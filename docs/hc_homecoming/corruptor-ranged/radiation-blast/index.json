@@ -1,1 +1,2418 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Corruptor_Ranged.Radiation_Blast","display_name":"Radiation Blast","display_help":"Blast your foes with lethal radiation. Radiation Blast powers can bypass normal defenses, and lower your targets' overall Defense.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/45/radiationburst_neutrinoblast.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Corruptor_Ranged.Radiation_Blast.Neutrino_Bolt","Corruptor_Ranged.Radiation_Blast.X-Ray_Beam","Corruptor_Ranged.Radiation_Blast.Irradiate","Corruptor_Ranged.Radiation_Blast.Electron_Haze","Corruptor_Ranged.Radiation_Blast.Proton_Volley","Corruptor_Ranged.Radiation_Blast.Aim","Corruptor_Ranged.Radiation_Blast.Cosmic_Burst","Corruptor_Ranged.Radiation_Blast.Neutron_Bomb","Corruptor_Ranged.Radiation_Blast.Atomic_Blast"],"powers":[{"name":"Corruptor_Ranged.Radiation_Blast.Neutrino_Bolt","display_name":"Neutrino Bolt","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/45/radiationburst_neutrinoblast.png","display_help":"A very quick, but low damage attack. Neutrino Bolt can reduce the target's Defense. Damage: Minor, Recharge: Very Fast","display_short_help":"Ranged, Minor DMG(Energy), Foe -DEF","display_info":{"Recharge Time":"1.5s","Power Range":"80 ft.","Endurance Cost":"3.12","Target Type":"Enemies","Power Type":"Click","Available Level":"1","Effect Area":"Single Target","Attack Types":"Ranged, Energy","Activation Time":"1s"},"attack_types":["Ranged_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Corruptor Archetype Sets","Ranged Damage","Accurate Defense Debuff","Defense Debuff","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.57,"recharge_time":1.5,"endurance_cost":3.12},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":25.02,"average":25.02,"per_activation":25.02,"per_cast_cycle":10.01,"display_info":["25.02 energy damage on target"],"base_value":-41.7077,"scale":0.6}]}]},{"pve_or_pvp":"PVE","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":25.02,"average":25.02,"per_activation":25.02,"per_cast_cycle":10.01,"display_info":["25.02 energy damage on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-41.7077,"scale":0.6}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":65.43,"average":65.43,"per_activation":65.43,"per_cast_cycle":26.17,"display_info":["65.43 energy damage on target"],"base_value":-56.4132,"scale":1.1599}]}]},{"pve_or_pvp":"PVP","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":65.43,"average":65.43,"per_activation":65.43,"per_cast_cycle":26.17,"display_info":["65.43 energy damage on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-56.4132,"scale":1.1599}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","percent":-10.0,"display_info":["-10.00% strength to defense for 3s on target"],"base_value":-0.1,"scale":1.0}]}]}]},{"name":"Corruptor_Ranged.Radiation_Blast.X-Ray_Beam","display_name":"X-Ray Beam","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/85/radiationburst_xraybeam.png","display_help":"You can emit a beam of X-Ray energy from your eyes, dealing moderate Energy damage. This attack can bypass some defenses and can reduce the target's Defense. Damage: Moderate, Recharge: Fast","display_short_help":"Ranged, Moderate DMG(Energy), Foe -DEF","display_info":{"Effect Area":"Single Target","Target Type":"Enemies","Power Range":"80 ft.","Power Type":"Click","Attack Types":"Ranged, Energy","Available Level":"1","Activation Time":"1.67s","Recharge Time":"4s","Endurance Cost":"5.20"},"attack_types":["Ranged_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Accurate Defense Debuff","Universal Damage Sets","Defense Debuff","Corruptor Archetype Sets","Ranged Damage"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.1,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":1.07,"recharge_time":4.0,"endurance_cost":5.2},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":41.71,"average":41.71,"per_activation":24.98,"per_cast_cycle":7.36,"display_info":["41.71 energy damage on target"],"base_value":-41.7077,"scale":1.0}]}]},{"pve_or_pvp":"PVE","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":41.71,"average":41.71,"per_activation":24.98,"per_cast_cycle":7.36,"display_info":["41.71 energy damage on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-41.7077,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":97.53,"average":97.53,"per_activation":58.4,"per_cast_cycle":17.2,"display_info":["97.53 energy damage on target"],"base_value":-56.4132,"scale":1.7289}]}]},{"pve_or_pvp":"PVP","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":97.53,"average":97.53,"per_activation":58.4,"per_cast_cycle":17.2,"display_info":["97.53 energy damage on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-56.4132,"scale":1.7289}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","percent":-20.0,"display_info":["-20.00% strength to defense for 6s on target"],"base_value":-0.1,"scale":2.0}]}]}]},{"name":"Corruptor_Ranged.Radiation_Blast.Irradiate","display_name":"Irradiate","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/02/radiationburst_irradiate.png","display_help":"You can emit lethal amounts of radiation in all directions, damaging all nearby foes for a short time. Like other Radiation attacks, this power can bypass some of a target's defenses. Irradiate severely reduces the target's Defense. Damage: Moderate(DoT), Recharge: Slow","display_short_help":"Close (AoE), Moderate DoT(Energy), Foe -DEF","display_info":{"Recharge Time":"20s","Target Type":"Self","Activation Time":"1.07s","Power Type":"Click","Effect Area":"AoE — 20 ft. radius (16 targets max)","Attack Types":"Area, Energy","Available Level":"2","Endurance Cost":"18.51"},"attack_types":["Area_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Defense Debuff","Accurate Defense Debuff","PBAoE Damage","Corruptor Archetype Sets","Universal Damage Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.1,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":20.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.07,"animation_time":1.07,"animation_time_before_hit":1.0,"recharge_time":20.0,"endurance_cost":18.51},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.6,"continuous_apply_seconds":0.5,"ticks":10,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":4.17,"average":4.17,"per_activation":3.9,"per_cast_cycle":0.2,"display_info":["10 ticks of 4.17 energy damage over 4.6s on target"],"base_value":-41.7077,"scale":0.1}]}]},{"pve_or_pvp":"PVE","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.6,"continuous_apply_seconds":0.5,"ticks":10,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":4.17,"average":4.17,"per_activation":3.9,"per_cast_cycle":0.2,"display_info":["10 ticks of 4.17 energy damage over 4.6s on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-41.7077,"scale":0.1}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.6,"continuous_apply_seconds":4.6,"ticks":2,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":2.75,"average":2.75,"per_activation":2.57,"per_cast_cycle":0.13,"display_info":["2 ticks of 2.75 energy damage over 4.6s on target"],"base_value":-56.4132,"scale":0.0487}]}]},{"pve_or_pvp":"PVP","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.6,"continuous_apply_seconds":0.5,"ticks":10,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":2.75,"average":2.75,"per_activation":2.57,"per_cast_cycle":0.13,"display_info":["10 ticks of 2.75 energy damage over 4.6s on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-56.4132,"scale":0.0487}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","percent":-30.0,"display_info":["-30.00% strength to defense for 10s on target"],"base_value":-0.1,"scale":3.0}]}]}]},{"name":"Corruptor_Ranged.Radiation_Blast.Electron_Haze","display_name":"Electron Haze","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/93/radiationburst_electronhaze.png","display_help":"A short range conical blast of free electrons. This attack can bypass some of a target's defenses and reduce the target's Defense. It can also knock some targets down. Damage: Moderate, Recharge: Slow","display_short_help":"Close, Cone Moderate DMG(Energy), Foe -DEF, Knockback","display_info":{"Attack Types":"Area, Energy","Endurance Cost":"15.18","Effect Area":"Cone — 40 ft. radius 30° arc (10 targets max)","Power Type":"Click","Target Type":"Enemies","Recharge Time":"16s","Available Level":"6","Power Range":"40 ft.","Activation Time":"2.37s"},"attack_types":["Area_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance KnockBack","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Targeted AoE Damage","Corruptor Archetype Sets","Accurate Defense Debuff","Knockback","Universal Damage Sets","Defense Debuff"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.1,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":40.0,"arc_degrees":30.0,"range_feet":40.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.37,"animation_time":2.37,"animation_time_before_hit":1.83,"recharge_time":16.0,"endurance_cost":15.18},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":56.31,"average":56.31,"per_activation":23.76,"per_cast_cycle":3.07,"display_info":["56.31 energy damage on target"],"base_value":-41.7077,"scale":1.35}]}]},{"pve_or_pvp":"PVE","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":56.31,"average":56.31,"per_activation":23.76,"per_cast_cycle":3.07,"display_info":["56.31 energy damage on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-41.7077,"scale":1.35}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":70.49,"average":70.49,"per_activation":29.74,"per_cast_cycle":3.84,"display_info":["70.49 energy damage on target"],"base_value":-56.4132,"scale":1.2495}]}]},{"pve_or_pvp":"PVP","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":70.49,"average":70.49,"per_activation":29.74,"per_cast_cycle":3.84,"display_info":["70.49 energy damage on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-56.4132,"scale":1.2495}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","percent":-20.0,"display_info":["-20.00% strength to defense for 8s on target"],"base_value":-0.1,"scale":2.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":25.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","magnitude":1.66,"display_info":["25.00% chance for 1.7 magnitude knock on target"],"base_value":1.6617,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":25.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","magnitude":1.66,"display_info":["25.00% chance for 1.7 magnitude knock on target"],"base_value":1.6617,"scale":1.0}]}]}]},{"name":"Corruptor_Ranged.Radiation_Blast.Proton_Volley","display_name":"Proton Volley","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/58/radiationburst_protonvolley.png","display_help":"Hurls a volley of alpha particles over an extremely long range. Proton Volley can bypass some of a target's defenses and reduce the target's Defense. This is a sniper attack, and is best fired from a distance as it can be interrupted. If you are engaged in battle this attack becomes instant-cast. If you are not engaged, it will do bonus damage. Damage: Superior, Recharge: Slow","display_short_help":"Sniper, Superior DMG(Energy), Foe -DEF","display_info":{"Power Type":"Click","Activation Time":"1.33s","Target Type":"Enemies","Power Range":"150 ft.","Attack Types":"Ranged, Energy","Endurance Cost":"14.35","Recharge Time":"12s","Effect Area":"Single Target","Available Level":"8"},"attack_types":["Ranged_Def","Energy_Def"],"enhancements_allowed":["Reduce Interrupt Time","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Corruptor Archetype Sets","Ranged Damage","Accurate Defense Debuff","Universal Damage Sets","Sniper Attacks","Defense Debuff"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":150.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.33,"animation_time":1.33,"animation_time_before_hit":0.83,"recharge_time":12.0,"endurance_cost":14.35},"effect_groups":[],"redirects":[{"name":"Villain_Pets.Corruptor_RadiationBlast_Snipe.Proton_Volley_Quick","fallback":false,"requires":"Source.Mode?(kEngaged) || source.ownPower?(Set_Bonus.Set_Bonus.Experienced_Marksman)","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/corruptor-radiationblast-snipe/"},{"name":"Villain_Pets.Corruptor_RadiationBlast_Snipe.Proton_Volley_Normal","fallback":true,"url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/corruptor-radiationblast-snipe/"}]},{"name":"Corruptor_Ranged.Radiation_Blast.Aim","display_name":"Aim","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/18/radiationburst_aim.png","display_help":"Greatly increases your chance to hit with attacks for a few seconds. Slightly increases damage. Recharge: Long","display_short_help":"Self +To Hit, +DMG","display_info":{"Endurance Cost":"5.20","Available Level":"12","Power Type":"Click","Target Type":"Self","Recharge Time":"1m 30s","Effect Area":"Single Target","Activation Time":"1.17s"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["To Hit Buff"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":90.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","percent":42.5,"display_info":["42.50% to hit for 10s on self","Unresistable"],"base_value":0.085,"scale":5.0}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","percent":42.5,"display_info":["42.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.085,"scale":5.0}]}]}]},{"name":"Corruptor_Ranged.Radiation_Blast.Cosmic_Burst","display_name":"Cosmic Burst","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/98/radiationburst_cosmicburst.png","display_help":"Cosmic Burst smashes the target with cosmic particles. The attack is devastating and can leave most targets Disoriented and with reduced Defense. Damage: Extreme, Recharge: Moderate","display_short_help":"Extreme DMG(Energy), Foe Disorient, -DEF","display_info":{"Target Type":"Enemies","Power Range":"80 ft.","Power Type":"Click","Effect Area":"Single Target","Available Level":"18","Recharge Time":"10s","Endurance Cost":"10.40","Attack Types":"Ranged, Energy","Activation Time":"2.07s"},"attack_types":["Ranged_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Disorient","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Accurate Defense Debuff","Universal Damage Sets","Corruptor Archetype Sets","Defense Debuff","Stuns","Ranged Damage"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.07,"animation_time":2.07,"animation_time_before_hit":1.17,"recharge_time":10.0,"endurance_cost":10.4},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":88.42,"average":88.42,"per_activation":42.71,"per_cast_cycle":7.33,"display_info":["88.42 energy damage on target"],"base_value":-41.7077,"scale":2.12}]},{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","duration_seconds":8.94,"display_info":["3.0 stun for 8.94s on target"],"base_value":1.1175,"scale":8.0}]}]},{"pve_or_pvp":"PVE","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":88.42,"average":88.42,"per_activation":42.71,"per_cast_cycle":7.33,"display_info":["88.42 energy damage on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-41.7077,"scale":2.12}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":126.87,"average":126.87,"per_activation":61.29,"per_cast_cycle":10.51,"display_info":["126.87 energy damage on target"],"base_value":-56.4132,"scale":2.2489}]},{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","duration_seconds":2.0,"display_info":["3.0 stun for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"pve_or_pvp":"PVP","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":126.87,"average":126.87,"per_activation":61.29,"per_cast_cycle":10.51,"display_info":["126.87 energy damage on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-56.4132,"scale":2.2489}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":12.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","percent":-30.0,"display_info":["-30.00% strength to defense for 12s on target"],"base_value":-0.1,"scale":3.0}]}]}]},{"name":"Corruptor_Ranged.Radiation_Blast.Neutron_Bomb","display_name":"Neutron Bomb","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/9f/radiationburst_radiationblast.png","display_help":"This devastating attack lobs an explosive sphere of deadly radiation, damaging the target and all nearby foes. Neutron Bomb can bypass some of a target's defenses and reduce the target's Defense. Damage: Moderate, Recharge: Slow","display_short_help":"Ranged (Targeted AoE), Moderate DMG(Energy), Foe -DEF","display_info":{"Activation Time":"1.67s","Recharge Time":"16s","Power Type":"Click","Effect Area":"AoE — 15 ft. radius (16 targets max)","Endurance Cost":"15.18","Available Level":"26","Target Type":"Enemies","Power Range":"80 ft.","Attack Types":"Area, Energy"},"attack_types":["Area_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Defense Debuff","Accurate Defense Debuff","Targeted AoE Damage","Corruptor Archetype Sets","Universal Damage Sets"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.1,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":15.0,"range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":2.6,"recharge_time":16.0,"endurance_cost":15.18},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":37.54,"average":37.54,"per_activation":22.48,"per_cast_cycle":2.12,"display_info":["37.54 energy damage on target"],"base_value":-41.7077,"scale":0.9}]}]},{"pve_or_pvp":"PVE","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":37.54,"average":37.54,"per_activation":22.48,"per_cast_cycle":2.12,"display_info":["37.54 energy damage on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-41.7077,"scale":0.9}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":38.46,"average":38.46,"per_activation":23.03,"per_cast_cycle":2.18,"display_info":["38.46 energy damage on target"],"base_value":-56.4132,"scale":0.6818}]}]},{"pve_or_pvp":"PVP","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":38.46,"average":38.46,"per_activation":23.03,"per_cast_cycle":2.18,"display_info":["38.46 energy damage on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-56.4132,"scale":0.6818}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":16.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","percent":-20.0,"display_info":["-20.00% strength to defense for 16s on target"],"base_value":-0.1,"scale":2.0}]}]}]},{"name":"Corruptor_Ranged.Radiation_Blast.Atomic_Blast","display_name":"Atomic Blast","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/21/radiationburst_atomicblast.png","display_help":"This attack taps most of your stored energy to deal a devastating Atomic Blast which deals Extreme Energy and Smashing damage. Any foes left standing will have their Defense greatly reduced and may be left helplessly choking on toxic vapors. Damage: Extreme, Recharge: Long","display_short_help":"PBAoE, Extreme DMG(Energy/Smash), Foe Hold, -DEF","display_info":{"Endurance Cost":"27.73","Effect Area":"AoE — 25 ft. radius (16 targets max)","Available Level":"32","Attack Types":"Area, Energy","Activation Time":"2.93s","Power Type":"Click","Recharge Time":"2m 25s","Target Type":"Self"},"attack_types":["Area_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["PBAoE Damage","Defense Debuff","Corruptor Archetype Sets","Accurate Defense Debuff","Universal Damage Sets"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.4,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":25.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.93,"animation_time":2.93,"animation_time_before_hit":2.07,"recharge_time":145.0,"endurance_cost":27.73},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":41.71,"average":41.71,"per_activation":14.24,"per_cast_cycle":0.28,"display_info":["41.71 smashing damage on target"],"base_value":-41.7077,"scale":1.0}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":125.12,"average":125.12,"per_activation":42.7,"per_cast_cycle":0.85,"display_info":["125.12 energy damage on target"],"base_value":-41.7077,"scale":3.0}]},{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","duration_seconds":11.17,"display_info":["3.0 hold for 11.17s on target"],"base_value":1.1175,"scale":10.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":97.99,"average":97.99,"per_activation":33.44,"per_cast_cycle":0.66,"display_info":["97.99 energy damage on target"],"base_value":-56.4132,"scale":1.737}]},{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","duration_seconds":2.0,"display_info":["3.0 hold for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"pve_or_pvp":"PVE","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":83.42,"average":83.42,"per_activation":28.47,"per_cast_cycle":0.56,"display_info":["83.42 energy damage on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-41.7077,"scale":2.0}]}]},{"pve_or_pvp":"PVP","tags":["Scourge"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","damage":48.99,"average":48.99,"per_activation":16.72,"per_cast_cycle":0.33,"display_info":["48.99 energy damage on target","2.5% chance per every percentage point targets health is below 50%"],"base_value":-56.4132,"scale":0.8685}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Corruptor","percent":-40.0,"display_info":["-40.00% strength to defense for 20s on target"],"base_value":-0.1,"scale":4.0}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Corruptor_Ranged.Radiation_Blast",
+  "display_name": "Radiation Blast",
+  "display_help": "Blast your foes with lethal radiation. Radiation Blast powers can bypass normal defenses, and lower your targets' overall Defense.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/45/radiationburst_neutrinoblast.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Corruptor_Ranged.Radiation_Blast.Neutrino_Bolt",
+    "Corruptor_Ranged.Radiation_Blast.X-Ray_Beam",
+    "Corruptor_Ranged.Radiation_Blast.Irradiate",
+    "Corruptor_Ranged.Radiation_Blast.Electron_Haze",
+    "Corruptor_Ranged.Radiation_Blast.Proton_Volley",
+    "Corruptor_Ranged.Radiation_Blast.Aim",
+    "Corruptor_Ranged.Radiation_Blast.Cosmic_Burst",
+    "Corruptor_Ranged.Radiation_Blast.Neutron_Bomb",
+    "Corruptor_Ranged.Radiation_Blast.Atomic_Blast"
+  ],
+  "powers": [
+    {
+      "name": "Corruptor_Ranged.Radiation_Blast.Neutrino_Bolt",
+      "display_name": "Neutrino Bolt",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/45/radiationburst_neutrinoblast.png",
+      "display_help": "A very quick, but low damage attack. Neutrino Bolt can reduce the target's Defense. Damage: Minor, Recharge: Very Fast",
+      "display_short_help": "Ranged, Minor DMG(Energy), Foe -DEF",
+      "display_info": {
+        "Activation Time": "1s",
+        "Endurance Cost": "3.12",
+        "Recharge Time": "1.5s",
+        "Power Type": "Click",
+        "Effect Area": "Single Target",
+        "Attack Types": "Ranged, Energy",
+        "Target Type": "Enemies",
+        "Power Range": "80 ft.",
+        "Available Level": "1"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Debuff",
+        "Accurate Defense Debuff",
+        "Universal Damage Sets",
+        "Ranged Damage",
+        "Corruptor Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 1.5,
+        "endurance_cost": 3.12
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 25.02,
+                  "average": 25.02,
+                  "per_activation": 25.02,
+                  "per_cast_cycle": 10.01,
+                  "display_info": [
+                    "25.02 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 25.02,
+                  "average": 25.02,
+                  "per_activation": 25.02,
+                  "per_cast_cycle": 10.01,
+                  "display_info": [
+                    "25.02 energy damage on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 65.43,
+                  "average": 65.43,
+                  "per_activation": 65.43,
+                  "per_cast_cycle": 26.17,
+                  "display_info": [
+                    "65.43 energy damage on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 1.1599
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 65.43,
+                  "average": 65.43,
+                  "per_activation": 65.43,
+                  "per_cast_cycle": 26.17,
+                  "display_info": [
+                    "65.43 energy damage on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 1.1599
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "percent": -10.0,
+                  "display_info": [
+                    "-10.00% strength to defense for 3s on target"
+                  ],
+                  "base_value": -0.1,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Corruptor_Ranged.Radiation_Blast.X-Ray_Beam",
+      "display_name": "X-Ray Beam",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/85/radiationburst_xraybeam.png",
+      "display_help": "You can emit a beam of X-Ray energy from your eyes, dealing moderate Energy damage. This attack can bypass some defenses and can reduce the target's Defense. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Ranged, Moderate DMG(Energy), Foe -DEF",
+      "display_info": {
+        "Endurance Cost": "5.20",
+        "Effect Area": "Single Target",
+        "Attack Types": "Ranged, Energy",
+        "Power Range": "80 ft.",
+        "Available Level": "1",
+        "Activation Time": "1.67s",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Recharge Time": "4s"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Accurate Defense Debuff",
+        "Corruptor Archetype Sets",
+        "Defense Debuff",
+        "Universal Damage Sets",
+        "Ranged Damage"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.1,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 1.07,
+        "recharge_time": 4.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 41.71,
+                  "average": 41.71,
+                  "per_activation": 24.98,
+                  "per_cast_cycle": 7.36,
+                  "display_info": [
+                    "41.71 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 41.71,
+                  "average": 41.71,
+                  "per_activation": 24.98,
+                  "per_cast_cycle": 7.36,
+                  "display_info": [
+                    "41.71 energy damage on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 97.53,
+                  "average": 97.53,
+                  "per_activation": 58.4,
+                  "per_cast_cycle": 17.2,
+                  "display_info": [
+                    "97.53 energy damage on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 1.7289
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 97.53,
+                  "average": 97.53,
+                  "per_activation": 58.4,
+                  "per_cast_cycle": 17.2,
+                  "display_info": [
+                    "97.53 energy damage on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 1.7289
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% strength to defense for 6s on target"
+                  ],
+                  "base_value": -0.1,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Corruptor_Ranged.Radiation_Blast.Irradiate",
+      "display_name": "Irradiate",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/02/radiationburst_irradiate.png",
+      "display_help": "You can emit lethal amounts of radiation in all directions, damaging all nearby foes for a short time. Like other Radiation attacks, this power can bypass some of a target's defenses. Irradiate severely reduces the target's Defense. Damage: Moderate(DoT), Recharge: Slow",
+      "display_short_help": "Close (AoE), Moderate DoT(Energy), Foe -DEF",
+      "display_info": {
+        "Activation Time": "1.07s",
+        "Power Type": "Click",
+        "Effect Area": "AoE — 20 ft. radius (16 targets max)",
+        "Attack Types": "Area, Energy",
+        "Endurance Cost": "18.51",
+        "Recharge Time": "20s",
+        "Target Type": "Self",
+        "Available Level": "2"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Debuff",
+        "Corruptor Archetype Sets",
+        "Universal Damage Sets",
+        "Accurate Defense Debuff",
+        "PBAoE Damage"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.1,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 20.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.07,
+        "animation_time": 1.07,
+        "animation_time_before_hit": 1.0,
+        "recharge_time": 20.0,
+        "endurance_cost": 18.51
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.6,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 10,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 4.17,
+                  "average": 4.17,
+                  "per_activation": 3.9,
+                  "per_cast_cycle": 0.2,
+                  "display_info": [
+                    "10 ticks of 4.17 energy damage over 4.6s on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.6,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 10,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 4.17,
+                  "average": 4.17,
+                  "per_activation": 3.9,
+                  "per_cast_cycle": 0.2,
+                  "display_info": [
+                    "10 ticks of 4.17 energy damage over 4.6s on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.6,
+              "continuous_apply_seconds": 4.6,
+              "ticks": 2,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 2.75,
+                  "average": 2.75,
+                  "per_activation": 2.57,
+                  "per_cast_cycle": 0.13,
+                  "display_info": [
+                    "2 ticks of 2.75 energy damage over 4.6s on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 0.0487
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.6,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 10,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 2.75,
+                  "average": 2.75,
+                  "per_activation": 2.57,
+                  "per_cast_cycle": 0.13,
+                  "display_info": [
+                    "10 ticks of 2.75 energy damage over 4.6s on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 0.0487
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "percent": -30.0,
+                  "display_info": [
+                    "-30.00% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.1,
+                  "scale": 3.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Corruptor_Ranged.Radiation_Blast.Electron_Haze",
+      "display_name": "Electron Haze",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/93/radiationburst_electronhaze.png",
+      "display_help": "A short range conical blast of free electrons. This attack can bypass some of a target's defenses and reduce the target's Defense. It can also knock some targets down. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "Close, Cone Moderate DMG(Energy), Foe -DEF, Knockback",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Effect Area": "Cone — 40 ft. radius 30° arc (10 targets max)",
+        "Activation Time": "2.37s",
+        "Power Type": "Click",
+        "Endurance Cost": "15.18",
+        "Available Level": "6",
+        "Recharge Time": "16s",
+        "Power Range": "40 ft.",
+        "Attack Types": "Area, Energy"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Corruptor Archetype Sets",
+        "Defense Debuff",
+        "Targeted AoE Damage",
+        "Universal Damage Sets",
+        "Knockback",
+        "Accurate Defense Debuff"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.1,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 40.0,
+        "arc_degrees": 30.0,
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.37,
+        "animation_time": 2.37,
+        "animation_time_before_hit": 1.83,
+        "recharge_time": 16.0,
+        "endurance_cost": 15.18
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 56.31,
+                  "average": 56.31,
+                  "per_activation": 23.76,
+                  "per_cast_cycle": 3.07,
+                  "display_info": [
+                    "56.31 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 1.35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 56.31,
+                  "average": 56.31,
+                  "per_activation": 23.76,
+                  "per_cast_cycle": 3.07,
+                  "display_info": [
+                    "56.31 energy damage on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 1.35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 70.49,
+                  "average": 70.49,
+                  "per_activation": 29.74,
+                  "per_cast_cycle": 3.84,
+                  "display_info": [
+                    "70.49 energy damage on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 1.2495
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 70.49,
+                  "average": 70.49,
+                  "per_activation": 29.74,
+                  "per_cast_cycle": 3.84,
+                  "display_info": [
+                    "70.49 energy damage on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 1.2495
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% strength to defense for 8s on target"
+                  ],
+                  "base_value": -0.1,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 25.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "magnitude": 1.66,
+                  "display_info": [
+                    "25.00% chance for 1.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.6617,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 25.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "magnitude": 1.66,
+                  "display_info": [
+                    "25.00% chance for 1.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.6617,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Corruptor_Ranged.Radiation_Blast.Proton_Volley",
+      "display_name": "Proton Volley",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/58/radiationburst_protonvolley.png",
+      "display_help": "Hurls a volley of alpha particles over an extremely long range. Proton Volley can bypass some of a target's defenses and reduce the target's Defense. This is a sniper attack, and is best fired from a distance as it can be interrupted. If you are engaged in battle this attack becomes instant-cast. If you are not engaged, it will do bonus damage. Damage: Superior, Recharge: Slow",
+      "display_short_help": "Sniper, Superior DMG(Energy), Foe -DEF",
+      "display_info": {
+        "Available Level": "8",
+        "Effect Area": "Single Target",
+        "Power Range": "150 ft.",
+        "Target Type": "Enemies",
+        "Attack Types": "Ranged, Energy",
+        "Activation Time": "1.33s",
+        "Endurance Cost": "14.35",
+        "Power Type": "Click",
+        "Recharge Time": "12s"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Interrupt Time",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Debuff",
+        "Corruptor Archetype Sets",
+        "Accurate Defense Debuff",
+        "Sniper Attacks",
+        "Ranged Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 150.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.33,
+        "animation_time": 1.33,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 12.0,
+        "endurance_cost": 14.35
+      },
+      "effect_groups": [],
+      "redirects": [
+        {
+          "name": "Villain_Pets.Corruptor_RadiationBlast_Snipe.Proton_Volley_Quick",
+          "fallback": false,
+          "requires": "Source.Mode?(kEngaged) || source.ownPower?(Set_Bonus.Set_Bonus.Experienced_Marksman)",
+          "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/corruptor-radiationblast-snipe/"
+        },
+        {
+          "name": "Villain_Pets.Corruptor_RadiationBlast_Snipe.Proton_Volley_Normal",
+          "fallback": true,
+          "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/corruptor-radiationblast-snipe/"
+        }
+      ]
+    },
+    {
+      "name": "Corruptor_Ranged.Radiation_Blast.Aim",
+      "display_name": "Aim",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/18/radiationburst_aim.png",
+      "display_help": "Greatly increases your chance to hit with attacks for a few seconds. Slightly increases damage. Recharge: Long",
+      "display_short_help": "Self +To Hit, +DMG",
+      "display_info": {
+        "Endurance Cost": "5.20",
+        "Target Type": "Self",
+        "Available Level": "12",
+        "Recharge Time": "1m 30s",
+        "Power Type": "Click",
+        "Activation Time": "1.17s",
+        "Effect Area": "Single Target"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 90.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "percent": 42.5,
+                  "display_info": [
+                    "42.50% to hit for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.085,
+                  "scale": 5.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "percent": 42.5,
+                  "display_info": [
+                    "42.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.085,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Corruptor_Ranged.Radiation_Blast.Cosmic_Burst",
+      "display_name": "Cosmic Burst",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/98/radiationburst_cosmicburst.png",
+      "display_help": "Cosmic Burst smashes the target with cosmic particles. The attack is devastating and can leave most targets Disoriented and with reduced Defense. Damage: Extreme, Recharge: Moderate",
+      "display_short_help": "Extreme DMG(Energy), Foe Disorient, -DEF",
+      "display_info": {
+        "Activation Time": "2.07s",
+        "Endurance Cost": "10.40",
+        "Target Type": "Enemies",
+        "Power Range": "80 ft.",
+        "Effect Area": "Single Target",
+        "Available Level": "18",
+        "Power Type": "Click",
+        "Recharge Time": "10s",
+        "Attack Types": "Ranged, Energy"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Stuns",
+        "Ranged Damage",
+        "Universal Damage Sets",
+        "Accurate Defense Debuff",
+        "Defense Debuff",
+        "Corruptor Archetype Sets"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.07,
+        "animation_time": 2.07,
+        "animation_time_before_hit": 1.17,
+        "recharge_time": 10.0,
+        "endurance_cost": 10.4
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 88.42,
+                  "average": 88.42,
+                  "per_activation": 42.71,
+                  "per_cast_cycle": 7.33,
+                  "display_info": [
+                    "88.42 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 2.12
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "duration_seconds": 8.94,
+                  "display_info": [
+                    "3.0 stun for 8.94s on target"
+                  ],
+                  "base_value": 1.1175,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 88.42,
+                  "average": 88.42,
+                  "per_activation": 42.71,
+                  "per_cast_cycle": 7.33,
+                  "display_info": [
+                    "88.42 energy damage on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 2.12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 126.87,
+                  "average": 126.87,
+                  "per_activation": 61.29,
+                  "per_cast_cycle": 10.51,
+                  "display_info": [
+                    "126.87 energy damage on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 2.2489
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 stun for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 126.87,
+                  "average": 126.87,
+                  "per_activation": 61.29,
+                  "per_cast_cycle": 10.51,
+                  "display_info": [
+                    "126.87 energy damage on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 2.2489
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 12.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "percent": -30.0,
+                  "display_info": [
+                    "-30.00% strength to defense for 12s on target"
+                  ],
+                  "base_value": -0.1,
+                  "scale": 3.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Corruptor_Ranged.Radiation_Blast.Neutron_Bomb",
+      "display_name": "Neutron Bomb",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/9f/radiationburst_radiationblast.png",
+      "display_help": "This devastating attack lobs an explosive sphere of deadly radiation, damaging the target and all nearby foes. Neutron Bomb can bypass some of a target's defenses and reduce the target's Defense. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "Ranged (Targeted AoE), Moderate DMG(Energy), Foe -DEF",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Power Range": "80 ft.",
+        "Effect Area": "AoE — 15 ft. radius (16 targets max)",
+        "Recharge Time": "16s",
+        "Activation Time": "1.67s",
+        "Available Level": "26",
+        "Attack Types": "Area, Energy",
+        "Endurance Cost": "15.18"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Accurate Defense Debuff",
+        "Universal Damage Sets",
+        "Targeted AoE Damage",
+        "Defense Debuff",
+        "Corruptor Archetype Sets"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.1,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 15.0,
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 2.6,
+        "recharge_time": 16.0,
+        "endurance_cost": 15.18
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 37.54,
+                  "average": 37.54,
+                  "per_activation": 22.48,
+                  "per_cast_cycle": 2.12,
+                  "display_info": [
+                    "37.54 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 37.54,
+                  "average": 37.54,
+                  "per_activation": 22.48,
+                  "per_cast_cycle": 2.12,
+                  "display_info": [
+                    "37.54 energy damage on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 38.46,
+                  "average": 38.46,
+                  "per_activation": 23.03,
+                  "per_cast_cycle": 2.18,
+                  "display_info": [
+                    "38.46 energy damage on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 0.6818
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 38.46,
+                  "average": 38.46,
+                  "per_activation": 23.03,
+                  "per_cast_cycle": 2.18,
+                  "display_info": [
+                    "38.46 energy damage on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 0.6818
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 16.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% strength to defense for 16s on target"
+                  ],
+                  "base_value": -0.1,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Corruptor_Ranged.Radiation_Blast.Atomic_Blast",
+      "display_name": "Atomic Blast",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/21/radiationburst_atomicblast.png",
+      "display_help": "This attack taps most of your stored energy to deal a devastating Atomic Blast which deals Extreme Energy and Smashing damage. Any foes left standing will have their Defense greatly reduced and may be left helplessly choking on toxic vapors. Damage: Extreme, Recharge: Long",
+      "display_short_help": "PBAoE, Extreme DMG(Energy/Smash), Foe Hold, -DEF",
+      "display_info": {
+        "Attack Types": "Area, Energy",
+        "Available Level": "32",
+        "Endurance Cost": "27.73",
+        "Effect Area": "AoE — 25 ft. radius (16 targets max)",
+        "Power Type": "Click",
+        "Activation Time": "2.93s",
+        "Target Type": "Self",
+        "Recharge Time": "2m 25s"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Debuff",
+        "Accurate Defense Debuff",
+        "Universal Damage Sets",
+        "PBAoE Damage",
+        "Corruptor Archetype Sets"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.4,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 25.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.93,
+        "animation_time": 2.93,
+        "animation_time_before_hit": 2.07,
+        "recharge_time": 145.0,
+        "endurance_cost": 27.73
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 41.71,
+                  "average": 41.71,
+                  "per_activation": 14.24,
+                  "per_cast_cycle": 0.28,
+                  "display_info": [
+                    "41.71 smashing damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 125.12,
+                  "average": 125.12,
+                  "per_activation": 42.7,
+                  "per_cast_cycle": 0.85,
+                  "display_info": [
+                    "125.12 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 3.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "duration_seconds": 11.17,
+                  "display_info": [
+                    "3.0 hold for 11.17s on target"
+                  ],
+                  "base_value": 1.1175,
+                  "scale": 10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 97.99,
+                  "average": 97.99,
+                  "per_activation": 33.44,
+                  "per_cast_cycle": 0.66,
+                  "display_info": [
+                    "97.99 energy damage on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 1.737
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 hold for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 83.42,
+                  "average": 83.42,
+                  "per_activation": 28.47,
+                  "per_cast_cycle": 0.56,
+                  "display_info": [
+                    "83.42 energy damage on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Scourge"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(minmax((((target>kHitPoints% - 10) * 100) / (50 - 10)), 0, 100) < (rand() * 100)) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "damage": 48.99,
+                  "average": 48.99,
+                  "per_activation": 16.72,
+                  "per_cast_cycle": 0.33,
+                  "display_info": [
+                    "48.99 energy damage on target",
+                    "2.5% chance per every percentage point targets health is below 50%"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 0.8685
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Corruptor",
+                  "percent": -40.0,
+                  "display_info": [
+                    "-40.00% strength to defense for 20s on target"
+                  ],
+                  "base_value": -0.1,
+                  "scale": 4.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

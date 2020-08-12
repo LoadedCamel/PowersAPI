@@ -1,1 +1,2488 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Dominator_Control.Darkness_Control","display_name":"Darkness Control","display_help":"You can control darkness and shadow to disable your foes with negative energy. Enemies that are affected by many of your attacks will have their chance to hit reduced.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e3/darknesscontrol_shadowybinds.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Dominator_Control.Darkness_Control.Shadowy_Binds","Dominator_Control.Darkness_Control.Dark_Grasp","Dominator_Control.Darkness_Control.Living_Shadows","Dominator_Control.Darkness_Control.Possess","Dominator_Control.Darkness_Control.Fearsome_Stare","Dominator_Control.Darkness_Control.Heart_of_Darkness","Dominator_Control.Darkness_Control.Haunt","Dominator_Control.Darkness_Control.Shadow_Field","Dominator_Control.Darkness_Control.Umbra_Beast"],"powers":[{"name":"Dominator_Control.Darkness_Control.Shadowy_Binds","display_name":"Shadowy Binds","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e3/darknesscontrol_shadowybinds.png","display_help":"You take control of your victim's shadow causing it to entangle and bind its owner thus leaving them immobilized and suffering from negative energy damage over time and reducing their chance to hit. Immobilized foes cannot move but can still attack. Damage: Moderate, Recharge: Fast","display_short_help":"Ranged, Moderate DoT(Negative), Foe Immobilize, -To Hit, -Fly","display_info":{"Target Type":"Enemies","Endurance Cost":"7.80","Recharge Time":"4s","Power Range":"80 ft.","Available Level":"1","Activation Time":"1.2s","Effect Area":"Single Target","Power Type":"Click","Attack Types":"Ranged, Negative_Energy"},"attack_types":["Ranged_Def","Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Immobilization","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Ranged Damage","Universal Damage Sets","Accurate To-Hit Debuff","To Hit Debuff","Dominator Archetype Sets","Immobilize"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.2,"animation_time":1.2,"animation_time_before_hit":0.53,"recharge_time":4.0,"endurance_cost":7.8},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":9.2,"continuous_apply_seconds":2.0,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":10.57,"average":10.57,"per_activation":8.81,"per_cast_cycle":2.03,"display_info":["5 ticks of 10.57 negative energy damage over 9.2s on target"],"base_value":-52.8297,"scale":0.2}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":22.35,"display_info":["4.0 immobilize for 22.35s on target"],"base_value":1.49,"scale":15.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":9.2,"continuous_apply_seconds":2.0,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":20.71,"average":20.71,"per_activation":17.26,"per_cast_cycle":3.98,"display_info":["5 ticks of 20.71 negative energy damage over 9.2s on target"],"base_value":-73.9593,"scale":0.28}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":5.0,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["5.0 immobilize for 4s on target"],"base_value":4.0,"scale":1.0}]}]},{"pve_or_pvp":"PVE","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["NearGround","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":33.53,"display_info":["3.0 immobilize for 33.53s on target","Only while domination is active"],"base_value":1.49,"scale":22.5}]}]},{"pve_or_pvp":"PVP","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["NearGround","IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["1.0 immobilize for 4s on target","Only while domination is active","Unresistable"],"base_value":4.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-5.63,"display_info":["-5.63% to hit for 15s on target"],"base_value":-0.075,"scale":0.75}]},{"attributes":["Knockup","Knockback"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":10000.0,"display_info":["10000.00% resistance to knockup, knock for 15s on target","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":100.0}]},{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","magnitude":-1.6,"display_info":["-1.6 fly protection for 15s on target","Unresistable"],"base_value":1.0,"scale":-1.6}]}]}]},{"name":"Dominator_Control.Darkness_Control.Dark_Grasp","display_name":"Dark Grasp","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/5d/darknesscontrol_darkgrasp.png","display_help":"You cause your target's shadow to wholly envelop them, leaving them held and rendered helpless while suffering from moderate negative energy damage. Even if the target is powerful enough to resist the power's hold effect they will have their chance to hit reduced. Damage: Moderate, Recharge: Moderate","display_short_help":"Ranged, Moderate DMG(Negative), Foe Hold, -To Hit","display_info":{"Recharge Time":"8s","Endurance Cost":"8.53","Power Range":"80 ft.","Activation Time":"1.67s","Target Type":"Enemies","Attack Types":"Ranged, Negative_Energy","Effect Area":"Single Target","Available Level":"1","Power Type":"Click"},"attack_types":["Ranged_Def","Negative_Energy_Def"],"enhancements_allowed":["Enhance Hold","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Dominator Archetype Sets","Holds","Accurate To-Hit Debuff","Universal Damage Sets","To Hit Debuff","Ranged Damage"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":1.0,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":17.88,"display_info":["3.0 hold for 17.88s on target"],"base_value":1.49,"scale":12.0}]},{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":52.83,"average":52.83,"per_activation":31.63,"per_cast_cycle":5.46,"display_info":["52.83 negative energy damage on target"],"base_value":-52.8297,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["4.0 hold for 4s on target"],"base_value":4.0,"scale":1.0}]},{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":139.72,"average":139.72,"per_activation":83.66,"per_cast_cycle":14.45,"display_info":["139.72 negative energy damage on target"],"base_value":-73.9593,"scale":1.8891}]}]},{"pve_or_pvp":"PVE","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["NearGround","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":26.82,"display_info":["3.0 hold for 26.82s on target","Only while domination is active"],"base_value":1.49,"scale":18.0}]}]},{"pve_or_pvp":"PVP","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["NearGround","IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["1.0 hold for 4s on target","Only while domination is active","Unresistable"],"base_value":4.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-5.63,"display_info":["-5.63% to hit for 10s on target"],"base_value":-0.075,"scale":0.75}]}]}]},{"name":"Dominator_Control.Darkness_Control.Living_Shadows","display_name":"Living Shadows","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/9a/darknesscontrol_livingshadows.png","display_help":"You extend and animate your own shadow causing it to entangle all foes within a long cone pattern in front of you, rendering all affected foes immobilized. Damage: Minor(DoT), Recharge: Moderate","display_short_help":"Ranged (Cone), Minor DoT(Negative), Foe Immobilize, -To Hit, -Fly","display_info":{"Power Range":"60 ft.","Effect Area":"Cone — 60 ft. radius 60° arc (16 targets max)","Endurance Cost":"13.00","Power Type":"Click","Attack Types":"Area, Negative_Energy, Smashing","Available Level":"2","Recharge Time":"8s","Target Type":"Enemies","Activation Time":"1.67s"},"attack_types":["Area_Def","Negative_Energy_Def","Smashing_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Immobilization","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Immobilize","Accurate To-Hit Debuff","Dominator Archetype Sets","To Hit Debuff","Universal Damage Sets","Targeted AoE Damage"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":16,"radius_feet":60.0,"arc_degrees":60.0,"range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":1.0,"recharge_time":8.0,"endurance_cost":13.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.2,"after_delay_seconds":1.0,"continuous_apply_seconds":2.0,"ticks":3,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":6.87,"average":6.87,"per_activation":4.11,"per_cast_cycle":0.71,"display_info":["3 ticks of 6.87 negative energy damage over 5.2s on target after 1s delay"],"base_value":-52.8297,"scale":0.13}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":22.35,"display_info":["3.0 immobilize for 22.35s on target","Unresistable"],"base_value":1.49,"scale":15.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.2,"after_delay_seconds":1.0,"continuous_apply_seconds":2.0,"ticks":3,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":15.75,"average":15.75,"per_activation":9.43,"per_cast_cycle":1.63,"display_info":["3 ticks of 15.75 negative energy damage over 5.2s on target after 1s delay"],"base_value":-73.9593,"scale":0.2129}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["3.0 immobilize for 4s on target","Unresistable"],"base_value":4.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-5.63,"display_info":["-5.63% to hit for 8s on target"],"base_value":-0.075,"scale":0.75}]},{"attributes":["Knockup","Knockback"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":10000.0,"display_info":["10000.00% resistance to knockup, knock for 15s on target","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":100.0}]},{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","magnitude":-1.6,"display_info":["-1.6 fly protection for 15s on target","Unresistable"],"base_value":1.0,"scale":-1.6}]}]},{"pve_or_pvp":"PVE","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["NearGround","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":33.53,"display_info":["3.0 immobilize for 33.53s on target","Only while domination is active"],"base_value":1.49,"scale":22.5}]}]},{"pve_or_pvp":"PVP","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["NearGround","IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["1.0 immobilize for 4s on target","Only while domination is active","Unresistable"],"base_value":4.0,"scale":1.0}]}]}]},{"name":"Dominator_Control.Darkness_Control.Possess","display_name":"Possess","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/28/darknesscontrol_possess.png","display_help":"You cause your targeted foe to be possessed by a dark entity from the Netherworld causing them to be confused for a short period of time. While confused they will be unable to tell the difference between friend or foe and will attack nearby allies. Recharge: Moderate","display_short_help":"Ranged, Target Confuse","display_info":{"Activation Time":"2.33s","Endurance Cost":"8.53","Attack Types":"Negative_Energy","Power Range":"80 ft.","Target Type":"Enemies","Effect Area":"Single Target","Available Level":"6","Recharge Time":"8s","Power Type":"Click","Aggro Type":"Enemies will not notice this attack"},"attack_types":["Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Confuse","Enhance Accuracy"],"enhancement_set_categories_allowed":["Confuse","Dominator Archetype Sets"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.33,"animation_time":2.33,"animation_time_before_hit":1.5,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":29.8,"display_info":["3.0 confuse for 29.8s on target"],"base_value":1.49,"scale":20.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["3.0 confuse for 4s on target"],"base_value":4.0,"scale":1.0}]}]},{"pve_or_pvp":"PVE","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":44.7,"display_info":["3.0 confuse for 44.7s on target","Only while domination is active"],"base_value":1.49,"scale":30.0}]}]},{"pve_or_pvp":"PVP","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["1.0 confuse for 4s on target","Only while domination is active","Unresistable"],"base_value":4.0,"scale":1.0}]}]}]},{"name":"Dominator_Control.Darkness_Control.Fearsome_Stare","display_name":"Fearsome Stare","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/74/darknesscontrol_fearsomestare.png","display_help":"Instills tremendous Fear within a cone area in front of you, causing all affected targets to tremble in Terror uncontrollably. Recharge: Slow","display_short_help":"Ranged (Cone), Foe Fear, -To Hit","display_info":{"Target Type":"Enemies","Attack Types":"Negative_Energy","Effect Area":"Cone — 70 ft. radius 45° arc (16 targets max)","Endurance Cost":"8.53","Activation Time":"2.03s","Power Type":"Click","Available Level":"8","Recharge Time":"40s","Power Range":"70 ft."},"attack_types":["Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Fear","Enhance ToHit DeBuffs","Enhance Accuracy"],"enhancement_set_categories_allowed":["Fear","Dominator Archetype Sets","Accurate To-Hit Debuff","To Hit Debuff"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":16,"radius_feet":70.0,"arc_degrees":45.0,"range_feet":70.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.03,"animation_time":2.03,"animation_time_before_hit":0.77,"recharge_time":40.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Terrorized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":22.35,"display_info":["3.0 terrorize for 22.35s on target"],"base_value":1.49,"scale":15.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-11.25,"display_info":["-11.25% to hit for 20s on target"],"base_value":-0.075,"scale":1.5}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Terrorized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["3.0 terrorize for 4s on target"],"base_value":4.0,"scale":1.0}]}]},{"pve_or_pvp":"PVE","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Terrorized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":33.53,"display_info":["3.0 terrorize for 33.53s on target","Only while domination is active"],"base_value":1.49,"scale":22.5}]}]},{"pve_or_pvp":"PVP","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Terrorized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["1.0 terrorize for 4s on target","Only while domination is active","Unresistable"],"base_value":4.0,"scale":1.0}]}]}]},{"name":"Dominator_Control.Darkness_Control.Heart_of_Darkness","display_name":"Heart of Darkness","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/30/darknesscontrol_heartofdarkness.png","display_help":"In a burst of negative energy you overwhelm the minds of those around you causing them to be disoriented and suffer minor negative energy damage over a short time. Affected targets will also have their chance to hit reduced. Damage: Minor (DoT), Recharge: Long","display_short_help":"PBAoE, Foe Disorient, -To Hit, Minor DoT(Negative)","display_info":{"Effect Area":"AoE — 25 ft. radius (16 targets max)","Recharge Time":"1m 30s","Available Level":"12","Power Type":"Click","Activation Time":"1.67s","Target Type":"Self","Endurance Cost":"15.60","Attack Types":"Area, Negative_Energy"},"attack_types":["Area_Def","Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Disorient","Enhance Recharge Speed","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Dominator Archetype Sets","Stuns","To Hit Debuff","Accurate To-Hit Debuff","PBAoE Damage"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":0.8,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":25.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.83,"recharge_time":90.0,"endurance_cost":15.6},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.1,"continuous_apply_seconds":1.0,"ticks":5,"flags":["NearGround","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":3.7,"average":3.7,"per_activation":2.22,"per_cast_cycle":0.04,"display_info":["5 ticks of 3.70 negative energy damage over 4.1s on target"],"base_value":-52.8297,"scale":0.07}]},{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["NearGround","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":14.9,"display_info":["3.0 stun for 14.9s on target"],"base_value":1.49,"scale":10.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.1,"continuous_apply_seconds":1.0,"ticks":5,"flags":["NearGround","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":13.9,"average":13.9,"per_activation":8.32,"per_cast_cycle":0.15,"display_info":["5 ticks of 13.90 negative energy damage over 4.1s on target"],"base_value":-73.9593,"scale":0.188}]},{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["NearGround","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["4.0 stun for 4s on target"],"base_value":4.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-5.63,"display_info":["-5.63% to hit for 10s on target"],"base_value":-0.075,"scale":0.75}]}]},{"pve_or_pvp":"PVE","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["NearGround","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":22.35,"display_info":["3.0 stun for 22.35s on target","Only while domination is active"],"base_value":1.49,"scale":15.0}]}]},{"pve_or_pvp":"PVP","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["NearGround","IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["1.0 stun for 4s on target","Only while domination is active","Unresistable"],"base_value":4.0,"scale":1.0}]}]}]},{"name":"Dominator_Control.Darkness_Control.Haunt","display_name":"Haunt","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/fd/darknesscontrol_haunt.png","display_help":"You summon a pair of Shades from the Netherworld to harass your target foe. Shades deal moderate damage and they terrorize their victims. Recharge: Long","display_short_help":"Foe Targeted, Summon Shades","display_info":{"Available Level":"18","Power Range":"80 ft.","Activation Time":"2.33s","Recharge Time":"3m 30s","Endurance Cost":"10.40","Target Type":"Enemies","Effect Area":"Single Target","Power Type":"Click"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Fear","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Fear","Pet Damage","Recharge Intensive Pets"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.33,"animation_time":2.33,"animation_time_before_hit":1.2,"recharge_time":210.0,"endurance_cost":10.4},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Shade","display_name":"Shade","powers":[{"name":"Villain_Pets.Shade.Shadow_Punch","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"},{"name":"Villain_Pets.Shade.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"},{"name":"Villain_Pets.Shade.Scare","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"},{"name":"Villain_Pets.Shade.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"}]}}},{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Shade","display_name":"Shade","powers":[{"name":"Villain_Pets.Shade.Shadow_Punch","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"},{"name":"Villain_Pets.Shade.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"},{"name":"Villain_Pets.Shade.Scare","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"},{"name":"Villain_Pets.Shade.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":1.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Haunted","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Replace","by_caster":true}}]}]},{"name":"Dominator_Control.Darkness_Control.Shadow_Field","display_name":"Shadow Field","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ad/darknesscontrol_shadowfield.png","display_help":"You blanket a targeted area in darkness immediately holding foes within the field. Any foe who enters this area will have their chance to hit reduced and has a chance to be held for a short period of time. Recharge: Long","display_short_help":"Target (Location AoE), Foe Hold, -To Hit","display_info":{"Target Type":"Location","Power Type":"Click","Endurance Cost":"15.60","Effect Area":"Location","Activation Time":"2.67s","Power Range":"60 ft.","Available Level":"26","Recharge Time":"4m 0s"},"enhancements_allowed":["Enhance Hold","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance ToHit DeBuffs","Enhance Accuracy"],"enhancement_set_categories_allowed":["Dominator Archetype Sets","To Hit Debuff","Holds","Accurate To-Hit Debuff"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.67,"animation_time":2.67,"animation_time_before_hit":1.5,"recharge_time":240.0,"endurance_cost":15.6},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source>kStealth <= 0.5"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":45.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Shadow_Field_Dominator","display_name":"Shadow Field","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Villain_Pets.Shadow_Field_Dominator.Shadow_Field","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shadow-field-dominator/"},{"name":"Villain_Pets.Shadow_Field_Dominator.Shadow_Field_Hold","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shadow-field-dominator/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]},{"tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["source>kStealth > 0.5"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":45.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Shadow_Field_Dominator_Domination","display_name":"Shadow Field","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Villain_Pets.Shadow_Field_Dominator_Domination.Shadow_Field","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shadow-field-dominator-domination/"},{"name":"Villain_Pets.Shadow_Field_Dominator_Domination.Shadow_Field_Hold","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shadow-field-dominator-domination/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Dominator_Control.Darkness_Control.Umbra_Beast","display_name":"Umbra Beast","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/10/darknesscontrol_umbrabeast.png","display_help":"You conjure up one of the most fearsome creatures of the Netherworld, the Umbra Beast. This creature will fight beside its summoner using its brutal claw, bite and darkness attacks. Recharge: Long","display_short_help":"Summon Umbra Beast","display_info":{"Activation Time":"2.33s","Recharge Time":"4m 0s","Power Type":"Click","Target Type":"Location","Power Range":"50 ft.","Available Level":"32","Endurance Cost":"26.00","Effect Area":"Location"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Immobilization","Enhance Fear","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Fear","Pet Damage","Accurate To-Hit Debuff","Recharge Intensive Pets","Universal Damage Sets","To Hit Debuff"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":50.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.33,"animation_time":2.33,"animation_time_before_hit":1.2,"recharge_time":240.0,"endurance_cost":26.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Umbra_Beast","display_name":"Umbra Beast","powers":[{"name":"Villain_Pets.Umbra_Beast.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/umbra-beast/"},{"name":"Villain_Pets.Umbra_Beast.Claw_Swipe","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/umbra-beast/"},{"name":"Villain_Pets.Umbra_Beast.Umbra_Swipe","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/umbra-beast/"},{"name":"Villain_Pets.Umbra_Beast.Shadowy_Binds","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/umbra-beast/"},{"name":"Villain_Pets.Umbra_Beast.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/umbra-beast/"},{"name":"Villain_Pets.Umbra_Beast.Terrifying_Roar","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/umbra-beast/"}]}},"stacking":{"behavior":"Replace","by_caster":true}}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Dominator_Control.Darkness_Control",
+  "display_name": "Darkness Control",
+  "display_help": "You can control darkness and shadow to disable your foes with negative energy. Enemies that are affected by many of your attacks will have their chance to hit reduced.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e3/darknesscontrol_shadowybinds.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Dominator_Control.Darkness_Control.Shadowy_Binds",
+    "Dominator_Control.Darkness_Control.Dark_Grasp",
+    "Dominator_Control.Darkness_Control.Living_Shadows",
+    "Dominator_Control.Darkness_Control.Possess",
+    "Dominator_Control.Darkness_Control.Fearsome_Stare",
+    "Dominator_Control.Darkness_Control.Heart_of_Darkness",
+    "Dominator_Control.Darkness_Control.Haunt",
+    "Dominator_Control.Darkness_Control.Shadow_Field",
+    "Dominator_Control.Darkness_Control.Umbra_Beast"
+  ],
+  "powers": [
+    {
+      "name": "Dominator_Control.Darkness_Control.Shadowy_Binds",
+      "display_name": "Shadowy Binds",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e3/darknesscontrol_shadowybinds.png",
+      "display_help": "You take control of your victim's shadow causing it to entangle and bind its owner thus leaving them immobilized and suffering from negative energy damage over time and reducing their chance to hit. Immobilized foes cannot move but can still attack. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Ranged, Moderate DoT(Negative), Foe Immobilize, -To Hit, -Fly",
+      "display_info": {
+        "Activation Time": "1.2s",
+        "Power Range": "80 ft.",
+        "Attack Types": "Ranged, Negative_Energy",
+        "Effect Area": "Single Target",
+        "Recharge Time": "4s",
+        "Available Level": "1",
+        "Target Type": "Enemies",
+        "Endurance Cost": "7.80",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Immobilization",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Ranged Damage",
+        "Accurate To-Hit Debuff",
+        "Immobilize",
+        "To Hit Debuff",
+        "Dominator Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.2,
+        "animation_time": 1.2,
+        "animation_time_before_hit": 0.53,
+        "recharge_time": 4.0,
+        "endurance_cost": 7.8
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 9.2,
+              "continuous_apply_seconds": 2.0,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 10.57,
+                  "average": 10.57,
+                  "per_activation": 8.81,
+                  "per_cast_cycle": 2.03,
+                  "display_info": [
+                    "5 ticks of 10.57 negative energy damage over 9.2s on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 22.35,
+                  "display_info": [
+                    "4.0 immobilize for 22.35s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 15.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 9.2,
+              "continuous_apply_seconds": 2.0,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 20.71,
+                  "average": 20.71,
+                  "per_activation": 17.26,
+                  "per_cast_cycle": 3.98,
+                  "display_info": [
+                    "5 ticks of 20.71 negative energy damage over 9.2s on target"
+                  ],
+                  "base_value": -73.9593,
+                  "scale": 0.28
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 5.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "5.0 immobilize for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "NearGround",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 33.53,
+                  "display_info": [
+                    "3.0 immobilize for 33.53s on target",
+                    "Only while domination is active"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 22.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "NearGround",
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "1.0 immobilize for 4s on target",
+                    "Only while domination is active",
+                    "Unresistable"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -5.63,
+                  "display_info": [
+                    "-5.63% to hit for 15s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.75
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": 10000.0,
+                  "display_info": [
+                    "10000.00% resistance to knockup, knock for 15s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "magnitude": -1.6,
+                  "display_info": [
+                    "-1.6 fly protection for 15s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Darkness_Control.Dark_Grasp",
+      "display_name": "Dark Grasp",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/5d/darknesscontrol_darkgrasp.png",
+      "display_help": "You cause your target's shadow to wholly envelop them, leaving them held and rendered helpless while suffering from moderate negative energy damage. Even if the target is powerful enough to resist the power's hold effect they will have their chance to hit reduced. Damage: Moderate, Recharge: Moderate",
+      "display_short_help": "Ranged, Moderate DMG(Negative), Foe Hold, -To Hit",
+      "display_info": {
+        "Endurance Cost": "8.53",
+        "Attack Types": "Ranged, Negative_Energy",
+        "Available Level": "1",
+        "Recharge Time": "8s",
+        "Activation Time": "1.67s",
+        "Power Type": "Click",
+        "Power Range": "80 ft.",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Hold",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Debuff",
+        "Dominator Archetype Sets",
+        "Universal Damage Sets",
+        "Ranged Damage",
+        "Holds",
+        "Accurate To-Hit Debuff"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 1.0,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 17.88,
+                  "display_info": [
+                    "3.0 hold for 17.88s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 12.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 52.83,
+                  "average": 52.83,
+                  "per_activation": 31.63,
+                  "per_cast_cycle": 5.46,
+                  "display_info": [
+                    "52.83 negative energy damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "4.0 hold for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 139.72,
+                  "average": 139.72,
+                  "per_activation": 83.66,
+                  "per_cast_cycle": 14.45,
+                  "display_info": [
+                    "139.72 negative energy damage on target"
+                  ],
+                  "base_value": -73.9593,
+                  "scale": 1.8891
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "NearGround",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 26.82,
+                  "display_info": [
+                    "3.0 hold for 26.82s on target",
+                    "Only while domination is active"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 18.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "NearGround",
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "1.0 hold for 4s on target",
+                    "Only while domination is active",
+                    "Unresistable"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -5.63,
+                  "display_info": [
+                    "-5.63% to hit for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.75
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Darkness_Control.Living_Shadows",
+      "display_name": "Living Shadows",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/9a/darknesscontrol_livingshadows.png",
+      "display_help": "You extend and animate your own shadow causing it to entangle all foes within a long cone pattern in front of you, rendering all affected foes immobilized. Damage: Minor(DoT), Recharge: Moderate",
+      "display_short_help": "Ranged (Cone), Minor DoT(Negative), Foe Immobilize, -To Hit, -Fly",
+      "display_info": {
+        "Effect Area": "Cone — 60 ft. radius 60° arc (16 targets max)",
+        "Attack Types": "Area, Negative_Energy, Smashing",
+        "Recharge Time": "8s",
+        "Endurance Cost": "13.00",
+        "Power Range": "60 ft.",
+        "Available Level": "2",
+        "Activation Time": "1.67s",
+        "Power Type": "Click",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Negative_Energy_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Immobilization",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Immobilize",
+        "Accurate To-Hit Debuff",
+        "Dominator Archetype Sets",
+        "Targeted AoE Damage",
+        "To Hit Debuff"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 16,
+        "radius_feet": 60.0,
+        "arc_degrees": 60.0,
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 1.0,
+        "recharge_time": 8.0,
+        "endurance_cost": 13.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.2,
+              "after_delay_seconds": 1.0,
+              "continuous_apply_seconds": 2.0,
+              "ticks": 3,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 6.87,
+                  "average": 6.87,
+                  "per_activation": 4.11,
+                  "per_cast_cycle": 0.71,
+                  "display_info": [
+                    "3 ticks of 6.87 negative energy damage over 5.2s on target after 1s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.13
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 22.35,
+                  "display_info": [
+                    "3.0 immobilize for 22.35s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 15.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.2,
+              "after_delay_seconds": 1.0,
+              "continuous_apply_seconds": 2.0,
+              "ticks": 3,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 15.75,
+                  "average": 15.75,
+                  "per_activation": 9.43,
+                  "per_cast_cycle": 1.63,
+                  "display_info": [
+                    "3 ticks of 15.75 negative energy damage over 5.2s on target after 1s delay"
+                  ],
+                  "base_value": -73.9593,
+                  "scale": 0.2129
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "3.0 immobilize for 4s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -5.63,
+                  "display_info": [
+                    "-5.63% to hit for 8s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.75
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": 10000.0,
+                  "display_info": [
+                    "10000.00% resistance to knockup, knock for 15s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "magnitude": -1.6,
+                  "display_info": [
+                    "-1.6 fly protection for 15s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "NearGround",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 33.53,
+                  "display_info": [
+                    "3.0 immobilize for 33.53s on target",
+                    "Only while domination is active"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 22.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "NearGround",
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "1.0 immobilize for 4s on target",
+                    "Only while domination is active",
+                    "Unresistable"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Darkness_Control.Possess",
+      "display_name": "Possess",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/28/darknesscontrol_possess.png",
+      "display_help": "You cause your targeted foe to be possessed by a dark entity from the Netherworld causing them to be confused for a short period of time. While confused they will be unable to tell the difference between friend or foe and will attack nearby allies. Recharge: Moderate",
+      "display_short_help": "Ranged, Target Confuse",
+      "display_info": {
+        "Power Type": "Click",
+        "Effect Area": "Single Target",
+        "Attack Types": "Negative_Energy",
+        "Available Level": "6",
+        "Endurance Cost": "8.53",
+        "Power Range": "80 ft.",
+        "Activation Time": "2.33s",
+        "Recharge Time": "8s",
+        "Aggro Type": "Enemies will not notice this attack",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Confuse",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Confuse",
+        "Dominator Archetype Sets"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.33,
+        "animation_time": 2.33,
+        "animation_time_before_hit": 1.5,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 29.8,
+                  "display_info": [
+                    "3.0 confuse for 29.8s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 20.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "3.0 confuse for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 44.7,
+                  "display_info": [
+                    "3.0 confuse for 44.7s on target",
+                    "Only while domination is active"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 30.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "1.0 confuse for 4s on target",
+                    "Only while domination is active",
+                    "Unresistable"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Darkness_Control.Fearsome_Stare",
+      "display_name": "Fearsome Stare",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/74/darknesscontrol_fearsomestare.png",
+      "display_help": "Instills tremendous Fear within a cone area in front of you, causing all affected targets to tremble in Terror uncontrollably. Recharge: Slow",
+      "display_short_help": "Ranged (Cone), Foe Fear, -To Hit",
+      "display_info": {
+        "Activation Time": "2.03s",
+        "Target Type": "Enemies",
+        "Endurance Cost": "8.53",
+        "Effect Area": "Cone — 70 ft. radius 45° arc (16 targets max)",
+        "Available Level": "8",
+        "Power Type": "Click",
+        "Power Range": "70 ft.",
+        "Attack Types": "Negative_Energy",
+        "Recharge Time": "40s"
+      },
+      "attack_types": [
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Fear",
+        "Enhance ToHit DeBuffs",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Accurate To-Hit Debuff",
+        "Fear",
+        "To Hit Debuff",
+        "Dominator Archetype Sets"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 16,
+        "radius_feet": 70.0,
+        "arc_degrees": 45.0,
+        "range_feet": 70.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.03,
+        "animation_time": 2.03,
+        "animation_time_before_hit": 0.77,
+        "recharge_time": 40.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Terrorized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 22.35,
+                  "display_info": [
+                    "3.0 terrorize for 22.35s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 15.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -11.25,
+                  "display_info": [
+                    "-11.25% to hit for 20s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Terrorized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "3.0 terrorize for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Terrorized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 33.53,
+                  "display_info": [
+                    "3.0 terrorize for 33.53s on target",
+                    "Only while domination is active"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 22.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Terrorized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "1.0 terrorize for 4s on target",
+                    "Only while domination is active",
+                    "Unresistable"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Darkness_Control.Heart_of_Darkness",
+      "display_name": "Heart of Darkness",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/30/darknesscontrol_heartofdarkness.png",
+      "display_help": "In a burst of negative energy you overwhelm the minds of those around you causing them to be disoriented and suffer minor negative energy damage over a short time. Affected targets will also have their chance to hit reduced. Damage: Minor (DoT), Recharge: Long",
+      "display_short_help": "PBAoE, Foe Disorient, -To Hit, Minor DoT(Negative)",
+      "display_info": {
+        "Effect Area": "AoE — 25 ft. radius (16 targets max)",
+        "Recharge Time": "1m 30s",
+        "Power Type": "Click",
+        "Available Level": "12",
+        "Activation Time": "1.67s",
+        "Attack Types": "Area, Negative_Energy",
+        "Endurance Cost": "15.60",
+        "Target Type": "Self"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Accurate To-Hit Debuff",
+        "Stuns",
+        "To Hit Debuff",
+        "Dominator Archetype Sets",
+        "Universal Damage Sets",
+        "PBAoE Damage"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 0.8,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 25.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 90.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.1,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "NearGround",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 3.7,
+                  "average": 3.7,
+                  "per_activation": 2.22,
+                  "per_cast_cycle": 0.04,
+                  "display_info": [
+                    "5 ticks of 3.70 negative energy damage over 4.1s on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.07
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "NearGround",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 14.9,
+                  "display_info": [
+                    "3.0 stun for 14.9s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.1,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "NearGround",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 13.9,
+                  "average": 13.9,
+                  "per_activation": 8.32,
+                  "per_cast_cycle": 0.15,
+                  "display_info": [
+                    "5 ticks of 13.90 negative energy damage over 4.1s on target"
+                  ],
+                  "base_value": -73.9593,
+                  "scale": 0.188
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "NearGround",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "4.0 stun for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -5.63,
+                  "display_info": [
+                    "-5.63% to hit for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "NearGround",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 22.35,
+                  "display_info": [
+                    "3.0 stun for 22.35s on target",
+                    "Only while domination is active"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 15.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "NearGround",
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "1.0 stun for 4s on target",
+                    "Only while domination is active",
+                    "Unresistable"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Darkness_Control.Haunt",
+      "display_name": "Haunt",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/fd/darknesscontrol_haunt.png",
+      "display_help": "You summon a pair of Shades from the Netherworld to harass your target foe. Shades deal moderate damage and they terrorize their victims. Recharge: Long",
+      "display_short_help": "Foe Targeted, Summon Shades",
+      "display_info": {
+        "Activation Time": "2.33s",
+        "Power Type": "Click",
+        "Recharge Time": "3m 30s",
+        "Power Range": "80 ft.",
+        "Target Type": "Enemies",
+        "Endurance Cost": "10.40",
+        "Available Level": "18",
+        "Effect Area": "Single Target"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Fear",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Fear",
+        "Universal Damage Sets",
+        "Recharge Intensive Pets",
+        "Pet Damage"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.33,
+        "animation_time": 2.33,
+        "animation_time_before_hit": 1.2,
+        "recharge_time": 210.0,
+        "endurance_cost": 10.4
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Shade",
+                  "display_name": "Shade",
+                  "powers": [
+                    {
+                      "name": "Villain_Pets.Shade.Shadow_Punch",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"
+                    },
+                    {
+                      "name": "Villain_Pets.Shade.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"
+                    },
+                    {
+                      "name": "Villain_Pets.Shade.Scare",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"
+                    },
+                    {
+                      "name": "Villain_Pets.Shade.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Shade",
+                  "display_name": "Shade",
+                  "powers": [
+                    {
+                      "name": "Villain_Pets.Shade.Shadow_Punch",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"
+                    },
+                    {
+                      "name": "Villain_Pets.Shade.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"
+                    },
+                    {
+                      "name": "Villain_Pets.Shade.Scare",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"
+                    },
+                    {
+                      "name": "Villain_Pets.Shade.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shade/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 1.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Haunted",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Darkness_Control.Shadow_Field",
+      "display_name": "Shadow Field",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ad/darknesscontrol_shadowfield.png",
+      "display_help": "You blanket a targeted area in darkness immediately holding foes within the field. Any foe who enters this area will have their chance to hit reduced and has a chance to be held for a short period of time. Recharge: Long",
+      "display_short_help": "Target (Location AoE), Foe Hold, -To Hit",
+      "display_info": {
+        "Available Level": "26",
+        "Effect Area": "Location",
+        "Target Type": "Location",
+        "Power Type": "Click",
+        "Activation Time": "2.67s",
+        "Power Range": "60 ft.",
+        "Recharge Time": "4m 0s",
+        "Endurance Cost": "15.60"
+      },
+      "enhancements_allowed": [
+        "Enhance Hold",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance ToHit DeBuffs",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Debuff",
+        "Accurate To-Hit Debuff",
+        "Dominator Archetype Sets",
+        "Holds"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.67,
+        "animation_time": 2.67,
+        "animation_time_before_hit": 1.5,
+        "recharge_time": 240.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source>kStealth <= 0.5"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 45.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Shadow_Field_Dominator",
+                  "display_name": "Shadow Field",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Villain_Pets.Shadow_Field_Dominator.Shadow_Field",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shadow-field-dominator/"
+                    },
+                    {
+                      "name": "Villain_Pets.Shadow_Field_Dominator.Shadow_Field_Hold",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shadow-field-dominator/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source>kStealth > 0.5"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 45.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Shadow_Field_Dominator_Domination",
+                  "display_name": "Shadow Field",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Villain_Pets.Shadow_Field_Dominator_Domination.Shadow_Field",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shadow-field-dominator-domination/"
+                    },
+                    {
+                      "name": "Villain_Pets.Shadow_Field_Dominator_Domination.Shadow_Field_Hold",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shadow-field-dominator-domination/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Darkness_Control.Umbra_Beast",
+      "display_name": "Umbra Beast",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/10/darknesscontrol_umbrabeast.png",
+      "display_help": "You conjure up one of the most fearsome creatures of the Netherworld, the Umbra Beast. This creature will fight beside its summoner using its brutal claw, bite and darkness attacks. Recharge: Long",
+      "display_short_help": "Summon Umbra Beast",
+      "display_info": {
+        "Endurance Cost": "26.00",
+        "Recharge Time": "4m 0s",
+        "Activation Time": "2.33s",
+        "Power Type": "Click",
+        "Power Range": "50 ft.",
+        "Effect Area": "Location",
+        "Available Level": "32",
+        "Target Type": "Location"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Immobilization",
+        "Enhance Fear",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Pet Damage",
+        "Recharge Intensive Pets",
+        "Universal Damage Sets",
+        "Accurate To-Hit Debuff",
+        "To Hit Debuff",
+        "Fear"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 50.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.33,
+        "animation_time": 2.33,
+        "animation_time_before_hit": 1.2,
+        "recharge_time": 240.0,
+        "endurance_cost": 26.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Umbra_Beast",
+                  "display_name": "Umbra Beast",
+                  "powers": [
+                    {
+                      "name": "Villain_Pets.Umbra_Beast.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/umbra-beast/"
+                    },
+                    {
+                      "name": "Villain_Pets.Umbra_Beast.Claw_Swipe",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/umbra-beast/"
+                    },
+                    {
+                      "name": "Villain_Pets.Umbra_Beast.Umbra_Swipe",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/umbra-beast/"
+                    },
+                    {
+                      "name": "Villain_Pets.Umbra_Beast.Shadowy_Binds",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/umbra-beast/"
+                    },
+                    {
+                      "name": "Villain_Pets.Umbra_Beast.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/umbra-beast/"
+                    },
+                    {
+                      "name": "Villain_Pets.Umbra_Beast.Terrifying_Roar",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/umbra-beast/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

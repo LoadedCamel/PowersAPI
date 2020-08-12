@@ -1,1 +1,295 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Pets.PoisonGasArrow","display_name":"Poison Gas Arrow","display_help":"Trick Arrow","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/82/trickarrow_debuffdamage.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Pets.PoisonGasArrow.PoisonGasArrow"],"powers":[{"name":"Pets.PoisonGasArrow.PoisonGasArrow","display_name":"Poison Gas Arrow","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/82/trickarrow_debuffdamage.png","display_help":"The poisonous gas has severely weakened your attacks and is making it difficult to breathe.","display_short_help":"-DMG, Sleep","display_info":{"Effect Area":"AoE — 25 ft. radius (16 targets max)","Available Level":"1","Power Type":"Auto","Target Type":"Self"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Sleep","Enhance Recharge Speed","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.5,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":25.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"auto_cast_interval":2.5,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Null"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":2.75,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":2.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":8.94,"display_info":["2.0 sleep for 8.94s on target"],"base_value":1.49,"scale":6.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source.owner>arch == Defender"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.75,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source.owner>arch == Class_Mastermind"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.75,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source.owner>arch == Controller) || (source.owner>arch == Corruptor)"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.75,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":66.0,"requires":["(target>enttype == player) && (source.owner>arch == Controller)"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":2.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true}}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":66.0,"requires":["(target>enttype == player) && !(source.owner>arch == Controller)"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":2.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true}}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Pets.PoisonGasArrow",
+  "display_name": "Poison Gas Arrow",
+  "display_help": "Trick Arrow",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/82/trickarrow_debuffdamage.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Pets.PoisonGasArrow.PoisonGasArrow"
+  ],
+  "powers": [
+    {
+      "name": "Pets.PoisonGasArrow.PoisonGasArrow",
+      "display_name": "Poison Gas Arrow",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/82/trickarrow_debuffdamage.png",
+      "display_help": "The poisonous gas has severely weakened your attacks and is making it difficult to breathe.",
+      "display_short_help": "-DMG, Sleep",
+      "display_info": {
+        "Target Type": "Self",
+        "Power Type": "Auto",
+        "Available Level": "1",
+        "Effect Area": "AoE — 25 ft. radius (16 targets max)"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Sleep",
+        "Enhance Recharge Speed",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.5,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 25.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "auto_cast_interval": 2.5,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Null"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 2.75,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 8.94,
+                  "display_info": [
+                    "2.0 sleep for 8.94s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 6.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source.owner>arch == Defender"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.75,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source.owner>arch == Class_Mastermind"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.75,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source.owner>arch == Controller) || (source.owner>arch == Corruptor)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.75,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 66.0,
+          "requires": [
+            "(target>enttype == player) && (source.owner>arch == Controller)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 66.0,
+          "requires": [
+            "(target>enttype == player) && !(source.owner>arch == Controller)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

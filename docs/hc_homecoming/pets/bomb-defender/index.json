@@ -1,1 +1,628 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Pets.Bomb_Defender","display_name":"Bomb","display_help":"Devices","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ca/darkmiasma_tarpatch.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Pets.Bomb_Defender.Time_Bomb","Pets.Bomb_Defender.Self_Destruct","Pets.Bomb_Defender.Resistance"],"powers":[{"name":"Pets.Bomb_Defender.Time_Bomb","display_name":"Time Bomb","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ca/darkmiasma_tarpatch.png","display_help":"All foes that pass near this Trip Mine will get blown to smithereens. Note that Time Bomb is unaffected by Recharge Time changes. Recharge: Extremely Long","display_short_help":"AoE Lethal/Fire, Knockback","display_info":{"Attack Types":"Area, Lethal, Fire","Effect Area":"AoE — 20 ft. radius (16 targets max)","Available Level":"1","Recharge Time":"16m 40s","Target Type":"Self","Power Type":"Click"},"attack_types":["Area_Def","Lethal_Def","Fire_Def"],"enhancements_allowed":["Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":20.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":1000.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":108.44,"average":108.44,"display_info":["108.44 lethal damage on target"],"base_value":-55.6102,"scale":1.95}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":72.29,"average":72.29,"display_info":["72.29 fire damage on target"],"base_value":-55.6102,"scale":1.3}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":80.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":8.31,"display_info":["80.00% chance for 8.3 magnitude knock on target"],"base_value":2.0771,"scale":4.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":80.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":8.31,"display_info":["80.00% chance for 8.3 magnitude knock on target"],"base_value":2.0771,"scale":4.0}]}]}]},{"name":"Pets.Bomb_Defender.Self_Destruct","display_name":"Self Destruct","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ca/darkmiasma_tarpatch.png","display_help":"Self Destruct","display_short_help":"Self Destruct","display_info":{"Effect Area":"Single Target","Power Type":"Auto","Target Type":"Self","Available Level":"1"},"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Silent Kill"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","after_delay_seconds":15.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Pets.Bomb_Defender.Resistance","display_name":"Resistance","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/20/invulnerability_temporaryinvulnerabilty.png","display_help":"The Trip Mine is fragile, but cannot be affected by secondary effects like Sleep, Disorient, or Fear.","display_short_help":"Resistance","display_info":{"Effect Area":"Single Target","Target Type":"Self","Power Type":"Auto","Available Level":"1"},"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"auto_cast_interval":10.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg","Special_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-500.0,"display_info":["-500.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage, special damage for 10.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-5.0}]},{"attributes":["Healing_Dmg","Defense","Endurance","ToHit","Fly","Taunt","Confused","Afraid","Terrorized","Held","Stunned","Sleep","RechargeTime","EnduranceDiscount"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":10000.0,"display_info":["10000.00% resistance to healing, defense debuff, endurance debuff, to hit debuff, fly, taunt debuff, confuse, fear, terrorize, hold, stun, sleep, recharge debuff, Endurance Cost debuff for 10.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":100.0}]},{"attributes":["HitPoints"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":1000.0,"display_info":["1000.00% resistance to hit points for 10.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":10.0}]},{"attributes":["Fly","Taunt","Confused","Afraid","Terrorized","Held","Stunned","Sleep"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":-100.0,"display_info":["-100.0 fly protection, taunt, confuse protection, fear protection, terrorize protection, hold protection, stun protection, sleep protection for 10.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0}]},{"attributes":["Teleport"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.3,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-10000.0,"display_info":["-10000.00% teleport for 10.3s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0}]},{"attributes":["Afraid"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":-100.0,"display_info":["-100.0 fear protection for 10.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Self","magnitude":100.0,"duration":"InSecondsScaled","flags":["IgnoreStrength","IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":10.25,"display_info":["100.0 immobilize for 10.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":10.25}]},{"attributes":["StealthRadius_PVP"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":100000.0,"display_info":["100000.00% stealth radius for 10.25s on self","Unresistable"],"base_value":1.0,"scale":1000.0}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Pets.Bomb_Defender",
+  "display_name": "Bomb",
+  "display_help": "Devices",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ca/darkmiasma_tarpatch.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Pets.Bomb_Defender.Time_Bomb",
+    "Pets.Bomb_Defender.Self_Destruct",
+    "Pets.Bomb_Defender.Resistance"
+  ],
+  "powers": [
+    {
+      "name": "Pets.Bomb_Defender.Time_Bomb",
+      "display_name": "Time Bomb",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ca/darkmiasma_tarpatch.png",
+      "display_help": "All foes that pass near this Trip Mine will get blown to smithereens. Note that Time Bomb is unaffected by Recharge Time changes. Recharge: Extremely Long",
+      "display_short_help": "AoE Lethal/Fire, Knockback",
+      "display_info": {
+        "Power Type": "Click",
+        "Attack Types": "Area, Lethal, Fire",
+        "Effect Area": "AoE — 20 ft. radius (16 targets max)",
+        "Target Type": "Self",
+        "Available Level": "1",
+        "Recharge Time": "16m 40s"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Lethal_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 20.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 1000.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 108.44,
+                  "average": 108.44,
+                  "display_info": [
+                    "108.44 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.95
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 72.29,
+                  "average": 72.29,
+                  "display_info": [
+                    "72.29 fire damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 80.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": 8.31,
+                  "display_info": [
+                    "80.00% chance for 8.3 magnitude knock on target"
+                  ],
+                  "base_value": 2.0771,
+                  "scale": 4.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 80.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": 8.31,
+                  "display_info": [
+                    "80.00% chance for 8.3 magnitude knock on target"
+                  ],
+                  "base_value": 2.0771,
+                  "scale": 4.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Bomb_Defender.Self_Destruct",
+      "display_name": "Self Destruct",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ca/darkmiasma_tarpatch.png",
+      "display_help": "Self Destruct",
+      "display_short_help": "Self Destruct",
+      "display_info": {
+        "Power Type": "Auto",
+        "Effect Area": "Single Target",
+        "Target Type": "Self",
+        "Available Level": "1"
+      },
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Silent Kill"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "after_delay_seconds": 15.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Bomb_Defender.Resistance",
+      "display_name": "Resistance",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/20/invulnerability_temporaryinvulnerabilty.png",
+      "display_help": "The Trip Mine is fragile, but cannot be affected by secondary effects like Sleep, Disorient, or Fear.",
+      "display_short_help": "Resistance",
+      "display_info": {
+        "Available Level": "1",
+        "Target Type": "Self",
+        "Power Type": "Auto",
+        "Effect Area": "Single Target"
+      },
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "auto_cast_interval": 10.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg",
+                "Special_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -500.0,
+                  "display_info": [
+                    "-500.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage, special damage for 10.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -5.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Healing_Dmg",
+                "Defense",
+                "Endurance",
+                "ToHit",
+                "Fly",
+                "Taunt",
+                "Confused",
+                "Afraid",
+                "Terrorized",
+                "Held",
+                "Stunned",
+                "Sleep",
+                "RechargeTime",
+                "EnduranceDiscount"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 10000.0,
+                  "display_info": [
+                    "10000.00% resistance to healing, defense debuff, endurance debuff, to hit debuff, fly, taunt debuff, confuse, fear, terrorize, hold, stun, sleep, recharge debuff, Endurance Cost debuff for 10.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "HitPoints"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 1000.0,
+                  "display_info": [
+                    "1000.00% resistance to hit points for 10.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 10.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fly",
+                "Taunt",
+                "Confused",
+                "Afraid",
+                "Terrorized",
+                "Held",
+                "Stunned",
+                "Sleep"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": -100.0,
+                  "display_info": [
+                    "-100.0 fly protection, taunt, confuse protection, fear protection, terrorize protection, hold protection, stun protection, sleep protection for 10.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Teleport"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.3,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% teleport for 10.3s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Afraid"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": -100.0,
+                  "display_info": [
+                    "-100.0 fear protection for 10.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Self",
+              "magnitude": 100.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 10.25,
+                  "display_info": [
+                    "100.0 immobilize for 10.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 10.25
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "StealthRadius_PVP"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 100000.0,
+                  "display_info": [
+                    "100000.00% stealth radius for 10.25s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1000.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,2737 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Mastermind_Summon.Beast_Mastery","display_name":"Beast Mastery","display_help":"Command wild animals to aid you in battle. These beastly allies lack ranged attacks, but make up for it with a specialized focus in melee combat. Call forth wolves, lions, dire wolves, hawks and insects to harass your foes. Additionally, you have a chance to gain a stack of Pack Mentality when you and your pets land a hit on an enemy. Each stack of Pack Mentality will boost the damage of all of your nearby beast henchmen. Pack Mentality can stack up to 10 times and will fade after a short time.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/68/beastmastery_callswarm.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Mastermind_Summon.Beast_Mastery.Call_Swarm","Mastermind_Summon.Beast_Mastery.Summon_Wolves","Mastermind_Summon.Beast_Mastery.Call_Hawk","Mastermind_Summon.Beast_Mastery.Train_Beasts","Mastermind_Summon.Beast_Mastery.Call_Locusts","Mastermind_Summon.Beast_Mastery.Summon_Lions","Mastermind_Summon.Beast_Mastery.Fortify_Pack","Mastermind_Summon.Beast_Mastery.Summon_Dire_Wolf","Mastermind_Summon.Beast_Mastery.Tame_Beasts"],"powers":[{"name":"Mastermind_Summon.Beast_Mastery.Call_Swarm","display_name":"Call Swarm","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/68/beastmastery_callswarm.png","display_help":"You summon a swarm of stinging insects to harass your foe causing Light Lethal damage over time and reducing both their movement speed and defense. This power has a moderate chance at granting your pets a stack of Pack Mentality. Damage: Light DoT, Recharge: Very Fast","display_short_help":"Ranged, Light DoT(Lethal), Foe -Defense, -Speed","display_info":{"Power Type":"Click","Attack Types":"Ranged, Lethal","Recharge Time":"3s","Endurance Cost":"5.46","Effect Area":"Single Target","Activation Time":"1s","Target Type":"Enemies","Power Range":"80 ft.","Available Level":"1"},"attack_types":["Ranged_Def","Lethal_Def"],"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Ranged Damage","Defense Debuff","Slow Movement","Universal Damage Sets","Accurate Defense Debuff"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.73,"recharge_time":3.0,"endurance_cost":5.46},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":0.75,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":5.65,"average":5.65,"per_activation":5.65,"per_cast_cycle":1.41,"display_info":["5 ticks of 5.65 lethal damage over 3.1s on target after 0.5s delay"],"base_value":-30.5856,"scale":0.1848}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":0.75,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":11.26,"average":11.26,"per_activation":11.26,"per_cast_cycle":2.82,"display_info":["5 ticks of 11.26 lethal damage over 3.1s on target after 0.5s delay"],"base_value":-46.1537,"scale":0.244}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":-7.5,"display_info":["-7.50% strength to defense for 8s on target"],"base_value":-0.075,"scale":1.0}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":-20.0,"display_info":["-20.00% run speed, fly speed, jump speed for 8s on target"],"base_value":-1.0,"scale":0.2}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":-20.0,"display_info":["-20.00% strength to jump height for 8s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.2}]}]},{"visible_in_info_window":true,"chance_percent":32.0,"requires":["!source.ownPower?(temporary_powers.temporary_powers.Pack_Mentality_Lock)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Pack_Mentality","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Mastermind_Summon.Beast_Mastery.Summon_Wolves","display_name":"Summon Wolves","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/2f/beastmastery_summonwolves.png","display_help":"Calls forth one to three Wolves to do your bidding. The third one summoned will be an Alpha Wolf, which grants some leadership bonuses to the pack. Wolves have no ranged attacks, but can quickly close in on their prey. You may only have 3 Wolves under your control at any given time. If you attempt to call more Wolves, you can only replace the ones you have lost in battle. If you already have three, the power will fail. Wolf attacks have a chance to build a charge of Pack Mentality. Pack Mentality is a Damage buff aura that radiates from the Mastermind and can stack up to 10 times. Recharge: Slow","display_short_help":"Summon Wolves","display_info":{"Recharge Time":"1m 0s","Power Type":"Click","Power Range":"60 ft.","Effect Area":"Location","Activation Time":"1.97s","Endurance Cost":"19.50","Target Type":"Location","Available Level":"1"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Running Speed","Enhance KnockBack","Enhance Heal","Enhance ToHit DeBuffs","Enhance Defense DeBuff","Enhance Damage","Enhance ToHit Buffs","Enhance Accuracy"],"enhancement_set_categories_allowed":["To Hit Debuff","Pet Damage","Recharge Intensive Pets","Accurate To-Hit Debuff","Mastermind Archetype Sets","Running","Universal Damage Sets","Healing","Knockback","Defense Debuff","Accurate Defense Debuff","To Hit Buff"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.97,"animation_time":1.97,"animation_time_before_hit":0.57,"recharge_time":60.0,"endurance_cost":19.5},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":2.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Howler_Wolf","display_name":"Howler Wolf","powers":[{"name":"Mastermind_Pets.Howler_Wolf.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"},{"name":"Mastermind_Pets.Howler_Wolf.Vicious_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"},{"name":"Mastermind_Pets.Howler_Wolf.PM_Vicious_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"},{"name":"Mastermind_Pets.Howler_Wolf.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"},{"name":"Mastermind_Pets.Howler_Wolf.Wild_Charge","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source>combatlevel > 5"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":3.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Howler_Wolf","display_name":"Howler Wolf","powers":[{"name":"Mastermind_Pets.Howler_Wolf.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"},{"name":"Mastermind_Pets.Howler_Wolf.Vicious_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"},{"name":"Mastermind_Pets.Howler_Wolf.PM_Vicious_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"},{"name":"Mastermind_Pets.Howler_Wolf.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"},{"name":"Mastermind_Pets.Howler_Wolf.Wild_Charge","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source>combatlevel > 17"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":4.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Howler_Wolf_Alpha","display_name":"Alpha Howler Wolf","powers":[{"name":"Mastermind_Pets.Alpha_Wolf.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf/"},{"name":"Mastermind_Pets.Alpha_Wolf.Vicious_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf/"},{"name":"Mastermind_Pets.Alpha_Wolf.PM_Vicious_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf/"},{"name":"Mastermind_Pets.Alpha_Wolf.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf/"},{"name":"Mastermind_Pets.Alpha_Wolf.Wild_Charge","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf/"}]}}}]}]},{"name":"Mastermind_Summon.Beast_Mastery.Call_Hawk","display_name":"Call Hawk","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d0/beastmastery_callhawk.png","display_help":"You call forth a hawk ally to swoop in and viciously peck at your target causing High Lethal damage. The attack often catches foes off their guard and can knock them down as well as reducing their chance to hit. This power has a good chance at granting your pets a stack of Pack Mentality. Damage: High, Recharge: Fast","display_short_help":"Ranged, High DMG (Lethal), Foe -To Hit, Knockdown, -Fly","display_info":{"Attack Types":"Ranged, Lethal","Recharge Time":"6s","Power Type":"Click","Power Range":"80 ft.","Activation Time":"1.67s","Endurance Cost":"9.62","Effect Area":"Single Target","Target Type":"Enemies","Available Level":"2"},"attack_types":["Ranged_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance KnockBack","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["To Hit Debuff","Knockback","Accurate To-Hit Debuff","Universal Damage Sets","Ranged Damage"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.67,"recharge_time":6.0,"endurance_cost":9.62},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.3,"after_delay_seconds":0.25,"continuous_apply_seconds":0.3,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":9.96,"average":9.96,"per_activation":5.96,"per_cast_cycle":1.3,"display_info":["5 ticks of 9.96 lethal damage over 1.3s on target after 0.25s delay"],"base_value":-30.5856,"scale":0.3256}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":-5.63,"display_info":["-5.63% to hit for 10s on target"],"base_value":-0.075,"scale":0.75}]},{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","magnitude":-1.6,"display_info":["-1.6 fly protection for 10s on target"],"base_value":1.0,"scale":-1.6}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.3,"after_delay_seconds":0.25,"continuous_apply_seconds":0.3,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":18.37,"average":18.37,"per_activation":11.0,"per_cast_cycle":2.4,"display_info":["5 ticks of 18.37 lethal damage over 1.3s on target after 0.25s delay"],"base_value":-46.1537,"scale":0.398}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":40.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":0.5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","magnitude":0.67,"display_info":["40.00% chance for 0.7 magnitude knock on target after 0.5s delay"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":40.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":0.5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","magnitude":0.67,"display_info":["40.00% chance for 0.7 magnitude knock on target after 0.5s delay"],"base_value":1.0,"scale":0.67}]}]},{"visible_in_info_window":true,"chance_percent":61.36,"requires":["!source.ownPower?(temporary_powers.temporary_powers.Pack_Mentality_Lock)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Pack_Mentality","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Mastermind_Summon.Beast_Mastery.Train_Beasts","display_name":"Train Beasts","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/26/beastmastery_trainbeasts.png","display_help":"Train your Beast Henchmen to more effectively attack your foes. This power permanently bestows new powers and abilities to all of your Beast Henchmen. The powers gained are unique and dependent upon the type of Beast Henchman. This power only works on your Beast Henchmen and you can only Train your Beast Henchmen once with this power. Recharge: Fast","display_short_help":"Ranged, Train Beast Henchmen","display_info":{"Activation Time":"1.67s","Endurance Cost":"22.75","Target Type":"Pet","Power Type":"Click","Recharge Time":"6s","Effect Area":"AoE — 30 ft. radius (16 targets max)","Power Range":"50 ft.","Available Level":"6"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":30.0,"range_feet":50.0},"target_type_tags":["Pet","Owned"],"display_target_type":"Pet","target_auto_hit_tags":[["Pet","Owned"]],"display_target_auto_hit":["Pet"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.73,"recharge_time":6.0,"endurance_cost":22.75},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Howler_Wolf"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Howler_Wolf_2.Maiming_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Howler_Wolf_2.PM_Maiming_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Howler_Wolf_2.Train_Beasts","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-2/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Howler_Wolf_Alpha"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Alpha_Wolf_2.Growl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Alpha_Wolf_2.PM_Growl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Alpha_Wolf_2.Maiming_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Alpha_Wolf_2.PM_Maiming_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Alpha_Wolf_2.Train_Beasts","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-2/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Lioness"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lioness_2.Lick_Wounds","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lioness_2.Lions_Roar","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lioness_2.Train_Beasts","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-2/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Dire_Wolf"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Dire_Wolf_2.Maiming_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Dire_Wolf_2.PM_Maiming_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Dire_Wolf_2.Freezing_Roar","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Dire_Wolf_2.PM_Freezing_Roar","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Dire_Wolf_2.Train_Beasts","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-2/"}]}}}]}]},{"name":"Mastermind_Summon.Beast_Mastery.Call_Locusts","display_name":"Call Ravens","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ed/beastmastery_calllocusts.png","display_help":"You command an unkindness of ravens to quickly assault and harass your foes. Your foes will suffer Moderate Lethal damage over time and have their speed and defense reduced. This power has a high chance at granting your pets a stack of Pack Mentality. Damage: Moderate, Recharge: Slow","display_short_help":"Ranged (Cone), Moderate DoT(Lethal), Foe -Speed, -Defense, -Fly","display_info":{"Recharge Time":"14s","Effect Area":"Cone — 40 ft. radius 30° arc (10 targets max)","Power Range":"40 ft.","Available Level":"8","Activation Time":"2.17s","Endurance Cost":"16.90","Power Type":"Click","Target Type":"Enemies","Attack Types":"Ranged, Lethal"},"attack_types":["Ranged_Def","Lethal_Def"],"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Targeted AoE Damage","Accurate Defense Debuff","Defense Debuff","Slow Movement","Universal Damage Sets"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.16,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":40.0,"arc_degrees":30.0,"range_feet":40.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.17,"animation_time":2.17,"animation_time_before_hit":0.97,"recharge_time":14.0,"endurance_cost":16.9},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":0.75,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":9.29,"average":9.29,"per_activation":4.28,"per_cast_cycle":0.57,"display_info":["5 ticks of 9.29 lethal damage over 3.1s on target after 0.5s delay"],"base_value":-30.5856,"scale":0.3036}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":0.75,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":12.18,"average":12.18,"per_activation":5.61,"per_cast_cycle":0.75,"display_info":["5 ticks of 12.18 lethal damage over 3.1s on target after 0.5s delay"],"base_value":-46.1537,"scale":0.2638}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":-7.5,"display_info":["-7.50% strength to defense for 10s on target"],"base_value":-0.075,"scale":1.0}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":-20.0,"display_info":["-20.00% run speed, fly speed, jump speed for 10s on target"],"base_value":-1.0,"scale":0.2}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":-20.0,"display_info":["-20.00% strength to jump height for 10s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.2}]},{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","magnitude":-1.6,"display_info":["-1.6 fly protection for 10s on target"],"base_value":1.0,"scale":-1.6}]}]},{"visible_in_info_window":true,"chance_percent":68.84,"requires":["!source.ownPower?(temporary_powers.temporary_powers.Pack_Mentality_Lock)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Pack_Mentality","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Mastermind_Summon.Beast_Mastery.Summon_Lions","display_name":"Summon Lions","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ce/beastmastery_summonlions.png","display_help":"You can summon one to two mighty lions (depending on your level). Lions are one of the most deadly predators on the planet and possess vicious claw and bite attacks as well as growl and roar buffs and debuffs. Like all Henchmen, Lions can be trained to be even more powerful. You may only have 2 Lions under your control at any given time. If you attempt to summon more Lions, you can only replace the ones you have lost in battle. If you already have two, the power will fail. Lion attacks have a chance to build a charge of Pack Mentality. Pack Mentality is a Damage buff aura that radiates from the Mastermind and can stack up to 10 times. Recharge: Long","display_short_help":"Summon Lions","display_info":{"Power Range":"60 ft.","Available Level":"12","Power Type":"Click","Target Type":"Location","Activation Time":"2s","Recharge Time":"1m 30s","Endurance Cost":"19.50","Effect Area":"Location"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Disorient","Enhance Running Speed","Enhance Heal","Enhance Damage","Enhance Defense","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Mastermind Archetype Sets","Pet Damage","Recharge Intensive Pets","Running","Stuns","Healing","Defense Sets"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.0,"animation_time":2.0,"animation_time_before_hit":1.0,"recharge_time":90.0,"endurance_cost":19.5},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":2.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Lioness","display_name":"Lioness","powers":[{"name":"Mastermind_Pets.Lioness.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"},{"name":"Mastermind_Pets.Lioness.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"},{"name":"Mastermind_Pets.Lioness.PM_Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"},{"name":"Mastermind_Pets.Lioness.Vicious_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"},{"name":"Mastermind_Pets.Lioness.PM_Vicious_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"},{"name":"Mastermind_Pets.Lioness.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"},{"name":"Mastermind_Pets.Lioness.Wild_Charge","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source>combatlevel > 23"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":3.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Lioness","display_name":"Lioness","powers":[{"name":"Mastermind_Pets.Lioness.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"},{"name":"Mastermind_Pets.Lioness.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"},{"name":"Mastermind_Pets.Lioness.PM_Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"},{"name":"Mastermind_Pets.Lioness.Vicious_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"},{"name":"Mastermind_Pets.Lioness.PM_Vicious_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"},{"name":"Mastermind_Pets.Lioness.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"},{"name":"Mastermind_Pets.Lioness.Wild_Charge","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"}]}}}]}]},{"name":"Mastermind_Summon.Beast_Mastery.Fortify_Pack","display_name":"Fortify Pack","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/a4/beastmastery_fortifypack.png","display_help":"You command your beasts to fight more defensively. Using Fortify Pack will prevent your pets from benefiting from Pack Mentality for 60 seconds. The number of charges of Pack Mentality you own when activating this power will determine the potency of the Defense and Regeneration buff that will be granted to your pack. Additionally, simply owning this power grants your beast pets attacks a chance to critically hit that scales with the amount of Pack Mentality owned by the Mastermind. Recharge: Long","display_short_help":"PBAoE, Pets +Defense, +Regeneration, consumes all charges of Pack Mentality","display_info":{"Available Level":"18","Effect Area":"AoE — 30 ft. radius (16 targets max)","Power Type":"Click","Activation Time":"2.27s","Recharge Time":"4m 0s","Endurance Cost":"16.25","Target Type":"Self"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Heal","Enhance Defense"],"enhancement_set_categories_allowed":["Healing","Defense Sets"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":30.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Pet","Owned"]],"display_target_auto_hit":["Pet"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.27,"animation_time":2.27,"animation_time_before_hit":0.83,"recharge_time":240.0,"endurance_cost":16.25},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Ranged_Def","Melee_Def","Area_Def","Smashing_Def","Lethal_Def","Fire_Def","Cold_Def","Energy_Def","Negative_Energy_Def","Psionic_Def","Toxic_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"magnitude_expression":"((source>cur.kMeter * .1) + .05) * @Strength","duration":"InSeconds","duration_seconds":60.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":0.0,"display_info":["0.00% strength to ranged, melee, AoE, smashing, lethal, fire, cold, energy, negative energy, psionic, unique for 1m 0s on target","Unresistable"],"base_value":0.075,"scale":0.0}]},{"attributes":["Regeneration"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"magnitude_expression":"((source>cur.kMeter * 2) + 1) * @Strength","duration":"InSeconds","duration_seconds":60.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":0.0,"display_info":["0.00% regeneration rate for 1m 0s on target","Unresistable"],"base_value":1.0,"scale":0.0}]},{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","VanishEntOnTimeout"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Pack_Mentality","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}},{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","VanishEntOnTimeout"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Pack_Mentality","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"temporary_powers.temporary_powers.Pack_Mentality_Lock","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Mastermind_Summon.Beast_Mastery.Summon_Dire_Wolf","display_name":"Summon Dire Wolf","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/1e/beastmastery_summondirewolves.png","display_help":"You call upon the aid of the fabled Dire Wolf. It has powerful bite and breath attacks. Unlike wolves and lions, the Dire Wolf has some limited ranged attacks. The Dire Wolf has good defense to Melee, Ranged and AoE attacks and good resistance to Cold damage. You may only have 1 Dire Wolf under your control at any given time. If you attempt to summon another Dire Wolf the power will fail. Dire Wolf attacks have a chance to build a charge of Pack Mentality. Pack Mentality is a Damage buff aura that radiates from the Mastermind and can stack up to 10 times. Recharge: Long","display_short_help":"Summon Dire Wolf","display_info":{"Target Type":"Location","Effect Area":"Location","Power Range":"60 ft.","Recharge Time":"2m 0s","Endurance Cost":"19.50","Activation Time":"4.67s","Power Type":"Click","Available Level":"26"},"enhancements_allowed":["Enhance Damage Resistance","Enhance Slow Movement","Reduce Endurance Cost","Enhance Running Speed","Enhance Heal","Enhance Fear","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Healing","Pet Damage","Defense Debuff","Fear","Running","Accurate Defense Debuff","Mastermind Archetype Sets","Resist Damage","Universal Damage Sets","Slow Movement","Recharge Intensive Pets"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":4.67,"animation_time":4.67,"animation_time_before_hit":1.0,"recharge_time":120.0,"endurance_cost":19.5},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":2.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Dire_Wolf","display_name":"Dire Wolf","powers":[{"name":"Mastermind_Pets.Dire_Wolf.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"},{"name":"Mastermind_Pets.Dire_Wolf.Vicious_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"},{"name":"Mastermind_Pets.Dire_Wolf.PM_Vicious_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"},{"name":"Mastermind_Pets.Dire_Wolf.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"},{"name":"Mastermind_Pets.Dire_Wolf.Wild_Charge","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"},{"name":"Mastermind_Pets.Dire_Wolf.Chilling_Howl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"},{"name":"Mastermind_Pets.Dire_Wolf.PM_Chilling_Howl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"}]}}}]}]},{"name":"Mastermind_Summon.Beast_Mastery.Tame_Beasts","display_name":"Tame Beasts","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d8/beastmastery_tamebeasts.png","display_help":"Tame Beasts will permanently teach the most deadly and ferocious powers to all of your Beast Henchmen. The Tamed Beasts will gain new abilities and powers. The powers gained are unique and dependent upon the type of Beast Henchman that is Tamed. Tame Beasts only works on your Beast Henchmen and you can only Tame your Beast Henchmen once with this power. Recharge: Moderate","display_short_help":"Ranged, Upgrade Beast Henchmen","display_info":{"Available Level":"32","Activation Time":"1.07s","Target Type":"Pet","Recharge Time":"10s","Endurance Cost":"22.75","Power Type":"Click","Power Range":"30 ft.","Effect Area":"AoE — 30 ft. radius (16 targets max)"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":30.0,"range_feet":30.0},"target_type_tags":["Pet","Owned"],"display_target_type":"Pet","target_auto_hit_tags":[["Pet","Owned"]],"display_target_auto_hit":["Pet"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.07,"animation_time":1.07,"animation_time_before_hit":0.73,"recharge_time":10.0,"endurance_cost":22.75},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Howler_Wolf"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Howler_Wolf_3.Howl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Howler_Wolf_3.Throat_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Howler_Wolf_3.PM_Throat_Bite","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Howler_Wolf_3.Tame_Beasts","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-3/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Howler_Wolf_Alpha"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Alpha_Wolf_3.Howl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Alpha_Wolf_3.Lick_Wounds","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Alpha_Wolf_3.Tame_Beasts","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-3/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Lioness"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lioness_3.Claw_Swipe","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lioness_3.PM_Claw_Swipe","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lioness_3.Ferocious_Growl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lioness_3.PM_Ferocious_Growl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lioness_3.Tame_Beasts","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-3/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Dire_Wolf"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Dire_Wolf_3.Terrible_Howl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Dire_Wolf_3.PM_Terrible_Howl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Dire_Wolf_3.Will_of_the_Wild","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Dire_Wolf_3.Tame_Beasts","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-3/"}]}}}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Mastermind_Summon.Beast_Mastery",
+  "display_name": "Beast Mastery",
+  "display_help": "Command wild animals to aid you in battle. These beastly allies lack ranged attacks, but make up for it with a specialized focus in melee combat. Call forth wolves, lions, dire wolves, hawks and insects to harass your foes. Additionally, you have a chance to gain a stack of Pack Mentality when you and your pets land a hit on an enemy. Each stack of Pack Mentality will boost the damage of all of your nearby beast henchmen. Pack Mentality can stack up to 10 times and will fade after a short time.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/68/beastmastery_callswarm.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Mastermind_Summon.Beast_Mastery.Call_Swarm",
+    "Mastermind_Summon.Beast_Mastery.Summon_Wolves",
+    "Mastermind_Summon.Beast_Mastery.Call_Hawk",
+    "Mastermind_Summon.Beast_Mastery.Train_Beasts",
+    "Mastermind_Summon.Beast_Mastery.Call_Locusts",
+    "Mastermind_Summon.Beast_Mastery.Summon_Lions",
+    "Mastermind_Summon.Beast_Mastery.Fortify_Pack",
+    "Mastermind_Summon.Beast_Mastery.Summon_Dire_Wolf",
+    "Mastermind_Summon.Beast_Mastery.Tame_Beasts"
+  ],
+  "powers": [
+    {
+      "name": "Mastermind_Summon.Beast_Mastery.Call_Swarm",
+      "display_name": "Call Swarm",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/68/beastmastery_callswarm.png",
+      "display_help": "You summon a swarm of stinging insects to harass your foe causing Light Lethal damage over time and reducing both their movement speed and defense. This power has a moderate chance at granting your pets a stack of Pack Mentality. Damage: Light DoT, Recharge: Very Fast",
+      "display_short_help": "Ranged, Light DoT(Lethal), Foe -Defense, -Speed",
+      "display_info": {
+        "Recharge Time": "3s",
+        "Endurance Cost": "5.46",
+        "Power Type": "Click",
+        "Attack Types": "Ranged, Lethal",
+        "Power Range": "80 ft.",
+        "Available Level": "1",
+        "Effect Area": "Single Target",
+        "Activation Time": "1s",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Ranged Damage",
+        "Accurate Defense Debuff",
+        "Universal Damage Sets",
+        "Defense Debuff",
+        "Slow Movement"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.73,
+        "recharge_time": 3.0,
+        "endurance_cost": 5.46
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 0.75,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 5.65,
+                  "average": 5.65,
+                  "per_activation": 5.65,
+                  "per_cast_cycle": 1.41,
+                  "display_info": [
+                    "5 ticks of 5.65 lethal damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 0.1848
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 0.75,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 11.26,
+                  "average": 11.26,
+                  "per_activation": 11.26,
+                  "per_cast_cycle": 2.82,
+                  "display_info": [
+                    "5 ticks of 11.26 lethal damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -46.1537,
+                  "scale": 0.244
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": -7.5,
+                  "display_info": [
+                    "-7.50% strength to defense for 8s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% run speed, fly speed, jump speed for 8s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% strength to jump height for 8s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 32.0,
+          "requires": [
+            "!source.ownPower?(temporary_powers.temporary_powers.Pack_Mentality_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Pack_Mentality",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Beast_Mastery.Summon_Wolves",
+      "display_name": "Summon Wolves",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/2f/beastmastery_summonwolves.png",
+      "display_help": "Calls forth one to three Wolves to do your bidding. The third one summoned will be an Alpha Wolf, which grants some leadership bonuses to the pack. Wolves have no ranged attacks, but can quickly close in on their prey. You may only have 3 Wolves under your control at any given time. If you attempt to call more Wolves, you can only replace the ones you have lost in battle. If you already have three, the power will fail. Wolf attacks have a chance to build a charge of Pack Mentality. Pack Mentality is a Damage buff aura that radiates from the Mastermind and can stack up to 10 times. Recharge: Slow",
+      "display_short_help": "Summon Wolves",
+      "display_info": {
+        "Power Range": "60 ft.",
+        "Effect Area": "Location",
+        "Recharge Time": "1m 0s",
+        "Target Type": "Location",
+        "Power Type": "Click",
+        "Endurance Cost": "19.50",
+        "Activation Time": "1.97s",
+        "Available Level": "1"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Running Speed",
+        "Enhance KnockBack",
+        "Enhance Heal",
+        "Enhance ToHit DeBuffs",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance ToHit Buffs",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Running",
+        "Defense Debuff",
+        "Knockback",
+        "Universal Damage Sets",
+        "To Hit Buff",
+        "Healing",
+        "Mastermind Archetype Sets",
+        "To Hit Debuff",
+        "Accurate Defense Debuff",
+        "Accurate To-Hit Debuff",
+        "Pet Damage",
+        "Recharge Intensive Pets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.97,
+        "animation_time": 1.97,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 60.0,
+        "endurance_cost": 19.5
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Howler_Wolf",
+                  "display_name": "Howler Wolf",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf.Vicious_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf.PM_Vicious_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf.Wild_Charge",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source>combatlevel > 5"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 3.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Howler_Wolf",
+                  "display_name": "Howler Wolf",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf.Vicious_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf.PM_Vicious_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf.Wild_Charge",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source>combatlevel > 17"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 4.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Howler_Wolf_Alpha",
+                  "display_name": "Alpha Howler Wolf",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Alpha_Wolf.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Alpha_Wolf.Vicious_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Alpha_Wolf.PM_Vicious_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Alpha_Wolf.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Alpha_Wolf.Wild_Charge",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Beast_Mastery.Call_Hawk",
+      "display_name": "Call Hawk",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d0/beastmastery_callhawk.png",
+      "display_help": "You call forth a hawk ally to swoop in and viciously peck at your target causing High Lethal damage. The attack often catches foes off their guard and can knock them down as well as reducing their chance to hit. This power has a good chance at granting your pets a stack of Pack Mentality. Damage: High, Recharge: Fast",
+      "display_short_help": "Ranged, High DMG (Lethal), Foe -To Hit, Knockdown, -Fly",
+      "display_info": {
+        "Power Range": "80 ft.",
+        "Activation Time": "1.67s",
+        "Recharge Time": "6s",
+        "Endurance Cost": "9.62",
+        "Target Type": "Enemies",
+        "Attack Types": "Ranged, Lethal",
+        "Available Level": "2",
+        "Power Type": "Click",
+        "Effect Area": "Single Target"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Knockback",
+        "Accurate To-Hit Debuff",
+        "To Hit Debuff",
+        "Ranged Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 6.0,
+        "endurance_cost": 9.62
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.3,
+              "after_delay_seconds": 0.25,
+              "continuous_apply_seconds": 0.3,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 9.96,
+                  "average": 9.96,
+                  "per_activation": 5.96,
+                  "per_cast_cycle": 1.3,
+                  "display_info": [
+                    "5 ticks of 9.96 lethal damage over 1.3s on target after 0.25s delay"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 0.3256
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": -5.63,
+                  "display_info": [
+                    "-5.63% to hit for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.75
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "magnitude": -1.6,
+                  "display_info": [
+                    "-1.6 fly protection for 10s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.3,
+              "after_delay_seconds": 0.25,
+              "continuous_apply_seconds": 0.3,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 18.37,
+                  "average": 18.37,
+                  "per_activation": 11.0,
+                  "per_cast_cycle": 2.4,
+                  "display_info": [
+                    "5 ticks of 18.37 lethal damage over 1.3s on target after 0.25s delay"
+                  ],
+                  "base_value": -46.1537,
+                  "scale": 0.398
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 40.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 0.5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "40.00% chance for 0.7 magnitude knock on target after 0.5s delay"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 40.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 0.5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "40.00% chance for 0.7 magnitude knock on target after 0.5s delay"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 61.36,
+          "requires": [
+            "!source.ownPower?(temporary_powers.temporary_powers.Pack_Mentality_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Pack_Mentality",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Beast_Mastery.Train_Beasts",
+      "display_name": "Train Beasts",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/26/beastmastery_trainbeasts.png",
+      "display_help": "Train your Beast Henchmen to more effectively attack your foes. This power permanently bestows new powers and abilities to all of your Beast Henchmen. The powers gained are unique and dependent upon the type of Beast Henchman. This power only works on your Beast Henchmen and you can only Train your Beast Henchmen once with this power. Recharge: Fast",
+      "display_short_help": "Ranged, Train Beast Henchmen",
+      "display_info": {
+        "Activation Time": "1.67s",
+        "Power Type": "Click",
+        "Available Level": "6",
+        "Endurance Cost": "22.75",
+        "Power Range": "50 ft.",
+        "Recharge Time": "6s",
+        "Effect Area": "AoE — 30 ft. radius (16 targets max)",
+        "Target Type": "Pet"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 30.0,
+        "range_feet": 50.0
+      },
+      "target_type_tags": [
+        "Pet",
+        "Owned"
+      ],
+      "display_target_type": "Pet",
+      "target_auto_hit_tags": [
+        [
+          "Pet",
+          "Owned"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Pet"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.73,
+        "recharge_time": 6.0,
+        "endurance_cost": 22.75
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Howler_Wolf"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf_2.Maiming_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf_2.PM_Maiming_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf_2.Train_Beasts",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Howler_Wolf_Alpha"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Alpha_Wolf_2.Growl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Alpha_Wolf_2.PM_Growl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Alpha_Wolf_2.Maiming_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Alpha_Wolf_2.PM_Maiming_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Alpha_Wolf_2.Train_Beasts",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Lioness"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lioness_2.Lick_Wounds",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lioness_2.Lions_Roar",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lioness_2.Train_Beasts",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Dire_Wolf"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf_2.Maiming_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf_2.PM_Maiming_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf_2.Freezing_Roar",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf_2.PM_Freezing_Roar",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf_2.Train_Beasts",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Beast_Mastery.Call_Locusts",
+      "display_name": "Call Ravens",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ed/beastmastery_calllocusts.png",
+      "display_help": "You command an unkindness of ravens to quickly assault and harass your foes. Your foes will suffer Moderate Lethal damage over time and have their speed and defense reduced. This power has a high chance at granting your pets a stack of Pack Mentality. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "Ranged (Cone), Moderate DoT(Lethal), Foe -Speed, -Defense, -Fly",
+      "display_info": {
+        "Power Type": "Click",
+        "Effect Area": "Cone — 40 ft. radius 30° arc (10 targets max)",
+        "Endurance Cost": "16.90",
+        "Recharge Time": "14s",
+        "Attack Types": "Ranged, Lethal",
+        "Activation Time": "2.17s",
+        "Available Level": "8",
+        "Power Range": "40 ft.",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Slow Movement",
+        "Accurate Defense Debuff",
+        "Targeted AoE Damage",
+        "Defense Debuff"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.16,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 40.0,
+        "arc_degrees": 30.0,
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.17,
+        "animation_time": 2.17,
+        "animation_time_before_hit": 0.97,
+        "recharge_time": 14.0,
+        "endurance_cost": 16.9
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 0.75,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 9.29,
+                  "average": 9.29,
+                  "per_activation": 4.28,
+                  "per_cast_cycle": 0.57,
+                  "display_info": [
+                    "5 ticks of 9.29 lethal damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 0.3036
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 0.75,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 12.18,
+                  "average": 12.18,
+                  "per_activation": 5.61,
+                  "per_cast_cycle": 0.75,
+                  "display_info": [
+                    "5 ticks of 12.18 lethal damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -46.1537,
+                  "scale": 0.2638
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": -7.5,
+                  "display_info": [
+                    "-7.50% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% run speed, fly speed, jump speed for 10s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% strength to jump height for 10s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "magnitude": -1.6,
+                  "display_info": [
+                    "-1.6 fly protection for 10s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 68.84,
+          "requires": [
+            "!source.ownPower?(temporary_powers.temporary_powers.Pack_Mentality_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Pack_Mentality",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Beast_Mastery.Summon_Lions",
+      "display_name": "Summon Lions",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ce/beastmastery_summonlions.png",
+      "display_help": "You can summon one to two mighty lions (depending on your level). Lions are one of the most deadly predators on the planet and possess vicious claw and bite attacks as well as growl and roar buffs and debuffs. Like all Henchmen, Lions can be trained to be even more powerful. You may only have 2 Lions under your control at any given time. If you attempt to summon more Lions, you can only replace the ones you have lost in battle. If you already have two, the power will fail. Lion attacks have a chance to build a charge of Pack Mentality. Pack Mentality is a Damage buff aura that radiates from the Mastermind and can stack up to 10 times. Recharge: Long",
+      "display_short_help": "Summon Lions",
+      "display_info": {
+        "Activation Time": "2s",
+        "Power Type": "Click",
+        "Effect Area": "Location",
+        "Available Level": "12",
+        "Recharge Time": "1m 30s",
+        "Endurance Cost": "19.50",
+        "Power Range": "60 ft.",
+        "Target Type": "Location"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Disorient",
+        "Enhance Running Speed",
+        "Enhance Heal",
+        "Enhance Damage",
+        "Enhance Defense",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Mastermind Archetype Sets",
+        "Recharge Intensive Pets",
+        "Defense Sets",
+        "Stuns",
+        "Running",
+        "Universal Damage Sets",
+        "Healing",
+        "Pet Damage"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.0,
+        "animation_time": 2.0,
+        "animation_time_before_hit": 1.0,
+        "recharge_time": 90.0,
+        "endurance_cost": 19.5
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Lioness",
+                  "display_name": "Lioness",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lioness.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lioness.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lioness.PM_Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lioness.Vicious_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lioness.PM_Vicious_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lioness.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lioness.Wild_Charge",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source>combatlevel > 23"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 3.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Lioness",
+                  "display_name": "Lioness",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lioness.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lioness.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lioness.PM_Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lioness.Vicious_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lioness.PM_Vicious_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lioness.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lioness.Wild_Charge",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Beast_Mastery.Fortify_Pack",
+      "display_name": "Fortify Pack",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/a4/beastmastery_fortifypack.png",
+      "display_help": "You command your beasts to fight more defensively. Using Fortify Pack will prevent your pets from benefiting from Pack Mentality for 60 seconds. The number of charges of Pack Mentality you own when activating this power will determine the potency of the Defense and Regeneration buff that will be granted to your pack. Additionally, simply owning this power grants your beast pets attacks a chance to critically hit that scales with the amount of Pack Mentality owned by the Mastermind. Recharge: Long",
+      "display_short_help": "PBAoE, Pets +Defense, +Regeneration, consumes all charges of Pack Mentality",
+      "display_info": {
+        "Effect Area": "AoE — 30 ft. radius (16 targets max)",
+        "Available Level": "18",
+        "Endurance Cost": "16.25",
+        "Power Type": "Click",
+        "Recharge Time": "4m 0s",
+        "Target Type": "Self",
+        "Activation Time": "2.27s"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Heal",
+        "Enhance Defense"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Sets",
+        "Healing"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 30.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Pet",
+          "Owned"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Pet"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.27,
+        "animation_time": 2.27,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 240.0,
+        "endurance_cost": 16.25
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Ranged_Def",
+                "Melee_Def",
+                "Area_Def",
+                "Smashing_Def",
+                "Lethal_Def",
+                "Fire_Def",
+                "Cold_Def",
+                "Energy_Def",
+                "Negative_Energy_Def",
+                "Psionic_Def",
+                "Toxic_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "magnitude_expression": "((source>cur.kMeter * .1) + .05) * @Strength",
+              "duration": "InSeconds",
+              "duration_seconds": 60.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": 0.0,
+                  "display_info": [
+                    "0.00% strength to ranged, melee, AoE, smashing, lethal, fire, cold, energy, negative energy, psionic, unique for 1m 0s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 0.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Regeneration"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "magnitude_expression": "((source>cur.kMeter * 2) + 1) * @Strength",
+              "duration": "InSeconds",
+              "duration_seconds": 60.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": 0.0,
+                  "display_info": [
+                    "0.00% regeneration rate for 1m 0s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "VanishEntOnTimeout"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Pack_Mentality",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "VanishEntOnTimeout"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Pack_Mentality",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "temporary_powers.temporary_powers.Pack_Mentality_Lock",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Beast_Mastery.Summon_Dire_Wolf",
+      "display_name": "Summon Dire Wolf",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/1e/beastmastery_summondirewolves.png",
+      "display_help": "You call upon the aid of the fabled Dire Wolf. It has powerful bite and breath attacks. Unlike wolves and lions, the Dire Wolf has some limited ranged attacks. The Dire Wolf has good defense to Melee, Ranged and AoE attacks and good resistance to Cold damage. You may only have 1 Dire Wolf under your control at any given time. If you attempt to summon another Dire Wolf the power will fail. Dire Wolf attacks have a chance to build a charge of Pack Mentality. Pack Mentality is a Damage buff aura that radiates from the Mastermind and can stack up to 10 times. Recharge: Long",
+      "display_short_help": "Summon Dire Wolf",
+      "display_info": {
+        "Power Range": "60 ft.",
+        "Recharge Time": "2m 0s",
+        "Activation Time": "4.67s",
+        "Available Level": "26",
+        "Power Type": "Click",
+        "Target Type": "Location",
+        "Endurance Cost": "19.50",
+        "Effect Area": "Location"
+      },
+      "enhancements_allowed": [
+        "Enhance Damage Resistance",
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Running Speed",
+        "Enhance Heal",
+        "Enhance Fear",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Accurate Defense Debuff",
+        "Healing",
+        "Slow Movement",
+        "Universal Damage Sets",
+        "Fear",
+        "Mastermind Archetype Sets",
+        "Pet Damage",
+        "Running",
+        "Recharge Intensive Pets",
+        "Resist Damage",
+        "Defense Debuff"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 4.67,
+        "animation_time": 4.67,
+        "animation_time_before_hit": 1.0,
+        "recharge_time": 120.0,
+        "endurance_cost": 19.5
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Dire_Wolf",
+                  "display_name": "Dire Wolf",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf.Vicious_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf.PM_Vicious_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf.Wild_Charge",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf.Chilling_Howl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf.PM_Chilling_Howl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Beast_Mastery.Tame_Beasts",
+      "display_name": "Tame Beasts",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d8/beastmastery_tamebeasts.png",
+      "display_help": "Tame Beasts will permanently teach the most deadly and ferocious powers to all of your Beast Henchmen. The Tamed Beasts will gain new abilities and powers. The powers gained are unique and dependent upon the type of Beast Henchman that is Tamed. Tame Beasts only works on your Beast Henchmen and you can only Tame your Beast Henchmen once with this power. Recharge: Moderate",
+      "display_short_help": "Ranged, Upgrade Beast Henchmen",
+      "display_info": {
+        "Recharge Time": "10s",
+        "Available Level": "32",
+        "Power Type": "Click",
+        "Target Type": "Pet",
+        "Activation Time": "1.07s",
+        "Endurance Cost": "22.75",
+        "Power Range": "30 ft.",
+        "Effect Area": "AoE — 30 ft. radius (16 targets max)"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 30.0,
+        "range_feet": 30.0
+      },
+      "target_type_tags": [
+        "Pet",
+        "Owned"
+      ],
+      "display_target_type": "Pet",
+      "target_auto_hit_tags": [
+        [
+          "Pet",
+          "Owned"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Pet"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.07,
+        "animation_time": 1.07,
+        "animation_time_before_hit": 0.73,
+        "recharge_time": 10.0,
+        "endurance_cost": 22.75
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Howler_Wolf"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf_3.Howl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf_3.Throat_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf_3.PM_Throat_Bite",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Howler_Wolf_3.Tame_Beasts",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/howler-wolf-3/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Howler_Wolf_Alpha"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Alpha_Wolf_3.Howl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Alpha_Wolf_3.Lick_Wounds",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Alpha_Wolf_3.Tame_Beasts",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/alpha-wolf-3/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Lioness"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lioness_3.Claw_Swipe",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lioness_3.PM_Claw_Swipe",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lioness_3.Ferocious_Growl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lioness_3.PM_Ferocious_Growl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lioness_3.Tame_Beasts",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lioness-3/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Dire_Wolf"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf_3.Terrible_Howl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf_3.PM_Terrible_Howl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf_3.Will_of_the_Wild",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Dire_Wolf_3.Tame_Beasts",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/dire-wolf-3/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

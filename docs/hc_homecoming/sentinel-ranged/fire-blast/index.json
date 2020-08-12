@@ -1,1 +1,2221 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Sentinel_Ranged.Fire_Blast","display_name":"Fire Blast","display_help":"Fire Blast allows you to blast fire at foes, with a tendency to set them ablaze for added damage over time.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ab/fireblast_flare.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Sentinel_Ranged.Fire_Blast.Flares","Sentinel_Ranged.Fire_Blast.Fire_Blast","Sentinel_Ranged.Fire_Blast.Fire_Ball","Sentinel_Ranged.Fire_Blast.Blaze","Sentinel_Ranged.Fire_Blast.Aim","Sentinel_Ranged.Fire_Blast.Fire_Breath","Sentinel_Ranged.Fire_Blast.Blazing_Blast","Sentinel_Ranged.Fire_Blast.Rain_of_Fire","Sentinel_Ranged.Fire_Blast.Inferno"],"powers":[{"name":"Sentinel_Ranged.Fire_Blast.Flares","display_name":"Flares","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ab/fireblast_flare.png","display_help":"A quick attack that throws Flares at the target. Little damage, but very fast. Damage: Minor, Recharge: Very Fast","display_short_help":"Ranged, Minor DMG(Fire)","display_info":{"Power Range":"60 ft.","Target Type":"Enemies","Available Level":"1","Endurance Cost":"3.54","Recharge Time":"2s","Power Type":"Click","Attack Types":"Ranged, Fire","Activation Time":"1s","Effect Area":"Single Target"},"attack_types":["Ranged_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Sentinel Archetype Sets","Ranged Damage","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.83,"recharge_time":2.0,"endurance_cost":3.54},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":35.92,"average":35.92,"per_activation":35.92,"per_cast_cycle":11.97,"display_info":["35.92 fire damage on target"],"base_value":-52.8297,"scale":0.68}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":0.5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":15.85,"average":15.85,"per_activation":15.85,"per_cast_cycle":5.28,"display_info":["15.85 fire damage on target after 0.5s delay"],"base_value":-52.8297,"scale":0.3}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":81.04,"average":81.04,"per_activation":81.04,"per_cast_cycle":27.01,"display_info":["81.04 fire damage on target"],"base_value":-45.5837,"scale":1.7778}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude","StackByAttribAndKey"],"stacking":{"behavior":"Replace","by_caster":false,"key":"Vulnerability"},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-0.2}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Vulnerability","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Designer Status"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Unset Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Opportunity_Lock","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Sentinel_Ranged.Fire_Blast.Fire_Blast","display_name":"Fire Blast","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/71/fireblast_fireblast.png","display_help":"Sends a Blast of Fire at a targeted foe and sets the target on fire for a short period of time. Slower recharge rate than Flares, but more damage. Damage: Moderate, Recharge: Fast","display_short_help":"Ranged, Moderate DMG(Fire)","display_info":{"Power Type":"Click","Power Range":"60 ft.","Activation Time":"1.67s","Effect Area":"Single Target","Attack Types":"Ranged, Fire","Available Level":"1","Recharge Time":"5s","Target Type":"Enemies","Endurance Cost":"6.03"},"attack_types":["Ranged_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Ranged Damage","Sentinel Archetype Sets","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.53,"recharge_time":5.0,"endurance_cost":6.03},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":61.28,"average":61.28,"per_activation":36.69,"per_cast_cycle":9.19,"display_info":["61.28 fire damage on target"],"base_value":-52.8297,"scale":1.16}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":7.92,"average":18.7,"per_activation":11.2,"per_cast_cycle":2.8,"display_info":["4 ticks of 80.00% chance for 7.92 fire damage over 3.1s on target after 0.5s delay"],"base_value":-52.8297,"scale":0.15}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":121.51,"average":121.51,"per_activation":72.76,"per_cast_cycle":18.22,"display_info":["121.51 fire damage on target"],"base_value":-45.5837,"scale":2.6656}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude","StackByAttribAndKey"],"stacking":{"behavior":"Replace","by_caster":false,"key":"Vulnerability"},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-0.2}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Vulnerability","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Designer Status"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Unset Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Opportunity_Lock","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Sentinel_Ranged.Fire_Blast.Fire_Ball","display_name":"Fire Ball","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/a4/fireblast_fireball.png","display_help":"Hurls an exploding Fireball that consumes a targeted foe, and all nearby enemies. Anyone in that explosion is burned and set ablaze. Damage: Moderate, Recharge: Slow","display_short_help":"Ranged (Targeted AoE), Moderate DMG(Fire/Smash)","display_info":{"Effect Area":"AoE — 15 ft. radius (10 targets max)","Recharge Time":"16s","Activation Time":"1s","Target Type":"Enemies","Endurance Cost":"15.18","Available Level":"2","Attack Types":"Area, Fire","Power Range":"40 ft.","Power Type":"Click"},"attack_types":["Area_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Sentinel Archetype Sets","Targeted AoE Damage","Universal Damage Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":15.0,"range_feet":40.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.6,"recharge_time":16.0,"endurance_cost":15.18},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":10.57,"average":10.57,"per_activation":10.57,"per_cast_cycle":0.62,"display_info":["10.57 smashing damage on target"],"base_value":-52.8297,"scale":0.2}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":36.98,"average":36.98,"per_activation":36.98,"per_cast_cycle":2.18,"display_info":["36.98 fire damage on target"],"base_value":-52.8297,"scale":0.7}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":3,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":7.92,"average":15.46,"per_activation":15.46,"per_cast_cycle":0.91,"display_info":["3 ticks of 80.00% chance for 7.92 fire damage over 2.1s on target after 0.5s delay"],"base_value":-52.8297,"scale":0.15}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":31.86,"average":31.86,"per_activation":31.86,"per_cast_cycle":1.87,"display_info":["31.86 fire damage on target"],"base_value":-45.5837,"scale":0.6989}]}]}]},{"name":"Sentinel_Ranged.Fire_Blast.Blaze","display_name":"Blaze","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/21/fireblast_blaze.png","display_help":"A devastating flame attack. Damage: High, Recharge: Moderate","display_short_help":"High DMG(Fire)","display_info":{"Attack Types":"Ranged, Fire","Target Type":"Enemies","Effect Area":"Single Target","Activation Time":"1s","Endurance Cost":"10.19","Power Range":"60 ft.","Power Type":"Click","Recharge Time":"10s","Available Level":"6"},"attack_types":["Ranged_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Sentinel Archetype Sets","Ranged Damage"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.53,"recharge_time":10.0,"endurance_cost":10.19},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":103.55,"average":103.55,"per_activation":103.55,"per_cast_cycle":9.41,"display_info":["103.55 fire damage on target"],"base_value":-52.8297,"scale":1.96}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":5,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":11.89,"average":31.98,"per_activation":31.98,"per_cast_cycle":2.91,"display_info":["5 ticks of 80.00% chance for 11.89 fire damage over 4.1s on target after 0.5s delay"],"base_value":-52.8297,"scale":0.225}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":103.02,"average":103.02,"per_activation":103.02,"per_cast_cycle":9.37,"display_info":["103.02 fire damage on target"],"base_value":-45.5837,"scale":2.26}]}]}]},{"name":"Sentinel_Ranged.Fire_Blast.Aim","display_name":"Aim","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/a9/fireblast_aim.png","display_help":"Greatly increases the chance to hit of your attacks for a few seconds. Slightly increases damage and range. Recharge: Long","display_short_help":"Self +To Hit, +DMG, +Range","display_info":{"Activation Time":"1.17s","Endurance Cost":"5.20","Power Type":"Click","Recharge Time":"1m 30s","Target Type":"Self","Effect Area":"Single Target","Available Level":"8"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["To Hit Buff"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":90.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":50.0,"display_info":["50.00% to hit for 10s on self","Unresistable"],"base_value":0.1,"scale":5.0}]},{"attributes":["Range"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":33.3,"display_info":["33.30% strength to range for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.333}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":50.0,"display_info":["50.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":5.0}]}]}]},{"name":"Sentinel_Ranged.Fire_Blast.Fire_Breath","display_name":"Fire Breath","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/72/fireblast_arcoffire.png","display_help":"You can breathe forth a torrent of fire that burns all foes within its narrow cone. Very accurate and very deadly at medium range. Damage: Moderate(DoT), Recharge: Slow","display_short_help":"Close (Cone), Moderate DoT(Fire)","display_info":{"Power Type":"Click","Power Range":"40 ft.","Endurance Cost":"15.18","Available Level":"12","Activation Time":"2.67s","Effect Area":"Cone — 40 ft. radius 30° arc (6 targets max)","Attack Types":"Area, Fire","Recharge Time":"16s","Target Type":"Enemies"},"attack_types":["Area_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Targeted AoE Damage","Sentinel Archetype Sets","Universal Damage Sets"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"Cone","max_targets_hit":6,"radius_feet":40.0,"arc_degrees":30.0,"range_feet":40.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.67,"animation_time":2.67,"animation_time_before_hit":1.17,"recharge_time":16.0,"endurance_cost":15.18},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.1,"after_delay_seconds":1.0,"continuous_apply_seconds":1.0,"ticks":3,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":30.91,"average":30.91,"per_activation":11.58,"per_cast_cycle":1.66,"display_info":["3 ticks of 30.91 fire damage over 2.1s on target after 1s delay"],"base_value":-52.8297,"scale":0.585}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.1,"after_delay_seconds":1.0,"continuous_apply_seconds":1.0,"ticks":3,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":30.85,"average":30.85,"per_activation":11.55,"per_cast_cycle":1.65,"display_info":["3 ticks of 30.85 fire damage over 2.1s on target after 1s delay"],"base_value":-45.5837,"scale":0.6768}]}]}]},{"name":"Sentinel_Ranged.Fire_Blast.Blazing_Blast","display_name":"Blazing Blast","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/4f/fireblast_heavy.png","display_help":"An extremely quick long range beam of fire that blasts your foes. Damage: High, Recharge: Slow","display_short_help":"High DMG(Fire)","display_info":{"Recharge Time":"12s","Activation Time":"1.67s","Target Type":"Enemies","Power Range":"60 ft.","Effect Area":"Single Target","Power Type":"Click","Endurance Cost":"11.86","Available Level":"18","Attack Types":"Ranged, Fire"},"attack_types":["Ranged_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Sentinel Archetype Sets","Ranged Damage","Universal Damage Sets"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.73,"recharge_time":12.0,"endurance_cost":11.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":48.18,"average":48.18,"per_activation":28.85,"per_cast_cycle":3.52,"display_info":["48.18 fire damage on target"],"base_value":-52.8297,"scale":0.912}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":2.0,"duration":"InSeconds","duration_seconds":2.5,"continuous_apply_seconds":0.2,"ticks":13,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":5.16,"average":5.16,"per_activation":3.09,"per_cast_cycle":0.38,"display_info":["13 ticks of 5.16 fire damage over 2.5s on target"],"base_value":-52.8297,"scale":0.0977}]},{"attributes":["Repel"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":0.61,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Sentinel","magnitude":8.0,"display_info":["8.0 magnitude repel for 0.61s on target"],"base_value":1.0,"scale":8.0}]},{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":0.61,"flags":["CancelOnMiss","IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Sentinel","magnitude":4.0,"display_info":["4.0 magnitude hold for 0.61s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":4.0}]},{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":0.6,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","magnitude":3.32,"display_info":["3.3 magnitude knock on target after 0.6s delay"],"base_value":1.6617,"scale":2.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":37.36,"average":37.36,"per_activation":22.37,"per_cast_cycle":2.73,"display_info":["37.36 fire damage on target"],"base_value":-45.5837,"scale":0.8196}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":2.0,"duration":"InSeconds","duration_seconds":2.5,"continuous_apply_seconds":0.2,"ticks":13,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":4.0,"average":4.0,"per_activation":2.4,"per_cast_cycle":0.29,"display_info":["13 ticks of 4.00 fire damage over 2.5s on target"],"base_value":-45.5837,"scale":0.0878}]},{"attributes":["Repel"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":0.6,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Sentinel","magnitude":2.0,"display_info":["2.0 magnitude repel for 0.6s on target"],"base_value":1.0,"scale":2.0}]},{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":0.6,"flags":["CancelOnMiss","IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Sentinel","magnitude":8.0,"display_info":["8.0 magnitude hold for 0.6s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":8.0}]}]}]},{"name":"Sentinel_Ranged.Fire_Blast.Rain_of_Fire","display_name":"Rain of Fire","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/75/fireblast_rainoffire.png","display_help":"Summons a Rain of Fire over a targeted location, burning foes and reducing their movement speed within a large area. Damage: Minor(DoT), Recharge: Slow","display_short_help":"Ranged (Location AoE), Minor DoT(Fire), -SPD","display_info":{"Recharge Time":"1m 0s","Available Level":"26","Activation Time":"2.03s","Effect Area":"Location","Endurance Cost":"26.00","Power Type":"Click","Target Type":"Location","Power Range":"40 ft."},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Targeted AoE Damage","Universal Damage Sets","Sentinel Archetype Sets"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":2.0,"effect_area":{"area":"Location","range_feet":40.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.03,"animation_time":2.03,"animation_time_before_hit":0.83,"recharge_time":60.0,"endurance_cost":26.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":15.0,"flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_RainofFire_Sentinel","display_name":"Rain of Fire","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Pets.RainofFire.RainofFire","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/rainoffire/"},{"name":"Pets.RainofFire.Avoid","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/rainoffire/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Sentinel_Ranged.Fire_Blast.Inferno","display_name":"Inferno","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/60/fireblast_inferno.png","display_help":"Unleashes a massive fiery explosion to devastate all nearby enemies and set them ablaze. Inferno deals Extreme Fire damage to all nearby foes and inflicts Moderate Fire damage over time. Damage: Extreme, Recharge: Long","display_short_help":"PBAoE, Extreme DMG(Fire/Smash), Foe Moderate DoT(Fire)","display_info":{"Endurance Cost":"15.60","Attack Types":"Area, Fire","Target Type":"Self","Activation Time":"3s","Recharge Time":"1m 30s","Effect Area":"AoE — 20 ft. radius (10 targets max)","Power Type":"Click","Available Level":"32"},"attack_types":["Area_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Sentinel Archetype Sets","PBAoE Damage"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.4,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":20.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":3.0,"animation_time":3.0,"animation_time_before_hit":1.83,"recharge_time":90.0,"endurance_cost":15.6},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":49.03,"average":49.03,"per_activation":16.34,"per_cast_cycle":0.53,"display_info":["49.03 smashing damage on target"],"base_value":-52.8297,"scale":0.928}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":119.03,"average":119.03,"per_activation":39.68,"per_cast_cycle":1.28,"display_info":["119.03 fire damage on target"],"base_value":-52.8297,"scale":2.253}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":3,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":7.92,"average":15.46,"per_activation":5.15,"per_cast_cycle":0.17,"display_info":["3 ticks of 80.00% chance for 7.92 fire damage over 2.1s on target after 0.5s delay"],"base_value":-52.8297,"scale":0.15}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":29.11,"average":29.11,"per_activation":9.7,"per_cast_cycle":0.31,"display_info":["29.11 fire damage on target","Unresistable"],"base_value":-45.5837,"scale":0.6386}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":59.12,"average":59.12,"per_activation":19.71,"per_cast_cycle":0.64,"display_info":["59.12 fire damage on target"],"base_value":-45.5837,"scale":1.2969}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Sentinel_Ranged.Fire_Blast",
+  "display_name": "Fire Blast",
+  "display_help": "Fire Blast allows you to blast fire at foes, with a tendency to set them ablaze for added damage over time.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ab/fireblast_flare.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Sentinel_Ranged.Fire_Blast.Flares",
+    "Sentinel_Ranged.Fire_Blast.Fire_Blast",
+    "Sentinel_Ranged.Fire_Blast.Fire_Ball",
+    "Sentinel_Ranged.Fire_Blast.Blaze",
+    "Sentinel_Ranged.Fire_Blast.Aim",
+    "Sentinel_Ranged.Fire_Blast.Fire_Breath",
+    "Sentinel_Ranged.Fire_Blast.Blazing_Blast",
+    "Sentinel_Ranged.Fire_Blast.Rain_of_Fire",
+    "Sentinel_Ranged.Fire_Blast.Inferno"
+  ],
+  "powers": [
+    {
+      "name": "Sentinel_Ranged.Fire_Blast.Flares",
+      "display_name": "Flares",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ab/fireblast_flare.png",
+      "display_help": "A quick attack that throws Flares at the target. Little damage, but very fast. Damage: Minor, Recharge: Very Fast",
+      "display_short_help": "Ranged, Minor DMG(Fire)",
+      "display_info": {
+        "Attack Types": "Ranged, Fire",
+        "Activation Time": "1s",
+        "Target Type": "Enemies",
+        "Recharge Time": "2s",
+        "Power Type": "Click",
+        "Endurance Cost": "3.54",
+        "Effect Area": "Single Target",
+        "Available Level": "1",
+        "Power Range": "60 ft."
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sentinel Archetype Sets",
+        "Ranged Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 2.0,
+        "endurance_cost": 3.54
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 35.92,
+                  "average": 35.92,
+                  "per_activation": 35.92,
+                  "per_cast_cycle": 11.97,
+                  "display_info": [
+                    "35.92 fire damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.68
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 0.5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 15.85,
+                  "average": 15.85,
+                  "per_activation": 15.85,
+                  "per_cast_cycle": 5.28,
+                  "display_info": [
+                    "15.85 fire damage on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 81.04,
+                  "average": 81.04,
+                  "per_activation": 81.04,
+                  "per_cast_cycle": 27.01,
+                  "display_info": [
+                    "81.04 fire damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 1.7778
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "StackByAttribAndKey"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": false,
+                "key": "Vulnerability"
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Vulnerability",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Designer Status"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Unset Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Opportunity_Lock",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Fire_Blast.Fire_Blast",
+      "display_name": "Fire Blast",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/71/fireblast_fireblast.png",
+      "display_help": "Sends a Blast of Fire at a targeted foe and sets the target on fire for a short period of time. Slower recharge rate than Flares, but more damage. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Ranged, Moderate DMG(Fire)",
+      "display_info": {
+        "Attack Types": "Ranged, Fire",
+        "Recharge Time": "5s",
+        "Effect Area": "Single Target",
+        "Endurance Cost": "6.03",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Power Range": "60 ft.",
+        "Available Level": "1",
+        "Activation Time": "1.67s"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sentinel Archetype Sets",
+        "Universal Damage Sets",
+        "Ranged Damage"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.53,
+        "recharge_time": 5.0,
+        "endurance_cost": 6.03
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 61.28,
+                  "average": 61.28,
+                  "per_activation": 36.69,
+                  "per_cast_cycle": 9.19,
+                  "display_info": [
+                    "61.28 fire damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.16
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 7.92,
+                  "average": 18.7,
+                  "per_activation": 11.2,
+                  "per_cast_cycle": 2.8,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 7.92 fire damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 121.51,
+                  "average": 121.51,
+                  "per_activation": 72.76,
+                  "per_cast_cycle": 18.22,
+                  "display_info": [
+                    "121.51 fire damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 2.6656
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "StackByAttribAndKey"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": false,
+                "key": "Vulnerability"
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Vulnerability",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Designer Status"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Unset Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Opportunity_Lock",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Fire_Blast.Fire_Ball",
+      "display_name": "Fire Ball",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/a4/fireblast_fireball.png",
+      "display_help": "Hurls an exploding Fireball that consumes a targeted foe, and all nearby enemies. Anyone in that explosion is burned and set ablaze. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "Ranged (Targeted AoE), Moderate DMG(Fire/Smash)",
+      "display_info": {
+        "Endurance Cost": "15.18",
+        "Effect Area": "AoE — 15 ft. radius (10 targets max)",
+        "Available Level": "2",
+        "Activation Time": "1s",
+        "Power Range": "40 ft.",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Recharge Time": "16s",
+        "Attack Types": "Area, Fire"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Targeted AoE Damage",
+        "Sentinel Archetype Sets",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 15.0,
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.6,
+        "recharge_time": 16.0,
+        "endurance_cost": 15.18
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 10.57,
+                  "average": 10.57,
+                  "per_activation": 10.57,
+                  "per_cast_cycle": 0.62,
+                  "display_info": [
+                    "10.57 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 36.98,
+                  "average": 36.98,
+                  "per_activation": 36.98,
+                  "per_cast_cycle": 2.18,
+                  "display_info": [
+                    "36.98 fire damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 3,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 7.92,
+                  "average": 15.46,
+                  "per_activation": 15.46,
+                  "per_cast_cycle": 0.91,
+                  "display_info": [
+                    "3 ticks of 80.00% chance for 7.92 fire damage over 2.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 31.86,
+                  "average": 31.86,
+                  "per_activation": 31.86,
+                  "per_cast_cycle": 1.87,
+                  "display_info": [
+                    "31.86 fire damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.6989
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Fire_Blast.Blaze",
+      "display_name": "Blaze",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/21/fireblast_blaze.png",
+      "display_help": "A devastating flame attack. Damage: High, Recharge: Moderate",
+      "display_short_help": "High DMG(Fire)",
+      "display_info": {
+        "Recharge Time": "10s",
+        "Attack Types": "Ranged, Fire",
+        "Available Level": "6",
+        "Effect Area": "Single Target",
+        "Activation Time": "1s",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Endurance Cost": "10.19",
+        "Power Range": "60 ft."
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Sentinel Archetype Sets",
+        "Ranged Damage"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.53,
+        "recharge_time": 10.0,
+        "endurance_cost": 10.19
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 103.55,
+                  "average": 103.55,
+                  "per_activation": 103.55,
+                  "per_cast_cycle": 9.41,
+                  "display_info": [
+                    "103.55 fire damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.96
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 11.89,
+                  "average": 31.98,
+                  "per_activation": 31.98,
+                  "per_cast_cycle": 2.91,
+                  "display_info": [
+                    "5 ticks of 80.00% chance for 11.89 fire damage over 4.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.225
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 103.02,
+                  "average": 103.02,
+                  "per_activation": 103.02,
+                  "per_cast_cycle": 9.37,
+                  "display_info": [
+                    "103.02 fire damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 2.26
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Fire_Blast.Aim",
+      "display_name": "Aim",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/a9/fireblast_aim.png",
+      "display_help": "Greatly increases the chance to hit of your attacks for a few seconds. Slightly increases damage and range. Recharge: Long",
+      "display_short_help": "Self +To Hit, +DMG, +Range",
+      "display_info": {
+        "Target Type": "Self",
+        "Power Type": "Click",
+        "Recharge Time": "1m 30s",
+        "Effect Area": "Single Target",
+        "Available Level": "8",
+        "Endurance Cost": "5.20",
+        "Activation Time": "1.17s"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 90.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% to hit for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Range"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 33.3,
+                  "display_info": [
+                    "33.30% strength to range for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.333
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Fire_Blast.Fire_Breath",
+      "display_name": "Fire Breath",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/72/fireblast_arcoffire.png",
+      "display_help": "You can breathe forth a torrent of fire that burns all foes within its narrow cone. Very accurate and very deadly at medium range. Damage: Moderate(DoT), Recharge: Slow",
+      "display_short_help": "Close (Cone), Moderate DoT(Fire)",
+      "display_info": {
+        "Activation Time": "2.67s",
+        "Endurance Cost": "15.18",
+        "Effect Area": "Cone — 40 ft. radius 30° arc (6 targets max)",
+        "Power Range": "40 ft.",
+        "Target Type": "Enemies",
+        "Attack Types": "Area, Fire",
+        "Available Level": "12",
+        "Recharge Time": "16s",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Targeted AoE Damage",
+        "Sentinel Archetype Sets"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 6,
+        "radius_feet": 40.0,
+        "arc_degrees": 30.0,
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.67,
+        "animation_time": 2.67,
+        "animation_time_before_hit": 1.17,
+        "recharge_time": 16.0,
+        "endurance_cost": 15.18
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.1,
+              "after_delay_seconds": 1.0,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 3,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 30.91,
+                  "average": 30.91,
+                  "per_activation": 11.58,
+                  "per_cast_cycle": 1.66,
+                  "display_info": [
+                    "3 ticks of 30.91 fire damage over 2.1s on target after 1s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.585
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.1,
+              "after_delay_seconds": 1.0,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 3,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 30.85,
+                  "average": 30.85,
+                  "per_activation": 11.55,
+                  "per_cast_cycle": 1.65,
+                  "display_info": [
+                    "3 ticks of 30.85 fire damage over 2.1s on target after 1s delay"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.6768
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Fire_Blast.Blazing_Blast",
+      "display_name": "Blazing Blast",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/4f/fireblast_heavy.png",
+      "display_help": "An extremely quick long range beam of fire that blasts your foes. Damage: High, Recharge: Slow",
+      "display_short_help": "High DMG(Fire)",
+      "display_info": {
+        "Endurance Cost": "11.86",
+        "Available Level": "18",
+        "Target Type": "Enemies",
+        "Activation Time": "1.67s",
+        "Effect Area": "Single Target",
+        "Recharge Time": "12s",
+        "Attack Types": "Ranged, Fire",
+        "Power Type": "Click",
+        "Power Range": "60 ft."
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Ranged Damage",
+        "Universal Damage Sets",
+        "Sentinel Archetype Sets"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.73,
+        "recharge_time": 12.0,
+        "endurance_cost": 11.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 48.18,
+                  "average": 48.18,
+                  "per_activation": 28.85,
+                  "per_cast_cycle": 3.52,
+                  "display_info": [
+                    "48.18 fire damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.912
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.5,
+              "continuous_apply_seconds": 0.2,
+              "ticks": 13,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 5.16,
+                  "average": 5.16,
+                  "per_activation": 3.09,
+                  "per_cast_cycle": 0.38,
+                  "display_info": [
+                    "13 ticks of 5.16 fire damage over 2.5s on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.0977
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Repel"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 0.61,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "magnitude": 8.0,
+                  "display_info": [
+                    "8.0 magnitude repel for 0.61s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 8.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 0.61,
+              "flags": [
+                "CancelOnMiss",
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "magnitude": 4.0,
+                  "display_info": [
+                    "4.0 magnitude hold for 0.61s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 4.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 0.6,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "magnitude": 3.32,
+                  "display_info": [
+                    "3.3 magnitude knock on target after 0.6s delay"
+                  ],
+                  "base_value": 1.6617,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 37.36,
+                  "average": 37.36,
+                  "per_activation": 22.37,
+                  "per_cast_cycle": 2.73,
+                  "display_info": [
+                    "37.36 fire damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.8196
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.5,
+              "continuous_apply_seconds": 0.2,
+              "ticks": 13,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 4.0,
+                  "average": 4.0,
+                  "per_activation": 2.4,
+                  "per_cast_cycle": 0.29,
+                  "display_info": [
+                    "13 ticks of 4.00 fire damage over 2.5s on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.0878
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Repel"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 0.6,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "magnitude": 2.0,
+                  "display_info": [
+                    "2.0 magnitude repel for 0.6s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 2.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 0.6,
+              "flags": [
+                "CancelOnMiss",
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "magnitude": 8.0,
+                  "display_info": [
+                    "8.0 magnitude hold for 0.6s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Fire_Blast.Rain_of_Fire",
+      "display_name": "Rain of Fire",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/75/fireblast_rainoffire.png",
+      "display_help": "Summons a Rain of Fire over a targeted location, burning foes and reducing their movement speed within a large area. Damage: Minor(DoT), Recharge: Slow",
+      "display_short_help": "Ranged (Location AoE), Minor DoT(Fire), -SPD",
+      "display_info": {
+        "Power Type": "Click",
+        "Effect Area": "Location",
+        "Power Range": "40 ft.",
+        "Available Level": "26",
+        "Target Type": "Location",
+        "Endurance Cost": "26.00",
+        "Activation Time": "2.03s",
+        "Recharge Time": "1m 0s"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Targeted AoE Damage",
+        "Sentinel Archetype Sets"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 2.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.03,
+        "animation_time": 2.03,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 60.0,
+        "endurance_cost": 26.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_RainofFire_Sentinel",
+                  "display_name": "Rain of Fire",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Pets.RainofFire.RainofFire",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/rainoffire/"
+                    },
+                    {
+                      "name": "Pets.RainofFire.Avoid",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/rainoffire/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Fire_Blast.Inferno",
+      "display_name": "Inferno",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/60/fireblast_inferno.png",
+      "display_help": "Unleashes a massive fiery explosion to devastate all nearby enemies and set them ablaze. Inferno deals Extreme Fire damage to all nearby foes and inflicts Moderate Fire damage over time. Damage: Extreme, Recharge: Long",
+      "display_short_help": "PBAoE, Extreme DMG(Fire/Smash), Foe Moderate DoT(Fire)",
+      "display_info": {
+        "Activation Time": "3s",
+        "Effect Area": "AoE — 20 ft. radius (10 targets max)",
+        "Target Type": "Self",
+        "Power Type": "Click",
+        "Recharge Time": "1m 30s",
+        "Endurance Cost": "15.60",
+        "Attack Types": "Area, Fire",
+        "Available Level": "32"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Sentinel Archetype Sets",
+        "PBAoE Damage"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.4,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 20.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 3.0,
+        "animation_time": 3.0,
+        "animation_time_before_hit": 1.83,
+        "recharge_time": 90.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 49.03,
+                  "average": 49.03,
+                  "per_activation": 16.34,
+                  "per_cast_cycle": 0.53,
+                  "display_info": [
+                    "49.03 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.928
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 119.03,
+                  "average": 119.03,
+                  "per_activation": 39.68,
+                  "per_cast_cycle": 1.28,
+                  "display_info": [
+                    "119.03 fire damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 2.253
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 3,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 7.92,
+                  "average": 15.46,
+                  "per_activation": 5.15,
+                  "per_cast_cycle": 0.17,
+                  "display_info": [
+                    "3 ticks of 80.00% chance for 7.92 fire damage over 2.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 29.11,
+                  "average": 29.11,
+                  "per_activation": 9.7,
+                  "per_cast_cycle": 0.31,
+                  "display_info": [
+                    "29.11 fire damage on target",
+                    "Unresistable"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.6386
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 59.12,
+                  "average": 59.12,
+                  "per_activation": 19.71,
+                  "per_cast_cycle": 0.64,
+                  "display_info": [
+                    "59.12 fire damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 1.2969
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

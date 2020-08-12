@@ -1,1 +1,2417 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Sentinel_Ranged.Ice_Blast","display_name":"Ice Blast","display_help":"Ice Blast allows you to use the power of ice against your foes, with a tendency to Slow their attacks and movement.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/05/iceblast_bolt.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Sentinel_Ranged.Ice_Blast.Ice_Bolt","Sentinel_Ranged.Ice_Blast.Ice_Blast","Sentinel_Ranged.Ice_Blast.Frost_Breath","Sentinel_Ranged.Ice_Blast.Chilling_Ray","Sentinel_Ranged.Ice_Blast.Aim","Sentinel_Ranged.Ice_Blast.Ice_Storm","Sentinel_Ranged.Ice_Blast.Bitter_Ice_Blast","Sentinel_Ranged.Ice_Blast.Bitter_Freeze_Ray","Sentinel_Ranged.Ice_Blast.Blizzard"],"powers":[{"name":"Sentinel_Ranged.Ice_Blast.Ice_Bolt","display_name":"Ice Bolt","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/05/iceblast_bolt.png","display_help":"Ice Bolt quickly pelts an enemy with small icy daggers; their chill Slows a foe's attacks and movement for a time. Fast, but little damage. Damage: Minor, Recharge: Very Fast","display_short_help":"Ranged, Minor DMG(Cold/Smash), Foe -Recharge, -SPD","display_info":{"Attack Types":"Ranged, Smashing, Cold","Available Level":"1","Endurance Cost":"4.37","Power Type":"Click","Recharge Time":"3s","Target Type":"Enemies","Effect Area":"Single Target","Activation Time":"1s","Power Range":"60 ft."},"attack_types":["Ranged_Def","Smashing_Def","Cold_Def"],"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Sentinel Archetype Sets","Ranged Damage","Slow Movement"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.63,"recharge_time":3.0,"endurance_cost":4.37},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":8.88,"average":8.88,"per_activation":8.88,"per_cast_cycle":2.22,"display_info":["8.88 smashing damage on target"],"base_value":-52.8297,"scale":0.168}]},{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":35.5,"average":35.5,"per_activation":35.5,"per_cast_cycle":8.88,"display_info":["35.50 cold damage on target"],"base_value":-52.8297,"scale":0.672}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":83.79,"average":83.79,"per_activation":83.79,"per_cast_cycle":20.95,"display_info":["83.79 cold damage on target"],"base_value":-45.5837,"scale":1.8381}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% run speed, fly speed, jump speed for 6s on target"],"base_value":-1.0,"scale":0.2}]},{"attributes":["JumpHeight","RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% strength to jump height, recharge for 6s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.2}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude","StackByAttribAndKey"],"stacking":{"behavior":"Replace","by_caster":false,"key":"Vulnerability"},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-0.2}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Vulnerability","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}},{"attributes":["Designer Status"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Unset Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Opportunity_Lock","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Sentinel_Ranged.Ice_Blast.Ice_Blast","display_name":"Ice Blast","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/37/iceblast_iceblast.png","display_help":"Ice Blast hurls shards of ice at foes and Slows their attacks and movement for a time. Slower recharge than Ice Bolt, but more damage. Damage: Moderate, Recharge: Fast","display_short_help":"Ranged, Moderate DMG(Cold/Smash), Foe -Recharge, -SPD","display_info":{"Endurance Cost":"6.86","Attack Types":"Ranged, Smashing, Cold","Available Level":"1","Power Range":"60 ft.","Activation Time":"1.67s","Power Type":"Click","Effect Area":"Single Target","Target Type":"Enemies","Recharge Time":"6s"},"attack_types":["Ranged_Def","Smashing_Def","Cold_Def"],"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Sentinel Archetype Sets","Universal Damage Sets","Ranged Damage","Slow Movement"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.57,"recharge_time":6.0,"endurance_cost":6.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":13.95,"average":13.95,"per_activation":8.35,"per_cast_cycle":1.82,"display_info":["13.95 smashing damage on target"],"base_value":-52.8297,"scale":0.264}]},{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":55.79,"average":55.79,"per_activation":33.41,"per_cast_cycle":7.27,"display_info":["55.79 cold damage on target"],"base_value":-52.8297,"scale":1.056}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":124.26,"average":124.26,"per_activation":74.41,"per_cast_cycle":16.2,"display_info":["124.26 cold damage on target"],"base_value":-45.5837,"scale":2.7259}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["JumpHeight","RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% strength to jump height, recharge for 10s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.2}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% run speed, fly speed, jump speed for 10s on target"],"base_value":-1.0,"scale":0.2}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude","StackByAttribAndKey"],"stacking":{"behavior":"Replace","by_caster":false,"key":"Vulnerability"},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-0.2}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Vulnerability","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}},{"attributes":["Designer Status"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Unset Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Opportunity_Lock","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Sentinel_Ranged.Ice_Blast.Frost_Breath","display_name":"Frost Breath","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/0c/iceblast_frostbreath.png","display_help":"Unleashes a cone of frosty breath that can Slow your opponents' movement and attacks. Very accurate and very deadly at medium range. Damage: Moderate(DoT), Recharge: Slow","display_short_help":"Close (Cone), Moderate DoT(Cold), Foe -Recharge, -SPD","display_info":{"Endurance Cost":"15.18","Power Type":"Click","Target Type":"Enemies","Effect Area":"Cone — 40 ft. radius 30° arc (6 targets max)","Attack Types":"Area, Cold","Activation Time":"2.67s","Power Range":"40 ft.","Recharge Time":"16s","Available Level":"2"},"attack_types":["Area_Def","Cold_Def"],"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Slow Movement","Sentinel Archetype Sets","Targeted AoE Damage","Universal Damage Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"Cone","max_targets_hit":6,"radius_feet":40.0,"arc_degrees":30.0,"range_feet":40.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.67,"animation_time":2.67,"animation_time_before_hit":1.17,"recharge_time":16.0,"endurance_cost":15.18},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.6,"continuous_apply_seconds":0.5,"ticks":2,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":36.98,"average":36.98,"per_activation":13.85,"per_cast_cycle":1.98,"display_info":["2 ticks of 36.98 cold damage over 0.6s on target"],"base_value":-52.8297,"scale":0.7}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.6,"continuous_apply_seconds":0.5,"ticks":2,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":46.23,"average":46.23,"per_activation":17.31,"per_cast_cycle":2.48,"display_info":["2 ticks of 46.23 cold damage over 0.6s on target"],"base_value":-45.5837,"scale":1.0141}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["JumpHeight","RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% strength to jump height, recharge for 10s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.2}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% run speed, fly speed, jump speed for 10s on target"],"base_value":-1.0,"scale":0.2}]}]}]},{"name":"Sentinel_Ranged.Ice_Blast.Chilling_Ray","display_name":"Chilling Ray","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/f7/iceblast_freezeray.png","display_help":"Chilling Ray encases your foe in a frail block of ice, holding them helpless in place for a while. The block of ice will break if attacked. Damage: Moderate, Recharge: Moderate","display_short_help":"Ranged, Moderate DMG(Cold), Foe Sleep","display_info":{"Attack Types":"Ranged, Cold","Activation Time":"1.67s","Available Level":"6","Effect Area":"Single Target","Power Type":"Click","Endurance Cost":"8.53","Target Type":"Enemies","Power Range":"60 ft.","Recharge Time":"8s"},"attack_types":["Ranged_Def","Cold_Def"],"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance Range","Enhance Sleep","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Sentinel Archetype Sets","Sleep","Ranged Damage","Universal Damage Sets","Slow Movement"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.57,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":86.64,"average":86.64,"per_activation":51.88,"per_cast_cycle":8.96,"display_info":["86.64 cold damage on target"],"base_value":-52.8297,"scale":1.64}]},{"attributes":["Smashing_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":9.17,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":11.0,"display_info":["11.00% strength to smashing damage for 9.17s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.11}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% run speed, fly speed, jump speed for 6s on target"],"base_value":-1.0,"scale":0.2}]},{"attributes":["JumpHeight","RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% strength to jump height, recharge for 6s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.2}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.2,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","duration_seconds":9.54,"display_info":["3.0 sleep for 9.54s on target after 0.2s delay"],"base_value":1.192,"scale":8.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.2,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","duration_seconds":2.0,"display_info":["3.0 sleep for 2s on target after 0.2s delay"],"base_value":2.0,"scale":1.0}]}]}]},{"name":"Sentinel_Ranged.Ice_Blast.Aim","display_name":"Aim","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b5/iceblast_buildup.png","display_help":"Greatly increases the chance to hit of your attacks for a few seconds. Slightly increases damage and range. Recharge: Long","display_short_help":"Self +To Hit, +DMG, +Range","display_info":{"Power Type":"Click","Endurance Cost":"5.20","Effect Area":"Single Target","Activation Time":"1.17s","Target Type":"Self","Recharge Time":"1m 30s","Available Level":"8"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["To Hit Buff"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":90.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":50.0,"display_info":["50.00% to hit for 10s on self","Unresistable"],"base_value":0.1,"scale":5.0}]},{"attributes":["Range"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":33.3,"display_info":["33.30% strength to range for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.333}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":50.0,"display_info":["50.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":5.0}]}]}]},{"name":"Sentinel_Ranged.Ice_Blast.Ice_Storm","display_name":"Ice Storm","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/88/iceblast_freezingrain.png","display_help":"Shred your foes with this Ice Storm. This power deals a lot of damage in a large area and can Slow all affected targets movement and attack speed. Damage: Minor(DoT), Recharge: Slow","display_short_help":"Ranged (Location AoE), Minor DoT(Cold, Lethal), Foe -Recharge, -SPD","display_info":{"Activation Time":"2.03s","Power Type":"Click","Power Range":"40 ft.","Target Type":"Location","Available Level":"12","Recharge Time":"1m 0s","Effect Area":"Location","Endurance Cost":"15.60"},"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Slow Movement","Universal Damage Sets","Sentinel Archetype Sets","Targeted AoE Damage"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":2.0,"effect_area":{"area":"Location","range_feet":40.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.03,"animation_time":2.03,"animation_time_before_hit":0.83,"recharge_time":60.0,"endurance_cost":15.6},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":15.0,"flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_IceStorm_Sentinel","display_name":"Ice Storm","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Pets.IceStorm_Sentinel.IceStorm","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/icestorm-sentinel/"},{"name":"Pets.IceStorm_Sentinel.Avoid","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/icestorm-sentinel/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Sentinel_Ranged.Ice_Blast.Bitter_Ice_Blast","display_name":"Bitter Ice Blast","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/39/iceblast_bitterfrostblast.png","display_help":"A slower yet more powerful version of Ice Blast, Bitter Ice Blast deals much more damage and can also reduce your enemy's chance to hit. Like other Ice Blast powers, Bitter Ice Blast can Slow a target's movement and attack speed. Damage: Superior, Recharge: Slow","display_short_help":"Ranged, Superior DMG(Cold/Smash), Foe -Recharge, -SPD, -To Hit","display_info":{"Power Range":"60 ft.","Activation Time":"1.07s","Available Level":"18","Recharge Time":"12s","Effect Area":"Single Target","Attack Types":"Ranged, Smashing, Cold","Target Type":"Enemies","Power Type":"Click","Endurance Cost":"11.86"},"attack_types":["Ranged_Def","Smashing_Def","Cold_Def"],"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Ranged Damage","To Hit Debuff","Accurate To-Hit Debuff","Universal Damage Sets","Slow Movement","Sentinel Archetype Sets"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.07,"animation_time":1.07,"animation_time_before_hit":0.57,"recharge_time":12.0,"endurance_cost":11.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":52.83,"average":52.83,"per_activation":49.37,"per_cast_cycle":4.04,"display_info":["52.83 smashing damage on target"],"base_value":-52.8297,"scale":1.0}]},{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":67.62,"average":67.62,"per_activation":63.2,"per_cast_cycle":5.17,"display_info":["67.62 cold damage on target"],"base_value":-52.8297,"scale":1.28}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":111.89,"average":111.89,"per_activation":104.57,"per_cast_cycle":8.56,"display_info":["111.89 cold damage on target"],"base_value":-45.5837,"scale":2.4547}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-7.0,"display_info":["-7.00% to hit for 6s on target"],"base_value":-0.07,"scale":1.0}]},{"attributes":["JumpHeight","RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":12.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% strength to jump height, recharge for 12s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.2}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":12.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% run speed, fly speed, jump speed for 12s on target"],"base_value":-1.0,"scale":0.2}]}]}]},{"name":"Sentinel_Ranged.Ice_Blast.Bitter_Freeze_Ray","display_name":"Bitter Freeze Ray","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/31/iceblast_bitterfreezeray.png","display_help":"This power can Hold your opponent frozen solid in a block of ice. The victim can be attacked and will remain frozen and helpless. After the ice thaws, the victim emerges chilled and Slowed. Damage: Moderate, Recharge: Slow","display_short_help":"Ranged, High DMG(Cold), Foe Hold","display_info":{"Endurance Cost":"15.18","Power Type":"Click","Power Range":"60 ft.","Target Type":"Enemies","Effect Area":"Single Target","Available Level":"26","Recharge Time":"16s","Activation Time":"2.5s","Attack Types":"Ranged, Cold"},"attack_types":["Ranged_Def","Cold_Def"],"enhancements_allowed":["Enhance Hold","Enhance Slow Movement","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Slow Movement","Ranged Damage","Holds","Universal Damage Sets","Sentinel Archetype Sets"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.5,"animation_time":2.5,"animation_time_before_hit":2.3,"recharge_time":16.0,"endurance_cost":15.18},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":154.26,"average":154.26,"per_activation":61.7,"per_cast_cycle":8.34,"display_info":["154.26 cold damage on target"],"base_value":-52.8297,"scale":2.92}]},{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","duration_seconds":7.63,"display_info":["3.0 hold for 7.63s on target"],"base_value":1.192,"scale":6.4}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["JumpHeight","RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":18.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% strength to jump height, recharge for 18s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.2}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":18.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% run speed, fly speed, jump speed for 18s on target"],"base_value":-1.0,"scale":0.2}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":191.61,"average":191.61,"per_activation":76.64,"per_cast_cycle":10.36,"display_info":["191.61 cold damage on target"],"base_value":-45.5837,"scale":4.2035}]},{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","duration_seconds":2.0,"display_info":["3.0 hold for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target>kHeld > 0"],"effects":[{"attributes":["Knockup","Knockback"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":10000.0,"display_info":["10000.00% resistance to knockup, knock for 10s on target","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":100.0}]},{"attributes":["Knockup","Knockback"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","magnitude":-100.0,"display_info":["-100.0 knockup protection, knock protection for 10s on target","Unresistable"],"base_value":1.0,"scale":-100.0}]}]}]},{"name":"Sentinel_Ranged.Ice_Blast.Blizzard","display_name":"Blizzard","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b9/iceblast_blizzard.png","display_help":"You can conjure a Blizzard that inflicts Extreme Cold and Lethal damage over time and can Slow the attack rate of all your opponents in a large area, reducing their chance to hit and possibly knocking them back. Damage: Extreme(DoT), Recharge: Long","display_short_help":"Ranged (Location AoE), Extreme DoT(Cold), Foe -To Hit, -SPD, -Recharge, Knockback","display_info":{"Activation Time":"2.03s","Power Range":"40 ft.","Target Type":"Location","Recharge Time":"1m 30s","Endurance Cost":"15.60","Available Level":"32","Effect Area":"Location","Power Type":"Click"},"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["To Hit Debuff","Targeted AoE Damage","Sentinel Archetype Sets","Accurate To-Hit Debuff","Slow Movement","Universal Damage Sets"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":2.0,"effect_area":{"area":"Location","range_feet":40.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.03,"animation_time":2.03,"animation_time_before_hit":0.83,"recharge_time":90.0,"endurance_cost":15.6},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":8.0,"flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Blizzard_Sentinel","display_name":"Blizzard","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Pets.Blizzard_Sentinel.Blizzard","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/blizzard-sentinel/"},{"name":"Pets.Blizzard_Sentinel.Avoid","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/blizzard-sentinel/"},{"name":"Pets.Blizzard_Sentinel.Snow","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/blizzard-sentinel/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Sentinel_Ranged.Ice_Blast",
+  "display_name": "Ice Blast",
+  "display_help": "Ice Blast allows you to use the power of ice against your foes, with a tendency to Slow their attacks and movement.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/05/iceblast_bolt.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Sentinel_Ranged.Ice_Blast.Ice_Bolt",
+    "Sentinel_Ranged.Ice_Blast.Ice_Blast",
+    "Sentinel_Ranged.Ice_Blast.Frost_Breath",
+    "Sentinel_Ranged.Ice_Blast.Chilling_Ray",
+    "Sentinel_Ranged.Ice_Blast.Aim",
+    "Sentinel_Ranged.Ice_Blast.Ice_Storm",
+    "Sentinel_Ranged.Ice_Blast.Bitter_Ice_Blast",
+    "Sentinel_Ranged.Ice_Blast.Bitter_Freeze_Ray",
+    "Sentinel_Ranged.Ice_Blast.Blizzard"
+  ],
+  "powers": [
+    {
+      "name": "Sentinel_Ranged.Ice_Blast.Ice_Bolt",
+      "display_name": "Ice Bolt",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/05/iceblast_bolt.png",
+      "display_help": "Ice Bolt quickly pelts an enemy with small icy daggers; their chill Slows a foe's attacks and movement for a time. Fast, but little damage. Damage: Minor, Recharge: Very Fast",
+      "display_short_help": "Ranged, Minor DMG(Cold/Smash), Foe -Recharge, -SPD",
+      "display_info": {
+        "Recharge Time": "3s",
+        "Power Type": "Click",
+        "Available Level": "1",
+        "Effect Area": "Single Target",
+        "Target Type": "Enemies",
+        "Attack Types": "Ranged, Smashing, Cold",
+        "Activation Time": "1s",
+        "Power Range": "60 ft.",
+        "Endurance Cost": "4.37"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Smashing_Def",
+        "Cold_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Ranged Damage",
+        "Sentinel Archetype Sets",
+        "Universal Damage Sets",
+        "Slow Movement"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.63,
+        "recharge_time": 3.0,
+        "endurance_cost": 4.37
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 8.88,
+                  "average": 8.88,
+                  "per_activation": 8.88,
+                  "per_cast_cycle": 2.22,
+                  "display_info": [
+                    "8.88 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.168
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 35.5,
+                  "average": 35.5,
+                  "per_activation": 35.5,
+                  "per_cast_cycle": 8.88,
+                  "display_info": [
+                    "35.50 cold damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.672
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 83.79,
+                  "average": 83.79,
+                  "per_activation": 83.79,
+                  "per_cast_cycle": 20.95,
+                  "display_info": [
+                    "83.79 cold damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 1.8381
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% run speed, fly speed, jump speed for 6s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight",
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% strength to jump height, recharge for 6s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "StackByAttribAndKey"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": false,
+                "key": "Vulnerability"
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Vulnerability",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Designer Status"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Unset Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Opportunity_Lock",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Ice_Blast.Ice_Blast",
+      "display_name": "Ice Blast",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/37/iceblast_iceblast.png",
+      "display_help": "Ice Blast hurls shards of ice at foes and Slows their attacks and movement for a time. Slower recharge than Ice Bolt, but more damage. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Ranged, Moderate DMG(Cold/Smash), Foe -Recharge, -SPD",
+      "display_info": {
+        "Activation Time": "1.67s",
+        "Endurance Cost": "6.86",
+        "Effect Area": "Single Target",
+        "Available Level": "1",
+        "Recharge Time": "6s",
+        "Power Range": "60 ft.",
+        "Attack Types": "Ranged, Smashing, Cold",
+        "Power Type": "Click",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Smashing_Def",
+        "Cold_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Slow Movement",
+        "Universal Damage Sets",
+        "Sentinel Archetype Sets",
+        "Ranged Damage"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 6.0,
+        "endurance_cost": 6.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 13.95,
+                  "average": 13.95,
+                  "per_activation": 8.35,
+                  "per_cast_cycle": 1.82,
+                  "display_info": [
+                    "13.95 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.264
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 55.79,
+                  "average": 55.79,
+                  "per_activation": 33.41,
+                  "per_cast_cycle": 7.27,
+                  "display_info": [
+                    "55.79 cold damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.056
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 124.26,
+                  "average": 124.26,
+                  "per_activation": 74.41,
+                  "per_cast_cycle": 16.2,
+                  "display_info": [
+                    "124.26 cold damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 2.7259
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "JumpHeight",
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% strength to jump height, recharge for 10s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% run speed, fly speed, jump speed for 10s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "StackByAttribAndKey"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": false,
+                "key": "Vulnerability"
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Vulnerability",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Designer Status"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Unset Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Opportunity_Lock",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Ice_Blast.Frost_Breath",
+      "display_name": "Frost Breath",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/0c/iceblast_frostbreath.png",
+      "display_help": "Unleashes a cone of frosty breath that can Slow your opponents' movement and attacks. Very accurate and very deadly at medium range. Damage: Moderate(DoT), Recharge: Slow",
+      "display_short_help": "Close (Cone), Moderate DoT(Cold), Foe -Recharge, -SPD",
+      "display_info": {
+        "Recharge Time": "16s",
+        "Activation Time": "2.67s",
+        "Available Level": "2",
+        "Effect Area": "Cone — 40 ft. radius 30° arc (6 targets max)",
+        "Endurance Cost": "15.18",
+        "Power Range": "40 ft.",
+        "Power Type": "Click",
+        "Attack Types": "Area, Cold",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Cold_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sentinel Archetype Sets",
+        "Targeted AoE Damage",
+        "Slow Movement",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 6,
+        "radius_feet": 40.0,
+        "arc_degrees": 30.0,
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.67,
+        "animation_time": 2.67,
+        "animation_time_before_hit": 1.17,
+        "recharge_time": 16.0,
+        "endurance_cost": 15.18
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.6,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 2,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 36.98,
+                  "average": 36.98,
+                  "per_activation": 13.85,
+                  "per_cast_cycle": 1.98,
+                  "display_info": [
+                    "2 ticks of 36.98 cold damage over 0.6s on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.6,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 2,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 46.23,
+                  "average": 46.23,
+                  "per_activation": 17.31,
+                  "per_cast_cycle": 2.48,
+                  "display_info": [
+                    "2 ticks of 46.23 cold damage over 0.6s on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 1.0141
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "JumpHeight",
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% strength to jump height, recharge for 10s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% run speed, fly speed, jump speed for 10s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Ice_Blast.Chilling_Ray",
+      "display_name": "Chilling Ray",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/f7/iceblast_freezeray.png",
+      "display_help": "Chilling Ray encases your foe in a frail block of ice, holding them helpless in place for a while. The block of ice will break if attacked. Damage: Moderate, Recharge: Moderate",
+      "display_short_help": "Ranged, Moderate DMG(Cold), Foe Sleep",
+      "display_info": {
+        "Recharge Time": "8s",
+        "Power Range": "60 ft.",
+        "Attack Types": "Ranged, Cold",
+        "Effect Area": "Single Target",
+        "Available Level": "6",
+        "Endurance Cost": "8.53",
+        "Activation Time": "1.67s",
+        "Target Type": "Enemies",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Cold_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Sleep",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sleep",
+        "Slow Movement",
+        "Universal Damage Sets",
+        "Sentinel Archetype Sets",
+        "Ranged Damage"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 86.64,
+                  "average": 86.64,
+                  "per_activation": 51.88,
+                  "per_cast_cycle": 8.96,
+                  "display_info": [
+                    "86.64 cold damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.64
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 9.17,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 11.0,
+                  "display_info": [
+                    "11.00% strength to smashing damage for 9.17s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.11
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% run speed, fly speed, jump speed for 6s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight",
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% strength to jump height, recharge for 6s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.2,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "duration_seconds": 9.54,
+                  "display_info": [
+                    "3.0 sleep for 9.54s on target after 0.2s delay"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.2,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 sleep for 2s on target after 0.2s delay"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Ice_Blast.Aim",
+      "display_name": "Aim",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b5/iceblast_buildup.png",
+      "display_help": "Greatly increases the chance to hit of your attacks for a few seconds. Slightly increases damage and range. Recharge: Long",
+      "display_short_help": "Self +To Hit, +DMG, +Range",
+      "display_info": {
+        "Endurance Cost": "5.20",
+        "Effect Area": "Single Target",
+        "Activation Time": "1.17s",
+        "Available Level": "8",
+        "Recharge Time": "1m 30s",
+        "Target Type": "Self",
+        "Power Type": "Click"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 90.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% to hit for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Range"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 33.3,
+                  "display_info": [
+                    "33.30% strength to range for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.333
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Ice_Blast.Ice_Storm",
+      "display_name": "Ice Storm",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/88/iceblast_freezingrain.png",
+      "display_help": "Shred your foes with this Ice Storm. This power deals a lot of damage in a large area and can Slow all affected targets movement and attack speed. Damage: Minor(DoT), Recharge: Slow",
+      "display_short_help": "Ranged (Location AoE), Minor DoT(Cold, Lethal), Foe -Recharge, -SPD",
+      "display_info": {
+        "Target Type": "Location",
+        "Power Type": "Click",
+        "Activation Time": "2.03s",
+        "Recharge Time": "1m 0s",
+        "Available Level": "12",
+        "Endurance Cost": "15.60",
+        "Power Range": "40 ft.",
+        "Effect Area": "Location"
+      },
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Targeted AoE Damage",
+        "Sentinel Archetype Sets",
+        "Slow Movement",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 2.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.03,
+        "animation_time": 2.03,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 60.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_IceStorm_Sentinel",
+                  "display_name": "Ice Storm",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Pets.IceStorm_Sentinel.IceStorm",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/icestorm-sentinel/"
+                    },
+                    {
+                      "name": "Pets.IceStorm_Sentinel.Avoid",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/icestorm-sentinel/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Ice_Blast.Bitter_Ice_Blast",
+      "display_name": "Bitter Ice Blast",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/39/iceblast_bitterfrostblast.png",
+      "display_help": "A slower yet more powerful version of Ice Blast, Bitter Ice Blast deals much more damage and can also reduce your enemy's chance to hit. Like other Ice Blast powers, Bitter Ice Blast can Slow a target's movement and attack speed. Damage: Superior, Recharge: Slow",
+      "display_short_help": "Ranged, Superior DMG(Cold/Smash), Foe -Recharge, -SPD, -To Hit",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Activation Time": "1.07s",
+        "Recharge Time": "12s",
+        "Power Type": "Click",
+        "Power Range": "60 ft.",
+        "Effect Area": "Single Target",
+        "Attack Types": "Ranged, Smashing, Cold",
+        "Endurance Cost": "11.86",
+        "Available Level": "18"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Smashing_Def",
+        "Cold_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Accurate To-Hit Debuff",
+        "To Hit Debuff",
+        "Slow Movement",
+        "Universal Damage Sets",
+        "Ranged Damage",
+        "Sentinel Archetype Sets"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.07,
+        "animation_time": 1.07,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 12.0,
+        "endurance_cost": 11.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 52.83,
+                  "average": 52.83,
+                  "per_activation": 49.37,
+                  "per_cast_cycle": 4.04,
+                  "display_info": [
+                    "52.83 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 67.62,
+                  "average": 67.62,
+                  "per_activation": 63.2,
+                  "per_cast_cycle": 5.17,
+                  "display_info": [
+                    "67.62 cold damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.28
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 111.89,
+                  "average": 111.89,
+                  "per_activation": 104.57,
+                  "per_cast_cycle": 8.56,
+                  "display_info": [
+                    "111.89 cold damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 2.4547
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% to hit for 6s on target"
+                  ],
+                  "base_value": -0.07,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight",
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 12.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% strength to jump height, recharge for 12s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 12.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% run speed, fly speed, jump speed for 12s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Ice_Blast.Bitter_Freeze_Ray",
+      "display_name": "Bitter Freeze Ray",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/31/iceblast_bitterfreezeray.png",
+      "display_help": "This power can Hold your opponent frozen solid in a block of ice. The victim can be attacked and will remain frozen and helpless. After the ice thaws, the victim emerges chilled and Slowed. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "Ranged, High DMG(Cold), Foe Hold",
+      "display_info": {
+        "Endurance Cost": "15.18",
+        "Available Level": "26",
+        "Effect Area": "Single Target",
+        "Power Range": "60 ft.",
+        "Activation Time": "2.5s",
+        "Attack Types": "Ranged, Cold",
+        "Recharge Time": "16s",
+        "Target Type": "Enemies",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Cold_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Hold",
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Ranged Damage",
+        "Holds",
+        "Slow Movement",
+        "Universal Damage Sets",
+        "Sentinel Archetype Sets"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.5,
+        "animation_time": 2.5,
+        "animation_time_before_hit": 2.3,
+        "recharge_time": 16.0,
+        "endurance_cost": 15.18
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 154.26,
+                  "average": 154.26,
+                  "per_activation": 61.7,
+                  "per_cast_cycle": 8.34,
+                  "display_info": [
+                    "154.26 cold damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 2.92
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "duration_seconds": 7.63,
+                  "display_info": [
+                    "3.0 hold for 7.63s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 6.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "JumpHeight",
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 18.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% strength to jump height, recharge for 18s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 18.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% run speed, fly speed, jump speed for 18s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 191.61,
+                  "average": 191.61,
+                  "per_activation": 76.64,
+                  "per_cast_cycle": 10.36,
+                  "display_info": [
+                    "191.61 cold damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 4.2035
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 hold for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>kHeld > 0"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 10000.0,
+                  "display_info": [
+                    "10000.00% resistance to knockup, knock for 10s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "magnitude": -100.0,
+                  "display_info": [
+                    "-100.0 knockup protection, knock protection for 10s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Ice_Blast.Blizzard",
+      "display_name": "Blizzard",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b9/iceblast_blizzard.png",
+      "display_help": "You can conjure a Blizzard that inflicts Extreme Cold and Lethal damage over time and can Slow the attack rate of all your opponents in a large area, reducing their chance to hit and possibly knocking them back. Damage: Extreme(DoT), Recharge: Long",
+      "display_short_help": "Ranged (Location AoE), Extreme DoT(Cold), Foe -To Hit, -SPD, -Recharge, Knockback",
+      "display_info": {
+        "Target Type": "Location",
+        "Power Range": "40 ft.",
+        "Endurance Cost": "15.60",
+        "Effect Area": "Location",
+        "Recharge Time": "1m 30s",
+        "Available Level": "32",
+        "Activation Time": "2.03s",
+        "Power Type": "Click"
+      },
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Slow Movement",
+        "Accurate To-Hit Debuff",
+        "Sentinel Archetype Sets",
+        "Targeted AoE Damage",
+        "To Hit Debuff",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 2.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.03,
+        "animation_time": 2.03,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 90.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Blizzard_Sentinel",
+                  "display_name": "Blizzard",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Pets.Blizzard_Sentinel.Blizzard",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/blizzard-sentinel/"
+                    },
+                    {
+                      "name": "Pets.Blizzard_Sentinel.Avoid",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/blizzard-sentinel/"
+                    },
+                    {
+                      "name": "Pets.Blizzard_Sentinel.Snow",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/blizzard-sentinel/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

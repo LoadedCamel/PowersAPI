@@ -1,1 +1,2846 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Blaster_Support.Martial_Manipulation","display_name":"Martial Combat","display_help":"Your mastery of Martial Combat allows you to draw on the physical energy stored within your body to perform remarkable feats. You deliver damage to your enemies via withering kicks and punches, while your preternatural senses keep you moving faster and striking harder than any who oppose you.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d0/martialmanipulation_kipush.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Blaster_Support.Martial_Manipulation.Ki_Push","Blaster_Support.Martial_Manipulation.Storm_Kick","Blaster_Support.Martial_Manipulation.Reach_for_the_Limit","Blaster_Support.Martial_Manipulation.Build_Up_Proc","Blaster_Support.Martial_Manipulation.Burst_of_Speed","Blaster_Support.Martial_Manipulation.Dragons_Tail","Blaster_Support.Martial_Manipulation.Reaction_Time","Blaster_Support.Martial_Manipulation.Inner_Will","Blaster_Support.Martial_Manipulation.Throw_Sand","Blaster_Support.Martial_Manipulation.Eagles_Claw"],"powers":[{"name":"Blaster_Support.Martial_Manipulation.Build_Up_Proc","display_name":"Reach for the Limit","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/55/martialmanipulation_reachforthelimit.png","display_help":"Greatly boosts your attacks for a few seconds. Slightly increases chance to hit.","display_short_help":"Self +DMG, +To Hit","display_info":{"Effect Area":"Single Target","Power Type":"Global Enhancement","Target Type":"Self","Available Level":"0"},"requires":"Blaster_Support.Martial_Manipulation.Reach_for_the_Limit","enhancements_allowed":["Enhance Damage"],"available_at_level":0,"auto_issue":true,"power_type":"Global Enhancement","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"auto_cast_interval":10.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"procs_per_minute":0.67,"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Reach_For_The_Limit","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Blaster_Support.Martial_Manipulation.Ki_Push","display_name":"Ki Push","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d0/martialmanipulation_kipush.png","display_help":"You smash your foe with a burst of Ki Energy, sending them flying through the air in slow motion. Damage: Moderate, Recharge: Fast","display_short_help":"Melee, Moderate DMG(Smash), Foe Repel, KB","display_info":{"Activation Time":"0.83s","Recharge Time":"6s","Power Range":"7 ft.","Endurance Cost":"5.20","Effect Area":"Single Target","Available Level":"1","Target Type":"Enemies","Power Type":"Click","Attack Types":"Melee, Smashing"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Blaster Archetype Sets","Melee Damage","Knockback","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All","Defiant"],"status_interaction":{"cast_through":["Hold","Sleep","Stun","Terrorize","Sleep","Stun"],"toggle_ignores":["Hold"]},"activate":{"cast_time":0.83,"animation_time":0.83,"animation_time_before_hit":0.5,"recharge_time":6.0,"endurance_cost":5.2},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":44.49,"average":44.49,"per_activation":53.6,"per_cast_cycle":6.51,"display_info":["44.49 smashing damage on target"],"base_value":-55.6102,"scale":0.8}]},{"attributes":["Repel"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":2.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":4.0,"display_info":["4.0 magnitude repel for 2s on target"],"base_value":1.0,"scale":4.0}]},{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":2.0,"flags":["CancelOnMiss","IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":4.0,"display_info":["4.0 magnitude hold for 2s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":4.0}]},{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":2.05,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":8.31,"display_info":["8.3 magnitude knock on target after 2.05s delay"],"base_value":2.0771,"scale":4.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":2.0,"flags":["CancelOnMiss","IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":4.0,"display_info":["4.0 magnitude hold for 2s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":4.0}]},{"attributes":["Repel"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":2.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":2.0,"display_info":["2.0 magnitude repel for 2s on target"],"base_value":1.0,"scale":2.0}]},{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":83.49,"average":83.49,"per_activation":100.59,"per_cast_cycle":12.22,"display_info":["83.49 smashing damage on target"],"base_value":-68.3828,"scale":1.2209}]},{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":2.05,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":8.31,"display_info":["8.3 magnitude knock on target after 2.05s delay"],"base_value":2.0771,"scale":4.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.33,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":5.5,"display_info":["5.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.33s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.055}]}]}]},{"name":"Blaster_Support.Martial_Manipulation.Storm_Kick","display_name":"Storm Kick","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/45/martialmanipulation_stormkick.png","display_help":"You can unleash a roundhouse kick that pummels your foe for moderate damage, knocking them down. Storm Kick has an additional chance to cause your target to bleed for Lethal damage over time. Damage: Moderate, Recharge: Fast","display_short_help":"Melee, Moderate DMG(Smash), DoT(Lethal), Foe Knockdown","display_info":{"Target Type":"Enemies","Available Level":"2","Power Range":"7 ft.","Activation Time":"1.07s","Attack Types":"Melee, Smashing","Endurance Cost":"6.86","Effect Area":"Single Target","Recharge Time":"6s","Power Type":"Click"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Melee Damage","Knockback","Blaster Archetype Sets","Universal Damage Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.07,"animation_time":1.07,"animation_time_before_hit":0.5,"recharge_time":6.0,"endurance_cost":6.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":73.41,"average":73.41,"per_activation":68.61,"per_cast_cycle":10.38,"display_info":["73.41 smashing damage on target"],"base_value":-55.6102,"scale":1.32}]},{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":0.67,"display_info":["0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":75.98,"average":75.98,"per_activation":71.01,"per_cast_cycle":10.75,"display_info":["75.98 smashing damage on target"],"base_value":-68.3828,"scale":1.1111}]},{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":0.67,"display_info":["0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.5,"continuous_apply_seconds":0.5,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":5.56,"average":3.34,"per_activation":3.12,"per_cast_cycle":0.47,"display_info":["4 ticks of 5.56 lethal damage over 1.5s on target"],"base_value":-55.6102,"scale":0.1}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.5,"continuous_apply_seconds":0.5,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":6.33,"average":3.8,"per_activation":3.55,"per_cast_cycle":0.54,"display_info":["4 ticks of 6.33 lethal damage over 1.5s on target"],"base_value":-68.3828,"scale":0.0926}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.57,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":7.1,"display_info":["7.10% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.57s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.071}]}]}]},{"name":"Blaster_Support.Martial_Manipulation.Reach_for_the_Limit","display_name":"Reach for the Limit","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/55/martialmanipulation_reachforthelimit.png","display_help":"You are constantly looking for vulnerabilities in your foes' stances and positioning. Whenever you attack, you have a chance to gain a moderate +ToHit and +Damage bonus for a short duration.","display_short_help":"All Attacks: Chance for +ToHit, +DMG(All)","display_info":{"Effect Area":"Single Target","Power Type":"Auto","Target Type":"Self","Available Level":"4"},"available_at_level":4,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"auto_cast_interval":10.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Null"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}}]}]},{"name":"Blaster_Support.Martial_Manipulation.Burst_of_Speed","display_name":"Burst of Speed","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/4d/martialmanipulation_burstofspeed.png","display_help":"Channeling physical Ki inwards, you move more quickly than can be seen for an instant, allowing you to move instantly to a targeted location and strike at targets within melee range. You can use this Burst of Speed up to 3 times before it needs to recharge. Recharge: Long","display_short_help":"Location AoE Moderate DMG (Smash), Self Teleport","display_info":{"Available Level":"10","Recharge Time":"1m 30s","Target Type":"Location","Activation Time":"1s","Power Type":"Click","Power Range":"200 ft.","Effect Area":"Location","Endurance Cost":"13.52"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Travel","Universal Damage Sets","Blaster Archetype Sets","PBAoE Damage","Teleport"],"available_at_level":10,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":200.0},"target_type_tags":["Location","Teleport"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":2.57,"animation_time_before_hit":0.87,"recharge_time":90.0,"endurance_cost":13.52},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Teleport"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Self","magnitude":1.0,"duration":"Instant","after_delay_seconds":-0.3,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":100.0,"display_info":["100.00% teleport on self after -0.3s delay","Unresistable"],"base_value":1.0,"scale":1.0}]},{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":2.0,"after_delay_seconds":-0.2,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Burst_of_Speed","display_name":"Burst of Speed","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Pets.Martial_Manipulation_Burst.Burst_of_Speed","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/martial-manipulation-burst/"}]}},"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.5,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":2.6,"display_info":["2.60% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.5s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.026}]}]},{"visible_in_info_window":true,"chance_percent":200.0,"effects":[{"attributes":["Recharge Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","after_delay_seconds":1.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Blaster_Support.Martial_Manipulation.Burst_of_Speed","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/blaster-support/martial-manipulation/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":200.0,"effects":[{"attributes":["Global Chance Mod"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude_expression":"-1","duration_expression":"power.boosted>rechargetime","after_delay_seconds":1.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","CombatModDuration","KeepThroughDeath"],"parameter":{"effect":{"tags":["SpeedRefresh"]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Blaster_Support.Martial_Manipulation.Dragons_Tail","display_name":"Dragon's Tail","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b7/martialmanipulation_dragonstail.png","display_help":"This low spinning kick deals moderate damage, but has a chance to hit all enemies in melee range. Successful hits may trip and knock down your opponents. Damage: Moderate, Recharge: Slow","display_short_help":"PBAoE Melee, Moderate DMG(Smash), Foe Knockdown","display_info":{"Activation Time":"1.5s","Effect Area":"AoE — 8 ft. radius (10 targets max)","Recharge Time":"14s","Attack Types":"Melee, Smashing","Target Type":"Self","Power Type":"Click","Endurance Cost":"13.52","Available Level":"16"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Knockback","PBAoE Damage","Universal Damage Sets","Blaster Archetype Sets"],"available_at_level":16,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":8.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.5,"animation_time":1.5,"animation_time_before_hit":0.5,"recharge_time":14.0,"endurance_cost":13.52},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":65.62,"average":65.62,"per_activation":43.75,"per_cast_cycle":4.23,"display_info":["65.62 smashing damage on target"],"base_value":-55.6102,"scale":1.18}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":75.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["NearGround","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":0.67,"display_info":["75.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":75.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["NearGround","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":0.67,"display_info":["75.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":78.54,"average":78.54,"per_activation":52.36,"per_cast_cycle":5.07,"display_info":["78.54 smashing damage on target"],"base_value":-68.3828,"scale":1.1485}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":9.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":4.5,"display_info":["4.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 9s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.045}]}]}]},{"name":"Blaster_Support.Martial_Manipulation.Reaction_Time","display_name":"Reaction Time","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b3/martialmanipulation_reactiontime.png","display_help":"You attune yourself to the world around you, moving with preternatural speed. All enemies nearby move slowly and have reduced recharge, and you can absorb small amounts of damage every 2 seconds. When Reaction Time is deactivated, you gain a burst of speed for a short duration, increasing your own recharge and move speed. Recharge: Moderate","display_short_help":"Toggle (PBAoE), Self Absorb over Time, +Recovery, Foe Rech, - Move, Special","display_info":{"Attack Types":"Area, Energy","Activation Time":"1.83s","Recharge Time":"10s","Available Level":"20","Target Type":"Self","Power Type":"Toggle","Effect Area":"AoE — 30 ft. radius (10 targets max)"},"attack_types":["Area_Def","Energy_Def"],"enhancements_allowed":["Enhance Endurance Modification","Enhance Slow Movement","Enhance Recharge Speed","Enhance Heal"],"enhancement_set_categories_allowed":["Slow Movement","Accurate Healing","Endurance Modification","Healing"],"available_at_level":20,"auto_issue":false,"power_type":"Toggle","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":30.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Foe"],["Self","Alive","Dead"]],"display_target_auto_hit":["Enemies","Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"status_interaction":{"cast_through":["Hold","Sleep","Stun","Terrorize","Sleep","Stun"],"toggle_ignores":["Hold"]},"activate":{"cast_time":1.83,"animation_time":1.83,"animation_time_before_hit":0.93,"recharge_time":10.0,"auto_cast_interval":0.5,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"requires":["!(target>entref == source>entref) && !((((source>cur.kHeld > 0) || (source>cur.kStun > 0)) || (source>cur.kSleep > 0)) || (source>cur.kTerrorized > 0))"],"effects":[{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-70.0,"display_info":["-70.00% run speed, fly speed, jump speed for 5s on target"],"base_value":-1.0,"scale":0.7}]},{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-40.0,"display_info":["-40.00% strength to recharge for 5s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.4}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-70.0,"display_info":["-70.00% strength to jump height for 5s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.7}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["((target>enttype == critter) && !(target>entref == source>entref)) && !((((source>cur.kHeld > 0) || (source>cur.kStun > 0)) || (source>cur.kSleep > 0)) || (source>cur.kTerrorized > 0))"],"effects":[{"attributes":["RunningSpeed"],"applies_to":"MaxValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-350.0,"display_info":["-350.00% max run speed for 5s on target","Ignores buffs and enhancements"],"base_value":3.5,"scale":-1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnDeactive","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":70.0,"display_info":["70.00% run speed, fly speed, jump speed for 10s on self","Ignores buffs and enhancements"],"base_value":-1.0,"scale":-0.7}]},{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnDeactive","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":40.0,"display_info":["40.00% strength to recharge for 10s on self","Ignores buffs and enhancements"],"base_value":-1.0,"scale":-0.4}]},{"attributes":["RunningSpeed"],"applies_to":"MaxValue","application_type":"OnDeactive","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":350.0,"display_info":["350.00% max run speed for 10s on self","Ignores buffs and enhancements"],"base_value":3.5,"scale":1.0}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnDeactive","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":70.0,"display_info":["70.00% strength to jump height for 10s on self","Ignores buffs and enhancements"],"base_value":-1.0,"scale":-0.7}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target>entref == source>entref"],"effects":[{"attributes":["Absorb"],"applies_to":"MaxValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.0,"flags":["IgnoreResistance","IgnoreLevelDifference"],"scaled":[{"archetype":"Blaster","healing":60.24,"display_info":["60.24 max absorption for 3s on self","Unresistable"],"base_value":120.4759,"scale":0.5}]},{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":50.0,"display_info":["50.00% recovery rate for 3s on self","Unresistable"],"base_value":1.0,"scale":0.5}]}]}]},{"name":"Blaster_Support.Martial_Manipulation.Inner_Will","display_name":"Inner Will","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/38/martialmanipulation_innerwill.png","display_help":"When pushed to your limit, you can tap into an inner reserve of power, allowing you to overcome impossible odds. When you are below half health, below half endurance, or the victim of any status effect, you may activate Inner Will. Inner Will cancels any status effects currently affecting you, increases your resistance to status effects by 100%, and increases the power of your own status effect-inducing powers. Inner Will also heals you for a moderate amount when activated. Recharge: Long","display_short_help":"Self Heal, Special","display_info":{"Power Type":"Click","Recharge Time":"3m 0s","Effect Area":"Single Target","Target Type":"Self","Activation Time":"1.03s","Available Level":"28"},"enhancements_allowed":["Enhance Recharge Speed","Enhance Heal"],"enhancement_set_categories_allowed":["Healing"],"available_at_level":28,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"status_interaction":{"cast_through":["Hold","Sleep","Stun","Terrorize"]},"activate":{"cast_time":1.03,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":180.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude_expression":"negate(minmax((source>mod.kStun + 1), 2, 30))","duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":1.0,"display_info":["1.0 magnitude stun for 30s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0}]},{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude_expression":"negate(minmax((source>mod.kSleep + 1), 2, 30))","duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":1.0,"display_info":["1.0 magnitude sleep for 30s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude_expression":"negate(minmax((source>mod.kImmobilize + 1), 2, 30))","duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":1.0,"display_info":["1.0 magnitude immobilize for 30s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0}]},{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude_expression":"negate(minmax((source>mod.kHeld + 1), 2, 30))","duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":1.0,"display_info":["1.0 magnitude hold for 30s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0}]},{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude_expression":"negate(minmax((source>mod.kConfused + 1), 2, 30))","duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":1.0,"display_info":["1.0 magnitude confuse for 30s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0}]},{"attributes":["Terrorized"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude_expression":"negate(minmax((source>mod.kTerrorized + 1), 2, 30))","duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":1.0,"display_info":["1.0 magnitude terrorize for 30s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0}]},{"attributes":["Confused","Terrorized","Held","Immobilized","Stunned","Sleep"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":100.0,"display_info":["100.00% resistance to confuse, terrorize, hold, immobilize, stun, sleep for 30s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0}]},{"attributes":["Confused","Terrorized","Held","Immobilized","Stunned","Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":0.5,"display_info":["0.5 magnitude confuse, magnitude terrorize, magnitude hold, magnitude immobilize, magnitude stun, magnitude sleep for 30s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.5}]},{"attributes":["Healing_Dmg"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Self","magnitude":1.0,"duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","healing":0.08,"display_info":["0.08 healing on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.075}]},{"attributes":["Healing_Dmg"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Self","magnitude":1.0,"duration":"Instant","flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","healing":0.08,"display_info":["0.08 healing on self","Unresistable"],"base_value":1.0,"scale":0.075}]}]}]},{"name":"Blaster_Support.Martial_Manipulation.Throw_Sand","display_name":"Throw Sand","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e3/martialmanipulations_throwsand.png","display_help":"You grab some nearby debris and fling it towards a nearby foe, obstructing their vision and dazing them. Recharge: Long","display_short_help":"Ranged (Cone), Foe Stun, -Perception","display_info":{"Recharge Time":"1m 30s","Effect Area":"Cone — 40 ft. radius 45° arc (10 targets max)","Power Range":"40 ft.","Attack Types":"Area","Activation Time":"1.07s","Endurance Cost":"20.18","Power Type":"Click","Target Type":"Enemies","Available Level":"35"},"attack_types":["Area_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Disorient","Enhance Recharge Speed","Enhance ToHit DeBuffs","Enhance Accuracy"],"enhancement_set_categories_allowed":["Stuns","Accurate To-Hit Debuff","To Hit Debuff"],"available_at_level":35,"auto_issue":false,"power_type":"Click","accuracy":0.8,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":40.0,"arc_degrees":45.0,"range_feet":40.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.07,"animation_time":1.07,"animation_time_before_hit":0.97,"recharge_time":90.0,"endurance_cost":20.18},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":9.54,"display_info":["3.0 stun for 9.54s on target after 0.25s delay"],"base_value":1.192,"scale":8.0}]},{"attributes":["PerceptionRadius"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-90.0,"display_info":["-90.00% perception radius for 20s on target"],"base_value":1.0,"scale":-0.9}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":2.0,"display_info":["3.0 stun for 2s on target after 0.25s delay"],"base_value":2.0,"scale":1.0}]},{"attributes":["PerceptionRadius"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-90.0,"display_info":["-90.00% perception radius for 20s on target"],"base_value":1.0,"scale":-0.9}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.57,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":2.9,"display_info":["2.90% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.57s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.029}]}]}]},{"name":"Blaster_Support.Martial_Manipulation.Eagles_Claw","display_name":"Eagles Claw","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/32/martialmanipulation_eaglesclaw.png","display_help":"You can perform a devastating kick that can severely Disorient most opponents. Eagle's Claw strikes so powerfully that it weakens your target's resolve, reducing their Range and Recharge for several seconds after attacking. Damage: Superior, Recharge: Slow","display_short_help":"Melee, Superior DMG(Smash), Foe Minor Disorient, +Special","display_info":{"Endurance Cost":"11.86","Attack Types":"Melee, Smashing","Recharge Time":"18s","Available Level":"38","Target Type":"Enemies","Activation Time":"2.53s","Power Type":"Click","Effect Area":"Single Target","Power Range":"7 ft."},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Disorient","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Melee Damage","Stuns","Blaster Archetype Sets","Universal Damage Sets"],"available_at_level":38,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.53,"animation_time":2.53,"animation_time_before_hit":1.3,"recharge_time":18.0,"endurance_cost":11.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":180.18,"average":180.18,"per_activation":71.22,"per_cast_cycle":8.78,"display_info":["180.18 smashing damage on target"],"base_value":-55.6102,"scale":3.24}]},{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":4.77,"display_info":["3.0 stun for 4.77s on target"],"base_value":1.192,"scale":4.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":2.0,"display_info":["3.0 stun for 2s on target"],"base_value":2.0,"scale":1.0}]},{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","damage":197.67,"average":197.67,"per_activation":78.13,"per_cast_cycle":9.63,"display_info":["197.67 smashing damage on target"],"base_value":-68.3828,"scale":2.8907}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Range","RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-25.0,"display_info":["-25.00% strength to range, recharge for 10s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-0.25}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.03,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":16.7,"display_info":["16.70% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10.03s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.167}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Blaster_Support.Martial_Manipulation",
+  "display_name": "Martial Combat",
+  "display_help": "Your mastery of Martial Combat allows you to draw on the physical energy stored within your body to perform remarkable feats. You deliver damage to your enemies via withering kicks and punches, while your preternatural senses keep you moving faster and striking harder than any who oppose you.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d0/martialmanipulation_kipush.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Blaster_Support.Martial_Manipulation.Ki_Push",
+    "Blaster_Support.Martial_Manipulation.Storm_Kick",
+    "Blaster_Support.Martial_Manipulation.Reach_for_the_Limit",
+    "Blaster_Support.Martial_Manipulation.Build_Up_Proc",
+    "Blaster_Support.Martial_Manipulation.Burst_of_Speed",
+    "Blaster_Support.Martial_Manipulation.Dragons_Tail",
+    "Blaster_Support.Martial_Manipulation.Reaction_Time",
+    "Blaster_Support.Martial_Manipulation.Inner_Will",
+    "Blaster_Support.Martial_Manipulation.Throw_Sand",
+    "Blaster_Support.Martial_Manipulation.Eagles_Claw"
+  ],
+  "powers": [
+    {
+      "name": "Blaster_Support.Martial_Manipulation.Build_Up_Proc",
+      "display_name": "Reach for the Limit",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/55/martialmanipulation_reachforthelimit.png",
+      "display_help": "Greatly boosts your attacks for a few seconds. Slightly increases chance to hit.",
+      "display_short_help": "Self +DMG, +To Hit",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Power Type": "Global Enhancement",
+        "Available Level": "0",
+        "Target Type": "Self"
+      },
+      "requires": "Blaster_Support.Martial_Manipulation.Reach_for_the_Limit",
+      "enhancements_allowed": [
+        "Enhance Damage"
+      ],
+      "available_at_level": 0,
+      "auto_issue": true,
+      "power_type": "Global Enhancement",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "auto_cast_interval": 10.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "procs_per_minute": 0.67,
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Reach_For_The_Limit",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Martial_Manipulation.Ki_Push",
+      "display_name": "Ki Push",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d0/martialmanipulation_kipush.png",
+      "display_help": "You smash your foe with a burst of Ki Energy, sending them flying through the air in slow motion. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Melee, Moderate DMG(Smash), Foe Repel, KB",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Available Level": "1",
+        "Endurance Cost": "5.20",
+        "Power Type": "Click",
+        "Activation Time": "0.83s",
+        "Recharge Time": "6s",
+        "Power Range": "7 ft.",
+        "Effect Area": "Single Target",
+        "Attack Types": "Melee, Smashing"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Blaster Archetype Sets",
+        "Universal Damage Sets",
+        "Melee Damage",
+        "Knockback"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All",
+        "Defiant"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Hold",
+          "Sleep",
+          "Stun",
+          "Terrorize",
+          "Sleep",
+          "Stun"
+        ],
+        "toggle_ignores": [
+          "Hold"
+        ]
+      },
+      "activate": {
+        "cast_time": 0.83,
+        "animation_time": 0.83,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 6.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 44.49,
+                  "average": 44.49,
+                  "per_activation": 53.6,
+                  "per_cast_cycle": 6.51,
+                  "display_info": [
+                    "44.49 smashing damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.8
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Repel"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 4.0,
+                  "display_info": [
+                    "4.0 magnitude repel for 2s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 4.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "flags": [
+                "CancelOnMiss",
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 4.0,
+                  "display_info": [
+                    "4.0 magnitude hold for 2s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 4.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 2.05,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 8.31,
+                  "display_info": [
+                    "8.3 magnitude knock on target after 2.05s delay"
+                  ],
+                  "base_value": 2.0771,
+                  "scale": 4.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "flags": [
+                "CancelOnMiss",
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 4.0,
+                  "display_info": [
+                    "4.0 magnitude hold for 2s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 4.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Repel"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 2.0,
+                  "display_info": [
+                    "2.0 magnitude repel for 2s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 2.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 83.49,
+                  "average": 83.49,
+                  "per_activation": 100.59,
+                  "per_cast_cycle": 12.22,
+                  "display_info": [
+                    "83.49 smashing damage on target"
+                  ],
+                  "base_value": -68.3828,
+                  "scale": 1.2209
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 2.05,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 8.31,
+                  "display_info": [
+                    "8.3 magnitude knock on target after 2.05s delay"
+                  ],
+                  "base_value": 2.0771,
+                  "scale": 4.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.33,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 5.5,
+                  "display_info": [
+                    "5.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.33s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.055
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Martial_Manipulation.Storm_Kick",
+      "display_name": "Storm Kick",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/45/martialmanipulation_stormkick.png",
+      "display_help": "You can unleash a roundhouse kick that pummels your foe for moderate damage, knocking them down. Storm Kick has an additional chance to cause your target to bleed for Lethal damage over time. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Melee, Moderate DMG(Smash), DoT(Lethal), Foe Knockdown",
+      "display_info": {
+        "Endurance Cost": "6.86",
+        "Available Level": "2",
+        "Effect Area": "Single Target",
+        "Attack Types": "Melee, Smashing",
+        "Activation Time": "1.07s",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Recharge Time": "6s",
+        "Power Range": "7 ft."
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Blaster Archetype Sets",
+        "Universal Damage Sets",
+        "Melee Damage",
+        "Knockback"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.07,
+        "animation_time": 1.07,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 6.0,
+        "endurance_cost": 6.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 73.41,
+                  "average": 73.41,
+                  "per_activation": 68.61,
+                  "per_cast_cycle": 10.38,
+                  "display_info": [
+                    "73.41 smashing damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.32
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 75.98,
+                  "average": 75.98,
+                  "per_activation": 71.01,
+                  "per_cast_cycle": 10.75,
+                  "display_info": [
+                    "75.98 smashing damage on target"
+                  ],
+                  "base_value": -68.3828,
+                  "scale": 1.1111
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.5,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 5.56,
+                  "average": 3.34,
+                  "per_activation": 3.12,
+                  "per_cast_cycle": 0.47,
+                  "display_info": [
+                    "4 ticks of 5.56 lethal damage over 1.5s on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.5,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 6.33,
+                  "average": 3.8,
+                  "per_activation": 3.55,
+                  "per_cast_cycle": 0.54,
+                  "display_info": [
+                    "4 ticks of 6.33 lethal damage over 1.5s on target"
+                  ],
+                  "base_value": -68.3828,
+                  "scale": 0.0926
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.57,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 7.1,
+                  "display_info": [
+                    "7.10% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.57s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.071
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Martial_Manipulation.Reach_for_the_Limit",
+      "display_name": "Reach for the Limit",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/55/martialmanipulation_reachforthelimit.png",
+      "display_help": "You are constantly looking for vulnerabilities in your foes' stances and positioning. Whenever you attack, you have a chance to gain a moderate +ToHit and +Damage bonus for a short duration.",
+      "display_short_help": "All Attacks: Chance for +ToHit, +DMG(All)",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Target Type": "Self",
+        "Available Level": "4",
+        "Power Type": "Auto"
+      },
+      "available_at_level": 4,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "auto_cast_interval": 10.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Null"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Martial_Manipulation.Burst_of_Speed",
+      "display_name": "Burst of Speed",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/4d/martialmanipulation_burstofspeed.png",
+      "display_help": "Channeling physical Ki inwards, you move more quickly than can be seen for an instant, allowing you to move instantly to a targeted location and strike at targets within melee range. You can use this Burst of Speed up to 3 times before it needs to recharge. Recharge: Long",
+      "display_short_help": "Location AoE Moderate DMG (Smash), Self Teleport",
+      "display_info": {
+        "Power Type": "Click",
+        "Activation Time": "1s",
+        "Target Type": "Location",
+        "Recharge Time": "1m 30s",
+        "Available Level": "10",
+        "Power Range": "200 ft.",
+        "Effect Area": "Location",
+        "Endurance Cost": "13.52"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Teleport",
+        "Universal Travel",
+        "PBAoE Damage",
+        "Blaster Archetype Sets",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 10,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 200.0
+      },
+      "target_type_tags": [
+        "Location",
+        "Teleport"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 2.57,
+        "animation_time_before_hit": 0.87,
+        "recharge_time": 90.0,
+        "endurance_cost": 13.52
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Teleport"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": -0.3,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% teleport on self after -0.3s delay",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "after_delay_seconds": -0.2,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Burst_of_Speed",
+                  "display_name": "Burst of Speed",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Pets.Martial_Manipulation_Burst.Burst_of_Speed",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/martial-manipulation-burst/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.5,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 2.6,
+                  "display_info": [
+                    "2.60% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.5s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.026
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 200.0,
+          "effects": [
+            {
+              "attributes": [
+                "Recharge Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "after_delay_seconds": 1.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Blaster_Support.Martial_Manipulation.Burst_of_Speed",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/blaster-support/martial-manipulation/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 200.0,
+          "effects": [
+            {
+              "attributes": [
+                "Global Chance Mod"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude_expression": "-1",
+              "duration_expression": "power.boosted>rechargetime",
+              "after_delay_seconds": 1.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "CombatModDuration",
+                "KeepThroughDeath"
+              ],
+              "parameter": {
+                "effect": {
+                  "tags": [
+                    "SpeedRefresh"
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Martial_Manipulation.Dragons_Tail",
+      "display_name": "Dragon's Tail",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b7/martialmanipulation_dragonstail.png",
+      "display_help": "This low spinning kick deals moderate damage, but has a chance to hit all enemies in melee range. Successful hits may trip and knock down your opponents. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "PBAoE Melee, Moderate DMG(Smash), Foe Knockdown",
+      "display_info": {
+        "Power Type": "Click",
+        "Effect Area": "AoE — 8 ft. radius (10 targets max)",
+        "Recharge Time": "14s",
+        "Available Level": "16",
+        "Attack Types": "Melee, Smashing",
+        "Endurance Cost": "13.52",
+        "Activation Time": "1.5s",
+        "Target Type": "Self"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Blaster Archetype Sets",
+        "PBAoE Damage",
+        "Universal Damage Sets",
+        "Knockback"
+      ],
+      "available_at_level": 16,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 8.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.5,
+        "animation_time": 1.5,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 14.0,
+        "endurance_cost": 13.52
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 65.62,
+                  "average": 65.62,
+                  "per_activation": 43.75,
+                  "per_cast_cycle": 4.23,
+                  "display_info": [
+                    "65.62 smashing damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.18
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 75.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "NearGround",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "75.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 75.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "NearGround",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "75.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 78.54,
+                  "average": 78.54,
+                  "per_activation": 52.36,
+                  "per_cast_cycle": 5.07,
+                  "display_info": [
+                    "78.54 smashing damage on target"
+                  ],
+                  "base_value": -68.3828,
+                  "scale": 1.1485
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 9.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 4.5,
+                  "display_info": [
+                    "4.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 9s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.045
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Martial_Manipulation.Reaction_Time",
+      "display_name": "Reaction Time",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b3/martialmanipulation_reactiontime.png",
+      "display_help": "You attune yourself to the world around you, moving with preternatural speed. All enemies nearby move slowly and have reduced recharge, and you can absorb small amounts of damage every 2 seconds. When Reaction Time is deactivated, you gain a burst of speed for a short duration, increasing your own recharge and move speed. Recharge: Moderate",
+      "display_short_help": "Toggle (PBAoE), Self Absorb over Time, +Recovery, Foe Rech, - Move, Special",
+      "display_info": {
+        "Target Type": "Self",
+        "Available Level": "20",
+        "Activation Time": "1.83s",
+        "Effect Area": "AoE — 30 ft. radius (10 targets max)",
+        "Attack Types": "Area, Energy",
+        "Power Type": "Toggle",
+        "Recharge Time": "10s"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Enhance Slow Movement",
+        "Enhance Recharge Speed",
+        "Enhance Heal"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Endurance Modification",
+        "Healing",
+        "Accurate Healing",
+        "Slow Movement"
+      ],
+      "available_at_level": 20,
+      "auto_issue": false,
+      "power_type": "Toggle",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 30.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ],
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies",
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Hold",
+          "Sleep",
+          "Stun",
+          "Terrorize",
+          "Sleep",
+          "Stun"
+        ],
+        "toggle_ignores": [
+          "Hold"
+        ]
+      },
+      "activate": {
+        "cast_time": 1.83,
+        "animation_time": 1.83,
+        "animation_time_before_hit": 0.93,
+        "recharge_time": 10.0,
+        "auto_cast_interval": 0.5,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "!(target>entref == source>entref) && !((((source>cur.kHeld > 0) || (source>cur.kStun > 0)) || (source>cur.kSleep > 0)) || (source>cur.kTerrorized > 0))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -70.0,
+                  "display_info": [
+                    "-70.00% run speed, fly speed, jump speed for 5s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.7
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -40.0,
+                  "display_info": [
+                    "-40.00% strength to recharge for 5s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.4
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -70.0,
+                  "display_info": [
+                    "-70.00% strength to jump height for 5s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "((target>enttype == critter) && !(target>entref == source>entref)) && !((((source>cur.kHeld > 0) || (source>cur.kStun > 0)) || (source>cur.kSleep > 0)) || (source>cur.kTerrorized > 0))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "RunningSpeed"
+              ],
+              "applies_to": "MaxValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -350.0,
+                  "display_info": [
+                    "-350.00% max run speed for 5s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 3.5,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnDeactive",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 70.0,
+                  "display_info": [
+                    "70.00% run speed, fly speed, jump speed for 10s on self",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": -0.7
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnDeactive",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 40.0,
+                  "display_info": [
+                    "40.00% strength to recharge for 10s on self",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": -0.4
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed"
+              ],
+              "applies_to": "MaxValue",
+              "application_type": "OnDeactive",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 350.0,
+                  "display_info": [
+                    "350.00% max run speed for 10s on self",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 3.5,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnDeactive",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 70.0,
+                  "display_info": [
+                    "70.00% strength to jump height for 10s on self",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": -0.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>entref == source>entref"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Absorb"
+              ],
+              "applies_to": "MaxValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.0,
+              "flags": [
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "healing": 60.24,
+                  "display_info": [
+                    "60.24 max absorption for 3s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 120.4759,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% recovery rate for 3s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Martial_Manipulation.Inner_Will",
+      "display_name": "Inner Will",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/38/martialmanipulation_innerwill.png",
+      "display_help": "When pushed to your limit, you can tap into an inner reserve of power, allowing you to overcome impossible odds. When you are below half health, below half endurance, or the victim of any status effect, you may activate Inner Will. Inner Will cancels any status effects currently affecting you, increases your resistance to status effects by 100%, and increases the power of your own status effect-inducing powers. Inner Will also heals you for a moderate amount when activated. Recharge: Long",
+      "display_short_help": "Self Heal, Special",
+      "display_info": {
+        "Activation Time": "1.03s",
+        "Effect Area": "Single Target",
+        "Recharge Time": "3m 0s",
+        "Available Level": "28",
+        "Target Type": "Self",
+        "Power Type": "Click"
+      },
+      "enhancements_allowed": [
+        "Enhance Recharge Speed",
+        "Enhance Heal"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Healing"
+      ],
+      "available_at_level": 28,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Hold",
+          "Sleep",
+          "Stun",
+          "Terrorize"
+        ]
+      },
+      "activate": {
+        "cast_time": 1.03,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 180.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude_expression": "negate(minmax((source>mod.kStun + 1), 2, 30))",
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 1.0,
+                  "display_info": [
+                    "1.0 magnitude stun for 30s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude_expression": "negate(minmax((source>mod.kSleep + 1), 2, 30))",
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 1.0,
+                  "display_info": [
+                    "1.0 magnitude sleep for 30s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude_expression": "negate(minmax((source>mod.kImmobilize + 1), 2, 30))",
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 1.0,
+                  "display_info": [
+                    "1.0 magnitude immobilize for 30s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude_expression": "negate(minmax((source>mod.kHeld + 1), 2, 30))",
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 1.0,
+                  "display_info": [
+                    "1.0 magnitude hold for 30s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude_expression": "negate(minmax((source>mod.kConfused + 1), 2, 30))",
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 1.0,
+                  "display_info": [
+                    "1.0 magnitude confuse for 30s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Terrorized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude_expression": "negate(minmax((source>mod.kTerrorized + 1), 2, 30))",
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 1.0,
+                  "display_info": [
+                    "1.0 magnitude terrorize for 30s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Confused",
+                "Terrorized",
+                "Held",
+                "Immobilized",
+                "Stunned",
+                "Sleep"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% resistance to confuse, terrorize, hold, immobilize, stun, sleep for 30s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Confused",
+                "Terrorized",
+                "Held",
+                "Immobilized",
+                "Stunned",
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 0.5,
+                  "display_info": [
+                    "0.5 magnitude confuse, magnitude terrorize, magnitude hold, magnitude immobilize, magnitude stun, magnitude sleep for 30s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Healing_Dmg"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "healing": 0.08,
+                  "display_info": [
+                    "0.08 healing on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.075
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Healing_Dmg"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "healing": 0.08,
+                  "display_info": [
+                    "0.08 healing on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.075
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Martial_Manipulation.Throw_Sand",
+      "display_name": "Throw Sand",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e3/martialmanipulations_throwsand.png",
+      "display_help": "You grab some nearby debris and fling it towards a nearby foe, obstructing their vision and dazing them. Recharge: Long",
+      "display_short_help": "Ranged (Cone), Foe Stun, -Perception",
+      "display_info": {
+        "Activation Time": "1.07s",
+        "Recharge Time": "1m 30s",
+        "Attack Types": "Area",
+        "Target Type": "Enemies",
+        "Available Level": "35",
+        "Power Type": "Click",
+        "Power Range": "40 ft.",
+        "Endurance Cost": "20.18",
+        "Effect Area": "Cone — 40 ft. radius 45° arc (10 targets max)"
+      },
+      "attack_types": [
+        "Area_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance ToHit DeBuffs",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Debuff",
+        "Stuns",
+        "Accurate To-Hit Debuff"
+      ],
+      "available_at_level": 35,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 0.8,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 40.0,
+        "arc_degrees": 45.0,
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.07,
+        "animation_time": 1.07,
+        "animation_time_before_hit": 0.97,
+        "recharge_time": 90.0,
+        "endurance_cost": 20.18
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 9.54,
+                  "display_info": [
+                    "3.0 stun for 9.54s on target after 0.25s delay"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 8.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "PerceptionRadius"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -90.0,
+                  "display_info": [
+                    "-90.00% perception radius for 20s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 stun for 2s on target after 0.25s delay"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "PerceptionRadius"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -90.0,
+                  "display_info": [
+                    "-90.00% perception radius for 20s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.57,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 2.9,
+                  "display_info": [
+                    "2.90% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.57s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.029
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Martial_Manipulation.Eagles_Claw",
+      "display_name": "Eagles Claw",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/32/martialmanipulation_eaglesclaw.png",
+      "display_help": "You can perform a devastating kick that can severely Disorient most opponents. Eagle's Claw strikes so powerfully that it weakens your target's resolve, reducing their Range and Recharge for several seconds after attacking. Damage: Superior, Recharge: Slow",
+      "display_short_help": "Melee, Superior DMG(Smash), Foe Minor Disorient, +Special",
+      "display_info": {
+        "Power Type": "Click",
+        "Endurance Cost": "11.86",
+        "Power Range": "7 ft.",
+        "Activation Time": "2.53s",
+        "Attack Types": "Melee, Smashing",
+        "Available Level": "38",
+        "Recharge Time": "18s",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Melee Damage",
+        "Stuns",
+        "Blaster Archetype Sets"
+      ],
+      "available_at_level": 38,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.53,
+        "animation_time": 2.53,
+        "animation_time_before_hit": 1.3,
+        "recharge_time": 18.0,
+        "endurance_cost": 11.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 180.18,
+                  "average": 180.18,
+                  "per_activation": 71.22,
+                  "per_cast_cycle": 8.78,
+                  "display_info": [
+                    "180.18 smashing damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 3.24
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 4.77,
+                  "display_info": [
+                    "3.0 stun for 4.77s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 4.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 stun for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 197.67,
+                  "average": 197.67,
+                  "per_activation": 78.13,
+                  "per_cast_cycle": 9.63,
+                  "display_info": [
+                    "197.67 smashing damage on target"
+                  ],
+                  "base_value": -68.3828,
+                  "scale": 2.8907
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Range",
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -25.0,
+                  "display_info": [
+                    "-25.00% strength to range, recharge for 10s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.25
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.03,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 16.7,
+                  "display_info": [
+                    "16.70% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10.03s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.167
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,2894 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Mastermind_Summon.Demon_Summoning","display_name":"Demon Summoning","display_help":"Conjure demons from the depths of the netherworld and beyond. These demonic servitors wield hellfire and serve you through some dark compact. You are capable of summoning a variety of different infernal minions each with its own strengths and weaknesses.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d3/demonsummoning_corruption.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Mastermind_Summon.Demon_Summoning.Corruption","Mastermind_Summon.Demon_Summoning.Summon_Demonlings","Mastermind_Summon.Demon_Summoning.Lash","Mastermind_Summon.Demon_Summoning.Enchant_Demon","Mastermind_Summon.Demon_Summoning.Crack_Whip","Mastermind_Summon.Demon_Summoning.Summon_Demons","Mastermind_Summon.Demon_Summoning.Hell_on_Earth","Mastermind_Summon.Demon_Summoning.Summon_Demon_Prince","Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment"],"powers":[{"name":"Mastermind_Summon.Demon_Summoning.Corruption","display_name":"Corruption","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d3/demonsummoning_corruption.png","display_help":"You lash out with your whip, firing a bolt of hellfire and corrupting your victim's very living essence. This attack deals minor fire damage, causes minor toxic damage over time, and reduces their damage resistance for a short time. Damage: Minor, Recharge: Fast","display_short_help":"Ranged, Minor DMG(Fire), Foe Minor DoT (Toxic), -Res","display_info":{"Target Type":"Enemies","Recharge Time":"4s","Endurance Cost":"6.50","Available Level":"1","Effect Area":"Single Target","Activation Time":"1.23s","Power Type":"Click","Power Range":"80 ft.","Attack Types":"Ranged, Fire"},"attack_types":["Ranged_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Ranged Damage"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.23,"animation_time":1.23,"animation_time_before_hit":1.27,"recharge_time":4.0,"endurance_cost":6.5},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":23.25,"average":23.25,"per_activation":18.9,"per_cast_cycle":4.45,"display_info":["23.25 fire damage on target"],"base_value":-30.5856,"scale":0.76}]}]},{"visible_in_info_window":true,"chance_percent":80.0,"effects":[{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":4.59,"average":3.67,"per_activation":2.98,"per_cast_cycle":0.7,"display_info":["4 ticks of 4.59 toxic damage over 3.1s on target after 0.5s delay"],"base_value":-30.5856,"scale":0.15}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":-9.38,"display_info":["-9.38% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 5s on target","Ignores buffs and enhancements"],"base_value":0.075,"scale":-1.25}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":65.58,"average":65.58,"per_activation":53.32,"per_cast_cycle":12.54,"display_info":["65.58 fire damage on target"],"base_value":-46.1537,"scale":1.421}]}]}]},{"name":"Mastermind_Summon.Demon_Summoning.Summon_Demonlings","display_name":"Summon Demonlings","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/72/demonsummoning_summondemonlings.png","display_help":"Call forth up to three demonlings (depending on your level) to do your bidding. The first demonling is adept at manipulating fire, the second blasts your foes with cold attacks and the third is able to wield hellfire to deal fire/toxic damage. You may only have three demonlings under your command at any given time. If you attempt to summon more demonlings, you can only replace those that have been lost in battle. If you already have your maximum allowed amount, the power will fail. Recharge: Slow","display_short_help":"Summon Demonlings","display_info":{"Effect Area":"Location","Activation Time":"4s","Power Range":"60 ft.","Available Level":"1","Target Type":"Location","Endurance Cost":"19.50","Recharge Time":"1m 0s","Power Type":"Click"},"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Mastermind Archetype Sets","Pet Damage","Universal Damage Sets","Recharge Intensive Pets","Slow Movement"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":4.0,"animation_time":4.0,"animation_time_before_hit":0.03,"recharge_time":60.0,"endurance_cost":19.5},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":3.33,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Fiery_Demonling","display_name":"Fiery Demonling","powers":[{"name":"Mastermind_Pets.Fiery_Demonling.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling/"},{"name":"Mastermind_Pets.Fiery_Demonling.Flares","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling/"},{"name":"Mastermind_Pets.Fiery_Demonling.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling/"},{"name":"Mastermind_Pets.Fiery_Demonling.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source>combatlevel > 5"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":3.83,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Cold_Demonling","display_name":"Cold Demonling","powers":[{"name":"Mastermind_Pets.Cold_Demonling.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling/"},{"name":"Mastermind_Pets.Cold_Demonling.Ice_Bolt","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling/"},{"name":"Mastermind_Pets.Cold_Demonling.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling/"},{"name":"Mastermind_Pets.Cold_Demonling.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source>combatlevel > 17"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":4.33,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Hellfire_Demonling","display_name":"Hellfire Demonling","powers":[{"name":"Mastermind_Pets.Hellfire_Demonling.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling/"},{"name":"Mastermind_Pets.Hellfire_Demonling.Corruption","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling/"},{"name":"Mastermind_Pets.Hellfire_Demonling.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling/"},{"name":"Mastermind_Pets.Hellfire_Demonling.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling/"}]}}}]}]},{"name":"Mastermind_Summon.Demon_Summoning.Lash","display_name":"Lash","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d0/demonsummoning_lash.png","display_help":"You channel unholy energies into your whip and Lash out at your foe dealing high fire damage causing toxic damage over time. Lash has longer range than most melee attacks will reduce the target's damage resistance and also has a chance to knockdown your target. Damage: High, Recharge: Moderate","display_short_help":"Close, High DMG(Fire), Foe -Res, Knockdown, Minor DoT(Toxic)","display_info":{"Activation Time":"1.8s","Power Type":"Click","Endurance Cost":"10.66","Power Range":"20 ft.","Attack Types":"Melee, Fire","Recharge Time":"8s","Target Type":"Enemies","Effect Area":"Single Target","Available Level":"2"},"attack_types":["Melee_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Melee Damage","Knockback","Universal Damage Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":20.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.8,"animation_time":1.8,"animation_time_before_hit":0.97,"recharge_time":8.0,"endurance_cost":10.66},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":32.54,"average":32.54,"per_activation":18.08,"per_cast_cycle":3.32,"display_info":["32.54 fire damage on target"],"base_value":-30.5856,"scale":1.064}]}]},{"visible_in_info_window":true,"chance_percent":80.0,"effects":[{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":6.42,"average":5.14,"per_activation":2.86,"per_cast_cycle":0.52,"display_info":["4 ticks of 6.42 toxic damage over 3.1s on target after 0.5s delay"],"base_value":-30.5856,"scale":0.21}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":-9.38,"display_info":["-9.38% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 6s on target","Ignores buffs and enhancements"],"base_value":0.075,"scale":-1.25}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":40.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","magnitude":1.06,"display_info":["40.00% chance for 1.1 magnitude knock on target"],"base_value":1.6617,"scale":0.64}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":40.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","magnitude":1.06,"display_info":["40.00% chance for 1.1 magnitude knock on target"],"base_value":1.6617,"scale":0.64}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":91.38,"average":91.38,"per_activation":50.77,"per_cast_cycle":9.32,"display_info":["91.38 fire damage on target"],"base_value":-46.1537,"scale":1.98}]}]}]},{"name":"Mastermind_Summon.Demon_Summoning.Enchant_Demon","display_name":"Enchant Demon","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b6/demonsummoning_enchantdemon.png","display_help":"Enchant Demon will permanently bestow new powers and abilities to all of your Demon Henchman. The powers gained are unique and dependent upon the type of Demon Henchman that is Enchanted. Enchant Demon only works on your Demon Henchmen and you can only Enchant your Demon Henchmen once with this power. Recharge: Fast","display_short_help":"Ranged, Enchant Demon Henchman","display_info":{"Power Range":"50 ft.","Available Level":"6","Activation Time":"2.17s","Recharge Time":"6s","Endurance Cost":"22.75","Power Type":"Click","Effect Area":"AoE — 30 ft. radius (16 targets max)","Target Type":"Pet"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":30.0,"range_feet":50.0},"target_type_tags":["Pet","Owned"],"display_target_type":"Pet","target_auto_hit_tags":[["Pet","Owned"]],"display_target_auto_hit":["Pet"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.17,"animation_time":2.17,"animation_time_before_hit":2.0,"recharge_time":6.0,"endurance_cost":22.75},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Fiery_Demonling"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Fiery_Demonling_2.Fire_Blast","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Fiery_Demonling_2.Enchant_Demon","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling-2/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Cold_Demonling"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Cold_Demonling_2.Ice_Blast","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Cold_Demonling_2.Enchant_Demon","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling-2/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Hellfire_Demonling"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Hellfire_Demonling_2.Hellfire","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Hellfire_Demonling_2.Enchant_Demon","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling-2/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Hellfire_Gargoyle"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Hellfire_Gargoyle_2.Breath_of_Hellfire","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Hellfire_Gargoyle_2.Hellfire_Aura","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Hellfire_Gargoyle_2.Enchant_Demon","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle-2/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Ember_Demon"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Ember_Demon_2.Fire_Breath","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Ember_Demon_2.Abyssal_Mending","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Ember_Demon_2.Enchant_Demon","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon-2/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Demon_Prince"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Demon_Prince_2.Chilling_Embrace","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Demon_Prince_2.Ice_Sword","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Demon_Prince_2.Block_of_Ice","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Demon_Prince_2.Enchant_Demon","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-2/"}]}}}]}]},{"name":"Mastermind_Summon.Demon_Summoning.Crack_Whip","display_name":"Crack Whip","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/85/demonsummoning_crackwhip.png","display_help":"You channel hellfire into your whip and make an impressive sweep causing high fire damage to enemies within a wide cone and also cause some toxic damage over time. Whip Crack has a larger range than most melee cones. Targets that are struck will also have their resistance to damage reduced for a short time, may suffer toxic damage over time and may be knocked down. Damage: High, Recharge: Slow","display_short_help":"Short Ranged (Cone), High DMG(Fire), Foe -Res, Knockdown, DoT(Toxic)","display_info":{"Effect Area":"Cone — 30 ft. radius 30° arc (10 targets max)","Power Range":"30 ft.","Available Level":"8","Endurance Cost":"17.94","Target Type":"Enemies","Recharge Time":"15s","Attack Types":"Melee, Fire","Activation Time":"2.33s","Power Type":"Click"},"attack_types":["Melee_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Knockback","Universal Damage Sets","Targeted AoE Damage"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":30.0,"arc_degrees":30.0,"range_feet":30.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.33,"animation_time":2.33,"animation_time_before_hit":1.77,"recharge_time":15.0,"endurance_cost":17.94},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":34.56,"average":34.56,"per_activation":14.83,"per_cast_cycle":1.99,"display_info":["34.56 fire damage on target"],"base_value":-30.5856,"scale":1.13}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":64.94,"average":64.94,"per_activation":27.87,"per_cast_cycle":3.75,"display_info":["64.94 fire damage on target"],"base_value":-46.1537,"scale":1.407}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":25.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","magnitude":0.64,"display_info":["25.00% chance for 0.6 magnitude knock on target"],"base_value":1.0,"scale":0.64}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":25.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","magnitude":0.64,"display_info":["25.00% chance for 0.6 magnitude knock on target"],"base_value":1.0,"scale":0.64}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":-9.38,"display_info":["-9.38% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 6s on target","Ignores buffs and enhancements"],"base_value":0.075,"scale":-1.25}]}]},{"visible_in_info_window":true,"chance_percent":80.0,"effects":[{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":3,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":6.79,"average":5.43,"per_activation":2.33,"per_cast_cycle":0.31,"display_info":["3 ticks of 6.79 toxic damage over 2.1s on target after 0.5s delay"],"base_value":-30.5856,"scale":0.222}]}]}]},{"name":"Mastermind_Summon.Demon_Summoning.Summon_Demons","display_name":"Summon Demons","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b5/demonsummoning_summondemons.png","display_help":"Summons forth one to two Demons (depending on your level) to do your bidding. One is cloaked in hellfire and has skin as hard as stone while the other manipulates flame. You may only have 2 Demons under your control at any given time. If you attempt to call more Demons, you can only replace the ones you have lost in battle. If you already have your maximum allowed number, the power will fail. Recharge: Long","display_short_help":"Summon Demons","display_info":{"Endurance Cost":"19.50","Power Range":"60 ft.","Activation Time":"4s","Available Level":"12","Effect Area":"Location","Recharge Time":"1m 30s","Power Type":"Click","Target Type":"Location"},"enhancements_allowed":["Enhance Damage Resistance","Reduce Endurance Cost","Enhance KnockBack","Enhance Heal","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Knockback","Mastermind Archetype Sets","Resist Damage","Pet Damage","Healing","Recharge Intensive Pets"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":4.0,"animation_time":4.0,"animation_time_before_hit":0.03,"recharge_time":90.0,"endurance_cost":19.5},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":3.5,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Ember_Demon","display_name":"Ember Demon","powers":[{"name":"Mastermind_Pets.Ember_Demon.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon/"},{"name":"Mastermind_Pets.Ember_Demon.Fire_Blast","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon/"},{"name":"Mastermind_Pets.Ember_Demon.Shield_of_Hellfire","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon/"},{"name":"Mastermind_Pets.Ember_Demon.Ember_Shield_Owner","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon/"},{"name":"Mastermind_Pets.Ember_Demon.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source>combatlevel > 23"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":6.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Hellfire_Gargoyle","display_name":"Hellfire Gargoyle","powers":[{"name":"Mastermind_Pets.Hellfire_Gargoyle.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle/"},{"name":"Mastermind_Pets.Hellfire_Gargoyle.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle/"},{"name":"Mastermind_Pets.Hellfire_Gargoyle.Claw_Slash","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle/"},{"name":"Mastermind_Pets.Hellfire_Gargoyle.Corruption","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle/"},{"name":"Mastermind_Pets.Hellfire_Gargoyle.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle/"}]}}}]}]},{"name":"Mastermind_Summon.Demon_Summoning.Hell_on_Earth","display_name":"Hell on Earth","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/5a/demonsummoning_hellonearth.png","display_help":"A dark blessing is placed upon a selected Demon henchman which will increase its damage and chance to hit for 90 seconds. While this is in effect living hellfire may spawn every 15 seconds at the affected Demon henchman's location. The creatures summoned will have a very weak tie to the material plane and will return to Abyss after a short time. Recharge: Very Long","display_short_help":"Ranged, Pet +Dmg, +To Hit, Summon Living Hellfire","display_info":{"Endurance Cost":"16.25","Effect Area":"Single Target","Available Level":"18","Power Type":"Click","Recharge Time":"10m 0s","Activation Time":"4.03s","Target Type":"Pet","Power Range":"60 ft."},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance ToHit Buffs","Enhance Accuracy"],"enhancement_set_categories_allowed":["Recharge Intensive Pets","Mastermind Archetype Sets","Pet Damage","Universal Damage Sets"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Pet","Owned"],"display_target_type":"Pet","target_auto_hit_tags":[["Pet","Owned"]],"display_target_auto_hit":["Pet"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":4.03,"animation_time":4.03,"animation_time_before_hit":0.83,"recharge_time":600.0,"endurance_cost":16.25},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":90.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":7.5,"display_info":["7.50% to hit for 1m 30s on target","Unresistable"],"base_value":0.075,"scale":1.0}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":90.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":37.5,"display_info":["37.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 1m 30s on target","Ignores buffs and enhancements","Unresistable"],"base_value":0.075,"scale":5.0}]},{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":1.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Living_Hellfire","display_name":"Living Hellfire","powers":[{"name":"Mastermind_Pets.Living_Hellfire.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"}]}}},{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Living_Hellfire","display_name":"Living Hellfire","powers":[{"name":"Mastermind_Pets.Living_Hellfire.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"}]}}},{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":20.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Living_Hellfire","display_name":"Living Hellfire","powers":[{"name":"Mastermind_Pets.Living_Hellfire.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"}]}}},{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Living_Hellfire","display_name":"Living Hellfire","powers":[{"name":"Mastermind_Pets.Living_Hellfire.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"}]}}}]},{"visible_in_info_window":true,"chance_percent":95.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":40.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Living_Hellfire","display_name":"Living Hellfire","powers":[{"name":"Mastermind_Pets.Living_Hellfire.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"}]}}}]},{"visible_in_info_window":true,"chance_percent":90.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":50.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Living_Hellfire","display_name":"Living Hellfire","powers":[{"name":"Mastermind_Pets.Living_Hellfire.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"}]}}}]},{"visible_in_info_window":true,"chance_percent":85.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":60.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Living_Hellfire","display_name":"Living Hellfire","powers":[{"name":"Mastermind_Pets.Living_Hellfire.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"}]}}}]},{"visible_in_info_window":true,"chance_percent":80.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":70.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Living_Hellfire","display_name":"Living Hellfire","powers":[{"name":"Mastermind_Pets.Living_Hellfire.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"}]}}}]},{"visible_in_info_window":true,"chance_percent":75.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":80.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Living_Hellfire","display_name":"Living Hellfire","powers":[{"name":"Mastermind_Pets.Living_Hellfire.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"}]}}}]},{"visible_in_info_window":true,"chance_percent":70.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":90.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Living_Hellfire","display_name":"Living Hellfire","powers":[{"name":"Mastermind_Pets.Living_Hellfire.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"},{"name":"Mastermind_Pets.Living_Hellfire.Claw_Rake","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"}]}}}]}]},{"name":"Mastermind_Summon.Demon_Summoning.Summon_Demon_Prince","display_name":"Summon Demon Prince","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e7/demonsummoning_summondemonprince.png","display_help":"Summons forth a foul Demon Prince from the deepest reaches of the Abyss. The Demon Prince is mighty among its kind and is a master of cold powers. It serves the conjuror only so that it may wreak havoc upon the material plane.The Demon has some defense versus lethal, smashing, fire and cold attacks.You may only have 1 Demon Prince under your control at any given time. If you attempt to summon another Demon Prince the power will fail. Recharge: Long","display_short_help":"Summon Demon Prince","display_info":{"Activation Time":"4s","Recharge Time":"2m 0s","Endurance Cost":"19.50","Available Level":"26","Power Type":"Click","Target Type":"Location","Power Range":"60 ft.","Effect Area":"Location"},"enhancements_allowed":["Enhance Hold","Enhance Slow Movement","Reduce Endurance Cost","Enhance Sleep","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Holds","Sleep","Recharge Intensive Pets","Pet Damage","Mastermind Archetype Sets","Universal Damage Sets","Slow Movement"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":4.0,"animation_time":4.0,"animation_time_before_hit":0.03,"recharge_time":120.0,"endurance_cost":19.5},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":3.33,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Demon_Prince","display_name":"Demon Prince","powers":[{"name":"Mastermind_Pets.Demon_Prince.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince/"},{"name":"Mastermind_Pets.Demon_Prince.Ice_Blast","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince/"},{"name":"Mastermind_Pets.Demon_Prince.Shiver","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince/"},{"name":"Mastermind_Pets.Demon_Prince.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince/"}]}}}]}]},{"name":"Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment","display_name":"Abyssal Empowerment","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/c8/demonsummoning_abyssalempowerment.png","display_help":"Abyssal Empowerment will permanently unseal the most powerful powers in your Demon Henchmen's infernal repertoire. The Empowered Demons will gain new abilities and powers. The powers gained are unique and dependent upon the type of Demon Henchman that is Empowered. Abyssal Empowerment only works on your Demon Henchmen and you can only Empower your Demon Henchmen once with this power. Recharge: Moderate","display_short_help":"Ranged, Empower Demon Henchman","display_info":{"Target Type":"Pet","Endurance Cost":"22.75","Power Type":"Click","Activation Time":"2.07s","Power Range":"30 ft.","Recharge Time":"10s","Available Level":"32","Effect Area":"AoE — 30 ft. radius (16 targets max)"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":30.0,"range_feet":30.0},"target_type_tags":["Pet","Owned"],"display_target_type":"Pet","target_auto_hit_tags":[["Pet","Owned"]],"display_target_auto_hit":["Pet"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.07,"animation_time":2.07,"animation_time_before_hit":2.0,"recharge_time":10.0,"endurance_cost":22.75},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Fiery_Demonling"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Fiery_Demonling_3.Fire_Breath","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Fiery_Demonling_3.Abyssal_Empowerment","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling-3/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Cold_Demonling"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Cold_Demonling_3.Frost_Breath","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Cold_Demonling_3.Abyssal_Empowerment","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling-3/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Hellfire_Demonling"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Hellfire_Demonling_3.Hellfire_Breath","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Hellfire_Demonling_3.Abyssal_Empowerment","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling-3/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Hellfire_Gargoyle"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Hellfire_Gargoyle_3.Hellfire_Smash","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Hellfire_Gargoyle_3.Hellfire_Burst","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Hellfire_Gargoyle_3.Abyssal_Empowerment","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle-3/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Ember_Demon"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Ember_Demon_3.Fire_Ball","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Ember_Demon_3.Abyssal_Reconstruction","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Ember_Demon_3.Abyssal_Empowerment","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon-3/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Demon_Prince"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Demon_Prince_3.Ice_Slash","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Demon_Prince_3.Frozen_Aura","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Demon_Prince_3.Abyssal_Empowerment","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-3/"}]}}}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Mastermind_Summon.Demon_Summoning",
+  "display_name": "Demon Summoning",
+  "display_help": "Conjure demons from the depths of the netherworld and beyond. These demonic servitors wield hellfire and serve you through some dark compact. You are capable of summoning a variety of different infernal minions each with its own strengths and weaknesses.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d3/demonsummoning_corruption.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Mastermind_Summon.Demon_Summoning.Corruption",
+    "Mastermind_Summon.Demon_Summoning.Summon_Demonlings",
+    "Mastermind_Summon.Demon_Summoning.Lash",
+    "Mastermind_Summon.Demon_Summoning.Enchant_Demon",
+    "Mastermind_Summon.Demon_Summoning.Crack_Whip",
+    "Mastermind_Summon.Demon_Summoning.Summon_Demons",
+    "Mastermind_Summon.Demon_Summoning.Hell_on_Earth",
+    "Mastermind_Summon.Demon_Summoning.Summon_Demon_Prince",
+    "Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment"
+  ],
+  "powers": [
+    {
+      "name": "Mastermind_Summon.Demon_Summoning.Corruption",
+      "display_name": "Corruption",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d3/demonsummoning_corruption.png",
+      "display_help": "You lash out with your whip, firing a bolt of hellfire and corrupting your victim's very living essence. This attack deals minor fire damage, causes minor toxic damage over time, and reduces their damage resistance for a short time. Damage: Minor, Recharge: Fast",
+      "display_short_help": "Ranged, Minor DMG(Fire), Foe Minor DoT (Toxic), -Res",
+      "display_info": {
+        "Endurance Cost": "6.50",
+        "Available Level": "1",
+        "Effect Area": "Single Target",
+        "Recharge Time": "4s",
+        "Power Range": "80 ft.",
+        "Activation Time": "1.23s",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Attack Types": "Ranged, Fire"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Ranged Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.23,
+        "animation_time": 1.23,
+        "animation_time_before_hit": 1.27,
+        "recharge_time": 4.0,
+        "endurance_cost": 6.5
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 23.25,
+                  "average": 23.25,
+                  "per_activation": 18.9,
+                  "per_cast_cycle": 4.45,
+                  "display_info": [
+                    "23.25 fire damage on target"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 0.76
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 80.0,
+          "effects": [
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 4.59,
+                  "average": 3.67,
+                  "per_activation": 2.98,
+                  "per_cast_cycle": 0.7,
+                  "display_info": [
+                    "4 ticks of 4.59 toxic damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 0.15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": -9.38,
+                  "display_info": [
+                    "-9.38% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 5s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 0.075,
+                  "scale": -1.25
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 65.58,
+                  "average": 65.58,
+                  "per_activation": 53.32,
+                  "per_cast_cycle": 12.54,
+                  "display_info": [
+                    "65.58 fire damage on target"
+                  ],
+                  "base_value": -46.1537,
+                  "scale": 1.421
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Demon_Summoning.Summon_Demonlings",
+      "display_name": "Summon Demonlings",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/72/demonsummoning_summondemonlings.png",
+      "display_help": "Call forth up to three demonlings (depending on your level) to do your bidding. The first demonling is adept at manipulating fire, the second blasts your foes with cold attacks and the third is able to wield hellfire to deal fire/toxic damage. You may only have three demonlings under your command at any given time. If you attempt to summon more demonlings, you can only replace those that have been lost in battle. If you already have your maximum allowed amount, the power will fail. Recharge: Slow",
+      "display_short_help": "Summon Demonlings",
+      "display_info": {
+        "Activation Time": "4s",
+        "Effect Area": "Location",
+        "Target Type": "Location",
+        "Power Type": "Click",
+        "Power Range": "60 ft.",
+        "Endurance Cost": "19.50",
+        "Available Level": "1",
+        "Recharge Time": "1m 0s"
+      },
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Slow Movement",
+        "Recharge Intensive Pets",
+        "Universal Damage Sets",
+        "Pet Damage",
+        "Mastermind Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 4.0,
+        "animation_time": 4.0,
+        "animation_time_before_hit": 0.03,
+        "recharge_time": 60.0,
+        "endurance_cost": 19.5
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 3.33,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Fiery_Demonling",
+                  "display_name": "Fiery Demonling",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Fiery_Demonling.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Fiery_Demonling.Flares",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Fiery_Demonling.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Fiery_Demonling.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source>combatlevel > 5"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 3.83,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Cold_Demonling",
+                  "display_name": "Cold Demonling",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Cold_Demonling.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Cold_Demonling.Ice_Bolt",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Cold_Demonling.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Cold_Demonling.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source>combatlevel > 17"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 4.33,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Hellfire_Demonling",
+                  "display_name": "Hellfire Demonling",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Demonling.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Demonling.Corruption",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Demonling.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Demonling.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Demon_Summoning.Lash",
+      "display_name": "Lash",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d0/demonsummoning_lash.png",
+      "display_help": "You channel unholy energies into your whip and Lash out at your foe dealing high fire damage causing toxic damage over time. Lash has longer range than most melee attacks will reduce the target's damage resistance and also has a chance to knockdown your target. Damage: High, Recharge: Moderate",
+      "display_short_help": "Close, High DMG(Fire), Foe -Res, Knockdown, Minor DoT(Toxic)",
+      "display_info": {
+        "Recharge Time": "8s",
+        "Available Level": "2",
+        "Power Type": "Click",
+        "Effect Area": "Single Target",
+        "Power Range": "20 ft.",
+        "Endurance Cost": "10.66",
+        "Activation Time": "1.8s",
+        "Target Type": "Enemies",
+        "Attack Types": "Melee, Fire"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "Universal Damage Sets",
+        "Knockback"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 20.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.8,
+        "animation_time": 1.8,
+        "animation_time_before_hit": 0.97,
+        "recharge_time": 8.0,
+        "endurance_cost": 10.66
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 32.54,
+                  "average": 32.54,
+                  "per_activation": 18.08,
+                  "per_cast_cycle": 3.32,
+                  "display_info": [
+                    "32.54 fire damage on target"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 1.064
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 80.0,
+          "effects": [
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 6.42,
+                  "average": 5.14,
+                  "per_activation": 2.86,
+                  "per_cast_cycle": 0.52,
+                  "display_info": [
+                    "4 ticks of 6.42 toxic damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 0.21
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": -9.38,
+                  "display_info": [
+                    "-9.38% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 6s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 0.075,
+                  "scale": -1.25
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 40.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "magnitude": 1.06,
+                  "display_info": [
+                    "40.00% chance for 1.1 magnitude knock on target"
+                  ],
+                  "base_value": 1.6617,
+                  "scale": 0.64
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 40.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "magnitude": 1.06,
+                  "display_info": [
+                    "40.00% chance for 1.1 magnitude knock on target"
+                  ],
+                  "base_value": 1.6617,
+                  "scale": 0.64
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 91.38,
+                  "average": 91.38,
+                  "per_activation": 50.77,
+                  "per_cast_cycle": 9.32,
+                  "display_info": [
+                    "91.38 fire damage on target"
+                  ],
+                  "base_value": -46.1537,
+                  "scale": 1.98
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Demon_Summoning.Enchant_Demon",
+      "display_name": "Enchant Demon",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b6/demonsummoning_enchantdemon.png",
+      "display_help": "Enchant Demon will permanently bestow new powers and abilities to all of your Demon Henchman. The powers gained are unique and dependent upon the type of Demon Henchman that is Enchanted. Enchant Demon only works on your Demon Henchmen and you can only Enchant your Demon Henchmen once with this power. Recharge: Fast",
+      "display_short_help": "Ranged, Enchant Demon Henchman",
+      "display_info": {
+        "Power Type": "Click",
+        "Effect Area": "AoE — 30 ft. radius (16 targets max)",
+        "Recharge Time": "6s",
+        "Target Type": "Pet",
+        "Activation Time": "2.17s",
+        "Endurance Cost": "22.75",
+        "Available Level": "6",
+        "Power Range": "50 ft."
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 30.0,
+        "range_feet": 50.0
+      },
+      "target_type_tags": [
+        "Pet",
+        "Owned"
+      ],
+      "display_target_type": "Pet",
+      "target_auto_hit_tags": [
+        [
+          "Pet",
+          "Owned"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Pet"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.17,
+        "animation_time": 2.17,
+        "animation_time_before_hit": 2.0,
+        "recharge_time": 6.0,
+        "endurance_cost": 22.75
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Fiery_Demonling"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Fiery_Demonling_2.Fire_Blast",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Fiery_Demonling_2.Enchant_Demon",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Cold_Demonling"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Cold_Demonling_2.Ice_Blast",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Cold_Demonling_2.Enchant_Demon",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Hellfire_Demonling"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Demonling_2.Hellfire",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Demonling_2.Enchant_Demon",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Hellfire_Gargoyle"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Gargoyle_2.Breath_of_Hellfire",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Gargoyle_2.Hellfire_Aura",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Gargoyle_2.Enchant_Demon",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Ember_Demon"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Ember_Demon_2.Fire_Breath",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Ember_Demon_2.Abyssal_Mending",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Ember_Demon_2.Enchant_Demon",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Demon_Prince"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Demon_Prince_2.Chilling_Embrace",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Demon_Prince_2.Ice_Sword",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Demon_Prince_2.Block_of_Ice",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Demon_Prince_2.Enchant_Demon",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Demon_Summoning.Crack_Whip",
+      "display_name": "Crack Whip",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/85/demonsummoning_crackwhip.png",
+      "display_help": "You channel hellfire into your whip and make an impressive sweep causing high fire damage to enemies within a wide cone and also cause some toxic damage over time. Whip Crack has a larger range than most melee cones. Targets that are struck will also have their resistance to damage reduced for a short time, may suffer toxic damage over time and may be knocked down. Damage: High, Recharge: Slow",
+      "display_short_help": "Short Ranged (Cone), High DMG(Fire), Foe -Res, Knockdown, DoT(Toxic)",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Activation Time": "2.33s",
+        "Available Level": "8",
+        "Power Type": "Click",
+        "Attack Types": "Melee, Fire",
+        "Effect Area": "Cone — 30 ft. radius 30° arc (10 targets max)",
+        "Power Range": "30 ft.",
+        "Recharge Time": "15s",
+        "Endurance Cost": "17.94"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Targeted AoE Damage",
+        "Universal Damage Sets",
+        "Knockback"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 30.0,
+        "arc_degrees": 30.0,
+        "range_feet": 30.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.33,
+        "animation_time": 2.33,
+        "animation_time_before_hit": 1.77,
+        "recharge_time": 15.0,
+        "endurance_cost": 17.94
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 34.56,
+                  "average": 34.56,
+                  "per_activation": 14.83,
+                  "per_cast_cycle": 1.99,
+                  "display_info": [
+                    "34.56 fire damage on target"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 1.13
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 64.94,
+                  "average": 64.94,
+                  "per_activation": 27.87,
+                  "per_cast_cycle": 3.75,
+                  "display_info": [
+                    "64.94 fire damage on target"
+                  ],
+                  "base_value": -46.1537,
+                  "scale": 1.407
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 25.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "magnitude": 0.64,
+                  "display_info": [
+                    "25.00% chance for 0.6 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.64
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 25.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "magnitude": 0.64,
+                  "display_info": [
+                    "25.00% chance for 0.6 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.64
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": -9.38,
+                  "display_info": [
+                    "-9.38% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 6s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 0.075,
+                  "scale": -1.25
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 80.0,
+          "effects": [
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 3,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 6.79,
+                  "average": 5.43,
+                  "per_activation": 2.33,
+                  "per_cast_cycle": 0.31,
+                  "display_info": [
+                    "3 ticks of 6.79 toxic damage over 2.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 0.222
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Demon_Summoning.Summon_Demons",
+      "display_name": "Summon Demons",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b5/demonsummoning_summondemons.png",
+      "display_help": "Summons forth one to two Demons (depending on your level) to do your bidding. One is cloaked in hellfire and has skin as hard as stone while the other manipulates flame. You may only have 2 Demons under your control at any given time. If you attempt to call more Demons, you can only replace the ones you have lost in battle. If you already have your maximum allowed number, the power will fail. Recharge: Long",
+      "display_short_help": "Summon Demons",
+      "display_info": {
+        "Power Type": "Click",
+        "Effect Area": "Location",
+        "Activation Time": "4s",
+        "Target Type": "Location",
+        "Recharge Time": "1m 30s",
+        "Endurance Cost": "19.50",
+        "Available Level": "12",
+        "Power Range": "60 ft."
+      },
+      "enhancements_allowed": [
+        "Enhance Damage Resistance",
+        "Reduce Endurance Cost",
+        "Enhance KnockBack",
+        "Enhance Heal",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Resist Damage",
+        "Knockback",
+        "Healing",
+        "Pet Damage",
+        "Mastermind Archetype Sets",
+        "Universal Damage Sets",
+        "Recharge Intensive Pets"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 4.0,
+        "animation_time": 4.0,
+        "animation_time_before_hit": 0.03,
+        "recharge_time": 90.0,
+        "endurance_cost": 19.5
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 3.5,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Ember_Demon",
+                  "display_name": "Ember Demon",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Ember_Demon.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ember_Demon.Fire_Blast",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ember_Demon.Shield_of_Hellfire",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ember_Demon.Ember_Shield_Owner",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ember_Demon.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source>combatlevel > 23"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 6.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Hellfire_Gargoyle",
+                  "display_name": "Hellfire Gargoyle",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Gargoyle.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Gargoyle.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Gargoyle.Claw_Slash",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Gargoyle.Corruption",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Gargoyle.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Demon_Summoning.Hell_on_Earth",
+      "display_name": "Hell on Earth",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/5a/demonsummoning_hellonearth.png",
+      "display_help": "A dark blessing is placed upon a selected Demon henchman which will increase its damage and chance to hit for 90 seconds. While this is in effect living hellfire may spawn every 15 seconds at the affected Demon henchman's location. The creatures summoned will have a very weak tie to the material plane and will return to Abyss after a short time. Recharge: Very Long",
+      "display_short_help": "Ranged, Pet +Dmg, +To Hit, Summon Living Hellfire",
+      "display_info": {
+        "Endurance Cost": "16.25",
+        "Power Type": "Click",
+        "Recharge Time": "10m 0s",
+        "Activation Time": "4.03s",
+        "Available Level": "18",
+        "Target Type": "Pet",
+        "Power Range": "60 ft.",
+        "Effect Area": "Single Target"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance ToHit Buffs",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Recharge Intensive Pets",
+        "Mastermind Archetype Sets",
+        "Universal Damage Sets",
+        "Pet Damage"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Pet",
+        "Owned"
+      ],
+      "display_target_type": "Pet",
+      "target_auto_hit_tags": [
+        [
+          "Pet",
+          "Owned"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Pet"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 4.03,
+        "animation_time": 4.03,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 600.0,
+        "endurance_cost": 16.25
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 90.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": 7.5,
+                  "display_info": [
+                    "7.50% to hit for 1m 30s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 90.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": 37.5,
+                  "display_info": [
+                    "37.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 1m 30s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 5.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 1.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Living_Hellfire",
+                  "display_name": "Living Hellfire",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Living_Hellfire",
+                  "display_name": "Living Hellfire",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 20.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Living_Hellfire",
+                  "display_name": "Living Hellfire",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Living_Hellfire",
+                  "display_name": "Living Hellfire",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 95.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 40.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Living_Hellfire",
+                  "display_name": "Living Hellfire",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 90.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 50.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Living_Hellfire",
+                  "display_name": "Living Hellfire",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 85.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 60.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Living_Hellfire",
+                  "display_name": "Living Hellfire",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 80.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 70.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Living_Hellfire",
+                  "display_name": "Living Hellfire",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 75.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 80.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Living_Hellfire",
+                  "display_name": "Living Hellfire",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 70.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 90.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Living_Hellfire",
+                  "display_name": "Living Hellfire",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Living_Hellfire.Claw_Rake",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/living-hellfire/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Demon_Summoning.Summon_Demon_Prince",
+      "display_name": "Summon Demon Prince",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e7/demonsummoning_summondemonprince.png",
+      "display_help": "Summons forth a foul Demon Prince from the deepest reaches of the Abyss. The Demon Prince is mighty among its kind and is a master of cold powers. It serves the conjuror only so that it may wreak havoc upon the material plane.The Demon has some defense versus lethal, smashing, fire and cold attacks.You may only have 1 Demon Prince under your control at any given time. If you attempt to summon another Demon Prince the power will fail. Recharge: Long",
+      "display_short_help": "Summon Demon Prince",
+      "display_info": {
+        "Activation Time": "4s",
+        "Recharge Time": "2m 0s",
+        "Power Range": "60 ft.",
+        "Effect Area": "Location",
+        "Available Level": "26",
+        "Endurance Cost": "19.50",
+        "Target Type": "Location",
+        "Power Type": "Click"
+      },
+      "enhancements_allowed": [
+        "Enhance Hold",
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Sleep",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Holds",
+        "Slow Movement",
+        "Mastermind Archetype Sets",
+        "Universal Damage Sets",
+        "Recharge Intensive Pets",
+        "Pet Damage",
+        "Sleep"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 4.0,
+        "animation_time": 4.0,
+        "animation_time_before_hit": 0.03,
+        "recharge_time": 120.0,
+        "endurance_cost": 19.5
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 3.33,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Demon_Prince",
+                  "display_name": "Demon Prince",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Demon_Prince.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Demon_Prince.Ice_Blast",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Demon_Prince.Shiver",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Demon_Prince.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment",
+      "display_name": "Abyssal Empowerment",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/c8/demonsummoning_abyssalempowerment.png",
+      "display_help": "Abyssal Empowerment will permanently unseal the most powerful powers in your Demon Henchmen's infernal repertoire. The Empowered Demons will gain new abilities and powers. The powers gained are unique and dependent upon the type of Demon Henchman that is Empowered. Abyssal Empowerment only works on your Demon Henchmen and you can only Empower your Demon Henchmen once with this power. Recharge: Moderate",
+      "display_short_help": "Ranged, Empower Demon Henchman",
+      "display_info": {
+        "Target Type": "Pet",
+        "Effect Area": "AoE — 30 ft. radius (16 targets max)",
+        "Power Type": "Click",
+        "Activation Time": "2.07s",
+        "Endurance Cost": "22.75",
+        "Recharge Time": "10s",
+        "Available Level": "32",
+        "Power Range": "30 ft."
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 30.0,
+        "range_feet": 30.0
+      },
+      "target_type_tags": [
+        "Pet",
+        "Owned"
+      ],
+      "display_target_type": "Pet",
+      "target_auto_hit_tags": [
+        [
+          "Pet",
+          "Owned"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Pet"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.07,
+        "animation_time": 2.07,
+        "animation_time_before_hit": 2.0,
+        "recharge_time": 10.0,
+        "endurance_cost": 22.75
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Fiery_Demonling"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Fiery_Demonling_3.Fire_Breath",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Fiery_Demonling_3.Abyssal_Empowerment",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/fiery-demonling-3/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Cold_Demonling"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Cold_Demonling_3.Frost_Breath",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Cold_Demonling_3.Abyssal_Empowerment",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/cold-demonling-3/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Hellfire_Demonling"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Demonling_3.Hellfire_Breath",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Demonling_3.Abyssal_Empowerment",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-demonling-3/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Hellfire_Gargoyle"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Gargoyle_3.Hellfire_Smash",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Gargoyle_3.Hellfire_Burst",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Hellfire_Gargoyle_3.Abyssal_Empowerment",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/hellfire-gargoyle-3/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Ember_Demon"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Ember_Demon_3.Fire_Ball",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Ember_Demon_3.Abyssal_Reconstruction",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Ember_Demon_3.Abyssal_Empowerment",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ember-demon-3/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Demon_Prince"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Demon_Prince_3.Ice_Slash",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Demon_Prince_3.Frozen_Aura",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Demon_Prince_3.Abyssal_Empowerment",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/demon-prince-3/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

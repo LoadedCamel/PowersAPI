@@ -1,1 +1,2413 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Brute_Defense.Shield_Defense","display_name":"Shield Defense","display_help":"Your mastery over the shield protects you from all forms of attacks in the form of defense as well as some moderate damage resistance to most types of damage. Your training with the shield enables you to protect your nearby allies boosting their defenses.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/aa/shielddefense_activedefense.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Brute_Defense.Shield_Defense.Active_Defense","Brute_Defense.Shield_Defense.Deflection","Brute_Defense.Shield_Defense.True_Grit","Brute_Defense.Shield_Defense.Battle_Agility","Brute_Defense.Shield_Defense.Against_all_Odds","Brute_Defense.Shield_Defense.Phalanx_Fighting","Brute_Defense.Shield_Defense.Grant_Cover","Brute_Defense.Shield_Defense.Shield_Charge","Brute_Defense.Shield_Defense.One_with_the_Shield"],"powers":[{"name":"Brute_Defense.Shield_Defense.Active_Defense","display_name":"Deflection","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/aa/shielddefense_activedefense.png","display_help":"Your mastery of the shield allows you to easily deflect melee attacks, and attacks that do get through your ironclad defenses tend to do less damage. While Deflection is active the user will gain defense to melee attacks and some minor resistance to lethal and smashing damage. Deflection also adds Psionic Defense and an Elusivity defense bonus to Psionic and Melee Attacks in PVP zones. Recharge: Fast","display_short_help":"Toggle: Self +DEF(Melee), +Res(Lethal, Smashing)","display_info":{"Effect Area":"Single Target","Activation Time":"1.5s","Available Level":"1","Endurance Cost":"0.20/s","Recharge Time":"4s","Power Type":"Toggle","Target Type":"Self"},"requires":"!(((((Brute_Melee.Dual_Blades || Brute_Melee.Claws) || Brute_Melee.Staff_Fighting) || Brute_Melee.Katana) || Brute_Melee.Titan_Weapons) || Brute_Melee.Spines)","enhancements_allowed":["Enhance Damage Resistance","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense"],"enhancement_set_categories_allowed":["Defense Sets","Resist Damage"],"available_at_level":1,"auto_issue":false,"power_type":"Toggle","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"status_interaction":{"cast_through":["Sleep","Stun"],"toggle_ignores":["Hold"]},"activate":{"cast_time":1.5,"animation_time":1.5,"animation_time_before_hit":0.5,"recharge_time":4.0,"auto_cast_interval":0.5,"endurance_cost":0.1},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["!isPVPMap?()"],"effects":[{"attributes":["Melee_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":11.25,"display_info":["11.25% strength to melee for 0.75s on self","Unresistable"],"base_value":0.075,"scale":1.5}]},{"attributes":["Smashing_Dmg","Lethal_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":11.25,"display_info":["11.25% resistance to smashing damage, lethal damage for 0.75s on self","Unresistable"],"base_value":0.075,"scale":1.5}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["isPVPMap?()"],"effects":[{"attributes":["Melee_Def","Psionic_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":11.25,"display_info":["11.25% strength to melee, psionic for 0.75s on self","Unresistable"],"base_value":0.075,"scale":1.5}]},{"attributes":["Smashing_Dmg","Lethal_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":11.25,"display_info":["11.25% resistance to smashing damage, lethal damage for 0.75s on self","Unresistable"],"base_value":0.075,"scale":1.5}]},{"attributes":["Melee_Elusivity","Psionic_Elusivity"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":10.0,"display_info":["10.00% strength to melee, psionic for 0.75s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.1}]}]}]},{"name":"Brute_Defense.Shield_Defense.Deflection","display_name":"Battle Agility","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/90/shielddefense_deflection.png","display_help":"Your incredible agility allows you to position your shield to protect yourself from incoming ranged damage. While Battle Agility is active you will benefit from increased Ranged and AoE defense as well as some moderate protection from Defense Debuffs. Battle Agility also adds an Elusivity defense bonus to Ranged and AOE Attacks in PVP zones. Recharge: Fast","display_short_help":"Toggle: Self +DEF(Ranged, AoE), +Res(Defense Debuff)","display_info":{"Target Type":"Self","Effect Area":"Single Target","Endurance Cost":"0.20/s","Available Level":"2","Recharge Time":"4s","Power Type":"Toggle","Activation Time":"1.5s"},"requires":"!(((((Brute_Melee.Dual_Blades || Brute_Melee.Claws) || Brute_Melee.Staff_Fighting) || Brute_Melee.Katana) || Brute_Melee.Titan_Weapons) || Brute_Melee.Spines)","enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense"],"enhancement_set_categories_allowed":["Defense Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Toggle","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"status_interaction":{"cast_through":["Sleep","Stun"],"toggle_ignores":["Hold"]},"activate":{"cast_time":1.5,"animation_time":1.5,"animation_time_before_hit":0.5,"recharge_time":4.0,"auto_cast_interval":0.5,"endurance_cost":0.1},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["!isPVPMap?()"],"effects":[{"attributes":["Ranged_Def","Area_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":11.25,"display_info":["11.25% strength to ranged, AoE for 0.75s on self","Unresistable"],"base_value":0.075,"scale":1.5}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["isPVPMap?()"],"effects":[{"attributes":["Ranged_Def","Area_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":11.25,"display_info":["11.25% strength to ranged, AoE for 0.75s on self","Unresistable"],"base_value":0.075,"scale":1.5}]},{"attributes":["Ranged_Elusivity","Area_Elusivity"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":10.0,"display_info":["10.00% strength to ranged, AoE for 0.75s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.1}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":13.84,"display_info":["13.84% resistance to defense debuff for 0.75s on self","Unresistable"],"base_value":0.346,"scale":0.4}]}]}]},{"name":"Brute_Defense.Shield_Defense.True_Grit","display_name":"True Grit","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/04/shielddefense_truegrit.png","display_help":"Your intense training has left you tougher than even the hardiest of heroes. You gain additional hit points and resistance to fire, cold, energy, negative energy and toxic damage sources. This power is always on and costs no Endurance.","display_short_help":"Auto: Self +Res (Cold, Energy, Fire, Negative Energy, Toxic), +MaxHealth","display_info":{"Available Level":"4","Effect Area":"Single Target","Power Type":"Auto","Target Type":"Self"},"enhancements_allowed":["Enhance Damage Resistance","Enhance Heal"],"enhancement_set_categories_allowed":["Healing","Resist Damage"],"available_at_level":4,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"auto_cast_interval":10.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["HitPoints"],"applies_to":"MaxValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","healing":149.93,"display_info":["149.93 hit points for 10.25s on self","Unresistable"],"base_value":149.9255,"scale":1.0}]},{"attributes":["Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":11.25,"display_info":["11.25% resistance to fire damage, cold damage, energy damage, negative energy damage, toxic damage for 10.25s on self","Unresistable"],"base_value":0.075,"scale":1.5}]}]}]},{"name":"Brute_Defense.Shield_Defense.Battle_Agility","display_name":"Active Defense","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/a1/shielddefense_battleagility.png","display_help":"When you activate this power, it grants protection from Sleep, Disorient, Fear, Immobilize, Confusion, Repel, Knockback, Hold and Defense Debuff effects for a short duration. Recharge: Long","display_short_help":"Self Res (Disorient, Hold, Immobilize, Sleep, Fear, Confuse, Repel, Knockback, Defense Debuff)","display_info":{"Target Type":"Self","Effect Area":"Single Target","Available Level":"10","Power Type":"Click","Endurance Cost":"10.40","Activation Time":"1.5s","Recharge Time":"3m 20s"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed"],"available_at_level":10,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"status_interaction":{"cast_through":["Hold","Sleep","Stun","Terrorize"]},"activate":{"cast_time":1.5,"animation_time":1.5,"animation_time_before_hit":0.67,"recharge_time":200.0,"endurance_cost":10.4},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["!isPVPMap?()"],"effects":[{"attributes":["Confused","Terrorized","Held","Stunned","Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":-10.38,"display_info":["-10.4 confuse protection, terrorize protection, hold protection, stun protection, sleep protection for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.346,"scale":-30.0}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":-10.38,"display_info":["-10.4 immobilize protection for 2m 0s on self","Unresistable"],"base_value":0.346,"scale":-30.0}]},{"attributes":["Knockup","Knockback","Repel"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":10000.0,"display_info":["10000.00% resistance to knockup, knock, repel for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":100.0}]},{"attributes":["Knockup","Knockback","Repel"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":-10.0,"display_info":["-10.0 knockup protection, knock protection, repel protection for 2m 0s on self","Unresistable"],"base_value":1.0,"scale":-10.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["isPVPMap?()"],"effects":[{"attributes":["Confused","Terrorized","Held","Immobilized","Stunned","Sleep"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":103.8,"display_info":["103.80% resistance to confuse, terrorize, hold, immobilize, stun, sleep for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.346,"scale":3.0}]},{"attributes":["Knockup","Knockback","Repel"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":10000.0,"display_info":["10000.00% resistance to knockup, knock, repel for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":100.0}]},{"attributes":["Knockup","Knockback","Repel"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":-10.0,"display_info":["-10.0 knockup protection, knock protection, repel protection for 2m 0s on self","Unresistable"],"base_value":1.0,"scale":-10.0}]},{"attributes":["Defense","ToHit","RechargeTime"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":30.0,"display_info":["30.00% resistance to defense debuff, to hit debuff, recharge debuff for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.3}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed","JumpHeight"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":50.0,"display_info":["50.00% resistance to run speed debuff, fly speed debuff, jump speed debuff, jump height debuff for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.5}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":17.3,"display_info":["17.30% resistance to defense debuff for 2m 0s on self","Unresistable"],"base_value":0.346,"scale":0.5}]}]}]},{"name":"Brute_Defense.Shield_Defense.Against_all_Odds","display_name":"Against All Odds","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/f3/shielddefense_againstallodds.png","display_help":"The harder pressed you are in combat the greater your offensive abilities become. Each enemy that stands toe-to-toe with you in combat will grant you a damage bonus. The first foe you engage in melee grants the highest damage bonus, and up to 10 foes can contribute to this effect. Each foe in melee range also suffers from reduced damage as your shield deflects a portion of their damage. Recharge: Moderate","display_short_help":"Toggle: Self +DMG, Foe -DMG","display_info":{"Recharge Time":"10s","Activation Time":"2.5s","Power Type":"Toggle","Target Type":"Self","Endurance Cost":"0.21/s","Effect Area":"AoE — 8 ft. radius (10 targets max)","Available Level":"16"},"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed"],"available_at_level":16,"auto_issue":false,"power_type":"Toggle","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":8.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.5,"animation_time":2.5,"animation_time_before_hit":0.5,"recharge_time":10.0,"auto_cast_interval":1.0,"endurance_cost":0.21},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.25,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":10.0,"display_info":["10.00% strength to smashing damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 1.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":1.0}]},{"attributes":["Lethal_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.25,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":10.0,"display_info":["10.00% strength to lethal damage for 1.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":1.0}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":5.5,"display_info":["5.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 1s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":0.55}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":-7.5,"display_info":["-7.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 1s on target","Ignores buffs and enhancements"],"base_value":-0.075,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[],"child_effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["(!target.HasTag?(Raid) && (target>enttype == critter)) && !(source>entref == target>entref)"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":13.6,"display_info":["4.0 taunt for 13.6s on target"],"base_value":13.6,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target.HasTag?(Raid) && ((@ToHitRoll + 0.2) < @ToHit)) && !(source>entref == target>entref)"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":13.6,"display_info":["4.0 taunt for 13.6s on target"],"base_value":13.6,"scale":1.0}]}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Execute Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"power":{"powers":[{"name":"Redirects.Inherents.Fury_Proc_Aura","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/redirects/inherents/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Brute_Defense.Shield_Defense.Phalanx_Fighting","display_name":"Phalanx Fighting","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/f5/shielddefense_phalanxfighting.png","display_help":"Fighting very near your allies allows you to deflect attacks much easier. You will gain a small bonus to your melee, ranged and area of effect defense. This bonus grows for each ally near you. This power is always on and costs no endurance.","display_short_help":"Auto: Self Special +DEF(Melee, Ranged, AoE)","display_info":{"Available Level":"20","Effect Area":"AoE — 8 ft. radius (3 targets max)","Power Type":"Auto","Target Type":"Self"},"enhancements_allowed":["Enhance Defense"],"enhancement_set_categories_allowed":["Defense Sets"],"available_at_level":20,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":3,"radius_feet":8.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Player","Alive","Team","League"],["Self","Alive","Dead"]],"display_target_auto_hit":["Friendlies","Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"auto_cast_interval":1.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["!(target>entref == source>entref) && (target>enttype == player)"],"effects":[{"attributes":["Ranged_Def","Melee_Def","Area_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.81,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":2.25,"display_info":["2.25% strength to ranged, melee, AoE for 0.81s on self","Unresistable"],"base_value":0.075,"scale":0.3}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Ranged_Def","Melee_Def","Area_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":3.75,"display_info":["3.75% strength to ranged, melee, AoE for 1.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.075,"scale":0.5}]}]}]},{"name":"Brute_Defense.Shield_Defense.Grant_Cover","display_name":"Grant Cover","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ce/shielddefense_grantcover.png","display_help":"You are able to use your shield to defend nearby allies. Any teammates who remain nearby gain a bonus to their defense. (NOTE: The defense bonus from this power is only applied to nearby team mates, but not yourself.) Additionally, while this power is active, the user will gain some resistance to defense debuffs. Recharge: Moderate","display_short_help":"PBAoE, Team (but not self) +DEF(All but Psionic), Self +RES(Defense Debuff)","display_info":{"Power Type":"Toggle","Effect Area":"AoE — 15 ft. radius (255 targets max)","Available Level":"28","Recharge Time":"10s","Aggro Type":"Enemies will not notice this attack","Endurance Cost":"0.16/s","Target Type":"Self","Activation Time":"2.5s"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense"],"enhancement_set_categories_allowed":["Defense Sets"],"available_at_level":28,"auto_issue":false,"power_type":"Toggle","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":255,"radius_feet":15.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Player","Alive","Team"],["Self","Alive","Dead"]],"display_target_auto_hit":["Friendlies","Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"status_interaction":{"cast_through":["Sleep","Stun"],"toggle_ignores":["Hold"]},"activate":{"cast_time":2.5,"animation_time":2.5,"animation_time_before_hit":1.0,"recharge_time":10.0,"auto_cast_interval":2.0,"endurance_cost":0.31},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"requires":["!(target>entref == source>entref)"],"effects":[{"attributes":["Ranged_Def","Melee_Def","Area_Def","Smashing_Def","Lethal_Def","Fire_Def","Cold_Def","Energy_Def","Negative_Energy_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":8.44,"display_info":["8.44% strength to ranged, melee, AoE, smashing, lethal, fire, cold, energy, negative energy for 2.25s on target","Unresistable"],"base_value":0.075,"scale":1.125}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":13.84,"display_info":["13.84% resistance to defense debuff for 2.25s on target","Ignores buffs and enhancements","Unresistable"],"base_value":0.346,"scale":0.4}]},{"attributes":["RechargeTime"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":30.0,"display_info":["30.00% resistance to recharge debuff for 2.25s on target","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.3}]}]}]},{"name":"Brute_Defense.Shield_Defense.Shield_Charge","display_name":"Shield Charge","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/f7/shielddefense_shieldcharge.png","display_help":"You can throw all of your might behind your shield and charge through ranks of foes in the blink of an eye. Using this power allows you to teleport to a selected area to deal significant smashing damage to all foes near the location you teleport to, most foes that are struck by your Shield Charge will be knocked down. Damage: Superior, Recharge: Long","display_short_help":"PBAoE Superior DMG(Smashing), Foe Knockdown; Self Teleport","display_info":{"Recharge Time":"1m 30s","Activation Time":"1.5s","Target Type":"Location","Effect Area":"Location","Available Level":"35","Endurance Cost":"13.52","Power Range":"60 ft.","Power Type":"Click"},"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt","Brute Archetype Sets","Universal Damage Sets","Knockback","PBAoE Damage"],"available_at_level":35,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location","Teleport"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.5,"animation_time":1.5,"animation_time_before_hit":0.5,"recharge_time":90.0,"endurance_cost":13.52},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Teleport"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Self","magnitude":1.0,"duration":"Instant","after_delay_seconds":0.7,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":100.0,"display_info":["100.00% teleport on self after 0.7s delay","Unresistable"],"base_value":1.0,"scale":1.0}]},{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":4.0,"after_delay_seconds":0.63,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Shield_Charge_Brute","display_name":"Shield Charge","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Villain_Pets.Shield_Charge_AoE.Shield_Charge_AoE_Brute","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shield-charge-aoe/"}]}},"stacking":{"behavior":"Replace","by_caster":true}}]}]},{"name":"Brute_Defense.Shield_Defense.One_with_the_Shield","display_name":"One with the Shield","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/a1/shielddefense_onewiththeshield.png","display_help":"When you activate this power, you gain strong resistance against most types of damage and also to Disorient, Immobilization, Hold, Knockback, Repel and Sleep effects. One with the Shield costs little Endurance to activate and increases your recovery and maximum hit points for its duration, but when it wears off you are left exhausted, and substantially drained of Endurance. Note that One with the Shield is unaffected by Recharge Time changes. Recharge: Very Long","display_short_help":"Self, +Res(Disorient, Sleep, Hold, Immobilize, Repel, Knockback, All DMG but Psi), +Recovery, +Max HP","display_info":{"Target Type":"Self","Activation Time":"2.5s","Endurance Cost":"2.60","Effect Area":"Single Target","Available Level":"38","Recharge Time":"6m 0s","Power Type":"Click"},"enhancements_allowed":["Enhance Damage Resistance","Enhance Endurance Modification","Reduce Endurance Cost","Enhance Heal"],"enhancement_set_categories_allowed":["Resist Damage","Endurance Modification","Healing"],"available_at_level":38,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"status_interaction":{"cast_through":["Hold","Sleep","Stun","Terrorize"]},"activate":{"cast_time":2.5,"animation_time":2.5,"animation_time_before_hit":1.33,"recharge_time":360.0,"endurance_cost":2.6},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":22.5,"display_info":["22.50% resistance to smashing damage, lethal damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":3.0}]},{"attributes":["Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":11.25,"display_info":["11.25% resistance to fire damage, cold damage, energy damage, negative energy damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":1.5}]},{"attributes":["HitPoints"],"applies_to":"MaxValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","healing":299.85,"display_info":["299.85 hit points for 2m 0s on self","Unresistable"],"base_value":149.9255,"scale":2.0}]},{"attributes":["Knockup","Knockback"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":-100.0,"display_info":["-100.0 knockup protection, knock protection for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0}]},{"attributes":["Knockup","Knockback","Repel"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":1000.0,"display_info":["1000.00% resistance to knockup, knock, repel for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":10.0}]},{"attributes":["Repel"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":-10.0,"display_info":["-10.0 repel protection for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-10.0}]},{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":30.0,"display_info":["30.00% recovery rate for 2m 0s on self","Unresistable"],"base_value":1.0,"scale":0.3}]},{"attributes":["Endurance"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Self","magnitude":1.0,"duration":"Instant","after_delay_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":-60.0,"display_info":["-60.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-0.6}]},{"attributes":["Global Chance Mod"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"parameter":{"effect":{"tags":["PresenceHealHigh"]}},"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Global Chance Mod"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"parameter":{"effect":{"tags":["PresenceHealLow"]}},"stacking":{"behavior":"Replace","by_caster":true}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["!isPVPMap?()"],"effects":[{"attributes":["Held","Immobilized","Stunned","Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":-17.3,"display_info":["-17.3 hold protection, immobilize protection, stun protection, sleep protection for 2m 0s on self","Unresistable"],"base_value":0.346,"scale":-50.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["isPVPMap?()"],"effects":[{"attributes":["Held","Immobilized","Stunned","Sleep"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":173.0,"display_info":["173.00% resistance to hold, immobilize, stun, sleep for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.346,"scale":5.0}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Brute_Defense.Shield_Defense",
+  "display_name": "Shield Defense",
+  "display_help": "Your mastery over the shield protects you from all forms of attacks in the form of defense as well as some moderate damage resistance to most types of damage. Your training with the shield enables you to protect your nearby allies boosting their defenses.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/aa/shielddefense_activedefense.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Brute_Defense.Shield_Defense.Active_Defense",
+    "Brute_Defense.Shield_Defense.Deflection",
+    "Brute_Defense.Shield_Defense.True_Grit",
+    "Brute_Defense.Shield_Defense.Battle_Agility",
+    "Brute_Defense.Shield_Defense.Against_all_Odds",
+    "Brute_Defense.Shield_Defense.Phalanx_Fighting",
+    "Brute_Defense.Shield_Defense.Grant_Cover",
+    "Brute_Defense.Shield_Defense.Shield_Charge",
+    "Brute_Defense.Shield_Defense.One_with_the_Shield"
+  ],
+  "powers": [
+    {
+      "name": "Brute_Defense.Shield_Defense.Active_Defense",
+      "display_name": "Deflection",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/aa/shielddefense_activedefense.png",
+      "display_help": "Your mastery of the shield allows you to easily deflect melee attacks, and attacks that do get through your ironclad defenses tend to do less damage. While Deflection is active the user will gain defense to melee attacks and some minor resistance to lethal and smashing damage. Deflection also adds Psionic Defense and an Elusivity defense bonus to Psionic and Melee Attacks in PVP zones. Recharge: Fast",
+      "display_short_help": "Toggle: Self +DEF(Melee), +Res(Lethal, Smashing)",
+      "display_info": {
+        "Endurance Cost": "0.20/s",
+        "Activation Time": "1.5s",
+        "Recharge Time": "4s",
+        "Power Type": "Toggle",
+        "Target Type": "Self",
+        "Effect Area": "Single Target",
+        "Available Level": "1"
+      },
+      "requires": "!(((((Brute_Melee.Dual_Blades || Brute_Melee.Claws) || Brute_Melee.Staff_Fighting) || Brute_Melee.Katana) || Brute_Melee.Titan_Weapons) || Brute_Melee.Spines)",
+      "enhancements_allowed": [
+        "Enhance Damage Resistance",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Sets",
+        "Resist Damage"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Toggle",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Sleep",
+          "Stun"
+        ],
+        "toggle_ignores": [
+          "Hold"
+        ]
+      },
+      "activate": {
+        "cast_time": 1.5,
+        "animation_time": 1.5,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 4.0,
+        "auto_cast_interval": 0.5,
+        "endurance_cost": 0.1
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "!isPVPMap?()"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Melee_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 11.25,
+                  "display_info": [
+                    "11.25% strength to melee for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 1.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 11.25,
+                  "display_info": [
+                    "11.25% resistance to smashing damage, lethal damage for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 1.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "isPVPMap?()"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Melee_Def",
+                "Psionic_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 11.25,
+                  "display_info": [
+                    "11.25% strength to melee, psionic for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 1.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 11.25,
+                  "display_info": [
+                    "11.25% resistance to smashing damage, lethal damage for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 1.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Melee_Elusivity",
+                "Psionic_Elusivity"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 10.0,
+                  "display_info": [
+                    "10.00% strength to melee, psionic for 0.75s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Defense.Shield_Defense.Deflection",
+      "display_name": "Battle Agility",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/90/shielddefense_deflection.png",
+      "display_help": "Your incredible agility allows you to position your shield to protect yourself from incoming ranged damage. While Battle Agility is active you will benefit from increased Ranged and AoE defense as well as some moderate protection from Defense Debuffs. Battle Agility also adds an Elusivity defense bonus to Ranged and AOE Attacks in PVP zones. Recharge: Fast",
+      "display_short_help": "Toggle: Self +DEF(Ranged, AoE), +Res(Defense Debuff)",
+      "display_info": {
+        "Target Type": "Self",
+        "Endurance Cost": "0.20/s",
+        "Activation Time": "1.5s",
+        "Effect Area": "Single Target",
+        "Recharge Time": "4s",
+        "Power Type": "Toggle",
+        "Available Level": "2"
+      },
+      "requires": "!(((((Brute_Melee.Dual_Blades || Brute_Melee.Claws) || Brute_Melee.Staff_Fighting) || Brute_Melee.Katana) || Brute_Melee.Titan_Weapons) || Brute_Melee.Spines)",
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Sets"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Toggle",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Sleep",
+          "Stun"
+        ],
+        "toggle_ignores": [
+          "Hold"
+        ]
+      },
+      "activate": {
+        "cast_time": 1.5,
+        "animation_time": 1.5,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 4.0,
+        "auto_cast_interval": 0.5,
+        "endurance_cost": 0.1
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "!isPVPMap?()"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Ranged_Def",
+                "Area_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 11.25,
+                  "display_info": [
+                    "11.25% strength to ranged, AoE for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 1.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "isPVPMap?()"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Ranged_Def",
+                "Area_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 11.25,
+                  "display_info": [
+                    "11.25% strength to ranged, AoE for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 1.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Ranged_Elusivity",
+                "Area_Elusivity"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 10.0,
+                  "display_info": [
+                    "10.00% strength to ranged, AoE for 0.75s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 13.84,
+                  "display_info": [
+                    "13.84% resistance to defense debuff for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.346,
+                  "scale": 0.4
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Defense.Shield_Defense.True_Grit",
+      "display_name": "True Grit",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/04/shielddefense_truegrit.png",
+      "display_help": "Your intense training has left you tougher than even the hardiest of heroes. You gain additional hit points and resistance to fire, cold, energy, negative energy and toxic damage sources. This power is always on and costs no Endurance.",
+      "display_short_help": "Auto: Self +Res (Cold, Energy, Fire, Negative Energy, Toxic), +MaxHealth",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Available Level": "4",
+        "Target Type": "Self",
+        "Power Type": "Auto"
+      },
+      "enhancements_allowed": [
+        "Enhance Damage Resistance",
+        "Enhance Heal"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Healing",
+        "Resist Damage"
+      ],
+      "available_at_level": 4,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "auto_cast_interval": 10.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "HitPoints"
+              ],
+              "applies_to": "MaxValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "healing": 149.93,
+                  "display_info": [
+                    "149.93 hit points for 10.25s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 149.9255,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 11.25,
+                  "display_info": [
+                    "11.25% resistance to fire damage, cold damage, energy damage, negative energy damage, toxic damage for 10.25s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 1.5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Defense.Shield_Defense.Battle_Agility",
+      "display_name": "Active Defense",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/a1/shielddefense_battleagility.png",
+      "display_help": "When you activate this power, it grants protection from Sleep, Disorient, Fear, Immobilize, Confusion, Repel, Knockback, Hold and Defense Debuff effects for a short duration. Recharge: Long",
+      "display_short_help": "Self Res (Disorient, Hold, Immobilize, Sleep, Fear, Confuse, Repel, Knockback, Defense Debuff)",
+      "display_info": {
+        "Endurance Cost": "10.40",
+        "Activation Time": "1.5s",
+        "Recharge Time": "3m 20s",
+        "Target Type": "Self",
+        "Effect Area": "Single Target",
+        "Available Level": "10",
+        "Power Type": "Click"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed"
+      ],
+      "available_at_level": 10,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Hold",
+          "Sleep",
+          "Stun",
+          "Terrorize"
+        ]
+      },
+      "activate": {
+        "cast_time": 1.5,
+        "animation_time": 1.5,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 200.0,
+        "endurance_cost": 10.4
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "!isPVPMap?()"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused",
+                "Terrorized",
+                "Held",
+                "Stunned",
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": -10.38,
+                  "display_info": [
+                    "-10.4 confuse protection, terrorize protection, hold protection, stun protection, sleep protection for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.346,
+                  "scale": -30.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": -10.38,
+                  "display_info": [
+                    "-10.4 immobilize protection for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.346,
+                  "scale": -30.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback",
+                "Repel"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 10000.0,
+                  "display_info": [
+                    "10000.00% resistance to knockup, knock, repel for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback",
+                "Repel"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": -10.0,
+                  "display_info": [
+                    "-10.0 knockup protection, knock protection, repel protection for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "isPVPMap?()"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused",
+                "Terrorized",
+                "Held",
+                "Immobilized",
+                "Stunned",
+                "Sleep"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 103.8,
+                  "display_info": [
+                    "103.80% resistance to confuse, terrorize, hold, immobilize, stun, sleep for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.346,
+                  "scale": 3.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback",
+                "Repel"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 10000.0,
+                  "display_info": [
+                    "10000.00% resistance to knockup, knock, repel for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback",
+                "Repel"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": -10.0,
+                  "display_info": [
+                    "-10.0 knockup protection, knock protection, repel protection for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -10.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Defense",
+                "ToHit",
+                "RechargeTime"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 30.0,
+                  "display_info": [
+                    "30.00% resistance to defense debuff, to hit debuff, recharge debuff for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.3
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed",
+                "JumpHeight"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% resistance to run speed debuff, fly speed debuff, jump speed debuff, jump height debuff for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 17.3,
+                  "display_info": [
+                    "17.30% resistance to defense debuff for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.346,
+                  "scale": 0.5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Defense.Shield_Defense.Against_all_Odds",
+      "display_name": "Against All Odds",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/f3/shielddefense_againstallodds.png",
+      "display_help": "The harder pressed you are in combat the greater your offensive abilities become. Each enemy that stands toe-to-toe with you in combat will grant you a damage bonus. The first foe you engage in melee grants the highest damage bonus, and up to 10 foes can contribute to this effect. Each foe in melee range also suffers from reduced damage as your shield deflects a portion of their damage. Recharge: Moderate",
+      "display_short_help": "Toggle: Self +DMG, Foe -DMG",
+      "display_info": {
+        "Effect Area": "AoE — 8 ft. radius (10 targets max)",
+        "Recharge Time": "10s",
+        "Endurance Cost": "0.21/s",
+        "Power Type": "Toggle",
+        "Target Type": "Self",
+        "Activation Time": "2.5s",
+        "Available Level": "16"
+      },
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed"
+      ],
+      "available_at_level": 16,
+      "auto_issue": false,
+      "power_type": "Toggle",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 8.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.5,
+        "animation_time": 2.5,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 10.0,
+        "auto_cast_interval": 1.0,
+        "endurance_cost": 0.21
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 10.0,
+                  "display_info": [
+                    "10.00% strength to smashing damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 1.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 10.0,
+                  "display_info": [
+                    "10.00% strength to lethal damage for 1.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 5.5,
+                  "display_info": [
+                    "5.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 1s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 0.55
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -7.5,
+                  "display_info": [
+                    "-7.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 1s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [],
+          "child_effect_groups": [
+            {
+              "pve_or_pvp": "PVE",
+              "visible_in_info_window": true,
+              "chance_percent": 100.0,
+              "requires": [
+                "(!target.HasTag?(Raid) && (target>enttype == critter)) && !(source>entref == target>entref)"
+              ],
+              "effects": [
+                {
+                  "attributes": [
+                    "Taunt"
+                  ],
+                  "applies_to": "AbsoluteValue",
+                  "application_type": "OnTick",
+                  "target_type": "Affected",
+                  "magnitude": 4.0,
+                  "duration": "InSecondsScaled",
+                  "flags": [
+                    "CancelOnMiss",
+                    "ResistDuration",
+                    "CombatModDuration"
+                  ],
+                  "stacking": {
+                    "behavior": "Replace",
+                    "by_caster": true
+                  },
+                  "scaled": [
+                    {
+                      "archetype": "Brute",
+                      "duration_seconds": 13.6,
+                      "display_info": [
+                        "4.0 taunt for 13.6s on target"
+                      ],
+                      "base_value": 13.6,
+                      "scale": 1.0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visible_in_info_window": true,
+              "chance_percent": 100.0,
+              "requires": [
+                "(target.HasTag?(Raid) && ((@ToHitRoll + 0.2) < @ToHit)) && !(source>entref == target>entref)"
+              ],
+              "effects": [
+                {
+                  "attributes": [
+                    "Taunt"
+                  ],
+                  "applies_to": "AbsoluteValue",
+                  "application_type": "OnTick",
+                  "target_type": "Affected",
+                  "magnitude": 4.0,
+                  "duration": "InSecondsScaled",
+                  "flags": [
+                    "CancelOnMiss",
+                    "ResistDuration",
+                    "CombatModDuration"
+                  ],
+                  "stacking": {
+                    "behavior": "Replace",
+                    "by_caster": true
+                  },
+                  "scaled": [
+                    {
+                      "archetype": "Brute",
+                      "duration_seconds": 13.6,
+                      "display_info": [
+                        "4.0 taunt for 13.6s on target"
+                      ],
+                      "base_value": 13.6,
+                      "scale": 1.0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Execute Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Redirects.Inherents.Fury_Proc_Aura",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/redirects/inherents/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Defense.Shield_Defense.Phalanx_Fighting",
+      "display_name": "Phalanx Fighting",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/f5/shielddefense_phalanxfighting.png",
+      "display_help": "Fighting very near your allies allows you to deflect attacks much easier. You will gain a small bonus to your melee, ranged and area of effect defense. This bonus grows for each ally near you. This power is always on and costs no endurance.",
+      "display_short_help": "Auto: Self Special +DEF(Melee, Ranged, AoE)",
+      "display_info": {
+        "Power Type": "Auto",
+        "Target Type": "Self",
+        "Available Level": "20",
+        "Effect Area": "AoE — 8 ft. radius (3 targets max)"
+      },
+      "enhancements_allowed": [
+        "Enhance Defense"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Sets"
+      ],
+      "available_at_level": 20,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 3,
+        "radius_feet": 8.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Player",
+          "Alive",
+          "Team",
+          "League"
+        ],
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Friendlies",
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "auto_cast_interval": 1.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "!(target>entref == source>entref) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Ranged_Def",
+                "Melee_Def",
+                "Area_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.81,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 2.25,
+                  "display_info": [
+                    "2.25% strength to ranged, melee, AoE for 0.81s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Ranged_Def",
+                "Melee_Def",
+                "Area_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 3.75,
+                  "display_info": [
+                    "3.75% strength to ranged, melee, AoE for 1.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 0.5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Defense.Shield_Defense.Grant_Cover",
+      "display_name": "Grant Cover",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ce/shielddefense_grantcover.png",
+      "display_help": "You are able to use your shield to defend nearby allies. Any teammates who remain nearby gain a bonus to their defense. (NOTE: The defense bonus from this power is only applied to nearby team mates, but not yourself.) Additionally, while this power is active, the user will gain some resistance to defense debuffs. Recharge: Moderate",
+      "display_short_help": "PBAoE, Team (but not self) +DEF(All but Psionic), Self +RES(Defense Debuff)",
+      "display_info": {
+        "Effect Area": "AoE — 15 ft. radius (255 targets max)",
+        "Aggro Type": "Enemies will not notice this attack",
+        "Recharge Time": "10s",
+        "Target Type": "Self",
+        "Activation Time": "2.5s",
+        "Available Level": "28",
+        "Endurance Cost": "0.16/s",
+        "Power Type": "Toggle"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Sets"
+      ],
+      "available_at_level": 28,
+      "auto_issue": false,
+      "power_type": "Toggle",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 255,
+        "radius_feet": 15.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Player",
+          "Alive",
+          "Team"
+        ],
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Friendlies",
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Sleep",
+          "Stun"
+        ],
+        "toggle_ignores": [
+          "Hold"
+        ]
+      },
+      "activate": {
+        "cast_time": 2.5,
+        "animation_time": 2.5,
+        "animation_time_before_hit": 1.0,
+        "recharge_time": 10.0,
+        "auto_cast_interval": 2.0,
+        "endurance_cost": 0.31
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "!(target>entref == source>entref)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Ranged_Def",
+                "Melee_Def",
+                "Area_Def",
+                "Smashing_Def",
+                "Lethal_Def",
+                "Fire_Def",
+                "Cold_Def",
+                "Energy_Def",
+                "Negative_Energy_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 8.44,
+                  "display_info": [
+                    "8.44% strength to ranged, melee, AoE, smashing, lethal, fire, cold, energy, negative energy for 2.25s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 1.125
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 13.84,
+                  "display_info": [
+                    "13.84% resistance to defense debuff for 2.25s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.346,
+                  "scale": 0.4
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 30.0,
+                  "display_info": [
+                    "30.00% resistance to recharge debuff for 2.25s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Defense.Shield_Defense.Shield_Charge",
+      "display_name": "Shield Charge",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/f7/shielddefense_shieldcharge.png",
+      "display_help": "You can throw all of your might behind your shield and charge through ranks of foes in the blink of an eye. Using this power allows you to teleport to a selected area to deal significant smashing damage to all foes near the location you teleport to, most foes that are struck by your Shield Charge will be knocked down. Damage: Superior, Recharge: Long",
+      "display_short_help": "PBAoE Superior DMG(Smashing), Foe Knockdown; Self Teleport",
+      "display_info": {
+        "Endurance Cost": "13.52",
+        "Target Type": "Location",
+        "Recharge Time": "1m 30s",
+        "Power Type": "Click",
+        "Available Level": "35",
+        "Activation Time": "1.5s",
+        "Effect Area": "Location",
+        "Power Range": "60 ft."
+      },
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Knockback",
+        "PBAoE Damage",
+        "Universal Damage Sets",
+        "Brute Archetype Sets",
+        "Taunt"
+      ],
+      "available_at_level": 35,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location",
+        "Teleport"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.5,
+        "animation_time": 1.5,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 90.0,
+        "endurance_cost": 13.52
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Teleport"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 0.7,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% teleport on self after 0.7s delay",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 4.0,
+              "after_delay_seconds": 0.63,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Shield_Charge_Brute",
+                  "display_name": "Shield Charge",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Villain_Pets.Shield_Charge_AoE.Shield_Charge_AoE_Brute",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/shield-charge-aoe/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Defense.Shield_Defense.One_with_the_Shield",
+      "display_name": "One with the Shield",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/a1/shielddefense_onewiththeshield.png",
+      "display_help": "When you activate this power, you gain strong resistance against most types of damage and also to Disorient, Immobilization, Hold, Knockback, Repel and Sleep effects. One with the Shield costs little Endurance to activate and increases your recovery and maximum hit points for its duration, but when it wears off you are left exhausted, and substantially drained of Endurance. Note that One with the Shield is unaffected by Recharge Time changes. Recharge: Very Long",
+      "display_short_help": "Self, +Res(Disorient, Sleep, Hold, Immobilize, Repel, Knockback, All DMG but Psi), +Recovery, +Max HP",
+      "display_info": {
+        "Recharge Time": "6m 0s",
+        "Power Type": "Click",
+        "Effect Area": "Single Target",
+        "Activation Time": "2.5s",
+        "Target Type": "Self",
+        "Available Level": "38",
+        "Endurance Cost": "2.60"
+      },
+      "enhancements_allowed": [
+        "Enhance Damage Resistance",
+        "Enhance Endurance Modification",
+        "Reduce Endurance Cost",
+        "Enhance Heal"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Resist Damage",
+        "Endurance Modification",
+        "Healing"
+      ],
+      "available_at_level": 38,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Hold",
+          "Sleep",
+          "Stun",
+          "Terrorize"
+        ]
+      },
+      "activate": {
+        "cast_time": 2.5,
+        "animation_time": 2.5,
+        "animation_time_before_hit": 1.33,
+        "recharge_time": 360.0,
+        "endurance_cost": 2.6
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 22.5,
+                  "display_info": [
+                    "22.50% resistance to smashing damage, lethal damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 3.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 11.25,
+                  "display_info": [
+                    "11.25% resistance to fire damage, cold damage, energy damage, negative energy damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 1.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "HitPoints"
+              ],
+              "applies_to": "MaxValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "healing": 299.85,
+                  "display_info": [
+                    "299.85 hit points for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 149.9255,
+                  "scale": 2.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": -100.0,
+                  "display_info": [
+                    "-100.0 knockup protection, knock protection for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback",
+                "Repel"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 1000.0,
+                  "display_info": [
+                    "1000.00% resistance to knockup, knock, repel for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 10.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Repel"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": -10.0,
+                  "display_info": [
+                    "-10.0 repel protection for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -10.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 30.0,
+                  "display_info": [
+                    "30.00% recovery rate for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.3
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -60.0,
+                  "display_info": [
+                    "-60.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.6
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Global Chance Mod"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "parameter": {
+                "effect": {
+                  "tags": [
+                    "PresenceHealHigh"
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Global Chance Mod"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "parameter": {
+                "effect": {
+                  "tags": [
+                    "PresenceHealLow"
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "!isPVPMap?()"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held",
+                "Immobilized",
+                "Stunned",
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": -17.3,
+                  "display_info": [
+                    "-17.3 hold protection, immobilize protection, stun protection, sleep protection for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.346,
+                  "scale": -50.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "isPVPMap?()"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held",
+                "Immobilized",
+                "Stunned",
+                "Sleep"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 173.0,
+                  "display_info": [
+                    "173.00% resistance to hold, immobilize, stun, sleep for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.346,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

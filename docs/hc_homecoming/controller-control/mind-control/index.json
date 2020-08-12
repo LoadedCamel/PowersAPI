@@ -1,1 +1,2273 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Controller_Control.Mind_Control","display_name":"Mind Control","display_help":"You can manipulate and control your opponent's mind. Since Mental powers directly affect the mind, most tend to be very accurate, and thus very useful against higher level foes. Few foes can resist Psionic powers, but creatures without minds, like machines and robots, are resistant to many of the effects.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b9/mentalcontrol_hypnotize.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Controller_Control.Mind_Control.Mesmerize","Controller_Control.Mind_Control.Levitate","Controller_Control.Mind_Control.Dominate","Controller_Control.Mind_Control.Confuse","Controller_Control.Mind_Control.Mass_Hypnosis","Controller_Control.Mind_Control.Telekinesis","Controller_Control.Mind_Control.Total_Domination","Controller_Control.Mind_Control.Terrify","Controller_Control.Mind_Control.Mass_Confusion"],"powers":[{"name":"Controller_Control.Mind_Control.Mesmerize","display_name":"Mesmerize","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b9/mentalcontrol_hypnotize.png","display_help":"Mesmerize painfully assails a target with psychic energy, rendering them unconscious. The target will remain asleep for some time, but will awaken if attacked. Damage: Moderate, Recharge: Fast","display_short_help":"Ranged, Moderate DMG(Psionic), Foe Sleep","display_info":{"Power Range":"100 ft.","Recharge Time":"6s","Activation Time":"1.67s","Target Type":"Enemies","Attack Types":"Psionic","Endurance Cost":"5.20","Power Type":"Click","Available Level":"1","Effect Area":"Single Target"},"attack_types":["Psionic_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Sleep","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Sleep","Universal Damage Sets","Ranged Damage","Controller Archetype Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.1,"effect_area":{"area":"SingleTarget","range_feet":100.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.67,"recharge_time":6.0,"endurance_cost":5.2},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.5,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":55.88,"display_info":["3.5 sleep for 55.88s on target after 0.25s delay"],"base_value":1.8625,"scale":30.0}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":30.59,"average":30.59,"per_activation":18.32,"per_cast_cycle":3.99,"display_info":["30.59 psionic damage on target"],"base_value":-30.5856,"scale":1.0}]}]},{"pve_or_pvp":"PVE","tags":["Containment"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0)) || target.HasTag?(IncarnateBoss))"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":30.59,"average":30.59,"per_activation":18.32,"per_cast_cycle":3.99,"display_info":["30.59 psionic damage on target","Only against immobilized, held, sleeping or stunned targets"],"base_value":-30.5856,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":92.77,"average":92.77,"per_activation":55.55,"per_cast_cycle":12.1,"display_info":["92.77 psionic damage on target"],"base_value":-51.2809,"scale":1.809}]},{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":4.0,"display_info":["4.0 sleep for 4s on target after 0.25s delay"],"base_value":4.0,"scale":1.0}]}]},{"pve_or_pvp":"PVP","tags":["Containment"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0))"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":46.38,"average":46.38,"per_activation":27.77,"per_cast_cycle":6.05,"display_info":["46.38 psionic damage on target","Only against immobilized, held, sleeping or stunned targets"],"base_value":-51.2809,"scale":0.9045}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":20.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":27.94,"display_info":["20.00% chance for 1.0 sleep for 27.94s on target after 0.25s delay"],"base_value":1.8625,"scale":15.0}]}]}]},{"name":"Controller_Control.Mind_Control.Levitate","display_name":"Levitate","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/cb/mentalcontrol_levitate.png","display_help":"You can send a single target violently into the air, then slam them to the ground for Smashing damage. This power can bring flying foes to the ground. Damage: Moderate, Recharge: Fast","display_short_help":"Ranged, Moderate DMG(Smash)","display_info":{"Available Level":"1","Activation Time":"1.87s","Target Type":"Enemies","Endurance Cost":"6.86","Effect Area":"Single Target","Power Type":"Click","Recharge Time":"6s","Attack Types":"Psionic","Power Range":"80 ft."},"attack_types":["Psionic_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Knockback","Ranged Damage","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.87,"animation_time":1.87,"animation_time_before_hit":0.67,"recharge_time":6.0,"endurance_cost":6.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockup"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","magnitude":12.46,"display_info":["12.5 magnitude knockup on target"],"base_value":2.0771,"scale":6.0}]},{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":2.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":40.37,"average":40.37,"per_activation":21.59,"per_cast_cycle":5.13,"display_info":["40.37 smashing damage on target after 2s delay"],"base_value":-30.5856,"scale":1.32}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockup"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","magnitude":12.46,"display_info":["12.5 magnitude knockup on target"],"base_value":2.0771,"scale":6.0}]},{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":2.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":99.95,"average":99.95,"per_activation":53.45,"per_cast_cycle":12.7,"display_info":["99.95 smashing damage on target after 2s delay"],"base_value":-51.2809,"scale":1.9491}]}]},{"pve_or_pvp":"PVE","tags":["Containment"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0)) || target.HasTag?(IncarnateBoss))"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":2.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":40.37,"average":40.37,"per_activation":21.59,"per_cast_cycle":5.13,"display_info":["40.37 smashing damage on target after 2s delay","Only against immobilized, held, sleeping or stunned targets"],"base_value":-30.5856,"scale":1.32}]}]},{"pve_or_pvp":"PVP","tags":["Containment"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0))"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":2.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":49.97,"average":49.97,"per_activation":26.72,"per_cast_cycle":6.35,"display_info":["49.97 smashing damage on target after 2s delay","Only against immobilized, held, sleeping or stunned targets"],"base_value":-51.2809,"scale":0.9745}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":10.0,"after_delay_seconds":2.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","magnitude":-1.6,"display_info":["-1.6 fly protection for 10s on target after 2s delay","Unresistable"],"base_value":1.0,"scale":-1.6}]}]}]},{"name":"Controller_Control.Mind_Control.Dominate","display_name":"Dominate","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/93/mentalcontrol_command.png","display_help":"Painfully tears at the mind of a single foe. Dominate deals Psionic damage and renders a foe helpless, lost in their own mind and unable to defend themselves. Damage: Moderate, Recharge: Moderate","display_short_help":"Ranged, Moderate DMG(Psionic), Foe Hold","display_info":{"Effect Area":"Single Target","Endurance Cost":"8.53","Power Range":"80 ft.","Power Type":"Click","Recharge Time":"8s","Target Type":"Enemies","Activation Time":"1.1s","Available Level":"2","Attack Types":"Psionic"},"attack_types":["Psionic_Def"],"enhancements_allowed":["Enhance Hold","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Ranged Damage","Controller Archetype Sets","Holds"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.1,"animation_time":1.1,"animation_time_before_hit":0.67,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":22.35,"display_info":["3.0 hold for 22.35s on target"],"base_value":1.8625,"scale":12.0}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":30.59,"average":30.59,"per_activation":27.81,"per_cast_cycle":3.36,"display_info":["30.59 psionic damage on target"],"base_value":-30.5856,"scale":1.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":20.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":16.76,"display_info":["20.00% chance for 1.0 hold for 16.76s on target"],"base_value":1.8625,"scale":9.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":4.0,"display_info":["4.0 hold for 4s on target"],"base_value":4.0,"scale":1.0}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":76.41,"average":76.41,"per_activation":69.46,"per_cast_cycle":8.4,"display_info":["76.41 psionic damage on target"],"base_value":-51.2809,"scale":1.49}]}]},{"pve_or_pvp":"PVE","tags":["Containment"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0)) || target.HasTag?(IncarnateBoss))"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":30.59,"average":30.59,"per_activation":27.81,"per_cast_cycle":3.36,"display_info":["30.59 psionic damage on target","Only against immobilized, held, sleeping or stunned targets"],"base_value":-30.5856,"scale":1.0}]}]},{"pve_or_pvp":"PVP","tags":["Containment"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0))"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":38.2,"average":38.2,"per_activation":34.73,"per_cast_cycle":4.2,"display_info":["38.20 psionic damage on target","Only against immobilized, held, sleeping or stunned targets"],"base_value":-51.2809,"scale":0.745}]}]}]},{"name":"Controller_Control.Mind_Control.Confuse","display_name":"Confuse","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/f3/mentalcontrol_mindcontrol.png","display_help":"You can Confuse an enemy, forcing that foe to believe their friends are not who they appear to be. If successful, the enemy will ignore you and attack their own allies. If you Confuse someone before they have noticed you, your presence will continue to be masked. You will not receive any Experience Points for foes defeated by a Confused enemy. Recharge: Moderate","display_short_help":"Ranged, Target Confuse","display_info":{"Endurance Cost":"8.53","Power Range":"80 ft.","Power Type":"Click","Recharge Time":"8s","Available Level":"6","Aggro Type":"Enemies will not notice this attack","Effect Area":"Single Target","Target Type":"Enemies","Attack Types":"Psionic","Activation Time":"2s"},"attack_types":["Psionic_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Confuse","Enhance Accuracy"],"enhancement_set_categories_allowed":["Controller Archetype Sets","Confuse"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.0,"animation_time":2.0,"animation_time_before_hit":1.0,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":37.25,"display_info":["3.0 confuse for 37.25s on target"],"base_value":1.8625,"scale":20.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":4.0,"display_info":["3.0 confuse for 4s on target"],"base_value":4.0,"scale":1.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":20.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":27.94,"display_info":["20.00% chance for 1.0 confuse for 27.94s on target"],"base_value":1.8625,"scale":15.0}]}]}]},{"name":"Controller_Control.Mind_Control.Mass_Hypnosis","display_name":"Mass Hypnosis","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/80/mentalcontrol_masshypnosis.png","display_help":"Hypnotizes a group of foes at a distance and puts them to Sleep. The targets will remain asleep for some time, but will awaken if attacked. This power deals no damage, but if done discreetly, the targets will never be aware of your presence. Recharge: Slow","display_short_help":"Ranged (Targeted AoE), Foe Sleep","display_info":{"Power Type":"Click","Attack Types":"Psionic","Effect Area":"AoE — 25 ft. radius (16 targets max)","Target Type":"Enemies","Recharge Time":"45s","Activation Time":"2.03s","Power Range":"80 ft.","Aggro Type":"Enemies will not notice this attack","Endurance Cost":"15.60","Available Level":"8"},"attack_types":["Psionic_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Sleep","Enhance Recharge Speed","Enhance Accuracy"],"enhancement_set_categories_allowed":["Controller Archetype Sets","Sleep"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":25.0,"range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.03,"animation_time":2.03,"animation_time_before_hit":0.93,"recharge_time":45.0,"endurance_cost":15.6},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":22.35,"display_info":["3.0 sleep for 22.35s on target"],"base_value":1.8625,"scale":12.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":50.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":14.9,"display_info":["50.00% chance for 1.0 sleep for 14.9s on target"],"base_value":1.8625,"scale":8.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":4.0,"display_info":["4.0 sleep for 4s on target"],"base_value":4.0,"scale":1.0}]}]}]},{"name":"Controller_Control.Mind_Control.Telekinesis","display_name":"Telekinesis","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/80/mentalcontrol_telekinesis.png","display_help":"Lifts a foe, and any nearby foes, off the ground and repels them. The targets are helpless, unable to take action, and will continue to hover away, picking up any passing targets, as long as you keep this power active. Keeping up this level of concentration costs a lot of Endurance. Recharge: Slow","display_short_help":"Toggle: Ranged (Targeted AoE), Foe Hold, Repel","display_info":{"Target Type":"Enemies","Endurance Cost":"3.12/s","Power Type":"Toggle","Power Range":"50 ft.","Recharge Time":"1m 0s","Activation Time":"1.13s","Effect Area":"AoE — 10 ft. radius (5 targets max)","Available Level":"12"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed"],"available_at_level":12,"auto_issue":false,"power_type":"Toggle","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":5,"radius_feet":10.0,"range_feet":50.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All","Defiant"],"activate":{"cast_time":1.13,"animation_time":1.13,"animation_time_before_hit":0.5,"recharge_time":60.0,"auto_cast_interval":0.5,"endurance_cost":1.56},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":1.4,"display_info":["3.0 hold for 1.4s on target"],"base_value":1.8625,"scale":0.75}]},{"attributes":["Repel"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":0.75,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Controller","magnitude":1.0,"display_info":["1.0 magnitude repel for 0.75s on target"],"base_value":1.0,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":4.0,"display_info":["3.0 hold for 4s on target"],"base_value":4.0,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["isPVPMap?()"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.KillTk","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Controller_Control.Mind_Control.Total_Domination","display_name":"Total Domination","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/97/mentalcontrol_freeze.png","display_help":"Tears at the mind of a target foe and those near them. Dominate renders all affected foes helpless, lost in their own minds and unable to defend themselves. Recharge: Long","display_short_help":"Ranged (Targeted AoE), Foe Hold","display_info":{"Endurance Cost":"15.60","Activation Time":"2.03s","Effect Area":"AoE — 20 ft. radius (16 targets max)","Available Level":"18","Power Range":"80 ft.","Attack Types":"Psionic","Power Type":"Click","Target Type":"Enemies","Recharge Time":"4m 0s"},"attack_types":["Psionic_Def"],"enhancements_allowed":["Enhance Hold","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Accuracy"],"enhancement_set_categories_allowed":["Holds","Controller Archetype Sets"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":0.8,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":20.0,"range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.03,"animation_time":2.03,"animation_time_before_hit":0.83,"recharge_time":240.0,"endurance_cost":15.6},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":14.9,"display_info":["3.0 hold for 14.9s on target"],"base_value":1.8625,"scale":8.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":20.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":11.17,"display_info":["20.00% chance for 1.0 hold for 11.17s on target"],"base_value":1.8625,"scale":6.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":4.0,"display_info":["4.0 hold for 4s on target"],"base_value":4.0,"scale":1.0}]}]}]},{"name":"Controller_Control.Mind_Control.Terrify","display_name":"Terrify","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/fd/mentalcontrol_terrify.png","display_help":"This power Terrifies foes within a cone area in front of you, causing them to tremble in Fear uncontrollably. The affect is so frightening and overwhelming, that the target takes real damage from the physiological response to this Psionic attack. Damage: Minor, Recharge: Slow","display_short_help":"Ranged (Cone), Minor DMG(Psionic), Foe Fear(Special)","display_info":{"Power Range":"60 ft.","Effect Area":"Cone — 60 ft. radius 90° arc (16 targets max)","Power Type":"Click","Activation Time":"2.03s","Target Type":"Enemies","Attack Types":"Psionic","Available Level":"26","Recharge Time":"40s","Endurance Cost":"20.80"},"attack_types":["Psionic_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Fear","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Targeted AoE Damage","Fear","Controller Archetype Sets","Universal Damage Sets"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":0.9,"effect_area":{"area":"Cone","max_targets_hit":16,"radius_feet":60.0,"arc_degrees":90.0,"range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.03,"animation_time":2.03,"animation_time_before_hit":0.77,"recharge_time":40.0,"endurance_cost":20.8},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Terrorized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":27.94,"display_info":["3.0 terrorize for 27.94s on target after 0.25s delay"],"base_value":1.8625,"scale":15.0}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":30.59,"average":30.59,"per_activation":15.07,"per_cast_cycle":0.73,"display_info":["30.59 psionic damage on target"],"base_value":-30.5856,"scale":1.0}]}]},{"pve_or_pvp":"PVE","tags":["Containment"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0)) || target.HasTag?(IncarnateBoss))"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":30.59,"average":30.59,"per_activation":15.07,"per_cast_cycle":0.73,"display_info":["30.59 psionic damage on target","Only against immobilized, held, sleeping or stunned targets"],"base_value":-30.5856,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":38.14,"average":38.14,"per_activation":18.79,"per_cast_cycle":0.91,"display_info":["38.14 psionic damage on target"],"base_value":-51.2809,"scale":0.7437}]},{"attributes":["Terrorized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":4.0,"display_info":["4.0 terrorize for 4s on target after 0.25s delay"],"base_value":4.0,"scale":1.0}]}]},{"pve_or_pvp":"PVP","tags":["Containment"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0))"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":19.07,"average":19.07,"per_activation":9.39,"per_cast_cycle":0.45,"display_info":["19.07 psionic damage on target","Only against immobilized, held, sleeping or stunned targets","Unresistable"],"base_value":-51.2809,"scale":0.3719}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":20.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Terrorized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":18.63,"display_info":["20.00% chance for 1.0 terrorize for 18.63s on target after 0.25s delay"],"base_value":1.8625,"scale":10.0}]}]}]},{"name":"Controller_Control.Mind_Control.Mass_Confusion","display_name":"Mass Confusion","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d0/mentalcontrol_confuse.png","display_help":"You can cause Mass Confusion within a group of foes, creating chaos. All affected foes within the area will turn and attack each other, ignoring all heroes. If you Confuse villains before they noticed you, your presence will continue to go unnoticed. You will not receive any Experience Points for foes defeated by Confused enemies. Recharge: Long","display_short_help":"Ranged (Targeted AoE), Foe Confuse","display_info":{"Recharge Time":"4m 0s","Available Level":"32","Effect Area":"AoE — 25 ft. radius (16 targets max)","Activation Time":"1.67s","Target Type":"Enemies","Power Range":"80 ft.","Endurance Cost":"26.00","Power Type":"Click","Aggro Type":"Enemies will not notice this attack","Attack Types":"Psionic"},"attack_types":["Psionic_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Confuse","Enhance Accuracy"],"enhancement_set_categories_allowed":["Confuse","Controller Archetype Sets"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":0.8,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":25.0,"range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":1.7,"recharge_time":240.0,"endurance_cost":26.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":37.25,"display_info":["3.0 confuse for 37.25s on target"],"base_value":1.8625,"scale":20.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":4.0,"display_info":["3.0 confuse for 4s on target"],"base_value":4.0,"scale":1.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":20.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","duration_seconds":27.94,"display_info":["20.00% chance for 1.0 confuse for 27.94s on target"],"base_value":1.8625,"scale":15.0}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Controller_Control.Mind_Control",
+  "display_name": "Mind Control",
+  "display_help": "You can manipulate and control your opponent's mind. Since Mental powers directly affect the mind, most tend to be very accurate, and thus very useful against higher level foes. Few foes can resist Psionic powers, but creatures without minds, like machines and robots, are resistant to many of the effects.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b9/mentalcontrol_hypnotize.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Controller_Control.Mind_Control.Mesmerize",
+    "Controller_Control.Mind_Control.Levitate",
+    "Controller_Control.Mind_Control.Dominate",
+    "Controller_Control.Mind_Control.Confuse",
+    "Controller_Control.Mind_Control.Mass_Hypnosis",
+    "Controller_Control.Mind_Control.Telekinesis",
+    "Controller_Control.Mind_Control.Total_Domination",
+    "Controller_Control.Mind_Control.Terrify",
+    "Controller_Control.Mind_Control.Mass_Confusion"
+  ],
+  "powers": [
+    {
+      "name": "Controller_Control.Mind_Control.Mesmerize",
+      "display_name": "Mesmerize",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b9/mentalcontrol_hypnotize.png",
+      "display_help": "Mesmerize painfully assails a target with psychic energy, rendering them unconscious. The target will remain asleep for some time, but will awaken if attacked. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Ranged, Moderate DMG(Psionic), Foe Sleep",
+      "display_info": {
+        "Attack Types": "Psionic",
+        "Available Level": "1",
+        "Activation Time": "1.67s",
+        "Endurance Cost": "5.20",
+        "Effect Area": "Single Target",
+        "Power Range": "100 ft.",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Recharge Time": "6s"
+      },
+      "attack_types": [
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Sleep",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Ranged Damage",
+        "Universal Damage Sets",
+        "Controller Archetype Sets",
+        "Sleep"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.1,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 100.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 6.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.5,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 55.88,
+                  "display_info": [
+                    "3.5 sleep for 55.88s on target after 0.25s delay"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 30.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 30.59,
+                  "average": 30.59,
+                  "per_activation": 18.32,
+                  "per_cast_cycle": 3.99,
+                  "display_info": [
+                    "30.59 psionic damage on target"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Containment"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0)) || target.HasTag?(IncarnateBoss))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 30.59,
+                  "average": 30.59,
+                  "per_activation": 18.32,
+                  "per_cast_cycle": 3.99,
+                  "display_info": [
+                    "30.59 psionic damage on target",
+                    "Only against immobilized, held, sleeping or stunned targets"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 92.77,
+                  "average": 92.77,
+                  "per_activation": 55.55,
+                  "per_cast_cycle": 12.1,
+                  "display_info": [
+                    "92.77 psionic damage on target"
+                  ],
+                  "base_value": -51.2809,
+                  "scale": 1.809
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "4.0 sleep for 4s on target after 0.25s delay"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Containment"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 46.38,
+                  "average": 46.38,
+                  "per_activation": 27.77,
+                  "per_cast_cycle": 6.05,
+                  "display_info": [
+                    "46.38 psionic damage on target",
+                    "Only against immobilized, held, sleeping or stunned targets"
+                  ],
+                  "base_value": -51.2809,
+                  "scale": 0.9045
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 27.94,
+                  "display_info": [
+                    "20.00% chance for 1.0 sleep for 27.94s on target after 0.25s delay"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 15.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Controller_Control.Mind_Control.Levitate",
+      "display_name": "Levitate",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/cb/mentalcontrol_levitate.png",
+      "display_help": "You can send a single target violently into the air, then slam them to the ground for Smashing damage. This power can bring flying foes to the ground. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Ranged, Moderate DMG(Smash)",
+      "display_info": {
+        "Recharge Time": "6s",
+        "Activation Time": "1.87s",
+        "Endurance Cost": "6.86",
+        "Available Level": "1",
+        "Power Range": "80 ft.",
+        "Power Type": "Click",
+        "Attack Types": "Psionic",
+        "Effect Area": "Single Target",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Ranged Damage",
+        "Knockback"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.87,
+        "animation_time": 1.87,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 6.0,
+        "endurance_cost": 6.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockup"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "magnitude": 12.46,
+                  "display_info": [
+                    "12.5 magnitude knockup on target"
+                  ],
+                  "base_value": 2.0771,
+                  "scale": 6.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 40.37,
+                  "average": 40.37,
+                  "per_activation": 21.59,
+                  "per_cast_cycle": 5.13,
+                  "display_info": [
+                    "40.37 smashing damage on target after 2s delay"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 1.32
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockup"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "magnitude": 12.46,
+                  "display_info": [
+                    "12.5 magnitude knockup on target"
+                  ],
+                  "base_value": 2.0771,
+                  "scale": 6.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 99.95,
+                  "average": 99.95,
+                  "per_activation": 53.45,
+                  "per_cast_cycle": 12.7,
+                  "display_info": [
+                    "99.95 smashing damage on target after 2s delay"
+                  ],
+                  "base_value": -51.2809,
+                  "scale": 1.9491
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Containment"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0)) || target.HasTag?(IncarnateBoss))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 40.37,
+                  "average": 40.37,
+                  "per_activation": 21.59,
+                  "per_cast_cycle": 5.13,
+                  "display_info": [
+                    "40.37 smashing damage on target after 2s delay",
+                    "Only against immobilized, held, sleeping or stunned targets"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 1.32
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Containment"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 49.97,
+                  "average": 49.97,
+                  "per_activation": 26.72,
+                  "per_cast_cycle": 6.35,
+                  "display_info": [
+                    "49.97 smashing damage on target after 2s delay",
+                    "Only against immobilized, held, sleeping or stunned targets"
+                  ],
+                  "base_value": -51.2809,
+                  "scale": 0.9745
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "magnitude": -1.6,
+                  "display_info": [
+                    "-1.6 fly protection for 10s on target after 2s delay",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Controller_Control.Mind_Control.Dominate",
+      "display_name": "Dominate",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/93/mentalcontrol_command.png",
+      "display_help": "Painfully tears at the mind of a single foe. Dominate deals Psionic damage and renders a foe helpless, lost in their own mind and unable to defend themselves. Damage: Moderate, Recharge: Moderate",
+      "display_short_help": "Ranged, Moderate DMG(Psionic), Foe Hold",
+      "display_info": {
+        "Endurance Cost": "8.53",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target",
+        "Available Level": "2",
+        "Attack Types": "Psionic",
+        "Activation Time": "1.1s",
+        "Recharge Time": "8s",
+        "Power Range": "80 ft."
+      },
+      "attack_types": [
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Hold",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Ranged Damage",
+        "Holds",
+        "Universal Damage Sets",
+        "Controller Archetype Sets"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.1,
+        "animation_time": 1.1,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 22.35,
+                  "display_info": [
+                    "3.0 hold for 22.35s on target"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 12.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 30.59,
+                  "average": 30.59,
+                  "per_activation": 27.81,
+                  "per_cast_cycle": 3.36,
+                  "display_info": [
+                    "30.59 psionic damage on target"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 16.76,
+                  "display_info": [
+                    "20.00% chance for 1.0 hold for 16.76s on target"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 9.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "4.0 hold for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 76.41,
+                  "average": 76.41,
+                  "per_activation": 69.46,
+                  "per_cast_cycle": 8.4,
+                  "display_info": [
+                    "76.41 psionic damage on target"
+                  ],
+                  "base_value": -51.2809,
+                  "scale": 1.49
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Containment"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0)) || target.HasTag?(IncarnateBoss))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 30.59,
+                  "average": 30.59,
+                  "per_activation": 27.81,
+                  "per_cast_cycle": 3.36,
+                  "display_info": [
+                    "30.59 psionic damage on target",
+                    "Only against immobilized, held, sleeping or stunned targets"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Containment"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 38.2,
+                  "average": 38.2,
+                  "per_activation": 34.73,
+                  "per_cast_cycle": 4.2,
+                  "display_info": [
+                    "38.20 psionic damage on target",
+                    "Only against immobilized, held, sleeping or stunned targets"
+                  ],
+                  "base_value": -51.2809,
+                  "scale": 0.745
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Controller_Control.Mind_Control.Confuse",
+      "display_name": "Confuse",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/f3/mentalcontrol_mindcontrol.png",
+      "display_help": "You can Confuse an enemy, forcing that foe to believe their friends are not who they appear to be. If successful, the enemy will ignore you and attack their own allies. If you Confuse someone before they have noticed you, your presence will continue to be masked. You will not receive any Experience Points for foes defeated by a Confused enemy. Recharge: Moderate",
+      "display_short_help": "Ranged, Target Confuse",
+      "display_info": {
+        "Recharge Time": "8s",
+        "Endurance Cost": "8.53",
+        "Target Type": "Enemies",
+        "Attack Types": "Psionic",
+        "Available Level": "6",
+        "Power Type": "Click",
+        "Power Range": "80 ft.",
+        "Effect Area": "Single Target",
+        "Activation Time": "2s",
+        "Aggro Type": "Enemies will not notice this attack"
+      },
+      "attack_types": [
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Confuse",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Controller Archetype Sets",
+        "Confuse"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.0,
+        "animation_time": 2.0,
+        "animation_time_before_hit": 1.0,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 37.25,
+                  "display_info": [
+                    "3.0 confuse for 37.25s on target"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 20.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "3.0 confuse for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 27.94,
+                  "display_info": [
+                    "20.00% chance for 1.0 confuse for 27.94s on target"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 15.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Controller_Control.Mind_Control.Mass_Hypnosis",
+      "display_name": "Mass Hypnosis",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/80/mentalcontrol_masshypnosis.png",
+      "display_help": "Hypnotizes a group of foes at a distance and puts them to Sleep. The targets will remain asleep for some time, but will awaken if attacked. This power deals no damage, but if done discreetly, the targets will never be aware of your presence. Recharge: Slow",
+      "display_short_help": "Ranged (Targeted AoE), Foe Sleep",
+      "display_info": {
+        "Power Range": "80 ft.",
+        "Activation Time": "2.03s",
+        "Power Type": "Click",
+        "Attack Types": "Psionic",
+        "Endurance Cost": "15.60",
+        "Available Level": "8",
+        "Aggro Type": "Enemies will not notice this attack",
+        "Effect Area": "AoE — 25 ft. radius (16 targets max)",
+        "Recharge Time": "45s",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Sleep",
+        "Enhance Recharge Speed",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Controller Archetype Sets",
+        "Sleep"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 25.0,
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.03,
+        "animation_time": 2.03,
+        "animation_time_before_hit": 0.93,
+        "recharge_time": 45.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 22.35,
+                  "display_info": [
+                    "3.0 sleep for 22.35s on target"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 12.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 14.9,
+                  "display_info": [
+                    "50.00% chance for 1.0 sleep for 14.9s on target"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "4.0 sleep for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Controller_Control.Mind_Control.Telekinesis",
+      "display_name": "Telekinesis",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/80/mentalcontrol_telekinesis.png",
+      "display_help": "Lifts a foe, and any nearby foes, off the ground and repels them. The targets are helpless, unable to take action, and will continue to hover away, picking up any passing targets, as long as you keep this power active. Keeping up this level of concentration costs a lot of Endurance. Recharge: Slow",
+      "display_short_help": "Toggle: Ranged (Targeted AoE), Foe Hold, Repel",
+      "display_info": {
+        "Power Range": "50 ft.",
+        "Power Type": "Toggle",
+        "Activation Time": "1.13s",
+        "Endurance Cost": "3.12/s",
+        "Recharge Time": "1m 0s",
+        "Target Type": "Enemies",
+        "Available Level": "12",
+        "Effect Area": "AoE — 10 ft. radius (5 targets max)"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Toggle",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 5,
+        "radius_feet": 10.0,
+        "range_feet": 50.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All",
+        "Defiant"
+      ],
+      "activate": {
+        "cast_time": 1.13,
+        "animation_time": 1.13,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 60.0,
+        "auto_cast_interval": 0.5,
+        "endurance_cost": 1.56
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 1.4,
+                  "display_info": [
+                    "3.0 hold for 1.4s on target"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 0.75
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Repel"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "magnitude": 1.0,
+                  "display_info": [
+                    "1.0 magnitude repel for 0.75s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "3.0 hold for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "isPVPMap?()"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.KillTk",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Controller_Control.Mind_Control.Total_Domination",
+      "display_name": "Total Domination",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/97/mentalcontrol_freeze.png",
+      "display_help": "Tears at the mind of a target foe and those near them. Dominate renders all affected foes helpless, lost in their own minds and unable to defend themselves. Recharge: Long",
+      "display_short_help": "Ranged (Targeted AoE), Foe Hold",
+      "display_info": {
+        "Activation Time": "2.03s",
+        "Available Level": "18",
+        "Recharge Time": "4m 0s",
+        "Attack Types": "Psionic",
+        "Power Type": "Click",
+        "Effect Area": "AoE — 20 ft. radius (16 targets max)",
+        "Endurance Cost": "15.60",
+        "Power Range": "80 ft.",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Hold",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Controller Archetype Sets",
+        "Holds"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 0.8,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 20.0,
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.03,
+        "animation_time": 2.03,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 240.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 14.9,
+                  "display_info": [
+                    "3.0 hold for 14.9s on target"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 11.17,
+                  "display_info": [
+                    "20.00% chance for 1.0 hold for 11.17s on target"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 6.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "4.0 hold for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Controller_Control.Mind_Control.Terrify",
+      "display_name": "Terrify",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/fd/mentalcontrol_terrify.png",
+      "display_help": "This power Terrifies foes within a cone area in front of you, causing them to tremble in Fear uncontrollably. The affect is so frightening and overwhelming, that the target takes real damage from the physiological response to this Psionic attack. Damage: Minor, Recharge: Slow",
+      "display_short_help": "Ranged (Cone), Minor DMG(Psionic), Foe Fear(Special)",
+      "display_info": {
+        "Power Range": "60 ft.",
+        "Attack Types": "Psionic",
+        "Recharge Time": "40s",
+        "Activation Time": "2.03s",
+        "Effect Area": "Cone — 60 ft. radius 90° arc (16 targets max)",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Endurance Cost": "20.80",
+        "Available Level": "26"
+      },
+      "attack_types": [
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Fear",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Controller Archetype Sets",
+        "Fear",
+        "Universal Damage Sets",
+        "Targeted AoE Damage"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 0.9,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 16,
+        "radius_feet": 60.0,
+        "arc_degrees": 90.0,
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.03,
+        "animation_time": 2.03,
+        "animation_time_before_hit": 0.77,
+        "recharge_time": 40.0,
+        "endurance_cost": 20.8
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Terrorized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 27.94,
+                  "display_info": [
+                    "3.0 terrorize for 27.94s on target after 0.25s delay"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 15.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 30.59,
+                  "average": 30.59,
+                  "per_activation": 15.07,
+                  "per_cast_cycle": 0.73,
+                  "display_info": [
+                    "30.59 psionic damage on target"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Containment"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0)) || target.HasTag?(IncarnateBoss))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 30.59,
+                  "average": 30.59,
+                  "per_activation": 15.07,
+                  "per_cast_cycle": 0.73,
+                  "display_info": [
+                    "30.59 psionic damage on target",
+                    "Only against immobilized, held, sleeping or stunned targets"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 38.14,
+                  "average": 38.14,
+                  "per_activation": 18.79,
+                  "per_cast_cycle": 0.91,
+                  "display_info": [
+                    "38.14 psionic damage on target"
+                  ],
+                  "base_value": -51.2809,
+                  "scale": 0.7437
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Terrorized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "4.0 terrorize for 4s on target after 0.25s delay"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Containment"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 19.07,
+                  "average": 19.07,
+                  "per_activation": 9.39,
+                  "per_cast_cycle": 0.45,
+                  "display_info": [
+                    "19.07 psionic damage on target",
+                    "Only against immobilized, held, sleeping or stunned targets",
+                    "Unresistable"
+                  ],
+                  "base_value": -51.2809,
+                  "scale": 0.3719
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Terrorized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 18.63,
+                  "display_info": [
+                    "20.00% chance for 1.0 terrorize for 18.63s on target after 0.25s delay"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 10.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Controller_Control.Mind_Control.Mass_Confusion",
+      "display_name": "Mass Confusion",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d0/mentalcontrol_confuse.png",
+      "display_help": "You can cause Mass Confusion within a group of foes, creating chaos. All affected foes within the area will turn and attack each other, ignoring all heroes. If you Confuse villains before they noticed you, your presence will continue to go unnoticed. You will not receive any Experience Points for foes defeated by Confused enemies. Recharge: Long",
+      "display_short_help": "Ranged (Targeted AoE), Foe Confuse",
+      "display_info": {
+        "Aggro Type": "Enemies will not notice this attack",
+        "Available Level": "32",
+        "Activation Time": "1.67s",
+        "Endurance Cost": "26.00",
+        "Recharge Time": "4m 0s",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Attack Types": "Psionic",
+        "Power Range": "80 ft.",
+        "Effect Area": "AoE — 25 ft. radius (16 targets max)"
+      },
+      "attack_types": [
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Confuse",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Confuse",
+        "Controller Archetype Sets"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 0.8,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 25.0,
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 1.7,
+        "recharge_time": 240.0,
+        "endurance_cost": 26.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 37.25,
+                  "display_info": [
+                    "3.0 confuse for 37.25s on target"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 20.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "3.0 confuse for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "duration_seconds": 27.94,
+                  "display_info": [
+                    "20.00% chance for 1.0 confuse for 27.94s on target"
+                  ],
+                  "base_value": 1.8625,
+                  "scale": 15.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

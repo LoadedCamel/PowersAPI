@@ -1,1 +1,3231 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Tanker_Melee.Psionic_Melee","display_name":"Psionic Melee","display_help":"You are able to strike at foes with psychic projections including deadly psi blades. Psionic Melee provides excellent crowd control by dominating the minds of its victims. Your psionic damaging attacks have a chance to grant you Insight into your enemies. While you have Insight, your psionic damage powers cause additional psionic damage over time and your Boggle and Psi Blade Sweep powers become more potent.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/29/psionicmelee_mentalstrike.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Tanker_Melee.Psionic_Melee.Mental_Strike","Tanker_Melee.Psionic_Melee.Psi_Blade","Tanker_Melee.Psionic_Melee.Telekinetic_Blow","Tanker_Melee.Psionic_Melee.Taunt","Tanker_Melee.Psionic_Melee.Psi_Blade_Sweep","Tanker_Melee.Psionic_Melee.Concentration","Tanker_Melee.Psionic_Melee.Boggle","Tanker_Melee.Psionic_Melee.Greater_Psi_Blade","Tanker_Melee.Psionic_Melee.Mass_Levitate"],"powers":[{"name":"Tanker_Melee.Psionic_Melee.Mental_Strike","display_name":"Mental Strike","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/29/psionicmelee_mentalstrike.png","display_help":"Frozen Fists encrusts your hands in ice, giving them the ability to quickly inflict minor damage on villains. The foe's attack and movement speed is Slowed, due to the chills caused by the cold blows. This power can bruise an enemy, making them more vulnerable to damage. Damage: Minor, Recharge: Very Fast","display_short_help":"Melee, Light DMG(Psionic/Smash), Foe -Rech; Self +Insight","display_info":{"Activation Time":"1s","Recharge Time":"3s","Power Range":"7 ft.","Attack Types":"Melee, Smashing, Psionic","Effect Area":"Single Target","Target Type":"Enemies","Endurance Cost":"4.37","Power Type":"Click","Available Level":"1"},"requires":"char>accesslevel >= 0","attack_types":["Melee_Def","Smashing_Def","Psionic_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Melee Damage","Tanker Archetype Sets","Taunt","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.43,"recharge_time":3.0,"endurance_cost":4.37},"effect_groups":[{"visible_in_info_window":true,"chance_percent":8.89,"requires":["(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"visible_in_info_window":true,"chance_percent":17.78,"requires":["(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":11.09,"average":11.09,"per_activation":11.09,"per_cast_cycle":2.77,"display_info":["11.09 smashing damage on target"],"base_value":-52.8297,"scale":0.21}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":33.28,"average":33.28,"per_activation":33.28,"per_cast_cycle":8.32,"display_info":["33.28 psionic damage on target"],"base_value":-52.8297,"scale":0.63}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":17.21,"average":17.21,"per_activation":17.21,"per_cast_cycle":4.3,"display_info":["17.21 smashing damage on target"],"base_value":-56.4121,"scale":0.305}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":51.62,"average":51.62,"per_activation":51.62,"per_cast_cycle":12.91,"display_info":["51.62 psionic damage on target"],"base_value":-56.4121,"scale":0.915}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-8.0,"display_info":["-8.00% strength to recharge for 6s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.1}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight)"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.25,"continuous_apply_seconds":1.0,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":4.44,"average":10.49,"per_activation":10.49,"per_cast_cycle":2.62,"display_info":["4 ticks of 80.00% chance for 4.44 psionic damage over 3.1s on target after 0.25s delay"],"base_value":-52.8297,"scale":0.084}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":19.97,"average":19.97,"per_activation":19.97,"per_cast_cycle":4.99,"display_info":["19.97 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.378}]}]}]},{"name":"Tanker_Melee.Psionic_Melee.Psi_Blade","display_name":"Psi Blade","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/00/psionicmelee_psiblade.png","display_help":"You lash at your foe's mind with a mentally projected blade of psychic energy to deal moderate Psionic and Lethal damage. Affected foes will have their recharge rate reduced. Psi Blade has a moderate chance to grant you Insight. While you have Insight, Psi Blade will deal additional minor psionic damage over time. Damage: Moderate, Recharge: Fast","display_short_help":"Melee, Moderate DMG(Psionic/Lethal), Foe -Rech, Self +Insight","display_info":{"Power Range":"7 ft.","Available Level":"2","Activation Time":"1.33s","Recharge Time":"5s","Power Type":"Click","Endurance Cost":"5.93","Effect Area":"Single Target","Attack Types":"Melee, Lethal, Psionic","Target Type":"Enemies"},"requires":"char>accesslevel >= 0","attack_types":["Melee_Def","Lethal_Def","Psionic_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Melee Damage","Taunt","Tanker Archetype Sets","Universal Damage Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.33,"animation_time":1.33,"animation_time_before_hit":0.67,"recharge_time":5.0,"endurance_cost":5.93},"effect_groups":[{"visible_in_info_window":true,"chance_percent":14.07,"requires":["(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"visible_in_info_window":true,"chance_percent":28.13,"requires":["(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":15.06,"average":15.06,"per_activation":11.32,"per_cast_cycle":2.38,"display_info":["15.06 lethal damage on target"],"base_value":-52.8297,"scale":0.285}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":45.17,"average":45.17,"per_activation":33.96,"per_cast_cycle":7.14,"display_info":["45.17 psionic damage on target"],"base_value":-52.8297,"scale":0.855}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":21.59,"average":21.59,"per_activation":16.23,"per_cast_cycle":3.41,"display_info":["21.59 lethal damage on target"],"base_value":-56.4121,"scale":0.3827}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":64.77,"average":64.77,"per_activation":48.7,"per_cast_cycle":10.23,"display_info":["64.77 psionic damage on target"],"base_value":-56.4121,"scale":1.1482}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-9.6,"display_info":["-9.60% strength to recharge for 6s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.12}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight)"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.25,"continuous_apply_seconds":1.0,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":12.07,"average":28.5,"per_activation":21.43,"per_cast_cycle":4.5,"display_info":["4 ticks of 80.00% chance for 12.07 psionic damage over 3.1s on target after 0.25s delay"],"base_value":-52.8297,"scale":0.2285}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":27.1,"average":27.1,"per_activation":20.38,"per_cast_cycle":4.28,"display_info":["27.10 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.513}]}]}]},{"name":"Tanker_Melee.Psionic_Melee.Telekinetic_Blow","display_name":"Telekinetic Blow","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/aa/psionicmelee_telekineticblow.png","display_help":"You project telekinetic energy around your fist before delivering a shattering uppercut to your foe dealing high Psionic and Smashing damage and sending them flying into the air. Telekinetic Blow has a high chance of granting you Insight. While you have Insight, Telekinetic Blow will deal additional minor psionic damage over time. Damage: High, Recharge: Moderate","display_short_help":"Melee, High DMG(Psionic/Smash), Foe Knock Up, Self +Insight","display_info":{"Activation Time":"1.47s","Endurance Cost":"9.36","Recharge Time":"9s","Effect Area":"Single Target","Power Type":"Click","Power Range":"7 ft.","Target Type":"Enemies","Attack Types":"Melee, Smashing, Psionic","Available Level":"4"},"requires":"char>accesslevel >= 0","attack_types":["Melee_Def","Smashing_Def","Psionic_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Melee Damage","Universal Damage Sets","Tanker Archetype Sets","Knockback","Taunt"],"available_at_level":4,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.47,"animation_time":1.47,"animation_time_before_hit":0.67,"recharge_time":9.0,"endurance_cost":9.36},"effect_groups":[{"visible_in_info_window":true,"chance_percent":23.27,"requires":["(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"visible_in_info_window":true,"chance_percent":46.53,"requires":["(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":23.77,"average":23.77,"per_activation":16.17,"per_cast_cycle":2.27,"display_info":["23.77 smashing damage on target"],"base_value":-52.8297,"scale":0.45}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":71.32,"average":71.32,"per_activation":48.52,"per_cast_cycle":6.81,"display_info":["71.32 psionic damage on target"],"base_value":-52.8297,"scale":1.35}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":25.23,"average":25.23,"per_activation":17.16,"per_cast_cycle":2.41,"display_info":["25.23 smashing damage on target"],"base_value":-56.4121,"scale":0.4472}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":75.69,"average":75.69,"per_activation":51.49,"per_cast_cycle":7.23,"display_info":["75.69 psionic damage on target"],"base_value":-56.4121,"scale":1.3417}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockup"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":2.6,"display_info":["60.00% chance for 2.6 magnitude knockup on target"],"base_value":2.5964,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockup"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":2.6,"display_info":["60.00% chance for 2.6 magnitude knockup on target"],"base_value":2.5964,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight)"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.25,"continuous_apply_seconds":1.0,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":9.51,"average":22.46,"per_activation":15.28,"per_cast_cycle":2.15,"display_info":["4 ticks of 80.00% chance for 9.51 psionic damage over 3.1s on target after 0.25s delay"],"base_value":-52.8297,"scale":0.18}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":42.79,"average":42.79,"per_activation":29.11,"per_cast_cycle":4.09,"display_info":["42.79 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.81}]}]}]},{"name":"Tanker_Melee.Psionic_Melee.Taunt","display_name":"Taunt","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/eb/psionicmelee_taunt.png","display_help":"Taunts a foe, and some nearby foes, to attack you. Useful for pulling villains off an ally who find themselves in over their head. Taunted foes tend to ignore other Heroes and focus on you for quite a while, so use this power cautiously. A To Hit check is required to Taunt enemy players, but is not needed against critter targets. Recharge: Moderate","display_short_help":"Ranged (Targeted AoE), Foe Taunt","display_info":{"Available Level":"10","Attack Types":"Ranged","Activation Time":"1.67s","Target Type":"Enemies","Effect Area":"AoE — 15 ft. radius (5 targets max)","Recharge Time":"10s","Power Type":"Click","Power Range":"70 ft."},"requires":"char>accesslevel >= 0","attack_types":["Ranged_Def"],"enhancements_allowed":["Enhance Taunt","Enhance Range","Enhance Recharge Speed","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt"],"available_at_level":10,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":5,"radius_feet":15.0,"range_feet":70.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.67,"recharge_time":10.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":41.0,"display_info":["4.0 taunt for 41s on target"],"base_value":2.05,"scale":20.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":10.25,"display_info":["4.0 taunt for 10.25s on target"],"base_value":2.05,"scale":5.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"],"effects":[{"attributes":["Null"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Range"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-100.0,"display_info":["-100.00% strength to range for 20s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-1.0}]}]}]},{"name":"Tanker_Melee.Psionic_Melee.Psi_Blade_Sweep","display_name":"Psi Blade Sweep","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/96/psionicmelee_psibladesweep.png","display_help":"You project a Psi Blade and swing it in a broad arc hitting all foes within a wide cone in front of you for high Psionic and Lethal damage. Foes struck by this power have their recharge reduced and have chance to become disoriented for a short time. Psi Blade Sweep has a high chance of granting you Insight. While you have Insight, Psi Blade Sweep will deal additional minor psionic damage over time and has a greater chance to disorient foes. Damage: High, Recharge: Moderate","display_short_help":"Melee (Cone), High DMG(Psionic/Lethal), Foe Disorient, -Rech; Self +Insight","display_info":{"Power Range":"7 ft.","Endurance Cost":"8.53","Attack Types":"Melee, Lethal, Psionic","Power Type":"Click","Target Type":"Enemies","Recharge Time":"8s","Effect Area":"Cone — 7 ft. radius 70° arc (10 targets max)","Available Level":"16","Activation Time":"1.77s"},"requires":"char>accesslevel >= 0","attack_types":["Melee_Def","Lethal_Def","Psionic_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Disorient","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt","Tanker Archetype Sets","Universal Damage Sets","Stuns","PBAoE Damage"],"available_at_level":16,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":7.0,"arc_degrees":70.0,"range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.77,"animation_time":1.77,"animation_time_before_hit":0.93,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"visible_in_info_window":true,"chance_percent":19.04,"requires":["(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"visible_in_info_window":true,"chance_percent":38.09,"requires":["(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":19.02,"average":19.02,"per_activation":10.75,"per_cast_cycle":1.95,"display_info":["19.02 lethal damage on target"],"base_value":-52.8297,"scale":0.36}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":57.06,"average":57.06,"per_activation":32.24,"per_cast_cycle":5.84,"display_info":["57.06 psionic damage on target"],"base_value":-52.8297,"scale":1.08}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":22.1,"average":22.1,"per_activation":12.49,"per_cast_cycle":2.26,"display_info":["22.10 lethal damage on target"],"base_value":-56.4121,"scale":0.3918}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":66.31,"average":66.31,"per_activation":37.46,"per_cast_cycle":6.79,"display_info":["66.31 psionic damage on target"],"base_value":-56.4121,"scale":1.1754}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-12.0,"display_info":["-12.00% strength to recharge for 6s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.15}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight)"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.25,"continuous_apply_seconds":1.0,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":12.47,"average":29.45,"per_activation":16.64,"per_cast_cycle":3.01,"display_info":["4 ticks of 80.00% chance for 12.47 psionic damage over 3.1s on target after 0.25s delay"],"base_value":-52.8297,"scale":0.236}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":33.0,"requires":["!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == critter)"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":2.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":5.96,"display_info":["33.00% chance for 2.0 stun for 5.96s on target"],"base_value":1.192,"scale":5.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":33.0,"requires":["!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == player)"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":2.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":2.0,"display_info":["33.00% chance for 2.0 stun for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":50.0,"requires":["source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == critter)"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":5.96,"display_info":["50.00% chance for 3.0 stun for 5.96s on target"],"base_value":1.192,"scale":5.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":50.0,"requires":["source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == player)"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":2.0,"display_info":["50.00% chance for 3.0 stun for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":34.23,"average":34.23,"per_activation":19.34,"per_cast_cycle":3.5,"display_info":["34.23 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.648}]}]}]},{"name":"Tanker_Melee.Psionic_Melee.Concentration","display_name":"Concentration","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/6b/psionicmelee_concentration.png","display_help":"Greatly boosts your attacks for a few seconds. Slightly increases chance to hit. Recharge: Long","display_short_help":"Self +DMG, +To Hit","display_info":{"Activation Time":"1.17s","Power Type":"Click","Effect Area":"Single Target","Recharge Time":"1m 30s","Endurance Cost":"5.20","Target Type":"Self","Available Level":"20"},"requires":"char>accesslevel >= 0","enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["To Hit Buff"],"available_at_level":20,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":90.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":20.0,"display_info":["20.00% to hit for 10s on self","Unresistable"],"base_value":0.1,"scale":2.0}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":80.0,"display_info":["80.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":8.0}]}]}]},{"name":"Tanker_Melee.Psionic_Melee.Boggle","display_name":"Boggle","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/99/psionicmelee_boggle.png","display_help":"You flood your foe's mind with doubt causing them to become confused for a brief time. Confused foes will attack their allies. Boggle will also place the \"Boggled\" effect on your target for a short time. Attacking a Boggled target will increase your chance of gaining Insight. Note that Boggle is unaffected by Range changes. Recharge: Slow","display_short_help":"Short Ranged, Target Confuse, +Special","display_info":{"Target Type":"Enemies","Aggro Type":"Enemies will not notice this attack","Recharge Time":"20s","Available Level":"28","Activation Time":"2s","Power Type":"Click","Attack Types":"Psionic","Endurance Cost":"7.80","Power Range":"40 ft.","Effect Area":"Single Target"},"requires":"char>accesslevel >= 0","attack_types":["Psionic_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Confuse","Enhance Accuracy"],"enhancement_set_categories_allowed":["Confuse"],"available_at_level":28,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":40.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.0,"animation_time":2.0,"animation_time_before_hit":1.0,"recharge_time":20.0,"endurance_cost":7.8},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Boggled","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Replace","by_caster":true}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":15.0,"display_info":["3.0 confuse for 15s on target"],"base_value":1.0,"scale":15.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":2.0,"display_info":["3.0 confuse for 2s on target"],"base_value":2.0,"scale":1.0}]}]}]},{"name":"Tanker_Melee.Psionic_Melee.Greater_Psi_Blade","display_name":"Greater Psi Blade","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/c7/psionicmelee_greaterpsiblade.png","display_help":"You focus and create a more powerful Psi Blade projection before slashing at your foe to deal superior Psionic and Lethal damage. The affected foe will have their recharge reduced moderately and be left held for a short time. Greater Psi Blade will cause additional damage and cause this power's hold to last for a longer duration if you have Insight. Using this power removes Insight. Damage: Superior, Recharge: Slow","display_short_help":"Melee, Superior DMG(Psionic/Lethal), Foe -Rech, Hold; Self -Insight","display_info":{"Endurance Cost":"14.35","Power Range":"7 ft.","Attack Types":"Melee, Lethal, Psionic","Power Type":"Click","Target Type":"Enemies","Recharge Time":"15s","Activation Time":"2.5s","Effect Area":"Single Target","Available Level":"35"},"requires":"char>accesslevel >= 0","attack_types":["Melee_Def","Lethal_Def","Psionic_Def"],"enhancements_allowed":["Enhance Hold","Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Holds","Taunt","Melee Damage","Tanker Archetype Sets","Universal Damage Sets"],"available_at_level":35,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.5,"animation_time":2.5,"animation_time_before_hit":1.67,"recharge_time":15.0,"endurance_cost":14.35},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight)"],"effects":[{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":36.45,"average":36.45,"per_activation":14.58,"per_cast_cycle":2.08,"display_info":["36.45 lethal damage on target"],"base_value":-52.8297,"scale":0.69}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":109.36,"average":109.36,"per_activation":43.74,"per_cast_cycle":6.25,"display_info":["109.36 psionic damage on target"],"base_value":-52.8297,"scale":2.07}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":38.78,"average":38.78,"per_activation":15.51,"per_cast_cycle":2.22,"display_info":["38.78 lethal damage on target"],"base_value":-56.4121,"scale":0.6875}]},{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":116.34,"average":116.34,"per_activation":46.54,"per_cast_cycle":6.65,"display_info":["116.34 psionic damage on target"],"base_value":-56.4121,"scale":2.0624}]},{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":2.0,"display_info":["3.0 hold for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-9.6,"display_info":["-9.60% strength to recharge for 6s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.12}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == critter)"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":72.9,"average":72.9,"per_activation":29.16,"per_cast_cycle":4.17,"display_info":["72.90 psionic damage on target"],"base_value":-52.8297,"scale":1.38}]},{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":14.3,"display_info":["3.0 hold for 14.3s on target"],"base_value":1.192,"scale":12.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == player)"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":77.57,"average":77.57,"per_activation":31.03,"per_cast_cycle":4.43,"display_info":["77.57 psionic damage on target"],"base_value":-56.4121,"scale":1.375}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == critter)"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":9.54,"display_info":["3.0 hold for 9.54s on target"],"base_value":1.192,"scale":8.0}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":65.61,"average":65.61,"per_activation":26.24,"per_cast_cycle":3.75,"display_info":["65.61 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":1.242}]}]}]},{"name":"Tanker_Melee.Psionic_Melee.Mass_Levitate","display_name":"Mass Levitate","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/5f/psionicmelee_masslevitate.png","display_help":"You build up a large amount of telekinetic energy and release it causing nearby foes to be flung into the air. Affected foes will suffer high Smashing damage. If the caster has Insight when this power is used Mass Levitate will also cause a moderate amount of Psionic damage over time. Damage: High, Recharge: Slow","display_short_help":"PBAoE, High DMG(Smash), Foe Knock Up, +Insight","display_info":{"Available Level":"38","Effect Area":"AoE — 10 ft. radius (16 targets max)","Recharge Time":"20s","Activation Time":"2.5s","Endurance Cost":"18.51","Attack Types":"Area, Smashing","Target Type":"Self","Power Type":"Click"},"requires":"char>accesslevel >= 0","attack_types":["Area_Def","Smashing_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["PBAoE Damage","Tanker Archetype Sets","Taunt","Knockback","Universal Damage Sets"],"available_at_level":38,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":10.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.5,"animation_time":2.5,"animation_time_before_hit":1.4,"recharge_time":20.0,"endurance_cost":18.51},"effect_groups":[{"visible_in_info_window":true,"chance_percent":20.0,"requires":["(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"visible_in_info_window":true,"chance_percent":40.0,"requires":["(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":2.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":75.02,"average":75.02,"per_activation":30.01,"per_cast_cycle":3.33,"display_info":["75.02 smashing damage on target after 2s delay"],"base_value":-52.8297,"scale":1.42}]},{"attributes":["Knockup"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":5.19,"display_info":["5.2 magnitude knockup on target"],"base_value":2.5964,"scale":2.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":2.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":66.57,"average":66.57,"per_activation":26.63,"per_cast_cycle":2.96,"display_info":["66.57 smashing damage on target after 2s delay"],"base_value":-56.4121,"scale":1.18}]},{"attributes":["Knockup"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":5.19,"display_info":["5.2 magnitude knockup on target"],"base_value":2.5964,"scale":2.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight)"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":2.25,"continuous_apply_seconds":1.0,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":7.5,"average":17.71,"per_activation":7.08,"per_cast_cycle":0.79,"display_info":["4 ticks of 80.00% chance for 7.50 psionic damage over 3.1s on target after 2.25s delay"],"base_value":-52.8297,"scale":0.142}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":33.76,"average":33.76,"per_activation":13.5,"per_cast_cycle":1.5,"display_info":["33.76 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.639}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Tanker_Melee.Psionic_Melee",
+  "display_name": "Psionic Melee",
+  "display_help": "You are able to strike at foes with psychic projections including deadly psi blades. Psionic Melee provides excellent crowd control by dominating the minds of its victims. Your psionic damaging attacks have a chance to grant you Insight into your enemies. While you have Insight, your psionic damage powers cause additional psionic damage over time and your Boggle and Psi Blade Sweep powers become more potent.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/29/psionicmelee_mentalstrike.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Tanker_Melee.Psionic_Melee.Mental_Strike",
+    "Tanker_Melee.Psionic_Melee.Psi_Blade",
+    "Tanker_Melee.Psionic_Melee.Telekinetic_Blow",
+    "Tanker_Melee.Psionic_Melee.Taunt",
+    "Tanker_Melee.Psionic_Melee.Psi_Blade_Sweep",
+    "Tanker_Melee.Psionic_Melee.Concentration",
+    "Tanker_Melee.Psionic_Melee.Boggle",
+    "Tanker_Melee.Psionic_Melee.Greater_Psi_Blade",
+    "Tanker_Melee.Psionic_Melee.Mass_Levitate"
+  ],
+  "powers": [
+    {
+      "name": "Tanker_Melee.Psionic_Melee.Mental_Strike",
+      "display_name": "Mental Strike",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/29/psionicmelee_mentalstrike.png",
+      "display_help": "Frozen Fists encrusts your hands in ice, giving them the ability to quickly inflict minor damage on villains. The foe's attack and movement speed is Slowed, due to the chills caused by the cold blows. This power can bruise an enemy, making them more vulnerable to damage. Damage: Minor, Recharge: Very Fast",
+      "display_short_help": "Melee, Light DMG(Psionic/Smash), Foe -Rech; Self +Insight",
+      "display_info": {
+        "Available Level": "1",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Attack Types": "Melee, Smashing, Psionic",
+        "Activation Time": "1s",
+        "Effect Area": "Single Target",
+        "Power Range": "7 ft.",
+        "Recharge Time": "3s",
+        "Endurance Cost": "4.37"
+      },
+      "requires": "char>accesslevel >= 0",
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Melee Damage",
+        "Taunt",
+        "Tanker Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.43,
+        "recharge_time": 3.0,
+        "endurance_cost": 4.37
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 8.89,
+          "requires": [
+            "(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 17.78,
+          "requires": [
+            "(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 11.09,
+                  "average": 11.09,
+                  "per_activation": 11.09,
+                  "per_cast_cycle": 2.77,
+                  "display_info": [
+                    "11.09 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.21
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 33.28,
+                  "average": 33.28,
+                  "per_activation": 33.28,
+                  "per_cast_cycle": 8.32,
+                  "display_info": [
+                    "33.28 psionic damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.63
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 17.21,
+                  "average": 17.21,
+                  "per_activation": 17.21,
+                  "per_cast_cycle": 4.3,
+                  "display_info": [
+                    "17.21 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.305
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 51.62,
+                  "average": 51.62,
+                  "per_activation": 51.62,
+                  "per_cast_cycle": 12.91,
+                  "display_info": [
+                    "51.62 psionic damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.915
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -8.0,
+                  "display_info": [
+                    "-8.00% strength to recharge for 6s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.25,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 4.44,
+                  "average": 10.49,
+                  "per_activation": 10.49,
+                  "per_cast_cycle": 2.62,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 4.44 psionic damage over 3.1s on target after 0.25s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.084
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 19.97,
+                  "average": 19.97,
+                  "per_activation": 19.97,
+                  "per_cast_cycle": 4.99,
+                  "display_info": [
+                    "19.97 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.378
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Psionic_Melee.Psi_Blade",
+      "display_name": "Psi Blade",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/00/psionicmelee_psiblade.png",
+      "display_help": "You lash at your foe's mind with a mentally projected blade of psychic energy to deal moderate Psionic and Lethal damage. Affected foes will have their recharge rate reduced. Psi Blade has a moderate chance to grant you Insight. While you have Insight, Psi Blade will deal additional minor psionic damage over time. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Melee, Moderate DMG(Psionic/Lethal), Foe -Rech, Self +Insight",
+      "display_info": {
+        "Recharge Time": "5s",
+        "Endurance Cost": "5.93",
+        "Available Level": "2",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target",
+        "Attack Types": "Melee, Lethal, Psionic",
+        "Power Range": "7 ft.",
+        "Activation Time": "1.33s"
+      },
+      "requires": "char>accesslevel >= 0",
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def",
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Melee Damage",
+        "Taunt",
+        "Tanker Archetype Sets"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.33,
+        "animation_time": 1.33,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 5.0,
+        "endurance_cost": 5.93
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 14.07,
+          "requires": [
+            "(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 28.13,
+          "requires": [
+            "(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 15.06,
+                  "average": 15.06,
+                  "per_activation": 11.32,
+                  "per_cast_cycle": 2.38,
+                  "display_info": [
+                    "15.06 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.285
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 45.17,
+                  "average": 45.17,
+                  "per_activation": 33.96,
+                  "per_cast_cycle": 7.14,
+                  "display_info": [
+                    "45.17 psionic damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.855
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 21.59,
+                  "average": 21.59,
+                  "per_activation": 16.23,
+                  "per_cast_cycle": 3.41,
+                  "display_info": [
+                    "21.59 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.3827
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 64.77,
+                  "average": 64.77,
+                  "per_activation": 48.7,
+                  "per_cast_cycle": 10.23,
+                  "display_info": [
+                    "64.77 psionic damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.1482
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -9.6,
+                  "display_info": [
+                    "-9.60% strength to recharge for 6s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.25,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 12.07,
+                  "average": 28.5,
+                  "per_activation": 21.43,
+                  "per_cast_cycle": 4.5,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 12.07 psionic damage over 3.1s on target after 0.25s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.2285
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 27.1,
+                  "average": 27.1,
+                  "per_activation": 20.38,
+                  "per_cast_cycle": 4.28,
+                  "display_info": [
+                    "27.10 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.513
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Psionic_Melee.Telekinetic_Blow",
+      "display_name": "Telekinetic Blow",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/aa/psionicmelee_telekineticblow.png",
+      "display_help": "You project telekinetic energy around your fist before delivering a shattering uppercut to your foe dealing high Psionic and Smashing damage and sending them flying into the air. Telekinetic Blow has a high chance of granting you Insight. While you have Insight, Telekinetic Blow will deal additional minor psionic damage over time. Damage: High, Recharge: Moderate",
+      "display_short_help": "Melee, High DMG(Psionic/Smash), Foe Knock Up, Self +Insight",
+      "display_info": {
+        "Recharge Time": "9s",
+        "Target Type": "Enemies",
+        "Endurance Cost": "9.36",
+        "Activation Time": "1.47s",
+        "Power Range": "7 ft.",
+        "Effect Area": "Single Target",
+        "Available Level": "4",
+        "Attack Types": "Melee, Smashing, Psionic",
+        "Power Type": "Click"
+      },
+      "requires": "char>accesslevel >= 0",
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Knockback",
+        "Tanker Archetype Sets",
+        "Universal Damage Sets",
+        "Melee Damage",
+        "Taunt"
+      ],
+      "available_at_level": 4,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.47,
+        "animation_time": 1.47,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 9.0,
+        "endurance_cost": 9.36
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 23.27,
+          "requires": [
+            "(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 46.53,
+          "requires": [
+            "(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 23.77,
+                  "average": 23.77,
+                  "per_activation": 16.17,
+                  "per_cast_cycle": 2.27,
+                  "display_info": [
+                    "23.77 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.45
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 71.32,
+                  "average": 71.32,
+                  "per_activation": 48.52,
+                  "per_cast_cycle": 6.81,
+                  "display_info": [
+                    "71.32 psionic damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 25.23,
+                  "average": 25.23,
+                  "per_activation": 17.16,
+                  "per_cast_cycle": 2.41,
+                  "display_info": [
+                    "25.23 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.4472
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 75.69,
+                  "average": 75.69,
+                  "per_activation": 51.49,
+                  "per_cast_cycle": 7.23,
+                  "display_info": [
+                    "75.69 psionic damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.3417
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockup"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 2.6,
+                  "display_info": [
+                    "60.00% chance for 2.6 magnitude knockup on target"
+                  ],
+                  "base_value": 2.5964,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockup"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 2.6,
+                  "display_info": [
+                    "60.00% chance for 2.6 magnitude knockup on target"
+                  ],
+                  "base_value": 2.5964,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.25,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 9.51,
+                  "average": 22.46,
+                  "per_activation": 15.28,
+                  "per_cast_cycle": 2.15,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 9.51 psionic damage over 3.1s on target after 0.25s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.18
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 42.79,
+                  "average": 42.79,
+                  "per_activation": 29.11,
+                  "per_cast_cycle": 4.09,
+                  "display_info": [
+                    "42.79 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.81
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Psionic_Melee.Taunt",
+      "display_name": "Taunt",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/eb/psionicmelee_taunt.png",
+      "display_help": "Taunts a foe, and some nearby foes, to attack you. Useful for pulling villains off an ally who find themselves in over their head. Taunted foes tend to ignore other Heroes and focus on you for quite a while, so use this power cautiously. A To Hit check is required to Taunt enemy players, but is not needed against critter targets. Recharge: Moderate",
+      "display_short_help": "Ranged (Targeted AoE), Foe Taunt",
+      "display_info": {
+        "Power Range": "70 ft.",
+        "Effect Area": "AoE — 15 ft. radius (5 targets max)",
+        "Attack Types": "Ranged",
+        "Recharge Time": "10s",
+        "Power Type": "Click",
+        "Available Level": "10",
+        "Target Type": "Enemies",
+        "Activation Time": "1.67s"
+      },
+      "requires": "char>accesslevel >= 0",
+      "attack_types": [
+        "Ranged_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt"
+      ],
+      "available_at_level": 10,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 5,
+        "radius_feet": 15.0,
+        "range_feet": 70.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 10.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 41.0,
+                  "display_info": [
+                    "4.0 taunt for 41s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 20.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 10.25,
+                  "display_info": [
+                    "4.0 taunt for 10.25s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Null"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Range"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% strength to range for 20s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Psionic_Melee.Psi_Blade_Sweep",
+      "display_name": "Psi Blade Sweep",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/96/psionicmelee_psibladesweep.png",
+      "display_help": "You project a Psi Blade and swing it in a broad arc hitting all foes within a wide cone in front of you for high Psionic and Lethal damage. Foes struck by this power have their recharge reduced and have chance to become disoriented for a short time. Psi Blade Sweep has a high chance of granting you Insight. While you have Insight, Psi Blade Sweep will deal additional minor psionic damage over time and has a greater chance to disorient foes. Damage: High, Recharge: Moderate",
+      "display_short_help": "Melee (Cone), High DMG(Psionic/Lethal), Foe Disorient, -Rech; Self +Insight",
+      "display_info": {
+        "Power Range": "7 ft.",
+        "Effect Area": "Cone — 7 ft. radius 70° arc (10 targets max)",
+        "Recharge Time": "8s",
+        "Activation Time": "1.77s",
+        "Endurance Cost": "8.53",
+        "Available Level": "16",
+        "Target Type": "Enemies",
+        "Attack Types": "Melee, Lethal, Psionic",
+        "Power Type": "Click"
+      },
+      "requires": "char>accesslevel >= 0",
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def",
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt",
+        "PBAoE Damage",
+        "Tanker Archetype Sets",
+        "Universal Damage Sets",
+        "Stuns"
+      ],
+      "available_at_level": 16,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 7.0,
+        "arc_degrees": 70.0,
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.77,
+        "animation_time": 1.77,
+        "animation_time_before_hit": 0.93,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 19.04,
+          "requires": [
+            "(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 38.09,
+          "requires": [
+            "(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 19.02,
+                  "average": 19.02,
+                  "per_activation": 10.75,
+                  "per_cast_cycle": 1.95,
+                  "display_info": [
+                    "19.02 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.36
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 57.06,
+                  "average": 57.06,
+                  "per_activation": 32.24,
+                  "per_cast_cycle": 5.84,
+                  "display_info": [
+                    "57.06 psionic damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.08
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 22.1,
+                  "average": 22.1,
+                  "per_activation": 12.49,
+                  "per_cast_cycle": 2.26,
+                  "display_info": [
+                    "22.10 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.3918
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 66.31,
+                  "average": 66.31,
+                  "per_activation": 37.46,
+                  "per_cast_cycle": 6.79,
+                  "display_info": [
+                    "66.31 psionic damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.1754
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -12.0,
+                  "display_info": [
+                    "-12.00% strength to recharge for 6s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.25,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 12.47,
+                  "average": 29.45,
+                  "per_activation": 16.64,
+                  "per_cast_cycle": 3.01,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 12.47 psionic damage over 3.1s on target after 0.25s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.236
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 33.0,
+          "requires": [
+            "!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 5.96,
+                  "display_info": [
+                    "33.00% chance for 2.0 stun for 5.96s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 33.0,
+          "requires": [
+            "!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "33.00% chance for 2.0 stun for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 5.96,
+                  "display_info": [
+                    "50.00% chance for 3.0 stun for 5.96s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "50.00% chance for 3.0 stun for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 34.23,
+                  "average": 34.23,
+                  "per_activation": 19.34,
+                  "per_cast_cycle": 3.5,
+                  "display_info": [
+                    "34.23 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.648
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Psionic_Melee.Concentration",
+      "display_name": "Concentration",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/6b/psionicmelee_concentration.png",
+      "display_help": "Greatly boosts your attacks for a few seconds. Slightly increases chance to hit. Recharge: Long",
+      "display_short_help": "Self +DMG, +To Hit",
+      "display_info": {
+        "Activation Time": "1.17s",
+        "Recharge Time": "1m 30s",
+        "Effect Area": "Single Target",
+        "Endurance Cost": "5.20",
+        "Available Level": "20",
+        "Power Type": "Click",
+        "Target Type": "Self"
+      },
+      "requires": "char>accesslevel >= 0",
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff"
+      ],
+      "available_at_level": 20,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 90.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": 20.0,
+                  "display_info": [
+                    "20.00% to hit for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 2.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": 80.0,
+                  "display_info": [
+                    "80.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Psionic_Melee.Boggle",
+      "display_name": "Boggle",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/99/psionicmelee_boggle.png",
+      "display_help": "You flood your foe's mind with doubt causing them to become confused for a brief time. Confused foes will attack their allies. Boggle will also place the \"Boggled\" effect on your target for a short time. Attacking a Boggled target will increase your chance of gaining Insight. Note that Boggle is unaffected by Range changes. Recharge: Slow",
+      "display_short_help": "Short Ranged, Target Confuse, +Special",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Aggro Type": "Enemies will not notice this attack",
+        "Recharge Time": "20s",
+        "Activation Time": "2s",
+        "Attack Types": "Psionic",
+        "Effect Area": "Single Target",
+        "Power Type": "Click",
+        "Power Range": "40 ft.",
+        "Endurance Cost": "7.80",
+        "Available Level": "28"
+      },
+      "requires": "char>accesslevel >= 0",
+      "attack_types": [
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Confuse",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Confuse"
+      ],
+      "available_at_level": 28,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.0,
+        "animation_time": 2.0,
+        "animation_time_before_hit": 1.0,
+        "recharge_time": 20.0,
+        "endurance_cost": 7.8
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Boggled",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 15.0,
+                  "display_info": [
+                    "3.0 confuse for 15s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 15.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 confuse for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Psionic_Melee.Greater_Psi_Blade",
+      "display_name": "Greater Psi Blade",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/c7/psionicmelee_greaterpsiblade.png",
+      "display_help": "You focus and create a more powerful Psi Blade projection before slashing at your foe to deal superior Psionic and Lethal damage. The affected foe will have their recharge reduced moderately and be left held for a short time. Greater Psi Blade will cause additional damage and cause this power's hold to last for a longer duration if you have Insight. Using this power removes Insight. Damage: Superior, Recharge: Slow",
+      "display_short_help": "Melee, Superior DMG(Psionic/Lethal), Foe -Rech, Hold; Self -Insight",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Available Level": "35",
+        "Power Type": "Click",
+        "Endurance Cost": "14.35",
+        "Power Range": "7 ft.",
+        "Attack Types": "Melee, Lethal, Psionic",
+        "Activation Time": "2.5s",
+        "Recharge Time": "15s",
+        "Effect Area": "Single Target"
+      },
+      "requires": "char>accesslevel >= 0",
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def",
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Hold",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Tanker Archetype Sets",
+        "Universal Damage Sets",
+        "Taunt",
+        "Holds",
+        "Melee Damage"
+      ],
+      "available_at_level": 35,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.5,
+        "animation_time": 2.5,
+        "animation_time_before_hit": 1.67,
+        "recharge_time": 15.0,
+        "endurance_cost": 14.35
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 36.45,
+                  "average": 36.45,
+                  "per_activation": 14.58,
+                  "per_cast_cycle": 2.08,
+                  "display_info": [
+                    "36.45 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.69
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 109.36,
+                  "average": 109.36,
+                  "per_activation": 43.74,
+                  "per_cast_cycle": 6.25,
+                  "display_info": [
+                    "109.36 psionic damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 2.07
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 38.78,
+                  "average": 38.78,
+                  "per_activation": 15.51,
+                  "per_cast_cycle": 2.22,
+                  "display_info": [
+                    "38.78 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.6875
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 116.34,
+                  "average": 116.34,
+                  "per_activation": 46.54,
+                  "per_cast_cycle": 6.65,
+                  "display_info": [
+                    "116.34 psionic damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 2.0624
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 hold for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -9.6,
+                  "display_info": [
+                    "-9.60% strength to recharge for 6s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 72.9,
+                  "average": 72.9,
+                  "per_activation": 29.16,
+                  "per_cast_cycle": 4.17,
+                  "display_info": [
+                    "72.90 psionic damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.38
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 14.3,
+                  "display_info": [
+                    "3.0 hold for 14.3s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 12.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 77.57,
+                  "average": 77.57,
+                  "per_activation": 31.03,
+                  "per_cast_cycle": 4.43,
+                  "display_info": [
+                    "77.57 psionic damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 9.54,
+                  "display_info": [
+                    "3.0 hold for 9.54s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 65.61,
+                  "average": 65.61,
+                  "per_activation": 26.24,
+                  "per_cast_cycle": 3.75,
+                  "display_info": [
+                    "65.61 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.242
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Psionic_Melee.Mass_Levitate",
+      "display_name": "Mass Levitate",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/5f/psionicmelee_masslevitate.png",
+      "display_help": "You build up a large amount of telekinetic energy and release it causing nearby foes to be flung into the air. Affected foes will suffer high Smashing damage. If the caster has Insight when this power is used Mass Levitate will also cause a moderate amount of Psionic damage over time. Damage: High, Recharge: Slow",
+      "display_short_help": "PBAoE, High DMG(Smash), Foe Knock Up, +Insight",
+      "display_info": {
+        "Available Level": "38",
+        "Activation Time": "2.5s",
+        "Power Type": "Click",
+        "Effect Area": "AoE — 10 ft. radius (16 targets max)",
+        "Endurance Cost": "18.51",
+        "Target Type": "Self",
+        "Recharge Time": "20s",
+        "Attack Types": "Area, Smashing"
+      },
+      "requires": "char>accesslevel >= 0",
+      "attack_types": [
+        "Area_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Tanker Archetype Sets",
+        "Taunt",
+        "Universal Damage Sets",
+        "PBAoE Damage",
+        "Knockback"
+      ],
+      "available_at_level": 38,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 10.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.5,
+        "animation_time": 2.5,
+        "animation_time_before_hit": 1.4,
+        "recharge_time": 20.0,
+        "endurance_cost": 18.51
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 40.0,
+          "requires": [
+            "(!source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight_Lockout)) && target.ownPower?(Temporary_Powers.Temporary_Powers.Boggled)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 75.02,
+                  "average": 75.02,
+                  "per_activation": 30.01,
+                  "per_cast_cycle": 3.33,
+                  "display_info": [
+                    "75.02 smashing damage on target after 2s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.42
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 5.19,
+                  "display_info": [
+                    "5.2 magnitude knockup on target"
+                  ],
+                  "base_value": 2.5964,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 66.57,
+                  "average": 66.57,
+                  "per_activation": 26.63,
+                  "per_cast_cycle": 2.96,
+                  "display_info": [
+                    "66.57 smashing damage on target after 2s delay"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.18
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 5.19,
+                  "display_info": [
+                    "5.2 magnitude knockup on target"
+                  ],
+                  "base_value": 2.5964,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source.ownPower?(Temporary_Powers.Temporary_Powers.Psionic_Melee_Insight)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 2.25,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 7.5,
+                  "average": 17.71,
+                  "per_activation": 7.08,
+                  "per_cast_cycle": 0.79,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 7.50 psionic damage over 3.1s on target after 2.25s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.142
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 33.76,
+                  "average": 33.76,
+                  "per_activation": 13.5,
+                  "per_cast_cycle": 1.5,
+                  "display_info": [
+                    "33.76 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.639
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

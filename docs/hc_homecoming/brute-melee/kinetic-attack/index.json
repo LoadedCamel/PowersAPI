@@ -1,1 +1,3141 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Brute_Melee.Kinetic_Attack","display_name":"Kinetic Melee","display_help":"Kinetic Melee features a mix of fast light attacks and slow heavy attacks, including some with range. All attacks in this set reduce the damage strength of enemies who are hit.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/7b/kineticattack_quickstrike.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Brute_Melee.Kinetic_Attack.Quick_Strike","Brute_Melee.Kinetic_Attack.Body_Blow","Brute_Melee.Kinetic_Attack.Smashing_Blow","Brute_Melee.Kinetic_Attack.Power_Siphon","Brute_Melee.Kinetic_Attack.Repulsing_Torrent","Brute_Melee.Kinetic_Attack.Taunt","Brute_Melee.Kinetic_Attack.Burst","Brute_Melee.Kinetic_Attack.Focused_Burst","Brute_Melee.Kinetic_Attack.Total_Focus"],"powers":[{"name":"Brute_Melee.Kinetic_Attack.Quick_Strike","display_name":"Quick Strike","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/7b/kineticattack_quickstrike.png","display_help":"A quick attack that sometimes knock foes down. Fast, but low damage. Damage: Light, Recharge: Very Fast","display_short_help":"Melee, Light DMG(Smash/Energy), Foe -DMG, Knockdown","display_info":{"Power Range":"7 ft.","Attack Types":"Melee, Smashing, Energy","Effect Area":"Single Target","Available Level":"1","Power Type":"Click","Recharge Time":"3s","Activation Time":"0.83s","Endurance Cost":"4.37","Target Type":"Enemies"},"attack_types":["Melee_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Melee Damage","Universal Damage Sets","Knockback","Taunt","Brute Archetype Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.83,"animation_time":0.83,"animation_time_before_hit":0.5,"recharge_time":3.0,"endurance_cost":4.37},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":26.28,"average":26.28,"per_activation":31.66,"per_cast_cycle":6.86,"display_info":["26.28 smashing damage on target"],"base_value":-41.7077,"scale":0.63}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":8.76,"average":8.76,"per_activation":10.55,"per_cast_cycle":2.29,"display_info":["8.76 energy damage on target"],"base_value":-41.7077,"scale":0.21}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":25.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":0.7,"display_info":["25.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.7}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":25.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":0.7,"display_info":["25.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.7}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":41.5,"average":41.5,"per_activation":50.0,"per_cast_cycle":10.84,"display_info":["41.50 smashing damage on target"],"base_value":-56.4121,"scale":0.7357}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":13.83,"average":13.83,"per_activation":16.66,"per_cast_cycle":3.61,"display_info":["13.83 energy damage on target"],"base_value":-56.4121,"scale":0.2452}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["Source.Mode?(kSiphonMode)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Power_Siphon","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":-6.38,"display_info":["-6.38% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 4s on target","Ignores buffs and enhancements","Unresistable"],"base_value":-0.075,"scale":0.85}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":15.77,"average":15.77,"per_activation":19.0,"per_cast_cycle":4.12,"display_info":["15.77 fire damage on target","Only using Fiery Embrace"],"base_value":-41.7077,"scale":0.378}]}]}]},{"name":"Brute_Melee.Kinetic_Attack.Body_Blow","display_name":"Body Blow","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/3b/kineticattack_bodyblow.png","display_help":"A much more powerful, yet slower version of Quick Strike. Body Blow is capable of stunning an opponent occasionally. Damage: Moderate, Recharge: Fast","display_short_help":"Melee, Moderate DMG(Smash/Energy), Foe Disorient","display_info":{"Power Range":"7 ft.","Effect Area":"Single Target","Activation Time":"1.07s","Target Type":"Enemies","Power Type":"Click","Available Level":"1","Recharge Time":"5s","Endurance Cost":"6.03","Attack Types":"Melee, Smashing, Energy"},"attack_types":["Melee_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Disorient","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Brute Archetype Sets","Taunt","Melee Damage","Universal Damage Sets","Stuns"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.07,"animation_time":1.07,"animation_time_before_hit":1.0,"recharge_time":5.0,"endurance_cost":6.03},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":36.29,"average":36.29,"per_activation":33.92,"per_cast_cycle":5.98,"display_info":["36.29 smashing damage on target"],"base_value":-41.7077,"scale":0.87}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":12.1,"average":12.1,"per_activation":11.31,"per_cast_cycle":1.99,"display_info":["12.10 energy damage on target"],"base_value":-41.7077,"scale":0.29}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":20.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":7.15,"display_info":["20.00% chance for 3.0 stun for 7.15s on target"],"base_value":1.192,"scale":6.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":20.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":2.0,"display_info":["20.00% chance for 3.0 stun for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":48.61,"average":48.61,"per_activation":45.43,"per_cast_cycle":8.01,"display_info":["48.61 smashing damage on target"],"base_value":-56.4121,"scale":0.8617}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":16.2,"average":16.2,"per_activation":15.14,"per_cast_cycle":2.67,"display_info":["16.20 energy damage on target"],"base_value":-56.4121,"scale":0.2872}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["Source.Mode?(kSiphonMode)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Power_Siphon","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":-6.38,"display_info":["-6.38% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 5s on target","Ignores buffs and enhancements","Unresistable"],"base_value":-0.075,"scale":0.85}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":21.77,"average":21.77,"per_activation":20.35,"per_cast_cycle":3.59,"display_info":["21.77 fire damage on target","Only using Fiery Embrace"],"base_value":-41.7077,"scale":0.522}]}]}]},{"name":"Brute_Melee.Kinetic_Attack.Smashing_Blow","display_name":"Smashing Blow","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/cb/kineticattack_smashingblow.png","display_help":"Smashing Blow is a slow attack, but makes up for it with a good amount of damage. Has a greater chance to stun than body blow. Damage: High, Recharge: Moderate","display_short_help":"Melee, High DMG(Smash/Energy), Foe Disorient","display_info":{"Recharge Time":"7s","Activation Time":"1.2s","Endurance Cost":"7.70","Attack Types":"Melee, Smashing, Energy","Power Type":"Click","Power Range":"7 ft.","Effect Area":"Single Target","Available Level":"2","Target Type":"Enemies"},"attack_types":["Melee_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Disorient","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Stuns","Universal Damage Sets","Melee Damage","Taunt","Brute Archetype Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.2,"animation_time":1.2,"animation_time_before_hit":1.23,"recharge_time":7.0,"endurance_cost":7.7},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":41.71,"average":41.71,"per_activation":34.76,"per_cast_cycle":5.09,"display_info":["41.71 smashing damage on target"],"base_value":-41.7077,"scale":1.0}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":20.02,"average":20.02,"per_activation":16.68,"per_cast_cycle":2.44,"display_info":["20.02 energy damage on target"],"base_value":-41.7077,"scale":0.48}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":46.17,"average":46.17,"per_activation":38.47,"per_cast_cycle":5.63,"display_info":["46.17 smashing damage on target"],"base_value":-56.4121,"scale":0.8184}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":28.3,"average":28.3,"per_activation":23.58,"per_cast_cycle":3.45,"display_info":["28.30 energy damage on target"],"base_value":-56.4121,"scale":0.5016}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":33.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":7.15,"display_info":["33.00% chance for 3.0 stun for 7.15s on target"],"base_value":1.192,"scale":6.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":33.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":2.0,"display_info":["33.00% chance for 3.0 stun for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["Source.Mode?(kSiphonMode)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Power_Siphon","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":-6.38,"display_info":["-6.38% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 5s on target","Ignores buffs and enhancements","Unresistable"],"base_value":-0.075,"scale":0.85}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":27.78,"average":27.78,"per_activation":23.15,"per_cast_cycle":3.39,"display_info":["27.78 fire damage on target","Only using Fiery Embrace"],"base_value":-41.7077,"scale":0.666}]}]}]},{"name":"Brute_Melee.Kinetic_Attack.Power_Siphon","display_name":"Power Siphon","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/1b/kineticattack_powersiphon.png","display_help":"Power Siphon adds a small bonus to hit and modifies your other Kinetic Attack powers, so they are now capable of draining the strength of your enemies and adding that strength to you. This effect will stack up to 5 times. Recharge: Long","display_short_help":"Self: +ToHit, +Special","display_info":{"Activation Time":"1.93s","Endurance Cost":"5.20","Power Type":"Click","Target Type":"Self","Recharge Time":"2m 0s","Effect Area":"Single Target","Available Level":"6"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["To Hit Buff"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.93,"animation_time":1.93,"animation_time_before_hit":0.83,"recharge_time":120.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":20.0,"continuous_apply_seconds":1.0,"ticks":21,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":7.5,"display_info":["7.50% to hit for 20s on self","Unresistable"],"base_value":0.1,"scale":0.75}]}]}]},{"name":"Brute_Melee.Kinetic_Attack.Repulsing_Torrent","display_name":"Repulsing Torrent","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/c7/kineticattack_repulsingtorrent.png","display_help":"Repulsing Torrent unleashes a cone of powerful energy that can smash foes and possibly send them flying. Damage: Moderate, Recharge: Slow","display_short_help":"Ranged (Cone), Moderate DMG(Energy/Smash), Foe Knockback","display_info":{"Target Type":"Enemies","Available Level":"8","Endurance Cost":"11.86","Power Type":"Click","Activation Time":"2s","Recharge Time":"12s","Power Range":"40 ft.","Effect Area":"Cone — 40 ft. radius 45° arc (10 targets max)","Attack Types":"Area, Smashing, Energy"},"attack_types":["Area_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt","Knockback","Universal Damage Sets","Targeted AoE Damage","Brute Archetype Sets"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":40.0,"arc_degrees":45.0,"range_feet":40.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.0,"animation_time":2.0,"animation_time_before_hit":1.83,"recharge_time":12.0,"endurance_cost":11.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":34.41,"average":34.41,"per_activation":17.21,"per_cast_cycle":2.46,"display_info":["34.41 smashing damage on target"],"base_value":-41.7077,"scale":0.825}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":11.47,"average":11.47,"per_activation":5.74,"per_cast_cycle":0.82,"display_info":["11.47 energy damage on target"],"base_value":-41.7077,"scale":0.275}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":80.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":7.79,"display_info":["80.00% chance for 7.8 magnitude knock on target"],"base_value":2.5964,"scale":3.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":80.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":7.79,"display_info":["80.00% chance for 7.8 magnitude knock on target"],"base_value":2.5964,"scale":3.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":76.16,"average":76.16,"per_activation":38.08,"per_cast_cycle":5.44,"display_info":["76.16 smashing damage on target"],"base_value":-56.4121,"scale":1.35}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":25.39,"average":25.39,"per_activation":12.7,"per_cast_cycle":1.81,"display_info":["25.39 energy damage on target"],"base_value":-56.4121,"scale":0.45}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":20.65,"average":20.65,"per_activation":10.33,"per_cast_cycle":1.48,"display_info":["20.65 fire damage on target","Only using Fiery Embrace"],"base_value":-41.7077,"scale":0.495}]}]}]},{"name":"Brute_Melee.Kinetic_Attack.Taunt","display_name":"Taunt","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d2/kineticattack_taunt.png","display_help":"Taunt foes to attack you. Useful to pull enemies off allies and keep them attacking you to raise your Fury. A To Hit check is required to Taunt enemy players, but is not needed against critter targets. Recharge: Moderate","display_short_help":"Ranged (Targeted AoE), Foe Taunt","display_info":{"Power Range":"70 ft.","Effect Area":"AoE — 15 ft. radius (5 targets max)","Attack Types":"Area","Activation Time":"1.67s","Power Type":"Click","Recharge Time":"10s","Target Type":"Enemies","Available Level":"12"},"attack_types":["Area_Def"],"enhancements_allowed":["Enhance Taunt","Enhance Range","Enhance Recharge Speed","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":5,"radius_feet":15.0,"range_feet":70.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.67,"recharge_time":10.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":41.0,"display_info":["4.0 taunt for 41s on target"],"base_value":2.05,"scale":20.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":10.25,"display_info":["4.0 taunt for 10.25s on target"],"base_value":2.05,"scale":5.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Range"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":12.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":-75.0,"display_info":["-75.00% strength to range for 12s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-0.75}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"],"effects":[{"attributes":["Null"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Brute_Melee.Kinetic_Attack.Burst","display_name":"Burst","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/f9/kineticattack_burst.png","display_help":"By focusing your energy into the muscles in your arms, you can launch a dizzying flurry of attacks against every foe in melee range. Some foes may be hit hard enough to be knocked down as well. Damage: Moderate, Recharge: Slow","display_short_help":"PBAoE Melee, Moderate DMG(Smash/Energy), Foe Knockdown","display_info":{"Effect Area":"AoE — 8 ft. radius (10 targets max)","Attack Types":"Melee, Smashing, Energy","Recharge Time":"15s","Endurance Cost":"14.35","Available Level":"18","Activation Time":"2.67s","Target Type":"Self","Power Type":"Click"},"attack_types":["Melee_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Knockback","Taunt","PBAoE Damage","Brute Archetype Sets"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":8.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.67,"animation_time":2.67,"animation_time_before_hit":2.17,"recharge_time":15.0,"endurance_cost":14.35},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":31.28,"average":31.28,"per_activation":11.72,"per_cast_cycle":1.77,"display_info":["31.28 smashing damage on target"],"base_value":-41.7077,"scale":0.75}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":20.85,"average":20.85,"per_activation":7.81,"per_cast_cycle":1.18,"display_info":["20.85 energy damage on target"],"base_value":-41.7077,"scale":0.5}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":96.0,"average":96.0,"per_activation":35.96,"per_cast_cycle":5.43,"display_info":["96.00 smashing damage on target"],"base_value":-56.4121,"scale":1.7017}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":40.46,"average":40.46,"per_activation":15.15,"per_cast_cycle":2.29,"display_info":["40.46 energy damage on target"],"base_value":-56.4121,"scale":0.7172}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":50.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":0.67,"display_info":["50.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":50.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":0.67,"display_info":["50.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["Source.Mode?(kSiphonMode)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Power_Siphon","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":7.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":-12.75,"display_info":["-12.75% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 7s on target","Ignores buffs and enhancements","Unresistable"],"base_value":-0.075,"scale":1.7}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":23.46,"average":23.46,"per_activation":8.79,"per_cast_cycle":1.33,"display_info":["23.46 fire damage on target","Only using Fiery Embrace"],"base_value":-41.7077,"scale":0.5625}]}]}]},{"name":"Brute_Melee.Kinetic_Attack.Focused_Burst","display_name":"Focused Burst","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/0a/kineticattack_focusedburst.png","display_help":"Projects a burst of focused power over a short distance. Focused Burst deals high damage and can possibly knock down your foe. Damage: High, Recharge: Moderate","display_short_help":"Ranged, High DMG(Smash/Energy), Foe Knockdown","display_info":{"Endurance Cost":"8.53","Activation Time":"2s","Recharge Time":"8s","Effect Area":"Single Target","Available Level":"26","Target Type":"Enemies","Power Type":"Click","Power Range":"40 ft.","Attack Types":"Ranged, Lethal"},"attack_types":["Ranged_Def","Lethal_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt","Universal Damage Sets","Brute Archetype Sets","Knockback","Ranged Damage"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":40.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.0,"animation_time":2.0,"animation_time_before_hit":1.67,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":51.3,"average":51.3,"per_activation":25.65,"per_cast_cycle":5.13,"display_info":["51.30 smashing damage on target"],"base_value":-41.7077,"scale":1.23}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":17.1,"average":17.1,"per_activation":8.55,"per_cast_cycle":1.71,"display_info":["17.10 energy damage on target"],"base_value":-41.7077,"scale":0.41}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":50.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":0.67,"display_info":["50.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":89.7,"average":89.7,"per_activation":44.85,"per_cast_cycle":8.97,"display_info":["89.70 smashing damage on target"],"base_value":-56.4121,"scale":1.59}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":25.39,"average":25.39,"per_activation":12.7,"per_cast_cycle":2.54,"display_info":["25.39 energy damage on target"],"base_value":-56.4121,"scale":0.45}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":50.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":0.67,"display_info":["50.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["Source.Mode?(kSiphonMode)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Power_Siphon","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":7.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":-6.38,"display_info":["-6.38% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 7s on target","Ignores buffs and enhancements","Unresistable"],"base_value":-0.075,"scale":0.85}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":30.78,"average":30.78,"per_activation":15.39,"per_cast_cycle":3.08,"display_info":["30.78 fire damage on target","Only using Fiery Embrace"],"base_value":-41.7077,"scale":0.738}]}]}]},{"name":"Brute_Melee.Kinetic_Attack.Total_Focus","display_name":"Concentrated Strike","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/63/kineticattack_totalfocus.png","display_help":"Concentrated Strike is a slow, but incredibly devastating attack that can knock out most opponents, leaving them Disoriented. Due to the exhausting nature of Concentrated Strike, its recharge time is very long. Damage: Extreme, Recharge: Slow","display_short_help":"Melee, Extreme DMG(Energy/Smash), Foe Disorient","display_info":{"Available Level":"32","Power Type":"Click","Activation Time":"2.83s","Target Type":"Enemies","Effect Area":"Single Target","Endurance Cost":"18.51","Recharge Time":"20s","Power Range":"7 ft.","Attack Types":"Melee, Smashing, Energy"},"attack_types":["Melee_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Disorient","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt","Melee Damage","Brute Archetype Sets","Stuns","Universal Damage Sets"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.83,"animation_time":2.83,"animation_time_before_hit":2.53,"recharge_time":20.0,"endurance_cost":18.51},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":41.71,"average":41.71,"per_activation":14.74,"per_cast_cycle":1.83,"display_info":["41.71 smashing damage on target"],"base_value":-41.7077,"scale":1.0}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":106.77,"average":106.77,"per_activation":37.73,"per_cast_cycle":4.68,"display_info":["106.77 energy damage on target"],"base_value":-41.7077,"scale":2.56}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":37.61,"average":37.61,"per_activation":13.29,"per_cast_cycle":1.65,"display_info":["37.61 smashing damage on target"],"base_value":-56.4121,"scale":0.6667}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":129.2,"average":129.2,"per_activation":45.65,"per_cast_cycle":5.66,"display_info":["129.20 energy damage on target"],"base_value":-56.4121,"scale":2.2903}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":11.92,"display_info":["60.00% chance for 3.0 stun for 11.92s on target"],"base_value":1.192,"scale":10.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":2.0,"display_info":["60.00% chance for 3.0 stun for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["Source.Mode?(kSiphonMode)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Power_Siphon","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","percent":-6.38,"display_info":["-6.38% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 8s on target","Ignores buffs and enhancements","Unresistable"],"base_value":-0.075,"scale":0.85}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":66.82,"average":66.82,"per_activation":23.61,"per_cast_cycle":2.93,"display_info":["66.82 fire damage on target","Only using Fiery Embrace"],"base_value":-41.7077,"scale":1.602}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Brute_Melee.Kinetic_Attack",
+  "display_name": "Kinetic Melee",
+  "display_help": "Kinetic Melee features a mix of fast light attacks and slow heavy attacks, including some with range. All attacks in this set reduce the damage strength of enemies who are hit.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/7b/kineticattack_quickstrike.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Brute_Melee.Kinetic_Attack.Quick_Strike",
+    "Brute_Melee.Kinetic_Attack.Body_Blow",
+    "Brute_Melee.Kinetic_Attack.Smashing_Blow",
+    "Brute_Melee.Kinetic_Attack.Power_Siphon",
+    "Brute_Melee.Kinetic_Attack.Repulsing_Torrent",
+    "Brute_Melee.Kinetic_Attack.Taunt",
+    "Brute_Melee.Kinetic_Attack.Burst",
+    "Brute_Melee.Kinetic_Attack.Focused_Burst",
+    "Brute_Melee.Kinetic_Attack.Total_Focus"
+  ],
+  "powers": [
+    {
+      "name": "Brute_Melee.Kinetic_Attack.Quick_Strike",
+      "display_name": "Quick Strike",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/7b/kineticattack_quickstrike.png",
+      "display_help": "A quick attack that sometimes knock foes down. Fast, but low damage. Damage: Light, Recharge: Very Fast",
+      "display_short_help": "Melee, Light DMG(Smash/Energy), Foe -DMG, Knockdown",
+      "display_info": {
+        "Power Range": "7 ft.",
+        "Power Type": "Click",
+        "Endurance Cost": "4.37",
+        "Available Level": "1",
+        "Target Type": "Enemies",
+        "Recharge Time": "3s",
+        "Effect Area": "Single Target",
+        "Attack Types": "Melee, Smashing, Energy",
+        "Activation Time": "0.83s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "Taunt",
+        "Brute Archetype Sets",
+        "Knockback",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.83,
+        "animation_time": 0.83,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 3.0,
+        "endurance_cost": 4.37
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 26.28,
+                  "average": 26.28,
+                  "per_activation": 31.66,
+                  "per_cast_cycle": 6.86,
+                  "display_info": [
+                    "26.28 smashing damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.63
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 8.76,
+                  "average": 8.76,
+                  "per_activation": 10.55,
+                  "per_cast_cycle": 2.29,
+                  "display_info": [
+                    "8.76 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.21
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 25.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": 0.7,
+                  "display_info": [
+                    "25.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 25.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": 0.7,
+                  "display_info": [
+                    "25.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 41.5,
+                  "average": 41.5,
+                  "per_activation": 50.0,
+                  "per_cast_cycle": 10.84,
+                  "display_info": [
+                    "41.50 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.7357
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 13.83,
+                  "average": 13.83,
+                  "per_activation": 16.66,
+                  "per_cast_cycle": 3.61,
+                  "display_info": [
+                    "13.83 energy damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.2452
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "Source.Mode?(kSiphonMode)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Power_Siphon",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -6.38,
+                  "display_info": [
+                    "-6.38% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 4s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 15.77,
+                  "average": 15.77,
+                  "per_activation": 19.0,
+                  "per_cast_cycle": 4.12,
+                  "display_info": [
+                    "15.77 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.378
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Kinetic_Attack.Body_Blow",
+      "display_name": "Body Blow",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/3b/kineticattack_bodyblow.png",
+      "display_help": "A much more powerful, yet slower version of Quick Strike. Body Blow is capable of stunning an opponent occasionally. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Melee, Moderate DMG(Smash/Energy), Foe Disorient",
+      "display_info": {
+        "Activation Time": "1.07s",
+        "Effect Area": "Single Target",
+        "Power Type": "Click",
+        "Power Range": "7 ft.",
+        "Target Type": "Enemies",
+        "Available Level": "1",
+        "Attack Types": "Melee, Smashing, Energy",
+        "Recharge Time": "5s",
+        "Endurance Cost": "6.03"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "Stuns",
+        "Brute Archetype Sets",
+        "Taunt",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.07,
+        "animation_time": 1.07,
+        "animation_time_before_hit": 1.0,
+        "recharge_time": 5.0,
+        "endurance_cost": 6.03
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 36.29,
+                  "average": 36.29,
+                  "per_activation": 33.92,
+                  "per_cast_cycle": 5.98,
+                  "display_info": [
+                    "36.29 smashing damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.87
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 12.1,
+                  "average": 12.1,
+                  "per_activation": 11.31,
+                  "per_cast_cycle": 1.99,
+                  "display_info": [
+                    "12.10 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.29
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 7.15,
+                  "display_info": [
+                    "20.00% chance for 3.0 stun for 7.15s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 6.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "20.00% chance for 3.0 stun for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 48.61,
+                  "average": 48.61,
+                  "per_activation": 45.43,
+                  "per_cast_cycle": 8.01,
+                  "display_info": [
+                    "48.61 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.8617
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 16.2,
+                  "average": 16.2,
+                  "per_activation": 15.14,
+                  "per_cast_cycle": 2.67,
+                  "display_info": [
+                    "16.20 energy damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.2872
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "Source.Mode?(kSiphonMode)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Power_Siphon",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -6.38,
+                  "display_info": [
+                    "-6.38% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 5s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 21.77,
+                  "average": 21.77,
+                  "per_activation": 20.35,
+                  "per_cast_cycle": 3.59,
+                  "display_info": [
+                    "21.77 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.522
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Kinetic_Attack.Smashing_Blow",
+      "display_name": "Smashing Blow",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/cb/kineticattack_smashingblow.png",
+      "display_help": "Smashing Blow is a slow attack, but makes up for it with a good amount of damage. Has a greater chance to stun than body blow. Damage: High, Recharge: Moderate",
+      "display_short_help": "Melee, High DMG(Smash/Energy), Foe Disorient",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Activation Time": "1.2s",
+        "Available Level": "2",
+        "Power Range": "7 ft.",
+        "Power Type": "Click",
+        "Endurance Cost": "7.70",
+        "Attack Types": "Melee, Smashing, Energy",
+        "Recharge Time": "7s",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Stuns",
+        "Brute Archetype Sets",
+        "Taunt",
+        "Melee Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.2,
+        "animation_time": 1.2,
+        "animation_time_before_hit": 1.23,
+        "recharge_time": 7.0,
+        "endurance_cost": 7.7
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 41.71,
+                  "average": 41.71,
+                  "per_activation": 34.76,
+                  "per_cast_cycle": 5.09,
+                  "display_info": [
+                    "41.71 smashing damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 20.02,
+                  "average": 20.02,
+                  "per_activation": 16.68,
+                  "per_cast_cycle": 2.44,
+                  "display_info": [
+                    "20.02 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.48
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 46.17,
+                  "average": 46.17,
+                  "per_activation": 38.47,
+                  "per_cast_cycle": 5.63,
+                  "display_info": [
+                    "46.17 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.8184
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 28.3,
+                  "average": 28.3,
+                  "per_activation": 23.58,
+                  "per_cast_cycle": 3.45,
+                  "display_info": [
+                    "28.30 energy damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.5016
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 33.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 7.15,
+                  "display_info": [
+                    "33.00% chance for 3.0 stun for 7.15s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 6.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 33.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "33.00% chance for 3.0 stun for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "Source.Mode?(kSiphonMode)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Power_Siphon",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -6.38,
+                  "display_info": [
+                    "-6.38% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 5s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 27.78,
+                  "average": 27.78,
+                  "per_activation": 23.15,
+                  "per_cast_cycle": 3.39,
+                  "display_info": [
+                    "27.78 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.666
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Kinetic_Attack.Power_Siphon",
+      "display_name": "Power Siphon",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/1b/kineticattack_powersiphon.png",
+      "display_help": "Power Siphon adds a small bonus to hit and modifies your other Kinetic Attack powers, so they are now capable of draining the strength of your enemies and adding that strength to you. This effect will stack up to 5 times. Recharge: Long",
+      "display_short_help": "Self: +ToHit, +Special",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Activation Time": "1.93s",
+        "Recharge Time": "2m 0s",
+        "Endurance Cost": "5.20",
+        "Power Type": "Click",
+        "Available Level": "6",
+        "Target Type": "Self"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.93,
+        "animation_time": 1.93,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 120.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 21,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 7.5,
+                  "display_info": [
+                    "7.50% to hit for 20s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 0.75
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Kinetic_Attack.Repulsing_Torrent",
+      "display_name": "Repulsing Torrent",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/c7/kineticattack_repulsingtorrent.png",
+      "display_help": "Repulsing Torrent unleashes a cone of powerful energy that can smash foes and possibly send them flying. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "Ranged (Cone), Moderate DMG(Energy/Smash), Foe Knockback",
+      "display_info": {
+        "Power Range": "40 ft.",
+        "Available Level": "8",
+        "Endurance Cost": "11.86",
+        "Effect Area": "Cone — 40 ft. radius 45° arc (10 targets max)",
+        "Activation Time": "2s",
+        "Target Type": "Enemies",
+        "Recharge Time": "12s",
+        "Attack Types": "Area, Smashing, Energy",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Targeted AoE Damage",
+        "Knockback",
+        "Universal Damage Sets",
+        "Brute Archetype Sets",
+        "Taunt"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 40.0,
+        "arc_degrees": 45.0,
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.0,
+        "animation_time": 2.0,
+        "animation_time_before_hit": 1.83,
+        "recharge_time": 12.0,
+        "endurance_cost": 11.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 34.41,
+                  "average": 34.41,
+                  "per_activation": 17.21,
+                  "per_cast_cycle": 2.46,
+                  "display_info": [
+                    "34.41 smashing damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.825
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 11.47,
+                  "average": 11.47,
+                  "per_activation": 5.74,
+                  "per_cast_cycle": 0.82,
+                  "display_info": [
+                    "11.47 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.275
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 80.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": 7.79,
+                  "display_info": [
+                    "80.00% chance for 7.8 magnitude knock on target"
+                  ],
+                  "base_value": 2.5964,
+                  "scale": 3.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 80.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": 7.79,
+                  "display_info": [
+                    "80.00% chance for 7.8 magnitude knock on target"
+                  ],
+                  "base_value": 2.5964,
+                  "scale": 3.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 76.16,
+                  "average": 76.16,
+                  "per_activation": 38.08,
+                  "per_cast_cycle": 5.44,
+                  "display_info": [
+                    "76.16 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.35
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 25.39,
+                  "average": 25.39,
+                  "per_activation": 12.7,
+                  "per_cast_cycle": 1.81,
+                  "display_info": [
+                    "25.39 energy damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.45
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 20.65,
+                  "average": 20.65,
+                  "per_activation": 10.33,
+                  "per_cast_cycle": 1.48,
+                  "display_info": [
+                    "20.65 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.495
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Kinetic_Attack.Taunt",
+      "display_name": "Taunt",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d2/kineticattack_taunt.png",
+      "display_help": "Taunt foes to attack you. Useful to pull enemies off allies and keep them attacking you to raise your Fury. A To Hit check is required to Taunt enemy players, but is not needed against critter targets. Recharge: Moderate",
+      "display_short_help": "Ranged (Targeted AoE), Foe Taunt",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Recharge Time": "10s",
+        "Effect Area": "AoE — 15 ft. radius (5 targets max)",
+        "Available Level": "12",
+        "Power Type": "Click",
+        "Activation Time": "1.67s",
+        "Attack Types": "Area",
+        "Power Range": "70 ft."
+      },
+      "attack_types": [
+        "Area_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 5,
+        "radius_feet": 15.0,
+        "range_feet": 70.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 10.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 41.0,
+                  "display_info": [
+                    "4.0 taunt for 41s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 20.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 10.25,
+                  "display_info": [
+                    "4.0 taunt for 10.25s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Range"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 12.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -75.0,
+                  "display_info": [
+                    "-75.00% strength to range for 12s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Null"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Kinetic_Attack.Burst",
+      "display_name": "Burst",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/f9/kineticattack_burst.png",
+      "display_help": "By focusing your energy into the muscles in your arms, you can launch a dizzying flurry of attacks against every foe in melee range. Some foes may be hit hard enough to be knocked down as well. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "PBAoE Melee, Moderate DMG(Smash/Energy), Foe Knockdown",
+      "display_info": {
+        "Attack Types": "Melee, Smashing, Energy",
+        "Available Level": "18",
+        "Activation Time": "2.67s",
+        "Effect Area": "AoE — 8 ft. radius (10 targets max)",
+        "Recharge Time": "15s",
+        "Endurance Cost": "14.35",
+        "Power Type": "Click",
+        "Target Type": "Self"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "PBAoE Damage",
+        "Taunt",
+        "Brute Archetype Sets",
+        "Universal Damage Sets",
+        "Knockback"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 8.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.67,
+        "animation_time": 2.67,
+        "animation_time_before_hit": 2.17,
+        "recharge_time": 15.0,
+        "endurance_cost": 14.35
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 31.28,
+                  "average": 31.28,
+                  "per_activation": 11.72,
+                  "per_cast_cycle": 1.77,
+                  "display_info": [
+                    "31.28 smashing damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.75
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 20.85,
+                  "average": 20.85,
+                  "per_activation": 7.81,
+                  "per_cast_cycle": 1.18,
+                  "display_info": [
+                    "20.85 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 96.0,
+                  "average": 96.0,
+                  "per_activation": 35.96,
+                  "per_cast_cycle": 5.43,
+                  "display_info": [
+                    "96.00 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.7017
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 40.46,
+                  "average": 40.46,
+                  "per_activation": 15.15,
+                  "per_cast_cycle": 2.29,
+                  "display_info": [
+                    "40.46 energy damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.7172
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "50.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "50.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "Source.Mode?(kSiphonMode)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Power_Siphon",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 7.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -12.75,
+                  "display_info": [
+                    "-12.75% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 7s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 23.46,
+                  "average": 23.46,
+                  "per_activation": 8.79,
+                  "per_cast_cycle": 1.33,
+                  "display_info": [
+                    "23.46 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.5625
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Kinetic_Attack.Focused_Burst",
+      "display_name": "Focused Burst",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/0a/kineticattack_focusedburst.png",
+      "display_help": "Projects a burst of focused power over a short distance. Focused Burst deals high damage and can possibly knock down your foe. Damage: High, Recharge: Moderate",
+      "display_short_help": "Ranged, High DMG(Smash/Energy), Foe Knockdown",
+      "display_info": {
+        "Endurance Cost": "8.53",
+        "Power Type": "Click",
+        "Available Level": "26",
+        "Activation Time": "2s",
+        "Effect Area": "Single Target",
+        "Power Range": "40 ft.",
+        "Target Type": "Enemies",
+        "Attack Types": "Ranged, Lethal",
+        "Recharge Time": "8s"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Ranged Damage",
+        "Knockback",
+        "Brute Archetype Sets",
+        "Taunt",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.0,
+        "animation_time": 2.0,
+        "animation_time_before_hit": 1.67,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 51.3,
+                  "average": 51.3,
+                  "per_activation": 25.65,
+                  "per_cast_cycle": 5.13,
+                  "display_info": [
+                    "51.30 smashing damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 1.23
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 17.1,
+                  "average": 17.1,
+                  "per_activation": 8.55,
+                  "per_cast_cycle": 1.71,
+                  "display_info": [
+                    "17.10 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.41
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "50.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 89.7,
+                  "average": 89.7,
+                  "per_activation": 44.85,
+                  "per_cast_cycle": 8.97,
+                  "display_info": [
+                    "89.70 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.59
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 25.39,
+                  "average": 25.39,
+                  "per_activation": 12.7,
+                  "per_cast_cycle": 2.54,
+                  "display_info": [
+                    "25.39 energy damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.45
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "50.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "Source.Mode?(kSiphonMode)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Power_Siphon",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 7.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -6.38,
+                  "display_info": [
+                    "-6.38% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 7s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 30.78,
+                  "average": 30.78,
+                  "per_activation": 15.39,
+                  "per_cast_cycle": 3.08,
+                  "display_info": [
+                    "30.78 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.738
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Kinetic_Attack.Total_Focus",
+      "display_name": "Concentrated Strike",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/63/kineticattack_totalfocus.png",
+      "display_help": "Concentrated Strike is a slow, but incredibly devastating attack that can knock out most opponents, leaving them Disoriented. Due to the exhausting nature of Concentrated Strike, its recharge time is very long. Damage: Extreme, Recharge: Slow",
+      "display_short_help": "Melee, Extreme DMG(Energy/Smash), Foe Disorient",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Available Level": "32",
+        "Target Type": "Enemies",
+        "Power Range": "7 ft.",
+        "Endurance Cost": "18.51",
+        "Power Type": "Click",
+        "Attack Types": "Melee, Smashing, Energy",
+        "Recharge Time": "20s",
+        "Activation Time": "2.83s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Brute Archetype Sets",
+        "Universal Damage Sets",
+        "Melee Damage",
+        "Taunt",
+        "Stuns"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.83,
+        "animation_time": 2.83,
+        "animation_time_before_hit": 2.53,
+        "recharge_time": 20.0,
+        "endurance_cost": 18.51
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 41.71,
+                  "average": 41.71,
+                  "per_activation": 14.74,
+                  "per_cast_cycle": 1.83,
+                  "display_info": [
+                    "41.71 smashing damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 106.77,
+                  "average": 106.77,
+                  "per_activation": 37.73,
+                  "per_cast_cycle": 4.68,
+                  "display_info": [
+                    "106.77 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 2.56
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 37.61,
+                  "average": 37.61,
+                  "per_activation": 13.29,
+                  "per_cast_cycle": 1.65,
+                  "display_info": [
+                    "37.61 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.6667
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 129.2,
+                  "average": 129.2,
+                  "per_activation": 45.65,
+                  "per_cast_cycle": 5.66,
+                  "display_info": [
+                    "129.20 energy damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 2.2903
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 11.92,
+                  "display_info": [
+                    "60.00% chance for 3.0 stun for 11.92s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "60.00% chance for 3.0 stun for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "Source.Mode?(kSiphonMode)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Power_Siphon",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -6.38,
+                  "display_info": [
+                    "-6.38% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 8s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 66.82,
+                  "average": 66.82,
+                  "per_activation": 23.61,
+                  "per_cast_cycle": 2.93,
+                  "display_info": [
+                    "66.82 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 1.602
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

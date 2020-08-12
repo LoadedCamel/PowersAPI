@@ -1,1 +1,3445 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Scrapper_Melee.Fiery_Melee","display_name":"Fiery Melee","display_help":"Fiery Melee allows you to attack with fire, and even conjure up flaming melee weapons. Fiery Melee powers tend to set foes ablaze for added Damage Over Time.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/25/fieryfray_targetedlightmelee.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Scrapper_Melee.Fiery_Melee.Scorch","Scrapper_Melee.Fiery_Melee.Fire_Sword","Scrapper_Melee.Fiery_Melee.Cremate","Scrapper_Melee.Fiery_Melee.Build_Up","Scrapper_Melee.Fiery_Melee.Breath_of_Fire","Scrapper_Melee.Fiery_Melee.Provoke","Scrapper_Melee.Fiery_Melee.Fire_Sword_Circle","Scrapper_Melee.Fiery_Melee.Incinerate","Scrapper_Melee.Fiery_Melee.Greater_Fire_Sword"],"powers":[{"name":"Scrapper_Melee.Fiery_Melee.Scorch","display_name":"Scorch","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/25/fieryfray_targetedlightmelee.png","display_help":"This power engulfs your hands in flames, and can ignite the target of your Scorching attack. Once on fire, the target will suffer damage over time. Damage: Minor, Recharge: Very Fast","display_short_help":"Melee, Minor DMG(Fire)","display_info":{"Activation Time":"1s","Target Type":"Enemies","Attack Types":"Melee, Fire","Power Type":"Click","Recharge Time":"3s","Endurance Cost":"4.37","Available Level":"1","Effect Area":"Single Target","Power Range":"7 ft."},"attack_types":["Melee_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Scrapper Archetype Sets","Universal Damage Sets","Melee Damage"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.5,"recharge_time":3.0,"endurance_cost":4.37},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":52.55,"average":52.55,"per_activation":52.55,"per_cast_cycle":13.14,"display_info":["52.55 fire damage on target"],"base_value":-62.5615,"scale":0.84}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":96.78,"average":96.78,"per_activation":96.78,"per_cast_cycle":24.2,"display_info":["96.78 fire damage on target"],"base_value":-79.3313,"scale":1.2199}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":3,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":6.26,"average":12.22,"per_activation":12.22,"per_cast_cycle":3.06,"display_info":["3 ticks of 80.00% chance for 6.26 fire damage over 2.1s on target after 0.5s delay"],"base_value":-62.5615,"scale":0.1}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":96.78,"average":4.84,"per_activation":4.84,"per_cast_cycle":1.21,"display_info":["5.00% chance for 96.78 fire damage on target [CRITICAL]"],"base_value":-79.3313,"scale":1.2199}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":52.55,"average":2.63,"per_activation":2.63,"per_cast_cycle":0.66,"display_info":["5.00% chance for 52.55 fire damage on target [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":0.84}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":52.55,"average":5.26,"per_activation":5.26,"per_cast_cycle":1.32,"display_info":["10.00% chance for 52.55 fire damage on target [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":0.84}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":23.65,"average":23.65,"per_activation":23.65,"per_cast_cycle":5.91,"display_info":["23.65 fire damage on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.378}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":3,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":2.82,"average":2.82,"per_activation":2.82,"per_cast_cycle":0.71,"display_info":["3 ticks of 2.82 fire damage over 2.1s on target after 0.5s delay","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.045}]}]}]},{"name":"Scrapper_Melee.Fiery_Melee.Fire_Sword","display_name":"Fire Sword","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/56/fieryfray_firesword.png","display_help":"Through concentration, you can create a Sword of Fire that sets foes ablaze. Successful attacks from the Fire Sword will ignite your target, dealing damage over time. Damage: Moderate, Recharge: Fast","display_short_help":"Melee, Moderate DMG(Fire/Lethal)","display_info":{"Power Type":"Click","Available Level":"1","Target Type":"Enemies","Attack Types":"Melee, Lethal, Fire","Recharge Time":"6s","Endurance Cost":"6.86","Power Range":"7 ft.","Effect Area":"Single Target","Activation Time":"1.33s"},"attack_types":["Melee_Def","Lethal_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Scrapper Archetype Sets","Melee Damage","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.33,"animation_time":1.33,"animation_time_before_hit":0.57,"recharge_time":6.0,"endurance_cost":6.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":31.28,"average":31.28,"per_activation":23.52,"per_cast_cycle":4.27,"display_info":["31.28 lethal damage on target"],"base_value":-62.5615,"scale":0.5}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":51.3,"average":51.3,"per_activation":38.57,"per_cast_cycle":7.0,"display_info":["51.30 fire damage on target"],"base_value":-62.5615,"scale":0.82}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":46.11,"average":46.11,"per_activation":34.67,"per_cast_cycle":6.29,"display_info":["46.11 lethal damage on target"],"base_value":-79.3313,"scale":0.5812}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":77.27,"average":77.27,"per_activation":58.1,"per_cast_cycle":10.54,"display_info":["77.27 fire damage on target"],"base_value":-79.3313,"scale":0.974}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":6.26,"average":14.78,"per_activation":11.11,"per_cast_cycle":2.02,"display_info":["4 ticks of 80.00% chance for 6.26 fire damage over 3.1s on target after 0.5s delay"],"base_value":-62.5615,"scale":0.1}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":82.58,"average":4.13,"per_activation":3.11,"per_cast_cycle":0.56,"display_info":["5.00% chance for 82.58 fire damage on target [CRITICAL]"],"base_value":-79.3313,"scale":1.041}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":82.58,"average":4.13,"per_activation":3.11,"per_cast_cycle":0.56,"display_info":["5.00% chance for 82.58 fire damage on target [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":1.32}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":82.58,"average":8.26,"per_activation":6.21,"per_cast_cycle":1.13,"display_info":["10.00% chance for 82.58 fire damage on target [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":1.32}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":37.16,"average":37.16,"per_activation":27.94,"per_cast_cycle":5.07,"display_info":["37.16 fire damage on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.594}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":2.82,"average":2.82,"per_activation":2.12,"per_cast_cycle":0.38,"display_info":["4 ticks of 2.82 fire damage over 3.1s on target after 0.5s delay","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.045}]}]}]},{"name":"Scrapper_Melee.Fiery_Melee.Cremate","display_name":"Cremate","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ed/fieryfray_scorch.png","display_help":"A slow but devastating attack. Cremate clobbers your foe with a massive 2 handed fiery smash that leaves your foe set on fire. Damage: High, Recharge: Moderate","display_short_help":"Melee, High DMG(Smash/Fire)","display_info":{"Endurance Cost":"8.53","Recharge Time":"8s","Attack Types":"Melee, Smashing, Fire","Activation Time":"1.5s","Power Type":"Click","Power Range":"7 ft.","Target Type":"Enemies","Effect Area":"Single Target","Available Level":"2"},"attack_types":["Melee_Def","Smashing_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Melee Damage","Scrapper Archetype Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.5,"animation_time":1.5,"animation_time_before_hit":0.83,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":40.04,"average":40.04,"per_activation":26.69,"per_cast_cycle":4.21,"display_info":["40.04 smashing damage on target"],"base_value":-62.5615,"scale":0.64}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":62.56,"average":62.56,"per_activation":41.71,"per_cast_cycle":6.59,"display_info":["62.56 fire damage on target"],"base_value":-62.5615,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":51.95,"average":51.95,"per_activation":34.63,"per_cast_cycle":5.47,"display_info":["51.95 smashing damage on target"],"base_value":-79.3313,"scale":0.6549}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":87.05,"average":87.05,"per_activation":58.03,"per_cast_cycle":9.16,"display_info":["87.05 fire damage on target"],"base_value":-79.3313,"scale":1.0973}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":6.26,"average":6.26,"per_activation":4.17,"per_cast_cycle":0.66,"display_info":["4 ticks of 6.26 fire damage over 3.1s on target after 0.5s delay"],"base_value":-62.5615,"scale":0.1}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":140.41,"average":7.02,"per_activation":4.68,"per_cast_cycle":0.74,"display_info":["5.00% chance for 140.41 fire damage on target [CRITICAL]"],"base_value":-79.3313,"scale":1.7699}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":102.6,"average":5.13,"per_activation":3.42,"per_cast_cycle":0.54,"display_info":["5.00% chance for 102.60 fire damage on target [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":1.64}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":102.6,"average":10.26,"per_activation":6.84,"per_cast_cycle":1.08,"display_info":["10.00% chance for 102.60 fire damage on target [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":1.64}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":46.17,"average":46.17,"per_activation":30.78,"per_cast_cycle":4.86,"display_info":["46.17 fire damage on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.738}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":2.82,"average":2.82,"per_activation":1.88,"per_cast_cycle":0.3,"display_info":["4 ticks of 2.82 fire damage over 3.1s on target after 0.5s delay","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.045}]}]}]},{"name":"Scrapper_Melee.Fiery_Melee.Build_Up","display_name":"Build Up","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d7/fieryfray_followup.png","display_help":"Greatly increases the amount of damage you deal for a few seconds, as well as slightly increasing your chance to hit. Recharge: Long","display_short_help":"Self +DMG, +To Hit","display_info":{"Effect Area":"Single Target","Recharge Time":"1m 30s","Target Type":"Self","Endurance Cost":"5.20","Available Level":"6","Power Type":"Click","Activation Time":"1.17s"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["To Hit Buff"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":90.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":20.0,"display_info":["20.00% to hit for 10s on self","Unresistable"],"base_value":0.1,"scale":2.0}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":100.0,"display_info":["100.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.125,"scale":8.0}]}]}]},{"name":"Scrapper_Melee.Fiery_Melee.Breath_of_Fire","display_name":"Breath of Fire","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/eb/fieryfray_breathingfire.png","display_help":"This allows you to spew forth fire from your mouth, burning all foes within its narrow cone. This is a very accurate attack that can deal good damage at a close range. Damage: Moderate(DoT), Recharge: Moderate","display_short_help":"Close (Cone) Moderate DoT(Fire)","display_info":{"Target Type":"Enemies","Power Range":"15 ft.","Attack Types":"Area, Fire","Recharge Time":"10s","Available Level":"8","Endurance Cost":"10.19","Power Type":"Click","Activation Time":"2.67s","Effect Area":"Cone — 15 ft. radius 30° arc (10 targets max)"},"attack_types":["Area_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Scrapper Archetype Sets","Targeted AoE Damage","Universal Damage Sets"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":15.0,"arc_degrees":30.0,"range_feet":15.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.67,"animation_time":2.67,"animation_time_before_hit":1.17,"recharge_time":10.0,"endurance_cost":10.19},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.6,"continuous_apply_seconds":0.5,"ticks":2,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":42.54,"average":42.54,"per_activation":15.93,"per_cast_cycle":3.36,"display_info":["2 ticks of 42.54 fire damage over 0.6s on target"],"base_value":-62.5615,"scale":0.68}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":1.0,"continuous_apply_seconds":1.0,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":6.26,"average":14.78,"per_activation":5.54,"per_cast_cycle":1.17,"display_info":["4 ticks of 80.00% chance for 6.26 fire damage over 3.1s on target after 1s delay"],"base_value":-62.5615,"scale":0.1}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":73.52,"average":73.52,"per_activation":27.54,"per_cast_cycle":5.8,"display_info":["73.52 fire damage on target"],"base_value":-79.3313,"scale":0.9267}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":147.03,"average":7.35,"per_activation":2.75,"per_cast_cycle":0.58,"display_info":["5.00% chance for 147.03 fire damage on target [CRITICAL]"],"base_value":-79.3313,"scale":1.8534}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":85.08,"average":4.25,"per_activation":1.59,"per_cast_cycle":0.34,"display_info":["5.00% chance for 85.08 fire damage on target [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":1.36}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":85.08,"average":8.51,"per_activation":3.19,"per_cast_cycle":0.67,"display_info":["10.00% chance for 85.08 fire damage on target [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":1.36}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.6,"continuous_apply_seconds":0.5,"ticks":2,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":19.14,"average":19.14,"per_activation":7.17,"per_cast_cycle":1.51,"display_info":["2 ticks of 19.14 fire damage over 0.6s on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.306}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":1.0,"continuous_apply_seconds":1.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":2.82,"average":2.82,"per_activation":1.06,"per_cast_cycle":0.22,"display_info":["4 ticks of 2.82 fire damage over 3.1s on target after 1s delay","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.045}]}]}]},{"name":"Scrapper_Melee.Fiery_Melee.Provoke","display_name":"Confront","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d8/fieryfray_willowisp.png","display_help":"Challenges a foe to attack you. Useful to pull a villain off an ally who finds themselves in over their head. A To Hit check required to Taunt enemy players, but is not needed against critter targets. Recharge: Very Fast","display_short_help":"Ranged, Foe Taunt","display_info":{"Power Range":"70 ft.","Activation Time":"1.67s","Power Type":"Click","Available Level":"12","Recharge Time":"3s","Effect Area":"Single Target","Attack Types":"Ranged","Target Type":"Enemies"},"attack_types":["Ranged_Def"],"enhancements_allowed":["Enhance Taunt","Enhance Range","Enhance Recharge Speed","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":70.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.67,"recharge_time":3.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Scrapper","duration_seconds":30.8,"display_info":["4.0 taunt for 30.8s on target"],"base_value":1.54,"scale":20.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Scrapper","duration_seconds":7.7,"display_info":["4.0 taunt for 7.7s on target"],"base_value":1.54,"scale":5.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Range"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":12.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":-75.0,"display_info":["-75.00% strength to range for 12s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-0.75}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"],"effects":[{"attributes":["Null"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Scrapper_Melee.Fiery_Melee.Fire_Sword_Circle","display_name":"Fire Sword Circle","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e6/fieryfray_fireswordcircle.png","display_help":"Mastery of your Fire Sword has enabled you to make an attack on every foe within melee distance. This will slash and burn your enemies, dealing minor damage and setting them ablaze. Damage: Moderate, Recharge: Slow","display_short_help":"PBAoE Melee, Moderate DMG(Fire/Lethal)","display_info":{"Effect Area":"AoE — 10 ft. radius (10 targets max)","Recharge Time":"20s","Attack Types":"Melee, Fire, Lethal","Target Type":"Self","Endurance Cost":"18.51","Activation Time":"2.67s","Available Level":"18","Power Type":"Click"},"attack_types":["Melee_Def","Fire_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Scrapper Archetype Sets","Universal Damage Sets","PBAoE Damage"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":10.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.67,"animation_time":2.67,"animation_time_before_hit":1.2,"recharge_time":20.0,"endurance_cost":18.51},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":48.49,"average":48.49,"per_activation":18.16,"per_cast_cycle":2.14,"display_info":["48.49 lethal damage on target"],"base_value":-62.5615,"scale":0.775}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":48.49,"average":48.49,"per_activation":18.16,"per_cast_cycle":2.14,"display_info":["48.49 fire damage on target"],"base_value":-62.5615,"scale":0.775}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":69.56,"average":69.56,"per_activation":26.05,"per_cast_cycle":3.07,"display_info":["69.56 lethal damage on target"],"base_value":-79.3313,"scale":0.8768}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":69.56,"average":69.56,"per_activation":26.05,"per_cast_cycle":3.07,"display_info":["69.56 fire damage on target"],"base_value":-79.3313,"scale":0.8768}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":6.26,"average":14.78,"per_activation":5.54,"per_cast_cycle":0.65,"display_info":["4 ticks of 80.00% chance for 6.26 fire damage over 3.1s on target after 0.5s delay"],"base_value":-62.5615,"scale":0.1}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":139.12,"average":6.96,"per_activation":2.61,"per_cast_cycle":0.31,"display_info":["5.00% chance for 139.12 fire damage on target [CRITICAL]"],"base_value":-79.3313,"scale":1.7536}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":96.97,"average":4.85,"per_activation":1.82,"per_cast_cycle":0.21,"display_info":["5.00% chance for 96.97 fire damage on target [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":1.55}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":96.97,"average":9.7,"per_activation":3.63,"per_cast_cycle":0.43,"display_info":["10.00% chance for 96.97 fire damage on target [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":1.55}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":43.64,"average":43.64,"per_activation":16.34,"per_cast_cycle":1.93,"display_info":["43.64 fire damage on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.6975}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":2.82,"average":2.82,"per_activation":1.06,"per_cast_cycle":0.12,"display_info":["4 ticks of 2.82 fire damage over 3.1s on target after 0.5s delay","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.045}]}]}]},{"name":"Scrapper_Melee.Fiery_Melee.Incinerate","display_name":"Incinerate","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d3/fieryfray_incinerate.png","display_help":"Intense concentration can allow you to Incinerate an opponent. This will set your foe ablaze, dealing damage over time. Damage: High(DoT), Recharge: Moderate","display_short_help":"Melee, High DoT(Fire)","display_info":{"Target Type":"Enemies","Attack Types":"Melee, Fire","Recharge Time":"10s","Endurance Cost":"6.86","Power Type":"Click","Activation Time":"1.67s","Power Range":"7 ft.","Available Level":"26","Effect Area":"Single Target"},"attack_types":["Melee_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Melee Damage","Scrapper Archetype Sets","Universal Damage Sets"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.83,"recharge_time":10.0,"endurance_cost":6.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.6,"continuous_apply_seconds":0.5,"ticks":10,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":15.64,"average":15.64,"per_activation":9.37,"per_cast_cycle":1.34,"display_info":["10 ticks of 15.64 fire damage over 4.6s on target"],"base_value":-62.5615,"scale":0.25}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":156.2,"average":7.81,"per_activation":4.68,"per_cast_cycle":0.67,"display_info":["5.00% chance for 156.20 fire damage on target [CRITICAL]"],"base_value":-79.3313,"scale":1.9689}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.6,"continuous_apply_seconds":0.5,"ticks":10,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":15.62,"average":15.62,"per_activation":9.35,"per_cast_cycle":1.34,"display_info":["10 ticks of 15.62 fire damage over 4.6s on target"],"base_value":-79.3313,"scale":0.1969}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":156.4,"average":7.82,"per_activation":4.68,"per_cast_cycle":0.67,"display_info":["5.00% chance for 156.40 fire damage on target [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":2.5}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":156.4,"average":15.64,"per_activation":9.37,"per_cast_cycle":1.34,"display_info":["10.00% chance for 156.40 fire damage on target [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":2.5}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.6,"continuous_apply_seconds":0.5,"ticks":10,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":7.04,"average":7.04,"per_activation":4.22,"per_cast_cycle":0.6,"display_info":["10 ticks of 7.04 fire damage over 4.6s on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.1125}]}]}]},{"name":"Scrapper_Melee.Fiery_Melee.Greater_Fire_Sword","display_name":"Greater Fire Sword","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/23/fieryfray_greaterfiresword.png","display_help":"Your mastery of fire allows you to create an enhanced Sword of Fire that can set foes ablaze. Successful attacks from the Greater Fire Sword will ignite your target, dealing damage over time. Damage: Superior, Recharge: Slow","display_short_help":"Melee, Superior DMG(Fire/Lethal)","display_info":{"Endurance Cost":"12.69","Power Range":"7 ft.","Available Level":"32","Effect Area":"Single Target","Power Type":"Click","Recharge Time":"12s","Attack Types":"Melee, Lethal, Fire","Activation Time":"2.33s","Target Type":"Enemies"},"attack_types":["Melee_Def","Lethal_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Scrapper Archetype Sets","Universal Damage Sets","Melee Damage"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.33,"animation_time":2.33,"animation_time_before_hit":1.23,"recharge_time":12.0,"endurance_cost":12.69},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":52.55,"average":52.55,"per_activation":22.55,"per_cast_cycle":3.67,"display_info":["52.55 lethal damage on target"],"base_value":-62.5615,"scale":0.84}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":90.09,"average":90.09,"per_activation":38.67,"per_cast_cycle":6.29,"display_info":["90.09 fire damage on target"],"base_value":-62.5615,"scale":1.44}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":73.7,"average":73.7,"per_activation":31.63,"per_cast_cycle":5.14,"display_info":["73.70 lethal damage on target"],"base_value":-79.3313,"scale":0.929}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":123.5,"average":123.5,"per_activation":53.0,"per_cast_cycle":8.62,"display_info":["123.50 fire damage on target"],"base_value":-79.3313,"scale":1.5567}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":5,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":12.51,"average":33.64,"per_activation":14.44,"per_cast_cycle":2.35,"display_info":["5 ticks of 80.00% chance for 12.51 fire damage over 4.1s on target after 0.5s delay"],"base_value":-62.5615,"scale":0.2}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":199.19,"average":9.96,"per_activation":4.27,"per_cast_cycle":0.7,"display_info":["5.00% chance for 199.19 fire damage on target [CRITICAL]"],"base_value":-79.3313,"scale":2.5109}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":142.64,"average":7.13,"per_activation":3.06,"per_cast_cycle":0.5,"display_info":["5.00% chance for 142.64 fire damage on target [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":2.28}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":142.64,"average":14.26,"per_activation":6.12,"per_cast_cycle":1.0,"display_info":["10.00% chance for 142.64 fire damage on target [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":2.28}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":64.19,"average":64.19,"per_activation":27.55,"per_cast_cycle":4.48,"display_info":["64.19 fire damage on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":1.026}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":5.63,"average":5.63,"per_activation":2.42,"per_cast_cycle":0.39,"display_info":["5 ticks of 5.63 fire damage over 4.1s on target after 0.5s delay","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.09}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Scrapper_Melee.Fiery_Melee",
+  "display_name": "Fiery Melee",
+  "display_help": "Fiery Melee allows you to attack with fire, and even conjure up flaming melee weapons. Fiery Melee powers tend to set foes ablaze for added Damage Over Time.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/25/fieryfray_targetedlightmelee.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Scrapper_Melee.Fiery_Melee.Scorch",
+    "Scrapper_Melee.Fiery_Melee.Fire_Sword",
+    "Scrapper_Melee.Fiery_Melee.Cremate",
+    "Scrapper_Melee.Fiery_Melee.Build_Up",
+    "Scrapper_Melee.Fiery_Melee.Breath_of_Fire",
+    "Scrapper_Melee.Fiery_Melee.Provoke",
+    "Scrapper_Melee.Fiery_Melee.Fire_Sword_Circle",
+    "Scrapper_Melee.Fiery_Melee.Incinerate",
+    "Scrapper_Melee.Fiery_Melee.Greater_Fire_Sword"
+  ],
+  "powers": [
+    {
+      "name": "Scrapper_Melee.Fiery_Melee.Scorch",
+      "display_name": "Scorch",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/25/fieryfray_targetedlightmelee.png",
+      "display_help": "This power engulfs your hands in flames, and can ignite the target of your Scorching attack. Once on fire, the target will suffer damage over time. Damage: Minor, Recharge: Very Fast",
+      "display_short_help": "Melee, Minor DMG(Fire)",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Power Range": "7 ft.",
+        "Power Type": "Click",
+        "Attack Types": "Melee, Fire",
+        "Effect Area": "Single Target",
+        "Endurance Cost": "4.37",
+        "Recharge Time": "3s",
+        "Activation Time": "1s",
+        "Available Level": "1"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Scrapper Archetype Sets",
+        "Universal Damage Sets",
+        "Melee Damage"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 3.0,
+        "endurance_cost": 4.37
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 52.55,
+                  "average": 52.55,
+                  "per_activation": 52.55,
+                  "per_cast_cycle": 13.14,
+                  "display_info": [
+                    "52.55 fire damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 96.78,
+                  "average": 96.78,
+                  "per_activation": 96.78,
+                  "per_cast_cycle": 24.2,
+                  "display_info": [
+                    "96.78 fire damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 1.2199
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 3,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 6.26,
+                  "average": 12.22,
+                  "per_activation": 12.22,
+                  "per_cast_cycle": 3.06,
+                  "display_info": [
+                    "3 ticks of 80.00% chance for 6.26 fire damage over 2.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 96.78,
+                  "average": 4.84,
+                  "per_activation": 4.84,
+                  "per_cast_cycle": 1.21,
+                  "display_info": [
+                    "5.00% chance for 96.78 fire damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 1.2199
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 52.55,
+                  "average": 2.63,
+                  "per_activation": 2.63,
+                  "per_cast_cycle": 0.66,
+                  "display_info": [
+                    "5.00% chance for 52.55 fire damage on target [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 52.55,
+                  "average": 5.26,
+                  "per_activation": 5.26,
+                  "per_cast_cycle": 1.32,
+                  "display_info": [
+                    "10.00% chance for 52.55 fire damage on target [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 23.65,
+                  "average": 23.65,
+                  "per_activation": 23.65,
+                  "per_cast_cycle": 5.91,
+                  "display_info": [
+                    "23.65 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.378
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 3,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 2.82,
+                  "average": 2.82,
+                  "per_activation": 2.82,
+                  "per_cast_cycle": 0.71,
+                  "display_info": [
+                    "3 ticks of 2.82 fire damage over 2.1s on target after 0.5s delay",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.045
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Fiery_Melee.Fire_Sword",
+      "display_name": "Fire Sword",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/56/fieryfray_firesword.png",
+      "display_help": "Through concentration, you can create a Sword of Fire that sets foes ablaze. Successful attacks from the Fire Sword will ignite your target, dealing damage over time. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Melee, Moderate DMG(Fire/Lethal)",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Attack Types": "Melee, Lethal, Fire",
+        "Endurance Cost": "6.86",
+        "Activation Time": "1.33s",
+        "Recharge Time": "6s",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Available Level": "1",
+        "Power Range": "7 ft."
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "Universal Damage Sets",
+        "Scrapper Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.33,
+        "animation_time": 1.33,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 6.0,
+        "endurance_cost": 6.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 31.28,
+                  "average": 31.28,
+                  "per_activation": 23.52,
+                  "per_cast_cycle": 4.27,
+                  "display_info": [
+                    "31.28 lethal damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 51.3,
+                  "average": 51.3,
+                  "per_activation": 38.57,
+                  "per_cast_cycle": 7.0,
+                  "display_info": [
+                    "51.30 fire damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.82
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 46.11,
+                  "average": 46.11,
+                  "per_activation": 34.67,
+                  "per_cast_cycle": 6.29,
+                  "display_info": [
+                    "46.11 lethal damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.5812
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 77.27,
+                  "average": 77.27,
+                  "per_activation": 58.1,
+                  "per_cast_cycle": 10.54,
+                  "display_info": [
+                    "77.27 fire damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.974
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 6.26,
+                  "average": 14.78,
+                  "per_activation": 11.11,
+                  "per_cast_cycle": 2.02,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 6.26 fire damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 82.58,
+                  "average": 4.13,
+                  "per_activation": 3.11,
+                  "per_cast_cycle": 0.56,
+                  "display_info": [
+                    "5.00% chance for 82.58 fire damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 1.041
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 82.58,
+                  "average": 4.13,
+                  "per_activation": 3.11,
+                  "per_cast_cycle": 0.56,
+                  "display_info": [
+                    "5.00% chance for 82.58 fire damage on target [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.32
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 82.58,
+                  "average": 8.26,
+                  "per_activation": 6.21,
+                  "per_cast_cycle": 1.13,
+                  "display_info": [
+                    "10.00% chance for 82.58 fire damage on target [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.32
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 37.16,
+                  "average": 37.16,
+                  "per_activation": 27.94,
+                  "per_cast_cycle": 5.07,
+                  "display_info": [
+                    "37.16 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.594
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 2.82,
+                  "average": 2.82,
+                  "per_activation": 2.12,
+                  "per_cast_cycle": 0.38,
+                  "display_info": [
+                    "4 ticks of 2.82 fire damage over 3.1s on target after 0.5s delay",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.045
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Fiery_Melee.Cremate",
+      "display_name": "Cremate",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ed/fieryfray_scorch.png",
+      "display_help": "A slow but devastating attack. Cremate clobbers your foe with a massive 2 handed fiery smash that leaves your foe set on fire. Damage: High, Recharge: Moderate",
+      "display_short_help": "Melee, High DMG(Smash/Fire)",
+      "display_info": {
+        "Endurance Cost": "8.53",
+        "Effect Area": "Single Target",
+        "Available Level": "2",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Activation Time": "1.5s",
+        "Recharge Time": "8s",
+        "Attack Types": "Melee, Smashing, Fire",
+        "Power Range": "7 ft."
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Scrapper Archetype Sets",
+        "Universal Damage Sets",
+        "Melee Damage"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.5,
+        "animation_time": 1.5,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 40.04,
+                  "average": 40.04,
+                  "per_activation": 26.69,
+                  "per_cast_cycle": 4.21,
+                  "display_info": [
+                    "40.04 smashing damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.64
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 62.56,
+                  "average": 62.56,
+                  "per_activation": 41.71,
+                  "per_cast_cycle": 6.59,
+                  "display_info": [
+                    "62.56 fire damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 51.95,
+                  "average": 51.95,
+                  "per_activation": 34.63,
+                  "per_cast_cycle": 5.47,
+                  "display_info": [
+                    "51.95 smashing damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.6549
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 87.05,
+                  "average": 87.05,
+                  "per_activation": 58.03,
+                  "per_cast_cycle": 9.16,
+                  "display_info": [
+                    "87.05 fire damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 1.0973
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 6.26,
+                  "average": 6.26,
+                  "per_activation": 4.17,
+                  "per_cast_cycle": 0.66,
+                  "display_info": [
+                    "4 ticks of 6.26 fire damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 140.41,
+                  "average": 7.02,
+                  "per_activation": 4.68,
+                  "per_cast_cycle": 0.74,
+                  "display_info": [
+                    "5.00% chance for 140.41 fire damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 1.7699
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 102.6,
+                  "average": 5.13,
+                  "per_activation": 3.42,
+                  "per_cast_cycle": 0.54,
+                  "display_info": [
+                    "5.00% chance for 102.60 fire damage on target [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.64
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 102.6,
+                  "average": 10.26,
+                  "per_activation": 6.84,
+                  "per_cast_cycle": 1.08,
+                  "display_info": [
+                    "10.00% chance for 102.60 fire damage on target [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.64
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 46.17,
+                  "average": 46.17,
+                  "per_activation": 30.78,
+                  "per_cast_cycle": 4.86,
+                  "display_info": [
+                    "46.17 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.738
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 2.82,
+                  "average": 2.82,
+                  "per_activation": 1.88,
+                  "per_cast_cycle": 0.3,
+                  "display_info": [
+                    "4 ticks of 2.82 fire damage over 3.1s on target after 0.5s delay",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.045
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Fiery_Melee.Build_Up",
+      "display_name": "Build Up",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d7/fieryfray_followup.png",
+      "display_help": "Greatly increases the amount of damage you deal for a few seconds, as well as slightly increasing your chance to hit. Recharge: Long",
+      "display_short_help": "Self +DMG, +To Hit",
+      "display_info": {
+        "Power Type": "Click",
+        "Target Type": "Self",
+        "Available Level": "6",
+        "Effect Area": "Single Target",
+        "Activation Time": "1.17s",
+        "Endurance Cost": "5.20",
+        "Recharge Time": "1m 30s"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 90.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": 20.0,
+                  "display_info": [
+                    "20.00% to hit for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 2.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.125,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Fiery_Melee.Breath_of_Fire",
+      "display_name": "Breath of Fire",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/eb/fieryfray_breathingfire.png",
+      "display_help": "This allows you to spew forth fire from your mouth, burning all foes within its narrow cone. This is a very accurate attack that can deal good damage at a close range. Damage: Moderate(DoT), Recharge: Moderate",
+      "display_short_help": "Close (Cone) Moderate DoT(Fire)",
+      "display_info": {
+        "Activation Time": "2.67s",
+        "Recharge Time": "10s",
+        "Effect Area": "Cone — 15 ft. radius 30° arc (10 targets max)",
+        "Target Type": "Enemies",
+        "Attack Types": "Area, Fire",
+        "Power Type": "Click",
+        "Endurance Cost": "10.19",
+        "Power Range": "15 ft.",
+        "Available Level": "8"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Scrapper Archetype Sets",
+        "Universal Damage Sets",
+        "Targeted AoE Damage"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 15.0,
+        "arc_degrees": 30.0,
+        "range_feet": 15.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.67,
+        "animation_time": 2.67,
+        "animation_time_before_hit": 1.17,
+        "recharge_time": 10.0,
+        "endurance_cost": 10.19
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.6,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 2,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 42.54,
+                  "average": 42.54,
+                  "per_activation": 15.93,
+                  "per_cast_cycle": 3.36,
+                  "display_info": [
+                    "2 ticks of 42.54 fire damage over 0.6s on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.68
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 1.0,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 6.26,
+                  "average": 14.78,
+                  "per_activation": 5.54,
+                  "per_cast_cycle": 1.17,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 6.26 fire damage over 3.1s on target after 1s delay"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 73.52,
+                  "average": 73.52,
+                  "per_activation": 27.54,
+                  "per_cast_cycle": 5.8,
+                  "display_info": [
+                    "73.52 fire damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.9267
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 147.03,
+                  "average": 7.35,
+                  "per_activation": 2.75,
+                  "per_cast_cycle": 0.58,
+                  "display_info": [
+                    "5.00% chance for 147.03 fire damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 1.8534
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 85.08,
+                  "average": 4.25,
+                  "per_activation": 1.59,
+                  "per_cast_cycle": 0.34,
+                  "display_info": [
+                    "5.00% chance for 85.08 fire damage on target [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.36
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 85.08,
+                  "average": 8.51,
+                  "per_activation": 3.19,
+                  "per_cast_cycle": 0.67,
+                  "display_info": [
+                    "10.00% chance for 85.08 fire damage on target [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.36
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.6,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 2,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 19.14,
+                  "average": 19.14,
+                  "per_activation": 7.17,
+                  "per_cast_cycle": 1.51,
+                  "display_info": [
+                    "2 ticks of 19.14 fire damage over 0.6s on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.306
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 1.0,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 2.82,
+                  "average": 2.82,
+                  "per_activation": 1.06,
+                  "per_cast_cycle": 0.22,
+                  "display_info": [
+                    "4 ticks of 2.82 fire damage over 3.1s on target after 1s delay",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.045
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Fiery_Melee.Provoke",
+      "display_name": "Confront",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d8/fieryfray_willowisp.png",
+      "display_help": "Challenges a foe to attack you. Useful to pull a villain off an ally who finds themselves in over their head. A To Hit check required to Taunt enemy players, but is not needed against critter targets. Recharge: Very Fast",
+      "display_short_help": "Ranged, Foe Taunt",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Available Level": "12",
+        "Power Range": "70 ft.",
+        "Recharge Time": "3s",
+        "Effect Area": "Single Target",
+        "Power Type": "Click",
+        "Activation Time": "1.67s",
+        "Attack Types": "Ranged"
+      },
+      "attack_types": [
+        "Ranged_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 70.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 3.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "duration_seconds": 30.8,
+                  "display_info": [
+                    "4.0 taunt for 30.8s on target"
+                  ],
+                  "base_value": 1.54,
+                  "scale": 20.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "duration_seconds": 7.7,
+                  "display_info": [
+                    "4.0 taunt for 7.7s on target"
+                  ],
+                  "base_value": 1.54,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Range"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 12.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": -75.0,
+                  "display_info": [
+                    "-75.00% strength to range for 12s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Null"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Fiery_Melee.Fire_Sword_Circle",
+      "display_name": "Fire Sword Circle",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e6/fieryfray_fireswordcircle.png",
+      "display_help": "Mastery of your Fire Sword has enabled you to make an attack on every foe within melee distance. This will slash and burn your enemies, dealing minor damage and setting them ablaze. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "PBAoE Melee, Moderate DMG(Fire/Lethal)",
+      "display_info": {
+        "Recharge Time": "20s",
+        "Available Level": "18",
+        "Power Type": "Click",
+        "Attack Types": "Melee, Fire, Lethal",
+        "Activation Time": "2.67s",
+        "Effect Area": "AoE — 10 ft. radius (10 targets max)",
+        "Endurance Cost": "18.51",
+        "Target Type": "Self"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Fire_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Scrapper Archetype Sets",
+        "PBAoE Damage"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 10.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.67,
+        "animation_time": 2.67,
+        "animation_time_before_hit": 1.2,
+        "recharge_time": 20.0,
+        "endurance_cost": 18.51
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 48.49,
+                  "average": 48.49,
+                  "per_activation": 18.16,
+                  "per_cast_cycle": 2.14,
+                  "display_info": [
+                    "48.49 lethal damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.775
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 48.49,
+                  "average": 48.49,
+                  "per_activation": 18.16,
+                  "per_cast_cycle": 2.14,
+                  "display_info": [
+                    "48.49 fire damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.775
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 69.56,
+                  "average": 69.56,
+                  "per_activation": 26.05,
+                  "per_cast_cycle": 3.07,
+                  "display_info": [
+                    "69.56 lethal damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.8768
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 69.56,
+                  "average": 69.56,
+                  "per_activation": 26.05,
+                  "per_cast_cycle": 3.07,
+                  "display_info": [
+                    "69.56 fire damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.8768
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 6.26,
+                  "average": 14.78,
+                  "per_activation": 5.54,
+                  "per_cast_cycle": 0.65,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 6.26 fire damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 139.12,
+                  "average": 6.96,
+                  "per_activation": 2.61,
+                  "per_cast_cycle": 0.31,
+                  "display_info": [
+                    "5.00% chance for 139.12 fire damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 1.7536
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 96.97,
+                  "average": 4.85,
+                  "per_activation": 1.82,
+                  "per_cast_cycle": 0.21,
+                  "display_info": [
+                    "5.00% chance for 96.97 fire damage on target [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.55
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 96.97,
+                  "average": 9.7,
+                  "per_activation": 3.63,
+                  "per_cast_cycle": 0.43,
+                  "display_info": [
+                    "10.00% chance for 96.97 fire damage on target [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.55
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 43.64,
+                  "average": 43.64,
+                  "per_activation": 16.34,
+                  "per_cast_cycle": 1.93,
+                  "display_info": [
+                    "43.64 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.6975
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 2.82,
+                  "average": 2.82,
+                  "per_activation": 1.06,
+                  "per_cast_cycle": 0.12,
+                  "display_info": [
+                    "4 ticks of 2.82 fire damage over 3.1s on target after 0.5s delay",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.045
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Fiery_Melee.Incinerate",
+      "display_name": "Incinerate",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d3/fieryfray_incinerate.png",
+      "display_help": "Intense concentration can allow you to Incinerate an opponent. This will set your foe ablaze, dealing damage over time. Damage: High(DoT), Recharge: Moderate",
+      "display_short_help": "Melee, High DoT(Fire)",
+      "display_info": {
+        "Attack Types": "Melee, Fire",
+        "Effect Area": "Single Target",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Endurance Cost": "6.86",
+        "Power Range": "7 ft.",
+        "Recharge Time": "10s",
+        "Available Level": "26",
+        "Activation Time": "1.67s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "Universal Damage Sets",
+        "Scrapper Archetype Sets"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 10.0,
+        "endurance_cost": 6.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.6,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 10,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 15.64,
+                  "average": 15.64,
+                  "per_activation": 9.37,
+                  "per_cast_cycle": 1.34,
+                  "display_info": [
+                    "10 ticks of 15.64 fire damage over 4.6s on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.25
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 156.2,
+                  "average": 7.81,
+                  "per_activation": 4.68,
+                  "per_cast_cycle": 0.67,
+                  "display_info": [
+                    "5.00% chance for 156.20 fire damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 1.9689
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.6,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 10,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 15.62,
+                  "average": 15.62,
+                  "per_activation": 9.35,
+                  "per_cast_cycle": 1.34,
+                  "display_info": [
+                    "10 ticks of 15.62 fire damage over 4.6s on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.1969
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 156.4,
+                  "average": 7.82,
+                  "per_activation": 4.68,
+                  "per_cast_cycle": 0.67,
+                  "display_info": [
+                    "5.00% chance for 156.40 fire damage on target [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 2.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 156.4,
+                  "average": 15.64,
+                  "per_activation": 9.37,
+                  "per_cast_cycle": 1.34,
+                  "display_info": [
+                    "10.00% chance for 156.40 fire damage on target [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 2.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.6,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 10,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 7.04,
+                  "average": 7.04,
+                  "per_activation": 4.22,
+                  "per_cast_cycle": 0.6,
+                  "display_info": [
+                    "10 ticks of 7.04 fire damage over 4.6s on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.1125
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Fiery_Melee.Greater_Fire_Sword",
+      "display_name": "Greater Fire Sword",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/23/fieryfray_greaterfiresword.png",
+      "display_help": "Your mastery of fire allows you to create an enhanced Sword of Fire that can set foes ablaze. Successful attacks from the Greater Fire Sword will ignite your target, dealing damage over time. Damage: Superior, Recharge: Slow",
+      "display_short_help": "Melee, Superior DMG(Fire/Lethal)",
+      "display_info": {
+        "Attack Types": "Melee, Lethal, Fire",
+        "Power Range": "7 ft.",
+        "Effect Area": "Single Target",
+        "Recharge Time": "12s",
+        "Endurance Cost": "12.69",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Activation Time": "2.33s",
+        "Available Level": "32"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Scrapper Archetype Sets",
+        "Melee Damage"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.33,
+        "animation_time": 2.33,
+        "animation_time_before_hit": 1.23,
+        "recharge_time": 12.0,
+        "endurance_cost": 12.69
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 52.55,
+                  "average": 52.55,
+                  "per_activation": 22.55,
+                  "per_cast_cycle": 3.67,
+                  "display_info": [
+                    "52.55 lethal damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.84
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 90.09,
+                  "average": 90.09,
+                  "per_activation": 38.67,
+                  "per_cast_cycle": 6.29,
+                  "display_info": [
+                    "90.09 fire damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.44
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 73.7,
+                  "average": 73.7,
+                  "per_activation": 31.63,
+                  "per_cast_cycle": 5.14,
+                  "display_info": [
+                    "73.70 lethal damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.929
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 123.5,
+                  "average": 123.5,
+                  "per_activation": 53.0,
+                  "per_cast_cycle": 8.62,
+                  "display_info": [
+                    "123.50 fire damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 1.5567
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 12.51,
+                  "average": 33.64,
+                  "per_activation": 14.44,
+                  "per_cast_cycle": 2.35,
+                  "display_info": [
+                    "5 ticks of 80.00% chance for 12.51 fire damage over 4.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 199.19,
+                  "average": 9.96,
+                  "per_activation": 4.27,
+                  "per_cast_cycle": 0.7,
+                  "display_info": [
+                    "5.00% chance for 199.19 fire damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 2.5109
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 142.64,
+                  "average": 7.13,
+                  "per_activation": 3.06,
+                  "per_cast_cycle": 0.5,
+                  "display_info": [
+                    "5.00% chance for 142.64 fire damage on target [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 2.28
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 142.64,
+                  "average": 14.26,
+                  "per_activation": 6.12,
+                  "per_cast_cycle": 1.0,
+                  "display_info": [
+                    "10.00% chance for 142.64 fire damage on target [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 2.28
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 64.19,
+                  "average": 64.19,
+                  "per_activation": 27.55,
+                  "per_cast_cycle": 4.48,
+                  "display_info": [
+                    "64.19 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.026
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 5.63,
+                  "average": 5.63,
+                  "per_activation": 2.42,
+                  "per_cast_cycle": 0.39,
+                  "display_info": [
+                    "5 ticks of 5.63 fire damage over 4.1s on target after 0.5s delay",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.09
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

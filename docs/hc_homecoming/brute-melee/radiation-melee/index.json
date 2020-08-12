@@ -1,1 +1,2976 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Brute_Melee.Radiation_Melee","display_name":"Radiation Melee","display_help":"You are able to harness the power of Radiation to crush your foes in close quarters. Radiation Melee attacks have a chance to inflict the Contaminated state on a target for a moderate amount of time. Powers that deal greater damage, have a longer recharge time and animation time have a greater chance to inflict Contaminated. Hitting Contaminated targets with Contaminated Strike, Radioactive Smash, Radiation Siphon and Devastating Blow cause a portion of that power's damage to also hit nearby foes. Radiation Melee attacks primarily deal smashing and energy damage, but this set is also capable of dealing some toxic damage.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/70/radiationmelee_contaminatedstrike.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Brute_Melee.Radiation_Melee.Contaminated_Strike","Brute_Melee.Radiation_Melee.Radioactive_Smash","Brute_Melee.Radiation_Melee.Proton_Sweep","Brute_Melee.Radiation_Melee.Fusion","Brute_Melee.Radiation_Melee.Radiation_Siphon","Brute_Melee.Radiation_Melee.Taunt","Brute_Melee.Radiation_Melee.Irradiated_Ground","Brute_Melee.Radiation_Melee.Devastating_Blow","Brute_Melee.Radiation_Melee.Atom_Smasher"],"powers":[{"name":"Brute_Melee.Radiation_Melee.Contaminated_Strike","display_name":"Contaminated Strike","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/70/radiationmelee_contaminatedstrike.png","display_help":"You charge your fist with harmful radioactive particles and quickly strike your foe dealing Light Energy and Smashing damage as well as reducing their defense. Affected enemies have a small chance to be affected by the Contaminated effect. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: Light, Recharge: Very Fast","display_short_help":"Melee, Light DMG(Energy/Smash), Foe -Def, Special","display_info":{"Attack Types":"Melee, Smashing, Energy","Target Type":"Enemies","Effect Area":"Single Target","Recharge Time":"3s","Activation Time":"0.83s","Endurance Cost":"4.37","Power Type":"Click","Power Range":"7 ft.","Available Level":"1"},"attack_types":["Melee_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Defense Debuff","Melee Damage","Taunt","Accurate Defense Debuff","Brute Archetype Sets","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.83,"animation_time":0.83,"animation_time_before_hit":0.53,"recharge_time":3.0,"endurance_cost":4.37},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":8.76,"average":8.76,"per_activation":10.55,"per_cast_cycle":2.29,"display_info":["8.76 smashing damage on target"],"base_value":-41.7077,"scale":0.21}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":26.28,"average":26.28,"per_activation":31.66,"per_cast_cycle":6.86,"display_info":["26.28 energy damage on target"],"base_value":-41.7077,"scale":0.63}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":15.52,"average":15.52,"per_activation":18.7,"per_cast_cycle":4.05,"display_info":["15.52 smashing damage on target"],"base_value":-56.4121,"scale":0.2752}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":46.58,"average":46.58,"per_activation":56.12,"per_cast_cycle":12.16,"display_info":["46.58 energy damage on target"],"base_value":-56.4121,"scale":0.8257}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":-7.5,"display_info":["-7.50% strength to defense for 10s on target"],"base_value":-0.075,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":12.0,"requires":["!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Replace","by_caster":true}}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":15.77,"average":15.77,"per_activation":19.0,"per_cast_cycle":4.12,"display_info":["15.77 fire damage on target","Only using Fiery Embrace"],"base_value":-41.7077,"scale":0.378}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated)"],"effects":[{"attributes":["Execute Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"power":{"powers":[{"name":"Redirects.Rad_Melee.Contaminated_Strike_AoE","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/redirects/rad-melee/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Brute_Melee.Radiation_Melee.Radioactive_Smash","display_name":"Radioactive Smash","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/8b/radiationmelee_radioactivesmash.png","display_help":"You channel a greater amount of radiation into your fists and deliver a hard hitting blow that deals Moderate Energy and Smashing damage to the target as well as reducing their Defense for a short time. Affected targets also have a chance to be knocked down and have a moderate chance to be affected by the Contaminated effect. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: Moderate, Recharge: Moderate","display_short_help":"Melee, High DMG(Energy/Smash), Foe -Def, Knockdown, Special","display_info":{"Effect Area":"Single Target","Power Type":"Click","Activation Time":"1.5s","Attack Types":"Melee, Smashing, Energy","Recharge Time":"7s","Available Level":"1","Endurance Cost":"7.70","Target Type":"Enemies","Power Range":"7 ft."},"attack_types":["Melee_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Knockback","Taunt","Melee Damage","Universal Damage Sets","Defense Debuff","Brute Archetype Sets","Accurate Defense Debuff"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.5,"animation_time":1.5,"animation_time_before_hit":0.83,"recharge_time":7.0,"endurance_cost":7.7},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":15.43,"average":15.43,"per_activation":10.29,"per_cast_cycle":1.82,"display_info":["15.43 smashing damage on target"],"base_value":-41.7077,"scale":0.37}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":46.3,"average":46.3,"per_activation":30.87,"per_cast_cycle":5.45,"display_info":["46.30 energy damage on target"],"base_value":-41.7077,"scale":1.11}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":24.4,"average":24.4,"per_activation":16.27,"per_cast_cycle":2.87,"display_info":["24.40 smashing damage on target"],"base_value":-56.4121,"scale":0.4325}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":73.19,"average":73.19,"per_activation":48.79,"per_cast_cycle":8.61,"display_info":["73.19 energy damage on target"],"base_value":-56.4121,"scale":1.2975}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":-11.25,"display_info":["-11.25% strength to defense for 10s on target"],"base_value":-0.075,"scale":1.5}]}]},{"visible_in_info_window":true,"chance_percent":23.0,"requires":["!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Replace","by_caster":true}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":33.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":0.67,"display_info":["33.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":33.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","magnitude":0.67,"display_info":["33.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":27.78,"average":27.78,"per_activation":18.52,"per_cast_cycle":3.27,"display_info":["27.78 fire damage on target","Only using Fiery Embrace"],"base_value":-41.7077,"scale":0.666}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated)"],"effects":[{"attributes":["Execute Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"power":{"powers":[{"name":"Redirects.Rad_Melee.Radioactive_Smash_AoE","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/redirects/rad-melee/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Brute_Melee.Radiation_Melee.Proton_Sweep","display_name":"Proton Sweep","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/46/radiationmelee_protonsweep.png","display_help":"You release a cloud of deadly radioactive particles in front of you inflicting Moderate Energy and Toxic damage over a short time as well as reducing the targets' defense. Affected enemies have a moderate chance to be affected by the Contaminated effect. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: Moderate, Recharge: Moderate","display_short_help":"Melee Cone, Moderate DoT(Energy/Toxic), Foe -Def, Special","display_info":{"Activation Time":"1.67s","Target Type":"Enemies","Attack Types":"Melee, Energy","Power Type":"Click","Recharge Time":"8s","Endurance Cost":"8.53","Power Range":"7 ft.","Effect Area":"Cone — 7 ft. radius 75° arc (5 targets max)","Available Level":"2"},"attack_types":["Melee_Def","Energy_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Defense Debuff","Taunt","Brute Archetype Sets","Accurate Defense Debuff","PBAoE Damage"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":5,"radius_feet":7.0,"arc_degrees":75.0,"range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":1.33,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":3.73,"average":3.73,"per_activation":2.23,"per_cast_cycle":0.39,"display_info":["4 ticks of 3.73 energy damage over 3.1s on target after 0.5s delay"],"base_value":-41.7077,"scale":0.0894}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":11.18,"average":11.18,"per_activation":6.69,"per_cast_cycle":1.16,"display_info":["4 ticks of 11.18 toxic damage over 3.1s on target after 0.5s delay"],"base_value":-41.7077,"scale":0.2681}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":5.8,"average":5.8,"per_activation":3.47,"per_cast_cycle":0.6,"display_info":["4 ticks of 5.80 energy damage over 3.1s on target after 0.5s delay"],"base_value":-56.4121,"scale":0.1029}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":17.42,"average":17.42,"per_activation":10.43,"per_cast_cycle":1.8,"display_info":["4 ticks of 17.42 toxic damage over 3.1s on target after 0.5s delay"],"base_value":-56.4121,"scale":0.3088}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":-9.0,"display_info":["-9.00% strength to defense for 10s on target"],"base_value":-0.075,"scale":1.2}]}]},{"visible_in_info_window":true,"chance_percent":21.0,"requires":["!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Replace","by_caster":true}}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":6.71,"average":6.71,"per_activation":4.02,"per_cast_cycle":0.69,"display_info":["4 ticks of 6.71 fire damage over 3.1s on target after 0.5s delay","Only using Fiery Embrace"],"base_value":-41.7077,"scale":0.1609}]}]}]},{"name":"Brute_Melee.Radiation_Melee.Fusion","display_name":"Fusion","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b9/radiationmelee_buildup.png","display_help":"Fusion boosts your damage and chance to hit moderately and also causes your next few attacks to have a 100% chance to inflict Contaminated on your enemies. Recharge: Long","display_short_help":"Self +DMG, +To Hit, Special","display_info":{"Endurance Cost":"5.20","Available Level":"6","Recharge Time":"1m 30s","Activation Time":"1.17s","Power Type":"Click","Target Type":"Self","Effect Area":"Single Target"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["To Hit Buff"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":90.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":20.0,"display_info":["20.00% to hit for 10s on self","Unresistable"],"base_value":0.1,"scale":2.0}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":50.0,"display_info":["50.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":5.0}]},{"attributes":["Global Chance Mod"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"effect":{"tags":["Contaminated"]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Brute_Melee.Radiation_Melee.Radiation_Siphon","display_name":"Radiation Siphon","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/14/radiationmelee_radiationsiphon.png","display_help":"You pummel your foe with a deadly smashing attack dealing High Energy and Smashing damage and reducing their defense. Hitting Contaminated targets will also heal you for a large amount of health over 3 seconds and remove the Contaminated effect from the target. However, uncontaminated targets have a moderate chance to be affected by the Contaminated effect. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: High Moderate, Recharge: Moderate","display_short_help":"Melee, High DMG(Energy/Smash), Foe, -Def, -Contaminated, Special","display_info":{"Endurance Cost":"10.19","Power Type":"Click","Effect Area":"Single Target","Attack Types":"Melee, Smashing, Energy","Available Level":"8","Power Range":"7 ft.","Activation Time":"2.23s","Recharge Time":"10s","Target Type":"Enemies"},"attack_types":["Melee_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Heal","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Accurate Defense Debuff","Accurate Healing","Healing","Taunt","Brute Archetype Sets","Melee Damage","Defense Debuff","Universal Damage Sets"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","arc_degrees":5.0,"range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.23,"animation_time":2.23,"animation_time_before_hit":1.3,"recharge_time":10.0,"endurance_cost":10.19},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":20.44,"average":20.44,"per_activation":9.17,"per_cast_cycle":1.67,"display_info":["20.44 smashing damage on target"],"base_value":-41.7077,"scale":0.49}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":61.31,"average":61.31,"per_activation":27.49,"per_cast_cycle":5.01,"display_info":["61.31 energy damage on target"],"base_value":-41.7077,"scale":1.47}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":33.29,"average":33.29,"per_activation":14.93,"per_cast_cycle":2.72,"display_info":["33.29 smashing damage on target"],"base_value":-56.4121,"scale":0.5902}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":99.89,"average":99.89,"per_activation":44.79,"per_cast_cycle":8.17,"display_info":["99.89 energy damage on target"],"base_value":-56.4121,"scale":1.7707}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":-11.25,"display_info":["-11.25% strength to defense for 10s on target"],"base_value":-0.075,"scale":1.5}]}]},{"visible_in_info_window":true,"chance_percent":32.0,"requires":["!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":0.3,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Replace","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated)"],"effects":[{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":0.1,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Healing_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.1,"continuous_apply_seconds":1.0,"ticks":3,"flags":["IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","healing":99.96,"average":99.96,"per_activation":44.83,"per_cast_cycle":8.17,"display_info":["3 ticks of 99.96 heal over 2.1s on self","Unresistable"],"base_value":149.9255,"scale":0.6667}]},{"attributes":["Execute Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"power":{"powers":[{"name":"Redirects.Rad_Melee.Radiation_Siphon_AoE","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/redirects/rad-melee/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":36.79,"average":36.79,"per_activation":16.5,"per_cast_cycle":3.01,"display_info":["36.79 fire damage on target","Only using Fiery Embrace"],"base_value":-41.7077,"scale":0.882}]}]}]},{"name":"Brute_Melee.Radiation_Melee.Taunt","display_name":"Taunt","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/bf/radiationmelee_taunt.png","display_help":"Taunts a foe, and some nearby foes, to attack you. Useful for pulling villains off an ally who find themselves in over their head. Taunted foes tend to ignore other Heroes and focus on you for quite a while, so use this power cautiously. A To Hit check is required to Taunt enemy players, but is not needed against critter targets. Recharge: Moderate","display_short_help":"Ranged (Targeted AoE), Foe Taunt","display_info":{"Power Type":"Click","Target Type":"Enemies","Recharge Time":"10s","Power Range":"70 ft.","Effect Area":"AoE — 15 ft. radius (10 targets max)","Activation Time":"1.67s","Attack Types":"Area","Available Level":"12"},"attack_types":["Area_Def"],"enhancements_allowed":["Enhance Taunt","Enhance Range","Enhance Recharge Speed","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":15.0,"range_feet":70.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.67,"recharge_time":10.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":41.0,"display_info":["4.0 taunt for 41s on target"],"base_value":2.05,"scale":20.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":10.25,"display_info":["4.0 taunt for 10.25s on target"],"base_value":2.05,"scale":5.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Range"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":12.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":-75.0,"display_info":["-75.00% strength to range for 12s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-0.75}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"],"effects":[{"attributes":["Null"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Brute_Melee.Radiation_Melee.Irradiated_Ground","display_name":"Irradiated Ground","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/5f/radiationmelee_irradiatedground.png","display_help":"While active you will scorch the earth beneath you leaving toxic clouds of radioactive gas in your wake. Foes that enter these clouds will suffer Minor Toxic damage, have their defense reduced and also have a tiny chance of being Contaminated. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: Minor, Recharge: Fast","display_short_help":"Toggle, Minor DoT(Toxic) Patch, Foe -Def, Special","display_info":{"Target Type":"Self","Attack Types":"Area","Power Type":"Toggle","Available Level":"18","Endurance Cost":"0.52/s","Recharge Time":"4s","Effect Area":"Single Target","Activation Time":"2.03s"},"attack_types":["Area_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Defense Debuff","Universal Damage Sets","Accurate Defense Debuff","PBAoE Damage"],"available_at_level":18,"auto_issue":false,"power_type":"Toggle","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.03,"animation_time":2.03,"animation_time_before_hit":0.77,"recharge_time":4.0,"auto_cast_interval":5.0,"endurance_cost":2.6},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Radiation_Melee_Irradiated_Ground_Pet","display_name":"Irradiated Ground","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Pets.Radiation_Melee.Irradiated_Ground","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/radiation-melee/"},{"name":"Pets.Radiation_Melee.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/radiation-melee/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Brute_Melee.Radiation_Melee.Devastating_Blow","display_name":"Devastating Blow","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/29/radiationmelee_devastatingblow.png","display_help":"You hammer your foe with a brutal smashing attack charged with a lethal dose of radiation. Your target will suffer Extreme Energy and Smashing damage, will have its defense reduced and will be disoriented for a short time. Affected enemies will be affected by the Contaminated effect. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: Extreme, Recharge: Slow","display_short_help":"Melee, Extreme DMG(Energy/Smash), Foe -Def, Disorient, Special","display_info":{"Activation Time":"2.67s","Endurance Cost":"16.02","Recharge Time":"17s","Power Type":"Click","Available Level":"26","Target Type":"Enemies","Effect Area":"Single Target","Attack Types":"Melee, Smashing, Energy","Power Range":"7 ft."},"attack_types":["Melee_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Disorient","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Accurate Defense Debuff","Universal Damage Sets","Defense Debuff","Taunt","Brute Archetype Sets","Melee Damage","Stuns"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.67,"animation_time":2.67,"animation_time_before_hit":2.2,"recharge_time":17.0,"endurance_cost":16.02},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":32.11,"average":32.11,"per_activation":12.03,"per_cast_cycle":1.63,"display_info":["32.11 smashing damage on target"],"base_value":-41.7077,"scale":0.77}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":96.34,"average":96.34,"per_activation":36.08,"per_cast_cycle":4.9,"display_info":["96.34 energy damage on target"],"base_value":-41.7077,"scale":2.31}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":41.59,"average":41.59,"per_activation":15.58,"per_cast_cycle":2.11,"display_info":["41.59 smashing damage on target"],"base_value":-56.4121,"scale":0.7372}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":124.77,"average":124.77,"per_activation":46.73,"per_cast_cycle":6.34,"display_info":["124.77 energy damage on target"],"base_value":-56.4121,"scale":2.2117}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":-15.0,"display_info":["-15.00% strength to defense for 10s on target"],"base_value":-0.075,"scale":2.0}]}]},{"visible_in_info_window":true,"chance_percent":50.0,"requires":["!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Replace","by_caster":true}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":11.92,"display_info":["60.00% chance for 3.0 stun for 11.92s on target"],"base_value":1.192,"scale":10.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":2.0,"display_info":["60.00% chance for 3.0 stun for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":57.81,"average":57.81,"per_activation":21.65,"per_cast_cycle":2.94,"display_info":["57.81 fire damage on target","Only using Fiery Embrace"],"base_value":-41.7077,"scale":1.386}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated)"],"effects":[{"attributes":["Execute Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"power":{"powers":[{"name":"Redirects.Rad_Melee.Radioactive_Smash_AoE","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/redirects/rad-melee/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Brute_Melee.Radiation_Melee.Atom_Smasher","display_name":"Atom Smasher","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/da/radiationmelee_atomsmasher.png","display_help":"You charge up a dangerously unstable amount of radioactive energy into a single fist before driving it into the ground and causing a small explosion. Foes caught in the blast will suffer High Energy and Toxic damage and have their defense reduced. Enemies also have a moderate chance to be disoriented for a short time. Affected enemies have a small chance to be affected by the Contaminated effect. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: High, Recharge: Slow","display_short_help":"PBAoE, High DMG(Energy/Toxic), Foe -Def, Disorient, Special","display_info":{"Endurance Cost":"20.18","Effect Area":"AoE — 10 ft. radius (10 targets max)","Recharge Time":"22s","Power Range":"7 ft.","Power Type":"Click","Activation Time":"2.93s","Target Type":"Self","Attack Types":"Melee, Smashing, Energy","Available Level":"32"},"attack_types":["Melee_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Disorient","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Defense Debuff","Taunt","PBAoE Damage","Stuns","Accurate Defense Debuff","Universal Damage Sets","Brute Archetype Sets"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":10.0,"range_feet":7.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.93,"animation_time":2.93,"animation_time_before_hit":1.83,"recharge_time":22.0,"endurance_cost":20.18},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":16.16,"average":16.16,"per_activation":5.52,"per_cast_cycle":0.65,"display_info":["16.16 energy damage on target"],"base_value":-41.7077,"scale":0.3875}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":48.49,"average":48.49,"per_activation":16.55,"per_cast_cycle":1.95,"display_info":["48.49 toxic damage on target"],"base_value":-41.7077,"scale":1.1625}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":18.79,"average":18.79,"per_activation":6.41,"per_cast_cycle":0.75,"display_info":["18.79 energy damage on target"],"base_value":-56.4121,"scale":0.3331}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":56.37,"average":56.37,"per_activation":19.24,"per_cast_cycle":2.26,"display_info":["56.37 toxic damage on target"],"base_value":-56.4121,"scale":0.9993}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","percent":-9.0,"display_info":["-9.00% strength to defense for 10s on target"],"base_value":-0.075,"scale":1.2}]}]},{"visible_in_info_window":true,"chance_percent":35.0,"requires":["!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Replace","by_caster":true}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":25.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":2.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":7.15,"display_info":["25.00% chance for 2.0 stun for 7.15s on target"],"base_value":1.192,"scale":6.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":25.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":2.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","duration_seconds":2.0,"display_info":["25.00% chance for 2.0 stun for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Brute","damage":29.09,"average":29.09,"per_activation":9.93,"per_cast_cycle":1.17,"display_info":["29.09 fire damage on target","Only using Fiery Embrace"],"base_value":-41.7077,"scale":0.6975}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Brute_Melee.Radiation_Melee",
+  "display_name": "Radiation Melee",
+  "display_help": "You are able to harness the power of Radiation to crush your foes in close quarters. Radiation Melee attacks have a chance to inflict the Contaminated state on a target for a moderate amount of time. Powers that deal greater damage, have a longer recharge time and animation time have a greater chance to inflict Contaminated. Hitting Contaminated targets with Contaminated Strike, Radioactive Smash, Radiation Siphon and Devastating Blow cause a portion of that power's damage to also hit nearby foes. Radiation Melee attacks primarily deal smashing and energy damage, but this set is also capable of dealing some toxic damage.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/70/radiationmelee_contaminatedstrike.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Brute_Melee.Radiation_Melee.Contaminated_Strike",
+    "Brute_Melee.Radiation_Melee.Radioactive_Smash",
+    "Brute_Melee.Radiation_Melee.Proton_Sweep",
+    "Brute_Melee.Radiation_Melee.Fusion",
+    "Brute_Melee.Radiation_Melee.Radiation_Siphon",
+    "Brute_Melee.Radiation_Melee.Taunt",
+    "Brute_Melee.Radiation_Melee.Irradiated_Ground",
+    "Brute_Melee.Radiation_Melee.Devastating_Blow",
+    "Brute_Melee.Radiation_Melee.Atom_Smasher"
+  ],
+  "powers": [
+    {
+      "name": "Brute_Melee.Radiation_Melee.Contaminated_Strike",
+      "display_name": "Contaminated Strike",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/70/radiationmelee_contaminatedstrike.png",
+      "display_help": "You charge your fist with harmful radioactive particles and quickly strike your foe dealing Light Energy and Smashing damage as well as reducing their defense. Affected enemies have a small chance to be affected by the Contaminated effect. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: Light, Recharge: Very Fast",
+      "display_short_help": "Melee, Light DMG(Energy/Smash), Foe -Def, Special",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Available Level": "1",
+        "Target Type": "Enemies",
+        "Activation Time": "0.83s",
+        "Endurance Cost": "4.37",
+        "Power Type": "Click",
+        "Power Range": "7 ft.",
+        "Attack Types": "Melee, Smashing, Energy",
+        "Recharge Time": "3s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Brute Archetype Sets",
+        "Melee Damage",
+        "Taunt",
+        "Accurate Defense Debuff",
+        "Defense Debuff"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.83,
+        "animation_time": 0.83,
+        "animation_time_before_hit": 0.53,
+        "recharge_time": 3.0,
+        "endurance_cost": 4.37
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 8.76,
+                  "average": 8.76,
+                  "per_activation": 10.55,
+                  "per_cast_cycle": 2.29,
+                  "display_info": [
+                    "8.76 smashing damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.21
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 26.28,
+                  "average": 26.28,
+                  "per_activation": 31.66,
+                  "per_cast_cycle": 6.86,
+                  "display_info": [
+                    "26.28 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.63
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 15.52,
+                  "average": 15.52,
+                  "per_activation": 18.7,
+                  "per_cast_cycle": 4.05,
+                  "display_info": [
+                    "15.52 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.2752
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 46.58,
+                  "average": 46.58,
+                  "per_activation": 56.12,
+                  "per_cast_cycle": 12.16,
+                  "display_info": [
+                    "46.58 energy damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.8257
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -7.5,
+                  "display_info": [
+                    "-7.50% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 12.0,
+          "requires": [
+            "!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 15.77,
+                  "average": 15.77,
+                  "per_activation": 19.0,
+                  "per_cast_cycle": 4.12,
+                  "display_info": [
+                    "15.77 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.378
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Execute Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Redirects.Rad_Melee.Contaminated_Strike_AoE",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/redirects/rad-melee/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Radiation_Melee.Radioactive_Smash",
+      "display_name": "Radioactive Smash",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/8b/radiationmelee_radioactivesmash.png",
+      "display_help": "You channel a greater amount of radiation into your fists and deliver a hard hitting blow that deals Moderate Energy and Smashing damage to the target as well as reducing their Defense for a short time. Affected targets also have a chance to be knocked down and have a moderate chance to be affected by the Contaminated effect. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: Moderate, Recharge: Moderate",
+      "display_short_help": "Melee, High DMG(Energy/Smash), Foe -Def, Knockdown, Special",
+      "display_info": {
+        "Attack Types": "Melee, Smashing, Energy",
+        "Effect Area": "Single Target",
+        "Target Type": "Enemies",
+        "Power Range": "7 ft.",
+        "Available Level": "1",
+        "Power Type": "Click",
+        "Recharge Time": "7s",
+        "Endurance Cost": "7.70",
+        "Activation Time": "1.5s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Accurate Defense Debuff",
+        "Knockback",
+        "Brute Archetype Sets",
+        "Defense Debuff",
+        "Melee Damage",
+        "Taunt"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.5,
+        "animation_time": 1.5,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 7.0,
+        "endurance_cost": 7.7
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 15.43,
+                  "average": 15.43,
+                  "per_activation": 10.29,
+                  "per_cast_cycle": 1.82,
+                  "display_info": [
+                    "15.43 smashing damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.37
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 46.3,
+                  "average": 46.3,
+                  "per_activation": 30.87,
+                  "per_cast_cycle": 5.45,
+                  "display_info": [
+                    "46.30 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 1.11
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 24.4,
+                  "average": 24.4,
+                  "per_activation": 16.27,
+                  "per_cast_cycle": 2.87,
+                  "display_info": [
+                    "24.40 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.4325
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 73.19,
+                  "average": 73.19,
+                  "per_activation": 48.79,
+                  "per_cast_cycle": 8.61,
+                  "display_info": [
+                    "73.19 energy damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.2975
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -11.25,
+                  "display_info": [
+                    "-11.25% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 23.0,
+          "requires": [
+            "!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 33.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "33.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 33.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "33.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 27.78,
+                  "average": 27.78,
+                  "per_activation": 18.52,
+                  "per_cast_cycle": 3.27,
+                  "display_info": [
+                    "27.78 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.666
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Execute Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Redirects.Rad_Melee.Radioactive_Smash_AoE",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/redirects/rad-melee/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Radiation_Melee.Proton_Sweep",
+      "display_name": "Proton Sweep",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/46/radiationmelee_protonsweep.png",
+      "display_help": "You release a cloud of deadly radioactive particles in front of you inflicting Moderate Energy and Toxic damage over a short time as well as reducing the targets' defense. Affected enemies have a moderate chance to be affected by the Contaminated effect. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: Moderate, Recharge: Moderate",
+      "display_short_help": "Melee Cone, Moderate DoT(Energy/Toxic), Foe -Def, Special",
+      "display_info": {
+        "Power Range": "7 ft.",
+        "Target Type": "Enemies",
+        "Activation Time": "1.67s",
+        "Available Level": "2",
+        "Recharge Time": "8s",
+        "Effect Area": "Cone — 7 ft. radius 75° arc (5 targets max)",
+        "Endurance Cost": "8.53",
+        "Power Type": "Click",
+        "Attack Types": "Melee, Energy"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Debuff",
+        "Taunt",
+        "Brute Archetype Sets",
+        "PBAoE Damage",
+        "Universal Damage Sets",
+        "Accurate Defense Debuff"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 5,
+        "radius_feet": 7.0,
+        "arc_degrees": 75.0,
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 1.33,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 3.73,
+                  "average": 3.73,
+                  "per_activation": 2.23,
+                  "per_cast_cycle": 0.39,
+                  "display_info": [
+                    "4 ticks of 3.73 energy damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.0894
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 11.18,
+                  "average": 11.18,
+                  "per_activation": 6.69,
+                  "per_cast_cycle": 1.16,
+                  "display_info": [
+                    "4 ticks of 11.18 toxic damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.2681
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 5.8,
+                  "average": 5.8,
+                  "per_activation": 3.47,
+                  "per_cast_cycle": 0.6,
+                  "display_info": [
+                    "4 ticks of 5.80 energy damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.1029
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 17.42,
+                  "average": 17.42,
+                  "per_activation": 10.43,
+                  "per_cast_cycle": 1.8,
+                  "display_info": [
+                    "4 ticks of 17.42 toxic damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.3088
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -9.0,
+                  "display_info": [
+                    "-9.00% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 21.0,
+          "requires": [
+            "!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 6.71,
+                  "average": 6.71,
+                  "per_activation": 4.02,
+                  "per_cast_cycle": 0.69,
+                  "display_info": [
+                    "4 ticks of 6.71 fire damage over 3.1s on target after 0.5s delay",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.1609
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Radiation_Melee.Fusion",
+      "display_name": "Fusion",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b9/radiationmelee_buildup.png",
+      "display_help": "Fusion boosts your damage and chance to hit moderately and also causes your next few attacks to have a 100% chance to inflict Contaminated on your enemies. Recharge: Long",
+      "display_short_help": "Self +DMG, +To Hit, Special",
+      "display_info": {
+        "Endurance Cost": "5.20",
+        "Power Type": "Click",
+        "Available Level": "6",
+        "Recharge Time": "1m 30s",
+        "Activation Time": "1.17s",
+        "Target Type": "Self",
+        "Effect Area": "Single Target"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 90.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 20.0,
+                  "display_info": [
+                    "20.00% to hit for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 2.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Global Chance Mod"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "effect": {
+                  "tags": [
+                    "Contaminated"
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Radiation_Melee.Radiation_Siphon",
+      "display_name": "Radiation Siphon",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/14/radiationmelee_radiationsiphon.png",
+      "display_help": "You pummel your foe with a deadly smashing attack dealing High Energy and Smashing damage and reducing their defense. Hitting Contaminated targets will also heal you for a large amount of health over 3 seconds and remove the Contaminated effect from the target. However, uncontaminated targets have a moderate chance to be affected by the Contaminated effect. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: High Moderate, Recharge: Moderate",
+      "display_short_help": "Melee, High DMG(Energy/Smash), Foe, -Def, -Contaminated, Special",
+      "display_info": {
+        "Activation Time": "2.23s",
+        "Attack Types": "Melee, Smashing, Energy",
+        "Power Range": "7 ft.",
+        "Recharge Time": "10s",
+        "Target Type": "Enemies",
+        "Endurance Cost": "10.19",
+        "Effect Area": "Single Target",
+        "Available Level": "8",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Heal",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Accurate Defense Debuff",
+        "Healing",
+        "Universal Damage Sets",
+        "Defense Debuff",
+        "Brute Archetype Sets",
+        "Accurate Healing",
+        "Taunt",
+        "Melee Damage"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "arc_degrees": 5.0,
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.23,
+        "animation_time": 2.23,
+        "animation_time_before_hit": 1.3,
+        "recharge_time": 10.0,
+        "endurance_cost": 10.19
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 20.44,
+                  "average": 20.44,
+                  "per_activation": 9.17,
+                  "per_cast_cycle": 1.67,
+                  "display_info": [
+                    "20.44 smashing damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.49
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 61.31,
+                  "average": 61.31,
+                  "per_activation": 27.49,
+                  "per_cast_cycle": 5.01,
+                  "display_info": [
+                    "61.31 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 1.47
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 33.29,
+                  "average": 33.29,
+                  "per_activation": 14.93,
+                  "per_cast_cycle": 2.72,
+                  "display_info": [
+                    "33.29 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.5902
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 99.89,
+                  "average": 99.89,
+                  "per_activation": 44.79,
+                  "per_cast_cycle": 8.17,
+                  "display_info": [
+                    "99.89 energy damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.7707
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -11.25,
+                  "display_info": [
+                    "-11.25% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 32.0,
+          "requires": [
+            "!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 0.3,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 0.1,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Healing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.1,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 3,
+              "flags": [
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "healing": 99.96,
+                  "average": 99.96,
+                  "per_activation": 44.83,
+                  "per_cast_cycle": 8.17,
+                  "display_info": [
+                    "3 ticks of 99.96 heal over 2.1s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 149.9255,
+                  "scale": 0.6667
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Execute Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Redirects.Rad_Melee.Radiation_Siphon_AoE",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/redirects/rad-melee/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 36.79,
+                  "average": 36.79,
+                  "per_activation": 16.5,
+                  "per_cast_cycle": 3.01,
+                  "display_info": [
+                    "36.79 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.882
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Radiation_Melee.Taunt",
+      "display_name": "Taunt",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/bf/radiationmelee_taunt.png",
+      "display_help": "Taunts a foe, and some nearby foes, to attack you. Useful for pulling villains off an ally who find themselves in over their head. Taunted foes tend to ignore other Heroes and focus on you for quite a while, so use this power cautiously. A To Hit check is required to Taunt enemy players, but is not needed against critter targets. Recharge: Moderate",
+      "display_short_help": "Ranged (Targeted AoE), Foe Taunt",
+      "display_info": {
+        "Activation Time": "1.67s",
+        "Recharge Time": "10s",
+        "Power Range": "70 ft.",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Available Level": "12",
+        "Attack Types": "Area",
+        "Effect Area": "AoE — 15 ft. radius (10 targets max)"
+      },
+      "attack_types": [
+        "Area_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 15.0,
+        "range_feet": 70.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 10.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 41.0,
+                  "display_info": [
+                    "4.0 taunt for 41s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 20.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 10.25,
+                  "display_info": [
+                    "4.0 taunt for 10.25s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Range"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 12.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -75.0,
+                  "display_info": [
+                    "-75.00% strength to range for 12s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Null"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Radiation_Melee.Irradiated_Ground",
+      "display_name": "Irradiated Ground",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/5f/radiationmelee_irradiatedground.png",
+      "display_help": "While active you will scorch the earth beneath you leaving toxic clouds of radioactive gas in your wake. Foes that enter these clouds will suffer Minor Toxic damage, have their defense reduced and also have a tiny chance of being Contaminated. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: Minor, Recharge: Fast",
+      "display_short_help": "Toggle, Minor DoT(Toxic) Patch, Foe -Def, Special",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Available Level": "18",
+        "Target Type": "Self",
+        "Endurance Cost": "0.52/s",
+        "Recharge Time": "4s",
+        "Activation Time": "2.03s",
+        "Attack Types": "Area",
+        "Power Type": "Toggle"
+      },
+      "attack_types": [
+        "Area_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "PBAoE Damage",
+        "Accurate Defense Debuff",
+        "Defense Debuff",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Toggle",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.03,
+        "animation_time": 2.03,
+        "animation_time_before_hit": 0.77,
+        "recharge_time": 4.0,
+        "auto_cast_interval": 5.0,
+        "endurance_cost": 2.6
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Radiation_Melee_Irradiated_Ground_Pet",
+                  "display_name": "Irradiated Ground",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Pets.Radiation_Melee.Irradiated_Ground",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/radiation-melee/"
+                    },
+                    {
+                      "name": "Pets.Radiation_Melee.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/radiation-melee/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Radiation_Melee.Devastating_Blow",
+      "display_name": "Devastating Blow",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/29/radiationmelee_devastatingblow.png",
+      "display_help": "You hammer your foe with a brutal smashing attack charged with a lethal dose of radiation. Your target will suffer Extreme Energy and Smashing damage, will have its defense reduced and will be disoriented for a short time. Affected enemies will be affected by the Contaminated effect. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: Extreme, Recharge: Slow",
+      "display_short_help": "Melee, Extreme DMG(Energy/Smash), Foe -Def, Disorient, Special",
+      "display_info": {
+        "Activation Time": "2.67s",
+        "Available Level": "26",
+        "Power Type": "Click",
+        "Effect Area": "Single Target",
+        "Target Type": "Enemies",
+        "Power Range": "7 ft.",
+        "Endurance Cost": "16.02",
+        "Recharge Time": "17s",
+        "Attack Types": "Melee, Smashing, Energy"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "Stuns",
+        "Defense Debuff",
+        "Accurate Defense Debuff",
+        "Taunt",
+        "Universal Damage Sets",
+        "Brute Archetype Sets"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.67,
+        "animation_time": 2.67,
+        "animation_time_before_hit": 2.2,
+        "recharge_time": 17.0,
+        "endurance_cost": 16.02
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 32.11,
+                  "average": 32.11,
+                  "per_activation": 12.03,
+                  "per_cast_cycle": 1.63,
+                  "display_info": [
+                    "32.11 smashing damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.77
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 96.34,
+                  "average": 96.34,
+                  "per_activation": 36.08,
+                  "per_cast_cycle": 4.9,
+                  "display_info": [
+                    "96.34 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 2.31
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 41.59,
+                  "average": 41.59,
+                  "per_activation": 15.58,
+                  "per_cast_cycle": 2.11,
+                  "display_info": [
+                    "41.59 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.7372
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 124.77,
+                  "average": 124.77,
+                  "per_activation": 46.73,
+                  "per_cast_cycle": 6.34,
+                  "display_info": [
+                    "124.77 energy damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 2.2117
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -15.0,
+                  "display_info": [
+                    "-15.00% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 11.92,
+                  "display_info": [
+                    "60.00% chance for 3.0 stun for 11.92s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "60.00% chance for 3.0 stun for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 57.81,
+                  "average": 57.81,
+                  "per_activation": 21.65,
+                  "per_cast_cycle": 2.94,
+                  "display_info": [
+                    "57.81 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 1.386
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Execute Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Redirects.Rad_Melee.Radioactive_Smash_AoE",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/redirects/rad-melee/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brute_Melee.Radiation_Melee.Atom_Smasher",
+      "display_name": "Atom Smasher",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/da/radiationmelee_atomsmasher.png",
+      "display_help": "You charge up a dangerously unstable amount of radioactive energy into a single fist before driving it into the ground and causing a small explosion. Foes caught in the blast will suffer High Energy and Toxic damage and have their defense reduced. Enemies also have a moderate chance to be disoriented for a short time. Affected enemies have a small chance to be affected by the Contaminated effect. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: High, Recharge: Slow",
+      "display_short_help": "PBAoE, High DMG(Energy/Toxic), Foe -Def, Disorient, Special",
+      "display_info": {
+        "Power Type": "Click",
+        "Attack Types": "Melee, Smashing, Energy",
+        "Activation Time": "2.93s",
+        "Available Level": "32",
+        "Power Range": "7 ft.",
+        "Endurance Cost": "20.18",
+        "Recharge Time": "22s",
+        "Target Type": "Self",
+        "Effect Area": "AoE — 10 ft. radius (10 targets max)"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "PBAoE Damage",
+        "Defense Debuff",
+        "Accurate Defense Debuff",
+        "Taunt",
+        "Stuns",
+        "Universal Damage Sets",
+        "Brute Archetype Sets"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 10.0,
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.93,
+        "animation_time": 2.93,
+        "animation_time_before_hit": 1.83,
+        "recharge_time": 22.0,
+        "endurance_cost": 20.18
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 16.16,
+                  "average": 16.16,
+                  "per_activation": 5.52,
+                  "per_cast_cycle": 0.65,
+                  "display_info": [
+                    "16.16 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.3875
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 48.49,
+                  "average": 48.49,
+                  "per_activation": 16.55,
+                  "per_cast_cycle": 1.95,
+                  "display_info": [
+                    "48.49 toxic damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 1.1625
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 18.79,
+                  "average": 18.79,
+                  "per_activation": 6.41,
+                  "per_cast_cycle": 0.75,
+                  "display_info": [
+                    "18.79 energy damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.3331
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 56.37,
+                  "average": 56.37,
+                  "per_activation": 19.24,
+                  "per_cast_cycle": 2.26,
+                  "display_info": [
+                    "56.37 toxic damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.9993
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "percent": -9.0,
+                  "display_info": [
+                    "-9.00% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 35.0,
+          "requires": [
+            "!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 25.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 7.15,
+                  "display_info": [
+                    "25.00% chance for 2.0 stun for 7.15s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 6.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 25.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "25.00% chance for 2.0 stun for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Brute",
+                  "damage": 29.09,
+                  "average": 29.09,
+                  "per_activation": 9.93,
+                  "per_cast_cycle": 1.17,
+                  "display_info": [
+                    "29.09 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.6975
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

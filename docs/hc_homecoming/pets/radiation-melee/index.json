@@ -1,1 +1,319 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Pets.Radiation_Melee","display_name":"Radiation Melee","display_help":"Radiation Melee","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/5f/radiationmelee_irradiatedground.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Pets.Radiation_Melee.Irradiated_Ground","Pets.Radiation_Melee.Self_Destruct"],"powers":[{"name":"Pets.Radiation_Melee.Irradiated_Ground","display_name":"Irradiated Ground","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/5f/radiationmelee_irradiatedground.png","display_help":"While active you will scorch the earth beneath you leaving toxic clouds of radioactive gas in your wake. Foes that enter these clouds will suffer Minor Toxic damage, have their defense reduced and also have a tiny chance of being Contaminated. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: Minor","display_short_help":"Minor DoT(Toxic) Patch, Foe -Def, Special","display_info":{"Attack Types":"Area","Effect Area":"AoE — 8 ft. radius (10 targets max)","Target Type":"Self","Power Type":"Auto","Available Level":"1"},"attack_types":["Area_Def"],"enhancements_allowed":["Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":8.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"auto_cast_interval":2.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source.owner>arch == Scrapper"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":10.0,"requires":["source.owner>arch == Scrapper"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source.owner>arch == Tanker"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source.owner>arch == Brute"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-5.0,"display_info":["-5.00% strength to defense for 5s on target"],"base_value":-0.1,"scale":0.5}]}]},{"visible_in_info_window":true,"chance_percent":10.0,"requires":["!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Replace","by_caster":true}}]}]},{"name":"Pets.Radiation_Melee.Self_Destruct","display_name":"Self Destruct","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/5f/radiationmelee_irradiatedground.png","display_help":"Self Destruct","display_short_help":"Self Destruct","display_info":{"Target Type":"Self","Power Type":"Auto","Effect Area":"Single Target","Available Level":"1"},"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Silent Kill"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","after_delay_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Pets.Radiation_Melee",
+  "display_name": "Radiation Melee",
+  "display_help": "Radiation Melee",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/5f/radiationmelee_irradiatedground.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Pets.Radiation_Melee.Irradiated_Ground",
+    "Pets.Radiation_Melee.Self_Destruct"
+  ],
+  "powers": [
+    {
+      "name": "Pets.Radiation_Melee.Irradiated_Ground",
+      "display_name": "Irradiated Ground",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/5f/radiationmelee_irradiatedground.png",
+      "display_help": "While active you will scorch the earth beneath you leaving toxic clouds of radioactive gas in your wake. Foes that enter these clouds will suffer Minor Toxic damage, have their defense reduced and also have a tiny chance of being Contaminated. Hitting Contaminated foes with single target Radiation Melee powers cause a small burst of damage to foes near the target. Damage: Minor",
+      "display_short_help": "Minor DoT(Toxic) Patch, Foe -Def, Special",
+      "display_info": {
+        "Target Type": "Self",
+        "Available Level": "1",
+        "Power Type": "Auto",
+        "Effect Area": "AoE — 8 ft. radius (10 targets max)",
+        "Attack Types": "Area"
+      },
+      "attack_types": [
+        "Area_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 8.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "auto_cast_interval": 2.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source.owner>arch == Scrapper"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "source.owner>arch == Scrapper"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source.owner>arch == Tanker"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source.owner>arch == Brute"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -5.0,
+                  "display_info": [
+                    "-5.00% strength to defense for 5s on target"
+                  ],
+                  "base_value": -0.1,
+                  "scale": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated_Imunity)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Radiation_Melee.Self_Destruct",
+      "display_name": "Self Destruct",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/5f/radiationmelee_irradiatedground.png",
+      "display_help": "Self Destruct",
+      "display_short_help": "Self Destruct",
+      "display_info": {
+        "Power Type": "Auto",
+        "Target Type": "Self",
+        "Effect Area": "Single Target",
+        "Available Level": "1"
+      },
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Silent Kill"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "after_delay_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,2312 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Blaster_Support.Gadgets","display_name":"Devices","display_help":"Devices are equipment you have constructed for use in combat. By using them strategically, you can gain a great tactical advantage. Traps, non-lethal munitions, and demolitions are available in this power set.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/cb/gadgets_webgrenade.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Blaster_Support.Gadgets.Web_Grenade","Blaster_Support.Gadgets.Caltrops","Blaster_Support.Gadgets.Taser","Blaster_Support.Gadgets.Targeting_Drone","Blaster_Support.Gadgets.Smoke_Grenade","Blaster_Support.Gadgets.Cloaking_Device","Blaster_Support.Gadgets.Trip_Mine","Blaster_Support.Gadgets.Time_Bomb","Blaster_Support.Gadgets.Auto_Turret"],"powers":[{"name":"Blaster_Support.Gadgets.Web_Grenade","display_name":"Toxic Web Grenade","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/cb/gadgets_webgrenade.png","display_help":"Upon impact, the Toxic Web Grenade expels a strong, tenuous, and very sticky substance that can Immobilize and corrode most targets, dealing moderate Toxic damage. This device does not prevent targets from attacking, although their attack rate is Slowed. The Web can bring down flying entities and halts jumping. Recharge: Fast","display_short_help":"Ranged, Moderate DoT(Toxic), Target Immobilize, -Recharge, -Fly","display_info":{"Target Type":"Enemies","Attack Types":"Ranged","Power Type":"Click","Recharge Time":"4s","Activation Time":"1.37s","Endurance Cost":"7.80","Power Range":"50 ft.","Available Level":"1","Effect Area":"Single Target"},"attack_types":["Ranged_Def"],"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Immobilization","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Blaster Archetype Sets","Slow Movement","Immobilize","Universal Damage Sets","Ranged Damage"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":50.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"status_interaction":{"cast_through":["Hold","Sleep","Stun","Terrorize"]},"activate":{"cast_time":1.37,"animation_time":1.37,"animation_time_before_hit":1.23,"recharge_time":4.0,"endurance_cost":7.8},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.2,"continuous_apply_seconds":2.0,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":12.51,"average":12.51,"per_activation":9.13,"per_cast_cycle":2.33,"display_info":["5 ticks of 12.51 toxic damage over 8.2s on target"],"base_value":-62.5615,"scale":0.2}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":17.88,"display_info":["3.0 immobilize for 17.88s on target"],"base_value":1.192,"scale":15.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.2,"continuous_apply_seconds":2.0,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":23.37,"average":23.37,"per_activation":17.06,"per_cast_cycle":4.35,"display_info":["5 ticks of 23.37 toxic damage over 8.2s on target"],"base_value":-76.9134,"scale":0.3038}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":2.0,"display_info":["3.0 immobilize for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["NearGround","IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-50.0,"display_info":["-50.00% strength to recharge for 15s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.5}]},{"attributes":["RunningSpeed","FlyingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["NearGround","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-50.0,"display_info":["-50.00% run speed, fly speed for 15s on target"],"base_value":-1.0,"scale":0.5}]},{"attributes":["Knockup","Knockback"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":10000.0,"display_info":["10000.00% resistance to knockup, knock for 15s on target","Unresistable"],"base_value":1.0,"scale":100.0}]},{"attributes":["Knockup","Knockback"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":-100.0,"display_info":["-100.0 knockup protection, knock protection for 15s on target","Unresistable"],"base_value":1.0,"scale":-100.0}]},{"attributes":["JumpHeight"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-50000.0,"display_info":["-50000.00% jump height for 15s on target","Unresistable"],"base_value":1.0,"scale":-500.0}]},{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":-10.0,"display_info":["-10.0 fly protection for 15s on target","Unresistable"],"base_value":1.0,"scale":-10.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":0.0,"magnitude_expression":"(.066 * power.base>activatetime) / power.base>areafactor","duration_expression":"power.base>activatetime + 7.5","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":0.0,"display_info":["0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.0}]}]}]},{"name":"Blaster_Support.Gadgets.Caltrops","display_name":"Caltrops","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/cd/gadgets_caltrops.png","display_help":"You toss a handful of Caltrops at a targeted location and spread the tiny metal spikes over a large area. Any villains that pass over the Caltrops will be forced to move at a slower rate. They will also take some trivial Lethal damage over time. Damage: Minor(DoT), Recharge: Slow","display_short_help":"Ranged (Location AoE), Minor DoT(Lethal), Foe -Speed","display_info":{"Activation Time":"1.07s","Power Range":"25 ft.","Effect Area":"Location","Endurance Cost":"7.80","Power Type":"Click","Recharge Time":"45s","Target Type":"Location","Available Level":"2"},"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage"],"enhancement_set_categories_allowed":["Blaster Archetype Sets","Targeted AoE Damage","Slow Movement","Universal Damage Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":25.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.07,"animation_time":1.07,"animation_time_before_hit":0.63,"recharge_time":45.0,"endurance_cost":7.8},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":45.0,"flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Caltrops","display_name":"Caltrops","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Pets.Caltrops.Caltrops","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/caltrops/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":0.0,"magnitude_expression":"(.066 * power.base>activatetime) / power.base>areafactor","duration_expression":"power.base>activatetime + 7.5","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":0.0,"display_info":["0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.0}]}]}]},{"name":"Blaster_Support.Gadgets.Taser","display_name":"Taser","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d3/gadgets_taser.png","display_help":"The High Voltage Taser is an overcharged stun-gun, releasing a high-voltage, high-amperage electrical charge that can Disorient most opponents with major tissue damage. The Taser has a very short range. Damage: High, Recharge: Moderate","display_short_help":"Melee, High DMG(Energy), Foe Disorient","display_info":{"Endurance Cost":"10.19","Available Level":"4","Effect Area":"Single Target","Power Range":"20 ft.","Attack Types":"Melee, Energy","Activation Time":"1s","Recharge Time":"10s","Target Type":"Enemies","Power Type":"Click"},"attack_types":["Melee_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Disorient","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Blaster Archetype Sets","Ranged Damage","Universal Damage Sets","Stuns"],"available_at_level":4,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":20.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.53,"recharge_time":10.0,"endurance_cost":10.19},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":109.0,"average":109.0,"per_activation":109.0,"per_cast_cycle":9.91,"display_info":["109.00 energy damage on target"],"base_value":-55.6102,"scale":1.96}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":5.96,"display_info":["3.0 stun for 5.96s on target"],"base_value":1.192,"scale":5.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":2.0,"display_info":["3.0 stun for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":0.0,"magnitude_expression":"(.066 * power.base>activatetime) / power.base>areafactor","duration_expression":"power.base>activatetime + 7.5","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":0.0,"display_info":["0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.0}]}]}]},{"name":"Blaster_Support.Gadgets.Targeting_Drone","display_name":"Targeting Drone","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d9/gadgets_targetingdrone.png","display_help":"When this device is activated, the small Targeting Drone hovers around your head and emits targeting laser sights. The lasers can dramatically improve your chance to hit, slightly increase the damage you deal, and increase your perception, allowing you to better see stealthy foes. If not engaged in combat, this power will give a large damage buff to your opening attack. Targeting Drone also grants you resistance to powers that debuff your chance to hit. Recharge: Moderate","display_short_help":"Toggle: Self +To Hit, +Damage, +Perception, Res(DeBuff To Hit)","display_info":{"Effect Area":"Single Target","Available Level":"10","Power Type":"Toggle","Activation Time":"1.17s","Endurance Cost":"0.32/s","Target Type":"Self","Recharge Time":"10s"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["To Hit Buff"],"available_at_level":10,"auto_issue":false,"power_type":"Toggle","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"status_interaction":{"cast_through":["Sleep","Stun"],"toggle_ignores":["Hold"]},"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":10.0,"auto_cast_interval":0.5,"endurance_cost":0.16},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":0.0,"duration":"InSeconds","duration_seconds":0.6,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":20.0,"display_info":["20.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 0.6s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.125,"scale":1.6}]},{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":18.5,"display_info":["18.50% to hit for 0.75s on target","Unresistable"],"base_value":0.1,"scale":1.85}]},{"attributes":["ToHit"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":55.36,"display_info":["55.36% resistance to to hit debuff for 0.75s on target","Ignores buffs and enhancements","Unresistable"],"base_value":0.2768,"scale":2.0}]},{"attributes":["PerceptionRadius"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":60.0,"display_info":["60.00% resistance to perception radius debuff for 0.75s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.6}]},{"attributes":["PerceptionRadius"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":60.0,"display_info":["60.00% perception radius for 0.75s on self","Unresistable"],"base_value":1.0,"scale":0.6}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["Source.Mode?(kOutOfCombat)"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":60.0,"display_info":["60.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 0.75s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.125,"scale":4.8}]}]}]},{"name":"Blaster_Support.Gadgets.Smoke_Grenade","display_name":"Smoke Grenade","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/2f/gadgets_smokegrenade.png","display_help":"The Smoke Grenade envelops all those in the affected area in a cloud of smoke. Most villains will not be able to see past normal melee range, although some may have better perception. If the villains are attacked, they will be alerted to your presence, but will suffer a penalty to their chance to hit. Recharge: Slow","display_short_help":"Ranged (Target AoE), Foe -Perception, -To Hit","display_info":{"Available Level":"16","Power Range":"80 ft.","Endurance Cost":"7.80","Effect Area":"AoE — 35 ft. radius (10 targets max)","Activation Time":"1.37s","Attack Types":"Area","Aggro Type":"Enemies will not notice this attack","Target Type":"Enemies","Power Type":"Click","Recharge Time":"15s"},"attack_types":["Area_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit DeBuffs","Enhance Accuracy"],"enhancement_set_categories_allowed":["To Hit Debuff"],"available_at_level":16,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":35.0,"range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.37,"animation_time":1.37,"animation_time_before_hit":1.23,"recharge_time":15.0,"endurance_cost":7.8},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["PerceptionRadius"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":60.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-90.0,"display_info":["-90.00% perception radius for 1m 0s on target"],"base_value":1.0,"scale":-0.9}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && ((@ToHitRoll < @ToHit) || @ForceHit)"],"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":60.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-4.9,"display_info":["-4.90% to hit for 1m 0s on target"],"base_value":-0.07,"scale":0.7}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"],"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-4.9,"display_info":["-4.90% to hit for 20s on target"],"base_value":-0.07,"scale":0.7}]},{"attributes":["PerceptionRadius"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-90.0,"display_info":["-90.00% perception radius for 20s on target"],"base_value":1.0,"scale":-0.9}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":0.0,"magnitude_expression":"(.066 * power.base>activatetime) / power.base>areafactor","duration_expression":"power.base>activatetime + 7.5","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":0.0,"display_info":["0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.0}]}]}]},{"name":"Blaster_Support.Gadgets.Cloaking_Device","display_name":"Field Operative","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d5/gadgets_cloak.png","display_help":"Through a mixture of combat training and highly sophisticated devices you are considered a Field Operative. You use a LCD body coating to become partially invisible. While concealed you can only be seen at very close range. If you attack while concealed, you will be discovered. Even if discovered, you are hard to see but will retain some of your Defense bonus to all attacks. Unlike some stealth powers, Field Operative has no movement penalty. This power's stealth component will not work with any other form of Concealment power such as Shadow Fall or Steamy Mist. In addition to being stealthy, your training also allows you to regenerate health and recovery endurance at an accelerated rate while this power is active. However, only half of this regeneration bonus is enhanceable. Recharge: Very Fast","display_short_help":"Toggle: Self Stealth, +DEF(All), +Special, +Regeneration, +Recovery","display_info":{"Effect Area":"Single Target","Activation Time":"0.73s","Recharge Time":"2s","Power Type":"Toggle","Target Type":"Self","Available Level":"20"},"enhancements_allowed":["Enhance Endurance Modification","Enhance Recharge Speed","Enhance Heal","Enhance Defense"],"enhancement_set_categories_allowed":["Defense Sets","Healing","Endurance Modification"],"available_at_level":20,"auto_issue":false,"power_type":"Toggle","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"status_interaction":{"cast_through":["Sleep","Stun"],"toggle_ignores":["Hold"]},"activate":{"cast_time":0.73,"animation_time":0.73,"animation_time_before_hit":0.67,"recharge_time":2.0,"auto_cast_interval":0.5,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["StealthRadius_PVE"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":1500.0,"display_info":["1500.00% stealth radius for 0.75s on self","Unresistable"],"base_value":1.0,"scale":15.0}]},{"attributes":["StealthRadius_PVP"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":38900.0,"display_info":["38900.00% stealth radius for 0.75s on self","Unresistable"],"base_value":1.0,"scale":389.0}]},{"attributes":["StealthRadius_PVE"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":2000.0,"display_info":["2000.00% stealth radius for 0.75s on self","Unresistable"],"base_value":1.0,"scale":20.0}]},{"attributes":["Ranged_Def","Melee_Def","Area_Def","Smashing_Def","Lethal_Def","Fire_Def","Cold_Def","Energy_Def","Negative_Energy_Def","Psionic_Def","Toxic_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":1.75,"display_info":["1.75% strength to ranged, melee, AoE, smashing, lethal, fire, cold, energy, negative energy, psionic, unique for 0.75s on self","Unresistable"],"base_value":0.07,"scale":0.25}]},{"attributes":["Ranged_Def","Melee_Def","Area_Def","Smashing_Def","Lethal_Def","Fire_Def","Cold_Def","Energy_Def","Negative_Energy_Def","Psionic_Def","Toxic_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":1.75,"display_info":["1.75% strength to ranged, melee, AoE, smashing, lethal, fire, cold, energy, negative energy, psionic, unique for 0.75s on self","Unresistable"],"base_value":0.07,"scale":0.25}]},{"attributes":["Regeneration"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":112.5,"display_info":["112.50% regeneration rate for 0.75s on target","Unresistable"],"base_value":1.0,"scale":1.125}]},{"attributes":["Regeneration"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":112.5,"display_info":["112.50% regeneration rate for 0.75s on target","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.125}]},{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":50.0,"display_info":["50.00% recovery rate for 0.75s on target","Unresistable"],"base_value":1.0,"scale":0.5}]},{"attributes":["Translucency"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Translucency"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}}]}]},{"name":"Blaster_Support.Gadgets.Trip_Mine","display_name":"Trip Mine","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/41/gadgets_mine.png","display_help":"You can place a Trip Mine on the ground. Any villains that pass near the Trip Mine will cause it to explode, severely damaging all nearby foes and sending them flying. The Trip Mine is almost impossible to detect, but it is fragile and may be set off by an enemy's explosion. Even if destroyed, the Trip Mine will detonate. Damage: Superior, Recharge: Slow","display_short_help":"Place Mine: PBAoE, Superior DMG(Lethal/Fire), Foe Knockback","display_info":{"Power Type":"Click","Target Type":"Self","Activation Time":"2.77s","Available Level":"28","Endurance Cost":"13.00","Aggro Type":"Enemies will not notice this attack","Recharge Time":"30s","Effect Area":"Single Target"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Knockback","Blaster Archetype Sets","Universal Damage Sets","PBAoE Damage"],"available_at_level":28,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.77,"animation_time":2.77,"animation_time_before_hit":0.8,"recharge_time":30.0,"endurance_cost":13.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":260.0,"flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Mine","display_name":"Trip Mine","powers":[{"name":"Pets.Mine.Trip_Mine","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/mine/"},{"name":"Pets.Mine.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/mine/"},{"name":"Pets.Mine.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/mine/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":0.0,"magnitude_expression":"(.066 * power.base>activatetime) / power.base>areafactor","duration_expression":"power.base>activatetime + 7.5","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":0.0,"display_info":["0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.0}]}]}]},{"name":"Blaster_Support.Gadgets.Time_Bomb","display_name":"Time Bomb","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/3c/gadgets_timebomb.png","display_help":"You can place a Time Bomb on the ground. The Time Bomb will detonate 5 seconds after being placed, resulting in a massive explosion that can devastate all nearby foes and send them flying. The Time Bomb is small, and almost impossible to detect. However, it is fragile and may be set off by an enemy's explosion. Even if destroyed, the Bomb will still detonate. Damage: Extreme, Recharge: Very Long","display_short_help":"Place Bomb: PBAoE, Extreme DMG(Lethal/Fire), Foe Knockback","display_info":{"Recharge Time":"6m 0s","Activation Time":"2.77s","Endurance Cost":"26.00","Effect Area":"Single Target","Aggro Type":"Enemies will not notice this attack","Target Type":"Self","Power Type":"Click","Available Level":"35"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Blaster Archetype Sets","Knockback","Universal Damage Sets","PBAoE Damage"],"available_at_level":35,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.77,"animation_time":2.77,"animation_time_before_hit":0.8,"recharge_time":360.0,"endurance_cost":26.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":11.0,"flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Bomb","display_name":"Time Bomb","powers":[{"name":"Pets.Bomb.Time_Bomb","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/bomb/"},{"name":"Pets.Bomb.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/bomb/"},{"name":"Pets.Bomb.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/bomb/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":0.0,"magnitude_expression":"(.066 * power.base>activatetime) / power.base>areafactor","duration_expression":"power.base>activatetime + 7.5","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":0.0,"display_info":["0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.0}]}]}]},{"name":"Blaster_Support.Gadgets.Auto_Turret","display_name":"Gun Drone","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/27/gadgets_turret.png","display_help":"You can summon a Gun Drone. The Drone has an extremely fast fire rate and is equipped with a customized tracking system. Once locked on, the Drone will continue to unload a volley of lead into the target until it is destroyed. Enemies hit by the drone, as well as those near it, will prioritize attacking it over it's owner. The Drone is armored, but can be destroyed. Damage: Moderate, Recharge: Long","display_short_help":"Build Turret: Ranged, Moderate DMG(Lethal)","display_info":{"Target Type":"Self","Activation Time":"1s","Effect Area":"Location","Recharge Time":"3m 0s","Power Type":"Click","Available Level":"38","Aggro Type":"Enemies will not notice this attack","Endurance Cost":"39.00"},"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt","Ranged Damage","Universal Damage Sets","Blaster Archetype Sets","Recharge Intensive Pets"],"available_at_level":38,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.5,"recharge_time":180.0,"endurance_cost":39.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":90.0,"flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Turret","display_name":"Gun Drone","powers":[{"name":"Pets.Turret.Gattling_Gun","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/turret/"},{"name":"Pets.Turret.Auto_Turret","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/turret/"},{"name":"Pets.Turret.Explode","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/turret/"},{"name":"Pets.Turret.Taunt","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/turret/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":0.0,"magnitude_expression":"(.066 * power.base>activatetime) / power.base>areafactor","duration_expression":"power.base>activatetime + 7.5","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":0.0,"display_info":["0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.0}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Blaster_Support.Gadgets",
+  "display_name": "Devices",
+  "display_help": "Devices are equipment you have constructed for use in combat. By using them strategically, you can gain a great tactical advantage. Traps, non-lethal munitions, and demolitions are available in this power set.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/cb/gadgets_webgrenade.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Blaster_Support.Gadgets.Web_Grenade",
+    "Blaster_Support.Gadgets.Caltrops",
+    "Blaster_Support.Gadgets.Taser",
+    "Blaster_Support.Gadgets.Targeting_Drone",
+    "Blaster_Support.Gadgets.Smoke_Grenade",
+    "Blaster_Support.Gadgets.Cloaking_Device",
+    "Blaster_Support.Gadgets.Trip_Mine",
+    "Blaster_Support.Gadgets.Time_Bomb",
+    "Blaster_Support.Gadgets.Auto_Turret"
+  ],
+  "powers": [
+    {
+      "name": "Blaster_Support.Gadgets.Web_Grenade",
+      "display_name": "Toxic Web Grenade",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/cb/gadgets_webgrenade.png",
+      "display_help": "Upon impact, the Toxic Web Grenade expels a strong, tenuous, and very sticky substance that can Immobilize and corrode most targets, dealing moderate Toxic damage. This device does not prevent targets from attacking, although their attack rate is Slowed. The Web can bring down flying entities and halts jumping. Recharge: Fast",
+      "display_short_help": "Ranged, Moderate DoT(Toxic), Target Immobilize, -Recharge, -Fly",
+      "display_info": {
+        "Power Range": "50 ft.",
+        "Attack Types": "Ranged",
+        "Power Type": "Click",
+        "Available Level": "1",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target",
+        "Activation Time": "1.37s",
+        "Recharge Time": "4s",
+        "Endurance Cost": "7.80"
+      },
+      "attack_types": [
+        "Ranged_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Immobilization",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Immobilize",
+        "Universal Damage Sets",
+        "Blaster Archetype Sets",
+        "Ranged Damage",
+        "Slow Movement"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 50.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Hold",
+          "Sleep",
+          "Stun",
+          "Terrorize"
+        ]
+      },
+      "activate": {
+        "cast_time": 1.37,
+        "animation_time": 1.37,
+        "animation_time_before_hit": 1.23,
+        "recharge_time": 4.0,
+        "endurance_cost": 7.8
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.2,
+              "continuous_apply_seconds": 2.0,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 12.51,
+                  "average": 12.51,
+                  "per_activation": 9.13,
+                  "per_cast_cycle": 2.33,
+                  "display_info": [
+                    "5 ticks of 12.51 toxic damage over 8.2s on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 17.88,
+                  "display_info": [
+                    "3.0 immobilize for 17.88s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 15.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.2,
+              "continuous_apply_seconds": 2.0,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 23.37,
+                  "average": 23.37,
+                  "per_activation": 17.06,
+                  "per_cast_cycle": 4.35,
+                  "display_info": [
+                    "5 ticks of 23.37 toxic damage over 8.2s on target"
+                  ],
+                  "base_value": -76.9134,
+                  "scale": 0.3038
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 immobilize for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "NearGround",
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -50.0,
+                  "display_info": [
+                    "-50.00% strength to recharge for 15s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "NearGround",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -50.0,
+                  "display_info": [
+                    "-50.00% run speed, fly speed for 15s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 10000.0,
+                  "display_info": [
+                    "10000.00% resistance to knockup, knock for 15s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": -100.0,
+                  "display_info": [
+                    "-100.0 knockup protection, knock protection for 15s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -50000.0,
+                  "display_info": [
+                    "-50000.00% jump height for 15s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -500.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": -10.0,
+                  "display_info": [
+                    "-10.0 fly protection for 15s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 0.0,
+              "magnitude_expression": "(.066 * power.base>activatetime) / power.base>areafactor",
+              "duration_expression": "power.base>activatetime + 7.5",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 0.0,
+                  "display_info": [
+                    "0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Gadgets.Caltrops",
+      "display_name": "Caltrops",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/cd/gadgets_caltrops.png",
+      "display_help": "You toss a handful of Caltrops at a targeted location and spread the tiny metal spikes over a large area. Any villains that pass over the Caltrops will be forced to move at a slower rate. They will also take some trivial Lethal damage over time. Damage: Minor(DoT), Recharge: Slow",
+      "display_short_help": "Ranged (Location AoE), Minor DoT(Lethal), Foe -Speed",
+      "display_info": {
+        "Activation Time": "1.07s",
+        "Endurance Cost": "7.80",
+        "Available Level": "2",
+        "Recharge Time": "45s",
+        "Power Type": "Click",
+        "Target Type": "Location",
+        "Power Range": "25 ft.",
+        "Effect Area": "Location"
+      },
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Blaster Archetype Sets",
+        "Slow Movement",
+        "Targeted AoE Damage"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 25.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.07,
+        "animation_time": 1.07,
+        "animation_time_before_hit": 0.63,
+        "recharge_time": 45.0,
+        "endurance_cost": 7.8
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 45.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Caltrops",
+                  "display_name": "Caltrops",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Pets.Caltrops.Caltrops",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/caltrops/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 0.0,
+              "magnitude_expression": "(.066 * power.base>activatetime) / power.base>areafactor",
+              "duration_expression": "power.base>activatetime + 7.5",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 0.0,
+                  "display_info": [
+                    "0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Gadgets.Taser",
+      "display_name": "Taser",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d3/gadgets_taser.png",
+      "display_help": "The High Voltage Taser is an overcharged stun-gun, releasing a high-voltage, high-amperage electrical charge that can Disorient most opponents with major tissue damage. The Taser has a very short range. Damage: High, Recharge: Moderate",
+      "display_short_help": "Melee, High DMG(Energy), Foe Disorient",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Endurance Cost": "10.19",
+        "Attack Types": "Melee, Energy",
+        "Available Level": "4",
+        "Power Type": "Click",
+        "Power Range": "20 ft.",
+        "Recharge Time": "10s",
+        "Activation Time": "1s",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Stuns",
+        "Blaster Archetype Sets",
+        "Ranged Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 4,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 20.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.53,
+        "recharge_time": 10.0,
+        "endurance_cost": 10.19
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 109.0,
+                  "average": 109.0,
+                  "per_activation": 109.0,
+                  "per_cast_cycle": 9.91,
+                  "display_info": [
+                    "109.00 energy damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.96
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 5.96,
+                  "display_info": [
+                    "3.0 stun for 5.96s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 stun for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 0.0,
+              "magnitude_expression": "(.066 * power.base>activatetime) / power.base>areafactor",
+              "duration_expression": "power.base>activatetime + 7.5",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 0.0,
+                  "display_info": [
+                    "0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Gadgets.Targeting_Drone",
+      "display_name": "Targeting Drone",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d9/gadgets_targetingdrone.png",
+      "display_help": "When this device is activated, the small Targeting Drone hovers around your head and emits targeting laser sights. The lasers can dramatically improve your chance to hit, slightly increase the damage you deal, and increase your perception, allowing you to better see stealthy foes. If not engaged in combat, this power will give a large damage buff to your opening attack. Targeting Drone also grants you resistance to powers that debuff your chance to hit. Recharge: Moderate",
+      "display_short_help": "Toggle: Self +To Hit, +Damage, +Perception, Res(DeBuff To Hit)",
+      "display_info": {
+        "Recharge Time": "10s",
+        "Activation Time": "1.17s",
+        "Endurance Cost": "0.32/s",
+        "Available Level": "10",
+        "Power Type": "Toggle",
+        "Target Type": "Self",
+        "Effect Area": "Single Target"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff"
+      ],
+      "available_at_level": 10,
+      "auto_issue": false,
+      "power_type": "Toggle",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Sleep",
+          "Stun"
+        ],
+        "toggle_ignores": [
+          "Hold"
+        ]
+      },
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 10.0,
+        "auto_cast_interval": 0.5,
+        "endurance_cost": 0.16
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 0.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.6,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 20.0,
+                  "display_info": [
+                    "20.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 0.6s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.125,
+                  "scale": 1.6
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 18.5,
+                  "display_info": [
+                    "18.50% to hit for 0.75s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 1.85
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 55.36,
+                  "display_info": [
+                    "55.36% resistance to to hit debuff for 0.75s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.2768,
+                  "scale": 2.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "PerceptionRadius"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 60.0,
+                  "display_info": [
+                    "60.00% resistance to perception radius debuff for 0.75s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.6
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "PerceptionRadius"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 60.0,
+                  "display_info": [
+                    "60.00% perception radius for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "Source.Mode?(kOutOfCombat)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 60.0,
+                  "display_info": [
+                    "60.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 0.75s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.125,
+                  "scale": 4.8
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Gadgets.Smoke_Grenade",
+      "display_name": "Smoke Grenade",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/2f/gadgets_smokegrenade.png",
+      "display_help": "The Smoke Grenade envelops all those in the affected area in a cloud of smoke. Most villains will not be able to see past normal melee range, although some may have better perception. If the villains are attacked, they will be alerted to your presence, but will suffer a penalty to their chance to hit. Recharge: Slow",
+      "display_short_help": "Ranged (Target AoE), Foe -Perception, -To Hit",
+      "display_info": {
+        "Recharge Time": "15s",
+        "Endurance Cost": "7.80",
+        "Activation Time": "1.37s",
+        "Power Type": "Click",
+        "Aggro Type": "Enemies will not notice this attack",
+        "Effect Area": "AoE — 35 ft. radius (10 targets max)",
+        "Attack Types": "Area",
+        "Power Range": "80 ft.",
+        "Target Type": "Enemies",
+        "Available Level": "16"
+      },
+      "attack_types": [
+        "Area_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit DeBuffs",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Debuff"
+      ],
+      "available_at_level": 16,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 35.0,
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.37,
+        "animation_time": 1.37,
+        "animation_time_before_hit": 1.23,
+        "recharge_time": 15.0,
+        "endurance_cost": 7.8
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "PerceptionRadius"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 60.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -90.0,
+                  "display_info": [
+                    "-90.00% perception radius for 1m 0s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && ((@ToHitRoll < @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 60.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -4.9,
+                  "display_info": [
+                    "-4.90% to hit for 1m 0s on target"
+                  ],
+                  "base_value": -0.07,
+                  "scale": 0.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -4.9,
+                  "display_info": [
+                    "-4.90% to hit for 20s on target"
+                  ],
+                  "base_value": -0.07,
+                  "scale": 0.7
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "PerceptionRadius"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -90.0,
+                  "display_info": [
+                    "-90.00% perception radius for 20s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 0.0,
+              "magnitude_expression": "(.066 * power.base>activatetime) / power.base>areafactor",
+              "duration_expression": "power.base>activatetime + 7.5",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 0.0,
+                  "display_info": [
+                    "0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Gadgets.Cloaking_Device",
+      "display_name": "Field Operative",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d5/gadgets_cloak.png",
+      "display_help": "Through a mixture of combat training and highly sophisticated devices you are considered a Field Operative. You use a LCD body coating to become partially invisible. While concealed you can only be seen at very close range. If you attack while concealed, you will be discovered. Even if discovered, you are hard to see but will retain some of your Defense bonus to all attacks. Unlike some stealth powers, Field Operative has no movement penalty. This power's stealth component will not work with any other form of Concealment power such as Shadow Fall or Steamy Mist. In addition to being stealthy, your training also allows you to regenerate health and recovery endurance at an accelerated rate while this power is active. However, only half of this regeneration bonus is enhanceable. Recharge: Very Fast",
+      "display_short_help": "Toggle: Self Stealth, +DEF(All), +Special, +Regeneration, +Recovery",
+      "display_info": {
+        "Available Level": "20",
+        "Activation Time": "0.73s",
+        "Target Type": "Self",
+        "Recharge Time": "2s",
+        "Power Type": "Toggle",
+        "Effect Area": "Single Target"
+      },
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Enhance Recharge Speed",
+        "Enhance Heal",
+        "Enhance Defense"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Sets",
+        "Endurance Modification",
+        "Healing"
+      ],
+      "available_at_level": 20,
+      "auto_issue": false,
+      "power_type": "Toggle",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Sleep",
+          "Stun"
+        ],
+        "toggle_ignores": [
+          "Hold"
+        ]
+      },
+      "activate": {
+        "cast_time": 0.73,
+        "animation_time": 0.73,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 2.0,
+        "auto_cast_interval": 0.5,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "StealthRadius_PVE"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 1500.0,
+                  "display_info": [
+                    "1500.00% stealth radius for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 15.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "StealthRadius_PVP"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 38900.0,
+                  "display_info": [
+                    "38900.00% stealth radius for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 389.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "StealthRadius_PVE"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 2000.0,
+                  "display_info": [
+                    "2000.00% stealth radius for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 20.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Ranged_Def",
+                "Melee_Def",
+                "Area_Def",
+                "Smashing_Def",
+                "Lethal_Def",
+                "Fire_Def",
+                "Cold_Def",
+                "Energy_Def",
+                "Negative_Energy_Def",
+                "Psionic_Def",
+                "Toxic_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 1.75,
+                  "display_info": [
+                    "1.75% strength to ranged, melee, AoE, smashing, lethal, fire, cold, energy, negative energy, psionic, unique for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.07,
+                  "scale": 0.25
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Ranged_Def",
+                "Melee_Def",
+                "Area_Def",
+                "Smashing_Def",
+                "Lethal_Def",
+                "Fire_Def",
+                "Cold_Def",
+                "Energy_Def",
+                "Negative_Energy_Def",
+                "Psionic_Def",
+                "Toxic_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 1.75,
+                  "display_info": [
+                    "1.75% strength to ranged, melee, AoE, smashing, lethal, fire, cold, energy, negative energy, psionic, unique for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.07,
+                  "scale": 0.25
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Regeneration"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 112.5,
+                  "display_info": [
+                    "112.50% regeneration rate for 0.75s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.125
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Regeneration"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 112.5,
+                  "display_info": [
+                    "112.50% regeneration rate for 0.75s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.125
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% recovery rate for 0.75s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Translucency"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Translucency"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Gadgets.Trip_Mine",
+      "display_name": "Trip Mine",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/41/gadgets_mine.png",
+      "display_help": "You can place a Trip Mine on the ground. Any villains that pass near the Trip Mine will cause it to explode, severely damaging all nearby foes and sending them flying. The Trip Mine is almost impossible to detect, but it is fragile and may be set off by an enemy's explosion. Even if destroyed, the Trip Mine will detonate. Damage: Superior, Recharge: Slow",
+      "display_short_help": "Place Mine: PBAoE, Superior DMG(Lethal/Fire), Foe Knockback",
+      "display_info": {
+        "Aggro Type": "Enemies will not notice this attack",
+        "Activation Time": "2.77s",
+        "Effect Area": "Single Target",
+        "Target Type": "Self",
+        "Recharge Time": "30s",
+        "Endurance Cost": "13.00",
+        "Power Type": "Click",
+        "Available Level": "28"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Knockback",
+        "PBAoE Damage",
+        "Blaster Archetype Sets",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 28,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.77,
+        "animation_time": 2.77,
+        "animation_time_before_hit": 0.8,
+        "recharge_time": 30.0,
+        "endurance_cost": 13.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 260.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Mine",
+                  "display_name": "Trip Mine",
+                  "powers": [
+                    {
+                      "name": "Pets.Mine.Trip_Mine",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/mine/"
+                    },
+                    {
+                      "name": "Pets.Mine.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/mine/"
+                    },
+                    {
+                      "name": "Pets.Mine.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/mine/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 0.0,
+              "magnitude_expression": "(.066 * power.base>activatetime) / power.base>areafactor",
+              "duration_expression": "power.base>activatetime + 7.5",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 0.0,
+                  "display_info": [
+                    "0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Gadgets.Time_Bomb",
+      "display_name": "Time Bomb",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/3c/gadgets_timebomb.png",
+      "display_help": "You can place a Time Bomb on the ground. The Time Bomb will detonate 5 seconds after being placed, resulting in a massive explosion that can devastate all nearby foes and send them flying. The Time Bomb is small, and almost impossible to detect. However, it is fragile and may be set off by an enemy's explosion. Even if destroyed, the Bomb will still detonate. Damage: Extreme, Recharge: Very Long",
+      "display_short_help": "Place Bomb: PBAoE, Extreme DMG(Lethal/Fire), Foe Knockback",
+      "display_info": {
+        "Endurance Cost": "26.00",
+        "Effect Area": "Single Target",
+        "Power Type": "Click",
+        "Activation Time": "2.77s",
+        "Available Level": "35",
+        "Aggro Type": "Enemies will not notice this attack",
+        "Recharge Time": "6m 0s",
+        "Target Type": "Self"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Blaster Archetype Sets",
+        "PBAoE Damage",
+        "Universal Damage Sets",
+        "Knockback"
+      ],
+      "available_at_level": 35,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.77,
+        "animation_time": 2.77,
+        "animation_time_before_hit": 0.8,
+        "recharge_time": 360.0,
+        "endurance_cost": 26.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 11.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Bomb",
+                  "display_name": "Time Bomb",
+                  "powers": [
+                    {
+                      "name": "Pets.Bomb.Time_Bomb",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/bomb/"
+                    },
+                    {
+                      "name": "Pets.Bomb.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/bomb/"
+                    },
+                    {
+                      "name": "Pets.Bomb.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/bomb/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 0.0,
+              "magnitude_expression": "(.066 * power.base>activatetime) / power.base>areafactor",
+              "duration_expression": "power.base>activatetime + 7.5",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 0.0,
+                  "display_info": [
+                    "0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Gadgets.Auto_Turret",
+      "display_name": "Gun Drone",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/27/gadgets_turret.png",
+      "display_help": "You can summon a Gun Drone. The Drone has an extremely fast fire rate and is equipped with a customized tracking system. Once locked on, the Drone will continue to unload a volley of lead into the target until it is destroyed. Enemies hit by the drone, as well as those near it, will prioritize attacking it over it's owner. The Drone is armored, but can be destroyed. Damage: Moderate, Recharge: Long",
+      "display_short_help": "Build Turret: Ranged, Moderate DMG(Lethal)",
+      "display_info": {
+        "Aggro Type": "Enemies will not notice this attack",
+        "Effect Area": "Location",
+        "Activation Time": "1s",
+        "Endurance Cost": "39.00",
+        "Available Level": "38",
+        "Power Type": "Click",
+        "Recharge Time": "3m 0s",
+        "Target Type": "Self"
+      },
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Recharge Intensive Pets",
+        "Universal Damage Sets",
+        "Ranged Damage",
+        "Taunt",
+        "Blaster Archetype Sets"
+      ],
+      "available_at_level": 38,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 180.0,
+        "endurance_cost": 39.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 90.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Turret",
+                  "display_name": "Gun Drone",
+                  "powers": [
+                    {
+                      "name": "Pets.Turret.Gattling_Gun",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/turret/"
+                    },
+                    {
+                      "name": "Pets.Turret.Auto_Turret",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/turret/"
+                    },
+                    {
+                      "name": "Pets.Turret.Explode",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/turret/"
+                    },
+                    {
+                      "name": "Pets.Turret.Taunt",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/turret/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 0.0,
+              "magnitude_expression": "(.066 * power.base>activatetime) / power.base>areafactor",
+              "duration_expression": "power.base>activatetime + 7.5",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 0.0,
+                  "display_info": [
+                    "0.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

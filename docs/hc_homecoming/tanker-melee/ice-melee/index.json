@@ -1,1 +1,2315 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Tanker_Melee.Ice_Melee","display_name":"Ice Melee","display_help":"Ice Melee allows the player to use Cold-based attacks, and even conjure up frozen melee weapons. Ice Melee powers are known for their ability to slow an opponent.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ae/icyonslaught_frozenfist.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Tanker_Melee.Ice_Melee.Frozen_Fists","Tanker_Melee.Ice_Melee.Ice_Sword","Tanker_Melee.Ice_Melee.Frost","Tanker_Melee.Ice_Melee.Taunt","Tanker_Melee.Ice_Melee.Build_Up","Tanker_Melee.Ice_Melee.Ice_Patch","Tanker_Melee.Ice_Melee.Freezing_Touch","Tanker_Melee.Ice_Melee.Greater_Ice_Sword","Tanker_Melee.Ice_Melee.Frozen_Aura"],"powers":[{"name":"Tanker_Melee.Ice_Melee.Frozen_Fists","display_name":"Frozen Fists","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ae/icyonslaught_frozenfist.png","display_help":"Frozen Fists encrusts your hands in ice, giving them the ability to quickly inflict minor damage on villains. The foe's attack and movement speed is Slowed, due to the chills caused by the cold blows. This power can bruise an enemy, making them more vulnerable to damage. Damage: Minor, Recharge: Very Fast","display_short_help":"Melee, Minor DMG(Cold/Smash), Foe -Recharge, -SPD,","display_info":{"Endurance Cost":"4.37","Power Range":"7 ft.","Effect Area":"Single Target","Power Type":"Click","Recharge Time":"3s","Attack Types":"Melee, Smashing, Cold","Activation Time":"1.33s","Target Type":"Enemies","Available Level":"1"},"attack_types":["Melee_Def","Smashing_Def","Cold_Def"],"enhancements_allowed":["Enhance Slow Movement","Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt","Tanker Archetype Sets","Slow Movement","Universal Damage Sets","Melee Damage"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.33,"animation_time":1.33,"animation_time_before_hit":0.5,"recharge_time":3.0,"endurance_cost":4.37},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.3,"continuous_apply_seconds":0.25,"ticks":2,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":5.28,"average":5.28,"per_activation":3.97,"per_cast_cycle":1.22,"display_info":["2 ticks of 5.28 smashing damage over 0.3s on target"],"base_value":-52.8297,"scale":0.1}]},{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.3,"continuous_apply_seconds":0.25,"ticks":2,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":21.13,"average":21.13,"per_activation":15.89,"per_cast_cycle":4.88,"display_info":["2 ticks of 21.13 cold damage over 0.3s on target"],"base_value":-52.8297,"scale":0.4}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":19.64,"average":19.64,"per_activation":14.77,"per_cast_cycle":4.54,"display_info":["19.64 smashing damage on target"],"base_value":-56.4121,"scale":0.3482}]},{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":62.21,"average":62.21,"per_activation":46.77,"per_cast_cycle":14.37,"display_info":["62.21 cold damage on target"],"base_value":-56.4121,"scale":1.1027}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-8.0,"display_info":["-8.00% run speed, fly speed, jump speed for 5s on target"],"base_value":-0.8,"scale":0.1}]},{"attributes":["JumpHeight","RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-8.0,"display_info":["-8.00% strength to jump height, recharge for 5s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.1}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":11.89,"average":11.89,"per_activation":8.94,"per_cast_cycle":2.75,"display_info":["11.89 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.225}]}]}]},{"name":"Tanker_Melee.Ice_Melee.Ice_Sword","display_name":"Ice Sword","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/8b/icyonslaught_icesword.png","display_help":"You create a blade of solid ice that deals good damage. Being hit by this Ice Sword will Slow a target's movement and attack speed, due to the intense chill. Damage: Moderate, Recharge: Fast","display_short_help":"Melee, Moderate DMG(Cold/Lethal), Foe -Recharge, -SPD","display_info":{"Recharge Time":"6s","Endurance Cost":"6.86","Target Type":"Enemies","Available Level":"2","Attack Types":"Melee, Lethal, Cold","Power Range":"7 ft.","Activation Time":"1.33s","Power Type":"Click","Effect Area":"Single Target"},"attack_types":["Melee_Def","Lethal_Def","Cold_Def"],"enhancements_allowed":["Enhance Slow Movement","Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Tanker Archetype Sets","Slow Movement","Taunt","Melee Damage","Universal Damage Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.33,"animation_time":1.33,"animation_time_before_hit":0.57,"recharge_time":6.0,"endurance_cost":6.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":26.41,"average":26.41,"per_activation":19.86,"per_cast_cycle":3.6,"display_info":["26.41 lethal damage on target"],"base_value":-52.8297,"scale":0.5}]},{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":43.32,"average":43.32,"per_activation":32.57,"per_cast_cycle":5.91,"display_info":["43.32 cold damage on target"],"base_value":-52.8297,"scale":0.82}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":33.68,"average":33.68,"per_activation":25.32,"per_cast_cycle":4.59,"display_info":["33.68 lethal damage on target"],"base_value":-56.4121,"scale":0.597}]},{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":54.95,"average":54.95,"per_activation":41.32,"per_cast_cycle":7.5,"display_info":["54.95 cold damage on target"],"base_value":-56.4121,"scale":0.974}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-8.0,"display_info":["-8.00% run speed, fly speed, jump speed for 8s on target"],"base_value":-0.8,"scale":0.1}]},{"attributes":["JumpHeight","RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-8.0,"display_info":["-8.00% strength to jump height, recharge for 8s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.1}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":31.38,"average":31.38,"per_activation":23.59,"per_cast_cycle":4.28,"display_info":["31.38 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.594}]}]}]},{"name":"Tanker_Melee.Ice_Melee.Frost","display_name":"Frost","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/93/icyonslaught_frost.png","display_help":"You create a short cone of Frost in front of you that can deal some damage and Slow a foe's speed, due to their uncontrollable shivering. Damage: Moderate(DoT), Recharge: Slow","display_short_help":"Close (Cone), Moderate DoT(Cold), Foe -Recharge, -SPD","display_info":{"Target Type":"Enemies","Attack Types":"Area, Cold","Available Level":"4","Power Type":"Click","Effect Area":"Cone — 10 ft. radius 90° arc (16 targets max)","Endurance Cost":"11.02","Recharge Time":"11s","Activation Time":"2.27s","Power Range":"10 ft."},"attack_types":["Area_Def","Cold_Def"],"enhancements_allowed":["Enhance Slow Movement","Enhance Taunt","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Tanker Archetype Sets","Taunt","Slow Movement","Targeted AoE Damage","Universal Damage Sets"],"available_at_level":4,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":16,"radius_feet":10.0,"arc_degrees":90.0,"range_feet":10.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.27,"animation_time":2.27,"animation_time_before_hit":0.83,"recharge_time":11.0,"endurance_cost":11.02},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.1,"continuous_apply_seconds":0.2,"ticks":6,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":14.26,"average":14.26,"per_activation":6.28,"per_cast_cycle":1.07,"display_info":["6 ticks of 14.26 cold damage over 1.1s on target"],"base_value":-52.8297,"scale":0.27}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["JumpHeight","RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% strength to jump height, recharge for 8s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.2}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% run speed, fly speed, jump speed for 8s on target"],"base_value":-0.8,"scale":0.2}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.1,"continuous_apply_seconds":0.2,"ticks":6,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":18.27,"average":18.27,"per_activation":8.05,"per_cast_cycle":1.38,"display_info":["6 ticks of 18.27 cold damage over 1.1s on target"],"base_value":-56.4121,"scale":0.3239}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.1,"continuous_apply_seconds":0.2,"ticks":6,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":6.42,"average":6.42,"per_activation":2.83,"per_cast_cycle":0.48,"display_info":["6 ticks of 6.42 fire damage over 1.1s on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.1215}]}]}]},{"name":"Tanker_Melee.Ice_Melee.Taunt","display_name":"Taunt","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d1/icyonslaught_taunt.png","display_help":"Taunts a foe, and some nearby foes, to attack you. Useful for pulling villains off an ally who find themselves in over their head. Taunted foes tend to ignore other Heroes and focus on you for quite a while, so use this power cautiously. A To Hit check is required to Taunt enemy players, but is not needed against critter targets. Recharge: Moderate","display_short_help":"Ranged (Targeted AoE), Foe Taunt","display_info":{"Power Type":"Click","Activation Time":"1.67s","Target Type":"Enemies","Available Level":"10","Effect Area":"AoE — 15 ft. radius (5 targets max)","Attack Types":"Area","Power Range":"70 ft.","Recharge Time":"10s"},"attack_types":["Area_Def"],"enhancements_allowed":["Enhance Taunt","Enhance Range","Enhance Recharge Speed","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt"],"available_at_level":10,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":5,"radius_feet":15.0,"range_feet":70.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.67,"recharge_time":10.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":41.0,"display_info":["4.0 taunt for 41s on target"],"base_value":2.05,"scale":20.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":10.25,"display_info":["4.0 taunt for 10.25s on target"],"base_value":2.05,"scale":5.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"],"effects":[{"attributes":["Null"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Range"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-100.0,"display_info":["-100.00% strength to range for 20s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-1.0}]}]}]},{"name":"Tanker_Melee.Ice_Melee.Build_Up","display_name":"Build Up","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/0a/icyonslaught_followup.png","display_help":"Greatly increases the amount of damage you deal for a few seconds, as well as slightly increasing your Accuracy. Recharge: Long","display_short_help":"Self +DMG, +To Hit","display_info":{"Endurance Cost":"5.20","Target Type":"Self","Activation Time":"1.17s","Power Type":"Click","Effect Area":"Single Target","Recharge Time":"1m 30s","Available Level":"16"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["To Hit Buff"],"available_at_level":16,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":90.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":20.0,"display_info":["20.00% to hit for 10s on self","Unresistable"],"base_value":0.1,"scale":2.0}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":80.0,"display_info":["80.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":8.0}]}]}]},{"name":"Tanker_Melee.Ice_Melee.Ice_Patch","display_name":"Ice Patch","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/a7/icyonslaught_icepatch.png","display_help":"You emanate a Patch of Ice around you. Foes that step onto the Ice Patch will slip and fall down. This effect lasts until the ice melts. You must be near the ground to activate this power. Recharge: Slow","display_short_help":"Location (PBAoE), Foe Knockdown","display_info":{"Endurance Cost":"10.40","Target Type":"Self","Available Level":"20","Recharge Time":"35s","Activation Time":"3.47s","Power Type":"Click","Effect Area":"Single Target"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed"],"available_at_level":20,"auto_issue":false,"power_type":"Click","accuracy":2.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":3.47,"animation_time":3.47,"animation_time_before_hit":0.93,"recharge_time":35.0,"endurance_cost":10.4},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":30.0,"flags":["NearGround","IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_IcePatch","display_name":"Ice Patch","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Pets.IcePatch.IcePatch","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/icepatch/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Tanker_Melee.Ice_Melee.Freezing_Touch","display_name":"Freezing Touch","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/c8/icyonslaught_freezingtouch.png","display_help":"This Freezing Touch will encase a single foe in a block of ice. This will deal high damage over time, as well as freezing him in his tracks, leaving him cold and helpless. Damage: High(DoT), Recharge: Slow","display_short_help":"Melee, High DoT(Cold), Foe Hold","display_info":{"Available Level":"28","Endurance Cost":"10.19","Activation Time":"1s","Recharge Time":"16s","Effect Area":"Single Target","Attack Types":"Melee, Cold","Target Type":"Enemies","Power Type":"Click","Power Range":"7 ft."},"attack_types":["Melee_Def","Cold_Def"],"enhancements_allowed":["Enhance Hold","Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt","Melee Damage","Tanker Archetype Sets","Universal Damage Sets","Holds"],"available_at_level":28,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.5,"recharge_time":16.0,"endurance_cost":10.19},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.6,"continuous_apply_seconds":0.25,"ticks":11,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":14.0,"average":14.0,"per_activation":14.0,"per_cast_cycle":0.82,"display_info":["11 ticks of 14.00 cold damage over 2.6s on target"],"base_value":-52.8297,"scale":0.265}]},{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":11.92,"display_info":["3.0 hold for 11.92s on target"],"base_value":1.192,"scale":10.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.6,"continuous_apply_seconds":0.25,"ticks":11,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":8.92,"average":8.92,"per_activation":8.92,"per_cast_cycle":0.52,"display_info":["11 ticks of 8.92 cold damage over 2.6s on target"],"base_value":-56.4121,"scale":0.1582}]},{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":2.0,"display_info":["3.0 hold for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Knockup","Knockback"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":10000.0,"display_info":["10000.00% resistance to knockup, knock for 6s on target","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":100.0}]},{"attributes":["Knockup","Knockback"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":6.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":-100.0,"display_info":["-100.0 knockup protection, knock protection for 6s on target","Unresistable"],"base_value":1.0,"scale":-100.0}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.6,"continuous_apply_seconds":0.25,"ticks":11,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":6.3,"average":6.3,"per_activation":6.3,"per_cast_cycle":0.37,"display_info":["11 ticks of 6.30 fire damage over 2.6s on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.1193}]}]}]},{"name":"Tanker_Melee.Ice_Melee.Greater_Ice_Sword","display_name":"Greater Ice Sword","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/0a/icyonslaught_greatericesword.png","display_help":"Your mastery of Ice allows you to create an enhanced blade of solid ice that deals above average damage. Being hit by the Greater Ice Sword will Slow a villain's attack and movement speed, due to the intense chill. Damage: High, Recharge: Moderate","display_short_help":"Melee, High DMG(Cold/Lethal), Foe -Recharge, -SPD","display_info":{"Target Type":"Enemies","Effect Area":"Single Target","Recharge Time":"10s","Activation Time":"2.33s","Attack Types":"Melee, Lethal, Cold","Available Level":"35","Power Range":"7 ft.","Power Type":"Click","Endurance Cost":"10.19"},"attack_types":["Melee_Def","Lethal_Def","Cold_Def"],"enhancements_allowed":["Enhance Slow Movement","Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Slow Movement","Taunt","Melee Damage","Tanker Archetype Sets","Universal Damage Sets"],"available_at_level":35,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.33,"animation_time":2.33,"animation_time_before_hit":1.23,"recharge_time":10.0,"endurance_cost":10.19},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":50.72,"average":50.72,"per_activation":21.77,"per_cast_cycle":4.11,"display_info":["50.72 lethal damage on target"],"base_value":-52.8297,"scale":0.96}]},{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":52.83,"average":52.83,"per_activation":22.67,"per_cast_cycle":4.28,"display_info":["52.83 cold damage on target"],"base_value":-52.8297,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":67.2,"average":67.2,"per_activation":28.84,"per_cast_cycle":5.45,"display_info":["67.20 lethal damage on target"],"base_value":-56.4121,"scale":1.1912}]},{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":69.94,"average":69.94,"per_activation":30.02,"per_cast_cycle":5.67,"display_info":["69.94 cold damage on target"],"base_value":-56.4121,"scale":1.2398}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["JumpHeight","RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% strength to jump height, recharge for 10s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.2}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% run speed, fly speed, jump speed for 10s on target"],"base_value":-0.8,"scale":0.2}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":46.6,"average":46.6,"per_activation":20.0,"per_cast_cycle":3.78,"display_info":["46.60 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.882}]}]}]},{"name":"Tanker_Melee.Ice_Melee.Frozen_Aura","display_name":"Frozen Aura","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/78/icyonslaught_frozenaura.png","display_help":"Your mastery of cold enables you to dramatically lower the temperature immediately around you. When you perform a Frozen Aura, nearby foes will be frozen within a fragile casing of ice and suffer a moderate amount of cold damage. These frozen foes will break free if attacked. Frozen Aura deals moderate damage. Damage: Moderate, Recharge: Slow","display_short_help":"PBAoE, Moderate DMG(Cold), Foe Sleep","display_info":{"Endurance Cost":"18.51","Power Type":"Click","Effect Area":"AoE — 10 ft. radius (16 targets max)","Attack Types":"Area, Cold","Activation Time":"2.1s","Available Level":"38","Recharge Time":"20s","Target Type":"Self"},"attack_types":["Area_Def","Cold_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Sleep","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Sleep","Tanker Archetype Sets","PBAoE Damage","Universal Damage Sets","Taunt"],"available_at_level":38,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":10.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.1,"animation_time":2.1,"animation_time_before_hit":0.73,"recharge_time":20.0,"endurance_cost":18.51},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":2.0,"duration":"InSecondsScaled","after_delay_seconds":0.33,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":11.92,"display_info":["2.0 sleep for 11.92s on target after 0.33s delay"],"base_value":1.192,"scale":10.0}]},{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":75.02,"average":75.02,"per_activation":35.72,"per_cast_cycle":3.39,"display_info":["75.02 cold damage on target"],"base_value":-52.8297,"scale":1.42}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Cold_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":86.07,"average":86.07,"per_activation":40.99,"per_cast_cycle":3.89,"display_info":["86.07 cold damage on target"],"base_value":-56.4121,"scale":1.5257}]},{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":2.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":2.0,"display_info":["2.0 sleep for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":33.76,"average":33.76,"per_activation":16.08,"per_cast_cycle":1.53,"display_info":["33.76 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.639}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Tanker_Melee.Ice_Melee",
+  "display_name": "Ice Melee",
+  "display_help": "Ice Melee allows the player to use Cold-based attacks, and even conjure up frozen melee weapons. Ice Melee powers are known for their ability to slow an opponent.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ae/icyonslaught_frozenfist.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Tanker_Melee.Ice_Melee.Frozen_Fists",
+    "Tanker_Melee.Ice_Melee.Ice_Sword",
+    "Tanker_Melee.Ice_Melee.Frost",
+    "Tanker_Melee.Ice_Melee.Taunt",
+    "Tanker_Melee.Ice_Melee.Build_Up",
+    "Tanker_Melee.Ice_Melee.Ice_Patch",
+    "Tanker_Melee.Ice_Melee.Freezing_Touch",
+    "Tanker_Melee.Ice_Melee.Greater_Ice_Sword",
+    "Tanker_Melee.Ice_Melee.Frozen_Aura"
+  ],
+  "powers": [
+    {
+      "name": "Tanker_Melee.Ice_Melee.Frozen_Fists",
+      "display_name": "Frozen Fists",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ae/icyonslaught_frozenfist.png",
+      "display_help": "Frozen Fists encrusts your hands in ice, giving them the ability to quickly inflict minor damage on villains. The foe's attack and movement speed is Slowed, due to the chills caused by the cold blows. This power can bruise an enemy, making them more vulnerable to damage. Damage: Minor, Recharge: Very Fast",
+      "display_short_help": "Melee, Minor DMG(Cold/Smash), Foe -Recharge, -SPD,",
+      "display_info": {
+        "Power Type": "Click",
+        "Power Range": "7 ft.",
+        "Target Type": "Enemies",
+        "Recharge Time": "3s",
+        "Endurance Cost": "4.37",
+        "Attack Types": "Melee, Smashing, Cold",
+        "Activation Time": "1.33s",
+        "Effect Area": "Single Target",
+        "Available Level": "1"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Cold_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Slow Movement",
+        "Universal Damage Sets",
+        "Melee Damage",
+        "Taunt",
+        "Tanker Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.33,
+        "animation_time": 1.33,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 3.0,
+        "endurance_cost": 4.37
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.3,
+              "continuous_apply_seconds": 0.25,
+              "ticks": 2,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 5.28,
+                  "average": 5.28,
+                  "per_activation": 3.97,
+                  "per_cast_cycle": 1.22,
+                  "display_info": [
+                    "2 ticks of 5.28 smashing damage over 0.3s on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.3,
+              "continuous_apply_seconds": 0.25,
+              "ticks": 2,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 21.13,
+                  "average": 21.13,
+                  "per_activation": 15.89,
+                  "per_cast_cycle": 4.88,
+                  "display_info": [
+                    "2 ticks of 21.13 cold damage over 0.3s on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 19.64,
+                  "average": 19.64,
+                  "per_activation": 14.77,
+                  "per_cast_cycle": 4.54,
+                  "display_info": [
+                    "19.64 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.3482
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 62.21,
+                  "average": 62.21,
+                  "per_activation": 46.77,
+                  "per_cast_cycle": 14.37,
+                  "display_info": [
+                    "62.21 cold damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.1027
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -8.0,
+                  "display_info": [
+                    "-8.00% run speed, fly speed, jump speed for 5s on target"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight",
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -8.0,
+                  "display_info": [
+                    "-8.00% strength to jump height, recharge for 5s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 11.89,
+                  "average": 11.89,
+                  "per_activation": 8.94,
+                  "per_cast_cycle": 2.75,
+                  "display_info": [
+                    "11.89 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.225
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Ice_Melee.Ice_Sword",
+      "display_name": "Ice Sword",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/8b/icyonslaught_icesword.png",
+      "display_help": "You create a blade of solid ice that deals good damage. Being hit by this Ice Sword will Slow a target's movement and attack speed, due to the intense chill. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Melee, Moderate DMG(Cold/Lethal), Foe -Recharge, -SPD",
+      "display_info": {
+        "Power Range": "7 ft.",
+        "Available Level": "2",
+        "Endurance Cost": "6.86",
+        "Target Type": "Enemies",
+        "Recharge Time": "6s",
+        "Power Type": "Click",
+        "Effect Area": "Single Target",
+        "Attack Types": "Melee, Lethal, Cold",
+        "Activation Time": "1.33s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def",
+        "Cold_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Slow Movement",
+        "Universal Damage Sets",
+        "Melee Damage",
+        "Taunt",
+        "Tanker Archetype Sets"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.33,
+        "animation_time": 1.33,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 6.0,
+        "endurance_cost": 6.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 26.41,
+                  "average": 26.41,
+                  "per_activation": 19.86,
+                  "per_cast_cycle": 3.6,
+                  "display_info": [
+                    "26.41 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 43.32,
+                  "average": 43.32,
+                  "per_activation": 32.57,
+                  "per_cast_cycle": 5.91,
+                  "display_info": [
+                    "43.32 cold damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.82
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 33.68,
+                  "average": 33.68,
+                  "per_activation": 25.32,
+                  "per_cast_cycle": 4.59,
+                  "display_info": [
+                    "33.68 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.597
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 54.95,
+                  "average": 54.95,
+                  "per_activation": 41.32,
+                  "per_cast_cycle": 7.5,
+                  "display_info": [
+                    "54.95 cold damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.974
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -8.0,
+                  "display_info": [
+                    "-8.00% run speed, fly speed, jump speed for 8s on target"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight",
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -8.0,
+                  "display_info": [
+                    "-8.00% strength to jump height, recharge for 8s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 31.38,
+                  "average": 31.38,
+                  "per_activation": 23.59,
+                  "per_cast_cycle": 4.28,
+                  "display_info": [
+                    "31.38 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.594
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Ice_Melee.Frost",
+      "display_name": "Frost",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/93/icyonslaught_frost.png",
+      "display_help": "You create a short cone of Frost in front of you that can deal some damage and Slow a foe's speed, due to their uncontrollable shivering. Damage: Moderate(DoT), Recharge: Slow",
+      "display_short_help": "Close (Cone), Moderate DoT(Cold), Foe -Recharge, -SPD",
+      "display_info": {
+        "Activation Time": "2.27s",
+        "Endurance Cost": "11.02",
+        "Recharge Time": "11s",
+        "Target Type": "Enemies",
+        "Effect Area": "Cone — 10 ft. radius 90° arc (16 targets max)",
+        "Attack Types": "Area, Cold",
+        "Available Level": "4",
+        "Power Range": "10 ft.",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Cold_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt",
+        "Slow Movement",
+        "Universal Damage Sets",
+        "Tanker Archetype Sets",
+        "Targeted AoE Damage"
+      ],
+      "available_at_level": 4,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 16,
+        "radius_feet": 10.0,
+        "arc_degrees": 90.0,
+        "range_feet": 10.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.27,
+        "animation_time": 2.27,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 11.0,
+        "endurance_cost": 11.02
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.1,
+              "continuous_apply_seconds": 0.2,
+              "ticks": 6,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 14.26,
+                  "average": 14.26,
+                  "per_activation": 6.28,
+                  "per_cast_cycle": 1.07,
+                  "display_info": [
+                    "6 ticks of 14.26 cold damage over 1.1s on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.27
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "JumpHeight",
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% strength to jump height, recharge for 8s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% run speed, fly speed, jump speed for 8s on target"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.1,
+              "continuous_apply_seconds": 0.2,
+              "ticks": 6,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 18.27,
+                  "average": 18.27,
+                  "per_activation": 8.05,
+                  "per_cast_cycle": 1.38,
+                  "display_info": [
+                    "6 ticks of 18.27 cold damage over 1.1s on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.3239
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.1,
+              "continuous_apply_seconds": 0.2,
+              "ticks": 6,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 6.42,
+                  "average": 6.42,
+                  "per_activation": 2.83,
+                  "per_cast_cycle": 0.48,
+                  "display_info": [
+                    "6 ticks of 6.42 fire damage over 1.1s on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.1215
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Ice_Melee.Taunt",
+      "display_name": "Taunt",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d1/icyonslaught_taunt.png",
+      "display_help": "Taunts a foe, and some nearby foes, to attack you. Useful for pulling villains off an ally who find themselves in over their head. Taunted foes tend to ignore other Heroes and focus on you for quite a while, so use this power cautiously. A To Hit check is required to Taunt enemy players, but is not needed against critter targets. Recharge: Moderate",
+      "display_short_help": "Ranged (Targeted AoE), Foe Taunt",
+      "display_info": {
+        "Recharge Time": "10s",
+        "Activation Time": "1.67s",
+        "Effect Area": "AoE — 15 ft. radius (5 targets max)",
+        "Power Type": "Click",
+        "Power Range": "70 ft.",
+        "Available Level": "10",
+        "Target Type": "Enemies",
+        "Attack Types": "Area"
+      },
+      "attack_types": [
+        "Area_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt"
+      ],
+      "available_at_level": 10,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 5,
+        "radius_feet": 15.0,
+        "range_feet": 70.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 10.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 41.0,
+                  "display_info": [
+                    "4.0 taunt for 41s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 20.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 10.25,
+                  "display_info": [
+                    "4.0 taunt for 10.25s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Null"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Range"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% strength to range for 20s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Ice_Melee.Build_Up",
+      "display_name": "Build Up",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/0a/icyonslaught_followup.png",
+      "display_help": "Greatly increases the amount of damage you deal for a few seconds, as well as slightly increasing your Accuracy. Recharge: Long",
+      "display_short_help": "Self +DMG, +To Hit",
+      "display_info": {
+        "Recharge Time": "1m 30s",
+        "Target Type": "Self",
+        "Effect Area": "Single Target",
+        "Available Level": "16",
+        "Activation Time": "1.17s",
+        "Power Type": "Click",
+        "Endurance Cost": "5.20"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff"
+      ],
+      "available_at_level": 16,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 90.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": 20.0,
+                  "display_info": [
+                    "20.00% to hit for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 2.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": 80.0,
+                  "display_info": [
+                    "80.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Ice_Melee.Ice_Patch",
+      "display_name": "Ice Patch",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/a7/icyonslaught_icepatch.png",
+      "display_help": "You emanate a Patch of Ice around you. Foes that step onto the Ice Patch will slip and fall down. This effect lasts until the ice melts. You must be near the ground to activate this power. Recharge: Slow",
+      "display_short_help": "Location (PBAoE), Foe Knockdown",
+      "display_info": {
+        "Activation Time": "3.47s",
+        "Recharge Time": "35s",
+        "Endurance Cost": "10.40",
+        "Available Level": "20",
+        "Power Type": "Click",
+        "Target Type": "Self",
+        "Effect Area": "Single Target"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed"
+      ],
+      "available_at_level": 20,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 2.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 3.47,
+        "animation_time": 3.47,
+        "animation_time_before_hit": 0.93,
+        "recharge_time": 35.0,
+        "endurance_cost": 10.4
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "NearGround",
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_IcePatch",
+                  "display_name": "Ice Patch",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Pets.IcePatch.IcePatch",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/icepatch/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Ice_Melee.Freezing_Touch",
+      "display_name": "Freezing Touch",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/c8/icyonslaught_freezingtouch.png",
+      "display_help": "This Freezing Touch will encase a single foe in a block of ice. This will deal high damage over time, as well as freezing him in his tracks, leaving him cold and helpless. Damage: High(DoT), Recharge: Slow",
+      "display_short_help": "Melee, High DoT(Cold), Foe Hold",
+      "display_info": {
+        "Attack Types": "Melee, Cold",
+        "Power Type": "Click",
+        "Power Range": "7 ft.",
+        "Target Type": "Enemies",
+        "Activation Time": "1s",
+        "Recharge Time": "16s",
+        "Available Level": "28",
+        "Effect Area": "Single Target",
+        "Endurance Cost": "10.19"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Cold_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Hold",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt",
+        "Tanker Archetype Sets",
+        "Holds",
+        "Melee Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 28,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 16.0,
+        "endurance_cost": 10.19
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.6,
+              "continuous_apply_seconds": 0.25,
+              "ticks": 11,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 14.0,
+                  "average": 14.0,
+                  "per_activation": 14.0,
+                  "per_cast_cycle": 0.82,
+                  "display_info": [
+                    "11 ticks of 14.00 cold damage over 2.6s on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.265
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 11.92,
+                  "display_info": [
+                    "3.0 hold for 11.92s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.6,
+              "continuous_apply_seconds": 0.25,
+              "ticks": 11,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 8.92,
+                  "average": 8.92,
+                  "per_activation": 8.92,
+                  "per_cast_cycle": 0.52,
+                  "display_info": [
+                    "11 ticks of 8.92 cold damage over 2.6s on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.1582
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 hold for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": 10000.0,
+                  "display_info": [
+                    "10000.00% resistance to knockup, knock for 6s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": -100.0,
+                  "display_info": [
+                    "-100.0 knockup protection, knock protection for 6s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.6,
+              "continuous_apply_seconds": 0.25,
+              "ticks": 11,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 6.3,
+                  "average": 6.3,
+                  "per_activation": 6.3,
+                  "per_cast_cycle": 0.37,
+                  "display_info": [
+                    "11 ticks of 6.30 fire damage over 2.6s on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.1193
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Ice_Melee.Greater_Ice_Sword",
+      "display_name": "Greater Ice Sword",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/0a/icyonslaught_greatericesword.png",
+      "display_help": "Your mastery of Ice allows you to create an enhanced blade of solid ice that deals above average damage. Being hit by the Greater Ice Sword will Slow a villain's attack and movement speed, due to the intense chill. Damage: High, Recharge: Moderate",
+      "display_short_help": "Melee, High DMG(Cold/Lethal), Foe -Recharge, -SPD",
+      "display_info": {
+        "Activation Time": "2.33s",
+        "Attack Types": "Melee, Lethal, Cold",
+        "Power Type": "Click",
+        "Recharge Time": "10s",
+        "Endurance Cost": "10.19",
+        "Power Range": "7 ft.",
+        "Effect Area": "Single Target",
+        "Target Type": "Enemies",
+        "Available Level": "35"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def",
+        "Cold_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Tanker Archetype Sets",
+        "Melee Damage",
+        "Taunt",
+        "Universal Damage Sets",
+        "Slow Movement"
+      ],
+      "available_at_level": 35,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.33,
+        "animation_time": 2.33,
+        "animation_time_before_hit": 1.23,
+        "recharge_time": 10.0,
+        "endurance_cost": 10.19
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 50.72,
+                  "average": 50.72,
+                  "per_activation": 21.77,
+                  "per_cast_cycle": 4.11,
+                  "display_info": [
+                    "50.72 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.96
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 52.83,
+                  "average": 52.83,
+                  "per_activation": 22.67,
+                  "per_cast_cycle": 4.28,
+                  "display_info": [
+                    "52.83 cold damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 67.2,
+                  "average": 67.2,
+                  "per_activation": 28.84,
+                  "per_cast_cycle": 5.45,
+                  "display_info": [
+                    "67.20 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.1912
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 69.94,
+                  "average": 69.94,
+                  "per_activation": 30.02,
+                  "per_cast_cycle": 5.67,
+                  "display_info": [
+                    "69.94 cold damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.2398
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "JumpHeight",
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% strength to jump height, recharge for 10s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% run speed, fly speed, jump speed for 10s on target"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 46.6,
+                  "average": 46.6,
+                  "per_activation": 20.0,
+                  "per_cast_cycle": 3.78,
+                  "display_info": [
+                    "46.60 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.882
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Ice_Melee.Frozen_Aura",
+      "display_name": "Frozen Aura",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/78/icyonslaught_frozenaura.png",
+      "display_help": "Your mastery of cold enables you to dramatically lower the temperature immediately around you. When you perform a Frozen Aura, nearby foes will be frozen within a fragile casing of ice and suffer a moderate amount of cold damage. These frozen foes will break free if attacked. Frozen Aura deals moderate damage. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "PBAoE, Moderate DMG(Cold), Foe Sleep",
+      "display_info": {
+        "Activation Time": "2.1s",
+        "Target Type": "Self",
+        "Power Type": "Click",
+        "Recharge Time": "20s",
+        "Available Level": "38",
+        "Effect Area": "AoE — 10 ft. radius (16 targets max)",
+        "Attack Types": "Area, Cold",
+        "Endurance Cost": "18.51"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Cold_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Sleep",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sleep",
+        "Taunt",
+        "Tanker Archetype Sets",
+        "PBAoE Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 38,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 10.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.1,
+        "animation_time": 2.1,
+        "animation_time_before_hit": 0.73,
+        "recharge_time": 20.0,
+        "endurance_cost": 18.51
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.33,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 11.92,
+                  "display_info": [
+                    "2.0 sleep for 11.92s on target after 0.33s delay"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 10.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 75.02,
+                  "average": 75.02,
+                  "per_activation": 35.72,
+                  "per_cast_cycle": 3.39,
+                  "display_info": [
+                    "75.02 cold damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.42
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Cold_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 86.07,
+                  "average": 86.07,
+                  "per_activation": 40.99,
+                  "per_cast_cycle": 3.89,
+                  "display_info": [
+                    "86.07 cold damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.5257
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "2.0 sleep for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 33.76,
+                  "average": 33.76,
+                  "per_activation": 16.08,
+                  "per_cast_cycle": 1.53,
+                  "display_info": [
+                    "33.76 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.639
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

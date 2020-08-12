@@ -1,1 +1,433 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Pets.DistortionField_Defender","display_name":"Time Manipulation","display_help":"Time Manipulation","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/a2/timemanipulation_distortionfield.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Pets.DistortionField_Defender.Distortion_Field"],"powers":[{"name":"Pets.DistortionField_Defender.Distortion_Field","display_name":"Distortion Field","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/a2/timemanipulation_distortionfield.png","display_help":"All foes that enter the Distortion Field will have both their rate of attack and movement speed reduced.","display_short_help":"-Speed, -Recharge, Chance for Hold","display_info":{"Power Type":"Auto","Attack Types":"Area, Energy","Target Type":"Self","Available Level":"1","Effect Area":"AoE — 20 ft. radius (16 targets max)"},"attack_types":["Area_Def","Energy_Def"],"enhancements_allowed":["Enhance Hold","Enhance Slow Movement"],"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":20.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"auto_cast_interval":1.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RunningSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.3,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-91.0,"display_info":["-91.00% run speed, jump speed for 1.3s on target"],"base_value":-1.0,"scale":0.91}]},{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.3,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-65.0,"display_info":["-65.00% strength to recharge for 1.3s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.65}]},{"attributes":["FlyingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.3,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-78.0,"display_info":["-78.00% fly speed for 1.3s on target"],"base_value":-1.0,"scale":0.78}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.3,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-91.0,"display_info":["-91.00% strength to jump height for 1.3s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.91}]},{"attributes":["Null"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":1.3,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["RunningSpeed"],"applies_to":"MaxValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.3,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-350.0,"display_info":["-350.00% max run speed for 1.3s on target","Ignores buffs and enhancements"],"base_value":3.5,"scale":-1.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":2.0,"requires":["(target>enttype == critter) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Time_Crawl_Debuff)"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":5.96,"display_info":["2.00% chance for 3.0 hold for 5.96s on target after 0.25s delay"],"base_value":1.49,"scale":4.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":2.0,"requires":["(target>enttype == player) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Time_Crawl_Debuff)"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":0.3,"display_info":["2.00% chance for 3.0 hold for 0.3s on target after 0.25s delay"],"base_value":1.0,"scale":0.3}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":3.0,"requires":["(target>enttype == critter) && target.ownPower?(Temporary_Powers.Temporary_Powers.Time_Crawl_Debuff)"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":5.96,"display_info":["3.00% chance for 3.0 hold for 5.96s on target after 0.25s delay","Only when Delayed"],"base_value":1.49,"scale":4.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":3.0,"requires":["(target>enttype == player) && target.ownPower?(Temporary_Powers.Temporary_Powers.Time_Crawl_Debuff)"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":0.3,"display_info":["3.00% chance for 3.0 hold for 0.3s on target after 0.25s delay","Only when Delayed"],"base_value":1.0,"scale":0.3}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Pets.DistortionField_Defender",
+  "display_name": "Time Manipulation",
+  "display_help": "Time Manipulation",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/a2/timemanipulation_distortionfield.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Pets.DistortionField_Defender.Distortion_Field"
+  ],
+  "powers": [
+    {
+      "name": "Pets.DistortionField_Defender.Distortion_Field",
+      "display_name": "Distortion Field",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/a2/timemanipulation_distortionfield.png",
+      "display_help": "All foes that enter the Distortion Field will have both their rate of attack and movement speed reduced.",
+      "display_short_help": "-Speed, -Recharge, Chance for Hold",
+      "display_info": {
+        "Attack Types": "Area, Energy",
+        "Target Type": "Self",
+        "Power Type": "Auto",
+        "Available Level": "1",
+        "Effect Area": "AoE — 20 ft. radius (16 targets max)"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Hold",
+        "Enhance Slow Movement"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 20.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "auto_cast_interval": 1.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RunningSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.3,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -91.0,
+                  "display_info": [
+                    "-91.00% run speed, jump speed for 1.3s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.91
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.3,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -65.0,
+                  "display_info": [
+                    "-65.00% strength to recharge for 1.3s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.65
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "FlyingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.3,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -78.0,
+                  "display_info": [
+                    "-78.00% fly speed for 1.3s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.78
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.3,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -91.0,
+                  "display_info": [
+                    "-91.00% strength to jump height for 1.3s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.91
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Null"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 1.3,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "RunningSpeed"
+              ],
+              "applies_to": "MaxValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.3,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -350.0,
+                  "display_info": [
+                    "-350.00% max run speed for 1.3s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 3.5,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 2.0,
+          "requires": [
+            "(target>enttype == critter) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Time_Crawl_Debuff)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 5.96,
+                  "display_info": [
+                    "2.00% chance for 3.0 hold for 5.96s on target after 0.25s delay"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 4.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 2.0,
+          "requires": [
+            "(target>enttype == player) && !target.ownPower?(Temporary_Powers.Temporary_Powers.Time_Crawl_Debuff)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 0.3,
+                  "display_info": [
+                    "2.00% chance for 3.0 hold for 0.3s on target after 0.25s delay"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 3.0,
+          "requires": [
+            "(target>enttype == critter) && target.ownPower?(Temporary_Powers.Temporary_Powers.Time_Crawl_Debuff)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 5.96,
+                  "display_info": [
+                    "3.00% chance for 3.0 hold for 5.96s on target after 0.25s delay",
+                    "Only when Delayed"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 4.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 3.0,
+          "requires": [
+            "(target>enttype == player) && target.ownPower?(Temporary_Powers.Temporary_Powers.Time_Crawl_Debuff)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 0.3,
+                  "display_info": [
+                    "3.00% chance for 3.0 hold for 0.3s on target after 0.25s delay",
+                    "Only when Delayed"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

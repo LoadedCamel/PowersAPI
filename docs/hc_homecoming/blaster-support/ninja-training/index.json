@@ -1,1 +1,2724 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Blaster_Support.Ninja_Training","display_name":"Ninja Training","display_help":"You compliment your abilities with training in the secret art of the Ninja. You have mastered valuable ninja tools, poisons and weapons, including the deadly Ninja Blade. You also mastered the harmonic powers of Kuji-In Toh, allowing you to regenerate and recover endurance at an accelerated rate.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/9c/ninjatools_immob.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Blaster_Support.Ninja_Training.Immobilizing_Dart","Blaster_Support.Ninja_Training.Sting_of_the_Wasp","Blaster_Support.Ninja_Training.Choking_Powder","Blaster_Support.Ninja_Training.Kyokan","Blaster_Support.Ninja_Training.The_Lotus_Drops","Blaster_Support.Ninja_Training.Kuji-In_Toh","Blaster_Support.Ninja_Training.Smoke_Flash","Blaster_Support.Ninja_Training.Blinding_Powder","Blaster_Support.Ninja_Training.Golden_Dragonfly"],"powers":[{"name":"Blaster_Support.Ninja_Training.Immobilizing_Dart","display_name":"Immobilizing Dart","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/9c/ninjatools_immob.png","display_help":"Immobilizing Darts do minor toxic damage over time and weakens your foe's legs. They will either be entirely unable to move, or severely slowed down. Damage: Minor(DoT), Recharge: Fast","display_short_help":"Ranged, Minor DoT(Toxic), Foe Immobilize","display_info":{"Recharge Time":"4s","Power Type":"Click","Attack Types":"Ranged, Lethal","Effect Area":"Single Target","Available Level":"1","Activation Time":"1.5s","Endurance Cost":"5.20","Power Range":"50 ft.","Target Type":"Enemies"},"attack_types":["Ranged_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Immobilization","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Ranged Damage","Immobilize","Universal Damage Sets","Blaster Archetype Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"SingleTarget","range_feet":50.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"status_interaction":{"cast_through":["Hold","Sleep","Stun","Terrorize"]},"activate":{"cast_time":1.5,"animation_time":1.5,"animation_time_before_hit":1.0,"recharge_time":4.0,"endurance_cost":5.2},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":17.88,"display_info":["3.0 immobilize for 17.88s on target"],"base_value":1.192,"scale":15.0}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":6.26,"average":6.26,"per_activation":4.17,"per_cast_cycle":1.14,"display_info":["4 ticks of 6.26 toxic damage over 3.1s on target after 0.5s delay"],"base_value":-62.5615,"scale":0.1}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":18.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-30.0,"display_info":["-30.00% strength to jump height for 18s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.3}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":18.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-30.0,"display_info":["-30.00% run speed, fly speed, jump speed for 18s on target"],"base_value":-1.0,"scale":0.3}]},{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":18.0,"flags":["NearGround","IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-30.0,"display_info":["-30.00% strength to recharge for 18s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.3}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":5.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":2.0,"display_info":["5.0 immobilize for 2s on target"],"base_value":2.0,"scale":1.0}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":99.08,"average":99.08,"per_activation":66.05,"per_cast_cycle":18.01,"display_info":["99.08 toxic damage on target"],"base_value":-76.9134,"scale":1.2882}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":9.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":9.9,"display_info":["9.90% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 9s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.099}]}]}]},{"name":"Blaster_Support.Ninja_Training.Sting_of_the_Wasp","display_name":"Sting of the Wasp","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/2c/ninjatools_katanalight.png","display_help":"You perform a standard attack with your Ninja Blade. Sting of the Wasp can reduce a target's Defense, making them easier to hit. Damage: Moderate, Recharge: Fast","display_short_help":"Melee, Moderate DMG(Lethal), Foe -Def","display_info":{"Recharge Time":"5s","Endurance Cost":"6.03","Available Level":"2","Power Range":"7 ft.","Target Type":"Enemies","Effect Area":"Single Target","Attack Types":"Melee, Lethal","Activation Time":"1.17s","Power Type":"Click"},"attack_types":["Melee_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Defense Debuff","Accurate Defense Debuff","Blaster Archetype Sets","Universal Damage Sets","Melee Damage"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.67,"recharge_time":5.0,"endurance_cost":6.03},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":64.51,"average":64.51,"per_activation":55.14,"per_cast_cycle":10.46,"display_info":["64.51 lethal damage on target"],"base_value":-55.6102,"scale":1.16}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-7.0,"display_info":["-7.00% strength to defense for 10s on target"],"base_value":-0.07,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":77.62,"average":77.62,"per_activation":66.34,"per_cast_cycle":12.58,"display_info":["77.62 lethal damage on target"],"base_value":-68.3828,"scale":1.1351}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.67,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":7.7,"display_info":["7.70% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.67s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.077}]}]}]},{"name":"Blaster_Support.Ninja_Training.Choking_Powder","display_name":"Choking Powder","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/97/ninjatools_hold.png","display_help":"Toss a fistful of toxic powder at an enemys face. This powder will temporarily close the affected foes throat making them choke and struggle to grasp for air. Damage: Moderate(DoT), Recharge: Slow","display_short_help":"Ranged, Moderate DoT(Toxic), Foe Hold","display_info":{"Available Level":"4","Power Type":"Click","Power Range":"60 ft.","Effect Area":"Single Target","Target Type":"Enemies","Attack Types":"Ranged, Toxic","Activation Time":"1.07s","Recharge Time":"16s","Endurance Cost":"11.39"},"attack_types":["Ranged_Def","Toxic_Def"],"enhancements_allowed":["Enhance Hold","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Ranged Damage","Universal Damage Sets","Blaster Archetype Sets","Holds"],"available_at_level":4,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.07,"animation_time":1.07,"animation_time_before_hit":0.77,"recharge_time":16.0,"endurance_cost":11.39},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":14.3,"display_info":["3.0 hold for 14.3s on target"],"base_value":1.192,"scale":12.0}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.2,"continuous_apply_seconds":1.0,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":13.76,"average":13.76,"per_activation":12.86,"per_cast_cycle":0.81,"display_info":["5 ticks of 13.76 toxic damage over 4.2s on target"],"base_value":-62.5615,"scale":0.22}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":2.0,"display_info":["4.0 hold for 2s on target"],"base_value":2.0,"scale":1.0}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.2,"continuous_apply_seconds":1.0,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":27.52,"average":27.52,"per_activation":25.72,"per_cast_cycle":1.61,"display_info":["5 ticks of 27.52 toxic damage over 4.2s on target"],"base_value":-76.9134,"scale":0.3578}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.57,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":7.1,"display_info":["7.10% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.57s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.071}]}]}]},{"name":"Blaster_Support.Ninja_Training.Kyokan","display_name":"Shinobi","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/c4/ninjatools_assassin.png","display_help":"A shinobi is a master of stealth and assassination. While this power is active you will be very hard to detect, and your first strike out of the shadows will deal extra damage. Even If you manage to regain cover, you can only inflict this surprise attack once every 30 seconds. Even while detected, a shinobi is a deadly foe and able to deal slightly higher damage . This power cant be used at the same time as other stealth powers. Recharge: Very Fast","display_short_help":"Toggle: Self Self +DEF(Melee, Ranged, AoE), +Run Speed, +Jump","display_info":{"Effect Area":"Single Target","Power Type":"Toggle","Target Type":"Self","Available Level":"10","Recharge Time":"2s","Endurance Cost":"0.26/s"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs","Enhance Defense"],"enhancement_set_categories_allowed":["Defense Sets","To Hit Buff"],"available_at_level":10,"auto_issue":false,"power_type":"Toggle","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_Travel","Disable_All"],"status_interaction":{"cast_through":["Sleep","Stun"],"toggle_ignores":["Hold"]},"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":2.0,"auto_cast_interval":0.5,"endurance_cost":0.13},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Ranged_Def","Melee_Def","Area_Def","Smashing_Def","Lethal_Def","Fire_Def","Cold_Def","Energy_Def","Negative_Energy_Def","Psionic_Def","Toxic_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":1.75,"display_info":["1.75% strength to ranged, melee, AoE, smashing, lethal, fire, cold, energy, negative energy, psionic, unique for 0.75s on self","Unresistable"],"base_value":0.07,"scale":0.25}]},{"attributes":["Ranged_Def","Melee_Def","Area_Def","Smashing_Def","Lethal_Def","Fire_Def","Cold_Def","Energy_Def","Negative_Energy_Def","Psionic_Def","Toxic_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":1.75,"display_info":["1.75% strength to ranged, melee, AoE, smashing, lethal, fire, cold, energy, negative energy, psionic, unique for 0.75s on self","Unresistable"],"base_value":0.07,"scale":0.25}]},{"attributes":["StealthRadius_PVE"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":3500.0,"display_info":["3500.00% stealth radius for 0.75s on self","Unresistable"],"base_value":1.0,"scale":35.0}]},{"attributes":["StealthRadius_PVP"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":38900.0,"display_info":["38900.00% stealth radius for 0.75s on self","Unresistable"],"base_value":1.0,"scale":389.0}]},{"attributes":["Translucency"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":15.0,"display_info":["15.00% to hit for 0.75s on target","Unresistable"],"base_value":0.1,"scale":1.5}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":43.75,"display_info":["43.75% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 0.75s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.125,"scale":3.5}]},{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":5.0,"display_info":["5.00% to hit for 0.75s on target","Unresistable"],"base_value":0.1,"scale":0.5}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":6.25,"display_info":["6.25% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 0.75s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.125,"scale":0.5}]}]}]},{"name":"Blaster_Support.Ninja_Training.The_Lotus_Drops","display_name":"The Lotus Drops","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/17/ninjatools_katanaaoe.png","display_help":"You perform The Lotus Drops maneuver, attacking all foes in melee range. This attack wounds your opponents, causing them to take moderate damage over time and reduces their Defense. Damage: Moderate, Recharge: Slow","display_short_help":"PBAoE Melee, Moderate DMG(Lethal), Foe -Def","display_info":{"Endurance Cost":"13.00","Recharge Time":"28s","Attack Types":"Melee, Lethal","Target Type":"Self","Power Type":"Click","Effect Area":"AoE — 8 ft. radius (10 targets max)","Available Level":"16","Activation Time":"1.83s"},"attack_types":["Melee_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Accurate Defense Debuff","PBAoE Damage","Blaster Archetype Sets","Defense Debuff","Universal Damage Sets"],"available_at_level":16,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":8.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.83,"animation_time":1.83,"animation_time_before_hit":0.83,"recharge_time":28.0,"endurance_cost":13.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":55.61,"average":55.61,"per_activation":30.39,"per_cast_cycle":1.86,"display_info":["55.61 lethal damage on target"],"base_value":-55.6102,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.1,"after_delay_seconds":1.0,"continuous_apply_seconds":1.0,"ticks":3,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":6.67,"average":6.67,"per_activation":3.64,"per_cast_cycle":0.22,"display_info":["3 ticks of 6.67 lethal damage over 2.1s on target after 1s delay"],"base_value":-55.6102,"scale":0.12}]},{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-7.0,"display_info":["-7.00% strength to defense for 10s on target"],"base_value":-0.07,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":191.52,"average":191.52,"per_activation":104.66,"per_cast_cycle":6.42,"display_info":["191.52 lethal damage on target"],"base_value":-68.3828,"scale":2.8007}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":9.33,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":5.5,"display_info":["5.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 9.33s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.055}]}]}]},{"name":"Blaster_Support.Ninja_Training.Kuji-In_Toh","display_name":"Kuji-In Toh","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e5/ninjatools_toh.png","display_help":"Kuji-In Toh invokes the power of Toh, or harmony with the universe. Focusing your inner power, you can make your body regenerate and recover endurance for a while. You also gain resistance to psionic attacks and fear protection. Recharge: Long","display_short_help":"Self +Regen, +Recovery, Res(Psionic, Fear)","display_info":{"Endurance Cost":"5.20","Power Type":"Click","Effect Area":"Single Target","Target Type":"Self","Recharge Time":"3m 20s","Activation Time":"1s","Available Level":"20"},"enhancements_allowed":["Enhance Damage Resistance","Enhance Endurance Modification","Enhance Recharge Speed","Enhance Heal"],"enhancement_set_categories_allowed":["Healing","Resist Damage","Endurance Modification"],"available_at_level":20,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.67,"recharge_time":200.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Regeneration"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":210.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":112.5,"display_info":["112.50% regeneration rate for 3m 30s on self","Unresistable"],"base_value":1.0,"scale":1.125}]},{"attributes":["Regeneration"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":210.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":112.5,"display_info":["112.50% regeneration rate for 3m 30s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.125}]},{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":210.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":50.0,"display_info":["50.00% recovery rate for 3m 30s on self","Unresistable"],"base_value":1.0,"scale":0.5}]},{"attributes":["Psionic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":210.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":7.0,"display_info":["7.00% resistance to psionic damage for 3m 30s on self","Unresistable"],"base_value":0.07,"scale":1.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["!isPVPMap?()"],"effects":[{"attributes":["Terrorized"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":210.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":-8.3,"display_info":["-8.3 terrorize protection for 3m 30s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.2768,"scale":-30.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["isPVPMap?()"],"effects":[{"attributes":["Terrorized"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":210.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":83.04,"display_info":["83.04% resistance to terrorize for 3m 30s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.2768,"scale":3.0}]}]}]},{"name":"Blaster_Support.Ninja_Training.Smoke_Flash","display_name":"Smoke Flash","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/07/ninjatools_placate.png","display_help":"You throw a smoke bomb at your feet. The resulting flash of light and smoke can briefly distract your foes and Placate them so they can no longer find or target you. Enemies will be distracted and confused, making them more vulnerable to attacks for a short time. Recharge: Long","display_short_help":"PBAoE, Foe Placate, -Res","display_info":{"Available Level":"28","Activation Time":"1.83s","Target Type":"Self","Power Type":"Click","Effect Area":"AoE — 20 ft. radius (10 targets max)","Recharge Time":"1m 30s","Endurance Cost":"2.60"},"enhancements_allowed":["Enhance Recharge Speed","Enhance Accuracy"],"available_at_level":28,"auto_issue":false,"power_type":"Click","accuracy":1.4,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":20.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.83,"animation_time":1.83,"animation_time_before_hit":1.53,"recharge_time":90.0,"endurance_cost":2.6},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Placate"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":8.24,"display_info":["3.0 placate for 8.24s on target"],"base_value":1.03,"scale":8.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Placate"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":6.18,"display_info":["3.0 placate for 6.18s on target"],"base_value":1.03,"scale":6.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-10.5,"display_info":["-10.50% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target"],"base_value":0.07,"scale":-1.5}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":9.33,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":3.0,"display_info":["3.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 9.33s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.03}]}]}]},{"name":"Blaster_Support.Ninja_Training.Blinding_Powder","display_name":"Blinding Powder","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/46/ninjatools_blindingpowder.png","display_help":"You throw a handful of Blinding powder in a wide arc at your foes. Most foes will be blinded, and unable to see. Some affected targets may be overcome by the powder that they may start attacking their own allies. If you attack the blinded foes, they will be alerted to your presence, but will continue to suffer a penalty to their chance to hit. Recharge: Long","display_short_help":"Ranged (Cone), Foe -To Hit, Sleep, Confuse, -Perception","display_info":{"Endurance Cost":"7.80","Activation Time":"1.07s","Power Range":"25 ft.","Aggro Type":"Enemies will not notice this attack","Power Type":"Click","Target Type":"Enemies","Recharge Time":"1m 30s","Effect Area":"Cone — 25 ft. radius 45° arc (10 targets max)","Available Level":"35","Attack Types":"Area"},"attack_types":["Area_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit DeBuffs","Enhance Confuse","Enhance Accuracy"],"enhancement_set_categories_allowed":["Confuse","To Hit Debuff","Accurate To-Hit Debuff"],"available_at_level":35,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":25.0,"arc_degrees":45.0,"range_feet":25.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.07,"animation_time":1.07,"animation_time_before_hit":0.63,"recharge_time":90.0,"endurance_cost":7.8},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":2.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":11.92,"display_info":["2.0 sleep for 11.92s on target after 0.25s delay"],"base_value":1.192,"scale":10.0}]},{"attributes":["PerceptionRadius"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-90.0,"display_info":["-90.00% perception radius for 20s on target"],"base_value":1.0,"scale":-0.9}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-7.0,"display_info":["-7.00% to hit for 15s on target"],"base_value":-0.07,"scale":1.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":50.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":2.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":23.84,"display_info":["50.00% chance for 2.0 confuse for 23.84s on target"],"base_value":1.192,"scale":20.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":2.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":2.0,"display_info":["2.0 sleep for 2s on target after 0.25s delay"],"base_value":2.0,"scale":1.0}]},{"attributes":["PerceptionRadius"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-90.0,"display_info":["-90.00% perception radius for 20s on target"],"base_value":1.0,"scale":-0.9}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":50.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":2.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","duration_seconds":2.0,"display_info":["50.00% chance for 2.0 confuse for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.57,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":3.8,"display_info":["3.80% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.57s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.038}]}]}]},{"name":"Blaster_Support.Ninja_Training.Golden_Dragonfly","display_name":"Golden Dragonfly","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/39/ninjatools_goldendragonfly.png","display_help":"You perform a devastating Golden Dragonfly attack that deals a massive amount of damage and can even knock a foe down to the ground and reduce it's Defense. The power of this attack can actually extend a short distance through multiple foes. Damage: Extreme, Recharge: Slow","display_short_help":"Melee, Extreme DMG(Lethal), Foe Knockback, -DEF","display_info":{"Recharge Time":"12s","Target Type":"Enemies","Power Range":"10 ft.","Endurance Cost":"11.86","Attack Types":"Melee, Lethal","Available Level":"38","Power Type":"Click","Effect Area":"Cone — 10 ft. radius 20° arc (10 targets max)","Activation Time":"1.83s"},"attack_types":["Melee_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Accurate Defense Debuff","Blaster Archetype Sets","Universal Damage Sets","PBAoE Damage","Knockback","Defense Debuff"],"available_at_level":38,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":10.0,"arc_degrees":20.0,"range_feet":10.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.83,"animation_time":1.83,"animation_time_before_hit":0.9,"recharge_time":12.0,"endurance_cost":11.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":126.79,"average":126.79,"per_activation":69.28,"per_cast_cycle":9.17,"display_info":["126.79 lethal damage on target"],"base_value":-55.6102,"scale":2.28}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":0.67,"display_info":["60.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","percent":-7.0,"display_info":["-7.00% strength to defense for 10s on target"],"base_value":-0.07,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","damage":147.76,"average":147.76,"per_activation":80.74,"per_cast_cycle":10.68,"display_info":["147.76 lethal damage on target"],"base_value":-68.3828,"scale":2.1608}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":9.33,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Blaster","percent":9.6,"display_info":["9.60% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 9.33s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.096}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Blaster","magnitude":0.67,"display_info":["60.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Blaster_Support.Ninja_Training",
+  "display_name": "Ninja Training",
+  "display_help": "You compliment your abilities with training in the secret art of the Ninja. You have mastered valuable ninja tools, poisons and weapons, including the deadly Ninja Blade. You also mastered the harmonic powers of Kuji-In Toh, allowing you to regenerate and recover endurance at an accelerated rate.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/9c/ninjatools_immob.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Blaster_Support.Ninja_Training.Immobilizing_Dart",
+    "Blaster_Support.Ninja_Training.Sting_of_the_Wasp",
+    "Blaster_Support.Ninja_Training.Choking_Powder",
+    "Blaster_Support.Ninja_Training.Kyokan",
+    "Blaster_Support.Ninja_Training.The_Lotus_Drops",
+    "Blaster_Support.Ninja_Training.Kuji-In_Toh",
+    "Blaster_Support.Ninja_Training.Smoke_Flash",
+    "Blaster_Support.Ninja_Training.Blinding_Powder",
+    "Blaster_Support.Ninja_Training.Golden_Dragonfly"
+  ],
+  "powers": [
+    {
+      "name": "Blaster_Support.Ninja_Training.Immobilizing_Dart",
+      "display_name": "Immobilizing Dart",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/9c/ninjatools_immob.png",
+      "display_help": "Immobilizing Darts do minor toxic damage over time and weakens your foe's legs. They will either be entirely unable to move, or severely slowed down. Damage: Minor(DoT), Recharge: Fast",
+      "display_short_help": "Ranged, Minor DoT(Toxic), Foe Immobilize",
+      "display_info": {
+        "Recharge Time": "4s",
+        "Power Type": "Click",
+        "Activation Time": "1.5s",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target",
+        "Available Level": "1",
+        "Endurance Cost": "5.20",
+        "Power Range": "50 ft.",
+        "Attack Types": "Ranged, Lethal"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Immobilization",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Blaster Archetype Sets",
+        "Ranged Damage",
+        "Universal Damage Sets",
+        "Immobilize"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 50.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Hold",
+          "Sleep",
+          "Stun",
+          "Terrorize"
+        ]
+      },
+      "activate": {
+        "cast_time": 1.5,
+        "animation_time": 1.5,
+        "animation_time_before_hit": 1.0,
+        "recharge_time": 4.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 17.88,
+                  "display_info": [
+                    "3.0 immobilize for 17.88s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 15.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 6.26,
+                  "average": 6.26,
+                  "per_activation": 4.17,
+                  "per_cast_cycle": 1.14,
+                  "display_info": [
+                    "4 ticks of 6.26 toxic damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 18.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -30.0,
+                  "display_info": [
+                    "-30.00% strength to jump height for 18s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.3
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 18.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -30.0,
+                  "display_info": [
+                    "-30.00% run speed, fly speed, jump speed for 18s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.3
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 18.0,
+              "flags": [
+                "NearGround",
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -30.0,
+                  "display_info": [
+                    "-30.00% strength to recharge for 18s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 5.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "5.0 immobilize for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 99.08,
+                  "average": 99.08,
+                  "per_activation": 66.05,
+                  "per_cast_cycle": 18.01,
+                  "display_info": [
+                    "99.08 toxic damage on target"
+                  ],
+                  "base_value": -76.9134,
+                  "scale": 1.2882
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 9.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 9.9,
+                  "display_info": [
+                    "9.90% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 9s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.099
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Ninja_Training.Sting_of_the_Wasp",
+      "display_name": "Sting of the Wasp",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/2c/ninjatools_katanalight.png",
+      "display_help": "You perform a standard attack with your Ninja Blade. Sting of the Wasp can reduce a target's Defense, making them easier to hit. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Melee, Moderate DMG(Lethal), Foe -Def",
+      "display_info": {
+        "Activation Time": "1.17s",
+        "Power Range": "7 ft.",
+        "Effect Area": "Single Target",
+        "Recharge Time": "5s",
+        "Endurance Cost": "6.03",
+        "Target Type": "Enemies",
+        "Available Level": "2",
+        "Power Type": "Click",
+        "Attack Types": "Melee, Lethal"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Debuff",
+        "Universal Damage Sets",
+        "Accurate Defense Debuff",
+        "Melee Damage",
+        "Blaster Archetype Sets"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 5.0,
+        "endurance_cost": 6.03
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 64.51,
+                  "average": 64.51,
+                  "per_activation": 55.14,
+                  "per_cast_cycle": 10.46,
+                  "display_info": [
+                    "64.51 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.16
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.07,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 77.62,
+                  "average": 77.62,
+                  "per_activation": 66.34,
+                  "per_cast_cycle": 12.58,
+                  "display_info": [
+                    "77.62 lethal damage on target"
+                  ],
+                  "base_value": -68.3828,
+                  "scale": 1.1351
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.67,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 7.7,
+                  "display_info": [
+                    "7.70% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.67s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.077
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Ninja_Training.Choking_Powder",
+      "display_name": "Choking Powder",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/97/ninjatools_hold.png",
+      "display_help": "Toss a fistful of toxic powder at an enemys face. This powder will temporarily close the affected foes throat making them choke and struggle to grasp for air. Damage: Moderate(DoT), Recharge: Slow",
+      "display_short_help": "Ranged, Moderate DoT(Toxic), Foe Hold",
+      "display_info": {
+        "Endurance Cost": "11.39",
+        "Activation Time": "1.07s",
+        "Power Type": "Click",
+        "Recharge Time": "16s",
+        "Effect Area": "Single Target",
+        "Available Level": "4",
+        "Target Type": "Enemies",
+        "Power Range": "60 ft.",
+        "Attack Types": "Ranged, Toxic"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Toxic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Hold",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Ranged Damage",
+        "Holds",
+        "Blaster Archetype Sets",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 4,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.07,
+        "animation_time": 1.07,
+        "animation_time_before_hit": 0.77,
+        "recharge_time": 16.0,
+        "endurance_cost": 11.39
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 14.3,
+                  "display_info": [
+                    "3.0 hold for 14.3s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 12.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.2,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 13.76,
+                  "average": 13.76,
+                  "per_activation": 12.86,
+                  "per_cast_cycle": 0.81,
+                  "display_info": [
+                    "5 ticks of 13.76 toxic damage over 4.2s on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.22
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "4.0 hold for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.2,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 27.52,
+                  "average": 27.52,
+                  "per_activation": 25.72,
+                  "per_cast_cycle": 1.61,
+                  "display_info": [
+                    "5 ticks of 27.52 toxic damage over 4.2s on target"
+                  ],
+                  "base_value": -76.9134,
+                  "scale": 0.3578
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.57,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 7.1,
+                  "display_info": [
+                    "7.10% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.57s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.071
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Ninja_Training.Kyokan",
+      "display_name": "Shinobi",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/c4/ninjatools_assassin.png",
+      "display_help": "A shinobi is a master of stealth and assassination. While this power is active you will be very hard to detect, and your first strike out of the shadows will deal extra damage. Even If you manage to regain cover, you can only inflict this surprise attack once every 30 seconds. Even while detected, a shinobi is a deadly foe and able to deal slightly higher damage . This power cant be used at the same time as other stealth powers. Recharge: Very Fast",
+      "display_short_help": "Toggle: Self Self +DEF(Melee, Ranged, AoE), +Run Speed, +Jump",
+      "display_info": {
+        "Target Type": "Self",
+        "Recharge Time": "2s",
+        "Power Type": "Toggle",
+        "Endurance Cost": "0.26/s",
+        "Effect Area": "Single Target",
+        "Available Level": "10"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs",
+        "Enhance Defense"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff",
+        "Defense Sets"
+      ],
+      "available_at_level": 10,
+      "auto_issue": false,
+      "power_type": "Toggle",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_Travel",
+        "Disable_All"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Sleep",
+          "Stun"
+        ],
+        "toggle_ignores": [
+          "Hold"
+        ]
+      },
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 2.0,
+        "auto_cast_interval": 0.5,
+        "endurance_cost": 0.13
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Ranged_Def",
+                "Melee_Def",
+                "Area_Def",
+                "Smashing_Def",
+                "Lethal_Def",
+                "Fire_Def",
+                "Cold_Def",
+                "Energy_Def",
+                "Negative_Energy_Def",
+                "Psionic_Def",
+                "Toxic_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 1.75,
+                  "display_info": [
+                    "1.75% strength to ranged, melee, AoE, smashing, lethal, fire, cold, energy, negative energy, psionic, unique for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.07,
+                  "scale": 0.25
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Ranged_Def",
+                "Melee_Def",
+                "Area_Def",
+                "Smashing_Def",
+                "Lethal_Def",
+                "Fire_Def",
+                "Cold_Def",
+                "Energy_Def",
+                "Negative_Energy_Def",
+                "Psionic_Def",
+                "Toxic_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 1.75,
+                  "display_info": [
+                    "1.75% strength to ranged, melee, AoE, smashing, lethal, fire, cold, energy, negative energy, psionic, unique for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.07,
+                  "scale": 0.25
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "StealthRadius_PVE"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 3500.0,
+                  "display_info": [
+                    "3500.00% stealth radius for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 35.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "StealthRadius_PVP"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 38900.0,
+                  "display_info": [
+                    "38900.00% stealth radius for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 389.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Translucency"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 15.0,
+                  "display_info": [
+                    "15.00% to hit for 0.75s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 1.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 43.75,
+                  "display_info": [
+                    "43.75% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 0.75s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.125,
+                  "scale": 3.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 5.0,
+                  "display_info": [
+                    "5.00% to hit for 0.75s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 6.25,
+                  "display_info": [
+                    "6.25% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 0.75s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.125,
+                  "scale": 0.5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Ninja_Training.The_Lotus_Drops",
+      "display_name": "The Lotus Drops",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/17/ninjatools_katanaaoe.png",
+      "display_help": "You perform The Lotus Drops maneuver, attacking all foes in melee range. This attack wounds your opponents, causing them to take moderate damage over time and reduces their Defense. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "PBAoE Melee, Moderate DMG(Lethal), Foe -Def",
+      "display_info": {
+        "Power Type": "Click",
+        "Available Level": "16",
+        "Effect Area": "AoE — 8 ft. radius (10 targets max)",
+        "Recharge Time": "28s",
+        "Attack Types": "Melee, Lethal",
+        "Endurance Cost": "13.00",
+        "Activation Time": "1.83s",
+        "Target Type": "Self"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Accurate Defense Debuff",
+        "Defense Debuff",
+        "PBAoE Damage",
+        "Blaster Archetype Sets",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 16,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 8.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.83,
+        "animation_time": 1.83,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 28.0,
+        "endurance_cost": 13.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 55.61,
+                  "average": 55.61,
+                  "per_activation": 30.39,
+                  "per_cast_cycle": 1.86,
+                  "display_info": [
+                    "55.61 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.1,
+              "after_delay_seconds": 1.0,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 3,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 6.67,
+                  "average": 6.67,
+                  "per_activation": 3.64,
+                  "per_cast_cycle": 0.22,
+                  "display_info": [
+                    "3 ticks of 6.67 lethal damage over 2.1s on target after 1s delay"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.12
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.07,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 191.52,
+                  "average": 191.52,
+                  "per_activation": 104.66,
+                  "per_cast_cycle": 6.42,
+                  "display_info": [
+                    "191.52 lethal damage on target"
+                  ],
+                  "base_value": -68.3828,
+                  "scale": 2.8007
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 9.33,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 5.5,
+                  "display_info": [
+                    "5.50% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 9.33s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.055
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Ninja_Training.Kuji-In_Toh",
+      "display_name": "Kuji-In Toh",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e5/ninjatools_toh.png",
+      "display_help": "Kuji-In Toh invokes the power of Toh, or harmony with the universe. Focusing your inner power, you can make your body regenerate and recover endurance for a while. You also gain resistance to psionic attacks and fear protection. Recharge: Long",
+      "display_short_help": "Self +Regen, +Recovery, Res(Psionic, Fear)",
+      "display_info": {
+        "Power Type": "Click",
+        "Activation Time": "1s",
+        "Recharge Time": "3m 20s",
+        "Endurance Cost": "5.20",
+        "Target Type": "Self",
+        "Available Level": "20",
+        "Effect Area": "Single Target"
+      },
+      "enhancements_allowed": [
+        "Enhance Damage Resistance",
+        "Enhance Endurance Modification",
+        "Enhance Recharge Speed",
+        "Enhance Heal"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Endurance Modification",
+        "Healing",
+        "Resist Damage"
+      ],
+      "available_at_level": 20,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 200.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Regeneration"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 210.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 112.5,
+                  "display_info": [
+                    "112.50% regeneration rate for 3m 30s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.125
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Regeneration"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 210.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 112.5,
+                  "display_info": [
+                    "112.50% regeneration rate for 3m 30s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.125
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 210.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% recovery rate for 3m 30s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 210.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 7.0,
+                  "display_info": [
+                    "7.00% resistance to psionic damage for 3m 30s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.07,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "!isPVPMap?()"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Terrorized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 210.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": -8.3,
+                  "display_info": [
+                    "-8.3 terrorize protection for 3m 30s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.2768,
+                  "scale": -30.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "isPVPMap?()"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Terrorized"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 210.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 83.04,
+                  "display_info": [
+                    "83.04% resistance to terrorize for 3m 30s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.2768,
+                  "scale": 3.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Ninja_Training.Smoke_Flash",
+      "display_name": "Smoke Flash",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/07/ninjatools_placate.png",
+      "display_help": "You throw a smoke bomb at your feet. The resulting flash of light and smoke can briefly distract your foes and Placate them so they can no longer find or target you. Enemies will be distracted and confused, making them more vulnerable to attacks for a short time. Recharge: Long",
+      "display_short_help": "PBAoE, Foe Placate, -Res",
+      "display_info": {
+        "Activation Time": "1.83s",
+        "Endurance Cost": "2.60",
+        "Power Type": "Click",
+        "Recharge Time": "1m 30s",
+        "Target Type": "Self",
+        "Available Level": "28",
+        "Effect Area": "AoE — 20 ft. radius (10 targets max)"
+      },
+      "enhancements_allowed": [
+        "Enhance Recharge Speed",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 28,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.4,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 20.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.83,
+        "animation_time": 1.83,
+        "animation_time_before_hit": 1.53,
+        "recharge_time": 90.0,
+        "endurance_cost": 2.6
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Placate"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 8.24,
+                  "display_info": [
+                    "3.0 placate for 8.24s on target"
+                  ],
+                  "base_value": 1.03,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Placate"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 6.18,
+                  "display_info": [
+                    "3.0 placate for 6.18s on target"
+                  ],
+                  "base_value": 1.03,
+                  "scale": 6.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -10.5,
+                  "display_info": [
+                    "-10.50% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target"
+                  ],
+                  "base_value": 0.07,
+                  "scale": -1.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 9.33,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 3.0,
+                  "display_info": [
+                    "3.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 9.33s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.03
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Ninja_Training.Blinding_Powder",
+      "display_name": "Blinding Powder",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/46/ninjatools_blindingpowder.png",
+      "display_help": "You throw a handful of Blinding powder in a wide arc at your foes. Most foes will be blinded, and unable to see. Some affected targets may be overcome by the powder that they may start attacking their own allies. If you attack the blinded foes, they will be alerted to your presence, but will continue to suffer a penalty to their chance to hit. Recharge: Long",
+      "display_short_help": "Ranged (Cone), Foe -To Hit, Sleep, Confuse, -Perception",
+      "display_info": {
+        "Activation Time": "1.07s",
+        "Power Range": "25 ft.",
+        "Aggro Type": "Enemies will not notice this attack",
+        "Attack Types": "Area",
+        "Available Level": "35",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Effect Area": "Cone — 25 ft. radius 45° arc (10 targets max)",
+        "Recharge Time": "1m 30s",
+        "Endurance Cost": "7.80"
+      },
+      "attack_types": [
+        "Area_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit DeBuffs",
+        "Enhance Confuse",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Confuse",
+        "To Hit Debuff",
+        "Accurate To-Hit Debuff"
+      ],
+      "available_at_level": 35,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 25.0,
+        "arc_degrees": 45.0,
+        "range_feet": 25.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.07,
+        "animation_time": 1.07,
+        "animation_time_before_hit": 0.63,
+        "recharge_time": 90.0,
+        "endurance_cost": 7.8
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 11.92,
+                  "display_info": [
+                    "2.0 sleep for 11.92s on target after 0.25s delay"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 10.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "PerceptionRadius"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -90.0,
+                  "display_info": [
+                    "-90.00% perception radius for 20s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% to hit for 15s on target"
+                  ],
+                  "base_value": -0.07,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 23.84,
+                  "display_info": [
+                    "50.00% chance for 2.0 confuse for 23.84s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 20.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "2.0 sleep for 2s on target after 0.25s delay"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "PerceptionRadius"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -90.0,
+                  "display_info": [
+                    "-90.00% perception radius for 20s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 2.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "50.00% chance for 2.0 confuse for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.57,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 3.8,
+                  "display_info": [
+                    "3.80% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8.57s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.038
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster_Support.Ninja_Training.Golden_Dragonfly",
+      "display_name": "Golden Dragonfly",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/39/ninjatools_goldendragonfly.png",
+      "display_help": "You perform a devastating Golden Dragonfly attack that deals a massive amount of damage and can even knock a foe down to the ground and reduce it's Defense. The power of this attack can actually extend a short distance through multiple foes. Damage: Extreme, Recharge: Slow",
+      "display_short_help": "Melee, Extreme DMG(Lethal), Foe Knockback, -DEF",
+      "display_info": {
+        "Recharge Time": "12s",
+        "Power Range": "10 ft.",
+        "Attack Types": "Melee, Lethal",
+        "Available Level": "38",
+        "Endurance Cost": "11.86",
+        "Power Type": "Click",
+        "Activation Time": "1.83s",
+        "Target Type": "Enemies",
+        "Effect Area": "Cone — 10 ft. radius 20° arc (10 targets max)"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Debuff",
+        "Knockback",
+        "PBAoE Damage",
+        "Blaster Archetype Sets",
+        "Universal Damage Sets",
+        "Accurate Defense Debuff"
+      ],
+      "available_at_level": 38,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 10.0,
+        "arc_degrees": 20.0,
+        "range_feet": 10.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.83,
+        "animation_time": 1.83,
+        "animation_time_before_hit": 0.9,
+        "recharge_time": 12.0,
+        "endurance_cost": 11.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 126.79,
+                  "average": 126.79,
+                  "per_activation": 69.28,
+                  "per_cast_cycle": 9.17,
+                  "display_info": [
+                    "126.79 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 2.28
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "60.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.07,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "damage": 147.76,
+                  "average": 147.76,
+                  "per_activation": 80.74,
+                  "per_cast_cycle": 10.68,
+                  "display_info": [
+                    "147.76 lethal damage on target"
+                  ],
+                  "base_value": -68.3828,
+                  "scale": 2.1608
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 9.33,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "percent": 9.6,
+                  "display_info": [
+                    "9.60% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 9.33s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.096
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Blaster",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "60.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

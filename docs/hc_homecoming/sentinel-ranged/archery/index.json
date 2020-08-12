@@ -1,1 +1,1909 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Sentinel_Ranged.Archery","display_name":"Archery","display_help":"The ancient art of Archery allows you to use a Bow and Arrow to great effect. This power set has an inherent bonus to Accuracy.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/f2/archery_quickarrow.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Sentinel_Ranged.Archery.Snap_Shot","Sentinel_Ranged.Archery.Aimed_Shot","Sentinel_Ranged.Archery.Fistful_of_Arrows","Sentinel_Ranged.Archery.Stunning_Shot","Sentinel_Ranged.Archery.Aim","Sentinel_Ranged.Archery.Explosive_Arrow","Sentinel_Ranged.Archery.Blazing_Arrow","Sentinel_Ranged.Archery.Ranged_Shot","Sentinel_Ranged.Archery.Rain_of_Arrows"],"powers":[{"name":"Sentinel_Ranged.Archery.Snap_Shot","display_name":"Snap Shot","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/f2/archery_quickarrow.png","display_help":"A quick attack that fires an arrow at your foe after only minimal aiming. Fast, but little damage. Damage: Minor, Recharge: Very Fast","display_short_help":"Ranged, Minor DMG(Lethal)","display_info":{"Available Level":"1","Activation Time":"1s","Endurance Cost":"3.54","Target Type":"Enemies","Recharge Time":"2s","Power Range":"60 ft.","Effect Area":"Single Target","Attack Types":"Ranged, Lethal","Power Type":"Click"},"attack_types":["Ranged_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Sentinel Archetype Sets","Ranged Damage"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.16,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.73,"recharge_time":2.0,"endurance_cost":3.54},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":44.38,"average":44.38,"per_activation":44.38,"per_cast_cycle":14.79,"display_info":["44.38 lethal damage on target"],"base_value":-52.8297,"scale":0.84}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":81.04,"average":81.04,"per_activation":81.04,"per_cast_cycle":27.01,"display_info":["81.04 lethal damage on target"],"base_value":-45.5837,"scale":1.7778}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude","StackByAttribAndKey"],"stacking":{"behavior":"Replace","by_caster":false,"key":"Vulnerability"},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-0.2}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Vulnerability","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}},{"attributes":["Designer Status"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Unset Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Opportunity_Lock","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Sentinel_Ranged.Archery.Aimed_Shot","display_name":"Aimed Shot","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/7e/archery_mediumarrow.png","display_help":"Though it takes longer to execute, your Aimed Shot deals greater damage than Snap Shot. Damage: High, Recharge: Fast","display_short_help":"Ranged, High DMG(Lethal)","display_info":{"Activation Time":"1s","Recharge Time":"4s","Power Range":"60 ft.","Available Level":"1","Power Type":"Click","Attack Types":"Ranged, Lethal","Target Type":"Enemies","Endurance Cost":"5.20","Effect Area":"Single Target"},"attack_types":["Ranged_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Sentinel Archetype Sets","Ranged Damage"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.16,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.8,"recharge_time":4.0,"endurance_cost":5.2},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":52.83,"average":52.83,"per_activation":52.83,"per_cast_cycle":10.57,"display_info":["52.83 lethal damage on target"],"base_value":-52.8297,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":86.54,"average":86.54,"per_activation":86.54,"per_cast_cycle":17.31,"display_info":["86.54 lethal damage on target"],"base_value":-45.5837,"scale":1.8984}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude","StackByAttribAndKey"],"stacking":{"behavior":"Replace","by_caster":false,"key":"Vulnerability"},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-0.2}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Vulnerability","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}},{"attributes":["Designer Status"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Unset Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Opportunity_Lock","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Sentinel_Ranged.Archery.Fistful_of_Arrows","display_name":"Fistful of Arrows","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/5c/archery_conearrow.png","display_help":"You fire a fistful of arrows at foes in a cone in front of you. Good at close range. Damage: Moderate, Recharge: Moderate","display_short_help":"Ranged (Cone), Moderate DMG(Lethal)","display_info":{"Endurance Cost":"8.53","Power Type":"Click","Attack Types":"Ranged, Lethal","Recharge Time":"8s","Effect Area":"Cone — 40 ft. radius 50° arc (6 targets max)","Power Range":"40 ft.","Available Level":"2","Activation Time":"1.17s","Target Type":"Enemies"},"attack_types":["Ranged_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Sentinel Archetype Sets","Targeted AoE Damage","Universal Damage Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.16,"effect_area":{"area":"Cone","max_targets_hit":6,"radius_feet":40.0,"arc_degrees":50.0,"range_feet":40.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.9,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":48.08,"average":48.08,"per_activation":41.09,"per_cast_cycle":5.24,"display_info":["48.08 lethal damage on target"],"base_value":-52.8297,"scale":0.91}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":43.16,"average":43.16,"per_activation":36.89,"per_cast_cycle":4.71,"display_info":["43.16 lethal damage on target"],"base_value":-45.5837,"scale":0.9469}]}]}]},{"name":"Sentinel_Ranged.Archery.Stunning_Shot","display_name":"Stunning Shot","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b4/archery_stunarrow.png","display_help":"You fire a blunt, weighted arrow at your target's chest. The Stunning Shot inflicts high damage and has a good chance of stunning your foe. Damage: High, Recharge: Moderate","display_short_help":"Ranged Disorient, High DMG(Smashing)","display_info":{"Activation Time":"1s","Available Level":"6","Effect Area":"Single Target","Power Range":"60 ft.","Attack Types":"Ranged, Smashing","Target Type":"Enemies","Endurance Cost":"8.53","Recharge Time":"8s","Power Type":"Click"},"attack_types":["Ranged_Def","Smashing_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Disorient","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Stuns","Ranged Damage","Sentinel Archetype Sets"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.16,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.77,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":86.64,"average":86.64,"per_activation":86.64,"per_cast_cycle":9.63,"display_info":["86.64 smashing damage on target"],"base_value":-52.8297,"scale":1.64}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","duration_seconds":2.0,"display_info":["3.0 stun for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","duration_seconds":4.77,"display_info":["3.0 stun for 4.77s on target"],"base_value":1.192,"scale":4.0}]}]}]},{"name":"Sentinel_Ranged.Archery.Aim","display_name":"Aim","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e5/archery_aim.png","display_help":"Greatly increases the chance to hit of your attacks for a few seconds. Slightly increases damage and range. Recharge: Long","display_short_help":"Self +To Hit, +DMG, +Range","display_info":{"Recharge Time":"1m 30s","Endurance Cost":"5.20","Effect Area":"Single Target","Target Type":"Self","Power Type":"Click","Available Level":"8","Activation Time":"1.17s"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["To Hit Buff"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":90.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":50.0,"display_info":["50.00% to hit for 10s on self","Unresistable"],"base_value":0.1,"scale":5.0}]},{"attributes":["Range"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":33.3,"display_info":["33.30% strength to range for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.333}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":50.0,"display_info":["50.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":5.0}]}]}]},{"name":"Sentinel_Ranged.Archery.Explosive_Arrow","display_name":"Explosive Arrow","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/02/archery_explodingarrow.png","display_help":"You fire a grenade-tipped arrow at long range. This explosion affects all within the blast radius, and can knock them back. Damage: Moderate, Recharge: Slow","display_short_help":"Ranged (Targeted AoE), Moderate DMG(Lethal/Smash), Knockback","display_info":{"Effect Area":"AoE — 15 ft. radius (10 targets max)","Recharge Time":"16s","Activation Time":"1s","Endurance Cost":"15.18","Target Type":"Enemies","Power Range":"60 ft.","Power Type":"Click","Attack Types":"Area, Lethal, Smashing","Available Level":"12"},"attack_types":["Area_Def","Lethal_Def","Smashing_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Sentinel Archetype Sets","Knockback","Targeted AoE Damage","Universal Damage Sets"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.16,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":15.0,"range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.8,"recharge_time":16.0,"endurance_cost":15.18},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":15.85,"average":15.85,"per_activation":15.85,"per_cast_cycle":0.93,"display_info":["15.85 smashing damage on target"],"base_value":-52.8297,"scale":0.3}]},{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":31.7,"average":31.7,"per_activation":31.7,"per_cast_cycle":1.86,"display_info":["31.70 lethal damage on target"],"base_value":-52.8297,"scale":0.6}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":12.15,"average":12.15,"per_activation":12.15,"per_cast_cycle":0.71,"display_info":["12.15 smashing damage on target"],"base_value":-45.5837,"scale":0.2666}]},{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":24.25,"average":24.25,"per_activation":24.25,"per_cast_cycle":1.43,"display_info":["24.25 lethal damage on target"],"base_value":-45.5837,"scale":0.532}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":50.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","magnitude":3.32,"display_info":["50.00% chance for 3.3 magnitude knock on target"],"base_value":1.6617,"scale":2.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":50.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","magnitude":3.32,"display_info":["50.00% chance for 3.3 magnitude knock on target"],"base_value":1.6617,"scale":2.0}]}]}]},{"name":"Sentinel_Ranged.Archery.Blazing_Arrow","display_name":"Blazing Arrow","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e7/archery_flamingarrow.png","display_help":"You fire a Blazing Arrow at your foe, dealing some Lethal damage and causing them to catch on fire and burn. Damage: High, Recharge: Moderate","display_short_help":"Ranged, High DMG(Lethal), Minor DoT(Fire)","display_info":{"Recharge Time":"10s","Effect Area":"Single Target","Available Level":"18","Endurance Cost":"10.19","Activation Time":"1.83s","Power Type":"Click","Target Type":"Enemies","Attack Types":"Ranged, Lethal, Fire","Power Range":"60 ft."},"attack_types":["Ranged_Def","Lethal_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Ranged Damage","Sentinel Archetype Sets","Universal Damage Sets"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":1.16,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.83,"animation_time":1.83,"animation_time_before_hit":1.6,"recharge_time":10.0,"endurance_cost":10.19},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":103.55,"average":103.55,"per_activation":56.58,"per_cast_cycle":8.75,"display_info":["103.55 lethal damage on target"],"base_value":-52.8297,"scale":1.96}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":142.9,"average":142.9,"per_activation":78.09,"per_cast_cycle":12.08,"display_info":["142.90 lethal damage on target"],"base_value":-45.5837,"scale":3.135}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.125,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":6.6,"average":6.6,"per_activation":3.61,"per_cast_cycle":0.56,"display_info":["5 ticks of 6.60 fire damage over 4.13s on target after 0.5s delay"],"base_value":-52.8297,"scale":0.125}]}]}]},{"name":"Sentinel_Ranged.Archery.Ranged_Shot","display_name":"Perfect Shot","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/67/archery_heavy.png","display_help":"A perfectly aimed and fast shot that blasts your foes. Damage: Very High, Recharge: Slow","display_short_help":"Very High DMG(Lethal)","display_info":{"Effect Area":"Single Target","Recharge Time":"12s","Activation Time":"1.67s","Endurance Cost":"11.86","Power Type":"Click","Attack Types":"Ranged, Lethal","Power Range":"60 ft.","Target Type":"Enemies","Available Level":"26"},"attack_types":["Ranged_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Ranged Damage","Sentinel Archetype Sets"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.39,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.8,"recharge_time":12.0,"endurance_cost":11.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":120.45,"average":120.45,"per_activation":72.13,"per_cast_cycle":8.81,"display_info":["120.45 lethal damage on target"],"base_value":-52.8297,"scale":2.28}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":93.4,"average":93.4,"per_activation":55.93,"per_cast_cycle":6.83,"display_info":["93.40 lethal damage on target"],"base_value":-45.5837,"scale":2.049}]}]}]},{"name":"Sentinel_Ranged.Archery.Rain_of_Arrows","display_name":"Rain of Arrows","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/56/archery_rainofarrows.png","display_help":"You unleash a Rain of Arrows on a targeted location, damaging foes within a large area. Damage: Extreme (DoT), Recharge: Long","display_short_help":"Ranged (Location AoE), Extreme DoT(Lethal)","display_info":{"Power Type":"Click","Endurance Cost":"15.60","Available Level":"32","Activation Time":"2s","Target Type":"Location","Recharge Time":"1m 35s","Power Range":"40 ft.","Effect Area":"Location"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Sentinel Archetype Sets","Targeted AoE Damage"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":40.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.0,"animation_time":2.0,"animation_time_before_hit":1.8,"recharge_time":95.0,"endurance_cost":15.6},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":3.0,"flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_RainofArrows_Visual","display_name":"Rain of Arrows","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Pets.RainofArrows_Visual.RainofArrows","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/rainofarrows-visual/"}]}},"stacking":{"behavior":"Stack","by_caster":true}},{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":1.0,"after_delay_seconds":1.8,"flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_RainofArrows_Sentinel","display_name":"Rain of Arrows","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Pets.RainofArrows_Sentinel.RainofArrows","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/rainofarrows-sentinel/"},{"name":"Pets.RainofArrows_Sentinel.Avoid","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/rainofarrows-sentinel/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Sentinel_Ranged.Archery",
+  "display_name": "Archery",
+  "display_help": "The ancient art of Archery allows you to use a Bow and Arrow to great effect. This power set has an inherent bonus to Accuracy.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/f2/archery_quickarrow.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Sentinel_Ranged.Archery.Snap_Shot",
+    "Sentinel_Ranged.Archery.Aimed_Shot",
+    "Sentinel_Ranged.Archery.Fistful_of_Arrows",
+    "Sentinel_Ranged.Archery.Stunning_Shot",
+    "Sentinel_Ranged.Archery.Aim",
+    "Sentinel_Ranged.Archery.Explosive_Arrow",
+    "Sentinel_Ranged.Archery.Blazing_Arrow",
+    "Sentinel_Ranged.Archery.Ranged_Shot",
+    "Sentinel_Ranged.Archery.Rain_of_Arrows"
+  ],
+  "powers": [
+    {
+      "name": "Sentinel_Ranged.Archery.Snap_Shot",
+      "display_name": "Snap Shot",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/f2/archery_quickarrow.png",
+      "display_help": "A quick attack that fires an arrow at your foe after only minimal aiming. Fast, but little damage. Damage: Minor, Recharge: Very Fast",
+      "display_short_help": "Ranged, Minor DMG(Lethal)",
+      "display_info": {
+        "Power Type": "Click",
+        "Attack Types": "Ranged, Lethal",
+        "Recharge Time": "2s",
+        "Activation Time": "1s",
+        "Target Type": "Enemies",
+        "Endurance Cost": "3.54",
+        "Power Range": "60 ft.",
+        "Effect Area": "Single Target",
+        "Available Level": "1"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sentinel Archetype Sets",
+        "Universal Damage Sets",
+        "Ranged Damage"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.16,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.73,
+        "recharge_time": 2.0,
+        "endurance_cost": 3.54
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 44.38,
+                  "average": 44.38,
+                  "per_activation": 44.38,
+                  "per_cast_cycle": 14.79,
+                  "display_info": [
+                    "44.38 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 81.04,
+                  "average": 81.04,
+                  "per_activation": 81.04,
+                  "per_cast_cycle": 27.01,
+                  "display_info": [
+                    "81.04 lethal damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 1.7778
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "StackByAttribAndKey"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": false,
+                "key": "Vulnerability"
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Vulnerability",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Designer Status"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Unset Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Opportunity_Lock",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Archery.Aimed_Shot",
+      "display_name": "Aimed Shot",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/7e/archery_mediumarrow.png",
+      "display_help": "Though it takes longer to execute, your Aimed Shot deals greater damage than Snap Shot. Damage: High, Recharge: Fast",
+      "display_short_help": "Ranged, High DMG(Lethal)",
+      "display_info": {
+        "Recharge Time": "4s",
+        "Attack Types": "Ranged, Lethal",
+        "Power Range": "60 ft.",
+        "Target Type": "Enemies",
+        "Endurance Cost": "5.20",
+        "Effect Area": "Single Target",
+        "Power Type": "Click",
+        "Available Level": "1",
+        "Activation Time": "1s"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Sentinel Archetype Sets",
+        "Ranged Damage"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.16,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.8,
+        "recharge_time": 4.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 52.83,
+                  "average": 52.83,
+                  "per_activation": 52.83,
+                  "per_cast_cycle": 10.57,
+                  "display_info": [
+                    "52.83 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 86.54,
+                  "average": 86.54,
+                  "per_activation": 86.54,
+                  "per_cast_cycle": 17.31,
+                  "display_info": [
+                    "86.54 lethal damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 1.8984
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "StackByAttribAndKey"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": false,
+                "key": "Vulnerability"
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Vulnerability",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Designer Status"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Unset Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Opportunity_Lock",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Archery.Fistful_of_Arrows",
+      "display_name": "Fistful of Arrows",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/5c/archery_conearrow.png",
+      "display_help": "You fire a fistful of arrows at foes in a cone in front of you. Good at close range. Damage: Moderate, Recharge: Moderate",
+      "display_short_help": "Ranged (Cone), Moderate DMG(Lethal)",
+      "display_info": {
+        "Effect Area": "Cone — 40 ft. radius 50° arc (6 targets max)",
+        "Activation Time": "1.17s",
+        "Recharge Time": "8s",
+        "Power Range": "40 ft.",
+        "Endurance Cost": "8.53",
+        "Target Type": "Enemies",
+        "Attack Types": "Ranged, Lethal",
+        "Power Type": "Click",
+        "Available Level": "2"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Targeted AoE Damage",
+        "Sentinel Archetype Sets",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.16,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 6,
+        "radius_feet": 40.0,
+        "arc_degrees": 50.0,
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.9,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 48.08,
+                  "average": 48.08,
+                  "per_activation": 41.09,
+                  "per_cast_cycle": 5.24,
+                  "display_info": [
+                    "48.08 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.91
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 43.16,
+                  "average": 43.16,
+                  "per_activation": 36.89,
+                  "per_cast_cycle": 4.71,
+                  "display_info": [
+                    "43.16 lethal damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.9469
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Archery.Stunning_Shot",
+      "display_name": "Stunning Shot",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b4/archery_stunarrow.png",
+      "display_help": "You fire a blunt, weighted arrow at your target's chest. The Stunning Shot inflicts high damage and has a good chance of stunning your foe. Damage: High, Recharge: Moderate",
+      "display_short_help": "Ranged Disorient, High DMG(Smashing)",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Available Level": "6",
+        "Endurance Cost": "8.53",
+        "Target Type": "Enemies",
+        "Recharge Time": "8s",
+        "Activation Time": "1s",
+        "Power Type": "Click",
+        "Power Range": "60 ft.",
+        "Attack Types": "Ranged, Smashing"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Ranged Damage",
+        "Universal Damage Sets",
+        "Stuns",
+        "Sentinel Archetype Sets"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.16,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.77,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 86.64,
+                  "average": 86.64,
+                  "per_activation": 86.64,
+                  "per_cast_cycle": 9.63,
+                  "display_info": [
+                    "86.64 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.64
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 stun for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "duration_seconds": 4.77,
+                  "display_info": [
+                    "3.0 stun for 4.77s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 4.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Archery.Aim",
+      "display_name": "Aim",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e5/archery_aim.png",
+      "display_help": "Greatly increases the chance to hit of your attacks for a few seconds. Slightly increases damage and range. Recharge: Long",
+      "display_short_help": "Self +To Hit, +DMG, +Range",
+      "display_info": {
+        "Activation Time": "1.17s",
+        "Power Type": "Click",
+        "Available Level": "8",
+        "Effect Area": "Single Target",
+        "Recharge Time": "1m 30s",
+        "Endurance Cost": "5.20",
+        "Target Type": "Self"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 90.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% to hit for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Range"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 33.3,
+                  "display_info": [
+                    "33.30% strength to range for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.333
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Archery.Explosive_Arrow",
+      "display_name": "Explosive Arrow",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/02/archery_explodingarrow.png",
+      "display_help": "You fire a grenade-tipped arrow at long range. This explosion affects all within the blast radius, and can knock them back. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "Ranged (Targeted AoE), Moderate DMG(Lethal/Smash), Knockback",
+      "display_info": {
+        "Attack Types": "Area, Lethal, Smashing",
+        "Endurance Cost": "15.18",
+        "Activation Time": "1s",
+        "Effect Area": "AoE — 15 ft. radius (10 targets max)",
+        "Power Type": "Click",
+        "Available Level": "12",
+        "Power Range": "60 ft.",
+        "Recharge Time": "16s",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Lethal_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sentinel Archetype Sets",
+        "Universal Damage Sets",
+        "Targeted AoE Damage",
+        "Knockback"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.16,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 15.0,
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.8,
+        "recharge_time": 16.0,
+        "endurance_cost": 15.18
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 15.85,
+                  "average": 15.85,
+                  "per_activation": 15.85,
+                  "per_cast_cycle": 0.93,
+                  "display_info": [
+                    "15.85 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.3
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 31.7,
+                  "average": 31.7,
+                  "per_activation": 31.7,
+                  "per_cast_cycle": 1.86,
+                  "display_info": [
+                    "31.70 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 12.15,
+                  "average": 12.15,
+                  "per_activation": 12.15,
+                  "per_cast_cycle": 0.71,
+                  "display_info": [
+                    "12.15 smashing damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.2666
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 24.25,
+                  "average": 24.25,
+                  "per_activation": 24.25,
+                  "per_cast_cycle": 1.43,
+                  "display_info": [
+                    "24.25 lethal damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.532
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "magnitude": 3.32,
+                  "display_info": [
+                    "50.00% chance for 3.3 magnitude knock on target"
+                  ],
+                  "base_value": 1.6617,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "magnitude": 3.32,
+                  "display_info": [
+                    "50.00% chance for 3.3 magnitude knock on target"
+                  ],
+                  "base_value": 1.6617,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Archery.Blazing_Arrow",
+      "display_name": "Blazing Arrow",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e7/archery_flamingarrow.png",
+      "display_help": "You fire a Blazing Arrow at your foe, dealing some Lethal damage and causing them to catch on fire and burn. Damage: High, Recharge: Moderate",
+      "display_short_help": "Ranged, High DMG(Lethal), Minor DoT(Fire)",
+      "display_info": {
+        "Attack Types": "Ranged, Lethal, Fire",
+        "Available Level": "18",
+        "Target Type": "Enemies",
+        "Recharge Time": "10s",
+        "Effect Area": "Single Target",
+        "Activation Time": "1.83s",
+        "Endurance Cost": "10.19",
+        "Power Range": "60 ft.",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Lethal_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Ranged Damage",
+        "Sentinel Archetype Sets",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.16,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.83,
+        "animation_time": 1.83,
+        "animation_time_before_hit": 1.6,
+        "recharge_time": 10.0,
+        "endurance_cost": 10.19
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 103.55,
+                  "average": 103.55,
+                  "per_activation": 56.58,
+                  "per_cast_cycle": 8.75,
+                  "display_info": [
+                    "103.55 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.96
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 142.9,
+                  "average": 142.9,
+                  "per_activation": 78.09,
+                  "per_cast_cycle": 12.08,
+                  "display_info": [
+                    "142.90 lethal damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 3.135
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.125,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 6.6,
+                  "average": 6.6,
+                  "per_activation": 3.61,
+                  "per_cast_cycle": 0.56,
+                  "display_info": [
+                    "5 ticks of 6.60 fire damage over 4.13s on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.125
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Archery.Ranged_Shot",
+      "display_name": "Perfect Shot",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/67/archery_heavy.png",
+      "display_help": "A perfectly aimed and fast shot that blasts your foes. Damage: Very High, Recharge: Slow",
+      "display_short_help": "Very High DMG(Lethal)",
+      "display_info": {
+        "Activation Time": "1.67s",
+        "Target Type": "Enemies",
+        "Recharge Time": "12s",
+        "Attack Types": "Ranged, Lethal",
+        "Power Range": "60 ft.",
+        "Effect Area": "Single Target",
+        "Available Level": "26",
+        "Endurance Cost": "11.86",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sentinel Archetype Sets",
+        "Ranged Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.39,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.8,
+        "recharge_time": 12.0,
+        "endurance_cost": 11.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 120.45,
+                  "average": 120.45,
+                  "per_activation": 72.13,
+                  "per_cast_cycle": 8.81,
+                  "display_info": [
+                    "120.45 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 2.28
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 93.4,
+                  "average": 93.4,
+                  "per_activation": 55.93,
+                  "per_cast_cycle": 6.83,
+                  "display_info": [
+                    "93.40 lethal damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 2.049
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Archery.Rain_of_Arrows",
+      "display_name": "Rain of Arrows",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/56/archery_rainofarrows.png",
+      "display_help": "You unleash a Rain of Arrows on a targeted location, damaging foes within a large area. Damage: Extreme (DoT), Recharge: Long",
+      "display_short_help": "Ranged (Location AoE), Extreme DoT(Lethal)",
+      "display_info": {
+        "Endurance Cost": "15.60",
+        "Activation Time": "2s",
+        "Recharge Time": "1m 35s",
+        "Power Type": "Click",
+        "Available Level": "32",
+        "Effect Area": "Location",
+        "Power Range": "40 ft.",
+        "Target Type": "Location"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sentinel Archetype Sets",
+        "Targeted AoE Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.0,
+        "animation_time": 2.0,
+        "animation_time_before_hit": 1.8,
+        "recharge_time": 95.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 3.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_RainofArrows_Visual",
+                  "display_name": "Rain of Arrows",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Pets.RainofArrows_Visual.RainofArrows",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/rainofarrows-visual/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 1.0,
+              "after_delay_seconds": 1.8,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_RainofArrows_Sentinel",
+                  "display_name": "Rain of Arrows",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Pets.RainofArrows_Sentinel.RainofArrows",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/rainofarrows-sentinel/"
+                    },
+                    {
+                      "name": "Pets.RainofArrows_Sentinel.Avoid",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/rainofarrows-sentinel/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

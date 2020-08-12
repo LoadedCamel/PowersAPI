@@ -1,1 +1,608 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Villain_Pets.Poison_Poison_Gas","display_name":"Poison Trap","display_help":"Poison","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/8d/poison_trap.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Villain_Pets.Poison_Poison_Gas.Poison_Trap","Villain_Pets.Poison_Poison_Gas.Initial_Poison_Gas","Villain_Pets.Poison_Poison_Gas.Self_Destruct"],"powers":[{"name":"Villain_Pets.Poison_Poison_Gas.Poison_Trap","display_name":"Poison Trap","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/8d/poison_trap.png","display_help":"The Poison Trap is making you tired and choking. The gas has drained some of your Endurance and you feel nauseous.","display_short_help":"Sleep","display_info":{"Power Type":"Auto","Recharge Time":"16m 40s","Target Type":"Self","Attack Types":"Area","Available Level":"1","Effect Area":"AoE — 15 ft. radius (16 targets max)"},"attack_types":["Area_Def"],"enhancements_allowed":["Enhance Endurance Modification","Enhance Hold","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":15.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":1000.0,"auto_cast_interval":1.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":2.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":4.0,"display_info":["2.00% chance for 3.0 hold for 4s on target after 0.25s delay"],"base_value":1.0,"scale":4.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":2.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":2.0,"display_info":["2.00% chance for 3.0 hold for 2s on target after 0.25s delay"],"base_value":1.0,"scale":2.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":1.5,"requires":["target>enttype == critter"],"effects":[{"attributes":["Endurance"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-10.0,"display_info":["1.50% chance for -10.00% endurance on target"],"base_value":1.0,"scale":-0.1}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":1.5,"requires":["target>enttype == player"],"effects":[{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","value":-2.25,"average":-0.03,"display_info":["1.50% chance for -2.25 endurance on target"],"base_value":0.75,"scale":-3.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Affected","magnitude":10.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-100.0,"display_info":["-100.00% recovery rate on target"],"base_value":1.0,"scale":-1.0}]},{"attributes":["Null"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","damage":1.67,"average":1.67,"display_info":["1.67 toxic damage on target"],"base_value":-55.6102,"scale":0.03}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":1.0,"requires":["(target>enttype == critter) && target.HasTag?(Human)"],"effects":[{"attributes":["Stealth"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.0,"continuous_apply_seconds":1.0,"ticks":5,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":100000.0,"display_info":["100000.00% (unknown) for 4s on target","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1000.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":1.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Stealth"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.0,"continuous_apply_seconds":1.0,"ticks":5,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":100000.0,"display_info":["100000.00% (unknown) for 4s on target","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1000.0}]}]}]},{"name":"Villain_Pets.Poison_Poison_Gas.Initial_Poison_Gas","display_name":"Poison Gas","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/64/traps_droppedaoedebuffattackspeed.png","display_help":"You are caught within a Poison Gas Trap. The poison is making you choke.","display_short_help":"Choke","display_info":{"Available Level":"1","Power Type":"Auto","Effect Area":"AoE — 25 ft. radius (16 targets max)","Target Type":"Self"},"enhancements_allowed":["Enhance Endurance Modification","Enhance Hold","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":25.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"auto_cast_interval":1000.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":8.0,"display_info":["3.0 hold for 8s on target after 0.25s delay"],"base_value":1.0,"scale":8.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":2.0,"display_info":["3.0 hold for 2s on target after 0.25s delay"],"base_value":1.0,"scale":2.0}]}]}]},{"name":"Villain_Pets.Poison_Poison_Gas.Self_Destruct","display_name":"Self Destruct","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/2b/powerblast_novablast.png","display_help":"Self Destruct","display_short_help":"Self Destruct","display_info":{"Power Type":"Auto","Effect Area":"Single Target","Target Type":"Self","Available Level":"1"},"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Silent Kill"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","after_delay_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Villain_Pets.Poison_Poison_Gas",
+  "display_name": "Poison Trap",
+  "display_help": "Poison",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/8d/poison_trap.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Villain_Pets.Poison_Poison_Gas.Poison_Trap",
+    "Villain_Pets.Poison_Poison_Gas.Initial_Poison_Gas",
+    "Villain_Pets.Poison_Poison_Gas.Self_Destruct"
+  ],
+  "powers": [
+    {
+      "name": "Villain_Pets.Poison_Poison_Gas.Poison_Trap",
+      "display_name": "Poison Trap",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/8d/poison_trap.png",
+      "display_help": "The Poison Trap is making you tired and choking. The gas has drained some of your Endurance and you feel nauseous.",
+      "display_short_help": "Sleep",
+      "display_info": {
+        "Recharge Time": "16m 40s",
+        "Available Level": "1",
+        "Power Type": "Auto",
+        "Effect Area": "AoE — 15 ft. radius (16 targets max)",
+        "Attack Types": "Area",
+        "Target Type": "Self"
+      },
+      "attack_types": [
+        "Area_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Enhance Hold",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 15.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 1000.0,
+        "auto_cast_interval": 1.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 2.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "2.00% chance for 3.0 hold for 4s on target after 0.25s delay"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 4.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 2.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "2.00% chance for 3.0 hold for 2s on target after 0.25s delay"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 1.5,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -10.0,
+                  "display_info": [
+                    "1.50% chance for -10.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 1.5,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "value": -2.25,
+                  "average": -0.03,
+                  "display_info": [
+                    "1.50% chance for -2.25 endurance on target"
+                  ],
+                  "base_value": 0.75,
+                  "scale": -3.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 10.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Null"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 1.67,
+                  "average": 1.67,
+                  "display_info": [
+                    "1.67 toxic damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.03
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 1.0,
+          "requires": [
+            "(target>enttype == critter) && target.HasTag?(Human)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stealth"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.0,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 100000.0,
+                  "display_info": [
+                    "100000.00% (unknown) for 4s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1000.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 1.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Stealth"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.0,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 100000.0,
+                  "display_info": [
+                    "100000.00% (unknown) for 4s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1000.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Villain_Pets.Poison_Poison_Gas.Initial_Poison_Gas",
+      "display_name": "Poison Gas",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/64/traps_droppedaoedebuffattackspeed.png",
+      "display_help": "You are caught within a Poison Gas Trap. The poison is making you choke.",
+      "display_short_help": "Choke",
+      "display_info": {
+        "Available Level": "1",
+        "Target Type": "Self",
+        "Power Type": "Auto",
+        "Effect Area": "AoE — 25 ft. radius (16 targets max)"
+      },
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Enhance Hold",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 25.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "auto_cast_interval": 1000.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 8.0,
+                  "display_info": [
+                    "3.0 hold for 8s on target after 0.25s delay"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 hold for 2s on target after 0.25s delay"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Villain_Pets.Poison_Poison_Gas.Self_Destruct",
+      "display_name": "Self Destruct",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/2b/powerblast_novablast.png",
+      "display_help": "Self Destruct",
+      "display_short_help": "Self Destruct",
+      "display_info": {
+        "Target Type": "Self",
+        "Power Type": "Auto",
+        "Effect Area": "Single Target",
+        "Available Level": "1"
+      },
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Silent Kill"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "after_delay_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

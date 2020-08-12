@@ -1,1 +1,3364 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Epic.Dominator_Mu_Mastery","display_name":"Mu Mastery","display_help":"Scirocco has taught you the ancient powers of the Mu. In their eternal struggle against the Oranbega, the Mu have unlocked many mystical powers, including their very signature crimson lightning. Now you posses these their secrets.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e3/arachnos_patron_pbaoedrain.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Epic.Dominator_Mu_Mastery.Power_Sink","Epic.Dominator_Mu_Mastery.Charged_Armor","Epic.Dominator_Mu_Mastery.Ball_Lightning","Epic.Dominator_Mu_Mastery.Surge_of_Power","Epic.Dominator_Mu_Mastery.Summon_Guardian"],"powers":[{"name":"Epic.Dominator_Mu_Mastery.Power_Sink","display_name":"Power Sink","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e3/arachnos_patron_pbaoedrain.png","display_help":"Power Sink leeches energy directly from the bodies of all nearby foes, draining their Endurance. Each foe you draw energy from increases your Endurance. If there are no foes within range, you will not gain any Endurance. Recharge: Long","display_short_help":"PBAoE, Self +End, Foe -End","display_info":{"Target Type":"Self","Effect Area":"AoE — 10 ft. radius (10 targets max)","Endurance Cost":"16.25","Available Level":"35","Power Type":"Click","Attack Types":"Area, Energy","Recharge Time":"2m 0s","Activation Time":"2.03s"},"requires":"(($archetype == @Class_Dominator) || ($archetype == @Class_Controller)) && (((Owned?(SpidersKissPatron) || Owned?(TheStingerPatron)) || Owned?(BloodInTheWaterPatron)) || Owned?(MiragePatron))","attack_types":["Area_Def","Energy_Def"],"enhancements_allowed":["Enhance Endurance Modification","Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed"],"enhancement_set_categories_allowed":["Endurance Modification"],"available_at_level":35,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":10.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All","Disable_Pool","Disable_Epic"],"activate":{"cast_time":2.03,"animation_time":2.03,"animation_time_before_hit":0.83,"recharge_time":120.0,"endurance_cost":16.25},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Endurance"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","percent":-35.0,"display_info":["-35.00% endurance on target"],"base_value":1.0,"scale":-0.35},{"archetype":"Dominator","percent":-35.0,"display_info":["-35.00% endurance on target"],"base_value":1.0,"scale":-0.35}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","value":-11.0,"average":-11.0,"per_activation":-5.42,"per_cast_cycle":-0.09,"display_info":["-11.00 endurance on target"],"base_value":1.1,"scale":-10.0},{"archetype":"Dominator","value":-11.0,"average":-11.0,"per_activation":-5.42,"per_cast_cycle":-0.09,"display_info":["-11.00 endurance on target"],"base_value":1.1,"scale":-10.0}]}]},{"visible_in_info_window":true,"chance_percent":30.0,"effects":[{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Dominator","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Self","magnitude":1.0,"duration":"Instant","after_delay_seconds":0.25,"flags":["IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","value":25.0,"average":25.0,"per_activation":12.32,"per_cast_cycle":0.2,"display_info":["25.00 endurance on self after 0.25s delay","Unresistable"],"base_value":1.0,"scale":25.0},{"archetype":"Dominator","value":25.0,"average":25.0,"per_activation":12.32,"per_cast_cycle":0.2,"display_info":["25.00 endurance on self after 0.25s delay","Unresistable"],"base_value":1.0,"scale":25.0}]}]}]},{"name":"Epic.Dominator_Mu_Mastery.Charged_Armor","display_name":"Charged Armor","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/1d/arachnos_patron_resistbuff.png","display_help":"When you toggle on this power, you are surrounded in a charged field that makes you highly resistant to Smashing, Lethal and Energy damage. Recharge: Fast","display_short_help":"Toggle: Self +Res(Smash, Lethal, Energy)","display_info":{"Endurance Cost":"0.32/s","Activation Time":"0.67s","Effect Area":"Single Target","Recharge Time":"4s","Power Type":"Toggle","Target Type":"Self","Available Level":"35"},"requires":"(($archetype == @Class_Dominator) || ($archetype == @Class_Controller)) && (((Owned?(SpidersKissPatron) || Owned?(TheStingerPatron)) || Owned?(BloodInTheWaterPatron)) || Owned?(MiragePatron))","enhancements_allowed":["Enhance Damage Resistance","Reduce Endurance Cost","Enhance Recharge Speed"],"enhancement_set_categories_allowed":["Resist Damage"],"available_at_level":35,"auto_issue":false,"power_type":"Toggle","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All","Disable_Pool","Disable_Epic"],"status_interaction":{"cast_through":["Sleep","Stun"],"toggle_ignores":["Hold"]},"activate":{"cast_time":0.67,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":4.0,"auto_cast_interval":0.5,"endurance_cost":0.16},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["!isPVPMap?()"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Energy_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Controller","percent":27.5,"display_info":["27.50% resistance to smashing damage, lethal damage, energy damage for 0.75s on self","Unresistable"],"base_value":0.1,"scale":2.75},{"archetype":"Dominator","percent":23.38,"display_info":["23.38% resistance to smashing damage, lethal damage, energy damage for 0.75s on self","Unresistable"],"base_value":0.085,"scale":2.75}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["isPVPMap?()"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.75,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Controller","percent":27.5,"display_info":["27.50% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 0.75s on self","Unresistable"],"base_value":0.1,"scale":2.75},{"archetype":"Dominator","percent":23.38,"display_info":["23.38% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 0.75s on self","Unresistable"],"base_value":0.085,"scale":2.75}]}]}]},{"name":"Epic.Dominator_Mu_Mastery.Ball_Lightning","display_name":"Ball Lightning","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/3d/arachnos_patron_rangedaoemoderatedmg.png","display_help":"Hurls a highly charged ball of Mu lightning that explodes on contact. Ball Lightning deals good damage in an area of effect, and drains some Endurance from each target it hits. You must be level 41 and have Power Sink or Charged Armor before selecting this power. Damage: Moderate(DoT), Recharge: Slow","display_short_help":"Ranged (Targeted AoE), Moderate DoT(Energy), Foe -End","display_info":{"Target Type":"Enemies","Power Type":"Click","Available Level":"41","Recharge Time":"32s","Effect Area":"AoE — 15 ft. radius (16 targets max)","Attack Types":"Area, Energy","Activation Time":"1.07s","Power Range":"80 ft.","Endurance Cost":"18.98"},"requires":"(((Owned?(SpidersKissPatron) || Owned?(TheStingerPatron)) || Owned?(BloodInTheWaterPatron)) || Owned?(MiragePatron)) && (Epic.Dominator_Mu_Mastery.Power_Sink || Epic.Dominator_Mu_Mastery.Charged_Armor)","attack_types":["Area_Def","Energy_Def"],"enhancements_allowed":["Enhance Endurance Modification","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Targeted AoE Damage","Universal Damage Sets","Endurance Modification"],"available_at_level":41,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":15.0,"range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All","Disable_Pool","Disable_Epic"],"activate":{"cast_time":1.07,"animation_time":1.07,"animation_time_before_hit":0.67,"recharge_time":32.0,"endurance_cost":18.98},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Defender","damage":10.84,"average":10.84,"per_activation":10.13,"per_cast_cycle":0.33,"display_info":["10.84 energy damage on target"],"base_value":-36.1466,"scale":0.3},{"archetype":"Tanker","damage":13.35,"average":13.35,"per_activation":12.48,"per_cast_cycle":0.4,"display_info":["13.35 energy damage on target"],"base_value":-44.4882,"scale":0.3},{"archetype":"Sentinel","damage":15.85,"average":15.85,"per_activation":14.81,"per_cast_cycle":0.48,"display_info":["15.85 energy damage on target"],"base_value":-52.8297,"scale":0.3},{"archetype":"Stalker","damage":10.01,"average":10.01,"per_activation":9.36,"per_cast_cycle":0.3,"display_info":["10.01 energy damage on target"],"base_value":-33.3661,"scale":0.3},{"archetype":"Blaster","damage":18.77,"average":18.77,"per_activation":17.54,"per_cast_cycle":0.57,"display_info":["18.77 energy damage on target"],"base_value":-62.5615,"scale":0.3},{"archetype":"Mastermind","damage":9.18,"average":9.18,"per_activation":8.58,"per_cast_cycle":0.28,"display_info":["9.18 energy damage on target"],"base_value":-30.5856,"scale":0.3},{"archetype":"Arachnos Soldier","damage":16.68,"average":16.68,"per_activation":15.59,"per_cast_cycle":0.5,"display_info":["16.68 energy damage on target"],"base_value":-55.6102,"scale":0.3},{"archetype":"Controller","damage":9.18,"average":9.18,"per_activation":8.58,"per_cast_cycle":0.28,"display_info":["9.18 energy damage on target"],"base_value":-30.5856,"scale":0.3},{"archetype":"Brute","damage":12.51,"average":12.51,"per_activation":11.69,"per_cast_cycle":0.38,"display_info":["12.51 energy damage on target"],"base_value":-41.7077,"scale":0.3},{"archetype":"Arachnos Widow","damage":16.68,"average":16.68,"per_activation":15.59,"per_cast_cycle":0.5,"display_info":["16.68 energy damage on target"],"base_value":-55.6102,"scale":0.3},{"archetype":"Warshade","damage":13.35,"average":13.35,"per_activation":12.48,"per_cast_cycle":0.4,"display_info":["13.35 energy damage on target"],"base_value":-44.4882,"scale":0.3},{"archetype":"Dominator","damage":15.85,"average":15.85,"per_activation":14.81,"per_cast_cycle":0.48,"display_info":["15.85 energy damage on target"],"base_value":-52.8297,"scale":0.3},{"archetype":"Scrapper","damage":8.34,"average":8.34,"per_activation":7.79,"per_cast_cycle":0.25,"display_info":["8.34 energy damage on target"],"base_value":-27.8051,"scale":0.3},{"archetype":"Peacebringer","damage":13.35,"average":13.35,"per_activation":12.48,"per_cast_cycle":0.4,"display_info":["13.35 energy damage on target"],"base_value":-44.4882,"scale":0.3},{"archetype":"Corruptor","damage":12.51,"average":12.51,"per_activation":11.69,"per_cast_cycle":0.38,"display_info":["12.51 energy damage on target"],"base_value":-41.7077,"scale":0.3}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"continuous_apply_seconds":1.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Defender","damage":6.51,"average":6.51,"per_activation":6.08,"per_cast_cycle":0.2,"display_info":["4 ticks of 6.51 energy damage over 3.1s on target"],"base_value":-36.1466,"scale":0.18},{"archetype":"Tanker","damage":8.01,"average":8.01,"per_activation":7.49,"per_cast_cycle":0.24,"display_info":["4 ticks of 8.01 energy damage over 3.1s on target"],"base_value":-44.4882,"scale":0.18},{"archetype":"Sentinel","damage":9.51,"average":9.51,"per_activation":8.89,"per_cast_cycle":0.29,"display_info":["4 ticks of 9.51 energy damage over 3.1s on target"],"base_value":-52.8297,"scale":0.18},{"archetype":"Stalker","damage":6.01,"average":6.01,"per_activation":5.62,"per_cast_cycle":0.18,"display_info":["4 ticks of 6.01 energy damage over 3.1s on target"],"base_value":-33.3661,"scale":0.18},{"archetype":"Blaster","damage":11.26,"average":11.26,"per_activation":10.52,"per_cast_cycle":0.34,"display_info":["4 ticks of 11.26 energy damage over 3.1s on target"],"base_value":-62.5615,"scale":0.18},{"archetype":"Mastermind","damage":5.51,"average":5.51,"per_activation":5.15,"per_cast_cycle":0.17,"display_info":["4 ticks of 5.51 energy damage over 3.1s on target"],"base_value":-30.5856,"scale":0.18},{"archetype":"Arachnos Soldier","damage":10.01,"average":10.01,"per_activation":9.36,"per_cast_cycle":0.3,"display_info":["4 ticks of 10.01 energy damage over 3.1s on target"],"base_value":-55.6102,"scale":0.18},{"archetype":"Controller","damage":5.51,"average":5.51,"per_activation":5.15,"per_cast_cycle":0.17,"display_info":["4 ticks of 5.51 energy damage over 3.1s on target"],"base_value":-30.5856,"scale":0.18},{"archetype":"Brute","damage":7.51,"average":7.51,"per_activation":7.02,"per_cast_cycle":0.23,"display_info":["4 ticks of 7.51 energy damage over 3.1s on target"],"base_value":-41.7077,"scale":0.18},{"archetype":"Arachnos Widow","damage":10.01,"average":10.01,"per_activation":9.36,"per_cast_cycle":0.3,"display_info":["4 ticks of 10.01 energy damage over 3.1s on target"],"base_value":-55.6102,"scale":0.18},{"archetype":"Warshade","damage":8.01,"average":8.01,"per_activation":7.49,"per_cast_cycle":0.24,"display_info":["4 ticks of 8.01 energy damage over 3.1s on target"],"base_value":-44.4882,"scale":0.18},{"archetype":"Dominator","damage":9.51,"average":9.51,"per_activation":8.89,"per_cast_cycle":0.29,"display_info":["4 ticks of 9.51 energy damage over 3.1s on target"],"base_value":-52.8297,"scale":0.18},{"archetype":"Scrapper","damage":5.0,"average":5.0,"per_activation":4.67,"per_cast_cycle":0.15,"display_info":["4 ticks of 5.00 energy damage over 3.1s on target"],"base_value":-27.8051,"scale":0.18},{"archetype":"Peacebringer","damage":8.01,"average":8.01,"per_activation":7.49,"per_cast_cycle":0.24,"display_info":["4 ticks of 8.01 energy damage over 3.1s on target"],"base_value":-44.4882,"scale":0.18},{"archetype":"Corruptor","damage":7.51,"average":7.51,"per_activation":7.02,"per_cast_cycle":0.23,"display_info":["4 ticks of 7.51 energy damage over 3.1s on target"],"base_value":-41.7077,"scale":0.18}]},{"attributes":["Endurance"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Defender","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Tanker","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Sentinel","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Stalker","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Blaster","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Mastermind","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Arachnos Soldier","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Controller","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Brute","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Arachnos Widow","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Warshade","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Dominator","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Scrapper","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Peacebringer","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07},{"archetype":"Corruptor","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Defender","damage":12.65,"average":12.65,"per_activation":11.82,"per_cast_cycle":0.38,"display_info":["12.65 energy damage on target"],"base_value":-56.4132,"scale":0.2242},{"archetype":"Tanker","damage":7.9,"average":7.9,"per_activation":7.38,"per_cast_cycle":0.24,"display_info":["7.90 energy damage on target"],"base_value":-35.2552,"scale":0.2242},{"archetype":"Sentinel","damage":10.22,"average":10.22,"per_activation":9.55,"per_cast_cycle":0.31,"display_info":["10.22 energy damage on target"],"base_value":-45.5837,"scale":0.2242},{"archetype":"Stalker","damage":7.59,"average":7.59,"per_activation":7.09,"per_cast_cycle":0.23,"display_info":["7.59 energy damage on target"],"base_value":-33.8449,"scale":0.2242},{"archetype":"Blaster","damage":17.24,"average":17.24,"per_activation":16.11,"per_cast_cycle":0.52,"display_info":["17.24 energy damage on target"],"base_value":-76.9134,"scale":0.2242},{"archetype":"Mastermind","damage":10.35,"average":10.35,"per_activation":9.67,"per_cast_cycle":0.31,"display_info":["10.35 energy damage on target"],"base_value":-46.1537,"scale":0.2242},{"archetype":"Arachnos Soldier","damage":12.65,"average":12.65,"per_activation":11.82,"per_cast_cycle":0.38,"display_info":["12.65 energy damage on target"],"base_value":-56.4132,"scale":0.2242},{"archetype":"Controller","damage":11.5,"average":11.5,"per_activation":10.75,"per_cast_cycle":0.35,"display_info":["11.50 energy damage on target"],"base_value":-51.2809,"scale":0.2242},{"archetype":"Brute","damage":8.43,"average":8.43,"per_activation":7.88,"per_cast_cycle":0.25,"display_info":["8.43 energy damage on target"],"base_value":-37.6097,"scale":0.2242},{"archetype":"Arachnos Widow","damage":12.65,"average":12.65,"per_activation":11.82,"per_cast_cycle":0.38,"display_info":["12.65 energy damage on target"],"base_value":-56.4132,"scale":0.2242},{"archetype":"Warshade","damage":11.97,"average":11.97,"per_activation":11.19,"per_cast_cycle":0.36,"display_info":["11.97 energy damage on target"],"base_value":-53.3852,"scale":0.2242},{"archetype":"Dominator","damage":16.58,"average":16.58,"per_activation":15.5,"per_cast_cycle":0.5,"display_info":["16.58 energy damage on target"],"base_value":-73.9593,"scale":0.2242},{"archetype":"Scrapper","damage":7.15,"average":7.15,"per_activation":6.68,"per_cast_cycle":0.22,"display_info":["7.15 energy damage on target"],"base_value":-31.9052,"scale":0.2242},{"archetype":"Peacebringer","damage":11.97,"average":11.97,"per_activation":11.19,"per_cast_cycle":0.36,"display_info":["11.97 energy damage on target"],"base_value":-53.3852,"scale":0.2242},{"archetype":"Corruptor","damage":12.65,"average":12.65,"per_activation":11.82,"per_cast_cycle":0.38,"display_info":["12.65 energy damage on target"],"base_value":-56.4132,"scale":0.2242}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"continuous_apply_seconds":1.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Defender","damage":5.9,"average":5.9,"per_activation":5.51,"per_cast_cycle":0.18,"display_info":["4 ticks of 5.90 energy damage over 3.1s on target"],"base_value":-56.4132,"scale":0.1046},{"archetype":"Tanker","damage":3.69,"average":3.69,"per_activation":3.45,"per_cast_cycle":0.11,"display_info":["4 ticks of 3.69 energy damage over 3.1s on target"],"base_value":-35.2552,"scale":0.1046},{"archetype":"Sentinel","damage":4.77,"average":4.77,"per_activation":4.46,"per_cast_cycle":0.14,"display_info":["4 ticks of 4.77 energy damage over 3.1s on target"],"base_value":-45.5837,"scale":0.1046},{"archetype":"Stalker","damage":3.54,"average":3.54,"per_activation":3.31,"per_cast_cycle":0.11,"display_info":["4 ticks of 3.54 energy damage over 3.1s on target"],"base_value":-33.8449,"scale":0.1046},{"archetype":"Blaster","damage":8.05,"average":8.05,"per_activation":7.52,"per_cast_cycle":0.24,"display_info":["4 ticks of 8.05 energy damage over 3.1s on target"],"base_value":-76.9134,"scale":0.1046},{"archetype":"Mastermind","damage":4.83,"average":4.83,"per_activation":4.51,"per_cast_cycle":0.15,"display_info":["4 ticks of 4.83 energy damage over 3.1s on target"],"base_value":-46.1537,"scale":0.1046},{"archetype":"Arachnos Soldier","damage":5.9,"average":5.9,"per_activation":5.51,"per_cast_cycle":0.18,"display_info":["4 ticks of 5.90 energy damage over 3.1s on target"],"base_value":-56.4132,"scale":0.1046},{"archetype":"Controller","damage":5.36,"average":5.36,"per_activation":5.01,"per_cast_cycle":0.16,"display_info":["4 ticks of 5.36 energy damage over 3.1s on target"],"base_value":-51.2809,"scale":0.1046},{"archetype":"Brute","damage":3.93,"average":3.93,"per_activation":3.67,"per_cast_cycle":0.12,"display_info":["4 ticks of 3.93 energy damage over 3.1s on target"],"base_value":-37.6097,"scale":0.1046},{"archetype":"Arachnos Widow","damage":5.9,"average":5.9,"per_activation":5.51,"per_cast_cycle":0.18,"display_info":["4 ticks of 5.90 energy damage over 3.1s on target"],"base_value":-56.4132,"scale":0.1046},{"archetype":"Warshade","damage":5.58,"average":5.58,"per_activation":5.21,"per_cast_cycle":0.17,"display_info":["4 ticks of 5.58 energy damage over 3.1s on target"],"base_value":-53.3852,"scale":0.1046},{"archetype":"Dominator","damage":7.74,"average":7.74,"per_activation":7.23,"per_cast_cycle":0.23,"display_info":["4 ticks of 7.74 energy damage over 3.1s on target"],"base_value":-73.9593,"scale":0.1046},{"archetype":"Scrapper","damage":3.34,"average":3.34,"per_activation":3.12,"per_cast_cycle":0.1,"display_info":["4 ticks of 3.34 energy damage over 3.1s on target"],"base_value":-31.9052,"scale":0.1046},{"archetype":"Peacebringer","damage":5.58,"average":5.58,"per_activation":5.21,"per_cast_cycle":0.17,"display_info":["4 ticks of 5.58 energy damage over 3.1s on target"],"base_value":-53.3852,"scale":0.1046},{"archetype":"Corruptor","damage":5.9,"average":5.9,"per_activation":5.51,"per_cast_cycle":0.18,"display_info":["4 ticks of 5.90 energy damage over 3.1s on target"],"base_value":-56.4132,"scale":0.1046}]},{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Defender","value":-1.56,"average":-1.56,"per_activation":-1.46,"per_cast_cycle":-0.05,"display_info":["-1.56 endurance on target"],"base_value":1.25,"scale":-1.25},{"archetype":"Tanker","value":-1.25,"average":-1.25,"per_activation":-1.17,"per_cast_cycle":-0.04,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25},{"archetype":"Sentinel","value":-1.25,"average":-1.25,"per_activation":-1.17,"per_cast_cycle":-0.04,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25},{"archetype":"Stalker","value":-1.25,"average":-1.25,"per_activation":-1.17,"per_cast_cycle":-0.04,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25},{"archetype":"Blaster","value":-1.25,"average":-1.25,"per_activation":-1.17,"per_cast_cycle":-0.04,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25},{"archetype":"Mastermind","value":-1.25,"average":-1.25,"per_activation":-1.17,"per_cast_cycle":-0.04,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25},{"archetype":"Arachnos Soldier","value":-1.25,"average":-1.25,"per_activation":-1.17,"per_cast_cycle":-0.04,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25},{"archetype":"Controller","value":-1.38,"average":-1.38,"per_activation":-1.29,"per_cast_cycle":-0.04,"display_info":["-1.38 endurance on target"],"base_value":1.1,"scale":-1.25},{"archetype":"Brute","value":-1.25,"average":-1.25,"per_activation":-1.17,"per_cast_cycle":-0.04,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25},{"archetype":"Arachnos Widow","value":-1.25,"average":-1.25,"per_activation":-1.17,"per_cast_cycle":-0.04,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25},{"archetype":"Warshade","value":-1.25,"average":-1.25,"per_activation":-1.17,"per_cast_cycle":-0.04,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25},{"archetype":"Dominator","value":-1.25,"average":-1.25,"per_activation":-1.17,"per_cast_cycle":-0.04,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25},{"archetype":"Scrapper","value":-1.25,"average":-1.25,"per_activation":-1.17,"per_cast_cycle":-0.04,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25},{"archetype":"Peacebringer","value":-1.25,"average":-1.25,"per_activation":-1.17,"per_cast_cycle":-0.04,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25},{"archetype":"Corruptor","value":-1.38,"average":-1.38,"per_activation":-1.29,"per_cast_cycle":-0.04,"display_info":["-1.38 endurance on target"],"base_value":1.1,"scale":-1.25}]}]},{"visible_in_info_window":true,"chance_percent":30.0,"effects":[{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Defender","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Tanker","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Sentinel","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Stalker","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Blaster","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Mastermind","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Arachnos Soldier","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Controller","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Brute","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Arachnos Widow","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Warshade","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Dominator","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Scrapper","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Peacebringer","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0},{"archetype":"Corruptor","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0}]}]},{"pve_or_pvp":"PVE","tags":["Containment"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["((target>enttype == critter) && (((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0)) || target.HasTag?(IncarnateBoss))) && (source>arch == Controller)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":31.2,"average":31.2,"per_activation":29.16,"per_cast_cycle":0.94,"display_info":["31.20 energy damage on target","Only against immobilized, held, sleeping or stunned targets"],"base_value":-30.5856,"scale":1.02}]}]},{"pve_or_pvp":"PVP","tags":["Containment"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["((target>enttype == player) && ((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0))) && (source>arch == Controller)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Controller","damage":38.33,"average":38.33,"per_activation":35.82,"per_cast_cycle":1.16,"display_info":["38.33 energy damage on target","Only against immobilized, held, sleeping or stunned targets"],"base_value":-51.2809,"scale":0.7474}]}]}]},{"name":"Epic.Dominator_Mu_Mastery.Surge_of_Power","display_name":"Surge of Power","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/80/arachnos_patron_selfbuffresistancephysical.png","display_help":"When you activate this power, you transform your body into living Electricity and become extremely resistant to all damage but Psionics, and your endurance recovery is also increased. Expending all this energy will leave you exhausted, drained of all your endurance and unable to recover endurance for a short time. You must be level 41 and have Power Sink or Charged Armor before selecting this power. Recharge: Extremely Long","display_short_help":"Self, +Res(Special)","display_info":{"Recharge Time":"16m 40s","Endurance Cost":"3.25","Target Type":"Self","Activation Time":"1.96s","Power Type":"Click","Effect Area":"Single Target","Available Level":"41"},"requires":"(((Owned?(SpidersKissPatron) || Owned?(TheStingerPatron)) || Owned?(BloodInTheWaterPatron)) || Owned?(MiragePatron)) && (Epic.Dominator_Mu_Mastery.Power_Sink || Epic.Dominator_Mu_Mastery.Charged_Armor)","enhancements_allowed":["Enhance Damage Resistance","Enhance Endurance Modification","Reduce Endurance Cost","Enhance Recharge Speed"],"enhancement_set_categories_allowed":["Endurance Modification","Resist Damage"],"available_at_level":41,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All","Disable_Pool","Disable_Epic"],"activate":{"cast_time":1.96,"animation_time":1.97,"animation_time_before_hit":0.57,"recharge_time":1000.0,"endurance_cost":3.25},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Defender","percent":50.0,"display_info":["50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":5.0},{"archetype":"Tanker","percent":50.0,"display_info":["50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":5.0},{"archetype":"Sentinel","percent":35.0,"display_info":["35.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.07,"scale":5.0},{"archetype":"Stalker","percent":37.5,"display_info":["37.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":5.0},{"archetype":"Blaster","percent":35.0,"display_info":["35.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.07,"scale":5.0},{"archetype":"Mastermind","percent":50.0,"display_info":["50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":5.0},{"archetype":"Arachnos Soldier","percent":50.0,"display_info":["50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":5.0},{"archetype":"Controller","percent":50.0,"display_info":["50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":5.0},{"archetype":"Brute","percent":37.5,"display_info":["37.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":5.0},{"archetype":"Arachnos Widow","percent":50.0,"display_info":["50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":5.0},{"archetype":"Warshade","percent":37.5,"display_info":["37.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":5.0},{"archetype":"Dominator","percent":42.5,"display_info":["42.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.085,"scale":5.0},{"archetype":"Scrapper","percent":37.5,"display_info":["37.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":5.0},{"archetype":"Peacebringer","percent":37.5,"display_info":["37.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":5.0},{"archetype":"Corruptor","percent":37.5,"display_info":["37.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":5.0}]},{"attributes":["Energy_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Defender","percent":60.0,"display_info":["60.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":6.0},{"archetype":"Tanker","percent":60.0,"display_info":["60.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":6.0},{"archetype":"Sentinel","percent":42.0,"display_info":["42.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.07,"scale":6.0},{"archetype":"Stalker","percent":45.0,"display_info":["45.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":6.0},{"archetype":"Blaster","percent":42.0,"display_info":["42.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.07,"scale":6.0},{"archetype":"Mastermind","percent":60.0,"display_info":["60.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":6.0},{"archetype":"Arachnos Soldier","percent":60.0,"display_info":["60.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":6.0},{"archetype":"Controller","percent":60.0,"display_info":["60.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":6.0},{"archetype":"Brute","percent":45.0,"display_info":["45.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":6.0},{"archetype":"Arachnos Widow","percent":60.0,"display_info":["60.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":6.0},{"archetype":"Warshade","percent":45.0,"display_info":["45.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":6.0},{"archetype":"Dominator","percent":51.0,"display_info":["51.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.085,"scale":6.0},{"archetype":"Scrapper","percent":45.0,"display_info":["45.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":6.0},{"archetype":"Peacebringer","percent":45.0,"display_info":["45.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":6.0},{"archetype":"Corruptor","percent":45.0,"display_info":["45.00% resistance to energy damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":6.0}]},{"attributes":["Negative_Energy_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Defender","percent":40.0,"display_info":["40.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":4.0},{"archetype":"Tanker","percent":40.0,"display_info":["40.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":4.0},{"archetype":"Sentinel","percent":28.0,"display_info":["28.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.07,"scale":4.0},{"archetype":"Stalker","percent":30.0,"display_info":["30.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":4.0},{"archetype":"Blaster","percent":28.0,"display_info":["28.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.07,"scale":4.0},{"archetype":"Mastermind","percent":40.0,"display_info":["40.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":4.0},{"archetype":"Arachnos Soldier","percent":40.0,"display_info":["40.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":4.0},{"archetype":"Controller","percent":40.0,"display_info":["40.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":4.0},{"archetype":"Brute","percent":30.0,"display_info":["30.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":4.0},{"archetype":"Arachnos Widow","percent":40.0,"display_info":["40.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.1,"scale":4.0},{"archetype":"Warshade","percent":30.0,"display_info":["30.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":4.0},{"archetype":"Dominator","percent":34.0,"display_info":["34.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.085,"scale":4.0},{"archetype":"Scrapper","percent":30.0,"display_info":["30.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":4.0},{"archetype":"Peacebringer","percent":30.0,"display_info":["30.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":4.0},{"archetype":"Corruptor","percent":30.0,"display_info":["30.00% resistance to negative energy damage for 2m 0s on self","Unresistable"],"base_value":0.075,"scale":4.0}]},{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Defender","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Tanker","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Sentinel","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Stalker","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Blaster","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Mastermind","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Arachnos Soldier","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Controller","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Brute","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Arachnos Widow","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Warshade","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Dominator","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Scrapper","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Peacebringer","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0},{"archetype":"Corruptor","percent":100.0,"display_info":["100.00% recovery rate for 2m 0s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0}]},{"attributes":["Translucency"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Endurance"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Self","magnitude":1.0,"duration":"Instant","after_delay_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Defender","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Tanker","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Sentinel","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Stalker","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Blaster","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Mastermind","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Arachnos Soldier","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Controller","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Brute","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Arachnos Widow","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Warshade","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Dominator","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Scrapper","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Peacebringer","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0},{"archetype":"Corruptor","percent":-100.0,"display_info":["-100.00% endurance on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0}]},{"attributes":["Null"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":5.0,"after_delay_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"after_delay_seconds":120.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Defender","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Tanker","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Sentinel","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Stalker","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Blaster","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Mastermind","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Arachnos Soldier","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Controller","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Brute","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Arachnos Widow","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Warshade","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Dominator","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Scrapper","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Peacebringer","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0},{"archetype":"Corruptor","percent":-10000.0,"display_info":["-10000.00% recovery rate for 15s on self after 2m 0s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0}]},{"attributes":["Global Chance Mod"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"parameter":{"effect":{"tags":["PresenceHealHigh"]}},"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Global Chance Mod"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"parameter":{"effect":{"tags":["PresenceHealLow"]}},"stacking":{"behavior":"Replace","by_caster":true}}]}]},{"name":"Epic.Dominator_Mu_Mastery.Summon_Guardian","display_name":"Summon Guardian","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/3e/arachnos_patron_summononepet.png","display_help":"Scirocco has shown you how to call upon a mystical Mu Guardian to assist you. The Mu pulse with the blood of their slaughtered ancestors in their veins, and are well practiced in the dark arts. Your access to this Guardian is very limited. You can only summon him once every 15 minutes and he will leave after 4 minutes, or if you exit a zone or mission. You must be level 44 and have two other Mu Mastery Powers before selecting this power. Recharge: Extremely Long","display_short_help":"Summon Mu Guardian: Ranged Moderate DMG(Energy)","display_info":{"Target Type":"Location","Available Level":"44","Effect Area":"Location","Recharge Time":"15m 0s","Power Range":"60 ft.","Activation Time":"1.17s","Endurance Cost":"26.00","Power Type":"Click"},"requires":"(((Owned?(SpidersKissPatron) || Owned?(TheStingerPatron)) || Owned?(BloodInTheWaterPatron)) || Owned?(MiragePatron)) && (((((Epic.Dominator_Mu_Mastery.Power_Sink && Epic.Dominator_Mu_Mastery.Charged_Armor) || (Epic.Dominator_Mu_Mastery.Power_Sink && Epic.Dominator_Mu_Mastery.Ball_Lightning)) || (Epic.Dominator_Mu_Mastery.Power_Sink && Epic.Dominator_Mu_Mastery.Surge_of_Power)) || (Epic.Dominator_Mu_Mastery.Charged_Armor && Epic.Dominator_Mu_Mastery.Ball_Lightning)) || (Epic.Dominator_Mu_Mastery.Charged_Armor && Epic.Dominator_Mu_Mastery.Surge_of_Power))","enhancements_allowed":["Enhance Endurance Modification","Enhance Hold","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Heal","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Recharge Intensive Pets","Pet Damage","Universal Damage Sets","Endurance Modification"],"available_at_level":44,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All","Disable_Pool","Disable_Epic"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.77,"recharge_time":900.0,"endurance_cost":26.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":240.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Patron_Powers_Mu_Guardian","display_name":"Mu Guardian","powers":[{"name":"Villain_Pets.Mu_Guardian.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"},{"name":"Villain_Pets.Mu_Guardian.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"},{"name":"Villain_Pets.Mu_Guardian.Lightning_Bolt","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"},{"name":"Villain_Pets.Mu_Guardian.Lightning_Blast","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"},{"name":"Villain_Pets.Mu_Guardian.Sentinel_of_Lightning","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"},{"name":"Villain_Pets.Mu_Guardian.Touch_of_the_Storm","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"},{"name":"Villain_Pets.Mu_Guardian.EM_Pulse","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"},{"name":"Villain_Pets.Mu_Guardian.Fly","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"}]}}}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Epic.Dominator_Mu_Mastery",
+  "display_name": "Mu Mastery",
+  "display_help": "Scirocco has taught you the ancient powers of the Mu. In their eternal struggle against the Oranbega, the Mu have unlocked many mystical powers, including their very signature crimson lightning. Now you posses these their secrets.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e3/arachnos_patron_pbaoedrain.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Epic.Dominator_Mu_Mastery.Power_Sink",
+    "Epic.Dominator_Mu_Mastery.Charged_Armor",
+    "Epic.Dominator_Mu_Mastery.Ball_Lightning",
+    "Epic.Dominator_Mu_Mastery.Surge_of_Power",
+    "Epic.Dominator_Mu_Mastery.Summon_Guardian"
+  ],
+  "powers": [
+    {
+      "name": "Epic.Dominator_Mu_Mastery.Power_Sink",
+      "display_name": "Power Sink",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e3/arachnos_patron_pbaoedrain.png",
+      "display_help": "Power Sink leeches energy directly from the bodies of all nearby foes, draining their Endurance. Each foe you draw energy from increases your Endurance. If there are no foes within range, you will not gain any Endurance. Recharge: Long",
+      "display_short_help": "PBAoE, Self +End, Foe -End",
+      "display_info": {
+        "Attack Types": "Area, Energy",
+        "Endurance Cost": "16.25",
+        "Effect Area": "AoE — 10 ft. radius (10 targets max)",
+        "Power Type": "Click",
+        "Target Type": "Self",
+        "Activation Time": "2.03s",
+        "Recharge Time": "2m 0s",
+        "Available Level": "35"
+      },
+      "requires": "(($archetype == @Class_Dominator) || ($archetype == @Class_Controller)) && (((Owned?(SpidersKissPatron) || Owned?(TheStingerPatron)) || Owned?(BloodInTheWaterPatron)) || Owned?(MiragePatron))",
+      "attack_types": [
+        "Area_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Endurance Modification"
+      ],
+      "available_at_level": 35,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 10.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All",
+        "Disable_Pool",
+        "Disable_Epic"
+      ],
+      "activate": {
+        "cast_time": 2.03,
+        "animation_time": 2.03,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 120.0,
+        "endurance_cost": 16.25
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "percent": -35.0,
+                  "display_info": [
+                    "-35.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.35
+                },
+                {
+                  "archetype": "Dominator",
+                  "percent": -35.0,
+                  "display_info": [
+                    "-35.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "value": -11.0,
+                  "average": -11.0,
+                  "per_activation": -5.42,
+                  "per_cast_cycle": -0.09,
+                  "display_info": [
+                    "-11.00 endurance on target"
+                  ],
+                  "base_value": 1.1,
+                  "scale": -10.0
+                },
+                {
+                  "archetype": "Dominator",
+                  "value": -11.0,
+                  "average": -11.0,
+                  "per_activation": -5.42,
+                  "per_cast_cycle": -0.09,
+                  "display_info": [
+                    "-11.00 endurance on target"
+                  ],
+                  "base_value": 1.1,
+                  "scale": -10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 30.0,
+          "effects": [
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Dominator",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "value": 25.0,
+                  "average": 25.0,
+                  "per_activation": 12.32,
+                  "per_cast_cycle": 0.2,
+                  "display_info": [
+                    "25.00 endurance on self after 0.25s delay",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 25.0
+                },
+                {
+                  "archetype": "Dominator",
+                  "value": 25.0,
+                  "average": 25.0,
+                  "per_activation": 12.32,
+                  "per_cast_cycle": 0.2,
+                  "display_info": [
+                    "25.00 endurance on self after 0.25s delay",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 25.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Epic.Dominator_Mu_Mastery.Charged_Armor",
+      "display_name": "Charged Armor",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/1d/arachnos_patron_resistbuff.png",
+      "display_help": "When you toggle on this power, you are surrounded in a charged field that makes you highly resistant to Smashing, Lethal and Energy damage. Recharge: Fast",
+      "display_short_help": "Toggle: Self +Res(Smash, Lethal, Energy)",
+      "display_info": {
+        "Recharge Time": "4s",
+        "Endurance Cost": "0.32/s",
+        "Activation Time": "0.67s",
+        "Power Type": "Toggle",
+        "Effect Area": "Single Target",
+        "Available Level": "35",
+        "Target Type": "Self"
+      },
+      "requires": "(($archetype == @Class_Dominator) || ($archetype == @Class_Controller)) && (((Owned?(SpidersKissPatron) || Owned?(TheStingerPatron)) || Owned?(BloodInTheWaterPatron)) || Owned?(MiragePatron))",
+      "enhancements_allowed": [
+        "Enhance Damage Resistance",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Resist Damage"
+      ],
+      "available_at_level": 35,
+      "auto_issue": false,
+      "power_type": "Toggle",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All",
+        "Disable_Pool",
+        "Disable_Epic"
+      ],
+      "status_interaction": {
+        "cast_through": [
+          "Sleep",
+          "Stun"
+        ],
+        "toggle_ignores": [
+          "Hold"
+        ]
+      },
+      "activate": {
+        "cast_time": 0.67,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 4.0,
+        "auto_cast_interval": 0.5,
+        "endurance_cost": 0.16
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "!isPVPMap?()"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Energy_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "percent": 27.5,
+                  "display_info": [
+                    "27.50% resistance to smashing damage, lethal damage, energy damage for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 2.75
+                },
+                {
+                  "archetype": "Dominator",
+                  "percent": 23.38,
+                  "display_info": [
+                    "23.38% resistance to smashing damage, lethal damage, energy damage for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.085,
+                  "scale": 2.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "isPVPMap?()"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.75,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "percent": 27.5,
+                  "display_info": [
+                    "27.50% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 2.75
+                },
+                {
+                  "archetype": "Dominator",
+                  "percent": 23.38,
+                  "display_info": [
+                    "23.38% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 0.75s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.085,
+                  "scale": 2.75
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Epic.Dominator_Mu_Mastery.Ball_Lightning",
+      "display_name": "Ball Lightning",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/3d/arachnos_patron_rangedaoemoderatedmg.png",
+      "display_help": "Hurls a highly charged ball of Mu lightning that explodes on contact. Ball Lightning deals good damage in an area of effect, and drains some Endurance from each target it hits. You must be level 41 and have Power Sink or Charged Armor before selecting this power. Damage: Moderate(DoT), Recharge: Slow",
+      "display_short_help": "Ranged (Targeted AoE), Moderate DoT(Energy), Foe -End",
+      "display_info": {
+        "Activation Time": "1.07s",
+        "Attack Types": "Area, Energy",
+        "Endurance Cost": "18.98",
+        "Target Type": "Enemies",
+        "Available Level": "41",
+        "Recharge Time": "32s",
+        "Power Range": "80 ft.",
+        "Effect Area": "AoE — 15 ft. radius (16 targets max)",
+        "Power Type": "Click"
+      },
+      "requires": "(((Owned?(SpidersKissPatron) || Owned?(TheStingerPatron)) || Owned?(BloodInTheWaterPatron)) || Owned?(MiragePatron)) && (Epic.Dominator_Mu_Mastery.Power_Sink || Epic.Dominator_Mu_Mastery.Charged_Armor)",
+      "attack_types": [
+        "Area_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Endurance Modification",
+        "Targeted AoE Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 41,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 15.0,
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All",
+        "Disable_Pool",
+        "Disable_Epic"
+      ],
+      "activate": {
+        "cast_time": 1.07,
+        "animation_time": 1.07,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 32.0,
+        "endurance_cost": 18.98
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Arachnos Soldier",
+                  "damage": 16.68,
+                  "average": 16.68,
+                  "per_activation": 15.59,
+                  "per_cast_cycle": 0.5,
+                  "display_info": [
+                    "16.68 energy damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Warshade",
+                  "damage": 13.35,
+                  "average": 13.35,
+                  "per_activation": 12.48,
+                  "per_cast_cycle": 0.4,
+                  "display_info": [
+                    "13.35 energy damage on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Brute",
+                  "damage": 12.51,
+                  "average": 12.51,
+                  "per_activation": 11.69,
+                  "per_cast_cycle": 0.38,
+                  "display_info": [
+                    "12.51 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Tanker",
+                  "damage": 13.35,
+                  "average": 13.35,
+                  "per_activation": 12.48,
+                  "per_cast_cycle": 0.4,
+                  "display_info": [
+                    "13.35 energy damage on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Arachnos Widow",
+                  "damage": 16.68,
+                  "average": 16.68,
+                  "per_activation": 15.59,
+                  "per_cast_cycle": 0.5,
+                  "display_info": [
+                    "16.68 energy damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Sentinel",
+                  "damage": 15.85,
+                  "average": 15.85,
+                  "per_activation": 14.81,
+                  "per_cast_cycle": 0.48,
+                  "display_info": [
+                    "15.85 energy damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Peacebringer",
+                  "damage": 13.35,
+                  "average": 13.35,
+                  "per_activation": 12.48,
+                  "per_cast_cycle": 0.4,
+                  "display_info": [
+                    "13.35 energy damage on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Scrapper",
+                  "damage": 8.34,
+                  "average": 8.34,
+                  "per_activation": 7.79,
+                  "per_cast_cycle": 0.25,
+                  "display_info": [
+                    "8.34 energy damage on target"
+                  ],
+                  "base_value": -27.8051,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Mastermind",
+                  "damage": 9.18,
+                  "average": 9.18,
+                  "per_activation": 8.58,
+                  "per_cast_cycle": 0.28,
+                  "display_info": [
+                    "9.18 energy damage on target"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Controller",
+                  "damage": 9.18,
+                  "average": 9.18,
+                  "per_activation": 8.58,
+                  "per_cast_cycle": 0.28,
+                  "display_info": [
+                    "9.18 energy damage on target"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Dominator",
+                  "damage": 15.85,
+                  "average": 15.85,
+                  "per_activation": 14.81,
+                  "per_cast_cycle": 0.48,
+                  "display_info": [
+                    "15.85 energy damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Defender",
+                  "damage": 10.84,
+                  "average": 10.84,
+                  "per_activation": 10.13,
+                  "per_cast_cycle": 0.33,
+                  "display_info": [
+                    "10.84 energy damage on target"
+                  ],
+                  "base_value": -36.1466,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Corruptor",
+                  "damage": 12.51,
+                  "average": 12.51,
+                  "per_activation": 11.69,
+                  "per_cast_cycle": 0.38,
+                  "display_info": [
+                    "12.51 energy damage on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Blaster",
+                  "damage": 18.77,
+                  "average": 18.77,
+                  "per_activation": 17.54,
+                  "per_cast_cycle": 0.57,
+                  "display_info": [
+                    "18.77 energy damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.3
+                },
+                {
+                  "archetype": "Stalker",
+                  "damage": 10.01,
+                  "average": 10.01,
+                  "per_activation": 9.36,
+                  "per_cast_cycle": 0.3,
+                  "display_info": [
+                    "10.01 energy damage on target"
+                  ],
+                  "base_value": -33.3661,
+                  "scale": 0.3
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Arachnos Soldier",
+                  "damage": 10.01,
+                  "average": 10.01,
+                  "per_activation": 9.36,
+                  "per_cast_cycle": 0.3,
+                  "display_info": [
+                    "4 ticks of 10.01 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Warshade",
+                  "damage": 8.01,
+                  "average": 8.01,
+                  "per_activation": 7.49,
+                  "per_cast_cycle": 0.24,
+                  "display_info": [
+                    "4 ticks of 8.01 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Brute",
+                  "damage": 7.51,
+                  "average": 7.51,
+                  "per_activation": 7.02,
+                  "per_cast_cycle": 0.23,
+                  "display_info": [
+                    "4 ticks of 7.51 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Tanker",
+                  "damage": 8.01,
+                  "average": 8.01,
+                  "per_activation": 7.49,
+                  "per_cast_cycle": 0.24,
+                  "display_info": [
+                    "4 ticks of 8.01 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Arachnos Widow",
+                  "damage": 10.01,
+                  "average": 10.01,
+                  "per_activation": 9.36,
+                  "per_cast_cycle": 0.3,
+                  "display_info": [
+                    "4 ticks of 10.01 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Sentinel",
+                  "damage": 9.51,
+                  "average": 9.51,
+                  "per_activation": 8.89,
+                  "per_cast_cycle": 0.29,
+                  "display_info": [
+                    "4 ticks of 9.51 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Peacebringer",
+                  "damage": 8.01,
+                  "average": 8.01,
+                  "per_activation": 7.49,
+                  "per_cast_cycle": 0.24,
+                  "display_info": [
+                    "4 ticks of 8.01 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Scrapper",
+                  "damage": 5.0,
+                  "average": 5.0,
+                  "per_activation": 4.67,
+                  "per_cast_cycle": 0.15,
+                  "display_info": [
+                    "4 ticks of 5.00 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -27.8051,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Mastermind",
+                  "damage": 5.51,
+                  "average": 5.51,
+                  "per_activation": 5.15,
+                  "per_cast_cycle": 0.17,
+                  "display_info": [
+                    "4 ticks of 5.51 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Controller",
+                  "damage": 5.51,
+                  "average": 5.51,
+                  "per_activation": 5.15,
+                  "per_cast_cycle": 0.17,
+                  "display_info": [
+                    "4 ticks of 5.51 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Dominator",
+                  "damage": 9.51,
+                  "average": 9.51,
+                  "per_activation": 8.89,
+                  "per_cast_cycle": 0.29,
+                  "display_info": [
+                    "4 ticks of 9.51 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Defender",
+                  "damage": 6.51,
+                  "average": 6.51,
+                  "per_activation": 6.08,
+                  "per_cast_cycle": 0.2,
+                  "display_info": [
+                    "4 ticks of 6.51 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -36.1466,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Corruptor",
+                  "damage": 7.51,
+                  "average": 7.51,
+                  "per_activation": 7.02,
+                  "per_cast_cycle": 0.23,
+                  "display_info": [
+                    "4 ticks of 7.51 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -41.7077,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Blaster",
+                  "damage": 11.26,
+                  "average": 11.26,
+                  "per_activation": 10.52,
+                  "per_cast_cycle": 0.34,
+                  "display_info": [
+                    "4 ticks of 11.26 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.18
+                },
+                {
+                  "archetype": "Stalker",
+                  "damage": 6.01,
+                  "average": 6.01,
+                  "per_activation": 5.62,
+                  "per_cast_cycle": 0.18,
+                  "display_info": [
+                    "4 ticks of 6.01 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -33.3661,
+                  "scale": 0.18
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Arachnos Soldier",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Warshade",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Brute",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Tanker",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Arachnos Widow",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Sentinel",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Peacebringer",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Scrapper",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Mastermind",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Controller",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Dominator",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Defender",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Corruptor",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Blaster",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                },
+                {
+                  "archetype": "Stalker",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Arachnos Soldier",
+                  "damage": 12.65,
+                  "average": 12.65,
+                  "per_activation": 11.82,
+                  "per_cast_cycle": 0.38,
+                  "display_info": [
+                    "12.65 energy damage on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Warshade",
+                  "damage": 11.97,
+                  "average": 11.97,
+                  "per_activation": 11.19,
+                  "per_cast_cycle": 0.36,
+                  "display_info": [
+                    "11.97 energy damage on target"
+                  ],
+                  "base_value": -53.3852,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Brute",
+                  "damage": 8.43,
+                  "average": 8.43,
+                  "per_activation": 7.88,
+                  "per_cast_cycle": 0.25,
+                  "display_info": [
+                    "8.43 energy damage on target"
+                  ],
+                  "base_value": -37.6097,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Tanker",
+                  "damage": 7.9,
+                  "average": 7.9,
+                  "per_activation": 7.38,
+                  "per_cast_cycle": 0.24,
+                  "display_info": [
+                    "7.90 energy damage on target"
+                  ],
+                  "base_value": -35.2552,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Arachnos Widow",
+                  "damage": 12.65,
+                  "average": 12.65,
+                  "per_activation": 11.82,
+                  "per_cast_cycle": 0.38,
+                  "display_info": [
+                    "12.65 energy damage on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Sentinel",
+                  "damage": 10.22,
+                  "average": 10.22,
+                  "per_activation": 9.55,
+                  "per_cast_cycle": 0.31,
+                  "display_info": [
+                    "10.22 energy damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Peacebringer",
+                  "damage": 11.97,
+                  "average": 11.97,
+                  "per_activation": 11.19,
+                  "per_cast_cycle": 0.36,
+                  "display_info": [
+                    "11.97 energy damage on target"
+                  ],
+                  "base_value": -53.3852,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Scrapper",
+                  "damage": 7.15,
+                  "average": 7.15,
+                  "per_activation": 6.68,
+                  "per_cast_cycle": 0.22,
+                  "display_info": [
+                    "7.15 energy damage on target"
+                  ],
+                  "base_value": -31.9052,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Mastermind",
+                  "damage": 10.35,
+                  "average": 10.35,
+                  "per_activation": 9.67,
+                  "per_cast_cycle": 0.31,
+                  "display_info": [
+                    "10.35 energy damage on target"
+                  ],
+                  "base_value": -46.1537,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Controller",
+                  "damage": 11.5,
+                  "average": 11.5,
+                  "per_activation": 10.75,
+                  "per_cast_cycle": 0.35,
+                  "display_info": [
+                    "11.50 energy damage on target"
+                  ],
+                  "base_value": -51.2809,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Dominator",
+                  "damage": 16.58,
+                  "average": 16.58,
+                  "per_activation": 15.5,
+                  "per_cast_cycle": 0.5,
+                  "display_info": [
+                    "16.58 energy damage on target"
+                  ],
+                  "base_value": -73.9593,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Defender",
+                  "damage": 12.65,
+                  "average": 12.65,
+                  "per_activation": 11.82,
+                  "per_cast_cycle": 0.38,
+                  "display_info": [
+                    "12.65 energy damage on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Corruptor",
+                  "damage": 12.65,
+                  "average": 12.65,
+                  "per_activation": 11.82,
+                  "per_cast_cycle": 0.38,
+                  "display_info": [
+                    "12.65 energy damage on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Blaster",
+                  "damage": 17.24,
+                  "average": 17.24,
+                  "per_activation": 16.11,
+                  "per_cast_cycle": 0.52,
+                  "display_info": [
+                    "17.24 energy damage on target"
+                  ],
+                  "base_value": -76.9134,
+                  "scale": 0.2242
+                },
+                {
+                  "archetype": "Stalker",
+                  "damage": 7.59,
+                  "average": 7.59,
+                  "per_activation": 7.09,
+                  "per_cast_cycle": 0.23,
+                  "display_info": [
+                    "7.59 energy damage on target"
+                  ],
+                  "base_value": -33.8449,
+                  "scale": 0.2242
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Arachnos Soldier",
+                  "damage": 5.9,
+                  "average": 5.9,
+                  "per_activation": 5.51,
+                  "per_cast_cycle": 0.18,
+                  "display_info": [
+                    "4 ticks of 5.90 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Warshade",
+                  "damage": 5.58,
+                  "average": 5.58,
+                  "per_activation": 5.21,
+                  "per_cast_cycle": 0.17,
+                  "display_info": [
+                    "4 ticks of 5.58 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -53.3852,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Brute",
+                  "damage": 3.93,
+                  "average": 3.93,
+                  "per_activation": 3.67,
+                  "per_cast_cycle": 0.12,
+                  "display_info": [
+                    "4 ticks of 3.93 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -37.6097,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Tanker",
+                  "damage": 3.69,
+                  "average": 3.69,
+                  "per_activation": 3.45,
+                  "per_cast_cycle": 0.11,
+                  "display_info": [
+                    "4 ticks of 3.69 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -35.2552,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Arachnos Widow",
+                  "damage": 5.9,
+                  "average": 5.9,
+                  "per_activation": 5.51,
+                  "per_cast_cycle": 0.18,
+                  "display_info": [
+                    "4 ticks of 5.90 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Sentinel",
+                  "damage": 4.77,
+                  "average": 4.77,
+                  "per_activation": 4.46,
+                  "per_cast_cycle": 0.14,
+                  "display_info": [
+                    "4 ticks of 4.77 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Peacebringer",
+                  "damage": 5.58,
+                  "average": 5.58,
+                  "per_activation": 5.21,
+                  "per_cast_cycle": 0.17,
+                  "display_info": [
+                    "4 ticks of 5.58 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -53.3852,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Scrapper",
+                  "damage": 3.34,
+                  "average": 3.34,
+                  "per_activation": 3.12,
+                  "per_cast_cycle": 0.1,
+                  "display_info": [
+                    "4 ticks of 3.34 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -31.9052,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Mastermind",
+                  "damage": 4.83,
+                  "average": 4.83,
+                  "per_activation": 4.51,
+                  "per_cast_cycle": 0.15,
+                  "display_info": [
+                    "4 ticks of 4.83 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -46.1537,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Controller",
+                  "damage": 5.36,
+                  "average": 5.36,
+                  "per_activation": 5.01,
+                  "per_cast_cycle": 0.16,
+                  "display_info": [
+                    "4 ticks of 5.36 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -51.2809,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Dominator",
+                  "damage": 7.74,
+                  "average": 7.74,
+                  "per_activation": 7.23,
+                  "per_cast_cycle": 0.23,
+                  "display_info": [
+                    "4 ticks of 7.74 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -73.9593,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Defender",
+                  "damage": 5.9,
+                  "average": 5.9,
+                  "per_activation": 5.51,
+                  "per_cast_cycle": 0.18,
+                  "display_info": [
+                    "4 ticks of 5.90 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Corruptor",
+                  "damage": 5.9,
+                  "average": 5.9,
+                  "per_activation": 5.51,
+                  "per_cast_cycle": 0.18,
+                  "display_info": [
+                    "4 ticks of 5.90 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -56.4132,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Blaster",
+                  "damage": 8.05,
+                  "average": 8.05,
+                  "per_activation": 7.52,
+                  "per_cast_cycle": 0.24,
+                  "display_info": [
+                    "4 ticks of 8.05 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -76.9134,
+                  "scale": 0.1046
+                },
+                {
+                  "archetype": "Stalker",
+                  "damage": 3.54,
+                  "average": 3.54,
+                  "per_activation": 3.31,
+                  "per_cast_cycle": 0.11,
+                  "display_info": [
+                    "4 ticks of 3.54 energy damage over 3.1s on target"
+                  ],
+                  "base_value": -33.8449,
+                  "scale": 0.1046
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Arachnos Soldier",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -1.17,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Warshade",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -1.17,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Brute",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -1.17,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Tanker",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -1.17,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Arachnos Widow",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -1.17,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Sentinel",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -1.17,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Peacebringer",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -1.17,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Scrapper",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -1.17,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Mastermind",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -1.17,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Controller",
+                  "value": -1.38,
+                  "average": -1.38,
+                  "per_activation": -1.29,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.38 endurance on target"
+                  ],
+                  "base_value": 1.1,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Dominator",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -1.17,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Defender",
+                  "value": -1.56,
+                  "average": -1.56,
+                  "per_activation": -1.46,
+                  "per_cast_cycle": -0.05,
+                  "display_info": [
+                    "-1.56 endurance on target"
+                  ],
+                  "base_value": 1.25,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Corruptor",
+                  "value": -1.38,
+                  "average": -1.38,
+                  "per_activation": -1.29,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.38 endurance on target"
+                  ],
+                  "base_value": 1.1,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Blaster",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -1.17,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                },
+                {
+                  "archetype": "Stalker",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -1.17,
+                  "per_cast_cycle": -0.04,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 30.0,
+          "effects": [
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Arachnos Soldier",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Warshade",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Brute",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Tanker",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Arachnos Widow",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Sentinel",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Peacebringer",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Scrapper",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Mastermind",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Controller",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Dominator",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Defender",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Corruptor",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Blaster",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Stalker",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Containment"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "((target>enttype == critter) && (((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0)) || target.HasTag?(IncarnateBoss))) && (source>arch == Controller)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 31.2,
+                  "average": 31.2,
+                  "per_activation": 29.16,
+                  "per_cast_cycle": 0.94,
+                  "display_info": [
+                    "31.20 energy damage on target",
+                    "Only against immobilized, held, sleeping or stunned targets"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 1.02
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Containment"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "((target>enttype == player) && ((((target>kImmobilized > 0) || (target>kHeld > 0)) || (target>kSleep > 0)) || (target>kStunned > 0))) && (source>arch == Controller)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Controller",
+                  "damage": 38.33,
+                  "average": 38.33,
+                  "per_activation": 35.82,
+                  "per_cast_cycle": 1.16,
+                  "display_info": [
+                    "38.33 energy damage on target",
+                    "Only against immobilized, held, sleeping or stunned targets"
+                  ],
+                  "base_value": -51.2809,
+                  "scale": 0.7474
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Epic.Dominator_Mu_Mastery.Surge_of_Power",
+      "display_name": "Surge of Power",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/80/arachnos_patron_selfbuffresistancephysical.png",
+      "display_help": "When you activate this power, you transform your body into living Electricity and become extremely resistant to all damage but Psionics, and your endurance recovery is also increased. Expending all this energy will leave you exhausted, drained of all your endurance and unable to recover endurance for a short time. You must be level 41 and have Power Sink or Charged Armor before selecting this power. Recharge: Extremely Long",
+      "display_short_help": "Self, +Res(Special)",
+      "display_info": {
+        "Activation Time": "1.96s",
+        "Recharge Time": "16m 40s",
+        "Power Type": "Click",
+        "Endurance Cost": "3.25",
+        "Target Type": "Self",
+        "Effect Area": "Single Target",
+        "Available Level": "41"
+      },
+      "requires": "(((Owned?(SpidersKissPatron) || Owned?(TheStingerPatron)) || Owned?(BloodInTheWaterPatron)) || Owned?(MiragePatron)) && (Epic.Dominator_Mu_Mastery.Power_Sink || Epic.Dominator_Mu_Mastery.Charged_Armor)",
+      "enhancements_allowed": [
+        "Enhance Damage Resistance",
+        "Enhance Endurance Modification",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Endurance Modification",
+        "Resist Damage"
+      ],
+      "available_at_level": 41,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All",
+        "Disable_Pool",
+        "Disable_Epic"
+      ],
+      "activate": {
+        "cast_time": 1.96,
+        "animation_time": 1.97,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 1000.0,
+        "endurance_cost": 3.25
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Arachnos Soldier",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Warshade",
+                  "percent": 37.5,
+                  "display_info": [
+                    "37.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Brute",
+                  "percent": 37.5,
+                  "display_info": [
+                    "37.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Tanker",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Arachnos Widow",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Sentinel",
+                  "percent": 35.0,
+                  "display_info": [
+                    "35.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.07,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Peacebringer",
+                  "percent": 37.5,
+                  "display_info": [
+                    "37.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Scrapper",
+                  "percent": 37.5,
+                  "display_info": [
+                    "37.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Mastermind",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Controller",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Dominator",
+                  "percent": 42.5,
+                  "display_info": [
+                    "42.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.085,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Defender",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Corruptor",
+                  "percent": 37.5,
+                  "display_info": [
+                    "37.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Blaster",
+                  "percent": 35.0,
+                  "display_info": [
+                    "35.00% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.07,
+                  "scale": 5.0
+                },
+                {
+                  "archetype": "Stalker",
+                  "percent": 37.5,
+                  "display_info": [
+                    "37.50% resistance to smashing damage, lethal damage, fire damage, cold damage, toxic damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 5.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Arachnos Soldier",
+                  "percent": 60.0,
+                  "display_info": [
+                    "60.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Warshade",
+                  "percent": 45.0,
+                  "display_info": [
+                    "45.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Brute",
+                  "percent": 45.0,
+                  "display_info": [
+                    "45.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Tanker",
+                  "percent": 60.0,
+                  "display_info": [
+                    "60.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Arachnos Widow",
+                  "percent": 60.0,
+                  "display_info": [
+                    "60.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Sentinel",
+                  "percent": 42.0,
+                  "display_info": [
+                    "42.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.07,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Peacebringer",
+                  "percent": 45.0,
+                  "display_info": [
+                    "45.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Scrapper",
+                  "percent": 45.0,
+                  "display_info": [
+                    "45.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Mastermind",
+                  "percent": 60.0,
+                  "display_info": [
+                    "60.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Controller",
+                  "percent": 60.0,
+                  "display_info": [
+                    "60.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Dominator",
+                  "percent": 51.0,
+                  "display_info": [
+                    "51.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.085,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Defender",
+                  "percent": 60.0,
+                  "display_info": [
+                    "60.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Corruptor",
+                  "percent": 45.0,
+                  "display_info": [
+                    "45.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Blaster",
+                  "percent": 42.0,
+                  "display_info": [
+                    "42.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.07,
+                  "scale": 6.0
+                },
+                {
+                  "archetype": "Stalker",
+                  "percent": 45.0,
+                  "display_info": [
+                    "45.00% resistance to energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 6.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Arachnos Soldier",
+                  "percent": 40.0,
+                  "display_info": [
+                    "40.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Warshade",
+                  "percent": 30.0,
+                  "display_info": [
+                    "30.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Brute",
+                  "percent": 30.0,
+                  "display_info": [
+                    "30.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Tanker",
+                  "percent": 40.0,
+                  "display_info": [
+                    "40.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Arachnos Widow",
+                  "percent": 40.0,
+                  "display_info": [
+                    "40.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Sentinel",
+                  "percent": 28.0,
+                  "display_info": [
+                    "28.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.07,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Peacebringer",
+                  "percent": 30.0,
+                  "display_info": [
+                    "30.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Scrapper",
+                  "percent": 30.0,
+                  "display_info": [
+                    "30.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Mastermind",
+                  "percent": 40.0,
+                  "display_info": [
+                    "40.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Controller",
+                  "percent": 40.0,
+                  "display_info": [
+                    "40.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Dominator",
+                  "percent": 34.0,
+                  "display_info": [
+                    "34.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.085,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Defender",
+                  "percent": 40.0,
+                  "display_info": [
+                    "40.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Corruptor",
+                  "percent": 30.0,
+                  "display_info": [
+                    "30.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Blaster",
+                  "percent": 28.0,
+                  "display_info": [
+                    "28.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.07,
+                  "scale": 4.0
+                },
+                {
+                  "archetype": "Stalker",
+                  "percent": 30.0,
+                  "display_info": [
+                    "30.00% resistance to negative energy damage for 2m 0s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 4.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Arachnos Soldier",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Warshade",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Brute",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Tanker",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Arachnos Widow",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Sentinel",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Peacebringer",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Scrapper",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Mastermind",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Controller",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Dominator",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Defender",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Corruptor",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Blaster",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                },
+                {
+                  "archetype": "Stalker",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% recovery rate for 2m 0s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Translucency"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Arachnos Soldier",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Warshade",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Brute",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Tanker",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Arachnos Widow",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Sentinel",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Peacebringer",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Scrapper",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Mastermind",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Controller",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Dominator",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Defender",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Corruptor",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Blaster",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                },
+                {
+                  "archetype": "Stalker",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% endurance on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Null"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "after_delay_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "after_delay_seconds": 120.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Arachnos Soldier",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Warshade",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Brute",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Tanker",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Arachnos Widow",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Sentinel",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Peacebringer",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Scrapper",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Mastermind",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Controller",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Dominator",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Defender",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Corruptor",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Blaster",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                },
+                {
+                  "archetype": "Stalker",
+                  "percent": -10000.0,
+                  "display_info": [
+                    "-10000.00% recovery rate for 15s on self after 2m 0s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Global Chance Mod"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "parameter": {
+                "effect": {
+                  "tags": [
+                    "PresenceHealHigh"
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Global Chance Mod"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "parameter": {
+                "effect": {
+                  "tags": [
+                    "PresenceHealLow"
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Epic.Dominator_Mu_Mastery.Summon_Guardian",
+      "display_name": "Summon Guardian",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/3e/arachnos_patron_summononepet.png",
+      "display_help": "Scirocco has shown you how to call upon a mystical Mu Guardian to assist you. The Mu pulse with the blood of their slaughtered ancestors in their veins, and are well practiced in the dark arts. Your access to this Guardian is very limited. You can only summon him once every 15 minutes and he will leave after 4 minutes, or if you exit a zone or mission. You must be level 44 and have two other Mu Mastery Powers before selecting this power. Recharge: Extremely Long",
+      "display_short_help": "Summon Mu Guardian: Ranged Moderate DMG(Energy)",
+      "display_info": {
+        "Power Range": "60 ft.",
+        "Effect Area": "Location",
+        "Activation Time": "1.17s",
+        "Available Level": "44",
+        "Endurance Cost": "26.00",
+        "Recharge Time": "15m 0s",
+        "Power Type": "Click",
+        "Target Type": "Location"
+      },
+      "requires": "(((Owned?(SpidersKissPatron) || Owned?(TheStingerPatron)) || Owned?(BloodInTheWaterPatron)) || Owned?(MiragePatron)) && (((((Epic.Dominator_Mu_Mastery.Power_Sink && Epic.Dominator_Mu_Mastery.Charged_Armor) || (Epic.Dominator_Mu_Mastery.Power_Sink && Epic.Dominator_Mu_Mastery.Ball_Lightning)) || (Epic.Dominator_Mu_Mastery.Power_Sink && Epic.Dominator_Mu_Mastery.Surge_of_Power)) || (Epic.Dominator_Mu_Mastery.Charged_Armor && Epic.Dominator_Mu_Mastery.Ball_Lightning)) || (Epic.Dominator_Mu_Mastery.Charged_Armor && Epic.Dominator_Mu_Mastery.Surge_of_Power))",
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Enhance Hold",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Heal",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Endurance Modification",
+        "Recharge Intensive Pets",
+        "Pet Damage"
+      ],
+      "available_at_level": 44,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All",
+        "Disable_Pool",
+        "Disable_Epic"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.77,
+        "recharge_time": 900.0,
+        "endurance_cost": 26.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 240.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Patron_Powers_Mu_Guardian",
+                  "display_name": "Mu Guardian",
+                  "powers": [
+                    {
+                      "name": "Villain_Pets.Mu_Guardian.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"
+                    },
+                    {
+                      "name": "Villain_Pets.Mu_Guardian.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"
+                    },
+                    {
+                      "name": "Villain_Pets.Mu_Guardian.Lightning_Bolt",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"
+                    },
+                    {
+                      "name": "Villain_Pets.Mu_Guardian.Lightning_Blast",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"
+                    },
+                    {
+                      "name": "Villain_Pets.Mu_Guardian.Sentinel_of_Lightning",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"
+                    },
+                    {
+                      "name": "Villain_Pets.Mu_Guardian.Touch_of_the_Storm",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"
+                    },
+                    {
+                      "name": "Villain_Pets.Mu_Guardian.EM_Pulse",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"
+                    },
+                    {
+                      "name": "Villain_Pets.Mu_Guardian.Fly",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/mu-guardian/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

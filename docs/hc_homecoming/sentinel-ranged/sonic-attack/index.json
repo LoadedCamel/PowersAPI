@@ -1,1 +1,2554 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Sentinel_Ranged.Sonic_Attack","display_name":"Sonic Attack","display_help":"Sonic Attack lets you use the power of sound waves to damage and weaken your foes.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e9/sonicblast_quick.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Sentinel_Ranged.Sonic_Attack.Shriek","Sentinel_Ranged.Sonic_Attack.Scream","Sentinel_Ranged.Sonic_Attack.Howl","Sentinel_Ranged.Sonic_Attack.Shout","Sentinel_Ranged.Sonic_Attack.Amplify","Sentinel_Ranged.Sonic_Attack.Shockwave","Sentinel_Ranged.Sonic_Attack.Sirens_Song","Sentinel_Ranged.Sonic_Attack.Screech","Sentinel_Ranged.Sonic_Attack.Dreadful_Wail"],"powers":[{"name":"Sentinel_Ranged.Sonic_Attack.Shriek","display_name":"Shriek","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e9/sonicblast_quick.png","display_help":"You let forth a quick Shriek, damaging your target and weakening his Damage Resistance. Damage: Minor, Recharge: Very Fast","display_short_help":"Ranged, Minor DMG(Smashing/Energy), Foe -Resist","display_info":{"Power Type":"Click","Recharge Time":"3s","Endurance Cost":"4.37","Target Type":"Enemies","Power Range":"60 ft.","Activation Time":"1s","Attack Types":"Ranged, Smashing, Energy","Available Level":"1","Effect Area":"Single Target"},"attack_types":["Ranged_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Ranged Damage","Sentinel Archetype Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.93,"recharge_time":3.0,"endurance_cost":4.37},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":22.19,"average":22.19,"per_activation":22.19,"per_cast_cycle":5.55,"display_info":["22.19 smashing damage on target"],"base_value":-52.8297,"scale":0.42}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":22.19,"average":22.19,"per_activation":22.19,"per_cast_cycle":5.55,"display_info":["22.19 energy damage on target"],"base_value":-52.8297,"scale":0.42}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":83.79,"average":83.79,"per_activation":83.79,"per_cast_cycle":20.95,"display_info":["83.79 energy damage on target"],"base_value":-45.5837,"scale":1.8381}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-9.6,"display_info":["-9.60% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 5s on target","Ignores buffs and enhancements"],"base_value":0.048,"scale":-2.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude","StackByAttribAndKey"],"stacking":{"behavior":"Replace","by_caster":false,"key":"Vulnerability"},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-0.2}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Vulnerability","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}},{"attributes":["Designer Status"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Unset Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Opportunity_Lock","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Sentinel_Ranged.Sonic_Attack.Scream","display_name":"Scream","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/13/sonicblast_medium.png","display_help":"Your Scream can cause serious damage to a target, while weakening his resistance to further damage. Damage: Moderate(DoT), Recharge: Fast","display_short_help":"Ranged, Moderate DoT(Smashing/Energy), -Res","display_info":{"Power Range":"60 ft.","Effect Area":"Single Target","Attack Types":"Ranged, Smashing, Energy","Available Level":"1","Target Type":"Enemies","Endurance Cost":"6.86","Activation Time":"1.67s","Power Type":"Click","Recharge Time":"6s"},"attack_types":["Ranged_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Ranged Damage","Sentinel Archetype Sets","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.83,"recharge_time":6.0,"endurance_cost":6.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.05,"continuous_apply_seconds":0.25,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":6.97,"average":6.97,"per_activation":4.17,"per_cast_cycle":0.91,"display_info":["5 ticks of 6.97 smashing damage over 1.05s on target"],"base_value":-52.8297,"scale":0.132}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.05,"continuous_apply_seconds":0.25,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":6.97,"average":6.97,"per_activation":4.17,"per_cast_cycle":0.91,"display_info":["5 ticks of 6.97 energy damage over 1.05s on target"],"base_value":-52.8297,"scale":0.132}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.05,"continuous_apply_seconds":0.25,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":24.83,"average":24.83,"per_activation":14.87,"per_cast_cycle":3.24,"display_info":["5 ticks of 24.83 energy damage over 1.05s on target"],"base_value":-45.5837,"scale":0.5447}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":7.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-9.6,"display_info":["-9.60% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 7s on target","Ignores buffs and enhancements"],"base_value":0.048,"scale":-2.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude","StackByAttribAndKey"],"stacking":{"behavior":"Replace","by_caster":false,"key":"Vulnerability"},"scaled":[{"archetype":"Sentinel","percent":-20.0,"display_info":["-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-0.2}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Vulnerability","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}},{"attributes":["Designer Status"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Unset Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Opportunity_Lock","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Sentinel_Ranged.Sonic_Attack.Howl","display_name":"Howl","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/9d/sonicblast_cone.png","display_help":"A short range, but powerful sonic attack that can hit multiple enemies in an arc in front of you. Damage: Medium, Recharge: Moderate","display_short_help":"Ranged Cone, Medium DMG(Smashing/Energy), Foe -Res(All)","display_info":{"Available Level":"2","Power Range":"50 ft.","Target Type":"Enemies","Recharge Time":"10s","Power Type":"Click","Attack Types":"Area, Smashing, Energy","Activation Time":"2.33s","Endurance Cost":"10.19","Effect Area":"Cone — 50 ft. radius 30° arc (10 targets max)"},"attack_types":["Area_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Sentinel Archetype Sets","Targeted AoE Damage","Universal Damage Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":50.0,"arc_degrees":30.0,"range_feet":50.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.33,"animation_time":2.33,"animation_time_before_hit":0.83,"recharge_time":10.0,"endurance_cost":10.19},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":21.4,"average":21.4,"per_activation":9.18,"per_cast_cycle":1.74,"display_info":["21.40 smashing damage on target"],"base_value":-52.8297,"scale":0.405}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":21.4,"average":21.4,"per_activation":9.18,"per_cast_cycle":1.74,"display_info":["21.40 energy damage on target"],"base_value":-52.8297,"scale":0.405}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":68.15,"average":68.15,"per_activation":29.25,"per_cast_cycle":5.53,"display_info":["68.15 energy damage on target"],"base_value":-45.5837,"scale":1.4951}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-9.6,"display_info":["-9.60% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8s on target","Ignores buffs and enhancements"],"base_value":0.048,"scale":-2.0}]}]}]},{"name":"Sentinel_Ranged.Sonic_Attack.Shout","display_name":"Shout","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/7f/sonicblast_heavy.png","display_help":"You blast your foe with a tremendous Shout, damaging them and reducing their Damage Resistance. Damage: High, Recharge: Slow","display_short_help":"Ranged, Heavy DMG(Smashing/Energy), Foe -Res(All)","display_info":{"Endurance Cost":"11.02","Attack Types":"Ranged, Smashing, Energy","Effect Area":"Single Target","Activation Time":"2.67s","Target Type":"Enemies","Power Type":"Click","Power Range":"60 ft.","Available Level":"6","Recharge Time":"11s"},"attack_types":["Ranged_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Ranged Damage","Sentinel Archetype Sets","Universal Damage Sets"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.67,"animation_time":2.67,"animation_time_before_hit":1.5,"recharge_time":11.0,"endurance_cost":11.02},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":56.0,"average":56.0,"per_activation":20.97,"per_cast_cycle":4.1,"display_info":["56.00 smashing damage on target"],"base_value":-52.8297,"scale":1.06}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":56.0,"average":56.0,"per_activation":20.97,"per_cast_cycle":4.1,"display_info":["56.00 energy damage on target"],"base_value":-52.8297,"scale":1.06}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":186.07,"average":186.07,"per_activation":69.69,"per_cast_cycle":13.61,"display_info":["186.07 energy damage on target"],"base_value":-45.5837,"scale":4.0819}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-9.6,"display_info":["-9.60% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on target","Ignores buffs and enhancements"],"base_value":0.048,"scale":-2.0}]}]}]},{"name":"Sentinel_Ranged.Sonic_Attack.Amplify","display_name":"Amplify","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/03/sonicblast_aim.png","display_help":"Greatly increases the chance to hit of your attacks for a few seconds. Slightly increases damage and range. Recharge: Long","display_short_help":"Self +To Hit, +DMG, +Range","display_info":{"Power Type":"Click","Effect Area":"Single Target","Endurance Cost":"5.20","Target Type":"Self","Available Level":"8","Recharge Time":"1m 30s","Activation Time":"1.17s"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["Ranged Damage","To Hit Buff"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":90.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":50.0,"display_info":["50.00% to hit for 10s on self","Unresistable"],"base_value":0.1,"scale":5.0}]},{"attributes":["Range"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":33.3,"display_info":["33.30% strength to range for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.333}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":50.0,"display_info":["50.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":5.0}]}]}]},{"name":"Sentinel_Ranged.Sonic_Attack.Shockwave","display_name":"Shockwave","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/46/sonicblast_knockback.png","display_help":"You can call forth a tremendous Shockwave that can knock down foes and deal some Smashing damage in a wide cone area. Damage: Minor, Recharge: Moderate","display_short_help":"Ranged (Cone), Minor DMG(Smashing/Energy), Foe Knockback, -Res(All)","display_info":{"Available Level":"12","Power Range":"50 ft.","Attack Types":"Area, Smashing, Energy","Target Type":"Enemies","Recharge Time":"8s","Activation Time":"2.17s","Endurance Cost":"8.53","Effect Area":"Cone — 50 ft. radius 30° arc (10 targets max)","Power Type":"Click"},"attack_types":["Area_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Sentinel Archetype Sets","Targeted AoE Damage","Knockback","Universal Damage Sets"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":50.0,"arc_degrees":30.0,"range_feet":50.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.17,"animation_time":2.17,"animation_time_before_hit":1.1,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":16.91,"average":16.91,"per_activation":7.79,"per_cast_cycle":1.66,"display_info":["16.91 smashing damage on target"],"base_value":-52.8297,"scale":0.32}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":16.91,"average":16.91,"per_activation":7.79,"per_cast_cycle":1.66,"display_info":["16.91 energy damage on target"],"base_value":-52.8297,"scale":0.32}]},{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","magnitude":4.99,"display_info":["5.0 magnitude knock on target"],"base_value":1.6617,"scale":3.0}]},{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":1.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","magnitude":4.99,"display_info":["5.0 magnitude knock on target after 1s delay"],"base_value":1.6617,"scale":3.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":62.76,"average":62.76,"per_activation":28.92,"per_cast_cycle":6.17,"display_info":["62.76 energy damage on target"],"base_value":-45.5837,"scale":1.3768}]},{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","magnitude":4.99,"display_info":["5.0 magnitude knock on target"],"base_value":1.6617,"scale":3.0}]},{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","after_delay_seconds":1.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","magnitude":4.99,"display_info":["5.0 magnitude knock on target after 1s delay"],"base_value":1.6617,"scale":3.0}]}]}]},{"name":"Sentinel_Ranged.Sonic_Attack.Sirens_Song","display_name":"Sirens Song","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/4d/sonicblast_sleep.png","display_help":"You send forth a subsonic pulse which causes your foes to fall unconscious and take some minor damage. Your foes will remain unconscious for a good while, but will waken if disturbed. Damage: Minor, Recharge: Slow","display_short_help":"Ranged (Cone), Minor DMG(Energy), Foe Sleep","display_info":{"Power Type":"Click","Attack Types":"Area, Energy","Available Level":"18","Activation Time":"2s","Power Range":"40 ft.","Effect Area":"Cone — 40 ft. radius 50° arc (10 targets max)","Target Type":"Enemies","Recharge Time":"20s","Endurance Cost":"15.60"},"attack_types":["Area_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Sleep","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Sleep","Targeted AoE Damage","Universal Damage Sets","Sentinel Archetype Sets"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":0.9,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":40.0,"arc_degrees":50.0,"range_feet":40.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.0,"animation_time":2.0,"animation_time_before_hit":1.5,"recharge_time":20.0,"endurance_cost":15.6},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","duration_seconds":35.76,"display_info":["3.0 sleep for 35.76s on target after 0.25s delay"],"base_value":1.192,"scale":30.0}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":26.41,"average":26.41,"per_activation":13.21,"per_cast_cycle":1.2,"display_info":["26.41 energy damage on target"],"base_value":-52.8297,"scale":0.5}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","after_delay_seconds":0.25,"flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","duration_seconds":2.0,"display_info":["3.0 sleep for 2s on target after 0.25s delay"],"base_value":2.0,"scale":1.0}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":26.42,"average":26.42,"per_activation":13.21,"per_cast_cycle":1.2,"display_info":["26.42 energy damage on target"],"base_value":-45.5837,"scale":0.5795}]}]}]},{"name":"Sentinel_Ranged.Sonic_Attack.Screech","display_name":"Screech","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/7f/sonicblast_stun.png","display_help":"By bursting forth with this hypersonic Screech, you can disorient a target. Damage: Minor, Recharge: Slow","display_short_help":"Ranged, Minor DMG(Smashing/Energy), Foe Disorient, -Res(All)","display_info":{"Power Range":"60 ft.","Attack Types":"Ranged, Smashing, Energy","Effect Area":"Single Target","Target Type":"Enemies","Recharge Time":"12s","Activation Time":"1.5s","Power Type":"Click","Endurance Cost":"11.86","Available Level":"26"},"attack_types":["Ranged_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Disorient","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Ranged Damage","Stuns","Sentinel Archetype Sets","Universal Damage Sets"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.5,"animation_time":1.5,"animation_time_before_hit":0.8,"recharge_time":12.0,"endurance_cost":11.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":60.23,"average":60.23,"per_activation":40.15,"per_cast_cycle":4.46,"display_info":["60.23 smashing damage on target"],"base_value":-52.8297,"scale":1.14}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":60.23,"average":60.23,"per_activation":40.15,"per_cast_cycle":4.46,"display_info":["60.23 energy damage on target"],"base_value":-52.8297,"scale":1.14}]},{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","duration_seconds":9.54,"display_info":["3.0 stun for 9.54s on target"],"base_value":1.192,"scale":8.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":60.23,"average":60.23,"per_activation":40.15,"per_cast_cycle":4.46,"display_info":["60.23 energy damage on target"],"base_value":-45.5837,"scale":1.3212}]},{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","duration_seconds":2.0,"display_info":["3.0 stun for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":12.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-9.6,"display_info":["-9.60% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 12s on target","Ignores buffs and enhancements"],"base_value":0.048,"scale":-2.0}]}]}]},{"name":"Sentinel_Ranged.Sonic_Attack.Dreadful_Wail","display_name":"Dreadful Wail","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/95/sonicblast_massivedamage.png","display_help":"Your Dreadful Wail is so strong that most foes will be defeated by being subjected to it. Dreadful Wail deals Extreme Smashing and Energy damage to all nearby foes in addition to reducing their defense and disorienting them for a good while. Damage: Extreme, Recharge: Long","display_short_help":"PBAoE, Extreme DMG(Energy/Smash), Foe Disorient, -Res(All)","display_info":{"Effect Area":"AoE — 20 ft. radius (10 targets max)","Attack Types":"Area, Smashing, Energy","Target Type":"Self","Power Type":"Click","Endurance Cost":"15.60","Recharge Time":"1m 30s","Available Level":"32","Activation Time":"1.97s"},"attack_types":["Area_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Disorient","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Stuns","PBAoE Damage","Universal Damage Sets","Sentinel Archetype Sets"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.4,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":20.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.97,"animation_time":1.97,"animation_time_before_hit":0.57,"recharge_time":90.0,"endurance_cost":15.6},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":0.5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":49.03,"average":49.03,"per_activation":24.89,"per_cast_cycle":0.53,"display_info":["49.03 smashing damage on target after 0.5s delay"],"base_value":-52.8297,"scale":0.928}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":0.5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":119.03,"average":119.03,"per_activation":60.42,"per_cast_cycle":1.29,"display_info":["119.03 energy damage on target after 0.5s delay"],"base_value":-52.8297,"scale":2.253}]},{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","duration_seconds":11.92,"display_info":["3.0 stun for 11.92s on target"],"base_value":1.192,"scale":10.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":0.5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":21.4,"average":21.4,"per_activation":10.86,"per_cast_cycle":0.23,"display_info":["21.40 energy damage on target after 0.5s delay"],"base_value":-45.5837,"scale":0.4694}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":0.5,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","damage":43.37,"average":43.37,"per_activation":22.02,"per_cast_cycle":0.47,"display_info":["43.37 energy damage on target after 0.5s delay","Unresistable"],"base_value":-45.5837,"scale":0.9515}]},{"attributes":["Stunned"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Sentinel","duration_seconds":2.0,"display_info":["3.0 stun for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"after_delay_seconds":0.5,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Sentinel","percent":-9.6,"display_info":["-9.60% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 20s on target after 0.5s delay","Ignores buffs and enhancements"],"base_value":0.048,"scale":-2.0}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Sentinel_Ranged.Sonic_Attack",
+  "display_name": "Sonic Attack",
+  "display_help": "Sonic Attack lets you use the power of sound waves to damage and weaken your foes.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e9/sonicblast_quick.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Sentinel_Ranged.Sonic_Attack.Shriek",
+    "Sentinel_Ranged.Sonic_Attack.Scream",
+    "Sentinel_Ranged.Sonic_Attack.Howl",
+    "Sentinel_Ranged.Sonic_Attack.Shout",
+    "Sentinel_Ranged.Sonic_Attack.Amplify",
+    "Sentinel_Ranged.Sonic_Attack.Shockwave",
+    "Sentinel_Ranged.Sonic_Attack.Sirens_Song",
+    "Sentinel_Ranged.Sonic_Attack.Screech",
+    "Sentinel_Ranged.Sonic_Attack.Dreadful_Wail"
+  ],
+  "powers": [
+    {
+      "name": "Sentinel_Ranged.Sonic_Attack.Shriek",
+      "display_name": "Shriek",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e9/sonicblast_quick.png",
+      "display_help": "You let forth a quick Shriek, damaging your target and weakening his Damage Resistance. Damage: Minor, Recharge: Very Fast",
+      "display_short_help": "Ranged, Minor DMG(Smashing/Energy), Foe -Resist",
+      "display_info": {
+        "Recharge Time": "3s",
+        "Attack Types": "Ranged, Smashing, Energy",
+        "Endurance Cost": "4.37",
+        "Target Type": "Enemies",
+        "Power Range": "60 ft.",
+        "Activation Time": "1s",
+        "Available Level": "1",
+        "Power Type": "Click",
+        "Effect Area": "Single Target"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sentinel Archetype Sets",
+        "Ranged Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.93,
+        "recharge_time": 3.0,
+        "endurance_cost": 4.37
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 22.19,
+                  "average": 22.19,
+                  "per_activation": 22.19,
+                  "per_cast_cycle": 5.55,
+                  "display_info": [
+                    "22.19 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.42
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 22.19,
+                  "average": 22.19,
+                  "per_activation": 22.19,
+                  "per_cast_cycle": 5.55,
+                  "display_info": [
+                    "22.19 energy damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.42
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 83.79,
+                  "average": 83.79,
+                  "per_activation": 83.79,
+                  "per_cast_cycle": 20.95,
+                  "display_info": [
+                    "83.79 energy damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 1.8381
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -9.6,
+                  "display_info": [
+                    "-9.60% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 5s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 0.048,
+                  "scale": -2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "StackByAttribAndKey"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": false,
+                "key": "Vulnerability"
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Vulnerability",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Designer Status"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Unset Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Opportunity_Lock",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Sonic_Attack.Scream",
+      "display_name": "Scream",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/13/sonicblast_medium.png",
+      "display_help": "Your Scream can cause serious damage to a target, while weakening his resistance to further damage. Damage: Moderate(DoT), Recharge: Fast",
+      "display_short_help": "Ranged, Moderate DoT(Smashing/Energy), -Res",
+      "display_info": {
+        "Activation Time": "1.67s",
+        "Endurance Cost": "6.86",
+        "Power Range": "60 ft.",
+        "Recharge Time": "6s",
+        "Available Level": "1",
+        "Effect Area": "Single Target",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Attack Types": "Ranged, Smashing, Energy"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sentinel Archetype Sets",
+        "Ranged Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 6.0,
+        "endurance_cost": 6.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.05,
+              "continuous_apply_seconds": 0.25,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 6.97,
+                  "average": 6.97,
+                  "per_activation": 4.17,
+                  "per_cast_cycle": 0.91,
+                  "display_info": [
+                    "5 ticks of 6.97 smashing damage over 1.05s on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.132
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.05,
+              "continuous_apply_seconds": 0.25,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 6.97,
+                  "average": 6.97,
+                  "per_activation": 4.17,
+                  "per_cast_cycle": 0.91,
+                  "display_info": [
+                    "5 ticks of 6.97 energy damage over 1.05s on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.132
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.05,
+              "continuous_apply_seconds": 0.25,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 24.83,
+                  "average": 24.83,
+                  "per_activation": 14.87,
+                  "per_cast_cycle": 3.24,
+                  "display_info": [
+                    "5 ticks of 24.83 energy damage over 1.05s on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.5447
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 7.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -9.6,
+                  "display_info": [
+                    "-9.60% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 7s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 0.048,
+                  "scale": -2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "StackByAttribAndKey"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": false,
+                "key": "Vulnerability"
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 15s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kRage > 90) && !source.ownPower?(Temporary_Powers.Temporary_Powers.Opportunity_Lock)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Vulnerability",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Designer Status"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Unset Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Opportunity_Lock",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Sonic_Attack.Howl",
+      "display_name": "Howl",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/9d/sonicblast_cone.png",
+      "display_help": "A short range, but powerful sonic attack that can hit multiple enemies in an arc in front of you. Damage: Medium, Recharge: Moderate",
+      "display_short_help": "Ranged Cone, Medium DMG(Smashing/Energy), Foe -Res(All)",
+      "display_info": {
+        "Activation Time": "2.33s",
+        "Endurance Cost": "10.19",
+        "Effect Area": "Cone — 50 ft. radius 30° arc (10 targets max)",
+        "Attack Types": "Area, Smashing, Energy",
+        "Recharge Time": "10s",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Power Range": "50 ft.",
+        "Available Level": "2"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sentinel Archetype Sets",
+        "Targeted AoE Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 50.0,
+        "arc_degrees": 30.0,
+        "range_feet": 50.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.33,
+        "animation_time": 2.33,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 10.0,
+        "endurance_cost": 10.19
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 21.4,
+                  "average": 21.4,
+                  "per_activation": 9.18,
+                  "per_cast_cycle": 1.74,
+                  "display_info": [
+                    "21.40 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.405
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 21.4,
+                  "average": 21.4,
+                  "per_activation": 9.18,
+                  "per_cast_cycle": 1.74,
+                  "display_info": [
+                    "21.40 energy damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.405
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 68.15,
+                  "average": 68.15,
+                  "per_activation": 29.25,
+                  "per_cast_cycle": 5.53,
+                  "display_info": [
+                    "68.15 energy damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 1.4951
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -9.6,
+                  "display_info": [
+                    "-9.60% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 0.048,
+                  "scale": -2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Sonic_Attack.Shout",
+      "display_name": "Shout",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/7f/sonicblast_heavy.png",
+      "display_help": "You blast your foe with a tremendous Shout, damaging them and reducing their Damage Resistance. Damage: High, Recharge: Slow",
+      "display_short_help": "Ranged, Heavy DMG(Smashing/Energy), Foe -Res(All)",
+      "display_info": {
+        "Activation Time": "2.67s",
+        "Available Level": "6",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Recharge Time": "11s",
+        "Endurance Cost": "11.02",
+        "Attack Types": "Ranged, Smashing, Energy",
+        "Effect Area": "Single Target",
+        "Power Range": "60 ft."
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sentinel Archetype Sets",
+        "Universal Damage Sets",
+        "Ranged Damage"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.67,
+        "animation_time": 2.67,
+        "animation_time_before_hit": 1.5,
+        "recharge_time": 11.0,
+        "endurance_cost": 11.02
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 56.0,
+                  "average": 56.0,
+                  "per_activation": 20.97,
+                  "per_cast_cycle": 4.1,
+                  "display_info": [
+                    "56.00 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.06
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 56.0,
+                  "average": 56.0,
+                  "per_activation": 20.97,
+                  "per_cast_cycle": 4.1,
+                  "display_info": [
+                    "56.00 energy damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.06
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 186.07,
+                  "average": 186.07,
+                  "per_activation": 69.69,
+                  "per_cast_cycle": 13.61,
+                  "display_info": [
+                    "186.07 energy damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 4.0819
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -9.6,
+                  "display_info": [
+                    "-9.60% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 0.048,
+                  "scale": -2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Sonic_Attack.Amplify",
+      "display_name": "Amplify",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/03/sonicblast_aim.png",
+      "display_help": "Greatly increases the chance to hit of your attacks for a few seconds. Slightly increases damage and range. Recharge: Long",
+      "display_short_help": "Self +To Hit, +DMG, +Range",
+      "display_info": {
+        "Target Type": "Self",
+        "Available Level": "8",
+        "Endurance Cost": "5.20",
+        "Recharge Time": "1m 30s",
+        "Activation Time": "1.17s",
+        "Power Type": "Click",
+        "Effect Area": "Single Target"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff",
+        "Ranged Damage"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 90.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% to hit for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Range"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 33.3,
+                  "display_info": [
+                    "33.30% strength to range for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.333
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Sonic_Attack.Shockwave",
+      "display_name": "Shockwave",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/46/sonicblast_knockback.png",
+      "display_help": "You can call forth a tremendous Shockwave that can knock down foes and deal some Smashing damage in a wide cone area. Damage: Minor, Recharge: Moderate",
+      "display_short_help": "Ranged (Cone), Minor DMG(Smashing/Energy), Foe Knockback, -Res(All)",
+      "display_info": {
+        "Activation Time": "2.17s",
+        "Effect Area": "Cone — 50 ft. radius 30° arc (10 targets max)",
+        "Attack Types": "Area, Smashing, Energy",
+        "Power Type": "Click",
+        "Available Level": "12",
+        "Target Type": "Enemies",
+        "Endurance Cost": "8.53",
+        "Recharge Time": "8s",
+        "Power Range": "50 ft."
+      },
+      "attack_types": [
+        "Area_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Knockback",
+        "Universal Damage Sets",
+        "Sentinel Archetype Sets",
+        "Targeted AoE Damage"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 50.0,
+        "arc_degrees": 30.0,
+        "range_feet": 50.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.17,
+        "animation_time": 2.17,
+        "animation_time_before_hit": 1.1,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 16.91,
+                  "average": 16.91,
+                  "per_activation": 7.79,
+                  "per_cast_cycle": 1.66,
+                  "display_info": [
+                    "16.91 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.32
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 16.91,
+                  "average": 16.91,
+                  "per_activation": 7.79,
+                  "per_cast_cycle": 1.66,
+                  "display_info": [
+                    "16.91 energy damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.32
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "magnitude": 4.99,
+                  "display_info": [
+                    "5.0 magnitude knock on target"
+                  ],
+                  "base_value": 1.6617,
+                  "scale": 3.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 1.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "magnitude": 4.99,
+                  "display_info": [
+                    "5.0 magnitude knock on target after 1s delay"
+                  ],
+                  "base_value": 1.6617,
+                  "scale": 3.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 62.76,
+                  "average": 62.76,
+                  "per_activation": 28.92,
+                  "per_cast_cycle": 6.17,
+                  "display_info": [
+                    "62.76 energy damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 1.3768
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "magnitude": 4.99,
+                  "display_info": [
+                    "5.0 magnitude knock on target"
+                  ],
+                  "base_value": 1.6617,
+                  "scale": 3.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "after_delay_seconds": 1.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "magnitude": 4.99,
+                  "display_info": [
+                    "5.0 magnitude knock on target after 1s delay"
+                  ],
+                  "base_value": 1.6617,
+                  "scale": 3.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Sonic_Attack.Sirens_Song",
+      "display_name": "Sirens Song",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/4d/sonicblast_sleep.png",
+      "display_help": "You send forth a subsonic pulse which causes your foes to fall unconscious and take some minor damage. Your foes will remain unconscious for a good while, but will waken if disturbed. Damage: Minor, Recharge: Slow",
+      "display_short_help": "Ranged (Cone), Minor DMG(Energy), Foe Sleep",
+      "display_info": {
+        "Power Range": "40 ft.",
+        "Available Level": "18",
+        "Power Type": "Click",
+        "Endurance Cost": "15.60",
+        "Recharge Time": "20s",
+        "Attack Types": "Area, Energy",
+        "Target Type": "Enemies",
+        "Activation Time": "2s",
+        "Effect Area": "Cone — 40 ft. radius 50° arc (10 targets max)"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Sleep",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sleep",
+        "Sentinel Archetype Sets",
+        "Targeted AoE Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 0.9,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 40.0,
+        "arc_degrees": 50.0,
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.0,
+        "animation_time": 2.0,
+        "animation_time_before_hit": 1.5,
+        "recharge_time": 20.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "duration_seconds": 35.76,
+                  "display_info": [
+                    "3.0 sleep for 35.76s on target after 0.25s delay"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 30.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 26.41,
+                  "average": 26.41,
+                  "per_activation": 13.21,
+                  "per_cast_cycle": 1.2,
+                  "display_info": [
+                    "26.41 energy damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 sleep for 2s on target after 0.25s delay"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 26.42,
+                  "average": 26.42,
+                  "per_activation": 13.21,
+                  "per_cast_cycle": 1.2,
+                  "display_info": [
+                    "26.42 energy damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.5795
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Sonic_Attack.Screech",
+      "display_name": "Screech",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/7f/sonicblast_stun.png",
+      "display_help": "By bursting forth with this hypersonic Screech, you can disorient a target. Damage: Minor, Recharge: Slow",
+      "display_short_help": "Ranged, Minor DMG(Smashing/Energy), Foe Disorient, -Res(All)",
+      "display_info": {
+        "Power Range": "60 ft.",
+        "Power Type": "Click",
+        "Available Level": "26",
+        "Attack Types": "Ranged, Smashing, Energy",
+        "Activation Time": "1.5s",
+        "Endurance Cost": "11.86",
+        "Recharge Time": "12s",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Sentinel Archetype Sets",
+        "Universal Damage Sets",
+        "Ranged Damage",
+        "Stuns"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.5,
+        "animation_time": 1.5,
+        "animation_time_before_hit": 0.8,
+        "recharge_time": 12.0,
+        "endurance_cost": 11.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 60.23,
+                  "average": 60.23,
+                  "per_activation": 40.15,
+                  "per_cast_cycle": 4.46,
+                  "display_info": [
+                    "60.23 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.14
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 60.23,
+                  "average": 60.23,
+                  "per_activation": 40.15,
+                  "per_cast_cycle": 4.46,
+                  "display_info": [
+                    "60.23 energy damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.14
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "duration_seconds": 9.54,
+                  "display_info": [
+                    "3.0 stun for 9.54s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 60.23,
+                  "average": 60.23,
+                  "per_activation": 40.15,
+                  "per_cast_cycle": 4.46,
+                  "display_info": [
+                    "60.23 energy damage on target"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 1.3212
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 stun for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 12.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -9.6,
+                  "display_info": [
+                    "-9.60% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 12s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 0.048,
+                  "scale": -2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sentinel_Ranged.Sonic_Attack.Dreadful_Wail",
+      "display_name": "Dreadful Wail",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/95/sonicblast_massivedamage.png",
+      "display_help": "Your Dreadful Wail is so strong that most foes will be defeated by being subjected to it. Dreadful Wail deals Extreme Smashing and Energy damage to all nearby foes in addition to reducing their defense and disorienting them for a good while. Damage: Extreme, Recharge: Long",
+      "display_short_help": "PBAoE, Extreme DMG(Energy/Smash), Foe Disorient, -Res(All)",
+      "display_info": {
+        "Endurance Cost": "15.60",
+        "Effect Area": "AoE — 20 ft. radius (10 targets max)",
+        "Recharge Time": "1m 30s",
+        "Power Type": "Click",
+        "Target Type": "Self",
+        "Activation Time": "1.97s",
+        "Available Level": "32",
+        "Attack Types": "Area, Smashing, Energy"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Disorient",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Sentinel Archetype Sets",
+        "PBAoE Damage",
+        "Stuns"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.4,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 20.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.97,
+        "animation_time": 1.97,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 90.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 0.5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 49.03,
+                  "average": 49.03,
+                  "per_activation": 24.89,
+                  "per_cast_cycle": 0.53,
+                  "display_info": [
+                    "49.03 smashing damage on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.928
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 0.5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 119.03,
+                  "average": 119.03,
+                  "per_activation": 60.42,
+                  "per_cast_cycle": 1.29,
+                  "display_info": [
+                    "119.03 energy damage on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 2.253
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "duration_seconds": 11.92,
+                  "display_info": [
+                    "3.0 stun for 11.92s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 0.5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 21.4,
+                  "average": 21.4,
+                  "per_activation": 10.86,
+                  "per_cast_cycle": 0.23,
+                  "display_info": [
+                    "21.40 energy damage on target after 0.5s delay"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.4694
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 0.5,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "damage": 43.37,
+                  "average": 43.37,
+                  "per_activation": 22.02,
+                  "per_cast_cycle": 0.47,
+                  "display_info": [
+                    "43.37 energy damage on target after 0.5s delay",
+                    "Unresistable"
+                  ],
+                  "base_value": -45.5837,
+                  "scale": 0.9515
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Stunned"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 stun for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "after_delay_seconds": 0.5,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Sentinel",
+                  "percent": -9.6,
+                  "display_info": [
+                    "-9.60% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 20s on target after 0.5s delay",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 0.048,
+                  "scale": -2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,2763 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Pets.Titan_Weapons_Tanker","display_name":"","display_help":"You wield an over-sized weapon of some sort; a gigantic sword, mace or axe or possibly even a railroad crossing sign. The weapon's sheer mass gives it great destructive power, and your immense strength and skill allow you to use it as a devastating weapon. Titan Weapons as a set, has exceptional area of effect capability, while retaining a strong single target ability. Certain powers can only be used as follow up attacks and are grayed out when first entering combat, while others allow you to build up momentum and accelerate your attack speed for a few moments. Momentum is gained by using a Titan Weapon power when you don't already have Momentum. This effect lasts for 5 seconds. Once Momentum wears off, another Titan Weapon attack must be used to grant Momentum again.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/38/titanweapons_defensivesweep.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Pets.Titan_Weapons_Tanker.Defensive_Sweep_Slow","Pets.Titan_Weapons_Tanker.Defensive_Sweep_Fast","Pets.Titan_Weapons_Tanker.Crushing_Blow_Slow","Pets.Titan_Weapons_Tanker.Crushing_Blow_Fast","Pets.Titan_Weapons_Tanker.Sweeping_Strike_Slow","Pets.Titan_Weapons_Tanker.Sweeping_Strike_Fast","Pets.Titan_Weapons_Tanker.Shatter_Armor_Slow","Pets.Titan_Weapons_Tanker.Shatter_Armor_Fast","Pets.Titan_Weapons_Tanker.Arc_of_Destruction_Slow","Pets.Titan_Weapons_Tanker.Arc_of_Destruction_Fast"],"powers":[{"name":"Pets.Titan_Weapons_Tanker.Defensive_Sweep_Slow","display_name":"Defensive Sweep","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/38/titanweapons_defensivesweep.png","display_help":"Melee(Cone), Light DMG(Smashing), Self +DEF(Melee, Smash), Foe -Res(All). Note that Defensive Sweep is unaffected by Arc changes. Recharge: Fast","display_short_help":"Melee(Cone), Light DMG(Smashing), Self +DEF(Melee, Smash), Foe -Res(All)","display_info":{"Endurance Cost":"5.36","Effect Area":"Cone — 10 ft. radius 120° arc (5 targets max)","Available Level":"1","Attack Types":"Melee, Smashing","Activation Time":"2.2s","Power Type":"Click","Target Type":"Enemies","Power Range":"10 ft.","Recharge Time":"4s"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Defense","Enhance Accuracy"],"enhancement_set_categories_allowed":["PBAoE Damage","Universal Damage Sets","Defense Sets","Taunt","Tanker Archetype Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":5,"radius_feet":10.0,"arc_degrees":120.0,"range_feet":10.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.2,"animation_time":2.2,"animation_time_before_hit":2.17,"recharge_time":4.0,"endurance_cost":5.36},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":38.51,"average":38.51,"per_activation":17.5,"per_cast_cycle":6.21,"display_info":["38.51 smashing damage on target"],"base_value":-52.8297,"scale":0.729}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Melee_Def","Smashing_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":15.0,"display_info":["15.00% strength to melee, smashing for 10s on self","Unresistable"],"base_value":0.1,"scale":1.5}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":100.48,"average":100.48,"per_activation":45.67,"per_cast_cycle":16.21,"display_info":["100.48 smashing damage on target"],"base_value":-52.8297,"scale":1.902}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":17.33,"average":17.33,"per_activation":7.88,"per_cast_cycle":2.8,"display_info":["17.33 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.3281}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":7.2,"after_delay_seconds":-2.2,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Designer Status"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}}]}]},{"name":"Pets.Titan_Weapons_Tanker.Defensive_Sweep_Fast","display_name":"Defensive Sweep","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/38/titanweapons_defensivesweep.png","display_help":"Melee(Cone), Light DMG(Smashing), Self +DEF(Melee, Smash), Foe -Res(All). Note that Defensive Sweep is unaffected by Arc changes. Recharge: Fast","display_short_help":"Melee(Cone), Light DMG(Smashing), Self +DEF(Melee, Smash), Foe -Res(All)","display_info":{"Endurance Cost":"5.36","Activation Time":"1s","Attack Types":"Melee, Smashing","Available Level":"1","Effect Area":"Cone — 10 ft. radius 120° arc (5 targets max)","Power Range":"10 ft.","Recharge Time":"4s","Target Type":"Enemies","Power Type":"Click"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Defense","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Taunt","Defense Sets","Tanker Archetype Sets","PBAoE Damage"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":5,"radius_feet":10.0,"arc_degrees":120.0,"range_feet":10.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.87,"recharge_time":4.0,"endurance_cost":5.36},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":38.51,"average":38.51,"per_activation":38.51,"per_cast_cycle":7.7,"display_info":["38.51 smashing damage on target"],"base_value":-52.8297,"scale":0.729}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Melee_Def","Smashing_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":15.0,"display_info":["15.00% strength to melee, smashing for 10s on self","Unresistable"],"base_value":0.1,"scale":1.5}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":60.29,"average":60.29,"per_activation":60.29,"per_cast_cycle":12.06,"display_info":["60.29 smashing damage on target"],"base_value":-52.8297,"scale":1.1412}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":17.33,"average":17.33,"per_activation":17.33,"per_cast_cycle":3.47,"display_info":["17.33 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.3281}]}]}]},{"name":"Pets.Titan_Weapons_Tanker.Crushing_Blow_Slow","display_name":"Crushing Blow","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/81/titanweapons_crushingblow.png","display_help":"You swing a mighty crushing blow at your opponent dealing High Smashing damage and reducing their defense. Damage: High, Recharge: Moderate","display_short_help":"Melee, High DMG(Smashing), -DEF","display_info":{"Power Range":"9 ft.","Attack Types":"Melee, Smashing","Power Type":"Click","Effect Area":"Single Target","Available Level":"1","Activation Time":"2s","Endurance Cost":"8.78","Recharge Time":"8s","Target Type":"Enemies"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Accurate Defense Debuff","Defense Debuff","Taunt","Tanker Archetype Sets","Melee Damage"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":9.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.0,"animation_time":2.0,"animation_time_before_hit":1.97,"recharge_time":8.0,"endurance_cost":8.78},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":95.3,"average":95.3,"per_activation":47.65,"per_cast_cycle":9.53,"display_info":["95.30 smashing damage on target"],"base_value":-52.8297,"scale":1.804}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":142.01,"average":142.01,"per_activation":71.0,"per_cast_cycle":14.2,"display_info":["142.01 smashing damage on target"],"base_value":-52.8297,"scale":2.6881}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-7.0,"display_info":["-7.00% strength to defense for 10s on target"],"base_value":-0.07,"scale":1.0}]},{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":7.0,"after_delay_seconds":-2.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Designer Status"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":42.89,"average":42.89,"per_activation":21.45,"per_cast_cycle":4.29,"display_info":["42.89 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.8118}]}]}]},{"name":"Pets.Titan_Weapons_Tanker.Crushing_Blow_Fast","display_name":"Crushing Blow","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/81/titanweapons_crushingblow.png","display_help":"You swing a mighty crushing blow at your opponent dealing High Smashing damage and reducing their defense. Damage: High, Recharge: Moderate","display_short_help":"Melee, High DMG(Smashing), -DEF","display_info":{"Endurance Cost":"8.78","Available Level":"1","Power Type":"Click","Power Range":"9 ft.","Attack Types":"Melee, Smashing","Activation Time":"1.2s","Target Type":"Enemies","Effect Area":"Single Target","Recharge Time":"8s"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt","Universal Damage Sets","Accurate Defense Debuff","Melee Damage","Tanker Archetype Sets","Defense Debuff"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":9.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.2,"animation_time":1.2,"animation_time_before_hit":1.17,"recharge_time":8.0,"endurance_cost":8.78},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":95.3,"average":95.3,"per_activation":79.42,"per_cast_cycle":10.36,"display_info":["95.30 smashing damage on target"],"base_value":-52.8297,"scale":1.804}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":104.5,"average":104.5,"per_activation":87.08,"per_cast_cycle":11.36,"display_info":["104.50 smashing damage on target"],"base_value":-52.8297,"scale":1.9781}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":42.89,"average":42.89,"per_activation":35.74,"per_cast_cycle":4.66,"display_info":["42.89 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.8118}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-7.0,"display_info":["-7.00% strength to defense for 10s on target"],"base_value":-0.07,"scale":1.0}]}]}]},{"name":"Pets.Titan_Weapons_Tanker.Sweeping_Strike_Slow","display_name":"Titan Sweep","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b7/titanweapons_sweepingstrike.png","display_help":"You make a sweeping slash with your weapon, causing high damage and possibly knocking your opponent down. Note that Titan Sweep is unaffected by Arc changes. Damage: High, Recharge: Moderate","display_short_help":"Melee (Cone), High DMG(Smashing), Foe Knockdown","display_info":{"Power Range":"10 ft.","Recharge Time":"10s","Attack Types":"Melee, Smashing","Power Type":"Click","Available Level":"1","Effect Area":"Cone — 10 ft. radius 120° arc (5 targets max)","Endurance Cost":"10.50","Activation Time":"2.43s","Target Type":"Enemies"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["PBAoE Damage","Knockback","Universal Damage Sets","Tanker Archetype Sets","Taunt"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":5,"radius_feet":10.0,"arc_degrees":120.0,"range_feet":10.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.43,"animation_time":2.43,"animation_time_before_hit":2.4,"recharge_time":10.0,"endurance_cost":10.5},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":75.49,"average":75.49,"per_activation":31.07,"per_cast_cycle":6.07,"display_info":["75.49 smashing damage on target"],"base_value":-52.8297,"scale":1.429}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":66.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":0.67,"display_info":["66.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":119.67,"average":119.67,"per_activation":49.25,"per_cast_cycle":9.63,"display_info":["119.67 smashing damage on target"],"base_value":-52.8297,"scale":2.2652}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":66.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":0.67,"display_info":["66.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":33.97,"average":33.97,"per_activation":13.98,"per_cast_cycle":2.73,"display_info":["33.97 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.6431}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":7.43,"after_delay_seconds":-2.43,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Designer Status"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}}]}]},{"name":"Pets.Titan_Weapons_Tanker.Sweeping_Strike_Fast","display_name":"Titan Sweep","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b7/titanweapons_sweepingstrike.png","display_help":"You make a sweeping slash with your weapon, causing high damage and possibly knocking your opponent down. Note that Titan Sweep is unaffected by Arc changes. Damage: High, Recharge: Moderate","display_short_help":"Melee (Cone), High DMG(Smashing), Foe Knockdown","display_info":{"Power Type":"Click","Effect Area":"Cone — 10 ft. radius 120° arc (5 targets max)","Available Level":"1","Power Range":"10 ft.","Target Type":"Enemies","Activation Time":"1s","Attack Types":"Melee, Smashing","Endurance Cost":"10.50","Recharge Time":"10s"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["PBAoE Damage","Tanker Archetype Sets","Taunt","Knockback","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":5,"radius_feet":10.0,"arc_degrees":120.0,"range_feet":10.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.9,"recharge_time":10.0,"endurance_cost":10.5},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":75.49,"average":75.49,"per_activation":75.49,"per_cast_cycle":6.86,"display_info":["75.49 smashing damage on target"],"base_value":-52.8297,"scale":1.429}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":66.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":0.67,"display_info":["66.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":71.77,"average":71.77,"per_activation":71.77,"per_cast_cycle":6.52,"display_info":["71.77 smashing damage on target"],"base_value":-52.8297,"scale":1.3586}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":66.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":0.67,"display_info":["66.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":33.97,"average":33.97,"per_activation":33.97,"per_cast_cycle":3.09,"display_info":["33.97 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.6431}]}]}]},{"name":"Pets.Titan_Weapons_Tanker.Shatter_Armor_Slow","display_name":"Rend Armor","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/9a/titanweapons_shatterarmor.png","display_help":"You batter your enemy with your mighty weapon dealing Extreme Smashing damage and reducing their resistance to damage as well as their defense to all types of attacks for a short time. Damage: Extreme, Recharge: Slow","display_short_help":"Melee, Extreme DMG(Smashing), Foe -Def(All), -Res(All)","display_info":{"Power Range":"9 ft.","Available Level":"1","Recharge Time":"16s","Power Type":"Click","Attack Types":"Melee, Smashing","Effect Area":"Single Target","Endurance Cost":"15.64","Activation Time":"2.3s","Target Type":"Enemies"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Accurate Defense Debuff","Melee Damage","Taunt","Defense Debuff","Tanker Archetype Sets","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":9.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.3,"animation_time":2.3,"animation_time_before_hit":2.27,"recharge_time":16.0,"endurance_cost":15.64},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":169.69,"average":169.69,"per_activation":73.78,"per_cast_cycle":9.27,"display_info":["169.69 smashing damage on target"],"base_value":-52.8297,"scale":3.212}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-7.0,"display_info":["-7.00% strength to defense for 10s on target"],"base_value":-0.07,"scale":1.0}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-8.0,"display_info":["-8.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8s on target","Ignores buffs and enhancements"],"base_value":0.08,"scale":-1.0}]},{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":7.3,"after_delay_seconds":-2.3,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Designer Status"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":177.52,"average":177.52,"per_activation":77.18,"per_cast_cycle":9.7,"display_info":["177.52 smashing damage on target"],"base_value":-52.8297,"scale":3.3602}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":76.36,"average":76.36,"per_activation":33.2,"per_cast_cycle":4.17,"display_info":["76.36 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":1.4454}]}]}]},{"name":"Pets.Titan_Weapons_Tanker.Shatter_Armor_Fast","display_name":"Rend Armor","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/9a/titanweapons_shatterarmor.png","display_help":"You batter your enemy with your mighty weapon dealing Extreme Smashing damage and reducing their resistance to damage as well as their defense to all types of attacks for a short time. Damage: Extreme, Recharge: Slow","display_short_help":"Melee, Extreme DMG(Smashing), Foe -Def(All), -Res(All)","display_info":{"Available Level":"1","Power Type":"Click","Target Type":"Enemies","Effect Area":"Single Target","Activation Time":"1.3s","Attack Types":"Melee, Smashing","Recharge Time":"16s","Power Range":"9 ft.","Endurance Cost":"15.64"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt","Tanker Archetype Sets","Accurate Defense Debuff","Melee Damage","Universal Damage Sets","Defense Debuff"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":9.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.3,"animation_time":1.3,"animation_time_before_hit":1.2,"recharge_time":16.0,"endurance_cost":15.64},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":169.69,"average":169.69,"per_activation":130.53,"per_cast_cycle":9.81,"display_info":["169.69 smashing damage on target"],"base_value":-52.8297,"scale":3.212}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-7.0,"display_info":["-7.00% strength to defense for 10s on target"],"base_value":-0.07,"scale":1.0}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-8.0,"display_info":["-8.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8s on target","Ignores buffs and enhancements"],"base_value":0.08,"scale":-1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":130.63,"average":130.63,"per_activation":100.48,"per_cast_cycle":7.55,"display_info":["130.63 smashing damage on target"],"base_value":-52.8297,"scale":2.4726}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":76.36,"average":76.36,"per_activation":58.74,"per_cast_cycle":4.41,"display_info":["76.36 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":1.4454}]}]}]},{"name":"Pets.Titan_Weapons_Tanker.Arc_of_Destruction_Slow","display_name":"Arc of Destruction","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b7/titanweapons_arcofdestruction.png","display_help":"You swing your weapon in a devastating Arc of Destruction that deals Superior Smashing damage and has a good chance to knock foes down. Arc of Destruction may only be used while on the ground. Note that Arc of Destruction is unaffected by Arc changes. Damage: Superior, Recharge: Slow","display_short_help":"Melee (Cone), Superior DMG(Smashing), Foe Knockback","display_info":{"Target Type":"Enemies","Power Range":"10 ft.","Power Type":"Click","Available Level":"1","Recharge Time":"20s","Effect Area":"Cone — 10 ft. radius 120° arc (10 targets max)","Activation Time":"2.7s","Attack Types":"Melee, Smashing","Endurance Cost":"19.07"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt","Knockback","PBAoE Damage","Tanker Archetype Sets","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":10.0,"arc_degrees":120.0,"range_feet":10.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.7,"animation_time":2.7,"animation_time_before_hit":2.47,"recharge_time":20.0,"endurance_cost":19.07},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":137.15,"average":137.15,"per_activation":50.8,"per_cast_cycle":6.04,"display_info":["137.15 smashing damage on target"],"base_value":-52.8297,"scale":2.596}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":147.85,"average":147.85,"per_activation":54.76,"per_cast_cycle":6.51,"display_info":["147.85 smashing damage on target"],"base_value":-52.8297,"scale":2.7986}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":75.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":0.67,"display_info":["75.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":75.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":0.67,"display_info":["75.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":61.72,"average":61.72,"per_activation":22.86,"per_cast_cycle":2.72,"display_info":["61.72 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":1.1682}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":7.7,"after_delay_seconds":-2.7,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Designer Status"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true}}]}]},{"name":"Pets.Titan_Weapons_Tanker.Arc_of_Destruction_Fast","display_name":"Arc of Destruction","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/b7/titanweapons_arcofdestruction.png","display_help":"You swing your weapon in a devastating Arc of Destruction that deals Superior Smashing damage and has a good chance to knock foes down. Arc of Destruction may only be used while on the ground. Note that Arc of Destruction is unaffected by Arc changes. Damage: Superior, Recharge: Slow","display_short_help":"Melee (Cone), Superior DMG(Smashing), Foe Knockback","display_info":{"Endurance Cost":"19.07","Activation Time":"1.5s","Power Range":"10 ft.","Recharge Time":"20s","Attack Types":"Melee, Smashing","Target Type":"Enemies","Available Level":"1","Power Type":"Click","Effect Area":"Cone — 10 ft. radius 120° arc (10 targets max)"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Taunt","PBAoE Damage","Tanker Archetype Sets","Knockback"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":10.0,"arc_degrees":120.0,"range_feet":10.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.5,"animation_time":1.5,"animation_time_before_hit":1.3,"recharge_time":20.0,"endurance_cost":19.07},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":137.15,"average":137.15,"per_activation":91.43,"per_cast_cycle":6.38,"display_info":["137.15 smashing damage on target"],"base_value":-52.8297,"scale":2.596}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":107.66,"average":107.66,"per_activation":71.77,"per_cast_cycle":5.01,"display_info":["107.66 smashing damage on target"],"base_value":-52.8297,"scale":2.0378}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":75.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":0.67,"display_info":["75.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":75.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":0.67,"display_info":["75.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":61.72,"average":61.72,"per_activation":41.15,"per_cast_cycle":2.87,"display_info":["61.72 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":1.1682}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Pets.Titan_Weapons_Tanker",
+  "display_name": "",
+  "display_help": "You wield an over-sized weapon of some sort; a gigantic sword, mace or axe or possibly even a railroad crossing sign. The weapon's sheer mass gives it great destructive power, and your immense strength and skill allow you to use it as a devastating weapon. Titan Weapons as a set, has exceptional area of effect capability, while retaining a strong single target ability. Certain powers can only be used as follow up attacks and are grayed out when first entering combat, while others allow you to build up momentum and accelerate your attack speed for a few moments. Momentum is gained by using a Titan Weapon power when you don't already have Momentum. This effect lasts for 5 seconds. Once Momentum wears off, another Titan Weapon attack must be used to grant Momentum again.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/38/titanweapons_defensivesweep.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Pets.Titan_Weapons_Tanker.Defensive_Sweep_Slow",
+    "Pets.Titan_Weapons_Tanker.Defensive_Sweep_Fast",
+    "Pets.Titan_Weapons_Tanker.Crushing_Blow_Slow",
+    "Pets.Titan_Weapons_Tanker.Crushing_Blow_Fast",
+    "Pets.Titan_Weapons_Tanker.Sweeping_Strike_Slow",
+    "Pets.Titan_Weapons_Tanker.Sweeping_Strike_Fast",
+    "Pets.Titan_Weapons_Tanker.Shatter_Armor_Slow",
+    "Pets.Titan_Weapons_Tanker.Shatter_Armor_Fast",
+    "Pets.Titan_Weapons_Tanker.Arc_of_Destruction_Slow",
+    "Pets.Titan_Weapons_Tanker.Arc_of_Destruction_Fast"
+  ],
+  "powers": [
+    {
+      "name": "Pets.Titan_Weapons_Tanker.Defensive_Sweep_Slow",
+      "display_name": "Defensive Sweep",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/38/titanweapons_defensivesweep.png",
+      "display_help": "Melee(Cone), Light DMG(Smashing), Self +DEF(Melee, Smash), Foe -Res(All). Note that Defensive Sweep is unaffected by Arc changes. Recharge: Fast",
+      "display_short_help": "Melee(Cone), Light DMG(Smashing), Self +DEF(Melee, Smash), Foe -Res(All)",
+      "display_info": {
+        "Effect Area": "Cone — 10 ft. radius 120° arc (5 targets max)",
+        "Recharge Time": "4s",
+        "Attack Types": "Melee, Smashing",
+        "Endurance Cost": "5.36",
+        "Power Range": "10 ft.",
+        "Power Type": "Click",
+        "Available Level": "1",
+        "Activation Time": "2.2s",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Defense",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Sets",
+        "Tanker Archetype Sets",
+        "Universal Damage Sets",
+        "Taunt",
+        "PBAoE Damage"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 5,
+        "radius_feet": 10.0,
+        "arc_degrees": 120.0,
+        "range_feet": 10.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.2,
+        "animation_time": 2.2,
+        "animation_time_before_hit": 2.17,
+        "recharge_time": 4.0,
+        "endurance_cost": 5.36
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 38.51,
+                  "average": 38.51,
+                  "per_activation": 17.5,
+                  "per_cast_cycle": 6.21,
+                  "display_info": [
+                    "38.51 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.729
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Melee_Def",
+                "Smashing_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": 15.0,
+                  "display_info": [
+                    "15.00% strength to melee, smashing for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 1.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 100.48,
+                  "average": 100.48,
+                  "per_activation": 45.67,
+                  "per_cast_cycle": 16.21,
+                  "display_info": [
+                    "100.48 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.902
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 17.33,
+                  "average": 17.33,
+                  "per_activation": 7.88,
+                  "per_cast_cycle": 2.8,
+                  "display_info": [
+                    "17.33 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.3281
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 7.2,
+              "after_delay_seconds": -2.2,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Designer Status"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Titan_Weapons_Tanker.Defensive_Sweep_Fast",
+      "display_name": "Defensive Sweep",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/38/titanweapons_defensivesweep.png",
+      "display_help": "Melee(Cone), Light DMG(Smashing), Self +DEF(Melee, Smash), Foe -Res(All). Note that Defensive Sweep is unaffected by Arc changes. Recharge: Fast",
+      "display_short_help": "Melee(Cone), Light DMG(Smashing), Self +DEF(Melee, Smash), Foe -Res(All)",
+      "display_info": {
+        "Recharge Time": "4s",
+        "Activation Time": "1s",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Endurance Cost": "5.36",
+        "Power Range": "10 ft.",
+        "Attack Types": "Melee, Smashing",
+        "Effect Area": "Cone — 10 ft. radius 120° arc (5 targets max)",
+        "Available Level": "1"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Defense",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt",
+        "Tanker Archetype Sets",
+        "Defense Sets",
+        "PBAoE Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 5,
+        "radius_feet": 10.0,
+        "arc_degrees": 120.0,
+        "range_feet": 10.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.87,
+        "recharge_time": 4.0,
+        "endurance_cost": 5.36
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 38.51,
+                  "average": 38.51,
+                  "per_activation": 38.51,
+                  "per_cast_cycle": 7.7,
+                  "display_info": [
+                    "38.51 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.729
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Melee_Def",
+                "Smashing_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": 15.0,
+                  "display_info": [
+                    "15.00% strength to melee, smashing for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 1.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 60.29,
+                  "average": 60.29,
+                  "per_activation": 60.29,
+                  "per_cast_cycle": 12.06,
+                  "display_info": [
+                    "60.29 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.1412
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 17.33,
+                  "average": 17.33,
+                  "per_activation": 17.33,
+                  "per_cast_cycle": 3.47,
+                  "display_info": [
+                    "17.33 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.3281
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Titan_Weapons_Tanker.Crushing_Blow_Slow",
+      "display_name": "Crushing Blow",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/81/titanweapons_crushingblow.png",
+      "display_help": "You swing a mighty crushing blow at your opponent dealing High Smashing damage and reducing their defense. Damage: High, Recharge: Moderate",
+      "display_short_help": "Melee, High DMG(Smashing), -DEF",
+      "display_info": {
+        "Attack Types": "Melee, Smashing",
+        "Effect Area": "Single Target",
+        "Target Type": "Enemies",
+        "Power Range": "9 ft.",
+        "Recharge Time": "8s",
+        "Activation Time": "2s",
+        "Available Level": "1",
+        "Endurance Cost": "8.78",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "Universal Damage Sets",
+        "Accurate Defense Debuff",
+        "Taunt",
+        "Tanker Archetype Sets",
+        "Defense Debuff"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 9.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.0,
+        "animation_time": 2.0,
+        "animation_time_before_hit": 1.97,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.78
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 95.3,
+                  "average": 95.3,
+                  "per_activation": 47.65,
+                  "per_cast_cycle": 9.53,
+                  "display_info": [
+                    "95.30 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.804
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 142.01,
+                  "average": 142.01,
+                  "per_activation": 71.0,
+                  "per_cast_cycle": 14.2,
+                  "display_info": [
+                    "142.01 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 2.6881
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.07,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 7.0,
+              "after_delay_seconds": -2.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Designer Status"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 42.89,
+                  "average": 42.89,
+                  "per_activation": 21.45,
+                  "per_cast_cycle": 4.29,
+                  "display_info": [
+                    "42.89 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.8118
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Titan_Weapons_Tanker.Crushing_Blow_Fast",
+      "display_name": "Crushing Blow",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/81/titanweapons_crushingblow.png",
+      "display_help": "You swing a mighty crushing blow at your opponent dealing High Smashing damage and reducing their defense. Damage: High, Recharge: Moderate",
+      "display_short_help": "Melee, High DMG(Smashing), -DEF",
+      "display_info": {
+        "Attack Types": "Melee, Smashing",
+        "Target Type": "Enemies",
+        "Power Range": "9 ft.",
+        "Activation Time": "1.2s",
+        "Effect Area": "Single Target",
+        "Power Type": "Click",
+        "Endurance Cost": "8.78",
+        "Available Level": "1",
+        "Recharge Time": "8s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Melee Damage",
+        "Taunt",
+        "Tanker Archetype Sets",
+        "Defense Debuff",
+        "Accurate Defense Debuff"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 9.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.2,
+        "animation_time": 1.2,
+        "animation_time_before_hit": 1.17,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.78
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 95.3,
+                  "average": 95.3,
+                  "per_activation": 79.42,
+                  "per_cast_cycle": 10.36,
+                  "display_info": [
+                    "95.30 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.804
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 104.5,
+                  "average": 104.5,
+                  "per_activation": 87.08,
+                  "per_cast_cycle": 11.36,
+                  "display_info": [
+                    "104.50 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.9781
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 42.89,
+                  "average": 42.89,
+                  "per_activation": 35.74,
+                  "per_cast_cycle": 4.66,
+                  "display_info": [
+                    "42.89 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.8118
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.07,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Titan_Weapons_Tanker.Sweeping_Strike_Slow",
+      "display_name": "Titan Sweep",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b7/titanweapons_sweepingstrike.png",
+      "display_help": "You make a sweeping slash with your weapon, causing high damage and possibly knocking your opponent down. Note that Titan Sweep is unaffected by Arc changes. Damage: High, Recharge: Moderate",
+      "display_short_help": "Melee (Cone), High DMG(Smashing), Foe Knockdown",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Endurance Cost": "10.50",
+        "Available Level": "1",
+        "Recharge Time": "10s",
+        "Power Range": "10 ft.",
+        "Power Type": "Click",
+        "Effect Area": "Cone — 10 ft. radius 120° arc (5 targets max)",
+        "Attack Types": "Melee, Smashing",
+        "Activation Time": "2.43s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "PBAoE Damage",
+        "Taunt",
+        "Universal Damage Sets",
+        "Tanker Archetype Sets",
+        "Knockback"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 5,
+        "radius_feet": 10.0,
+        "arc_degrees": 120.0,
+        "range_feet": 10.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.43,
+        "animation_time": 2.43,
+        "animation_time_before_hit": 2.4,
+        "recharge_time": 10.0,
+        "endurance_cost": 10.5
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 75.49,
+                  "average": 75.49,
+                  "per_activation": 31.07,
+                  "per_cast_cycle": 6.07,
+                  "display_info": [
+                    "75.49 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.429
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 66.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "66.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 119.67,
+                  "average": 119.67,
+                  "per_activation": 49.25,
+                  "per_cast_cycle": 9.63,
+                  "display_info": [
+                    "119.67 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 2.2652
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 66.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "66.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 33.97,
+                  "average": 33.97,
+                  "per_activation": 13.98,
+                  "per_cast_cycle": 2.73,
+                  "display_info": [
+                    "33.97 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.6431
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 7.43,
+              "after_delay_seconds": -2.43,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Designer Status"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Titan_Weapons_Tanker.Sweeping_Strike_Fast",
+      "display_name": "Titan Sweep",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b7/titanweapons_sweepingstrike.png",
+      "display_help": "You make a sweeping slash with your weapon, causing high damage and possibly knocking your opponent down. Note that Titan Sweep is unaffected by Arc changes. Damage: High, Recharge: Moderate",
+      "display_short_help": "Melee (Cone), High DMG(Smashing), Foe Knockdown",
+      "display_info": {
+        "Recharge Time": "10s",
+        "Effect Area": "Cone — 10 ft. radius 120° arc (5 targets max)",
+        "Activation Time": "1s",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Power Range": "10 ft.",
+        "Attack Types": "Melee, Smashing",
+        "Endurance Cost": "10.50",
+        "Available Level": "1"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Tanker Archetype Sets",
+        "PBAoE Damage",
+        "Taunt",
+        "Universal Damage Sets",
+        "Knockback"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 5,
+        "radius_feet": 10.0,
+        "arc_degrees": 120.0,
+        "range_feet": 10.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.9,
+        "recharge_time": 10.0,
+        "endurance_cost": 10.5
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 75.49,
+                  "average": 75.49,
+                  "per_activation": 75.49,
+                  "per_cast_cycle": 6.86,
+                  "display_info": [
+                    "75.49 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.429
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 66.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "66.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 71.77,
+                  "average": 71.77,
+                  "per_activation": 71.77,
+                  "per_cast_cycle": 6.52,
+                  "display_info": [
+                    "71.77 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.3586
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 66.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "66.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 33.97,
+                  "average": 33.97,
+                  "per_activation": 33.97,
+                  "per_cast_cycle": 3.09,
+                  "display_info": [
+                    "33.97 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.6431
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Titan_Weapons_Tanker.Shatter_Armor_Slow",
+      "display_name": "Rend Armor",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/9a/titanweapons_shatterarmor.png",
+      "display_help": "You batter your enemy with your mighty weapon dealing Extreme Smashing damage and reducing their resistance to damage as well as their defense to all types of attacks for a short time. Damage: Extreme, Recharge: Slow",
+      "display_short_help": "Melee, Extreme DMG(Smashing), Foe -Def(All), -Res(All)",
+      "display_info": {
+        "Endurance Cost": "15.64",
+        "Power Range": "9 ft.",
+        "Target Type": "Enemies",
+        "Attack Types": "Melee, Smashing",
+        "Recharge Time": "16s",
+        "Available Level": "1",
+        "Activation Time": "2.3s",
+        "Power Type": "Click",
+        "Effect Area": "Single Target"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt",
+        "Universal Damage Sets",
+        "Defense Debuff",
+        "Accurate Defense Debuff",
+        "Melee Damage",
+        "Tanker Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 9.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.3,
+        "animation_time": 2.3,
+        "animation_time_before_hit": 2.27,
+        "recharge_time": 16.0,
+        "endurance_cost": 15.64
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 169.69,
+                  "average": 169.69,
+                  "per_activation": 73.78,
+                  "per_cast_cycle": 9.27,
+                  "display_info": [
+                    "169.69 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 3.212
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.07,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -8.0,
+                  "display_info": [
+                    "-8.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 0.08,
+                  "scale": -1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 7.3,
+              "after_delay_seconds": -2.3,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Designer Status"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 177.52,
+                  "average": 177.52,
+                  "per_activation": 77.18,
+                  "per_cast_cycle": 9.7,
+                  "display_info": [
+                    "177.52 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 3.3602
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 76.36,
+                  "average": 76.36,
+                  "per_activation": 33.2,
+                  "per_cast_cycle": 4.17,
+                  "display_info": [
+                    "76.36 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.4454
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Titan_Weapons_Tanker.Shatter_Armor_Fast",
+      "display_name": "Rend Armor",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/9a/titanweapons_shatterarmor.png",
+      "display_help": "You batter your enemy with your mighty weapon dealing Extreme Smashing damage and reducing their resistance to damage as well as their defense to all types of attacks for a short time. Damage: Extreme, Recharge: Slow",
+      "display_short_help": "Melee, Extreme DMG(Smashing), Foe -Def(All), -Res(All)",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Activation Time": "1.3s",
+        "Endurance Cost": "15.64",
+        "Attack Types": "Melee, Smashing",
+        "Power Type": "Click",
+        "Available Level": "1",
+        "Recharge Time": "16s",
+        "Target Type": "Enemies",
+        "Power Range": "9 ft."
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Debuff",
+        "Melee Damage",
+        "Taunt",
+        "Accurate Defense Debuff",
+        "Universal Damage Sets",
+        "Tanker Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 9.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.3,
+        "animation_time": 1.3,
+        "animation_time_before_hit": 1.2,
+        "recharge_time": 16.0,
+        "endurance_cost": 15.64
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 169.69,
+                  "average": 169.69,
+                  "per_activation": 130.53,
+                  "per_cast_cycle": 9.81,
+                  "display_info": [
+                    "169.69 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 3.212
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.07,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -8.0,
+                  "display_info": [
+                    "-8.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 8s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 0.08,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 130.63,
+                  "average": 130.63,
+                  "per_activation": 100.48,
+                  "per_cast_cycle": 7.55,
+                  "display_info": [
+                    "130.63 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 2.4726
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 76.36,
+                  "average": 76.36,
+                  "per_activation": 58.74,
+                  "per_cast_cycle": 4.41,
+                  "display_info": [
+                    "76.36 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.4454
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Titan_Weapons_Tanker.Arc_of_Destruction_Slow",
+      "display_name": "Arc of Destruction",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b7/titanweapons_arcofdestruction.png",
+      "display_help": "You swing your weapon in a devastating Arc of Destruction that deals Superior Smashing damage and has a good chance to knock foes down. Arc of Destruction may only be used while on the ground. Note that Arc of Destruction is unaffected by Arc changes. Damage: Superior, Recharge: Slow",
+      "display_short_help": "Melee (Cone), Superior DMG(Smashing), Foe Knockback",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Activation Time": "2.7s",
+        "Effect Area": "Cone — 10 ft. radius 120° arc (10 targets max)",
+        "Attack Types": "Melee, Smashing",
+        "Recharge Time": "20s",
+        "Power Range": "10 ft.",
+        "Power Type": "Click",
+        "Available Level": "1",
+        "Endurance Cost": "19.07"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Tanker Archetype Sets",
+        "Taunt",
+        "Knockback",
+        "PBAoE Damage"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 10.0,
+        "arc_degrees": 120.0,
+        "range_feet": 10.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.7,
+        "animation_time": 2.7,
+        "animation_time_before_hit": 2.47,
+        "recharge_time": 20.0,
+        "endurance_cost": 19.07
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 137.15,
+                  "average": 137.15,
+                  "per_activation": 50.8,
+                  "per_cast_cycle": 6.04,
+                  "display_info": [
+                    "137.15 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 2.596
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 147.85,
+                  "average": 147.85,
+                  "per_activation": 54.76,
+                  "per_cast_cycle": 6.51,
+                  "display_info": [
+                    "147.85 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 2.7986
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 75.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "75.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 75.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "75.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 61.72,
+                  "average": 61.72,
+                  "per_activation": 22.86,
+                  "per_cast_cycle": 2.72,
+                  "display_info": [
+                    "61.72 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.1682
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 7.7,
+              "after_delay_seconds": -2.7,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Designer Status"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Titan_Weapons_Tanker.Arc_of_Destruction_Fast",
+      "display_name": "Arc of Destruction",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/b7/titanweapons_arcofdestruction.png",
+      "display_help": "You swing your weapon in a devastating Arc of Destruction that deals Superior Smashing damage and has a good chance to knock foes down. Arc of Destruction may only be used while on the ground. Note that Arc of Destruction is unaffected by Arc changes. Damage: Superior, Recharge: Slow",
+      "display_short_help": "Melee (Cone), Superior DMG(Smashing), Foe Knockback",
+      "display_info": {
+        "Recharge Time": "20s",
+        "Power Range": "10 ft.",
+        "Endurance Cost": "19.07",
+        "Attack Types": "Melee, Smashing",
+        "Available Level": "1",
+        "Power Type": "Click",
+        "Activation Time": "1.5s",
+        "Effect Area": "Cone — 10 ft. radius 120° arc (10 targets max)",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "PBAoE Damage",
+        "Knockback",
+        "Taunt",
+        "Universal Damage Sets",
+        "Tanker Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 10.0,
+        "arc_degrees": 120.0,
+        "range_feet": 10.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.5,
+        "animation_time": 1.5,
+        "animation_time_before_hit": 1.3,
+        "recharge_time": 20.0,
+        "endurance_cost": 19.07
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 137.15,
+                  "average": 137.15,
+                  "per_activation": 91.43,
+                  "per_cast_cycle": 6.38,
+                  "display_info": [
+                    "137.15 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 2.596
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 107.66,
+                  "average": 107.66,
+                  "per_activation": 71.77,
+                  "per_cast_cycle": 5.01,
+                  "display_info": [
+                    "107.66 smashing damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 2.0378
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 75.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "75.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 75.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "75.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 61.72,
+                  "average": 61.72,
+                  "per_activation": 41.15,
+                  "per_cast_cycle": 2.87,
+                  "display_info": [
+                    "61.72 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.1682
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

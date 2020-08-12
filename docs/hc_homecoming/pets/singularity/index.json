@@ -1,1 +1,1366 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Pets.Singularity","display_name":"Singularity","display_help":"Gravity Control","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/79/kineticboost_repel.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Pets.Singularity.Repel","Pets.Singularity.Crush","Pets.Singularity.Lift","Pets.Singularity.Gravity_Distortion","Pets.Singularity.Resistance"],"powers":[{"name":"Pets.Singularity.Repel","display_name":"Repel","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/79/kineticboost_repel.png","display_help":"Repel creates a zone of kinetic energy that violently repels nearby foes. Each villain that is repelled costs additional Endurance.","display_short_help":"Toggle: Self AoE Knockback","display_info":{"Effect Area":"AoE — 9 ft. radius (16 targets max)","Target Type":"Self","Available Level":"1","Power Type":"Auto"},"enhancements_allowed":["Enhance KnockBack"],"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":9.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"activate":{"cast_time":0.0,"animation_time":1.07,"animation_time_before_hit":0.77,"recharge_time":0.0,"auto_cast_interval":0.5,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":110.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":0.5,"flags":["IgnoreLevelDifference","ResistMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":6.23,"display_info":["6.2 magnitude knock for 0.5s on target"],"base_value":2.0771,"scale":3.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":0.5,"flags":["IgnoreLevelDifference","ResistMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":6.23,"display_info":["6.2 magnitude knock for 0.5s on target"],"base_value":2.0771,"scale":3.0}]}]}]},{"name":"Pets.Singularity.Crush","display_name":"Crush","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/86/gravitycontrol_crush.png","display_help":"Creates a localized gravitational field strong enough to Immobilize a single foe. Crush can also bring down flying entities. This power deals Smashing damage over time and can Slow the movement of targets that escape its grasp. Note that Crush is unaffected by Recharge Time changes. Damage: Moderate(DoT), Recharge: Fast","display_short_help":"Ranged, Moderate DoT(Smash), Foe Immobilize, -Fly","display_info":{"Target Type":"Enemies","Power Type":"Click","Activation Time":"1.33s","Recharge Time":"4s","Effect Area":"Single Target","Power Range":"60 ft.","Available Level":"1"},"enhancements_allowed":["Enhance Range","Enhance Immobilization","Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"activate":{"cast_time":1.33,"animation_time":3.1,"animation_time_before_hit":1.07,"recharge_time":4.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":9.2,"continuous_apply_seconds":2.0,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":8.9,"average":8.9,"per_activation":6.69,"per_cast_cycle":1.67,"display_info":["5 ticks of 8.90 smashing damage over 9.2s on target"],"base_value":-44.4882,"scale":0.2}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","percent":-50.0,"display_info":["-50.00% strength to jump height for 15s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.5}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","percent":-50.0,"display_info":["-50.00% run speed, fly speed, jump speed for 15s on target"],"base_value":-1.0,"scale":0.5}]},{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":-1.6,"display_info":["-1.6 fly protection for 10s on target","Unresistable"],"base_value":1.0,"scale":-1.6}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":22.35,"display_info":["4.0 immobilize for 22.35s on target"],"base_value":1.49,"scale":15.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":20.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":14.9,"display_info":["20.00% chance for 1.0 immobilize for 14.9s on target"],"base_value":1.49,"scale":10.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":2.0,"display_info":["4.0 immobilize for 2s on target"],"base_value":2.0,"scale":1.0}]}]}]},{"name":"Pets.Singularity.Lift","display_name":"Lift","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/76/gravitycontrol_lift.png","display_help":"Negates the gravity around a single target. Lift violently sends an enemy straight into the air, then slams them to the ground for Smashing damage. This power can bring flying foes to the ground. Note that Lift is unaffected by Recharge Time changes. Damage: Moderate, Recharge: Fast","display_short_help":"Ranged, Moderate DMG(Smash)","display_info":{"Effect Area":"Single Target","Available Level":"1","Power Range":"60 ft.","Activation Time":"1.03s","Recharge Time":"6s","Power Type":"Click","Target Type":"Enemies"},"enhancements_allowed":["Enhance Range","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"activate":{"cast_time":1.03,"animation_time":1.03,"animation_time_before_hit":0.73,"recharge_time":6.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":2.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":58.72,"average":58.72,"per_activation":57.01,"per_cast_cycle":8.35,"display_info":["58.72 smashing damage on target after 2s delay"],"base_value":-44.4882,"scale":1.32}]},{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":10.0,"after_delay_seconds":2.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":-1.6,"display_info":["-1.6 fly protection for 10s on target after 2s delay","Unresistable"],"base_value":1.0,"scale":-1.6}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockup"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":12.46,"display_info":["12.5 magnitude knockup on target"],"base_value":2.0771,"scale":6.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockup"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":12.46,"display_info":["12.5 magnitude knockup on target"],"base_value":2.0771,"scale":6.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["(now - target.TokenTime>GravityDistortion) < 12"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":2.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":14.68,"average":14.68,"per_activation":14.25,"per_cast_cycle":2.09,"display_info":["14.68 smashing damage on target after 2s delay"],"base_value":-44.4882,"scale":0.33}]}]}]},{"name":"Pets.Singularity.Gravity_Distortion","display_name":"Gravity Distortion","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/2c/gravitycontrol_gravitydistortion.png","display_help":"Causes a single foe to be trapped in a misshapen gravity field, rendering them unable to take action. Gravity Distortion deals Smashing damage to the target. Note that Gravity Distortion is unaffected by Recharge Time changes. Damage: Moderate(DoT), Recharge: Moderate","display_short_help":"Ranged, Moderate DoT(Smash), Foe Hold, -Fly","display_info":{"Activation Time":"1.83s","Target Type":"Enemies","Effect Area":"Single Target","Recharge Time":"8s","Available Level":"1","Power Range":"60 ft.","Power Type":"Click"},"enhancements_allowed":["Enhance Hold","Enhance Range","Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"activate":{"cast_time":1.83,"animation_time":3.2,"animation_time_before_hit":1.23,"recharge_time":8.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":17.88,"display_info":["3.0 hold for 17.88s on target"],"base_value":1.49,"scale":12.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":20.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":13.41,"display_info":["20.00% chance for 1.0 hold for 13.41s on target"],"base_value":1.49,"scale":9.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.5,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":2.0,"display_info":["3.5 hold for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Add Token"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","ResistDuration","CombatModMagnitude","CombatModDuration"],"parameter":{"token":{"tokens":["GravityDistortion"]}},"stacking":{"behavior":"Stack","by_caster":true}},{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.2,"continuous_apply_seconds":1.0,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":9.79,"average":9.79,"per_activation":5.35,"per_cast_cycle":1.0,"display_info":["5 ticks of 9.79 smashing damage over 4.2s on target"],"base_value":-44.4882,"scale":0.22}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":12.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","percent":-50.0,"display_info":["-50.00% run speed, fly speed, jump speed for 12s on target"],"base_value":-1.0,"scale":0.5}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":12.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","percent":-50.0,"display_info":["-50.00% strength to jump height for 12s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.5}]},{"attributes":["Knockup","Knockback"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","percent":10000.0,"display_info":["10000.00% resistance to knockup, knock for 10s on target","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":100.0}]},{"attributes":["Knockup","Knockback"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":-100.0,"display_info":["-100.0 knockup protection, knock protection for 10s on target","Unresistable"],"base_value":1.0,"scale":-100.0}]}]}]},{"name":"Pets.Singularity.Resistance","display_name":"Resistance","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/20/invulnerability_temporaryinvulnerabilty.png","display_help":"Singularity is highly resistant to most attacks.","display_short_help":"Resistance","display_info":{"Effect Area":"Single Target","Target Type":"Self","Power Type":"Auto","Available Level":"1"},"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"auto_cast_interval":10.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":50.0,"display_info":["50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 10.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":5.0}]},{"attributes":["Healing_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":100.0,"display_info":["100.00% resistance to healing, psionic damage, toxic damage for 10.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":10.0}]},{"attributes":["Held","Immobilized","Stunned","Sleep"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":-100.0,"display_info":["-100.0 hold protection, immobilize protection, stun protection, sleep protection for 10.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-100.0}]},{"attributes":["ToHit"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-25.0,"display_info":["-25.00% strength to to hit for 10.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-0.25}]},{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":10.0,"display_info":["10.0 magnitude fly for 10.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":10.0}]},{"attributes":["Translucency"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Knockup","Knockback","Repel"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":10000.0,"display_info":["10000.00% resistance to knockup, knock, repel for 10.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":100.0}]},{"attributes":["Knockup","Knockback","Repel"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":-100.0,"display_info":["-100.0 knockup protection, knock protection, repel protection for 10.25s on self","Unresistable"],"base_value":1.0,"scale":-100.0}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Pets.Singularity",
+  "display_name": "Singularity",
+  "display_help": "Gravity Control",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/79/kineticboost_repel.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Pets.Singularity.Repel",
+    "Pets.Singularity.Crush",
+    "Pets.Singularity.Lift",
+    "Pets.Singularity.Gravity_Distortion",
+    "Pets.Singularity.Resistance"
+  ],
+  "powers": [
+    {
+      "name": "Pets.Singularity.Repel",
+      "display_name": "Repel",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/79/kineticboost_repel.png",
+      "display_help": "Repel creates a zone of kinetic energy that violently repels nearby foes. Each villain that is repelled costs additional Endurance.",
+      "display_short_help": "Toggle: Self AoE Knockback",
+      "display_info": {
+        "Target Type": "Self",
+        "Power Type": "Auto",
+        "Effect Area": "AoE — 9 ft. radius (16 targets max)",
+        "Available Level": "1"
+      },
+      "enhancements_allowed": [
+        "Enhance KnockBack"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 9.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.07,
+        "animation_time_before_hit": 0.77,
+        "recharge_time": 0.0,
+        "auto_cast_interval": 0.5,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 110.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 0.5,
+              "flags": [
+                "IgnoreLevelDifference",
+                "ResistMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": 6.23,
+                  "display_info": [
+                    "6.2 magnitude knock for 0.5s on target"
+                  ],
+                  "base_value": 2.0771,
+                  "scale": 3.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 0.5,
+              "flags": [
+                "IgnoreLevelDifference",
+                "ResistMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": 6.23,
+                  "display_info": [
+                    "6.2 magnitude knock for 0.5s on target"
+                  ],
+                  "base_value": 2.0771,
+                  "scale": 3.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Singularity.Crush",
+      "display_name": "Crush",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/86/gravitycontrol_crush.png",
+      "display_help": "Creates a localized gravitational field strong enough to Immobilize a single foe. Crush can also bring down flying entities. This power deals Smashing damage over time and can Slow the movement of targets that escape its grasp. Note that Crush is unaffected by Recharge Time changes. Damage: Moderate(DoT), Recharge: Fast",
+      "display_short_help": "Ranged, Moderate DoT(Smash), Foe Immobilize, -Fly",
+      "display_info": {
+        "Power Range": "60 ft.",
+        "Power Type": "Click",
+        "Available Level": "1",
+        "Activation Time": "1.33s",
+        "Effect Area": "Single Target",
+        "Recharge Time": "4s",
+        "Target Type": "Enemies"
+      },
+      "enhancements_allowed": [
+        "Enhance Range",
+        "Enhance Immobilization",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 1.33,
+        "animation_time": 3.1,
+        "animation_time_before_hit": 1.07,
+        "recharge_time": 4.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 9.2,
+              "continuous_apply_seconds": 2.0,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 8.9,
+                  "average": 8.9,
+                  "per_activation": 6.69,
+                  "per_cast_cycle": 1.67,
+                  "display_info": [
+                    "5 ticks of 8.90 smashing damage over 9.2s on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -50.0,
+                  "display_info": [
+                    "-50.00% strength to jump height for 15s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -50.0,
+                  "display_info": [
+                    "-50.00% run speed, fly speed, jump speed for 15s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": -1.6,
+                  "display_info": [
+                    "-1.6 fly protection for 10s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 22.35,
+                  "display_info": [
+                    "4.0 immobilize for 22.35s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 15.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 14.9,
+                  "display_info": [
+                    "20.00% chance for 1.0 immobilize for 14.9s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "4.0 immobilize for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Singularity.Lift",
+      "display_name": "Lift",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/76/gravitycontrol_lift.png",
+      "display_help": "Negates the gravity around a single target. Lift violently sends an enemy straight into the air, then slams them to the ground for Smashing damage. This power can bring flying foes to the ground. Note that Lift is unaffected by Recharge Time changes. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Ranged, Moderate DMG(Smash)",
+      "display_info": {
+        "Recharge Time": "6s",
+        "Activation Time": "1.03s",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Power Range": "60 ft.",
+        "Effect Area": "Single Target",
+        "Available Level": "1"
+      },
+      "enhancements_allowed": [
+        "Enhance Range",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 1.03,
+        "animation_time": 1.03,
+        "animation_time_before_hit": 0.73,
+        "recharge_time": 6.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 58.72,
+                  "average": 58.72,
+                  "per_activation": 57.01,
+                  "per_cast_cycle": 8.35,
+                  "display_info": [
+                    "58.72 smashing damage on target after 2s delay"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 1.32
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": -1.6,
+                  "display_info": [
+                    "-1.6 fly protection for 10s on target after 2s delay",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockup"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": 12.46,
+                  "display_info": [
+                    "12.5 magnitude knockup on target"
+                  ],
+                  "base_value": 2.0771,
+                  "scale": 6.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockup"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": 12.46,
+                  "display_info": [
+                    "12.5 magnitude knockup on target"
+                  ],
+                  "base_value": 2.0771,
+                  "scale": 6.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(now - target.TokenTime>GravityDistortion) < 12"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 14.68,
+                  "average": 14.68,
+                  "per_activation": 14.25,
+                  "per_cast_cycle": 2.09,
+                  "display_info": [
+                    "14.68 smashing damage on target after 2s delay"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 0.33
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Singularity.Gravity_Distortion",
+      "display_name": "Gravity Distortion",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/2c/gravitycontrol_gravitydistortion.png",
+      "display_help": "Causes a single foe to be trapped in a misshapen gravity field, rendering them unable to take action. Gravity Distortion deals Smashing damage to the target. Note that Gravity Distortion is unaffected by Recharge Time changes. Damage: Moderate(DoT), Recharge: Moderate",
+      "display_short_help": "Ranged, Moderate DoT(Smash), Foe Hold, -Fly",
+      "display_info": {
+        "Available Level": "1",
+        "Effect Area": "Single Target",
+        "Recharge Time": "8s",
+        "Activation Time": "1.83s",
+        "Target Type": "Enemies",
+        "Power Range": "60 ft.",
+        "Power Type": "Click"
+      },
+      "enhancements_allowed": [
+        "Enhance Hold",
+        "Enhance Range",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 1.83,
+        "animation_time": 3.2,
+        "animation_time_before_hit": 1.23,
+        "recharge_time": 8.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 17.88,
+                  "display_info": [
+                    "3.0 hold for 17.88s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 12.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 13.41,
+                  "display_info": [
+                    "20.00% chance for 1.0 hold for 13.41s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 9.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.5,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.5 hold for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Add Token"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "ResistDuration",
+                "CombatModMagnitude",
+                "CombatModDuration"
+              ],
+              "parameter": {
+                "token": {
+                  "tokens": [
+                    "GravityDistortion"
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.2,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 9.79,
+                  "average": 9.79,
+                  "per_activation": 5.35,
+                  "per_cast_cycle": 1.0,
+                  "display_info": [
+                    "5 ticks of 9.79 smashing damage over 4.2s on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 0.22
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 12.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -50.0,
+                  "display_info": [
+                    "-50.00% run speed, fly speed, jump speed for 12s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 12.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -50.0,
+                  "display_info": [
+                    "-50.00% strength to jump height for 12s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 10000.0,
+                  "display_info": [
+                    "10000.00% resistance to knockup, knock for 10s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": -100.0,
+                  "display_info": [
+                    "-100.0 knockup protection, knock protection for 10s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Singularity.Resistance",
+      "display_name": "Resistance",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/20/invulnerability_temporaryinvulnerabilty.png",
+      "display_help": "Singularity is highly resistant to most attacks.",
+      "display_short_help": "Resistance",
+      "display_info": {
+        "Target Type": "Self",
+        "Effect Area": "Single Target",
+        "Power Type": "Auto",
+        "Available Level": "1"
+      },
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "auto_cast_interval": 10.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% resistance to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage for 10.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 5.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Healing_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 100.0,
+                  "display_info": [
+                    "100.00% resistance to healing, psionic damage, toxic damage for 10.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 10.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Held",
+                "Immobilized",
+                "Stunned",
+                "Sleep"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": -100.0,
+                  "display_info": [
+                    "-100.0 hold protection, immobilize protection, stun protection, sleep protection for 10.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -25.0,
+                  "display_info": [
+                    "-25.00% strength to to hit for 10.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.25
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": 10.0,
+                  "display_info": [
+                    "10.0 magnitude fly for 10.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 10.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Translucency"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback",
+                "Repel"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 10000.0,
+                  "display_info": [
+                    "10000.00% resistance to knockup, knock, repel for 10.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback",
+                "Repel"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": -100.0,
+                  "display_info": [
+                    "-100.0 knockup protection, knock protection, repel protection for 10.25s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

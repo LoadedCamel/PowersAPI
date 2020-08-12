@@ -1,1 +1,2974 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Stalker_Melee.Ninja_Sword","display_name":"Ninja Blade","display_help":"Wield a Ninja Blade and master a variety of powerful Lethal attacks. A quick and elegant weapon, the Ninja Blade can reduce an enemy's Defense. The Ninja Blade is a fine blade that always has a bonus to Accuracy. Like all Stalker primary attack powers, Ninja Blade attacks can land a Critical Hit for double damage, if you are properly Hidden or if your target is Slept or Held.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/5f/katana_hack.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Stalker_Melee.Ninja_Sword.Hack","Stalker_Melee.Ninja_Sword.Slash","Stalker_Melee.Ninja_Sword.Slice","Stalker_Melee.Ninja_Sword.Assassins_Blade","Stalker_Melee.Ninja_Sword.Build_Up","Stalker_Melee.Ninja_Sword.Placate","Stalker_Melee.Ninja_Sword.Parry","Stalker_Melee.Ninja_Sword.Disembowel","Stalker_Melee.Ninja_Sword.Head_Splitter"],"powers":[{"name":"Stalker_Melee.Ninja_Sword.Hack","display_name":"Sting of the Wasp","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/5f/katana_hack.png","display_help":"You perform a standard attack with your Ninja Blade. This attack is slower than Gambler's Cut, but deals more lethal damage. Sting of the Wasp can reduce a target's Defense, making them easier to hit. Damage: Moderate, Recharge: Fast","display_short_help":"Melee, Moderate DMG(Lethal), Foe -Def","display_info":{"Target Type":"Enemies","Power Type":"Click","Effect Area":"Single Target","Recharge Time":"5s","Attack Types":"Melee, Lethal","Available Level":"1","Endurance Cost":"6.03","Activation Time":"1.17s","Power Range":"7 ft."},"requires":"!Stalker_Defense.Shield_Defense","attack_types":["Melee_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Defense Debuff","Melee Damage","Accurate Defense Debuff","Stalker Archetype Sets","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.67,"recharge_time":5.0,"endurance_cost":6.03},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":64.51,"average":64.51,"per_activation":55.14,"per_cast_cycle":10.46,"display_info":["64.51 lethal damage on target"],"base_value":-55.6102,"scale":1.16}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":99.8,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","percent":-7.5,"display_info":["99.80% chance for -7.50% strength to defense for 10s on target"],"base_value":-0.075,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":80.05,"average":80.05,"per_activation":68.42,"per_cast_cycle":12.97,"display_info":["80.05 lethal damage on target"],"base_value":-56.4121,"scale":1.419}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kMeter > 0) && (target>enttype == player)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":80.05,"average":80.05,"per_activation":68.42,"per_cast_cycle":12.97,"display_info":["80.05 lethal damage on target","Only if hidden or target placated"],"base_value":-56.4121,"scale":1.419}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":20.0,"requires":["((source>kMeter < .9) && ((target>kHeld > 0) || (target>kSleep > 0))) && (target>enttype == player)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":80.05,"average":16.01,"per_activation":13.68,"per_cast_cycle":2.59,"display_info":["20.00% chance for 80.05 lethal damage on target","Only against held or sleeping targets when not hidden"],"base_value":-56.4121,"scale":1.419}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":7.0,"requires":["(target>enttype == critter) && (source>kMeter < .9)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","HideZero"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":64.51,"average":4.52,"per_activation":3.86,"per_cast_cycle":0.73,"display_info":["7.00% chance for 64.51 lethal damage on target"],"base_value":-55.6102,"scale":1.16}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kMeter > 0) && (target>enttype == critter)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":64.51,"average":64.51,"per_activation":55.14,"per_cast_cycle":10.46,"display_info":["64.51 lethal damage on target","Only if hidden or target placated"],"base_value":-55.6102,"scale":1.16}]}]},{"visible_in_info_window":true,"chance_percent":75.0,"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Assassins_Focus","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Stalker_Melee.Ninja_Sword.Slash","display_name":"Gambler's Cut","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/53/katana_slash.png","display_help":"You perform a quick slash with your Ninja Blade. This attack is very fast, but deals only minor lethal damage. This attack can reduce a target's Defense, making them easier to hit. Damage: Minor, Recharge: Very Fast","display_short_help":"Melee, Minor DMG(Lethal), Foe -Def","display_info":{"Endurance Cost":"4.37","Target Type":"Enemies","Power Type":"Click","Available Level":"1","Attack Types":"Melee, Lethal","Power Range":"7 ft.","Effect Area":"Single Target","Recharge Time":"3s","Activation Time":"0.67s"},"requires":"!Stalker_Defense.Shield_Defense","attack_types":["Melee_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Defense Debuff","Accurate Defense Debuff","Universal Damage Sets","Stalker Archetype Sets","Melee Damage"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.67,"animation_time":0.67,"animation_time_before_hit":0.33,"recharge_time":3.0,"endurance_cost":4.37},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.3,"continuous_apply_seconds":0.25,"ticks":2,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":23.36,"average":23.36,"per_activation":34.87,"per_cast_cycle":6.37,"display_info":["2 ticks of 23.36 lethal damage over 0.3s on target"],"base_value":-55.6102,"scale":0.42}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":99.8,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","percent":-7.5,"display_info":["99.80% chance for -7.50% strength to defense for 6s on target"],"base_value":-0.075,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.3,"continuous_apply_seconds":0.25,"ticks":2,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":27.9,"average":27.9,"per_activation":41.64,"per_cast_cycle":7.6,"display_info":["2 ticks of 27.90 lethal damage over 0.3s on target"],"base_value":-56.4121,"scale":0.4945}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kMeter > 0) && (target>enttype == player)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":55.79,"average":55.79,"per_activation":83.27,"per_cast_cycle":15.2,"display_info":["55.79 lethal damage on target","Only if hidden or target placated"],"base_value":-56.4121,"scale":0.989}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":20.0,"requires":["((source>kMeter < .9) && ((target>kHeld > 0) || (target>kSleep > 0))) && (target>enttype == player)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":0.25,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":55.79,"average":11.16,"per_activation":16.66,"per_cast_cycle":3.04,"display_info":["20.00% chance for 55.79 lethal damage on target after 0.25s delay","Only against held or sleeping targets when not hidden"],"base_value":-56.4121,"scale":0.989}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":7.0,"requires":["(target>enttype == critter) && (source>kMeter < .9)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","HideZero"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":46.71,"average":3.27,"per_activation":4.88,"per_cast_cycle":0.89,"display_info":["7.00% chance for 46.71 lethal damage on target"],"base_value":-55.6102,"scale":0.84}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kMeter > 0) && (target>enttype == critter)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":0.25,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":46.71,"average":46.71,"per_activation":69.72,"per_cast_cycle":12.73,"display_info":["46.71 lethal damage on target after 0.25s delay","Only if hidden or target placated"],"base_value":-55.6102,"scale":0.84}]}]},{"visible_in_info_window":true,"chance_percent":65.0,"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Assassins_Focus","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Stalker_Melee.Ninja_Sword.Slice","display_name":"Flashing Steel","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/df/katana_slice.png","display_help":"You swing your Ninja Blade in a wide arc in front of you, slicing multiple foes with lethal damage. This attack can reduce a target's Defense, making them easier to hit. If executed while hidden, all affected targets have a chance to be hit with a Critical for extra damage. Damage: Moderate, Recharge: Fast","display_short_help":"Melee (Cone), Moderate DMG(Lethal), Foe -Def","display_info":{"Attack Types":"Melee, Lethal","Available Level":"2","Effect Area":"Cone — 7 ft. radius 130° arc (5 targets max)","Recharge Time":"6s","Endurance Cost":"6.03","Power Type":"Click","Target Type":"Enemies","Activation Time":"1.17s","Power Range":"7 ft."},"attack_types":["Melee_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Defense Debuff","Accurate Defense Debuff","Stalker Archetype Sets","Universal Damage Sets","PBAoE Damage"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"Cone","max_targets_hit":5,"radius_feet":7.0,"arc_degrees":130.0,"range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.6,"recharge_time":6.0,"endurance_cost":6.03},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":55.05,"average":55.05,"per_activation":47.05,"per_cast_cycle":7.68,"display_info":["55.05 lethal damage on target"],"base_value":-55.6102,"scale":0.99}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":99.8,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","percent":-7.5,"display_info":["99.80% chance for -7.50% strength to defense for 10s on target"],"base_value":-0.075,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":82.31,"average":82.31,"per_activation":70.35,"per_cast_cycle":11.48,"display_info":["82.31 lethal damage on target"],"base_value":-56.4121,"scale":1.459}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":50.0,"requires":["(source>kMeter > 0) && (target>enttype == player)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":82.31,"average":41.16,"per_activation":35.18,"per_cast_cycle":5.74,"display_info":["50.00% chance for 82.31 lethal damage on target","Only if hidden or target placated"],"base_value":-56.4121,"scale":1.459}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":5.0,"requires":["((source>kMeter < .9) && ((target>kHeld > 0) || (target>kSleep > 0))) && (target>enttype == player)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":82.31,"average":4.12,"per_activation":3.52,"per_cast_cycle":0.57,"display_info":["5.00% chance for 82.31 lethal damage on target","Only against held or sleeping targets when not hidden"],"base_value":-56.4121,"scale":1.459}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":7.0,"requires":["(target>enttype == critter) && (source>kMeter < .9)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","HideZero"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":55.05,"average":3.85,"per_activation":3.29,"per_cast_cycle":0.54,"display_info":["7.00% chance for 55.05 lethal damage on target"],"base_value":-55.6102,"scale":0.99}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":50.0,"requires":["(source>kMeter > 0) && (target>enttype == critter)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":55.05,"average":27.53,"per_activation":23.53,"per_cast_cycle":3.84,"display_info":["50.00% chance for 55.05 lethal damage on target","Only if hidden or target placated"],"base_value":-55.6102,"scale":0.99}]}]},{"visible_in_info_window":true,"chance_percent":80.0,"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Assassins_Focus","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Stalker_Melee.Ninja_Sword.Assassins_Blade","display_name":"Assassin's Blade","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/26/katana_assassinblade.png","display_help":"A signature Stalker attack. This attack does superior lethal damage on its own as a frontal attack and cannot be interrupted. However, if it is executed while you are Hidden, this attack will do tremendous damage, as you impale your unsuspecting foe. This attack may be interrupted if you move or are attacked while executing this power and are hidden. Using this power while not hidden has a chance to critically hit equal to 33.3% times the number of stacks of Assassin's Focus. Using Assassin's Strike when not hidden will remove all stacks of Assassin's Focus regardless if you critically hit or not. Damage: Special, Recharge: Slow","display_short_help":"Melee, Special DMG(Lethal)","display_info":{"Attack Types":"Melee, Lethal","Effect Area":"Single Target","Recharge Time":"15s","Power Type":"Click","Target Type":"Enemies","Activation Time":"3.67s","Endurance Cost":"14.35","Power Range":"7 ft.","Available Level":"6"},"attack_types":["Melee_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Melee Damage","Stalker Archetype Sets","Universal Damage Sets"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":3.67,"animation_time":1.67,"animation_time_before_hit":0.5,"recharge_time":15.0,"interrupt_time":2.0,"endurance_cost":14.35},"effect_groups":[],"redirects":[{"name":"Villain_Pets.Ninja_Blade_Assassins_Strike.Assassins_Blade_Quick","fallback":false,"requires":"source>kMeter < .9","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/ninja-blade-assassins-strike/"},{"name":"Villain_Pets.Ninja_Blade_Assassins_Strike.Assassins_Blade_Stealth","fallback":true,"url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/ninja-blade-assassins-strike/"}]},{"name":"Stalker_Melee.Ninja_Sword.Build_Up","display_name":"Build Up","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d6/katana_buildup.png","display_help":"Greatly increases the amount of damage you deal for a few seconds, as well as slightly increasing your chance to hit. Recharge: Long","display_short_help":"Self +DMG, +To Hit","display_info":{"Recharge Time":"1m 30s","Effect Area":"Single Target","Target Type":"Self","Endurance Cost":"5.20","Activation Time":"1.17s","Power Type":"Click","Available Level":"8"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["To Hit Buff"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":90.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","percent":20.0,"display_info":["20.00% to hit for 10s on self","Unresistable"],"base_value":0.1,"scale":2.0}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","percent":80.0,"display_info":["80.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":8.0}]}]}]},{"name":"Stalker_Melee.Ninja_Sword.Placate","display_name":"Placate","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/2a/katana_placate.png","display_help":"Allows you to trick a foe to no longer attack you. A Successful Placate will also Hide you. This Hide is very brief, and offers no Defense bonus, but it will allow you to deliver a Critical Hit or an Assassins Blade. However, if you attack a Placated Foe, he will be able to attack you back. Recharge: Slow","display_short_help":"Ranged, Foe Placate, Self Stealth/Hide","display_info":{"Target Type":"Enemies","Power Range":"50 ft.","Available Level":"12","Aggro Type":"Enemies will not notice this attack","Recharge Time":"1m 0s","Power Type":"Click","Activation Time":"1.5s","Effect Area":"Single Target"},"enhancements_allowed":["Enhance Range","Enhance Recharge Speed"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":50.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.5,"animation_time":1.5,"animation_time_before_hit":0.5,"recharge_time":60.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Placate"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","duration_seconds":20.5,"display_info":["4.0 placate for 20.5s on target"],"base_value":2.05,"scale":10.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Placate"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","duration_seconds":12.3,"display_info":["4.0 placate for 12.3s on target"],"base_value":2.05,"scale":6.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["StealthRadius_PVE"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"after_delay_seconds":0.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Stalker","percent":15000.0,"display_info":["15000.00% stealth radius for 10s on self after 0.25s delay","Unresistable"],"base_value":1.0,"scale":150.0}]},{"attributes":["StealthRadius_PVP"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"after_delay_seconds":0.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Stalker","percent":38000.0,"display_info":["38000.00% stealth radius for 10s on self after 0.25s delay","Unresistable"],"base_value":1.0,"scale":380.0}]},{"attributes":["Meter"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"after_delay_seconds":0.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Stalker","value":1.0,"display_info":["1.00 (unknown) for 10s on self after 0.25s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0}]},{"attributes":["Translucency"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":10.0,"after_delay_seconds":0.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}}]}]},{"name":"Stalker_Melee.Ninja_Sword.Parry","display_name":"Divine Avalanche","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/4e/katana_parry.png","display_help":"You can use your Ninja Blade to parry incoming melee attacks and then quickly return the favor. Divine Avalanche does minor damage, but every successful hit will increase your Defense against melee and lethal attacks for a short while. Damage: Minor, Recharge: Very Fast","display_short_help":"Melee, Minor DMG(Lethal), Self +DEF (Melee, Lethal)","display_info":{"Target Type":"Enemies","Attack Types":"Melee, Lethal","Power Range":"7 ft.","Effect Area":"Single Target","Available Level":"18","Recharge Time":"3s","Power Type":"Click","Endurance Cost":"4.37","Activation Time":"1.33s"},"attack_types":["Melee_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Defense","Enhance Accuracy"],"enhancement_set_categories_allowed":["Melee Damage","Defense Sets","Stalker Archetype Sets","Universal Damage Sets"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.33,"animation_time":1.33,"animation_time_before_hit":0.9,"recharge_time":3.0,"endurance_cost":4.37},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":46.71,"average":46.71,"per_activation":35.12,"per_cast_cycle":10.79,"display_info":["46.71 lethal damage on target"],"base_value":-55.6102,"scale":0.84}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Melee_Def","Lethal_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","percent":15.0,"display_info":["15.00% strength to melee, lethal for 10s on self","Unresistable"],"base_value":0.075,"scale":2.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":81.85,"average":81.85,"per_activation":61.54,"per_cast_cycle":18.9,"display_info":["81.85 lethal damage on target"],"base_value":-56.4121,"scale":1.451}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kMeter > 0) && (target>enttype == player)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":81.85,"average":81.85,"per_activation":61.54,"per_cast_cycle":18.9,"display_info":["81.85 lethal damage on target","Only if hidden or target placated"],"base_value":-56.4121,"scale":1.451}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":20.0,"requires":["((source>kMeter < .9) && ((target>kHeld > 0) || (target>kSleep > 0))) && (target>enttype == player)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":81.85,"average":16.37,"per_activation":12.31,"per_cast_cycle":3.78,"display_info":["20.00% chance for 81.85 lethal damage on target","Only against held or sleeping targets when not hidden"],"base_value":-56.4121,"scale":1.451}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":7.0,"requires":["(target>enttype == critter) && (source>kMeter < .9)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","HideZero"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":46.71,"average":3.27,"per_activation":2.46,"per_cast_cycle":0.76,"display_info":["7.00% chance for 46.71 lethal damage on target"],"base_value":-55.6102,"scale":0.84}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kMeter > 0) && (target>enttype == critter)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":46.71,"average":46.71,"per_activation":35.12,"per_cast_cycle":10.79,"display_info":["46.71 lethal damage on target","Only if hidden or target placated"],"base_value":-55.6102,"scale":0.84}]}]},{"visible_in_info_window":true,"chance_percent":65.0,"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Assassins_Focus","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Stalker_Melee.Ninja_Sword.Disembowel","display_name":"Soaring Dragon","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/34/katana_disembowel.png","display_help":"You perform a powerful Soaring Dragon maneuver that deals a great amount of lethal damage, and can knock a target up into the air. This attack can reduce a target's Defense, making them easier to hit. Damage: Superior, Recharge: Moderate","display_short_help":"Melee, Superior DMG(Lethal), Foe Knockup, -DEF","display_info":{"Attack Types":"Melee, Lethal","Effect Area":"Single Target","Recharge Time":"9s","Power Type":"Click","Target Type":"Enemies","Available Level":"26","Endurance Cost":"9.36","Activation Time":"1.33s","Power Range":"7 ft."},"attack_types":["Melee_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Melee Damage","Knockback","Defense Debuff","Accurate Defense Debuff","Stalker Archetype Sets"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.33,"animation_time":1.33,"animation_time_before_hit":0.6,"recharge_time":9.0,"endurance_cost":9.36},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":100.1,"average":100.1,"per_activation":75.26,"per_cast_cycle":9.69,"display_info":["100.10 lethal damage on target"],"base_value":-55.6102,"scale":1.8}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":75.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockup"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","magnitude":4.15,"display_info":["75.00% chance for 4.2 magnitude knockup on target"],"base_value":2.0771,"scale":2.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":95.39,"average":95.39,"per_activation":71.72,"per_cast_cycle":9.23,"display_info":["95.39 lethal damage on target"],"base_value":-56.4121,"scale":1.691}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kMeter > 0) && (target>enttype == player)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":95.39,"average":95.39,"per_activation":71.72,"per_cast_cycle":9.23,"display_info":["95.39 lethal damage on target","Only if hidden or target placated"],"base_value":-56.4121,"scale":1.691}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":75.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockup"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","magnitude":4.15,"display_info":["75.00% chance for 4.2 magnitude knockup on target"],"base_value":2.0771,"scale":2.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":99.8,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","percent":-7.5,"display_info":["99.80% chance for -7.50% strength to defense for 10s on target"],"base_value":-0.075,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":20.0,"requires":["((source>kMeter < .9) && ((target>kHeld > 0) || (target>kSleep > 0))) && (target>enttype == player)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":95.39,"average":19.08,"per_activation":14.35,"per_cast_cycle":1.85,"display_info":["20.00% chance for 95.39 lethal damage on target","Only against held or sleeping targets when not hidden"],"base_value":-56.4121,"scale":1.691}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":7.0,"requires":["(target>enttype == critter) && (source>kMeter < .9)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","HideZero"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":100.1,"average":7.01,"per_activation":5.27,"per_cast_cycle":0.68,"display_info":["7.00% chance for 100.10 lethal damage on target"],"base_value":-55.6102,"scale":1.8}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kMeter > 0) && (target>enttype == critter)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":100.1,"average":100.1,"per_activation":75.26,"per_cast_cycle":9.69,"display_info":["100.10 lethal damage on target","Only if hidden or target placated"],"base_value":-55.6102,"scale":1.8}]}]},{"visible_in_info_window":true,"chance_percent":95.0,"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Assassins_Focus","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Stalker_Melee.Ninja_Sword.Head_Splitter","display_name":"Golden Dragonfly","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/0e/katana_headsplitter.png","display_help":"You perform a devastating Golden Dragonfly attack that deals a massive amount of lethal damage and can even knock a foe down to the ground and reduce their Defense. The power of this attack can actually extend a short distance through multiple foes. If executed while hidden, only some affected targets may be hit with a Critical, however, there is a chance you may land a Critical hit with Golden Dragonfly even if you are not Hidden. Damage: Extreme, Recharge: Slow","display_short_help":"Melee, Extreme DMG(Lethal), Foe Knockback, -DEF","display_info":{"Available Level":"32","Recharge Time":"12s","Activation Time":"1.83s","Effect Area":"Cone — 10 ft. radius 20° arc (5 targets max)","Power Type":"Click","Endurance Cost":"11.86","Attack Types":"Melee, Lethal","Target Type":"Enemies","Power Range":"10 ft."},"attack_types":["Melee_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Defense Debuff","Accurate Defense Debuff","Stalker Archetype Sets","Knockback","PBAoE Damage"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.05,"effect_area":{"area":"Cone","max_targets_hit":5,"radius_feet":10.0,"arc_degrees":20.0,"range_feet":10.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.83,"animation_time":1.83,"animation_time_before_hit":0.9,"recharge_time":12.0,"endurance_cost":11.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":126.79,"average":126.79,"per_activation":69.28,"per_cast_cycle":9.17,"display_info":["126.79 lethal damage on target"],"base_value":-55.6102,"scale":2.28}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","magnitude":0.67,"display_info":["60.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":121.9,"average":121.9,"per_activation":66.61,"per_cast_cycle":8.81,"display_info":["121.90 lethal damage on target"],"base_value":-56.4121,"scale":2.1609}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kMeter > 0) && (target>enttype == player)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":121.9,"average":121.9,"per_activation":66.61,"per_cast_cycle":8.81,"display_info":["121.90 lethal damage on target","Only if hidden or target placated"],"base_value":-56.4121,"scale":2.1609}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","magnitude":0.67,"display_info":["60.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Defense"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":99.8,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","percent":-7.5,"display_info":["99.80% chance for -7.50% strength to defense for 10s on target"],"base_value":-0.075,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":0.0,"requires":["source>kMeter < .9"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":126.79,"display_info":["126.79 lethal damage on target"],"base_value":-55.6102,"scale":2.28}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":7.0,"requires":["(target>enttype == critter) && (source>kMeter < .9)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","HideZero"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":126.79,"average":8.88,"per_activation":4.85,"per_cast_cycle":0.64,"display_info":["7.00% chance for 126.79 lethal damage on target"],"base_value":-55.6102,"scale":2.28}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":50.0,"requires":["(source>kMeter > 0) && (target>enttype == critter)"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":126.79,"average":63.4,"per_activation":34.64,"per_cast_cycle":4.58,"display_info":["50.00% chance for 126.79 lethal damage on target","Only if hidden or target placated"],"base_value":-55.6102,"scale":2.28}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Assassins_Focus","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Stalker_Melee.Ninja_Sword",
+  "display_name": "Ninja Blade",
+  "display_help": "Wield a Ninja Blade and master a variety of powerful Lethal attacks. A quick and elegant weapon, the Ninja Blade can reduce an enemy's Defense. The Ninja Blade is a fine blade that always has a bonus to Accuracy. Like all Stalker primary attack powers, Ninja Blade attacks can land a Critical Hit for double damage, if you are properly Hidden or if your target is Slept or Held.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/5f/katana_hack.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Stalker_Melee.Ninja_Sword.Hack",
+    "Stalker_Melee.Ninja_Sword.Slash",
+    "Stalker_Melee.Ninja_Sword.Slice",
+    "Stalker_Melee.Ninja_Sword.Assassins_Blade",
+    "Stalker_Melee.Ninja_Sword.Build_Up",
+    "Stalker_Melee.Ninja_Sword.Placate",
+    "Stalker_Melee.Ninja_Sword.Parry",
+    "Stalker_Melee.Ninja_Sword.Disembowel",
+    "Stalker_Melee.Ninja_Sword.Head_Splitter"
+  ],
+  "powers": [
+    {
+      "name": "Stalker_Melee.Ninja_Sword.Hack",
+      "display_name": "Sting of the Wasp",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/5f/katana_hack.png",
+      "display_help": "You perform a standard attack with your Ninja Blade. This attack is slower than Gambler's Cut, but deals more lethal damage. Sting of the Wasp can reduce a target's Defense, making them easier to hit. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Melee, Moderate DMG(Lethal), Foe -Def",
+      "display_info": {
+        "Power Range": "7 ft.",
+        "Effect Area": "Single Target",
+        "Available Level": "1",
+        "Recharge Time": "5s",
+        "Activation Time": "1.17s",
+        "Endurance Cost": "6.03",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Attack Types": "Melee, Lethal"
+      },
+      "requires": "!Stalker_Defense.Shield_Defense",
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Accurate Defense Debuff",
+        "Universal Damage Sets",
+        "Defense Debuff",
+        "Stalker Archetype Sets",
+        "Melee Damage"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 5.0,
+        "endurance_cost": 6.03
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 64.51,
+                  "average": 64.51,
+                  "per_activation": 55.14,
+                  "per_cast_cycle": 10.46,
+                  "display_info": [
+                    "64.51 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.16
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 99.8,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": -7.5,
+                  "display_info": [
+                    "99.80% chance for -7.50% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 80.05,
+                  "average": 80.05,
+                  "per_activation": 68.42,
+                  "per_cast_cycle": 12.97,
+                  "display_info": [
+                    "80.05 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.419
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 80.05,
+                  "average": 80.05,
+                  "per_activation": 68.42,
+                  "per_cast_cycle": 12.97,
+                  "display_info": [
+                    "80.05 lethal damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.419
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "((source>kMeter < .9) && ((target>kHeld > 0) || (target>kSleep > 0))) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 80.05,
+                  "average": 16.01,
+                  "per_activation": 13.68,
+                  "per_cast_cycle": 2.59,
+                  "display_info": [
+                    "20.00% chance for 80.05 lethal damage on target",
+                    "Only against held or sleeping targets when not hidden"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.419
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 7.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter < .9)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "HideZero"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 64.51,
+                  "average": 4.52,
+                  "per_activation": 3.86,
+                  "per_cast_cycle": 0.73,
+                  "display_info": [
+                    "7.00% chance for 64.51 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.16
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 64.51,
+                  "average": 64.51,
+                  "per_activation": 55.14,
+                  "per_cast_cycle": 10.46,
+                  "display_info": [
+                    "64.51 lethal damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.16
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 75.0,
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Assassins_Focus",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Ninja_Sword.Slash",
+      "display_name": "Gambler's Cut",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/53/katana_slash.png",
+      "display_help": "You perform a quick slash with your Ninja Blade. This attack is very fast, but deals only minor lethal damage. This attack can reduce a target's Defense, making them easier to hit. Damage: Minor, Recharge: Very Fast",
+      "display_short_help": "Melee, Minor DMG(Lethal), Foe -Def",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Recharge Time": "3s",
+        "Activation Time": "0.67s",
+        "Endurance Cost": "4.37",
+        "Effect Area": "Single Target",
+        "Power Range": "7 ft.",
+        "Attack Types": "Melee, Lethal",
+        "Available Level": "1"
+      },
+      "requires": "!Stalker_Defense.Shield_Defense",
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "Defense Debuff",
+        "Universal Damage Sets",
+        "Accurate Defense Debuff",
+        "Stalker Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.67,
+        "animation_time": 0.67,
+        "animation_time_before_hit": 0.33,
+        "recharge_time": 3.0,
+        "endurance_cost": 4.37
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.3,
+              "continuous_apply_seconds": 0.25,
+              "ticks": 2,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 23.36,
+                  "average": 23.36,
+                  "per_activation": 34.87,
+                  "per_cast_cycle": 6.37,
+                  "display_info": [
+                    "2 ticks of 23.36 lethal damage over 0.3s on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.42
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 99.8,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": -7.5,
+                  "display_info": [
+                    "99.80% chance for -7.50% strength to defense for 6s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.3,
+              "continuous_apply_seconds": 0.25,
+              "ticks": 2,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 27.9,
+                  "average": 27.9,
+                  "per_activation": 41.64,
+                  "per_cast_cycle": 7.6,
+                  "display_info": [
+                    "2 ticks of 27.90 lethal damage over 0.3s on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.4945
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 55.79,
+                  "average": 55.79,
+                  "per_activation": 83.27,
+                  "per_cast_cycle": 15.2,
+                  "display_info": [
+                    "55.79 lethal damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.989
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "((source>kMeter < .9) && ((target>kHeld > 0) || (target>kSleep > 0))) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 55.79,
+                  "average": 11.16,
+                  "per_activation": 16.66,
+                  "per_cast_cycle": 3.04,
+                  "display_info": [
+                    "20.00% chance for 55.79 lethal damage on target after 0.25s delay",
+                    "Only against held or sleeping targets when not hidden"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.989
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 7.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter < .9)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "HideZero"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 46.71,
+                  "average": 3.27,
+                  "per_activation": 4.88,
+                  "per_cast_cycle": 0.89,
+                  "display_info": [
+                    "7.00% chance for 46.71 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 46.71,
+                  "average": 46.71,
+                  "per_activation": 69.72,
+                  "per_cast_cycle": 12.73,
+                  "display_info": [
+                    "46.71 lethal damage on target after 0.25s delay",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 65.0,
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Assassins_Focus",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Ninja_Sword.Slice",
+      "display_name": "Flashing Steel",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/df/katana_slice.png",
+      "display_help": "You swing your Ninja Blade in a wide arc in front of you, slicing multiple foes with lethal damage. This attack can reduce a target's Defense, making them easier to hit. If executed while hidden, all affected targets have a chance to be hit with a Critical for extra damage. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Melee (Cone), Moderate DMG(Lethal), Foe -Def",
+      "display_info": {
+        "Effect Area": "Cone — 7 ft. radius 130° arc (5 targets max)",
+        "Power Type": "Click",
+        "Available Level": "2",
+        "Target Type": "Enemies",
+        "Activation Time": "1.17s",
+        "Recharge Time": "6s",
+        "Power Range": "7 ft.",
+        "Attack Types": "Melee, Lethal",
+        "Endurance Cost": "6.03"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Debuff",
+        "Stalker Archetype Sets",
+        "PBAoE Damage",
+        "Accurate Defense Debuff",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 5,
+        "radius_feet": 7.0,
+        "arc_degrees": 130.0,
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.6,
+        "recharge_time": 6.0,
+        "endurance_cost": 6.03
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 55.05,
+                  "average": 55.05,
+                  "per_activation": 47.05,
+                  "per_cast_cycle": 7.68,
+                  "display_info": [
+                    "55.05 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.99
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 99.8,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": -7.5,
+                  "display_info": [
+                    "99.80% chance for -7.50% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 82.31,
+                  "average": 82.31,
+                  "per_activation": 70.35,
+                  "per_cast_cycle": 11.48,
+                  "display_info": [
+                    "82.31 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.459
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 82.31,
+                  "average": 41.16,
+                  "per_activation": 35.18,
+                  "per_cast_cycle": 5.74,
+                  "display_info": [
+                    "50.00% chance for 82.31 lethal damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.459
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "((source>kMeter < .9) && ((target>kHeld > 0) || (target>kSleep > 0))) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 82.31,
+                  "average": 4.12,
+                  "per_activation": 3.52,
+                  "per_cast_cycle": 0.57,
+                  "display_info": [
+                    "5.00% chance for 82.31 lethal damage on target",
+                    "Only against held or sleeping targets when not hidden"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.459
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 7.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter < .9)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "HideZero"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 55.05,
+                  "average": 3.85,
+                  "per_activation": 3.29,
+                  "per_cast_cycle": 0.54,
+                  "display_info": [
+                    "7.00% chance for 55.05 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.99
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 55.05,
+                  "average": 27.53,
+                  "per_activation": 23.53,
+                  "per_cast_cycle": 3.84,
+                  "display_info": [
+                    "50.00% chance for 55.05 lethal damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.99
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 80.0,
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Assassins_Focus",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Ninja_Sword.Assassins_Blade",
+      "display_name": "Assassin's Blade",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/26/katana_assassinblade.png",
+      "display_help": "A signature Stalker attack. This attack does superior lethal damage on its own as a frontal attack and cannot be interrupted. However, if it is executed while you are Hidden, this attack will do tremendous damage, as you impale your unsuspecting foe. This attack may be interrupted if you move or are attacked while executing this power and are hidden. Using this power while not hidden has a chance to critically hit equal to 33.3% times the number of stacks of Assassin's Focus. Using Assassin's Strike when not hidden will remove all stacks of Assassin's Focus regardless if you critically hit or not. Damage: Special, Recharge: Slow",
+      "display_short_help": "Melee, Special DMG(Lethal)",
+      "display_info": {
+        "Available Level": "6",
+        "Recharge Time": "15s",
+        "Endurance Cost": "14.35",
+        "Attack Types": "Melee, Lethal",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Effect Area": "Single Target",
+        "Activation Time": "3.67s",
+        "Power Range": "7 ft."
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Stalker Archetype Sets",
+        "Melee Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 3.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 15.0,
+        "interrupt_time": 2.0,
+        "endurance_cost": 14.35
+      },
+      "effect_groups": [],
+      "redirects": [
+        {
+          "name": "Villain_Pets.Ninja_Blade_Assassins_Strike.Assassins_Blade_Quick",
+          "fallback": false,
+          "requires": "source>kMeter < .9",
+          "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/ninja-blade-assassins-strike/"
+        },
+        {
+          "name": "Villain_Pets.Ninja_Blade_Assassins_Strike.Assassins_Blade_Stealth",
+          "fallback": true,
+          "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/ninja-blade-assassins-strike/"
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Ninja_Sword.Build_Up",
+      "display_name": "Build Up",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d6/katana_buildup.png",
+      "display_help": "Greatly increases the amount of damage you deal for a few seconds, as well as slightly increasing your chance to hit. Recharge: Long",
+      "display_short_help": "Self +DMG, +To Hit",
+      "display_info": {
+        "Available Level": "8",
+        "Target Type": "Self",
+        "Recharge Time": "1m 30s",
+        "Activation Time": "1.17s",
+        "Effect Area": "Single Target",
+        "Endurance Cost": "5.20",
+        "Power Type": "Click"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 90.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": 20.0,
+                  "display_info": [
+                    "20.00% to hit for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 2.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": 80.0,
+                  "display_info": [
+                    "80.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Ninja_Sword.Placate",
+      "display_name": "Placate",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/2a/katana_placate.png",
+      "display_help": "Allows you to trick a foe to no longer attack you. A Successful Placate will also Hide you. This Hide is very brief, and offers no Defense bonus, but it will allow you to deliver a Critical Hit or an Assassins Blade. However, if you attack a Placated Foe, he will be able to attack you back. Recharge: Slow",
+      "display_short_help": "Ranged, Foe Placate, Self Stealth/Hide",
+      "display_info": {
+        "Aggro Type": "Enemies will not notice this attack",
+        "Activation Time": "1.5s",
+        "Power Type": "Click",
+        "Recharge Time": "1m 0s",
+        "Effect Area": "Single Target",
+        "Power Range": "50 ft.",
+        "Available Level": "12",
+        "Target Type": "Enemies"
+      },
+      "enhancements_allowed": [
+        "Enhance Range",
+        "Enhance Recharge Speed"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 50.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.5,
+        "animation_time": 1.5,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 60.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Placate"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "duration_seconds": 20.5,
+                  "display_info": [
+                    "4.0 placate for 20.5s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Placate"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "duration_seconds": 12.3,
+                  "display_info": [
+                    "4.0 placate for 12.3s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 6.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "StealthRadius_PVE"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": 15000.0,
+                  "display_info": [
+                    "15000.00% stealth radius for 10s on self after 0.25s delay",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 150.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "StealthRadius_PVP"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": 38000.0,
+                  "display_info": [
+                    "38000.00% stealth radius for 10s on self after 0.25s delay",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 380.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Meter"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "value": 1.0,
+                  "display_info": [
+                    "1.00 (unknown) for 10s on self after 0.25s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Translucency"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Ninja_Sword.Parry",
+      "display_name": "Divine Avalanche",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/4e/katana_parry.png",
+      "display_help": "You can use your Ninja Blade to parry incoming melee attacks and then quickly return the favor. Divine Avalanche does minor damage, but every successful hit will increase your Defense against melee and lethal attacks for a short while. Damage: Minor, Recharge: Very Fast",
+      "display_short_help": "Melee, Minor DMG(Lethal), Self +DEF (Melee, Lethal)",
+      "display_info": {
+        "Attack Types": "Melee, Lethal",
+        "Activation Time": "1.33s",
+        "Available Level": "18",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target",
+        "Recharge Time": "3s",
+        "Endurance Cost": "4.37",
+        "Power Type": "Click",
+        "Power Range": "7 ft."
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Defense",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Sets",
+        "Melee Damage",
+        "Stalker Archetype Sets",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.33,
+        "animation_time": 1.33,
+        "animation_time_before_hit": 0.9,
+        "recharge_time": 3.0,
+        "endurance_cost": 4.37
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 46.71,
+                  "average": 46.71,
+                  "per_activation": 35.12,
+                  "per_cast_cycle": 10.79,
+                  "display_info": [
+                    "46.71 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Melee_Def",
+                "Lethal_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": 15.0,
+                  "display_info": [
+                    "15.00% strength to melee, lethal for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.075,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 81.85,
+                  "average": 81.85,
+                  "per_activation": 61.54,
+                  "per_cast_cycle": 18.9,
+                  "display_info": [
+                    "81.85 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.451
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 81.85,
+                  "average": 81.85,
+                  "per_activation": 61.54,
+                  "per_cast_cycle": 18.9,
+                  "display_info": [
+                    "81.85 lethal damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.451
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "((source>kMeter < .9) && ((target>kHeld > 0) || (target>kSleep > 0))) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 81.85,
+                  "average": 16.37,
+                  "per_activation": 12.31,
+                  "per_cast_cycle": 3.78,
+                  "display_info": [
+                    "20.00% chance for 81.85 lethal damage on target",
+                    "Only against held or sleeping targets when not hidden"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.451
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 7.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter < .9)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "HideZero"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 46.71,
+                  "average": 3.27,
+                  "per_activation": 2.46,
+                  "per_cast_cycle": 0.76,
+                  "display_info": [
+                    "7.00% chance for 46.71 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 46.71,
+                  "average": 46.71,
+                  "per_activation": 35.12,
+                  "per_cast_cycle": 10.79,
+                  "display_info": [
+                    "46.71 lethal damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 65.0,
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Assassins_Focus",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Ninja_Sword.Disembowel",
+      "display_name": "Soaring Dragon",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/34/katana_disembowel.png",
+      "display_help": "You perform a powerful Soaring Dragon maneuver that deals a great amount of lethal damage, and can knock a target up into the air. This attack can reduce a target's Defense, making them easier to hit. Damage: Superior, Recharge: Moderate",
+      "display_short_help": "Melee, Superior DMG(Lethal), Foe Knockup, -DEF",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Power Range": "7 ft.",
+        "Recharge Time": "9s",
+        "Power Type": "Click",
+        "Available Level": "26",
+        "Activation Time": "1.33s",
+        "Effect Area": "Single Target",
+        "Attack Types": "Melee, Lethal",
+        "Endurance Cost": "9.36"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "Defense Debuff",
+        "Universal Damage Sets",
+        "Knockback",
+        "Stalker Archetype Sets",
+        "Accurate Defense Debuff"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.33,
+        "animation_time": 1.33,
+        "animation_time_before_hit": 0.6,
+        "recharge_time": 9.0,
+        "endurance_cost": 9.36
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 100.1,
+                  "average": 100.1,
+                  "per_activation": 75.26,
+                  "per_cast_cycle": 9.69,
+                  "display_info": [
+                    "100.10 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 75.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockup"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "magnitude": 4.15,
+                  "display_info": [
+                    "75.00% chance for 4.2 magnitude knockup on target"
+                  ],
+                  "base_value": 2.0771,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 95.39,
+                  "average": 95.39,
+                  "per_activation": 71.72,
+                  "per_cast_cycle": 9.23,
+                  "display_info": [
+                    "95.39 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.691
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 95.39,
+                  "average": 95.39,
+                  "per_activation": 71.72,
+                  "per_cast_cycle": 9.23,
+                  "display_info": [
+                    "95.39 lethal damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.691
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 75.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockup"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "magnitude": 4.15,
+                  "display_info": [
+                    "75.00% chance for 4.2 magnitude knockup on target"
+                  ],
+                  "base_value": 2.0771,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 99.8,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": -7.5,
+                  "display_info": [
+                    "99.80% chance for -7.50% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "requires": [
+            "((source>kMeter < .9) && ((target>kHeld > 0) || (target>kSleep > 0))) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 95.39,
+                  "average": 19.08,
+                  "per_activation": 14.35,
+                  "per_cast_cycle": 1.85,
+                  "display_info": [
+                    "20.00% chance for 95.39 lethal damage on target",
+                    "Only against held or sleeping targets when not hidden"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.691
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 7.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter < .9)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "HideZero"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 100.1,
+                  "average": 7.01,
+                  "per_activation": 5.27,
+                  "per_cast_cycle": 0.68,
+                  "display_info": [
+                    "7.00% chance for 100.10 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 100.1,
+                  "average": 100.1,
+                  "per_activation": 75.26,
+                  "per_cast_cycle": 9.69,
+                  "display_info": [
+                    "100.10 lethal damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 95.0,
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Assassins_Focus",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Ninja_Sword.Head_Splitter",
+      "display_name": "Golden Dragonfly",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/0e/katana_headsplitter.png",
+      "display_help": "You perform a devastating Golden Dragonfly attack that deals a massive amount of lethal damage and can even knock a foe down to the ground and reduce their Defense. The power of this attack can actually extend a short distance through multiple foes. If executed while hidden, only some affected targets may be hit with a Critical, however, there is a chance you may land a Critical hit with Golden Dragonfly even if you are not Hidden. Damage: Extreme, Recharge: Slow",
+      "display_short_help": "Melee, Extreme DMG(Lethal), Foe Knockback, -DEF",
+      "display_info": {
+        "Effect Area": "Cone — 10 ft. radius 20° arc (5 targets max)",
+        "Available Level": "32",
+        "Activation Time": "1.83s",
+        "Endurance Cost": "11.86",
+        "Attack Types": "Melee, Lethal",
+        "Target Type": "Enemies",
+        "Power Range": "10 ft.",
+        "Power Type": "Click",
+        "Recharge Time": "12s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Stalker Archetype Sets",
+        "Defense Debuff",
+        "PBAoE Damage",
+        "Universal Damage Sets",
+        "Accurate Defense Debuff",
+        "Knockback"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.05,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 5,
+        "radius_feet": 10.0,
+        "arc_degrees": 20.0,
+        "range_feet": 10.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.83,
+        "animation_time": 1.83,
+        "animation_time_before_hit": 0.9,
+        "recharge_time": 12.0,
+        "endurance_cost": 11.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 126.79,
+                  "average": 126.79,
+                  "per_activation": 69.28,
+                  "per_cast_cycle": 9.17,
+                  "display_info": [
+                    "126.79 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 2.28
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "60.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 121.9,
+                  "average": 121.9,
+                  "per_activation": 66.61,
+                  "per_cast_cycle": 8.81,
+                  "display_info": [
+                    "121.90 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 2.1609
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == player)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 121.9,
+                  "average": 121.9,
+                  "per_activation": 66.61,
+                  "per_cast_cycle": 8.81,
+                  "display_info": [
+                    "121.90 lethal damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 2.1609
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "60.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Defense"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 99.8,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": -7.5,
+                  "display_info": [
+                    "99.80% chance for -7.50% strength to defense for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 0.0,
+          "requires": [
+            "source>kMeter < .9"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 126.79,
+                  "display_info": [
+                    "126.79 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 2.28
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 7.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter < .9)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "HideZero"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 126.79,
+                  "average": 8.88,
+                  "per_activation": 4.85,
+                  "per_cast_cycle": 0.64,
+                  "display_info": [
+                    "7.00% chance for 126.79 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 2.28
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 126.79,
+                  "average": 63.4,
+                  "per_activation": 34.64,
+                  "per_cast_cycle": 4.58,
+                  "display_info": [
+                    "50.00% chance for 126.79 lethal damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 2.28
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Assassins_Focus",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

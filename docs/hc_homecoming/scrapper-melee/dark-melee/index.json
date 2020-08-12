@@ -1,1 +1,3461 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Scrapper_Melee.Dark_Melee","display_name":"Dark Melee","display_help":"Dark Melee allows you to focus the powers of the Netherworld to defeat your foes. The draining effects of most of these powers can reduce the target's Accuracy. Like all scrapper powers, all Dark Melee attacks can sometimes land a critical hit for double damage.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d6/shadowfighting_shadowpunch.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Scrapper_Melee.Dark_Melee.Shadow_Punch","Scrapper_Melee.Dark_Melee.Smite","Scrapper_Melee.Dark_Melee.Shadow_Maul","Scrapper_Melee.Dark_Melee.Touch_of_Fear","Scrapper_Melee.Dark_Melee.Siphon_Life","Scrapper_Melee.Dark_Melee.Taunt","Scrapper_Melee.Dark_Melee.Dark_Consumption","Scrapper_Melee.Dark_Melee.Soul_Drain","Scrapper_Melee.Dark_Melee.Midnight_Grasp"],"powers":[{"name":"Scrapper_Melee.Dark_Melee.Shadow_Punch","display_name":"Shadow Punch","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d6/shadowfighting_shadowpunch.png","display_help":"You wrap your fists with Negative Energy channeled from the Netherworlds, then perform a quick punch that deals minor damage. Shadow Punches cloud the target's vision, lowering his chance to hit for a short time. Damage: Minor, Recharge: Very Fast","display_short_help":"Melee, Minor DMG (Smash/Negative), Foe -To Hit","display_info":{"Power Range":"7 ft.","Attack Types":"Melee, Smashing, Negative_Energy","Effect Area":"Single Target","Activation Time":"0.83s","Power Type":"Click","Target Type":"Enemies","Endurance Cost":"4.37","Recharge Time":"3s","Available Level":"1"},"attack_types":["Melee_Def","Smashing_Def","Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Accurate To-Hit Debuff","Melee Damage","To Hit Debuff","Scrapper Archetype Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.83,"animation_time":0.83,"animation_time_before_hit":0.53,"recharge_time":3.0,"endurance_cost":4.37},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":21.27,"average":21.27,"per_activation":25.63,"per_cast_cycle":5.55,"display_info":["21.27 smashing damage on target"],"base_value":-62.5615,"scale":0.34}]},{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":31.28,"average":31.28,"per_activation":37.69,"per_cast_cycle":8.17,"display_info":["31.28 negative energy damage on target"],"base_value":-62.5615,"scale":0.5}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":34.94,"average":34.94,"per_activation":42.1,"per_cast_cycle":9.12,"display_info":["34.94 smashing damage on target"],"base_value":-79.3313,"scale":0.4404}]},{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":52.41,"average":52.41,"per_activation":63.14,"per_cast_cycle":13.68,"display_info":["52.41 negative energy damage on target"],"base_value":-79.3313,"scale":0.6606}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":-5.63,"display_info":["-5.63% to hit for 6s on target"],"base_value":-0.075,"scale":0.75}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":87.34,"average":4.37,"per_activation":5.27,"per_cast_cycle":1.14,"display_info":["5.00% chance for 87.34 negative energy damage on target [CRITICAL]"],"base_value":-79.3313,"scale":1.1009}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":52.55,"average":2.63,"per_activation":3.17,"per_cast_cycle":0.69,"display_info":["5.00% chance for 52.55 negative energy damage on target [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":0.84}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":52.55,"average":5.26,"per_activation":6.34,"per_cast_cycle":1.37,"display_info":["10.00% chance for 52.55 negative energy damage on target [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":0.84}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":23.65,"average":23.65,"per_activation":28.49,"per_cast_cycle":6.17,"display_info":["23.65 fire damage on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.378}]}]}]},{"name":"Scrapper_Melee.Dark_Melee.Smite","display_name":"Smite","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/a4/shadowfighting_smite.png","display_help":"You wrap your fists with Negative Energy channeled from the Netherworlds, then perform a Smite that deals more damage than Shadow Punch, but has a longer recharge time. Smite clouds the target's vision, lowering his chance to hit for a short time. Damage: Moderate, Recharge: Fast","display_short_help":"Melee, Moderate DMG (Smash/Negative), Foe -To Hit","display_info":{"Available Level":"1","Target Type":"Enemies","Endurance Cost":"6.86","Power Type":"Click","Power Range":"7 ft.","Recharge Time":"6s","Effect Area":"Single Target","Activation Time":"0.97s","Attack Types":"Melee, Smashing, Negative_Energy"},"attack_types":["Melee_Def","Smashing_Def","Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Scrapper Archetype Sets","Accurate To-Hit Debuff","Universal Damage Sets","Melee Damage","To Hit Debuff"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.97,"animation_time":0.97,"animation_time_before_hit":0.5,"recharge_time":6.0,"endurance_cost":6.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":20.02,"average":20.02,"per_activation":20.64,"per_cast_cycle":2.87,"display_info":["20.02 smashing damage on target"],"base_value":-62.5615,"scale":0.32}]},{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":62.56,"average":62.56,"per_activation":64.49,"per_cast_cycle":8.98,"display_info":["62.56 negative energy damage on target"],"base_value":-62.5615,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":26.16,"average":26.16,"per_activation":26.97,"per_cast_cycle":3.75,"display_info":["26.16 smashing damage on target"],"base_value":-79.3313,"scale":0.3297}]},{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":78.47,"average":78.47,"per_activation":80.9,"per_cast_cycle":11.26,"display_info":["78.47 negative energy damage on target"],"base_value":-79.3313,"scale":0.9892}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":-5.63,"display_info":["-5.63% to hit for 10s on target"],"base_value":-0.075,"scale":0.75}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":104.63,"average":5.23,"per_activation":5.39,"per_cast_cycle":0.75,"display_info":["5.00% chance for 104.63 negative energy damage on target [CRITICAL]"],"base_value":-79.3313,"scale":1.3189}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":82.58,"average":4.13,"per_activation":4.26,"per_cast_cycle":0.59,"display_info":["5.00% chance for 82.58 negative energy damage on target [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":1.32}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":82.58,"average":8.26,"per_activation":8.52,"per_cast_cycle":1.19,"display_info":["10.00% chance for 82.58 negative energy damage on target [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":1.32}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":37.16,"average":37.16,"per_activation":38.31,"per_cast_cycle":5.33,"display_info":["37.16 fire damage on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.594}]}]}]},{"name":"Scrapper_Melee.Dark_Melee.Shadow_Maul","display_name":"Shadow Maul","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e0/shadowfighting_shadowmaul.png","display_help":"You wrap your entire arms with Negative Energy channeled from the Netherworlds, then perform a series of blows that deal a lot of damage over a short period of time to multiple targets in front of you. These blows cloud your target's vision, lowering his chance to hit for a short time. Damage: High(DoT), Recharge: Slow","display_short_help":"Melee (Cone), High DoT(Smash/Negative), Foe -To Hit","display_info":{"Available Level":"2","Target Type":"Enemies","Attack Types":"Melee, Smashing, Negative_Energy","Effect Area":"Cone — 7 ft. radius 120° arc (10 targets max)","Activation Time":"2.37s","Endurance Cost":"11.02","Recharge Time":"11s","Power Range":"7 ft.","Power Type":"Click"},"attack_types":["Melee_Def","Smashing_Def","Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Scrapper Archetype Sets","Accurate To-Hit Debuff","PBAoE Damage","Universal Damage Sets","To Hit Debuff"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":7.0,"arc_degrees":120.0,"range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.37,"animation_time":2.37,"animation_time_before_hit":0.4,"recharge_time":11.0,"endurance_cost":11.02},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.0,"continuous_apply_seconds":0.63,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":12.66,"average":12.66,"per_activation":5.34,"per_cast_cycle":0.95,"display_info":["4 ticks of 12.66 smashing damage over 2s on target"],"base_value":-62.5615,"scale":0.2023}]},{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.0,"continuous_apply_seconds":0.63,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":12.66,"average":12.66,"per_activation":5.34,"per_cast_cycle":0.95,"display_info":["4 ticks of 12.66 negative energy damage over 2s on target"],"base_value":-62.5615,"scale":0.2023}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.0,"continuous_apply_seconds":0.63,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":18.92,"average":18.92,"per_activation":7.98,"per_cast_cycle":1.42,"display_info":["4 ticks of 18.92 smashing damage over 2s on target"],"base_value":-79.3313,"scale":0.2385}]},{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.0,"continuous_apply_seconds":0.63,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":18.92,"average":18.92,"per_activation":7.98,"per_cast_cycle":1.42,"display_info":["4 ticks of 18.92 negative energy damage over 2s on target"],"base_value":-79.3313,"scale":0.2385}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":151.33,"average":7.57,"per_activation":3.19,"per_cast_cycle":0.57,"display_info":["5.00% chance for 151.33 negative energy damage on target [CRITICAL]"],"base_value":-79.3313,"scale":1.9076}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":-5.63,"display_info":["-5.63% to hit for 10s on target"],"base_value":-0.075,"scale":0.75}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":2.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":101.24,"average":5.06,"per_activation":2.14,"per_cast_cycle":0.38,"display_info":["5.00% chance for 101.24 negative energy damage on target after 2s delay [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":1.6183}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":2.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":101.24,"average":10.12,"per_activation":4.27,"per_cast_cycle":0.76,"display_info":["10.00% chance for 101.24 negative energy damage on target after 2s delay [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":1.6183}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.0,"continuous_apply_seconds":0.63,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":11.39,"average":11.39,"per_activation":4.81,"per_cast_cycle":0.85,"display_info":["4 ticks of 11.39 fire damage over 2s on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.1821}]}]}]},{"name":"Scrapper_Melee.Dark_Melee.Touch_of_Fear","display_name":"Touch of Fear","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/2c/shadowfighting_touchoffear.png","display_help":"The Netherworld is one scary place, and with but a touch, you can give your enemy a glimpse into this dark world. This will cause them to helplessly tremble in Fear. Foes in this state of panic have reduced chance to hit. Recharge: Moderate","display_short_help":"Melee Fear, Foe -To Hit","display_info":{"Endurance Cost":"8.53","Power Range":"7 ft.","Power Type":"Click","Target Type":"Enemies","Recharge Time":"8s","Attack Types":"Melee, Negative_Energy","Effect Area":"Single Target","Activation Time":"1.17s","Available Level":"6"},"attack_types":["Melee_Def","Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Fear","Enhance ToHit DeBuffs","Enhance Accuracy"],"enhancement_set_categories_allowed":["Fear","To Hit Debuff","Accurate To-Hit Debuff"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.77,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Terrorized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","duration_seconds":22.35,"display_info":["3.0 terrorize for 22.35s on target"],"base_value":1.49,"scale":15.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":30.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Terrorized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","duration_seconds":10.43,"display_info":["30.00% chance for 1.0 terrorize for 10.43s on target"],"base_value":1.49,"scale":7.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Terrorized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","duration_seconds":2.0,"display_info":["3.0 terrorize for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":-11.25,"display_info":["-11.25% to hit for 20s on target"],"base_value":-0.075,"scale":1.5}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.0,"continuous_apply_seconds":0.63,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":30.47,"average":30.47,"per_activation":26.04,"per_cast_cycle":3.32,"display_info":["4 ticks of 30.47 fire damage over 2s on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.4871}]}]}]},{"name":"Scrapper_Melee.Dark_Melee.Siphon_Life","display_name":"Siphon Life","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/04/shadowfighting_siphonlife.png","display_help":"You tap the power of the Netherworld and create a life transferring conduit between a foe and yourself. This will transfer Hit Points from your enemy to yourself. Foes Siphoned in this manner have their chance to hit reduced. Damage: Superior, Recharge: Moderate","display_short_help":"Melee, Superior DMG(Negative), Foe -To Hit, Self +HP","display_info":{"Available Level":"8","Recharge Time":"10s","Power Range":"7 ft.","Power Type":"Click","Target Type":"Enemies","Effect Area":"Single Target","Activation Time":"1.93s","Endurance Cost":"10.19","Attack Types":"Melee, Negative_Energy"},"attack_types":["Melee_Def","Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Heal","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["To Hit Debuff","Healing","Accurate To-Hit Debuff","Universal Damage Sets","Melee Damage","Accurate Healing","Scrapper Archetype Sets"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.93,"animation_time":1.93,"animation_time_before_hit":0.83,"recharge_time":10.0,"endurance_cost":10.19},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":122.62,"average":122.62,"per_activation":63.53,"per_cast_cycle":10.28,"display_info":["122.62 negative energy damage on target"],"base_value":-62.5615,"scale":1.96}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":170.63,"average":170.63,"per_activation":88.41,"per_cast_cycle":14.3,"display_info":["170.63 negative energy damage on target"],"base_value":-79.3313,"scale":2.1509}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":170.63,"average":8.53,"per_activation":4.42,"per_cast_cycle":0.72,"display_info":["5.00% chance for 170.63 negative energy damage on target [CRITICAL]"],"base_value":-79.3313,"scale":2.1509}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Healing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Self","magnitude":1.0,"duration":"Instant","after_delay_seconds":0.5,"flags":["IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","healing":133.86,"average":133.86,"per_activation":69.36,"per_cast_cycle":11.22,"display_info":["133.86 heal on self after 0.5s delay","Unresistable"],"base_value":133.8621,"scale":1.0}]},{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":-5.63,"display_info":["-5.63% to hit for 10s on target"],"base_value":-0.075,"scale":0.75}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":122.62,"average":6.13,"per_activation":3.18,"per_cast_cycle":0.51,"display_info":["5.00% chance for 122.62 negative energy damage on target [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":1.96}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":122.62,"average":12.26,"per_activation":6.35,"per_cast_cycle":1.03,"display_info":["10.00% chance for 122.62 negative energy damage on target [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":1.96}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":55.18,"average":55.18,"per_activation":28.59,"per_cast_cycle":4.63,"display_info":["55.18 fire damage on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.882}]}]}]},{"name":"Scrapper_Melee.Dark_Melee.Taunt","display_name":"Confront","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/0f/shadowfighting_taunt.png","display_help":"Challenges a foe to attack you. Useful to pull a villain off an ally who finds themselves in over their head. A To Hit check required to Taunt enemy players, but is not needed against critter targets. Recharge: Very Fast","display_short_help":"Ranged, Foe Taunt","display_info":{"Available Level":"12","Effect Area":"Single Target","Activation Time":"1.67s","Target Type":"Enemies","Attack Types":"Ranged","Recharge Time":"3s","Power Type":"Click","Power Range":"70 ft."},"attack_types":["Ranged_Def"],"enhancements_allowed":["Enhance Taunt","Enhance Range","Enhance Recharge Speed","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":70.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.67,"recharge_time":3.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Scrapper","duration_seconds":23.1,"display_info":["4.0 taunt for 23.1s on target"],"base_value":1.54,"scale":15.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Scrapper","duration_seconds":6.16,"display_info":["4.0 taunt for 6.16s on target"],"base_value":1.54,"scale":4.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Range"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":12.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":-75.0,"display_info":["-75.00% strength to range for 12s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-0.75}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"],"effects":[{"attributes":["Null"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Scrapper_Melee.Dark_Melee.Dark_Consumption","display_name":"Dark Consumption","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d0/shadowfighting_darkconsumption.png","display_help":"The dark power of the Netherworld allows you to tap the essence of your foe's soul and transfer it to yourself. This will drain the Hit Points of your enemy and add to your Endurance. Damage: Moderate, Recharge: Long","display_short_help":"PBAoE Moderate DMG(Negative), Self +End","display_info":{"Available Level":"18","Endurance Cost":"0.52","Power Type":"Click","Attack Types":"Area, Negative_Energy","Effect Area":"AoE — 8 ft. radius (10 targets max)","Recharge Time":"3m 0s","Target Type":"Self","Activation Time":"1.03s"},"attack_types":["Area_Def","Negative_Energy_Def"],"enhancements_allowed":["Enhance Endurance Modification","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["PBAoE Damage","Scrapper Archetype Sets","Endurance Modification","Universal Damage Sets"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":8.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.03,"animation_time":1.03,"animation_time_before_hit":0.73,"recharge_time":180.0,"endurance_cost":0.52},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":50.05,"average":50.05,"per_activation":48.59,"per_cast_cycle":0.28,"display_info":["50.05 negative energy damage on target"],"base_value":-62.5615,"scale":0.8}]},{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Self","magnitude":1.0,"duration":"Instant","after_delay_seconds":0.25,"flags":["IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","value":25.0,"average":25.0,"per_activation":24.27,"per_cast_cycle":0.14,"display_info":["25.00 endurance on self after 0.25s delay","Unresistable"],"base_value":1.0,"scale":25.0}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":50.05,"average":2.5,"per_activation":2.43,"per_cast_cycle":0.01,"display_info":["5.00% chance for 50.05 negative energy damage on target [CRITICAL]"],"base_value":-79.3313,"scale":0.6309}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":50.05,"average":2.5,"per_activation":2.43,"per_cast_cycle":0.01,"display_info":["5.00% chance for 50.05 negative energy damage on target [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":0.8}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":50.05,"average":5.01,"per_activation":4.86,"per_cast_cycle":0.03,"display_info":["10.00% chance for 50.05 negative energy damage on target [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":0.8}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":22.52,"average":22.52,"per_activation":21.86,"per_cast_cycle":0.12,"display_info":["22.52 fire damage on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.36}]}]}]},{"name":"Scrapper_Melee.Dark_Melee.Soul_Drain","display_name":"Soul Drain","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ce/shadowfighting_stealpower.png","display_help":"Using this power, you can drain the essence of all nearby foes' souls, thus increasing your own strength. Each affected foe will lose some Hit Points and add to your Damage and chance to hit. Damage: Moderate, Recharge: Long","display_short_help":"PBAoE Moderate DMG(Negative), Self +DMG, +To Hit","display_info":{"Power Type":"Click","Recharge Time":"2m 0s","Effect Area":"AoE — 10 ft. radius (10 targets max)","Activation Time":"2.37s","Target Type":"Self","Endurance Cost":"15.60","Attack Types":"Area, Negative_Energy","Available Level":"26"},"attack_types":["Area_Def","Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance ToHit Buffs","Enhance Accuracy"],"enhancement_set_categories_allowed":["PBAoE Damage","Universal Damage Sets","To Hit Buff","Scrapper Archetype Sets"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":10.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.37,"animation_time":2.37,"animation_time_before_hit":1.77,"recharge_time":120.0,"endurance_cost":15.6},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":62.56,"average":62.56,"per_activation":26.4,"per_cast_cycle":0.51,"display_info":["62.56 negative energy damage on target"],"base_value":-62.5615,"scale":1.0}]},{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":2.0,"display_info":["2.00% to hit for 30s on self","Unresistable"],"base_value":0.1,"scale":0.2}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":10.0,"display_info":["10.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 30s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.125,"scale":0.8}]},{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":10.0,"display_info":["10.00% to hit for 30s on self","Unresistable"],"base_value":0.1,"scale":1.0}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":30.0,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":50.0,"display_info":["50.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 30s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.125,"scale":4.0}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":62.56,"average":3.13,"per_activation":1.32,"per_cast_cycle":0.03,"display_info":["5.00% chance for 62.56 negative energy damage on target [CRITICAL]"],"base_value":-79.3313,"scale":0.7886}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":62.56,"average":3.13,"per_activation":1.32,"per_cast_cycle":0.03,"display_info":["5.00% chance for 62.56 negative energy damage on target [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":1.0}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":62.56,"average":6.26,"per_activation":2.64,"per_cast_cycle":0.05,"display_info":["10.00% chance for 62.56 negative energy damage on target [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":1.0}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":28.15,"average":28.15,"per_activation":11.88,"per_cast_cycle":0.23,"display_info":["28.15 fire damage on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.45}]}]}]},{"name":"Scrapper_Melee.Dark_Melee.Midnight_Grasp","display_name":"Midnight Grasp","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d5/shadowfighting_midnightgrasp.png","display_help":"Mastery over the forces of the Netherworld allows you to create dark tentacles that can Immobilize a foe and continuously drain his life force. Damage: Superior(DoT), Recharge: Slow","display_short_help":"Melee, Superior DMG(Negative), Foe Immobilize, -To Hit","display_info":{"Recharge Time":"15s","Available Level":"32","Target Type":"Enemies","Power Range":"7 ft.","Endurance Cost":"11.96","Activation Time":"2.07s","Effect Area":"Single Target","Attack Types":"Melee, Negative_Energy","Power Type":"Click"},"attack_types":["Melee_Def","Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Immobilization","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","To Hit Debuff","Scrapper Archetype Sets","Accurate To-Hit Debuff","Immobilize","Melee Damage"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.07,"animation_time":2.07,"animation_time_before_hit":0.53,"recharge_time":15.0,"endurance_cost":11.96},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":138.26,"average":138.26,"per_activation":66.79,"per_cast_cycle":8.1,"display_info":["138.26 negative energy damage on target"],"base_value":-62.5615,"scale":2.21}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","duration_seconds":17.88,"display_info":["3.0 immobilize for 17.88s on target"],"base_value":1.192,"scale":15.0}]},{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":0.75,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":6.88,"average":6.88,"per_activation":3.32,"per_cast_cycle":0.4,"display_info":["5 ticks of 6.88 negative energy damage over 3.1s on target after 0.5s delay"],"base_value":-62.5615,"scale":0.11}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":162.99,"average":162.99,"per_activation":78.74,"per_cast_cycle":9.55,"display_info":["162.99 negative energy damage on target"],"base_value":-79.3313,"scale":2.0546}]},{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":0.75,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":6.26,"average":6.26,"per_activation":3.02,"per_cast_cycle":0.37,"display_info":["5 ticks of 6.26 negative energy damage over 3.1s on target after 0.5s delay"],"base_value":-79.3313,"scale":0.0789}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","duration_seconds":2.0,"display_info":["3.0 immobilize for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"pve_or_pvp":"PVP","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":194.27,"average":9.71,"per_activation":4.69,"per_cast_cycle":0.57,"display_info":["5.00% chance for 194.27 negative energy damage on target [CRITICAL]"],"base_value":-79.3313,"scale":2.4489}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","percent":-5.63,"display_info":["-5.63% to hit for 20s on target"],"base_value":-0.075,"scale":0.75}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":5.0,"requires":["(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":172.67,"average":8.63,"per_activation":4.17,"per_cast_cycle":0.51,"display_info":["5.00% chance for 172.67 negative energy damage on target [CRITICAL]","Only against minions and underlings"],"base_value":-62.5615,"scale":2.76}]}]},{"pve_or_pvp":"PVE","tags":["Critical"],"visible_in_info_window":true,"chance_percent":10.0,"requires":["!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":172.67,"average":17.27,"per_activation":8.34,"per_cast_cycle":1.01,"display_info":["10.00% chance for 172.67 negative energy damage on target [CRITICAL]","Only against targets tougher than minion class"],"base_value":-62.5615,"scale":2.76}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":62.22,"average":62.22,"per_activation":30.06,"per_cast_cycle":3.64,"display_info":["62.22 fire damage on target","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.9945}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":0.75,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Scrapper","damage":2.82,"average":2.82,"per_activation":1.36,"per_cast_cycle":0.17,"display_info":["5 ticks of 2.82 fire damage over 3.1s on target after 0.5s delay","Only using Fiery Embrace"],"base_value":-62.5615,"scale":0.045}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Scrapper_Melee.Dark_Melee",
+  "display_name": "Dark Melee",
+  "display_help": "Dark Melee allows you to focus the powers of the Netherworld to defeat your foes. The draining effects of most of these powers can reduce the target's Accuracy. Like all scrapper powers, all Dark Melee attacks can sometimes land a critical hit for double damage.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d6/shadowfighting_shadowpunch.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Scrapper_Melee.Dark_Melee.Shadow_Punch",
+    "Scrapper_Melee.Dark_Melee.Smite",
+    "Scrapper_Melee.Dark_Melee.Shadow_Maul",
+    "Scrapper_Melee.Dark_Melee.Touch_of_Fear",
+    "Scrapper_Melee.Dark_Melee.Siphon_Life",
+    "Scrapper_Melee.Dark_Melee.Taunt",
+    "Scrapper_Melee.Dark_Melee.Dark_Consumption",
+    "Scrapper_Melee.Dark_Melee.Soul_Drain",
+    "Scrapper_Melee.Dark_Melee.Midnight_Grasp"
+  ],
+  "powers": [
+    {
+      "name": "Scrapper_Melee.Dark_Melee.Shadow_Punch",
+      "display_name": "Shadow Punch",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d6/shadowfighting_shadowpunch.png",
+      "display_help": "You wrap your fists with Negative Energy channeled from the Netherworlds, then perform a quick punch that deals minor damage. Shadow Punches cloud the target's vision, lowering his chance to hit for a short time. Damage: Minor, Recharge: Very Fast",
+      "display_short_help": "Melee, Minor DMG (Smash/Negative), Foe -To Hit",
+      "display_info": {
+        "Endurance Cost": "4.37",
+        "Available Level": "1",
+        "Recharge Time": "3s",
+        "Power Type": "Click",
+        "Power Range": "7 ft.",
+        "Activation Time": "0.83s",
+        "Target Type": "Enemies",
+        "Attack Types": "Melee, Smashing, Negative_Energy",
+        "Effect Area": "Single Target"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Accurate To-Hit Debuff",
+        "To Hit Debuff",
+        "Melee Damage",
+        "Universal Damage Sets",
+        "Scrapper Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.83,
+        "animation_time": 0.83,
+        "animation_time_before_hit": 0.53,
+        "recharge_time": 3.0,
+        "endurance_cost": 4.37
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 21.27,
+                  "average": 21.27,
+                  "per_activation": 25.63,
+                  "per_cast_cycle": 5.55,
+                  "display_info": [
+                    "21.27 smashing damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.34
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 31.28,
+                  "average": 31.28,
+                  "per_activation": 37.69,
+                  "per_cast_cycle": 8.17,
+                  "display_info": [
+                    "31.28 negative energy damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 34.94,
+                  "average": 34.94,
+                  "per_activation": 42.1,
+                  "per_cast_cycle": 9.12,
+                  "display_info": [
+                    "34.94 smashing damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.4404
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 52.41,
+                  "average": 52.41,
+                  "per_activation": 63.14,
+                  "per_cast_cycle": 13.68,
+                  "display_info": [
+                    "52.41 negative energy damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.6606
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": -5.63,
+                  "display_info": [
+                    "-5.63% to hit for 6s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 87.34,
+                  "average": 4.37,
+                  "per_activation": 5.27,
+                  "per_cast_cycle": 1.14,
+                  "display_info": [
+                    "5.00% chance for 87.34 negative energy damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 1.1009
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 52.55,
+                  "average": 2.63,
+                  "per_activation": 3.17,
+                  "per_cast_cycle": 0.69,
+                  "display_info": [
+                    "5.00% chance for 52.55 negative energy damage on target [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 52.55,
+                  "average": 5.26,
+                  "per_activation": 6.34,
+                  "per_cast_cycle": 1.37,
+                  "display_info": [
+                    "10.00% chance for 52.55 negative energy damage on target [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 23.65,
+                  "average": 23.65,
+                  "per_activation": 28.49,
+                  "per_cast_cycle": 6.17,
+                  "display_info": [
+                    "23.65 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.378
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Dark_Melee.Smite",
+      "display_name": "Smite",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/a4/shadowfighting_smite.png",
+      "display_help": "You wrap your fists with Negative Energy channeled from the Netherworlds, then perform a Smite that deals more damage than Shadow Punch, but has a longer recharge time. Smite clouds the target's vision, lowering his chance to hit for a short time. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Melee, Moderate DMG (Smash/Negative), Foe -To Hit",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Power Range": "7 ft.",
+        "Available Level": "1",
+        "Activation Time": "0.97s",
+        "Endurance Cost": "6.86",
+        "Attack Types": "Melee, Smashing, Negative_Energy",
+        "Target Type": "Enemies",
+        "Recharge Time": "6s",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "Scrapper Archetype Sets",
+        "Accurate To-Hit Debuff",
+        "To Hit Debuff",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.97,
+        "animation_time": 0.97,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 6.0,
+        "endurance_cost": 6.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 20.02,
+                  "average": 20.02,
+                  "per_activation": 20.64,
+                  "per_cast_cycle": 2.87,
+                  "display_info": [
+                    "20.02 smashing damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.32
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 62.56,
+                  "average": 62.56,
+                  "per_activation": 64.49,
+                  "per_cast_cycle": 8.98,
+                  "display_info": [
+                    "62.56 negative energy damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 26.16,
+                  "average": 26.16,
+                  "per_activation": 26.97,
+                  "per_cast_cycle": 3.75,
+                  "display_info": [
+                    "26.16 smashing damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.3297
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 78.47,
+                  "average": 78.47,
+                  "per_activation": 80.9,
+                  "per_cast_cycle": 11.26,
+                  "display_info": [
+                    "78.47 negative energy damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.9892
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": -5.63,
+                  "display_info": [
+                    "-5.63% to hit for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 104.63,
+                  "average": 5.23,
+                  "per_activation": 5.39,
+                  "per_cast_cycle": 0.75,
+                  "display_info": [
+                    "5.00% chance for 104.63 negative energy damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 1.3189
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 82.58,
+                  "average": 4.13,
+                  "per_activation": 4.26,
+                  "per_cast_cycle": 0.59,
+                  "display_info": [
+                    "5.00% chance for 82.58 negative energy damage on target [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.32
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 82.58,
+                  "average": 8.26,
+                  "per_activation": 8.52,
+                  "per_cast_cycle": 1.19,
+                  "display_info": [
+                    "10.00% chance for 82.58 negative energy damage on target [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.32
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 37.16,
+                  "average": 37.16,
+                  "per_activation": 38.31,
+                  "per_cast_cycle": 5.33,
+                  "display_info": [
+                    "37.16 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.594
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Dark_Melee.Shadow_Maul",
+      "display_name": "Shadow Maul",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e0/shadowfighting_shadowmaul.png",
+      "display_help": "You wrap your entire arms with Negative Energy channeled from the Netherworlds, then perform a series of blows that deal a lot of damage over a short period of time to multiple targets in front of you. These blows cloud your target's vision, lowering his chance to hit for a short time. Damage: High(DoT), Recharge: Slow",
+      "display_short_help": "Melee (Cone), High DoT(Smash/Negative), Foe -To Hit",
+      "display_info": {
+        "Attack Types": "Melee, Smashing, Negative_Energy",
+        "Recharge Time": "11s",
+        "Power Range": "7 ft.",
+        "Effect Area": "Cone — 7 ft. radius 120° arc (10 targets max)",
+        "Available Level": "2",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Endurance Cost": "11.02",
+        "Activation Time": "2.37s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Accurate To-Hit Debuff",
+        "To Hit Debuff",
+        "Scrapper Archetype Sets",
+        "PBAoE Damage"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 7.0,
+        "arc_degrees": 120.0,
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.37,
+        "animation_time": 2.37,
+        "animation_time_before_hit": 0.4,
+        "recharge_time": 11.0,
+        "endurance_cost": 11.02
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "continuous_apply_seconds": 0.63,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 12.66,
+                  "average": 12.66,
+                  "per_activation": 5.34,
+                  "per_cast_cycle": 0.95,
+                  "display_info": [
+                    "4 ticks of 12.66 smashing damage over 2s on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.2023
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "continuous_apply_seconds": 0.63,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 12.66,
+                  "average": 12.66,
+                  "per_activation": 5.34,
+                  "per_cast_cycle": 0.95,
+                  "display_info": [
+                    "4 ticks of 12.66 negative energy damage over 2s on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.2023
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "continuous_apply_seconds": 0.63,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 18.92,
+                  "average": 18.92,
+                  "per_activation": 7.98,
+                  "per_cast_cycle": 1.42,
+                  "display_info": [
+                    "4 ticks of 18.92 smashing damage over 2s on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.2385
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "continuous_apply_seconds": 0.63,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 18.92,
+                  "average": 18.92,
+                  "per_activation": 7.98,
+                  "per_cast_cycle": 1.42,
+                  "display_info": [
+                    "4 ticks of 18.92 negative energy damage over 2s on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.2385
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 151.33,
+                  "average": 7.57,
+                  "per_activation": 3.19,
+                  "per_cast_cycle": 0.57,
+                  "display_info": [
+                    "5.00% chance for 151.33 negative energy damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 1.9076
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": -5.63,
+                  "display_info": [
+                    "-5.63% to hit for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 101.24,
+                  "average": 5.06,
+                  "per_activation": 2.14,
+                  "per_cast_cycle": 0.38,
+                  "display_info": [
+                    "5.00% chance for 101.24 negative energy damage on target after 2s delay [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.6183
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 101.24,
+                  "average": 10.12,
+                  "per_activation": 4.27,
+                  "per_cast_cycle": 0.76,
+                  "display_info": [
+                    "10.00% chance for 101.24 negative energy damage on target after 2s delay [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.6183
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "continuous_apply_seconds": 0.63,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 11.39,
+                  "average": 11.39,
+                  "per_activation": 4.81,
+                  "per_cast_cycle": 0.85,
+                  "display_info": [
+                    "4 ticks of 11.39 fire damage over 2s on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.1821
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Dark_Melee.Touch_of_Fear",
+      "display_name": "Touch of Fear",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/2c/shadowfighting_touchoffear.png",
+      "display_help": "The Netherworld is one scary place, and with but a touch, you can give your enemy a glimpse into this dark world. This will cause them to helplessly tremble in Fear. Foes in this state of panic have reduced chance to hit. Recharge: Moderate",
+      "display_short_help": "Melee Fear, Foe -To Hit",
+      "display_info": {
+        "Available Level": "6",
+        "Power Range": "7 ft.",
+        "Recharge Time": "8s",
+        "Endurance Cost": "8.53",
+        "Target Type": "Enemies",
+        "Attack Types": "Melee, Negative_Energy",
+        "Power Type": "Click",
+        "Effect Area": "Single Target",
+        "Activation Time": "1.17s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Fear",
+        "Enhance ToHit DeBuffs",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Debuff",
+        "Accurate To-Hit Debuff",
+        "Fear"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.77,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Terrorized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "duration_seconds": 22.35,
+                  "display_info": [
+                    "3.0 terrorize for 22.35s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 15.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 30.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Terrorized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "duration_seconds": 10.43,
+                  "display_info": [
+                    "30.00% chance for 1.0 terrorize for 10.43s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 7.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Terrorized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 terrorize for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": -11.25,
+                  "display_info": [
+                    "-11.25% to hit for 20s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 1.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "continuous_apply_seconds": 0.63,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 30.47,
+                  "average": 30.47,
+                  "per_activation": 26.04,
+                  "per_cast_cycle": 3.32,
+                  "display_info": [
+                    "4 ticks of 30.47 fire damage over 2s on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.4871
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Dark_Melee.Siphon_Life",
+      "display_name": "Siphon Life",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/04/shadowfighting_siphonlife.png",
+      "display_help": "You tap the power of the Netherworld and create a life transferring conduit between a foe and yourself. This will transfer Hit Points from your enemy to yourself. Foes Siphoned in this manner have their chance to hit reduced. Damage: Superior, Recharge: Moderate",
+      "display_short_help": "Melee, Superior DMG(Negative), Foe -To Hit, Self +HP",
+      "display_info": {
+        "Power Type": "Click",
+        "Activation Time": "1.93s",
+        "Attack Types": "Melee, Negative_Energy",
+        "Recharge Time": "10s",
+        "Endurance Cost": "10.19",
+        "Effect Area": "Single Target",
+        "Available Level": "8",
+        "Power Range": "7 ft.",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Heal",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "To Hit Debuff",
+        "Accurate Healing",
+        "Accurate To-Hit Debuff",
+        "Healing",
+        "Universal Damage Sets",
+        "Scrapper Archetype Sets"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.93,
+        "animation_time": 1.93,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 10.0,
+        "endurance_cost": 10.19
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 122.62,
+                  "average": 122.62,
+                  "per_activation": 63.53,
+                  "per_cast_cycle": 10.28,
+                  "display_info": [
+                    "122.62 negative energy damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.96
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 170.63,
+                  "average": 170.63,
+                  "per_activation": 88.41,
+                  "per_cast_cycle": 14.3,
+                  "display_info": [
+                    "170.63 negative energy damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 2.1509
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 170.63,
+                  "average": 8.53,
+                  "per_activation": 4.42,
+                  "per_cast_cycle": 0.72,
+                  "display_info": [
+                    "5.00% chance for 170.63 negative energy damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 2.1509
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Healing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 0.5,
+              "flags": [
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "healing": 133.86,
+                  "average": 133.86,
+                  "per_activation": 69.36,
+                  "per_cast_cycle": 11.22,
+                  "display_info": [
+                    "133.86 heal on self after 0.5s delay",
+                    "Unresistable"
+                  ],
+                  "base_value": 133.8621,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": -5.63,
+                  "display_info": [
+                    "-5.63% to hit for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 122.62,
+                  "average": 6.13,
+                  "per_activation": 3.18,
+                  "per_cast_cycle": 0.51,
+                  "display_info": [
+                    "5.00% chance for 122.62 negative energy damage on target [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.96
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 122.62,
+                  "average": 12.26,
+                  "per_activation": 6.35,
+                  "per_cast_cycle": 1.03,
+                  "display_info": [
+                    "10.00% chance for 122.62 negative energy damage on target [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.96
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 55.18,
+                  "average": 55.18,
+                  "per_activation": 28.59,
+                  "per_cast_cycle": 4.63,
+                  "display_info": [
+                    "55.18 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.882
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Dark_Melee.Taunt",
+      "display_name": "Confront",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/0f/shadowfighting_taunt.png",
+      "display_help": "Challenges a foe to attack you. Useful to pull a villain off an ally who finds themselves in over their head. A To Hit check required to Taunt enemy players, but is not needed against critter targets. Recharge: Very Fast",
+      "display_short_help": "Ranged, Foe Taunt",
+      "display_info": {
+        "Power Type": "Click",
+        "Available Level": "12",
+        "Recharge Time": "3s",
+        "Effect Area": "Single Target",
+        "Power Range": "70 ft.",
+        "Activation Time": "1.67s",
+        "Target Type": "Enemies",
+        "Attack Types": "Ranged"
+      },
+      "attack_types": [
+        "Ranged_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 70.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 3.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "duration_seconds": 23.1,
+                  "display_info": [
+                    "4.0 taunt for 23.1s on target"
+                  ],
+                  "base_value": 1.54,
+                  "scale": 15.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "duration_seconds": 6.16,
+                  "display_info": [
+                    "4.0 taunt for 6.16s on target"
+                  ],
+                  "base_value": 1.54,
+                  "scale": 4.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Range"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 12.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": -75.0,
+                  "display_info": [
+                    "-75.00% strength to range for 12s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Null"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Dark_Melee.Dark_Consumption",
+      "display_name": "Dark Consumption",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d0/shadowfighting_darkconsumption.png",
+      "display_help": "The dark power of the Netherworld allows you to tap the essence of your foe's soul and transfer it to yourself. This will drain the Hit Points of your enemy and add to your Endurance. Damage: Moderate, Recharge: Long",
+      "display_short_help": "PBAoE Moderate DMG(Negative), Self +End",
+      "display_info": {
+        "Effect Area": "AoE — 8 ft. radius (10 targets max)",
+        "Activation Time": "1.03s",
+        "Target Type": "Self",
+        "Available Level": "18",
+        "Attack Types": "Area, Negative_Energy",
+        "Power Type": "Click",
+        "Recharge Time": "3m 0s",
+        "Endurance Cost": "0.52"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Scrapper Archetype Sets",
+        "PBAoE Damage",
+        "Endurance Modification"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 8.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.03,
+        "animation_time": 1.03,
+        "animation_time_before_hit": 0.73,
+        "recharge_time": 180.0,
+        "endurance_cost": 0.52
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 50.05,
+                  "average": 50.05,
+                  "per_activation": 48.59,
+                  "per_cast_cycle": 0.28,
+                  "display_info": [
+                    "50.05 negative energy damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.8
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "value": 25.0,
+                  "average": 25.0,
+                  "per_activation": 24.27,
+                  "per_cast_cycle": 0.14,
+                  "display_info": [
+                    "25.00 endurance on self after 0.25s delay",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 25.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 50.05,
+                  "average": 2.5,
+                  "per_activation": 2.43,
+                  "per_cast_cycle": 0.01,
+                  "display_info": [
+                    "5.00% chance for 50.05 negative energy damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.6309
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 50.05,
+                  "average": 2.5,
+                  "per_activation": 2.43,
+                  "per_cast_cycle": 0.01,
+                  "display_info": [
+                    "5.00% chance for 50.05 negative energy damage on target [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 50.05,
+                  "average": 5.01,
+                  "per_activation": 4.86,
+                  "per_cast_cycle": 0.03,
+                  "display_info": [
+                    "10.00% chance for 50.05 negative energy damage on target [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 22.52,
+                  "average": 22.52,
+                  "per_activation": 21.86,
+                  "per_cast_cycle": 0.12,
+                  "display_info": [
+                    "22.52 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.36
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Dark_Melee.Soul_Drain",
+      "display_name": "Soul Drain",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ce/shadowfighting_stealpower.png",
+      "display_help": "Using this power, you can drain the essence of all nearby foes' souls, thus increasing your own strength. Each affected foe will lose some Hit Points and add to your Damage and chance to hit. Damage: Moderate, Recharge: Long",
+      "display_short_help": "PBAoE Moderate DMG(Negative), Self +DMG, +To Hit",
+      "display_info": {
+        "Power Type": "Click",
+        "Effect Area": "AoE — 10 ft. radius (10 targets max)",
+        "Available Level": "26",
+        "Target Type": "Self",
+        "Endurance Cost": "15.60",
+        "Activation Time": "2.37s",
+        "Recharge Time": "2m 0s",
+        "Attack Types": "Area, Negative_Energy"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance ToHit Buffs",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff",
+        "Universal Damage Sets",
+        "PBAoE Damage",
+        "Scrapper Archetype Sets"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 10.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.37,
+        "animation_time": 2.37,
+        "animation_time_before_hit": 1.77,
+        "recharge_time": 120.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 62.56,
+                  "average": 62.56,
+                  "per_activation": 26.4,
+                  "per_cast_cycle": 0.51,
+                  "display_info": [
+                    "62.56 negative energy damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": 2.0,
+                  "display_info": [
+                    "2.00% to hit for 30s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": 10.0,
+                  "display_info": [
+                    "10.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 30s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.125,
+                  "scale": 0.8
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": 10.0,
+                  "display_info": [
+                    "10.00% to hit for 30s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 30.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": 50.0,
+                  "display_info": [
+                    "50.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 30s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.125,
+                  "scale": 4.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 62.56,
+                  "average": 3.13,
+                  "per_activation": 1.32,
+                  "per_cast_cycle": 0.03,
+                  "display_info": [
+                    "5.00% chance for 62.56 negative energy damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.7886
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 62.56,
+                  "average": 3.13,
+                  "per_activation": 1.32,
+                  "per_cast_cycle": 0.03,
+                  "display_info": [
+                    "5.00% chance for 62.56 negative energy damage on target [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 62.56,
+                  "average": 6.26,
+                  "per_activation": 2.64,
+                  "per_cast_cycle": 0.05,
+                  "display_info": [
+                    "10.00% chance for 62.56 negative energy damage on target [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 28.15,
+                  "average": 28.15,
+                  "per_activation": 11.88,
+                  "per_cast_cycle": 0.23,
+                  "display_info": [
+                    "28.15 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.45
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scrapper_Melee.Dark_Melee.Midnight_Grasp",
+      "display_name": "Midnight Grasp",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d5/shadowfighting_midnightgrasp.png",
+      "display_help": "Mastery over the forces of the Netherworld allows you to create dark tentacles that can Immobilize a foe and continuously drain his life force. Damage: Superior(DoT), Recharge: Slow",
+      "display_short_help": "Melee, Superior DMG(Negative), Foe Immobilize, -To Hit",
+      "display_info": {
+        "Recharge Time": "15s",
+        "Endurance Cost": "11.96",
+        "Power Type": "Click",
+        "Activation Time": "2.07s",
+        "Effect Area": "Single Target",
+        "Attack Types": "Melee, Negative_Energy",
+        "Available Level": "32",
+        "Target Type": "Enemies",
+        "Power Range": "7 ft."
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Immobilization",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Scrapper Archetype Sets",
+        "To Hit Debuff",
+        "Universal Damage Sets",
+        "Immobilize",
+        "Accurate To-Hit Debuff",
+        "Melee Damage"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.07,
+        "animation_time": 2.07,
+        "animation_time_before_hit": 0.53,
+        "recharge_time": 15.0,
+        "endurance_cost": 11.96
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 138.26,
+                  "average": 138.26,
+                  "per_activation": 66.79,
+                  "per_cast_cycle": 8.1,
+                  "display_info": [
+                    "138.26 negative energy damage on target"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 2.21
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "duration_seconds": 17.88,
+                  "display_info": [
+                    "3.0 immobilize for 17.88s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 15.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 0.75,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 6.88,
+                  "average": 6.88,
+                  "per_activation": 3.32,
+                  "per_cast_cycle": 0.4,
+                  "display_info": [
+                    "5 ticks of 6.88 negative energy damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.11
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 162.99,
+                  "average": 162.99,
+                  "per_activation": 78.74,
+                  "per_cast_cycle": 9.55,
+                  "display_info": [
+                    "162.99 negative energy damage on target"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 2.0546
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 0.75,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 6.26,
+                  "average": 6.26,
+                  "per_activation": 3.02,
+                  "per_cast_cycle": 0.37,
+                  "display_info": [
+                    "5 ticks of 6.26 negative energy damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 0.0789
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 immobilize for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 194.27,
+                  "average": 9.71,
+                  "per_activation": 4.69,
+                  "per_cast_cycle": 0.57,
+                  "display_info": [
+                    "5.00% chance for 194.27 negative energy damage on target [CRITICAL]"
+                  ],
+                  "base_value": -79.3313,
+                  "scale": 2.4489
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "percent": -5.63,
+                  "display_info": [
+                    "-5.63% to hit for 20s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 5.0,
+          "requires": [
+            "(((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 172.67,
+                  "average": 8.63,
+                  "per_activation": 4.17,
+                  "per_cast_cycle": 0.51,
+                  "display_info": [
+                    "5.00% chance for 172.67 negative energy damage on target [CRITICAL]",
+                    "Only against minions and underlings"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 2.76
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Critical"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 10.0,
+          "requires": [
+            "!(((((target>arch == Class_Minion_Grunt) || (target>arch == Class_Minion_Small)) || (target>arch == Class_Minion_Pets)) || (target>arch == Class_Minion_Swarm)) || (target>enttype == player))"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 172.67,
+                  "average": 17.27,
+                  "per_activation": 8.34,
+                  "per_cast_cycle": 1.01,
+                  "display_info": [
+                    "10.00% chance for 172.67 negative energy damage on target [CRITICAL]",
+                    "Only against targets tougher than minion class"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 2.76
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 62.22,
+                  "average": 62.22,
+                  "per_activation": 30.06,
+                  "per_cast_cycle": 3.64,
+                  "display_info": [
+                    "62.22 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.9945
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 0.75,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Scrapper",
+                  "damage": 2.82,
+                  "average": 2.82,
+                  "per_activation": 1.36,
+                  "per_cast_cycle": 0.17,
+                  "display_info": [
+                    "5 ticks of 2.82 fire damage over 3.1s on target after 0.5s delay",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -62.5615,
+                  "scale": 0.045
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

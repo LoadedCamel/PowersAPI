@@ -1,1 +1,904 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Villain_Pets.Creeper_Vine","display_name":"Creeper Vine","display_help":"Plant Control","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/f9/inherent_brawl.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Villain_Pets.Creeper_Vine.Vine_Smash","Villain_Pets.Creeper_Vine.Vine_Thorns","Villain_Pets.Creeper_Vine.Self_Destruct","Villain_Pets.Creeper_Vine.Resistance"],"powers":[{"name":"Villain_Pets.Creeper_Vine.Vine_Smash","display_name":"Vine Smash","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/f9/inherent_brawl.png","display_help":"Toxin from the Creeper Vines Thorns are slowing you. You are unable to Fly and are taking Toxic Damage. Note that Vine Smash is unaffected by Recharge Time changes","display_short_help":"DoT(Toxic), Slow, -Fly","display_info":{"Power Range":"10 ft.","Available Level":"1","Endurance Cost":"5.20","Target Type":"Enemies","Effect Area":"Single Target","Attack Types":"Melee, Smashing","Recharge Time":"4s","Activation Time":"0.9s","Power Type":"Click"},"attack_types":["Melee_Def","Smashing_Def"],"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":10.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.9,"animation_time":0.9,"animation_time_before_hit":0.8,"recharge_time":4.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":11.12,"average":11.12,"per_activation":12.36,"per_cast_cycle":2.27,"display_info":["11.12 smashing damage on target"],"base_value":-55.6102,"scale":0.2}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":90.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.0,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":5,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":5.56,"average":20.49,"per_activation":22.77,"per_cast_cycle":4.18,"display_info":["5 ticks of 90.00% chance for 5.56 toxic damage over 4s on target after 0.5s delay"],"base_value":-55.6102,"scale":0.1}]},{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":15.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":-10.0,"display_info":["-10.0 fly protection for 15s on target"],"base_value":1.0,"scale":-10.0}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","percent":-20.0,"display_info":["-20.00% run speed, fly speed, jump speed for 15s on target"],"base_value":-1.0,"scale":0.2}]},{"attributes":["JumpHeight","RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","percent":-20.0,"display_info":["-20.00% strength to jump height, recharge for 15s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.2}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreLevelDifference","ResistMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":0.6,"display_info":["0.6 magnitude knock on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":0.6}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreLevelDifference","ResistMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":0.6,"display_info":["0.6 magnitude knock on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":0.6}]}]}]},{"name":"Villain_Pets.Creeper_Vine.Vine_Thorns","display_name":"Vine Thorns","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/59/thornyassault_darts.png","display_help":"Toxin from the Creeper Vines Thorns are slowing you. You are unable to Fly and are taking Toxic Damage. Note that Vine Thorns is unaffected by Recharge Time changes","display_short_help":"DoT(Toxic), Slow, -Fly","display_info":{"Activation Time":"0.83s","Target Type":"Enemies","Available Level":"1","Effect Area":"Single Target","Attack Types":"Ranged","Endurance Cost":"5.20","Power Range":"60 ft.","Power Type":"Click","Recharge Time":"4s"},"attack_types":["Ranged_Def"],"enhancements_allowed":["Enhance Slow Movement","Reduce Endurance Cost","Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.83,"animation_time":0.83,"animation_time_before_hit":0.63,"recharge_time":4.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":4.45,"average":4.45,"per_activation":5.36,"per_cast_cycle":0.92,"display_info":["4.45 lethal damage on target"],"base_value":-44.4882,"scale":0.1}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":90.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.0,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":5,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":4.45,"average":16.4,"per_activation":19.76,"per_cast_cycle":3.4,"display_info":["5 ticks of 90.00% chance for 4.45 toxic damage over 4s on target after 0.5s delay"],"base_value":-44.4882,"scale":0.1}]},{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":-10.0,"display_info":["-10.0 fly protection for 10s on target"],"base_value":1.0,"scale":-10.0}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","percent":-20.0,"display_info":["-20.00% run speed, fly speed, jump speed for 10s on target"],"base_value":-1.0,"scale":0.2}]},{"attributes":["JumpHeight","RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","percent":-20.0,"display_info":["-20.00% strength to jump height, recharge for 10s on target","Ignores buffs and enhancements"],"base_value":-1.0,"scale":0.2}]}]}]},{"name":"Villain_Pets.Creeper_Vine.Self_Destruct","display_name":"Self Destruct","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/2b/powerblast_novablast.png","display_help":"Self Destruct","display_short_help":"Self Destruct","display_info":{"Target Type":"Self","Power Type":"Auto","Effect Area":"Single Target","Available Level":"1"},"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Silent Kill"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","after_delay_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Villain_Pets.Creeper_Vine.Resistance","display_name":"Resistance","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ca/stonearmor_mineralcrust.png","display_help":"Carrion Creeper Vines are highly resistant to Toxic and Psionic Damage. They also have a high defense to Psionic Attacks. However, they are otherwise vulnerable to most damage.","display_short_help":"Auto: Self +Res(Toxic, Psionic)","display_info":{"Power Type":"Auto","Effect Area":"Single Target","Available Level":"1","Target Type":"Self"},"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"auto_cast_interval":10.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-1.0,"display_info":["-1.00% resistance to smashing damage for 10.25s on self","Unresistable"],"base_value":0.1,"scale":-0.1}]},{"attributes":["Lethal_Dmg","Fire_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-4.0,"display_info":["-4.00% resistance to lethal damage, fire damage for 10.25s on self","Unresistable"],"base_value":0.1,"scale":-0.4}]},{"attributes":["Cold_Dmg","Energy_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-2.0,"display_info":["-2.00% resistance to cold damage, energy damage for 10.25s on self","Unresistable"],"base_value":0.1,"scale":-0.2}]},{"attributes":["Negative_Energy_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":-3.0,"display_info":["-3.00% resistance to negative energy damage for 10.25s on self","Unresistable"],"base_value":0.1,"scale":-0.3}]},{"attributes":["Psionic_Dmg","Toxic_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":4.0,"display_info":["4.00% resistance to psionic damage, toxic damage for 10.25s on self","Unresistable"],"base_value":0.1,"scale":0.4}]},{"attributes":["Psionic_Def"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":25.0,"display_info":["25.00% strength to psionic for 10.25s on self","Unresistable"],"base_value":0.1,"scale":2.5}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":10.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","magnitude":100.0,"display_info":["100.0 magnitude immobilize for 10.25s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":100.0}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Villain_Pets.Creeper_Vine",
+  "display_name": "Creeper Vine",
+  "display_help": "Plant Control",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/f9/inherent_brawl.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Villain_Pets.Creeper_Vine.Vine_Smash",
+    "Villain_Pets.Creeper_Vine.Vine_Thorns",
+    "Villain_Pets.Creeper_Vine.Self_Destruct",
+    "Villain_Pets.Creeper_Vine.Resistance"
+  ],
+  "powers": [
+    {
+      "name": "Villain_Pets.Creeper_Vine.Vine_Smash",
+      "display_name": "Vine Smash",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/f9/inherent_brawl.png",
+      "display_help": "Toxin from the Creeper Vines Thorns are slowing you. You are unable to Fly and are taking Toxic Damage. Note that Vine Smash is unaffected by Recharge Time changes",
+      "display_short_help": "DoT(Toxic), Slow, -Fly",
+      "display_info": {
+        "Power Range": "10 ft.",
+        "Recharge Time": "4s",
+        "Power Type": "Click",
+        "Available Level": "1",
+        "Attack Types": "Melee, Smashing",
+        "Target Type": "Enemies",
+        "Endurance Cost": "5.20",
+        "Activation Time": "0.9s",
+        "Effect Area": "Single Target"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 10.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.9,
+        "animation_time": 0.9,
+        "animation_time_before_hit": 0.8,
+        "recharge_time": 4.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 11.12,
+                  "average": 11.12,
+                  "per_activation": 12.36,
+                  "per_cast_cycle": 2.27,
+                  "display_info": [
+                    "11.12 smashing damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 90.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.0,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 5.56,
+                  "average": 20.49,
+                  "per_activation": 22.77,
+                  "per_cast_cycle": 4.18,
+                  "display_info": [
+                    "5 ticks of 90.00% chance for 5.56 toxic damage over 4s on target after 0.5s delay"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": -10.0,
+                  "display_info": [
+                    "-10.0 fly protection for 15s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -10.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% run speed, fly speed, jump speed for 15s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight",
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% strength to jump height, recharge for 15s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreLevelDifference",
+                "ResistMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": 0.6,
+                  "display_info": [
+                    "0.6 magnitude knock on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreLevelDifference",
+                "ResistMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": 0.6,
+                  "display_info": [
+                    "0.6 magnitude knock on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Villain_Pets.Creeper_Vine.Vine_Thorns",
+      "display_name": "Vine Thorns",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/59/thornyassault_darts.png",
+      "display_help": "Toxin from the Creeper Vines Thorns are slowing you. You are unable to Fly and are taking Toxic Damage. Note that Vine Thorns is unaffected by Recharge Time changes",
+      "display_short_help": "DoT(Toxic), Slow, -Fly",
+      "display_info": {
+        "Recharge Time": "4s",
+        "Power Range": "60 ft.",
+        "Activation Time": "0.83s",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target",
+        "Endurance Cost": "5.20",
+        "Attack Types": "Ranged",
+        "Available Level": "1"
+      },
+      "attack_types": [
+        "Ranged_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.83,
+        "animation_time": 0.83,
+        "animation_time_before_hit": 0.63,
+        "recharge_time": 4.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 4.45,
+                  "average": 4.45,
+                  "per_activation": 5.36,
+                  "per_cast_cycle": 0.92,
+                  "display_info": [
+                    "4.45 lethal damage on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 90.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.0,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 4.45,
+                  "average": 16.4,
+                  "per_activation": 19.76,
+                  "per_cast_cycle": 3.4,
+                  "display_info": [
+                    "5 ticks of 90.00% chance for 4.45 toxic damage over 4s on target after 0.5s delay"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": -10.0,
+                  "display_info": [
+                    "-10.0 fly protection for 10s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -10.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% run speed, fly speed, jump speed for 10s on target"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight",
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -20.0,
+                  "display_info": [
+                    "-20.00% strength to jump height, recharge for 10s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -1.0,
+                  "scale": 0.2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Villain_Pets.Creeper_Vine.Self_Destruct",
+      "display_name": "Self Destruct",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/2b/powerblast_novablast.png",
+      "display_help": "Self Destruct",
+      "display_short_help": "Self Destruct",
+      "display_info": {
+        "Available Level": "1",
+        "Target Type": "Self",
+        "Effect Area": "Single Target",
+        "Power Type": "Auto"
+      },
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Silent Kill"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "after_delay_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Villain_Pets.Creeper_Vine.Resistance",
+      "display_name": "Resistance",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ca/stonearmor_mineralcrust.png",
+      "display_help": "Carrion Creeper Vines are highly resistant to Toxic and Psionic Damage. They also have a high defense to Psionic Attacks. However, they are otherwise vulnerable to most damage.",
+      "display_short_help": "Auto: Self +Res(Toxic, Psionic)",
+      "display_info": {
+        "Target Type": "Self",
+        "Available Level": "1",
+        "Power Type": "Auto",
+        "Effect Area": "Single Target"
+      },
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "auto_cast_interval": 10.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -1.0,
+                  "display_info": [
+                    "-1.00% resistance to smashing damage for 10.25s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": -0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Lethal_Dmg",
+                "Fire_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -4.0,
+                  "display_info": [
+                    "-4.00% resistance to lethal damage, fire damage for 10.25s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": -0.4
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Cold_Dmg",
+                "Energy_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -2.0,
+                  "display_info": [
+                    "-2.00% resistance to cold damage, energy damage for 10.25s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": -0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": -3.0,
+                  "display_info": [
+                    "-3.00% resistance to negative energy damage for 10.25s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": -0.3
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 4.0,
+                  "display_info": [
+                    "4.00% resistance to psionic damage, toxic damage for 10.25s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 0.4
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Psionic_Def"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 25.0,
+                  "display_info": [
+                    "25.00% strength to psionic for 10.25s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 2.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 10.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "magnitude": 100.0,
+                  "display_info": [
+                    "100.0 magnitude immobilize for 10.25s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

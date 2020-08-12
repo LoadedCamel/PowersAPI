@@ -1,1 +1,2926 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Dominator_Control.Electric_Control","display_name":"Electric Control","display_help":"Electricity leaps and sparks at your command. You can use raw electrical power to paralyze, knockdown and drain the endurance of foes.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/6f/electriccontrol_electricfence.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Dominator_Control.Electric_Control.Electric_Fence","Dominator_Control.Electric_Control.Tesla_Cage","Dominator_Control.Electric_Control.Chain_Fences","Dominator_Control.Electric_Control.Jolting_Chain","Dominator_Control.Electric_Control.Stunning_Aura","Dominator_Control.Electric_Control.Static_Field","Dominator_Control.Electric_Control.Paralyzing_Blast","Dominator_Control.Electric_Control.Synaptic_Overload","Dominator_Control.Electric_Control.Gremlins"],"powers":[{"name":"Dominator_Control.Electric_Control.Electric_Fence","display_name":"Electric Fence","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/6f/electriccontrol_electricfence.png","display_help":"Surrounds and Immobilizes a single target in an Electric Fence. Deals some damage over time and slowly drains some Endurance. Useful for keeping villains at bay and bringing down fliers. Damage: Minor(DoT), Recharge: Fast","display_short_help":"Ranged, Moderate DoT(Energy), Foe Immobilize, -End, -Fly, -Knockback","display_info":{"Power Range":"80 ft.","Activation Time":"1.67s","Recharge Time":"4s","Attack Types":"Ranged, Energy","Target Type":"Enemies","Effect Area":"Single Target","Endurance Cost":"7.80","Power Type":"Click","Available Level":"1"},"attack_types":["Ranged_Def","Energy_Def"],"enhancements_allowed":["Enhance Endurance Modification","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Immobilization","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Endurance Modification","Dominator Archetype Sets","Ranged Damage","Immobilize"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.83,"recharge_time":4.0,"endurance_cost":7.8},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":9.2,"continuous_apply_seconds":2.0,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":10.57,"average":10.57,"per_activation":6.33,"per_cast_cycle":1.86,"display_info":["5 ticks of 10.57 energy damage over 9.2s on target"],"base_value":-52.8297,"scale":0.2}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":22.35,"display_info":["4.0 immobilize for 22.35s on target"],"base_value":1.49,"scale":15.0}]},{"attributes":["Endurance"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.2,"continuous_apply_seconds":2.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-2.8,"display_info":["-2.80% endurance for 6.2s on target"],"base_value":1.0,"scale":-0.028}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":9.2,"continuous_apply_seconds":2.0,"ticks":5,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":25.58,"average":25.58,"per_activation":15.32,"per_cast_cycle":4.51,"display_info":["5 ticks of 25.58 energy damage over 9.2s on target"],"base_value":-73.9593,"scale":0.3458}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":5.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["5.0 immobilize for 4s on target"],"base_value":4.0,"scale":1.0}]},{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.2,"continuous_apply_seconds":2.0,"ticks":4,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","value":-1.0,"average":-1.0,"per_activation":-0.6,"per_cast_cycle":-0.18,"display_info":["4 ticks of -1.00 endurance over 6.2s on target"],"base_value":1.0,"scale":-1.0}]}]},{"pve_or_pvp":"PVE","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":33.53,"display_info":["4.0 immobilize for 33.53s on target","Only while domination is active"],"base_value":1.49,"scale":22.5}]}]},{"pve_or_pvp":"PVP","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["1.0 immobilize for 4s on target","Only while domination is active","Unresistable"],"base_value":4.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Knockup","Knockback"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":10000.0,"display_info":["10000.00% resistance to knockup, knock for 15s on target","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":100.0}]},{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","magnitude":-1.6,"display_info":["-1.6 fly protection for 15s on target","Unresistable"],"base_value":1.0,"scale":-1.6}]}]},{"visible_in_info_window":true,"chance_percent":20.0,"effects":[{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-100.0,"display_info":["-100.00% recovery rate for 2s on target"],"base_value":1.0,"scale":-1.0}]}]},{"visible_in_info_window":true,"chance_percent":30.0,"effects":[{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Self","magnitude":1.0,"duration":"Instant","flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","value":2.6,"average":0.78,"per_activation":0.47,"per_cast_cycle":0.14,"display_info":["30.00% chance for 2.60 endurance on self","Unresistable"],"base_value":1.0,"scale":2.6}]}]}]},{"name":"Dominator_Control.Electric_Control.Tesla_Cage","display_name":"Tesla Cage","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/57/electriccontrol_teslacage.png","display_help":"Tesla Cage confines the target in an electrical prison. The target is overwhelmed by the electrical charge and is left helpless and can be attacked. The target is drained of some Endurance and some of that Endurance may be transferred back to you. Damage: Minor, Recharge: Moderate","display_short_help":"Ranged, Moderate DMG(Energy), Foe Hold, -End","display_info":{"Power Range":"80 ft.","Endurance Cost":"8.53","Target Type":"Enemies","Available Level":"1","Activation Time":"2.17s","Recharge Time":"8s","Power Type":"Click","Effect Area":"Single Target","Attack Types":"Ranged, Energy"},"attack_types":["Ranged_Def","Energy_Def"],"enhancements_allowed":["Enhance Endurance Modification","Enhance Hold","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Ranged Damage","Endurance Modification","Universal Damage Sets","Dominator Archetype Sets","Holds"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.17,"animation_time":2.17,"animation_time_before_hit":0.97,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":17.88,"display_info":["3.0 hold for 17.88s on target"],"base_value":1.49,"scale":12.0}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":52.83,"average":52.83,"per_activation":24.35,"per_cast_cycle":5.19,"display_info":["52.83 energy damage on target"],"base_value":-52.8297,"scale":1.0}]},{"attributes":["Endurance"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07}]}]},{"pve_or_pvp":"PVE","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":26.82,"display_info":["3.0 hold for 26.82s on target","Only while domination is active"],"base_value":1.49,"scale":18.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["4.0 hold for 4s on target"],"base_value":4.0,"scale":1.0}]},{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":165.6,"average":165.6,"per_activation":76.31,"per_cast_cycle":16.28,"display_info":["165.60 smashing damage on target"],"base_value":-73.9593,"scale":2.2391}]},{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","value":-1.25,"average":-1.25,"per_activation":-0.58,"per_cast_cycle":-0.12,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25}]}]},{"pve_or_pvp":"PVP","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["1.0 hold for 4s on target","Only while domination is active","Unresistable"],"base_value":4.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":30.0,"effects":[{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-100.0,"display_info":["-100.00% recovery rate for 4s on target"],"base_value":1.0,"scale":-1.0}]},{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Self","magnitude":1.0,"duration":"Instant","flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","value":3.43,"average":1.03,"per_activation":0.47,"per_cast_cycle":0.1,"display_info":["30.00% chance for 3.43 endurance on self","Unresistable"],"base_value":1.0,"scale":3.43}]}]}]},{"name":"Dominator_Control.Electric_Control.Chain_Fences","display_name":"Chain Fences","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/db/electriccontrol_chainfences.png","display_help":"You can immobilize multiple foes in a chain of electricity, dealing minor damage to all foes in range and draining some endurance. This power also reduces Flight capacity in targets. Damage: Minor, Recharge: Moderate","display_short_help":"Ranged AoE, Minor DMG(Energy), Foe Immobilize, -End, -Fly","display_info":{"Recharge Time":"8s","Endurance Cost":"15.60","Activation Time":"1.17s","Power Range":"80 ft.","Available Level":"2","Effect Area":"AoE — 30 ft. radius (16 targets max)","Power Type":"Click","Attack Types":"Ranged, Energy","Target Type":"Enemies"},"attack_types":["Ranged_Def","Energy_Def"],"enhancements_allowed":["Enhance Endurance Modification","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Immobilization","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Endurance Modification","Immobilize","Targeted AoE Damage","Universal Damage Sets","Dominator Archetype Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":0.9,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":30.0,"range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.77,"recharge_time":8.0,"endurance_cost":15.6},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":22.35,"display_info":["3.0 immobilize for 22.35s on target"],"base_value":1.49,"scale":15.0}]},{"attributes":["Endurance"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-10.0,"display_info":["-10.00% endurance on target"],"base_value":1.0,"scale":-0.1}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":15.85,"average":15.85,"per_activation":13.55,"per_cast_cycle":1.73,"display_info":["15.85 energy damage on target"],"base_value":-52.8297,"scale":0.3}]}]},{"pve_or_pvp":"PVE","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":33.53,"display_info":["3.0 immobilize for 33.53s on target","Only while domination is active"],"base_value":1.49,"scale":22.5}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["3.0 immobilize for 4s on target"],"base_value":4.0,"scale":1.0}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["NearGround","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":113.82,"average":113.82,"per_activation":97.28,"per_cast_cycle":12.41,"display_info":["113.82 energy damage on target"],"base_value":-73.9593,"scale":1.539}]},{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","value":-2.0,"average":-2.0,"per_activation":-1.71,"per_cast_cycle":-0.22,"display_info":["-2.00 endurance on target"],"base_value":1.0,"scale":-2.0}]}]},{"pve_or_pvp":"PVP","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["1.0 immobilize for 4s on target","Only while domination is active","Unresistable"],"base_value":4.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":40.0,"effects":[{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-100.0,"display_info":["-100.00% recovery rate for 6s on target"],"base_value":1.0,"scale":-1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","magnitude":-1.6,"display_info":["-1.6 fly protection for 15s on target","Unresistable"],"base_value":1.0,"scale":-1.6}]}]}]},{"name":"Dominator_Control.Electric_Control.Jolting_Chain","display_name":"Jolting Chain","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/27/electriccontrol_joltingchain.png","display_help":"You can send a bolt of electricity through multiple opponents, causing a muscle spasm and dealing minor damage. Each foe is knocked down, and the electric charge can fork several times, jumping to several opponents rapidly. Damage: Minor, Recharge: Moderate","display_short_help":"Ranged Chain AoE, Minor DMG(Energy), Foe Knockdown, -End","display_info":{"Target Type":"Enemies","Recharge Time":"8s","Effect Area":"Single Target","Endurance Cost":"10.40","Power Range":"80 ft.","Available Level":"6","Activation Time":"2.07s","Attack Types":"Ranged, Energy","Power Type":"Click"},"attack_types":["Ranged_Def","Energy_Def"],"enhancements_allowed":["Enhance Endurance Modification","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Ranged Damage","Endurance Modification","Universal Damage Sets","Knockback"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.07,"animation_time":2.07,"animation_time_before_hit":1.0,"recharge_time":8.0,"endurance_cost":10.4},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":1.0,"after_delay_seconds":0.25,"flags":["ResistMagnitude","CombatModMagnitude","KeepThroughDeath","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Chain_Jolt_Dominator_Jump1","display_name":"Chain Jolt Jump 1","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Villain_Pets.Chain_Jolt_Dominator_Jump1.Charge","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/chain-jolt-dominator-jump1/"}]}},"stacking":{"behavior":"Stack","by_caster":true}},{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":1.0,"after_delay_seconds":0.5,"flags":["ResistMagnitude","CombatModMagnitude","KeepThroughDeath","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Chain_Jolt_Dominator_Jump1","display_name":"Chain Jolt Jump 1","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Villain_Pets.Chain_Jolt_Dominator_Jump1.Charge","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/chain-jolt-dominator-jump1/"}]}},"stacking":{"behavior":"Stack","by_caster":true}},{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":4.0,"continuous_apply_seconds":4.25,"ticks":1,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","magnitude":0.66,"display_info":["0.7 magnitude knock on target"],"base_value":1.0,"scale":0.66}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["NearGround","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":160.43,"average":160.43,"per_activation":77.5,"per_cast_cycle":15.93,"display_info":["160.43 energy damage on target"],"base_value":-73.9593,"scale":2.1691}]},{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","value":-2.0,"average":-2.0,"per_activation":-0.97,"per_cast_cycle":-0.2,"display_info":["-2.00 endurance on target"],"base_value":1.0,"scale":-2.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","magnitude":0.66,"display_info":["0.7 magnitude knock on target"],"base_value":1.0,"scale":0.66}]},{"attributes":["Endurance"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-10.0,"display_info":["-10.00% endurance on target"],"base_value":1.0,"scale":-0.1}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","damage":15.85,"average":15.85,"per_activation":7.66,"per_cast_cycle":1.57,"display_info":["15.85 energy damage on target"],"base_value":-52.8297,"scale":0.3}]}]},{"visible_in_info_window":true,"chance_percent":50.0,"effects":[{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-100.0,"display_info":["-100.00% recovery rate for 8s on target"],"base_value":1.0,"scale":-1.0}]}]}]},{"name":"Dominator_Control.Electric_Control.Stunning_Aura","display_name":"Conductive Aura","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/94/electriccontrol_stunningaura.png","display_help":"While this power is active, the air around you becomes charged with electricity, leaping out and shocking foes that get too close. Foes will lose some endurance, while you gain Recovery and Regeneration per target hit. Recharge: Slow","display_short_help":"Toggle: PBAoE, Foe -End, Self +Rec, +Regen","display_info":{"Available Level":"8","Power Type":"Toggle","Activation Time":"2.03s","Target Type":"Self","Recharge Time":"15s","Effect Area":"AoE — 20 ft. radius (8 targets max)","Attack Types":"Area, Energy"},"attack_types":["Area_Def","Energy_Def"],"enhancements_allowed":["Enhance Endurance Modification","Enhance Recharge Speed","Enhance Heal","Enhance Accuracy"],"enhancement_set_categories_allowed":["Endurance Modification","Healing"],"available_at_level":8,"auto_issue":false,"power_type":"Toggle","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":8,"radius_feet":20.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.03,"animation_time":2.03,"animation_time_before_hit":0.83,"recharge_time":15.0,"auto_cast_interval":2.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Endurance"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-10.0,"display_info":["-10.00% endurance on target"],"base_value":1.0,"scale":-0.1}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","value":-5.0,"average":-5.0,"per_activation":-2.46,"per_cast_cycle":-0.29,"display_info":["-5.00 endurance on target"],"base_value":1.0,"scale":-5.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Regeneration"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":5.0,"display_info":["5.00% regeneration rate for 2.25s on self","Unresistable"],"base_value":1.0,"scale":0.05}]},{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":3.13,"display_info":["3.13% recovery rate for 2.25s on self","Unresistable"],"base_value":1.0,"scale":0.0313}]}]}]},{"name":"Dominator_Control.Electric_Control.Static_Field","display_name":"Static Field","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/dc/electriccontrol_staticfield.png","display_help":"You can build up a Static Field at a nearby location. Any foes in the field may lose control of their muscles due to the static charge, and will shake violently. Foes may also be drained of some endurance, and some of that endurance may be transferred to nearby allies. Any attack will interrupt the effect temporarily and foes will re-gain control, although their movement and attack rates will be reduced. This effect can last for some time, and will continue to paralyze foes in the field. Recharge: Slow","display_short_help":"Target (Location AoE), Foe Sleep, -End, -Speed, -Recharge","display_info":{"Recharge Time":"40s","Available Level":"12","Target Type":"Location","Power Range":"60 ft.","Endurance Cost":"15.60","Effect Area":"Location","Power Type":"Click","Activation Time":"2.03s"},"enhancements_allowed":["Enhance Endurance Modification","Enhance Slow Movement","Reduce Endurance Cost","Enhance Range","Enhance Sleep","Enhance Recharge Speed","Enhance Accuracy"],"enhancement_set_categories_allowed":["Sleep","Dominator Archetype Sets","Slow Movement"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.03,"animation_time":2.03,"animation_time_before_hit":0.83,"recharge_time":40.0,"endurance_cost":15.6},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":25.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Static_Field_Dominator","display_name":"Static Field","powers":[{"name":"Villain_Pets.Static_Field_Dominator.Static_Field","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/static-field-dominator/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Dominator_Control.Electric_Control.Paralyzing_Blast","display_name":"Paralyzing Blast","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/2a/electriccontrol_paralyzingblast.png","display_help":"Summoning a large amount of energy, you can completely paralyze a group of foes in cages of electricity for a short time. These foes may be drained of some endurance as well. Recharge: Long","display_short_help":"Ranged AoE, Foe Hold, -End","display_info":{"Effect Area":"AoE — 20 ft. radius (16 targets max)","Attack Types":"Area, Energy","Power Range":"80 ft.","Target Type":"Enemies","Activation Time":"1.67s","Recharge Time":"4m 0s","Power Type":"Click","Endurance Cost":"15.60","Available Level":"18"},"attack_types":["Area_Def","Energy_Def"],"enhancements_allowed":["Enhance Endurance Modification","Enhance Hold","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Accuracy"],"enhancement_set_categories_allowed":["Dominator Archetype Sets","Holds"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":0.8,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":20.0,"range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":1.0,"recharge_time":240.0,"endurance_cost":15.6},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["NearGround","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":11.92,"display_info":["3.0 hold for 11.92s on target"],"base_value":1.49,"scale":8.0}]},{"attributes":["Endurance"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-7.0,"display_info":["-7.00% endurance on target"],"base_value":1.0,"scale":-0.07}]}]},{"pve_or_pvp":"PVE","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":17.88,"display_info":["3.0 hold for 17.88s on target","Only while domination is active"],"base_value":1.49,"scale":12.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Held"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["NearGround","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["4.0 hold for 4s on target"],"base_value":4.0,"scale":1.0}]},{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","value":-1.25,"average":-1.25,"per_activation":-0.75,"per_cast_cycle":-0.01,"display_info":["-1.25 endurance on target"],"base_value":1.0,"scale":-1.25}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-100.0,"display_info":["-100.00% recovery rate for 8s on target"],"base_value":1.0,"scale":-1.0}]}]}]},{"name":"Dominator_Control.Electric_Control.Synaptic_Overload","display_name":"Synaptic Overload","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/52/electriccontrol_synapticoverload.png","display_help":"This power can subtly scramble the synapses of any target affected, causing hallucinations and confusion amongst foes. The electric charge lasts for some time, and will jump slowly to other opponents causing wide spread confusion. Foes may not be aware that this has happened, and will not be alerted to your presence. You will also not receive experience for any damage dealt by confused opponents. Recharge: Slow","display_short_help":"Ranged Chain AoE, Foe Confuse, -End","display_info":{"Aggro Type":"Enemies will not notice this attack","Target Type":"Enemies","Power Range":"80 ft.","Effect Area":"Single Target","Activation Time":"2.37s","Recharge Time":"1m 0s","Power Type":"Click","Endurance Cost":"8.53","Attack Types":"Ranged, Energy","Available Level":"26"},"attack_types":["Ranged_Def","Energy_Def"],"enhancements_allowed":["Enhance Endurance Modification","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Confuse","Enhance Accuracy"],"enhancement_set_categories_allowed":["Confuse","Dominator Archetype Sets"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.37,"animation_time":2.37,"animation_time_before_hit":1.77,"recharge_time":60.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":22.35,"display_info":["3.0 confuse for 22.35s on target"],"base_value":1.49,"scale":15.0}]},{"attributes":["Endurance"],"applies_to":"CurrentValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-10.0,"display_info":["-10.00% endurance on target"],"base_value":1.0,"scale":-0.1}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Endurance"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","value":-2.0,"average":-2.0,"per_activation":-0.84,"per_cast_cycle":-0.03,"display_info":["-2.00 endurance on target"],"base_value":1.0,"scale":-2.0}]},{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":1.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":4.0,"display_info":["1.0 confuse for 4s on target"],"base_value":4.0,"scale":1.0}]}]},{"pve_or_pvp":"PVE","tags":["Domination"],"visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (source>kStealth > 0.5)"],"effects":[{"attributes":["Confused"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","duration_seconds":33.53,"display_info":["3.0 confuse for 33.53s on target","Only while domination is active","Unresistable"],"base_value":1.49,"scale":22.5}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":2.1,"after_delay_seconds":1.0,"flags":["ResistMagnitude","CombatModMagnitude","KeepThroughDeath","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Chain_Confuse_Dominator_Jump1","display_name":"Chain Confuse Jump 1","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Villain_Pets.Chain_Confuse_Dominator_Jump1.Charge","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/chain-confuse-dominator-jump1/"}]}},"stacking":{"behavior":"Stack","by_caster":true}},{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":4.1,"after_delay_seconds":2.0,"flags":["ResistMagnitude","CombatModMagnitude","KeepThroughDeath","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Chain_Confuse_Dominator_Jump1","display_name":"Chain Confuse Jump 1","powers":[{"name":"Pets.ResistAll.ResistAll","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"},{"name":"Villain_Pets.Chain_Confuse_Dominator_Jump1.Charge","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/chain-confuse-dominator-jump1/"}]}},"stacking":{"behavior":"Stack","by_caster":true}},{"attributes":["Set Mode"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":8.0,"continuous_apply_seconds":4.25,"ticks":2,"flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"]},{"attributes":["Recovery"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Dominator","percent":-100.0,"display_info":["-100.00% recovery rate for 8s on target"],"base_value":1.0,"scale":-1.0}]}]}]},{"name":"Dominator_Control.Electric_Control.Gremlins","display_name":"Gremlins","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d7/electriccontrol_gremlins.png","display_help":"Mastery over electricity allows you to create almost sentient elementals of lightning. These elementals are mischievous in nature, and enjoy creating havoc and interfering with electronic equipment or magical cantrips. They also never work alone, where there is one Gremlin, there is often another nearby. Recharge: Long","display_short_help":"Summon Gremlins: Melee Minor DMG(Energy)","display_info":{"Activation Time":"2.03s","Recharge Time":"4m 0s","Power Type":"Click","Power Range":"60 ft.","Effect Area":"Location","Endurance Cost":"26.00","Target Type":"Location","Available Level":"32"},"enhancements_allowed":["Enhance Endurance Modification","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Pet Damage","Recharge Intensive Pets"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.03,"animation_time":2.03,"animation_time_before_hit":0.93,"recharge_time":240.0,"endurance_cost":26.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"UntilKilled","flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Gremlin","display_name":"Gremlin","powers":[{"name":"Pets.Gremlin.Electric_Brawl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"},{"name":"Pets.Gremlin.Jolting_Chain","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"},{"name":"Pets.Gremlin.Shock","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"},{"name":"Pets.Gremlin.Resist_Energy","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"}]}},"stacking":{"behavior":"Replace","by_caster":true}},{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"UntilKilled","after_delay_seconds":1.0,"flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"create_entity":{"name":"Pets_Gremlin","display_name":"Gremlin","powers":[{"name":"Pets.Gremlin.Electric_Brawl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"},{"name":"Pets.Gremlin.Jolting_Chain","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"},{"name":"Pets.Gremlin.Shock","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"},{"name":"Pets.Gremlin.Resist_Energy","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"}]}},"stacking":{"behavior":"Replace","by_caster":true}}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Dominator_Control.Electric_Control",
+  "display_name": "Electric Control",
+  "display_help": "Electricity leaps and sparks at your command. You can use raw electrical power to paralyze, knockdown and drain the endurance of foes.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/6f/electriccontrol_electricfence.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Dominator_Control.Electric_Control.Electric_Fence",
+    "Dominator_Control.Electric_Control.Tesla_Cage",
+    "Dominator_Control.Electric_Control.Chain_Fences",
+    "Dominator_Control.Electric_Control.Jolting_Chain",
+    "Dominator_Control.Electric_Control.Stunning_Aura",
+    "Dominator_Control.Electric_Control.Static_Field",
+    "Dominator_Control.Electric_Control.Paralyzing_Blast",
+    "Dominator_Control.Electric_Control.Synaptic_Overload",
+    "Dominator_Control.Electric_Control.Gremlins"
+  ],
+  "powers": [
+    {
+      "name": "Dominator_Control.Electric_Control.Electric_Fence",
+      "display_name": "Electric Fence",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/6f/electriccontrol_electricfence.png",
+      "display_help": "Surrounds and Immobilizes a single target in an Electric Fence. Deals some damage over time and slowly drains some Endurance. Useful for keeping villains at bay and bringing down fliers. Damage: Minor(DoT), Recharge: Fast",
+      "display_short_help": "Ranged, Moderate DoT(Energy), Foe Immobilize, -End, -Fly, -Knockback",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Available Level": "1",
+        "Power Range": "80 ft.",
+        "Attack Types": "Ranged, Energy",
+        "Power Type": "Click",
+        "Endurance Cost": "7.80",
+        "Activation Time": "1.67s",
+        "Recharge Time": "4s",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Immobilization",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Dominator Archetype Sets",
+        "Endurance Modification",
+        "Immobilize",
+        "Universal Damage Sets",
+        "Ranged Damage"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 4.0,
+        "endurance_cost": 7.8
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 9.2,
+              "continuous_apply_seconds": 2.0,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 10.57,
+                  "average": 10.57,
+                  "per_activation": 6.33,
+                  "per_cast_cycle": 1.86,
+                  "display_info": [
+                    "5 ticks of 10.57 energy damage over 9.2s on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 22.35,
+                  "display_info": [
+                    "4.0 immobilize for 22.35s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 15.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.2,
+              "continuous_apply_seconds": 2.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -2.8,
+                  "display_info": [
+                    "-2.80% endurance for 6.2s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.028
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 9.2,
+              "continuous_apply_seconds": 2.0,
+              "ticks": 5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 25.58,
+                  "average": 25.58,
+                  "per_activation": 15.32,
+                  "per_cast_cycle": 4.51,
+                  "display_info": [
+                    "5 ticks of 25.58 energy damage over 9.2s on target"
+                  ],
+                  "base_value": -73.9593,
+                  "scale": 0.3458
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 5.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "5.0 immobilize for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.2,
+              "continuous_apply_seconds": 2.0,
+              "ticks": 4,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "value": -1.0,
+                  "average": -1.0,
+                  "per_activation": -0.6,
+                  "per_cast_cycle": -0.18,
+                  "display_info": [
+                    "4 ticks of -1.00 endurance over 6.2s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 33.53,
+                  "display_info": [
+                    "4.0 immobilize for 33.53s on target",
+                    "Only while domination is active"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 22.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "1.0 immobilize for 4s on target",
+                    "Only while domination is active",
+                    "Unresistable"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Knockup",
+                "Knockback"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": 10000.0,
+                  "display_info": [
+                    "10000.00% resistance to knockup, knock for 15s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 100.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "magnitude": -1.6,
+                  "display_info": [
+                    "-1.6 fly protection for 15s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 20.0,
+          "effects": [
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 2s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 30.0,
+          "effects": [
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "value": 2.6,
+                  "average": 0.78,
+                  "per_activation": 0.47,
+                  "per_cast_cycle": 0.14,
+                  "display_info": [
+                    "30.00% chance for 2.60 endurance on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 2.6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Electric_Control.Tesla_Cage",
+      "display_name": "Tesla Cage",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/57/electriccontrol_teslacage.png",
+      "display_help": "Tesla Cage confines the target in an electrical prison. The target is overwhelmed by the electrical charge and is left helpless and can be attacked. The target is drained of some Endurance and some of that Endurance may be transferred back to you. Damage: Minor, Recharge: Moderate",
+      "display_short_help": "Ranged, Moderate DMG(Energy), Foe Hold, -End",
+      "display_info": {
+        "Attack Types": "Ranged, Energy",
+        "Power Range": "80 ft.",
+        "Endurance Cost": "8.53",
+        "Available Level": "1",
+        "Activation Time": "2.17s",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Recharge Time": "8s",
+        "Effect Area": "Single Target"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Enhance Hold",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Endurance Modification",
+        "Ranged Damage",
+        "Holds",
+        "Dominator Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.17,
+        "animation_time": 2.17,
+        "animation_time_before_hit": 0.97,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 17.88,
+                  "display_info": [
+                    "3.0 hold for 17.88s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 12.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 52.83,
+                  "average": 52.83,
+                  "per_activation": 24.35,
+                  "per_cast_cycle": 5.19,
+                  "display_info": [
+                    "52.83 energy damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 26.82,
+                  "display_info": [
+                    "3.0 hold for 26.82s on target",
+                    "Only while domination is active"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 18.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "4.0 hold for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 165.6,
+                  "average": 165.6,
+                  "per_activation": 76.31,
+                  "per_cast_cycle": 16.28,
+                  "display_info": [
+                    "165.60 smashing damage on target"
+                  ],
+                  "base_value": -73.9593,
+                  "scale": 2.2391
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -0.58,
+                  "per_cast_cycle": -0.12,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "1.0 hold for 4s on target",
+                    "Only while domination is active",
+                    "Unresistable"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 30.0,
+          "effects": [
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 4s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "value": 3.43,
+                  "average": 1.03,
+                  "per_activation": 0.47,
+                  "per_cast_cycle": 0.1,
+                  "display_info": [
+                    "30.00% chance for 3.43 endurance on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 3.43
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Electric_Control.Chain_Fences",
+      "display_name": "Chain Fences",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/db/electriccontrol_chainfences.png",
+      "display_help": "You can immobilize multiple foes in a chain of electricity, dealing minor damage to all foes in range and draining some endurance. This power also reduces Flight capacity in targets. Damage: Minor, Recharge: Moderate",
+      "display_short_help": "Ranged AoE, Minor DMG(Energy), Foe Immobilize, -End, -Fly",
+      "display_info": {
+        "Power Type": "Click",
+        "Effect Area": "AoE — 30 ft. radius (16 targets max)",
+        "Recharge Time": "8s",
+        "Power Range": "80 ft.",
+        "Attack Types": "Ranged, Energy",
+        "Target Type": "Enemies",
+        "Available Level": "2",
+        "Endurance Cost": "15.60",
+        "Activation Time": "1.17s"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Immobilization",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Endurance Modification",
+        "Dominator Archetype Sets",
+        "Universal Damage Sets",
+        "Immobilize",
+        "Targeted AoE Damage"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 0.9,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 30.0,
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.77,
+        "recharge_time": 8.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 22.35,
+                  "display_info": [
+                    "3.0 immobilize for 22.35s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 15.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -10.0,
+                  "display_info": [
+                    "-10.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 15.85,
+                  "average": 15.85,
+                  "per_activation": 13.55,
+                  "per_cast_cycle": 1.73,
+                  "display_info": [
+                    "15.85 energy damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 33.53,
+                  "display_info": [
+                    "3.0 immobilize for 33.53s on target",
+                    "Only while domination is active"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 22.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "3.0 immobilize for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "NearGround",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 113.82,
+                  "average": 113.82,
+                  "per_activation": 97.28,
+                  "per_cast_cycle": 12.41,
+                  "display_info": [
+                    "113.82 energy damage on target"
+                  ],
+                  "base_value": -73.9593,
+                  "scale": 1.539
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "value": -2.0,
+                  "average": -2.0,
+                  "per_activation": -1.71,
+                  "per_cast_cycle": -0.22,
+                  "display_info": [
+                    "-2.00 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "1.0 immobilize for 4s on target",
+                    "Only while domination is active",
+                    "Unresistable"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 40.0,
+          "effects": [
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 6s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "magnitude": -1.6,
+                  "display_info": [
+                    "-1.6 fly protection for 15s on target",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Electric_Control.Jolting_Chain",
+      "display_name": "Jolting Chain",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/27/electriccontrol_joltingchain.png",
+      "display_help": "You can send a bolt of electricity through multiple opponents, causing a muscle spasm and dealing minor damage. Each foe is knocked down, and the electric charge can fork several times, jumping to several opponents rapidly. Damage: Minor, Recharge: Moderate",
+      "display_short_help": "Ranged Chain AoE, Minor DMG(Energy), Foe Knockdown, -End",
+      "display_info": {
+        "Power Range": "80 ft.",
+        "Power Type": "Click",
+        "Available Level": "6",
+        "Effect Area": "Single Target",
+        "Target Type": "Enemies",
+        "Activation Time": "2.07s",
+        "Endurance Cost": "10.40",
+        "Recharge Time": "8s",
+        "Attack Types": "Ranged, Energy"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Ranged Damage",
+        "Universal Damage Sets",
+        "Endurance Modification",
+        "Knockback"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.07,
+        "animation_time": 2.07,
+        "animation_time_before_hit": 1.0,
+        "recharge_time": 8.0,
+        "endurance_cost": 10.4
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 1.0,
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "KeepThroughDeath",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Chain_Jolt_Dominator_Jump1",
+                  "display_name": "Chain Jolt Jump 1",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Villain_Pets.Chain_Jolt_Dominator_Jump1.Charge",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/chain-jolt-dominator-jump1/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 1.0,
+              "after_delay_seconds": 0.5,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "KeepThroughDeath",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Chain_Jolt_Dominator_Jump1",
+                  "display_name": "Chain Jolt Jump 1",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Villain_Pets.Chain_Jolt_Dominator_Jump1.Charge",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/chain-jolt-dominator-jump1/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 4.0,
+              "continuous_apply_seconds": 4.25,
+              "ticks": 1,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "magnitude": 0.66,
+                  "display_info": [
+                    "0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.66
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "NearGround",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 160.43,
+                  "average": 160.43,
+                  "per_activation": 77.5,
+                  "per_cast_cycle": 15.93,
+                  "display_info": [
+                    "160.43 energy damage on target"
+                  ],
+                  "base_value": -73.9593,
+                  "scale": 2.1691
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "value": -2.0,
+                  "average": -2.0,
+                  "per_activation": -0.97,
+                  "per_cast_cycle": -0.2,
+                  "display_info": [
+                    "-2.00 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -2.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "magnitude": 0.66,
+                  "display_info": [
+                    "0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.66
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -10.0,
+                  "display_info": [
+                    "-10.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "damage": 15.85,
+                  "average": 15.85,
+                  "per_activation": 7.66,
+                  "per_cast_cycle": 1.57,
+                  "display_info": [
+                    "15.85 energy damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "effects": [
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 8s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Electric_Control.Stunning_Aura",
+      "display_name": "Conductive Aura",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/94/electriccontrol_stunningaura.png",
+      "display_help": "While this power is active, the air around you becomes charged with electricity, leaping out and shocking foes that get too close. Foes will lose some endurance, while you gain Recovery and Regeneration per target hit. Recharge: Slow",
+      "display_short_help": "Toggle: PBAoE, Foe -End, Self +Rec, +Regen",
+      "display_info": {
+        "Recharge Time": "15s",
+        "Target Type": "Self",
+        "Effect Area": "AoE — 20 ft. radius (8 targets max)",
+        "Attack Types": "Area, Energy",
+        "Available Level": "8",
+        "Power Type": "Toggle",
+        "Activation Time": "2.03s"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Enhance Recharge Speed",
+        "Enhance Heal",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Healing",
+        "Endurance Modification"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Toggle",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 8,
+        "radius_feet": 20.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.03,
+        "animation_time": 2.03,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 15.0,
+        "auto_cast_interval": 2.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -10.0,
+                  "display_info": [
+                    "-10.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "value": -5.0,
+                  "average": -5.0,
+                  "per_activation": -2.46,
+                  "per_cast_cycle": -0.29,
+                  "display_info": [
+                    "-5.00 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -5.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Regeneration"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": 5.0,
+                  "display_info": [
+                    "5.00% regeneration rate for 2.25s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.05
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": 3.13,
+                  "display_info": [
+                    "3.13% recovery rate for 2.25s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0313
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Electric_Control.Static_Field",
+      "display_name": "Static Field",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/dc/electriccontrol_staticfield.png",
+      "display_help": "You can build up a Static Field at a nearby location. Any foes in the field may lose control of their muscles due to the static charge, and will shake violently. Foes may also be drained of some endurance, and some of that endurance may be transferred to nearby allies. Any attack will interrupt the effect temporarily and foes will re-gain control, although their movement and attack rates will be reduced. This effect can last for some time, and will continue to paralyze foes in the field. Recharge: Slow",
+      "display_short_help": "Target (Location AoE), Foe Sleep, -End, -Speed, -Recharge",
+      "display_info": {
+        "Activation Time": "2.03s",
+        "Power Range": "60 ft.",
+        "Effect Area": "Location",
+        "Power Type": "Click",
+        "Available Level": "12",
+        "Target Type": "Location",
+        "Endurance Cost": "15.60",
+        "Recharge Time": "40s"
+      },
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Enhance Slow Movement",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Sleep",
+        "Enhance Recharge Speed",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Dominator Archetype Sets",
+        "Slow Movement",
+        "Sleep"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.03,
+        "animation_time": 2.03,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 40.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 25.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Static_Field_Dominator",
+                  "display_name": "Static Field",
+                  "powers": [
+                    {
+                      "name": "Villain_Pets.Static_Field_Dominator.Static_Field",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/static-field-dominator/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Electric_Control.Paralyzing_Blast",
+      "display_name": "Paralyzing Blast",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/2a/electriccontrol_paralyzingblast.png",
+      "display_help": "Summoning a large amount of energy, you can completely paralyze a group of foes in cages of electricity for a short time. These foes may be drained of some endurance as well. Recharge: Long",
+      "display_short_help": "Ranged AoE, Foe Hold, -End",
+      "display_info": {
+        "Attack Types": "Area, Energy",
+        "Activation Time": "1.67s",
+        "Power Type": "Click",
+        "Target Type": "Enemies",
+        "Effect Area": "AoE — 20 ft. radius (16 targets max)",
+        "Available Level": "18",
+        "Power Range": "80 ft.",
+        "Recharge Time": "4m 0s",
+        "Endurance Cost": "15.60"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Enhance Hold",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Dominator Archetype Sets",
+        "Holds"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 0.8,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 20.0,
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 1.0,
+        "recharge_time": 240.0,
+        "endurance_cost": 15.6
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "NearGround",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 11.92,
+                  "display_info": [
+                    "3.0 hold for 11.92s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 8.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -7.0,
+                  "display_info": [
+                    "-7.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.07
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 17.88,
+                  "display_info": [
+                    "3.0 hold for 17.88s on target",
+                    "Only while domination is active"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 12.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Held"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "NearGround",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "4.0 hold for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "value": -1.25,
+                  "average": -1.25,
+                  "per_activation": -0.75,
+                  "per_cast_cycle": -0.01,
+                  "display_info": [
+                    "-1.25 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.25
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 8s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Electric_Control.Synaptic_Overload",
+      "display_name": "Synaptic Overload",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/52/electriccontrol_synapticoverload.png",
+      "display_help": "This power can subtly scramble the synapses of any target affected, causing hallucinations and confusion amongst foes. The electric charge lasts for some time, and will jump slowly to other opponents causing wide spread confusion. Foes may not be aware that this has happened, and will not be alerted to your presence. You will also not receive experience for any damage dealt by confused opponents. Recharge: Slow",
+      "display_short_help": "Ranged Chain AoE, Foe Confuse, -End",
+      "display_info": {
+        "Activation Time": "2.37s",
+        "Endurance Cost": "8.53",
+        "Target Type": "Enemies",
+        "Aggro Type": "Enemies will not notice this attack",
+        "Power Type": "Click",
+        "Recharge Time": "1m 0s",
+        "Available Level": "26",
+        "Effect Area": "Single Target",
+        "Attack Types": "Ranged, Energy",
+        "Power Range": "80 ft."
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Confuse",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Dominator Archetype Sets",
+        "Confuse"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.37,
+        "animation_time": 2.37,
+        "animation_time_before_hit": 1.77,
+        "recharge_time": 60.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 22.35,
+                  "display_info": [
+                    "3.0 confuse for 22.35s on target"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 15.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -10.0,
+                  "display_info": [
+                    "-10.00% endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Endurance"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "value": -2.0,
+                  "average": -2.0,
+                  "per_activation": -0.84,
+                  "per_cast_cycle": -0.03,
+                  "display_info": [
+                    "-2.00 endurance on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -2.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 4.0,
+                  "display_info": [
+                    "1.0 confuse for 4s on target"
+                  ],
+                  "base_value": 4.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "tags": [
+            "Domination"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kStealth > 0.5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Confused"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "duration_seconds": 33.53,
+                  "display_info": [
+                    "3.0 confuse for 33.53s on target",
+                    "Only while domination is active",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.49,
+                  "scale": 22.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 2.1,
+              "after_delay_seconds": 1.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "KeepThroughDeath",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Chain_Confuse_Dominator_Jump1",
+                  "display_name": "Chain Confuse Jump 1",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Villain_Pets.Chain_Confuse_Dominator_Jump1.Charge",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/chain-confuse-dominator-jump1/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 4.1,
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "KeepThroughDeath",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Chain_Confuse_Dominator_Jump1",
+                  "display_name": "Chain Confuse Jump 1",
+                  "powers": [
+                    {
+                      "name": "Pets.ResistAll.ResistAll",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/resistall/"
+                    },
+                    {
+                      "name": "Villain_Pets.Chain_Confuse_Dominator_Jump1.Charge",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/chain-confuse-dominator-jump1/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Set Mode"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "continuous_apply_seconds": 4.25,
+              "ticks": 2,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ]
+            },
+            {
+              "attributes": [
+                "Recovery"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Dominator",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% recovery rate for 8s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dominator_Control.Electric_Control.Gremlins",
+      "display_name": "Gremlins",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d7/electriccontrol_gremlins.png",
+      "display_help": "Mastery over electricity allows you to create almost sentient elementals of lightning. These elementals are mischievous in nature, and enjoy creating havoc and interfering with electronic equipment or magical cantrips. They also never work alone, where there is one Gremlin, there is often another nearby. Recharge: Long",
+      "display_short_help": "Summon Gremlins: Melee Minor DMG(Energy)",
+      "display_info": {
+        "Activation Time": "2.03s",
+        "Endurance Cost": "26.00",
+        "Available Level": "32",
+        "Power Type": "Click",
+        "Effect Area": "Location",
+        "Power Range": "60 ft.",
+        "Target Type": "Location",
+        "Recharge Time": "4m 0s"
+      },
+      "enhancements_allowed": [
+        "Enhance Endurance Modification",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Pet Damage",
+        "Universal Damage Sets",
+        "Recharge Intensive Pets"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.03,
+        "animation_time": 2.03,
+        "animation_time_before_hit": 0.93,
+        "recharge_time": 240.0,
+        "endurance_cost": 26.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "UntilKilled",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Gremlin",
+                  "display_name": "Gremlin",
+                  "powers": [
+                    {
+                      "name": "Pets.Gremlin.Electric_Brawl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"
+                    },
+                    {
+                      "name": "Pets.Gremlin.Jolting_Chain",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"
+                    },
+                    {
+                      "name": "Pets.Gremlin.Shock",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"
+                    },
+                    {
+                      "name": "Pets.Gremlin.Resist_Energy",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            },
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 1.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "Pets_Gremlin",
+                  "display_name": "Gremlin",
+                  "powers": [
+                    {
+                      "name": "Pets.Gremlin.Electric_Brawl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"
+                    },
+                    {
+                      "name": "Pets.Gremlin.Jolting_Chain",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"
+                    },
+                    {
+                      "name": "Pets.Gremlin.Shock",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"
+                    },
+                    {
+                      "name": "Pets.Gremlin.Resist_Energy",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/pets/gremlin/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

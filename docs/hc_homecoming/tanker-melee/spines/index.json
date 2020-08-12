@@ -1,1 +1,3256 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Tanker_Melee.Spines","display_name":"Spines","display_help":"Spines protrude from your body and can deal damage in melee or at very short ranges. Spines are hollow and hold a neural toxin that deals additional Toxic damage and can Slow or Immobilize your enemies. The toxin is cumulative, and multiple hits will affect a target more strongly. Very few foes have resistance to Spine poison. Like all scrapper powers, all Spine attacks can sometimes land a critical hit for double damage.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/25/quills_swipe.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Tanker_Melee.Spines.Barb_Swipe","Tanker_Melee.Spines.Lunge","Tanker_Melee.Spines.Spine_Burst","Tanker_Melee.Spines.Taunt","Tanker_Melee.Spines.Ripper","Tanker_Melee.Spines.Build_Up","Tanker_Melee.Spines.Impale","Tanker_Melee.Spines.Quills","Tanker_Melee.Spines.Throw_Spines"],"powers":[{"name":"Tanker_Melee.Spines.Barb_Swipe","display_name":"Barb Swipe","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/25/quills_swipe.png","display_help":"Melee, Light DMG(Lethal), DoT(Toxic), -SPD, -Recharge. Recharge: Very Fast","display_short_help":"Melee, Light DMG(Lethal), DoT(Toxic), -SPD, -Recharge","display_info":{"Target Type":"Enemies","Endurance Cost":"4.37","Power Range":"7 ft.","Recharge Time":"3s","Effect Area":"Single Target","Activation Time":"0.83s","Attack Types":"Melee, Lethal","Power Type":"Click","Available Level":"1"},"requires":"!Tanker_Defense.Shield_Defense","attack_types":["Melee_Def","Lethal_Def"],"enhancements_allowed":["Enhance Slow Movement","Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Tanker Archetype Sets","Universal Damage Sets","Taunt","Melee Damage","Slow Movement"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.83,"animation_time":0.83,"animation_time_before_hit":0.5,"recharge_time":3.0,"endurance_cost":4.37},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":44.38,"average":44.38,"per_activation":53.47,"per_cast_cycle":11.59,"display_info":["44.38 lethal damage on target"],"base_value":-52.8297,"scale":0.84}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":0.33,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":9.54,"display_info":["0.3 immobilize for 9.54s on target"],"base_value":1.192,"scale":8.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":45.19,"average":45.19,"per_activation":54.45,"per_cast_cycle":11.8,"display_info":["45.19 lethal damage on target"],"base_value":-56.4121,"scale":0.801}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":0.33,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":2.0,"display_info":["0.3 immobilize for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% run speed, fly speed, jump speed for 4s on target"],"base_value":-0.8,"scale":0.2}]},{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-8.0,"display_info":["-8.00% strength to recharge for 2s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.1}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% strength to jump height for 4s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.2}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":3,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":5.28,"average":10.31,"per_activation":12.42,"per_cast_cycle":2.69,"display_info":["3 ticks of 80.00% chance for 5.28 toxic damage over 2.1s on target after 0.5s delay"],"base_value":-52.8297,"scale":0.1}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":19.97,"average":19.97,"per_activation":24.06,"per_cast_cycle":5.21,"display_info":["19.97 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.378}]}]}]},{"name":"Tanker_Melee.Spines.Lunge","display_name":"Lunge","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/db/quills_lunge.png","display_help":"You can lunge forward, stabbing and poisoning a foe with the large Spine on your arm. Lunge deals moderate damage. Spine poison deals additional Toxic damage and Slows affected foes. Damage: Moderate, Recharge: Fast","display_short_help":"Melee, Moderate DMG(Lethal), DoT(Toxic) -SPD, -Recharge","display_info":{"Recharge Time":"6s","Activation Time":"1.63s","Power Range":"7 ft.","Available Level":"2","Effect Area":"Single Target","Endurance Cost":"6.86","Power Type":"Click","Target Type":"Enemies","Attack Types":"Melee, Lethal"},"requires":"!Tanker_Defense.Shield_Defense","attack_types":["Melee_Def","Lethal_Def"],"enhancements_allowed":["Enhance Slow Movement","Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Slow Movement","Tanker Archetype Sets","Taunt","Melee Damage"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.63,"animation_time":1.63,"animation_time_before_hit":0.5,"recharge_time":6.0,"endurance_cost":6.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":69.74,"average":69.74,"per_activation":42.79,"per_cast_cycle":9.14,"display_info":["69.74 lethal damage on target"],"base_value":-52.8297,"scale":1.32}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":0.33,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":9.54,"display_info":["0.3 immobilize for 9.54s on target"],"base_value":1.192,"scale":8.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% run speed, fly speed, jump speed for 6s on target"],"base_value":-0.8,"scale":0.2}]},{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-8.0,"display_info":["-8.00% strength to recharge for 4s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.1}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% strength to jump height for 6s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.2}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":5.28,"average":12.47,"per_activation":7.65,"per_cast_cycle":1.63,"display_info":["4 ticks of 80.00% chance for 5.28 toxic damage over 3.1s on target after 0.5s delay"],"base_value":-52.8297,"scale":0.1}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":0.33,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":2.0,"display_info":["0.3 immobilize for 2s on target"],"base_value":2.0,"scale":1.0}]},{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":77.91,"average":77.91,"per_activation":47.8,"per_cast_cycle":10.21,"display_info":["77.91 lethal damage on target"],"base_value":-56.4121,"scale":1.381}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":31.38,"average":31.38,"per_activation":19.25,"per_cast_cycle":4.11,"display_info":["31.38 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.594}]}]}]},{"name":"Tanker_Melee.Spines.Spine_Burst","display_name":"Spine Burst","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d6/quills_flingquills.png","display_help":"You can fling dozens of Spines in all directions. These Spines only travel a short distance, but they can deal moderate damage and poison any target close to you. Spine poison deals additional Toxic damage and Slows affected foes. Damage: Moderate, Recharge: Slow","display_short_help":"PBAoE Melee, Moderate DMG(Lethal), DoT(Toxic), -SPD, -Recharge","display_info":{"Activation Time":"3s","Power Type":"Click","Effect Area":"AoE — 10 ft. radius (16 targets max)","Available Level":"4","Recharge Time":"16s","Attack Types":"Area, Lethal","Endurance Cost":"15.18","Target Type":"Self"},"attack_types":["Area_Def","Lethal_Def"],"enhancements_allowed":["Enhance Slow Movement","Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Slow Movement","Taunt","Universal Damage Sets","PBAoE Damage","Tanker Archetype Sets"],"available_at_level":4,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":10.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":3.0,"animation_time":3.0,"animation_time_before_hit":1.67,"recharge_time":16.0,"endurance_cost":15.18},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":47.55,"average":47.55,"per_activation":15.85,"per_cast_cycle":2.5,"display_info":["47.55 lethal damage on target"],"base_value":-52.8297,"scale":0.9}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":0.33,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":11.92,"display_info":["0.3 immobilize for 11.92s on target"],"base_value":1.192,"scale":10.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% run speed, fly speed, jump speed for 10s on target"],"base_value":-0.8,"scale":0.2}]},{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-8.0,"display_info":["-8.00% strength to recharge for 8s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.1}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% strength to jump height for 10s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.2}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":5.28,"average":12.47,"per_activation":4.16,"per_cast_cycle":0.66,"display_info":["4 ticks of 80.00% chance for 5.28 toxic damage over 3.1s on target after 0.5s delay"],"base_value":-52.8297,"scale":0.1}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":0.33,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":2.0,"display_info":["0.3 immobilize for 2s on target"],"base_value":2.0,"scale":1.0}]},{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":88.32,"average":88.32,"per_activation":29.44,"per_cast_cycle":4.65,"display_info":["88.32 lethal damage on target"],"base_value":-56.4121,"scale":1.5657}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":21.4,"average":21.4,"per_activation":7.13,"per_cast_cycle":1.13,"display_info":["21.40 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.405}]}]}]},{"name":"Tanker_Melee.Spines.Taunt","display_name":"Taunt","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/13/spines_taunt.png","display_help":"Taunts a foe, and some nearby foes, to attack you. Useful for pulling villains off an ally who find themselves in over their head. Taunted foes tend to ignore other Heroes and focus on you for quite a while, so use this power cautiously. A To Hit check is required to Taunt enemy players, but is not needed against critter targets. Recharge: Moderate","display_short_help":"Ranged (Targeted AoE), Foe Taunt","display_info":{"Power Type":"Click","Recharge Time":"10s","Attack Types":"Area","Effect Area":"AoE — 15 ft. radius (5 targets max)","Power Range":"70 ft.","Available Level":"10","Activation Time":"1.67s","Target Type":"Enemies"},"attack_types":["Area_Def"],"enhancements_allowed":["Enhance Taunt","Enhance Range","Enhance Recharge Speed","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt"],"available_at_level":10,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":5,"radius_feet":15.0,"range_feet":70.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.67,"recharge_time":10.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":41.0,"display_info":["4.0 taunt for 41s on target"],"base_value":2.05,"scale":20.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"],"effects":[{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":10.25,"display_info":["4.0 taunt for 10.25s on target"],"base_value":2.05,"scale":5.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"],"effects":[{"attributes":["Null"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Range"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":20.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-100.0,"display_info":["-100.00% strength to range for 20s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":-1.0}]}]}]},{"name":"Tanker_Melee.Spines.Ripper","display_name":"Ripper","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/7f/quills_bonesword.png","display_help":"You can unleash a spectacular slashing maneuver that attacks all villains in a wide arc in front of you. Ripper deals massive damage and poisons multiple targets. It can even knock foes down. Spine poison Slows affected targets and deals additional Toxic damage. Damage: High, Recharge: Slow","display_short_help":"Melee (Cone), High DMG(Lethal), DoT(Toxic), Knockback, -SPD, -Recharge","display_info":{"Recharge Time":"11s","Activation Time":"2.17s","Attack Types":"Melee, Lethal","Available Level":"16","Power Range":"7 ft.","Power Type":"Click","Target Type":"Enemies","Endurance Cost":"11.02","Effect Area":"Cone — 7 ft. radius 90° arc (10 targets max)"},"attack_types":["Melee_Def","Lethal_Def"],"enhancements_allowed":["Enhance Slow Movement","Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance KnockBack","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Tanker Archetype Sets","Knockback","PBAoE Damage","Universal Damage Sets","Slow Movement","Taunt"],"available_at_level":16,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":7.0,"arc_degrees":90.0,"range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.17,"animation_time":2.17,"animation_time_before_hit":1.7,"recharge_time":11.0,"endurance_cost":11.02},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":89.81,"average":89.81,"per_activation":41.39,"per_cast_cycle":6.82,"display_info":["89.81 lethal damage on target"],"base_value":-52.8297,"scale":1.7}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":0.67,"display_info":["60.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":60.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Knockback"],"applies_to":"CurrentModifier","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":0.67,"display_info":["60.00% chance for 0.7 magnitude knock on target"],"base_value":1.0,"scale":0.67}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-8.0,"display_info":["-8.00% strength to recharge for 10s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.1}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% run speed, fly speed, jump speed for 15s on target"],"base_value":-0.8,"scale":0.2}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% strength to jump height for 15s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.2}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":5,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":10.57,"average":28.43,"per_activation":13.1,"per_cast_cycle":2.16,"display_info":["5 ticks of 80.00% chance for 10.57 toxic damage over 4.1s on target after 0.5s delay"],"base_value":-52.8297,"scale":0.2}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":50.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":0.67,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":11.92,"display_info":["50.00% chance for 0.7 immobilize for 11.92s on target"],"base_value":1.192,"scale":10.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":50.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":0.67,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":2.0,"display_info":["50.00% chance for 0.7 immobilize for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":69.45,"average":69.45,"per_activation":32.0,"per_cast_cycle":5.27,"display_info":["69.45 lethal damage on target"],"base_value":-56.4121,"scale":1.2311}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":40.41,"average":40.41,"per_activation":18.62,"per_cast_cycle":3.07,"display_info":["40.41 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.765}]}]}]},{"name":"Tanker_Melee.Spines.Build_Up","display_name":"Build Up","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/64/quills_bristle.png","display_help":"Greatly increases the amount of damage you deal for a few seconds, as well as slightly increasing your chance to hit. Recharge: Long","display_short_help":"Self +DMG, +To Hit","display_info":{"Activation Time":"0.73s","Recharge Time":"1m 30s","Effect Area":"Single Target","Endurance Cost":"5.20","Power Type":"Click","Target Type":"Self","Available Level":"20"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["To Hit Buff"],"available_at_level":20,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.73,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":90.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":20.0,"display_info":["20.00% to hit for 10s on self","Unresistable"],"base_value":0.1,"scale":2.0}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":80.0,"display_info":["80.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":8.0}]}]}]},{"name":"Tanker_Melee.Spines.Impale","display_name":"Impale","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/69/quills_impale.png","display_help":"You can throw a single large Spine at a targeted foe. This Spine does only moderate damage, but carries a large amount of the Spine toxin. A successful attack can completely Immobilize most foes, as well as Slowing them and dealing Toxic poison damage. Impale can also bring down flying entities. Damage: Moderate, Recharge: Moderate","display_short_help":"Ranged, High DMG(Lethal), DoT(Toxic), Immobilize, -Recharge, -Fly","display_info":{"Power Type":"Click","Endurance Cost":"5.20","Activation Time":"2.43s","Available Level":"28","Effect Area":"Single Target","Recharge Time":"8s","Attack Types":"Ranged, Lethal","Power Range":"40 ft.","Target Type":"Enemies"},"attack_types":["Ranged_Def","Lethal_Def"],"enhancements_allowed":["Enhance Slow Movement","Enhance Taunt","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Immobilization","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Taunt","Slow Movement","Immobilize","Ranged Damage","Tanker Archetype Sets","Universal Damage Sets"],"available_at_level":28,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":40.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.43,"animation_time":2.43,"animation_time_before_hit":1.43,"recharge_time":8.0,"endurance_cost":5.2},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":86.64,"average":86.64,"per_activation":35.65,"per_cast_cycle":8.31,"display_info":["86.64 lethal damage on target"],"base_value":-52.8297,"scale":1.64}]},{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":17.88,"display_info":["3.0 immobilize for 17.88s on target"],"base_value":1.192,"scale":15.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":3.0,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":2.0,"display_info":["3.0 immobilize for 2s on target"],"base_value":2.0,"scale":1.0}]},{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":86.69,"average":86.69,"per_activation":35.67,"per_cast_cycle":8.31,"display_info":["86.69 lethal damage on target"],"base_value":-56.4121,"scale":1.5368}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fly"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"InSeconds","duration_seconds":15.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","magnitude":-1.6,"display_info":["-1.6 fly protection for 15s on target"],"base_value":1.0,"scale":-1.6}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-24.0,"display_info":["-24.00% run speed, fly speed, jump speed for 15s on target"],"base_value":-0.8,"scale":0.3}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-24.0,"display_info":["-24.00% strength to jump height for 15s on target"],"base_value":-0.8,"scale":0.3}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":5,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":5.28,"average":14.2,"per_activation":5.84,"per_cast_cycle":1.36,"display_info":["5 ticks of 80.00% chance for 5.28 toxic damage over 4.1s on target after 0.5s delay"],"base_value":-52.8297,"scale":0.1}]},{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-8.0,"display_info":["-8.00% strength to recharge for 8s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.1}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":38.99,"average":38.99,"per_activation":16.05,"per_cast_cycle":3.74,"display_info":["38.99 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.738}]}]}]},{"name":"Tanker_Melee.Spines.Quills","display_name":"Quills","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/7a/quills_quills.png","display_help":"While this power is active, you will constantly fire dozens of Spines in all directions. These Spines do minor damage, but can poison all foes in close range. Spine poison Slows affected foes. Note that Quills is unaffected by Radius changes. Damage: Minor(DoT), Recharge: Slow","display_short_help":"Toggle: PBAoE, Minor DoT(Lethal), Foe -Speed, -Recharge","display_info":{"Activation Time":"0.73s","Recharge Time":"15s","Target Type":"Self","Attack Types":"Area, Lethal","Effect Area":"AoE — 8 ft. radius (10 targets max)","Endurance Cost":"0.52/s","Available Level":"35","Power Type":"Toggle"},"attack_types":["Area_Def","Lethal_Def"],"enhancements_allowed":["Enhance Slow Movement","Enhance Taunt","Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Slow Movement","PBAoE Damage","Tanker Archetype Sets"],"available_at_level":35,"auto_issue":false,"power_type":"Toggle","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":8.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":0.73,"animation_time":0.73,"animation_time_before_hit":0.03,"recharge_time":15.0,"auto_cast_interval":2.0,"endurance_cost":1.04},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":7.92,"average":7.92,"per_activation":10.85,"per_cast_cycle":0.5,"display_info":["7.92 lethal damage on target"],"base_value":-52.8297,"scale":0.15}]},{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.0,"flags":["CancelOnMiss","IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-8.0,"display_info":["-8.00% strength to recharge for 3s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.1}]},{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.0,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% run speed, fly speed, jump speed for 3s on target"],"base_value":-0.8,"scale":0.2}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.0,"flags":["CancelOnMiss","IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% strength to jump height for 3s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.2}]},{"attributes":["Null"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":2.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":0.33,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":3.58,"display_info":["0.3 immobilize for 3.58s on target"],"base_value":1.192,"scale":3.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":0.33,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":2.0,"display_info":["0.3 immobilize for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":3.57,"average":3.57,"per_activation":4.89,"per_cast_cycle":0.23,"display_info":["3.57 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.0675}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Execute Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","NoTokenTime"],"parameter":{"power":{"powers":[{"name":"Redirects.Inherents.Gauntlet_Proc_Aura","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/redirects/inherents/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]},{"name":"Tanker_Melee.Spines.Throw_Spines","display_name":"Throw Spines","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/3a/quills_quillthrowing.png","display_help":"You can throw dozens of Spines in a wide cone in front of you, impaling foes caught within the range. Spine throwing deals moderate damage, and poisons any targets it hits. Spine poison deals additional Toxic damage and Slows affected foes. Note that Throw Spines is unaffected by Arc changes. Damage: Moderate, Recharge: Slow","display_short_help":"Ranged (Cone), Moderate DMG(Lethal), DoT(Toxic), -SPD, -Recharge","display_info":{"Attack Types":"Area, Lethal","Target Type":"Enemies","Power Range":"30 ft.","Power Type":"Click","Activation Time":"1.63s","Available Level":"38","Endurance Cost":"13.00","Recharge Time":"12s","Effect Area":"Cone — 30 ft. radius 90° arc (10 targets max)"},"attack_types":["Area_Def","Lethal_Def"],"enhancements_allowed":["Enhance Slow Movement","Enhance Taunt","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Taunt","Tanker Archetype Sets","Slow Movement","Targeted AoE Damage"],"available_at_level":38,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":30.0,"arc_degrees":90.0,"range_feet":30.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.63,"animation_time":1.63,"animation_time_before_hit":0.57,"recharge_time":12.0,"endurance_cost":13.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":57.58,"average":57.58,"per_activation":35.33,"per_cast_cycle":4.22,"display_info":["57.58 lethal damage on target"],"base_value":-52.8297,"scale":1.09}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["RunningSpeed","FlyingSpeed","JumpingSpeed"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-40.0,"display_info":["-40.00% run speed, fly speed, jump speed for 15s on target"],"base_value":-0.8,"scale":0.5}]},{"attributes":["RechargeTime"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-16.0,"display_info":["-16.00% strength to recharge for 10s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.2}]},{"attributes":["JumpHeight"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":15.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","percent":-40.0,"display_info":["-40.00% strength to jump height for 15s on target","Ignores buffs and enhancements"],"base_value":-0.8,"scale":0.5}]},{"attributes":["Toxic_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":4.1,"after_delay_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":5,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":5.28,"average":14.2,"per_activation":8.71,"per_cast_cycle":1.04,"display_info":["5 ticks of 80.00% chance for 5.28 toxic damage over 4.1s on target after 0.5s delay"],"base_value":-52.8297,"scale":0.1}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":50.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":0.67,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":11.92,"display_info":["50.00% chance for 0.7 immobilize for 11.92s on target"],"base_value":1.192,"scale":10.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":50.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Immobilized"],"applies_to":"CurrentModifier","application_type":"OnTick","target_type":"Affected","magnitude":0.67,"duration":"InSecondsScaled","flags":["CancelOnMiss","ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","duration_seconds":2.0,"display_info":["50.00% chance for 0.7 immobilize for 2s on target"],"base_value":2.0,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":56.08,"average":56.08,"per_activation":34.4,"per_cast_cycle":4.11,"display_info":["56.08 lethal damage on target"],"base_value":-56.4121,"scale":0.9941}]}]},{"tags":["FieryEmbrace"],"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Tanker","damage":25.91,"average":25.91,"per_activation":15.9,"per_cast_cycle":1.9,"display_info":["25.91 fire damage on target","Only using Fiery Embrace"],"base_value":-52.8297,"scale":0.4905}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Tanker_Melee.Spines",
+  "display_name": "Spines",
+  "display_help": "Spines protrude from your body and can deal damage in melee or at very short ranges. Spines are hollow and hold a neural toxin that deals additional Toxic damage and can Slow or Immobilize your enemies. The toxin is cumulative, and multiple hits will affect a target more strongly. Very few foes have resistance to Spine poison. Like all scrapper powers, all Spine attacks can sometimes land a critical hit for double damage.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/25/quills_swipe.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Tanker_Melee.Spines.Barb_Swipe",
+    "Tanker_Melee.Spines.Lunge",
+    "Tanker_Melee.Spines.Spine_Burst",
+    "Tanker_Melee.Spines.Taunt",
+    "Tanker_Melee.Spines.Ripper",
+    "Tanker_Melee.Spines.Build_Up",
+    "Tanker_Melee.Spines.Impale",
+    "Tanker_Melee.Spines.Quills",
+    "Tanker_Melee.Spines.Throw_Spines"
+  ],
+  "powers": [
+    {
+      "name": "Tanker_Melee.Spines.Barb_Swipe",
+      "display_name": "Barb Swipe",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/25/quills_swipe.png",
+      "display_help": "Melee, Light DMG(Lethal), DoT(Toxic), -SPD, -Recharge. Recharge: Very Fast",
+      "display_short_help": "Melee, Light DMG(Lethal), DoT(Toxic), -SPD, -Recharge",
+      "display_info": {
+        "Attack Types": "Melee, Lethal",
+        "Effect Area": "Single Target",
+        "Power Range": "7 ft.",
+        "Recharge Time": "3s",
+        "Activation Time": "0.83s",
+        "Endurance Cost": "4.37",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Available Level": "1"
+      },
+      "requires": "!Tanker_Defense.Shield_Defense",
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Tanker Archetype Sets",
+        "Taunt",
+        "Melee Damage",
+        "Slow Movement",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.83,
+        "animation_time": 0.83,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 3.0,
+        "endurance_cost": 4.37
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 44.38,
+                  "average": 44.38,
+                  "per_activation": 53.47,
+                  "per_cast_cycle": 11.59,
+                  "display_info": [
+                    "44.38 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.84
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 0.33,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 9.54,
+                  "display_info": [
+                    "0.3 immobilize for 9.54s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 45.19,
+                  "average": 45.19,
+                  "per_activation": 54.45,
+                  "per_cast_cycle": 11.8,
+                  "display_info": [
+                    "45.19 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.801
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 0.33,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "0.3 immobilize for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% run speed, fly speed, jump speed for 4s on target"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -8.0,
+                  "display_info": [
+                    "-8.00% strength to recharge for 2s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% strength to jump height for 4s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 3,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 5.28,
+                  "average": 10.31,
+                  "per_activation": 12.42,
+                  "per_cast_cycle": 2.69,
+                  "display_info": [
+                    "3 ticks of 80.00% chance for 5.28 toxic damage over 2.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 19.97,
+                  "average": 19.97,
+                  "per_activation": 24.06,
+                  "per_cast_cycle": 5.21,
+                  "display_info": [
+                    "19.97 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.378
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Spines.Lunge",
+      "display_name": "Lunge",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/db/quills_lunge.png",
+      "display_help": "You can lunge forward, stabbing and poisoning a foe with the large Spine on your arm. Lunge deals moderate damage. Spine poison deals additional Toxic damage and Slows affected foes. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Melee, Moderate DMG(Lethal), DoT(Toxic) -SPD, -Recharge",
+      "display_info": {
+        "Endurance Cost": "6.86",
+        "Activation Time": "1.63s",
+        "Recharge Time": "6s",
+        "Attack Types": "Melee, Lethal",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target",
+        "Power Range": "7 ft.",
+        "Power Type": "Click",
+        "Available Level": "2"
+      },
+      "requires": "!Tanker_Defense.Shield_Defense",
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Tanker Archetype Sets",
+        "Slow Movement",
+        "Universal Damage Sets",
+        "Taunt",
+        "Melee Damage"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.63,
+        "animation_time": 1.63,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 6.0,
+        "endurance_cost": 6.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 69.74,
+                  "average": 69.74,
+                  "per_activation": 42.79,
+                  "per_cast_cycle": 9.14,
+                  "display_info": [
+                    "69.74 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.32
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 0.33,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 9.54,
+                  "display_info": [
+                    "0.3 immobilize for 9.54s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% run speed, fly speed, jump speed for 6s on target"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -8.0,
+                  "display_info": [
+                    "-8.00% strength to recharge for 4s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% strength to jump height for 6s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 5.28,
+                  "average": 12.47,
+                  "per_activation": 7.65,
+                  "per_cast_cycle": 1.63,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 5.28 toxic damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 0.33,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "0.3 immobilize for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 77.91,
+                  "average": 77.91,
+                  "per_activation": 47.8,
+                  "per_cast_cycle": 10.21,
+                  "display_info": [
+                    "77.91 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.381
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 31.38,
+                  "average": 31.38,
+                  "per_activation": 19.25,
+                  "per_cast_cycle": 4.11,
+                  "display_info": [
+                    "31.38 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.594
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Spines.Spine_Burst",
+      "display_name": "Spine Burst",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d6/quills_flingquills.png",
+      "display_help": "You can fling dozens of Spines in all directions. These Spines only travel a short distance, but they can deal moderate damage and poison any target close to you. Spine poison deals additional Toxic damage and Slows affected foes. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "PBAoE Melee, Moderate DMG(Lethal), DoT(Toxic), -SPD, -Recharge",
+      "display_info": {
+        "Activation Time": "3s",
+        "Available Level": "4",
+        "Endurance Cost": "15.18",
+        "Attack Types": "Area, Lethal",
+        "Power Type": "Click",
+        "Effect Area": "AoE — 10 ft. radius (16 targets max)",
+        "Recharge Time": "16s",
+        "Target Type": "Self"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "PBAoE Damage",
+        "Taunt",
+        "Tanker Archetype Sets",
+        "Slow Movement",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 4,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 10.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 3.0,
+        "animation_time": 3.0,
+        "animation_time_before_hit": 1.67,
+        "recharge_time": 16.0,
+        "endurance_cost": 15.18
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 47.55,
+                  "average": 47.55,
+                  "per_activation": 15.85,
+                  "per_cast_cycle": 2.5,
+                  "display_info": [
+                    "47.55 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.9
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 0.33,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 11.92,
+                  "display_info": [
+                    "0.3 immobilize for 11.92s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% run speed, fly speed, jump speed for 10s on target"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -8.0,
+                  "display_info": [
+                    "-8.00% strength to recharge for 8s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% strength to jump height for 10s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 5.28,
+                  "average": 12.47,
+                  "per_activation": 4.16,
+                  "per_cast_cycle": 0.66,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 5.28 toxic damage over 3.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 0.33,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "0.3 immobilize for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 88.32,
+                  "average": 88.32,
+                  "per_activation": 29.44,
+                  "per_cast_cycle": 4.65,
+                  "display_info": [
+                    "88.32 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.5657
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 21.4,
+                  "average": 21.4,
+                  "per_activation": 7.13,
+                  "per_cast_cycle": 1.13,
+                  "display_info": [
+                    "21.40 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.405
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Spines.Taunt",
+      "display_name": "Taunt",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/13/spines_taunt.png",
+      "display_help": "Taunts a foe, and some nearby foes, to attack you. Useful for pulling villains off an ally who find themselves in over their head. Taunted foes tend to ignore other Heroes and focus on you for quite a while, so use this power cautiously. A To Hit check is required to Taunt enemy players, but is not needed against critter targets. Recharge: Moderate",
+      "display_short_help": "Ranged (Targeted AoE), Foe Taunt",
+      "display_info": {
+        "Effect Area": "AoE — 15 ft. radius (5 targets max)",
+        "Recharge Time": "10s",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Available Level": "10",
+        "Attack Types": "Area",
+        "Activation Time": "1.67s",
+        "Power Range": "70 ft."
+      },
+      "attack_types": [
+        "Area_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Taunt",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt"
+      ],
+      "available_at_level": 10,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 5,
+        "radius_feet": 15.0,
+        "range_feet": 70.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.67,
+        "recharge_time": 10.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 41.0,
+                  "display_info": [
+                    "4.0 taunt for 41s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 20.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll < @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 10.25,
+                  "display_info": [
+                    "4.0 taunt for 10.25s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 5.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && ((@ToHitRoll >= @ToHit) || @ForceHit)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Null"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Range"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 20.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% strength to range for 20s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Spines.Ripper",
+      "display_name": "Ripper",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/7f/quills_bonesword.png",
+      "display_help": "You can unleash a spectacular slashing maneuver that attacks all villains in a wide arc in front of you. Ripper deals massive damage and poisons multiple targets. It can even knock foes down. Spine poison Slows affected targets and deals additional Toxic damage. Damage: High, Recharge: Slow",
+      "display_short_help": "Melee (Cone), High DMG(Lethal), DoT(Toxic), Knockback, -SPD, -Recharge",
+      "display_info": {
+        "Power Type": "Click",
+        "Endurance Cost": "11.02",
+        "Recharge Time": "11s",
+        "Effect Area": "Cone — 7 ft. radius 90° arc (10 targets max)",
+        "Available Level": "16",
+        "Target Type": "Enemies",
+        "Attack Types": "Melee, Lethal",
+        "Activation Time": "2.17s",
+        "Power Range": "7 ft."
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance KnockBack",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt",
+        "PBAoE Damage",
+        "Knockback",
+        "Slow Movement",
+        "Tanker Archetype Sets",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 16,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 7.0,
+        "arc_degrees": 90.0,
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.17,
+        "animation_time": 2.17,
+        "animation_time_before_hit": 1.7,
+        "recharge_time": 11.0,
+        "endurance_cost": 11.02
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 89.81,
+                  "average": 89.81,
+                  "per_activation": 41.39,
+                  "per_cast_cycle": 6.82,
+                  "display_info": [
+                    "89.81 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "60.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 60.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Knockback"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": 0.67,
+                  "display_info": [
+                    "60.00% chance for 0.7 magnitude knock on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -8.0,
+                  "display_info": [
+                    "-8.00% strength to recharge for 10s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% run speed, fly speed, jump speed for 15s on target"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% strength to jump height for 15s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 10.57,
+                  "average": 28.43,
+                  "per_activation": 13.1,
+                  "per_cast_cycle": 2.16,
+                  "display_info": [
+                    "5 ticks of 80.00% chance for 10.57 toxic damage over 4.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 0.67,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 11.92,
+                  "display_info": [
+                    "50.00% chance for 0.7 immobilize for 11.92s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 0.67,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "50.00% chance for 0.7 immobilize for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 69.45,
+                  "average": 69.45,
+                  "per_activation": 32.0,
+                  "per_cast_cycle": 5.27,
+                  "display_info": [
+                    "69.45 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.2311
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 40.41,
+                  "average": 40.41,
+                  "per_activation": 18.62,
+                  "per_cast_cycle": 3.07,
+                  "display_info": [
+                    "40.41 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.765
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Spines.Build_Up",
+      "display_name": "Build Up",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/64/quills_bristle.png",
+      "display_help": "Greatly increases the amount of damage you deal for a few seconds, as well as slightly increasing your chance to hit. Recharge: Long",
+      "display_short_help": "Self +DMG, +To Hit",
+      "display_info": {
+        "Available Level": "20",
+        "Activation Time": "0.73s",
+        "Recharge Time": "1m 30s",
+        "Endurance Cost": "5.20",
+        "Power Type": "Click",
+        "Target Type": "Self",
+        "Effect Area": "Single Target"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff"
+      ],
+      "available_at_level": 20,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.73,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 90.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": 20.0,
+                  "display_info": [
+                    "20.00% to hit for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 2.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": 80.0,
+                  "display_info": [
+                    "80.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Spines.Impale",
+      "display_name": "Impale",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/69/quills_impale.png",
+      "display_help": "You can throw a single large Spine at a targeted foe. This Spine does only moderate damage, but carries a large amount of the Spine toxin. A successful attack can completely Immobilize most foes, as well as Slowing them and dealing Toxic poison damage. Impale can also bring down flying entities. Damage: Moderate, Recharge: Moderate",
+      "display_short_help": "Ranged, High DMG(Lethal), DoT(Toxic), Immobilize, -Recharge, -Fly",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Attack Types": "Ranged, Lethal",
+        "Recharge Time": "8s",
+        "Endurance Cost": "5.20",
+        "Effect Area": "Single Target",
+        "Activation Time": "2.43s",
+        "Power Range": "40 ft.",
+        "Available Level": "28",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Immobilization",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt",
+        "Tanker Archetype Sets",
+        "Universal Damage Sets",
+        "Slow Movement",
+        "Ranged Damage",
+        "Immobilize"
+      ],
+      "available_at_level": 28,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.43,
+        "animation_time": 2.43,
+        "animation_time_before_hit": 1.43,
+        "recharge_time": 8.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 86.64,
+                  "average": 86.64,
+                  "per_activation": 35.65,
+                  "per_cast_cycle": 8.31,
+                  "display_info": [
+                    "86.64 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.64
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 17.88,
+                  "display_info": [
+                    "3.0 immobilize for 17.88s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 15.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 3.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "3.0 immobilize for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 86.69,
+                  "average": 86.69,
+                  "per_activation": 35.67,
+                  "per_cast_cycle": 8.31,
+                  "display_info": [
+                    "86.69 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.5368
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fly"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "magnitude": -1.6,
+                  "display_info": [
+                    "-1.6 fly protection for 15s on target"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.6
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -24.0,
+                  "display_info": [
+                    "-24.00% run speed, fly speed, jump speed for 15s on target"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.3
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -24.0,
+                  "display_info": [
+                    "-24.00% strength to jump height for 15s on target"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.3
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 5.28,
+                  "average": 14.2,
+                  "per_activation": 5.84,
+                  "per_cast_cycle": 1.36,
+                  "display_info": [
+                    "5 ticks of 80.00% chance for 5.28 toxic damage over 4.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -8.0,
+                  "display_info": [
+                    "-8.00% strength to recharge for 8s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 38.99,
+                  "average": 38.99,
+                  "per_activation": 16.05,
+                  "per_cast_cycle": 3.74,
+                  "display_info": [
+                    "38.99 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.738
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Spines.Quills",
+      "display_name": "Quills",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/7a/quills_quills.png",
+      "display_help": "While this power is active, you will constantly fire dozens of Spines in all directions. These Spines do minor damage, but can poison all foes in close range. Spine poison Slows affected foes. Note that Quills is unaffected by Radius changes. Damage: Minor(DoT), Recharge: Slow",
+      "display_short_help": "Toggle: PBAoE, Minor DoT(Lethal), Foe -Speed, -Recharge",
+      "display_info": {
+        "Recharge Time": "15s",
+        "Endurance Cost": "0.52/s",
+        "Target Type": "Self",
+        "Power Type": "Toggle",
+        "Attack Types": "Area, Lethal",
+        "Activation Time": "0.73s",
+        "Effect Area": "AoE — 8 ft. radius (10 targets max)",
+        "Available Level": "35"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Slow Movement",
+        "Universal Damage Sets",
+        "Tanker Archetype Sets",
+        "PBAoE Damage"
+      ],
+      "available_at_level": 35,
+      "auto_issue": false,
+      "power_type": "Toggle",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 8.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 0.73,
+        "animation_time": 0.73,
+        "animation_time_before_hit": 0.03,
+        "recharge_time": 15.0,
+        "auto_cast_interval": 2.0,
+        "endurance_cost": 1.04
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 7.92,
+                  "average": 7.92,
+                  "per_activation": 10.85,
+                  "per_cast_cycle": 0.5,
+                  "display_info": [
+                    "7.92 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.15
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.0,
+              "flags": [
+                "CancelOnMiss",
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -8.0,
+                  "display_info": [
+                    "-8.00% strength to recharge for 3s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.1
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.0,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% run speed, fly speed, jump speed for 3s on target"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.0,
+              "flags": [
+                "CancelOnMiss",
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% strength to jump height for 3s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Null"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 2.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 0.33,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 3.58,
+                  "display_info": [
+                    "0.3 immobilize for 3.58s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 3.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 0.33,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "0.3 immobilize for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 3.57,
+                  "average": 3.57,
+                  "per_activation": 4.89,
+                  "per_cast_cycle": 0.23,
+                  "display_info": [
+                    "3.57 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.0675
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Execute Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Redirects.Inherents.Gauntlet_Proc_Aura",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/redirects/inherents/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanker_Melee.Spines.Throw_Spines",
+      "display_name": "Throw Spines",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/3a/quills_quillthrowing.png",
+      "display_help": "You can throw dozens of Spines in a wide cone in front of you, impaling foes caught within the range. Spine throwing deals moderate damage, and poisons any targets it hits. Spine poison deals additional Toxic damage and Slows affected foes. Note that Throw Spines is unaffected by Arc changes. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "Ranged (Cone), Moderate DMG(Lethal), DoT(Toxic), -SPD, -Recharge",
+      "display_info": {
+        "Effect Area": "Cone — 30 ft. radius 90° arc (10 targets max)",
+        "Target Type": "Enemies",
+        "Available Level": "38",
+        "Power Type": "Click",
+        "Power Range": "30 ft.",
+        "Activation Time": "1.63s",
+        "Attack Types": "Area, Lethal",
+        "Endurance Cost": "13.00",
+        "Recharge Time": "12s"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Slow Movement",
+        "Enhance Taunt",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Taunt",
+        "Slow Movement",
+        "Tanker Archetype Sets",
+        "Targeted AoE Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 38,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 30.0,
+        "arc_degrees": 90.0,
+        "range_feet": 30.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.63,
+        "animation_time": 1.63,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 12.0,
+        "endurance_cost": 13.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 57.58,
+                  "average": 57.58,
+                  "per_activation": 35.33,
+                  "per_cast_cycle": 4.22,
+                  "display_info": [
+                    "57.58 lethal damage on target"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 1.09
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "RunningSpeed",
+                "FlyingSpeed",
+                "JumpingSpeed"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -40.0,
+                  "display_info": [
+                    "-40.00% run speed, fly speed, jump speed for 15s on target"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RechargeTime"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -16.0,
+                  "display_info": [
+                    "-16.00% strength to recharge for 10s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "JumpHeight"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 15.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "percent": -40.0,
+                  "display_info": [
+                    "-40.00% strength to jump height for 15s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -0.8,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Toxic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 4.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 5,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 5.28,
+                  "average": 14.2,
+                  "per_activation": 8.71,
+                  "per_cast_cycle": 1.04,
+                  "display_info": [
+                    "5 ticks of 80.00% chance for 5.28 toxic damage over 4.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 0.67,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 11.92,
+                  "display_info": [
+                    "50.00% chance for 0.7 immobilize for 11.92s on target"
+                  ],
+                  "base_value": 1.192,
+                  "scale": 10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Immobilized"
+              ],
+              "applies_to": "CurrentModifier",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 0.67,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "CancelOnMiss",
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "duration_seconds": 2.0,
+                  "display_info": [
+                    "50.00% chance for 0.7 immobilize for 2s on target"
+                  ],
+                  "base_value": 2.0,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 56.08,
+                  "average": 56.08,
+                  "per_activation": 34.4,
+                  "per_cast_cycle": 4.11,
+                  "display_info": [
+                    "56.08 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.9941
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tags": [
+            "FieryEmbrace"
+          ],
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Tanker",
+                  "damage": 25.91,
+                  "average": 25.91,
+                  "per_activation": 15.9,
+                  "per_cast_cycle": 1.9,
+                  "display_info": [
+                    "25.91 fire damage on target",
+                    "Only using Fiery Embrace"
+                  ],
+                  "base_value": -52.8297,
+                  "scale": 0.4905
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

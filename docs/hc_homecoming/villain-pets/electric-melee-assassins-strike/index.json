@@ -1,1 +1,657 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Villain_Pets.Electric_Melee_Assassins_Strike","display_name":"","display_help":"Electricity surges through your body and you can channel this electricity through your fists. Electrical Melee allows you to pummel your foes with various melee attack powers while jolting them with a powerful electric current. Electric Melee powers can drain foes' Endurance and temporarily halt their Endurance recovery. Some powers may even return a portion of drained Endurance back to you.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/c0/electricmelee_assassinstrike.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Villain_Pets.Electric_Melee_Assassins_Strike.Assassins_Shock_Stealth","Villain_Pets.Electric_Melee_Assassins_Strike.Assassins_Shock_Quick"],"powers":[{"name":"Villain_Pets.Electric_Melee_Assassins_Strike.Assassins_Shock_Stealth","display_name":"Assassin's Shock","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/c0/electricmelee_assassinstrike.png","display_help":"A signature Stalker attack. This attack does superior energy and smashing damage on its own as a frontal attack and cannot be interrupted. However, if it is executed while you are Hidden, this attack will do tremendous damage, as you waylay your unsuspecting foe. This attack may be interrupted if you move or are attacked while executing this power and are hidden. Using this power while not hidden has a chance to critically hit equal to 33.3% times the number of stacks of Assassin's Focus. Using Assassin's Strike when not hidden will remove all stacks of Assassin's Focus regardless if you critically hit or not. Damage: Special","display_short_help":"Melee, Special DMG(Smashing, Energy)","display_info":{"Effect Area":"Single Target","Power Type":"Click","Endurance Cost":"14.35","Target Type":"Enemies","Activation Time":"3s","Attack Types":"Melee, Smashing, Energy","Available Level":"1","Recharge Time":"15s","Power Range":"7 ft."},"attack_types":["Melee_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Stalker Archetype Sets","Melee Damage"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":3.0,"animation_time":1.0,"animation_time_before_hit":0.43,"recharge_time":15.0,"interrupt_time":2.0,"endurance_cost":14.35},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":97.32,"average":97.32,"per_activation":32.44,"per_cast_cycle":5.41,"display_info":["97.32 smashing damage on target"],"base_value":-55.6102,"scale":1.75}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":41.71,"average":41.71,"per_activation":13.9,"per_cast_cycle":2.32,"display_info":["41.71 energy damage on target"],"base_value":-55.6102,"scale":0.75}]},{"attributes":["StealthRadius_PVE","StealthRadius_PVP"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":8.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Stalker","percent":-100.0,"display_info":["-100.00% strength to stealth radius, stealth radius for 8s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":-1.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == critter) && (source>kMeter > 0)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":250.25,"average":250.25,"per_activation":83.42,"per_cast_cycle":13.9,"display_info":["250.25 energy damage on target","Only if hidden or target placated"],"base_value":-55.6102,"scale":4.5}]},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Demoralized","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":7.0,"requires":["(target>enttype == critter) && (source>kMeter < .9)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","HideZero"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":139.03,"average":9.73,"per_activation":3.24,"per_cast_cycle":0.54,"display_info":["7.00% chance for 139.03 energy damage on target"],"base_value":-55.6102,"scale":2.5}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["(target>enttype == player) && (source>kMeter > 0)"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":250.25,"average":250.25,"per_activation":83.42,"per_cast_cycle":13.9,"display_info":["250.25 energy damage on target","Only if hidden or target placated","Unresistable"],"base_value":-55.6102,"scale":4.5}]}]}]},{"name":"Villain_Pets.Electric_Melee_Assassins_Strike.Assassins_Shock_Quick","display_name":"Assassin's Shock","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/c0/electricmelee_assassinstrike.png","display_help":"A signature Stalker attack. This attack does superior energy and smashing damage on its own as a frontal attack and cannot be interrupted. However, if it is executed while you are Hidden, this attack will do tremendous damage, as you waylay your unsuspecting foe. This attack may be interrupted if you move or are attacked while executing this power and are hidden. Using this power while not hidden has a chance to critically hit equal to 33.3% times the number of stacks of Assassin's Focus. Using Assassin's Strike when not hidden will remove all stacks of Assassin's Focus regardless if you critically hit or not. Damage: Special","display_short_help":"Melee, Special DMG(Smashing, Energy)","display_info":{"Endurance Cost":"14.35","Effect Area":"Single Target","Activation Time":"1s","Power Range":"7 ft.","Available Level":"1","Attack Types":"Melee, Smashing, Energy","Recharge Time":"15s","Target Type":"Enemies","Power Type":"Click"},"attack_types":["Melee_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Melee Damage","Stalker Archetype Sets","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.43,"recharge_time":15.0,"endurance_cost":14.35},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":107.44,"average":107.44,"per_activation":107.44,"per_cast_cycle":6.72,"display_info":["107.44 smashing damage on target"],"base_value":-55.6102,"scale":1.932}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":46.05,"average":46.05,"per_activation":46.05,"per_cast_cycle":2.88,"display_info":["46.05 energy damage on target"],"base_value":-55.6102,"scale":0.828}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":0.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":153.48,"display_info":["153.48 energy damage on target"],"base_value":-55.6102,"scale":2.76}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":67.13,"average":67.13,"per_activation":67.13,"per_cast_cycle":4.2,"display_info":["67.13 smashing damage on target"],"base_value":-55.6102,"scale":1.2071}]},{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":28.77,"average":28.77,"per_activation":28.77,"per_cast_cycle":1.8,"display_info":["28.77 energy damage on target"],"base_value":-55.6102,"scale":0.5173}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":0.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":95.9,"display_info":["95.90 energy damage on target"],"base_value":-55.6102,"scale":1.7245}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","VanishEntOnTimeout"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Assassins_Focus","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Villain_Pets.Electric_Melee_Assassins_Strike",
+  "display_name": "",
+  "display_help": "Electricity surges through your body and you can channel this electricity through your fists. Electrical Melee allows you to pummel your foes with various melee attack powers while jolting them with a powerful electric current. Electric Melee powers can drain foes' Endurance and temporarily halt their Endurance recovery. Some powers may even return a portion of drained Endurance back to you.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/c0/electricmelee_assassinstrike.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Villain_Pets.Electric_Melee_Assassins_Strike.Assassins_Shock_Stealth",
+    "Villain_Pets.Electric_Melee_Assassins_Strike.Assassins_Shock_Quick"
+  ],
+  "powers": [
+    {
+      "name": "Villain_Pets.Electric_Melee_Assassins_Strike.Assassins_Shock_Stealth",
+      "display_name": "Assassin's Shock",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/c0/electricmelee_assassinstrike.png",
+      "display_help": "A signature Stalker attack. This attack does superior energy and smashing damage on its own as a frontal attack and cannot be interrupted. However, if it is executed while you are Hidden, this attack will do tremendous damage, as you waylay your unsuspecting foe. This attack may be interrupted if you move or are attacked while executing this power and are hidden. Using this power while not hidden has a chance to critically hit equal to 33.3% times the number of stacks of Assassin's Focus. Using Assassin's Strike when not hidden will remove all stacks of Assassin's Focus regardless if you critically hit or not. Damage: Special",
+      "display_short_help": "Melee, Special DMG(Smashing, Energy)",
+      "display_info": {
+        "Activation Time": "3s",
+        "Attack Types": "Melee, Smashing, Energy",
+        "Power Type": "Click",
+        "Power Range": "7 ft.",
+        "Recharge Time": "15s",
+        "Target Type": "Enemies",
+        "Available Level": "1",
+        "Endurance Cost": "14.35",
+        "Effect Area": "Single Target"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Stalker Archetype Sets",
+        "Melee Damage",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 3.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.43,
+        "recharge_time": 15.0,
+        "interrupt_time": 2.0,
+        "endurance_cost": 14.35
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 97.32,
+                  "average": 97.32,
+                  "per_activation": 32.44,
+                  "per_cast_cycle": 5.41,
+                  "display_info": [
+                    "97.32 smashing damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.75
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 41.71,
+                  "average": 41.71,
+                  "per_activation": 13.9,
+                  "per_cast_cycle": 2.32,
+                  "display_info": [
+                    "41.71 energy damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.75
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "StealthRadius_PVE",
+                "StealthRadius_PVP"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 8.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": -100.0,
+                  "display_info": [
+                    "-100.00% strength to stealth radius, stealth radius for 8s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": -1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter > 0)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 250.25,
+                  "average": 250.25,
+                  "per_activation": 83.42,
+                  "per_cast_cycle": 13.9,
+                  "display_info": [
+                    "250.25 energy damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 4.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Demoralized",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 7.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter < .9)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "HideZero"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 139.03,
+                  "average": 9.73,
+                  "per_activation": 3.24,
+                  "per_cast_cycle": 0.54,
+                  "display_info": [
+                    "7.00% chance for 139.03 energy damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 2.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(target>enttype == player) && (source>kMeter > 0)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 250.25,
+                  "average": 250.25,
+                  "per_activation": 83.42,
+                  "per_cast_cycle": 13.9,
+                  "display_info": [
+                    "250.25 energy damage on target",
+                    "Only if hidden or target placated",
+                    "Unresistable"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 4.5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Villain_Pets.Electric_Melee_Assassins_Strike.Assassins_Shock_Quick",
+      "display_name": "Assassin's Shock",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/c0/electricmelee_assassinstrike.png",
+      "display_help": "A signature Stalker attack. This attack does superior energy and smashing damage on its own as a frontal attack and cannot be interrupted. However, if it is executed while you are Hidden, this attack will do tremendous damage, as you waylay your unsuspecting foe. This attack may be interrupted if you move or are attacked while executing this power and are hidden. Using this power while not hidden has a chance to critically hit equal to 33.3% times the number of stacks of Assassin's Focus. Using Assassin's Strike when not hidden will remove all stacks of Assassin's Focus regardless if you critically hit or not. Damage: Special",
+      "display_short_help": "Melee, Special DMG(Smashing, Energy)",
+      "display_info": {
+        "Activation Time": "1s",
+        "Recharge Time": "15s",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target",
+        "Power Type": "Click",
+        "Available Level": "1",
+        "Endurance Cost": "14.35",
+        "Attack Types": "Melee, Smashing, Energy",
+        "Power Range": "7 ft."
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "Stalker Archetype Sets",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.43,
+        "recharge_time": 15.0,
+        "endurance_cost": 14.35
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 107.44,
+                  "average": 107.44,
+                  "per_activation": 107.44,
+                  "per_cast_cycle": 6.72,
+                  "display_info": [
+                    "107.44 smashing damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.932
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 46.05,
+                  "average": 46.05,
+                  "per_activation": 46.05,
+                  "per_cast_cycle": 2.88,
+                  "display_info": [
+                    "46.05 energy damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.828
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 0.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 153.48,
+                  "display_info": [
+                    "153.48 energy damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 2.76
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 67.13,
+                  "average": 67.13,
+                  "per_activation": 67.13,
+                  "per_cast_cycle": 4.2,
+                  "display_info": [
+                    "67.13 smashing damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.2071
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 28.77,
+                  "average": 28.77,
+                  "per_activation": 28.77,
+                  "per_cast_cycle": 1.8,
+                  "display_info": [
+                    "28.77 energy damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.5173
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 0.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 95.9,
+                  "display_info": [
+                    "95.90 energy damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.7245
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "VanishEntOnTimeout"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Assassins_Focus",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,1611 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Pets.Decoy","display_name":"Decoy","display_help":"Illusion Control","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/20/invulnerability_temporaryinvulnerabilty.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Pets.Decoy.Decoy","Pets.Decoy.Fire_Sword","Pets.Decoy.Ice_Sword","Pets.Decoy.Punch","Pets.Decoy.Hurl","Pets.Decoy.Power_Bolt","Pets.Decoy.Fire_Blast","Pets.Decoy.Ice_Blast","Pets.Decoy.Lightning_Bolt"],"powers":[{"name":"Pets.Decoy.Decoy","display_name":"Decoy","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/20/invulnerability_temporaryinvulnerabilty.png","display_help":"The Decoy is an illusion, and is intangible.","display_short_help":"Intangible","display_info":{"Power Type":"Auto","Target Type":"Self","Available Level":"1","Effect Area":"Single Target"},"available_at_level":1,"auto_issue":false,"power_type":"Auto","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"activate":{"cast_time":0.0,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":0.0,"auto_cast_interval":0.2,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"requires":["!(@CustomFX == Mirror)"],"effects":[{"attributes":["Translucency"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":0.45,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Untouchable"],"applies_to":"CurrentValue","application_type":"OnTick","target_type":"Self","magnitude":100.0,"duration":"InSecondsScaled","flags":["IgnoreStrength","IgnoreResistance","CombatModDuration"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":0.45,"display_info":["100.0 untouchable for 0.45s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.45}]},{"attributes":["ThreatLevel"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.45,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","value":5.0,"display_info":["5.00 threat level for 0.45s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":5.0}]},{"attributes":["Healing_Dmg"],"applies_to":"Resistance","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.5,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Pet","percent":10000.0,"display_info":["10000.00% resistance to healing for 0.5s on self","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":100.0}]}]}]},{"name":"Pets.Decoy.Fire_Sword","display_name":"Fire Sword","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/56/fieryfray_firesword.png","display_help":"The Decoy can summon the illusion of a Fire Sword. Note that Fire Sword is unaffected by Recharge Time changes. Recharge: Fast","display_short_help":"Melee Taunt","display_info":{"Effect Area":"Single Target","Recharge Time":"6s","Available Level":"1","Target Type":"Enemies","Activation Time":"1.33s","Power Range":"7 ft.","Attack Types":"Melee, Psionic","Power Type":"Click"},"attack_types":["Melee_Def","Psionic_Def"],"enhancements_allowed":["Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"activate":{"cast_time":1.33,"animation_time":1.33,"animation_time_before_hit":0.57,"recharge_time":6.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":73.41,"average":73.41,"per_activation":55.2,"per_cast_cycle":10.02,"display_info":["73.41 psionic damage on target"],"base_value":-55.6102,"scale":1.32}]},{"attributes":["RunningSpeed"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","percent":0.0,"display_info":["0.00% run speed for 5s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":0.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","healing":56.72,"average":56.72,"per_activation":42.65,"per_cast_cycle":7.74,"display_info":["56.72 psionic damage on target after 5s delay","Ignores buffs and enhancements"],"base_value":-55.6102,"scale":-1.02}]},{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":27.2,"display_info":["4.0 taunt for 27.2s on target"],"base_value":13.6,"scale":2.0}]}]}]},{"name":"Pets.Decoy.Ice_Sword","display_name":"Ice Sword","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/56/fieryfray_firesword.png","display_help":"The Decoy can summon the illusion of a Ice Sword. Note that Ice Sword is unaffected by Recharge Time changes. Recharge: Fast","display_short_help":"Melee Taunt","display_info":{"Activation Time":"1.33s","Power Type":"Click","Available Level":"1","Effect Area":"Single Target","Recharge Time":"6s","Power Range":"7 ft.","Attack Types":"Melee, Psionic","Target Type":"Enemies"},"attack_types":["Melee_Def","Psionic_Def"],"enhancements_allowed":["Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"activate":{"cast_time":1.33,"animation_time":1.33,"animation_time_before_hit":0.57,"recharge_time":6.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":73.41,"average":73.41,"per_activation":55.2,"per_cast_cycle":10.02,"display_info":["73.41 psionic damage on target"],"base_value":-55.6102,"scale":1.32}]},{"attributes":["RunningSpeed"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","percent":0.0,"display_info":["0.00% run speed for 5s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":0.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","healing":56.72,"average":56.72,"per_activation":42.65,"per_cast_cycle":7.74,"display_info":["56.72 psionic damage on target after 5s delay","Ignores buffs and enhancements"],"base_value":-55.6102,"scale":-1.02}]},{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":27.2,"display_info":["4.0 taunt for 27.2s on target"],"base_value":13.6,"scale":2.0}]}]}]},{"name":"Pets.Decoy.Punch","display_name":"Punch","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/9e/superstrength_punch.png","display_help":"A Super Strength Punch is a powerful pummeling attack, and may knock foes off their feet. Note that Punch is unaffected by Recharge Time changes. Recharge: Fast","display_short_help":"Melee Smash, Knockback","display_info":{"Target Type":"Enemies","Recharge Time":"6s","Power Range":"7 ft.","Power Type":"Click","Available Level":"1","Effect Area":"Single Target","Activation Time":"1.2s","Attack Types":"Melee, Psionic"},"attack_types":["Melee_Def","Psionic_Def"],"enhancements_allowed":["Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"activate":{"cast_time":1.2,"animation_time":1.2,"animation_time_before_hit":0.8,"recharge_time":6.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":73.41,"average":73.41,"per_activation":61.18,"per_cast_cycle":10.2,"display_info":["73.41 psionic damage on target"],"base_value":-55.6102,"scale":1.32}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","healing":56.72,"average":56.72,"per_activation":47.27,"per_cast_cycle":7.88,"display_info":["56.72 psionic damage on target after 5s delay","Ignores buffs and enhancements"],"base_value":-55.6102,"scale":-1.02}]},{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":27.2,"display_info":["4.0 taunt for 27.2s on target"],"base_value":13.6,"scale":2.0}]}]}]},{"name":"Pets.Decoy.Hurl","display_name":"Hurl","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/a3/superstrength_hurl.png","display_help":"The Decoy can pick up and throw nearby objects, or even a piece of concrete flooring. Can knock foes back. Note that Hurl is unaffected by Recharge Time changes. Recharge: Slow","display_short_help":"Ranged Taunt","display_info":{"Target Type":"Enemies","Available Level":"1","Power Range":"40 ft.","Activation Time":"2.5s","Attack Types":"Ranged, Psionic","Power Type":"Click","Recharge Time":"12s","Effect Area":"Single Target"},"attack_types":["Ranged_Def","Psionic_Def"],"enhancements_allowed":["Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":40.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"activate":{"cast_time":2.5,"animation_time":2.5,"animation_time_before_hit":1.9,"recharge_time":12.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":44.49,"average":44.49,"per_activation":17.8,"per_cast_cycle":3.07,"display_info":["44.49 psionic damage on target"],"base_value":-44.4882,"scale":1.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","healing":31.14,"average":31.14,"per_activation":12.46,"per_cast_cycle":2.15,"display_info":["31.14 psionic damage on target after 5s delay","Ignores buffs and enhancements"],"base_value":-44.4882,"scale":-0.7}]},{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":26.66,"display_info":["4.0 taunt for 26.66s on target"],"base_value":13.33,"scale":2.0}]}]}]},{"name":"Pets.Decoy.Power_Bolt","display_name":"Power Bolt","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/37/powerblast_powerbolts.png","display_help":"A quick attack. Rapidly hurls small bolts of energy at foes, sometimes knocking them down. Note that Power Bolt is unaffected by Recharge Time changes. Recharge: Fast","display_short_help":"Ranged Taunt","display_info":{"Attack Types":"Ranged, Psionic","Available Level":"1","Power Type":"Click","Target Type":"Enemies","Recharge Time":"4s","Effect Area":"Single Target","Power Range":"80 ft.","Activation Time":"1s"},"attack_types":["Ranged_Def","Psionic_Def"],"enhancements_allowed":["Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.83,"recharge_time":4.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":44.49,"average":44.49,"per_activation":44.49,"per_cast_cycle":8.9,"display_info":["44.49 psionic damage on target"],"base_value":-44.4882,"scale":1.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","healing":31.14,"average":31.14,"per_activation":31.14,"per_cast_cycle":6.23,"display_info":["31.14 psionic damage on target after 5s delay","Ignores buffs and enhancements"],"base_value":-44.4882,"scale":-0.7}]},{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":26.66,"display_info":["4.0 taunt for 26.66s on target"],"base_value":13.33,"scale":2.0}]}]}]},{"name":"Pets.Decoy.Fire_Blast","display_name":"Fire Blast","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/71/fireblast_fireblast.png","display_help":"Sends a Blast of Fire at a targeted foe, setting them on fire for a short time. Slower recharge rate than Flares, but more damage. Note that Fire Blast is unaffected by Recharge Time changes. Recharge: Fast","display_short_help":"Ranged Fire, DoT","display_info":{"Power Type":"Click","Effect Area":"Single Target","Recharge Time":"4s","Target Type":"Enemies","Attack Types":"Ranged, Psionic","Activation Time":"1.67s","Available Level":"1","Power Range":"80 ft."},"attack_types":["Ranged_Def","Psionic_Def"],"enhancements_allowed":["Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.53,"recharge_time":4.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":44.49,"average":44.49,"per_activation":26.64,"per_cast_cycle":7.85,"display_info":["44.49 psionic damage on target"],"base_value":-44.4882,"scale":1.0}]},{"attributes":["RunningSpeed"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","percent":0.0,"display_info":["0.00% run speed for 5s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":0.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","healing":31.14,"average":31.14,"per_activation":18.65,"per_cast_cycle":5.49,"display_info":["31.14 psionic damage on target after 5s delay","Ignores buffs and enhancements"],"base_value":-44.4882,"scale":-0.7}]},{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":26.66,"display_info":["4.0 taunt for 26.66s on target"],"base_value":13.33,"scale":2.0}]}]}]},{"name":"Pets.Decoy.Ice_Blast","display_name":"Ice Blast","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/37/iceblast_iceblast.png","display_help":"Ice Blast hurls shards of ice at foes and Slows their attacks for a time. Slower recharge than Ice Bolt, but more damage. Note that Ice Blast is unaffected by Recharge Time changes. Recharge: Fast","display_short_help":"Ranged Cold/Smash, -Recharge","display_info":{"Activation Time":"1.67s","Target Type":"Enemies","Available Level":"1","Power Range":"80 ft.","Recharge Time":"4s","Power Type":"Click","Effect Area":"Single Target","Attack Types":"Ranged, Psionic"},"attack_types":["Ranged_Def","Psionic_Def"],"enhancements_allowed":["Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.57,"recharge_time":4.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":44.49,"average":44.49,"per_activation":26.64,"per_cast_cycle":7.85,"display_info":["44.49 psionic damage on target"],"base_value":-44.4882,"scale":1.0}]},{"attributes":["RunningSpeed"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","percent":0.0,"display_info":["0.00% run speed for 5s on target","Ignores buffs and enhancements"],"base_value":1.0,"scale":0.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","healing":31.14,"average":31.14,"per_activation":18.65,"per_cast_cycle":5.49,"display_info":["31.14 psionic damage on target after 5s delay","Ignores buffs and enhancements"],"base_value":-44.4882,"scale":-0.7}]},{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":26.66,"display_info":["4.0 taunt for 26.66s on target"],"base_value":13.33,"scale":2.0}]}]}]},{"name":"Pets.Decoy.Lightning_Bolt","display_name":"Lightning Bolt","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/5a/electricalbolt_lightningbolt.png","display_help":"The Decoy can send a large blast of electrical energy at a foe. Note that Lightning Bolt is unaffected by Recharge Time changes. Recharge: Fast","display_short_help":"Ranged Taunt","display_info":{"Target Type":"Enemies","Effect Area":"Single Target","Available Level":"1","Power Type":"Click","Attack Types":"Ranged, Psionic","Recharge Time":"4s","Activation Time":"1.67s","Power Range":"80 ft."},"attack_types":["Ranged_Def","Psionic_Def"],"enhancements_allowed":["Enhance Damage","Enhance Accuracy"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"activate":{"cast_time":1.67,"animation_time":1.67,"animation_time_before_hit":0.87,"recharge_time":4.0,"endurance_cost":0.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","damage":44.49,"average":44.49,"per_activation":26.64,"per_cast_cycle":7.85,"display_info":["44.49 psionic damage on target"],"base_value":-44.4882,"scale":1.0}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Psionic_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","after_delay_seconds":5.0,"flags":["IgnoreStrength","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","healing":31.14,"average":31.14,"per_activation":18.65,"per_cast_cycle":5.49,"display_info":["31.14 psionic damage on target after 5s delay","Ignores buffs and enhancements"],"base_value":-44.4882,"scale":-0.7}]},{"attributes":["Taunt"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Pet","duration_seconds":26.66,"display_info":["4.0 taunt for 26.66s on target"],"base_value":13.33,"scale":2.0}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Pets.Decoy",
+  "display_name": "Decoy",
+  "display_help": "Illusion Control",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/20/invulnerability_temporaryinvulnerabilty.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Pets.Decoy.Decoy",
+    "Pets.Decoy.Fire_Sword",
+    "Pets.Decoy.Ice_Sword",
+    "Pets.Decoy.Punch",
+    "Pets.Decoy.Hurl",
+    "Pets.Decoy.Power_Bolt",
+    "Pets.Decoy.Fire_Blast",
+    "Pets.Decoy.Ice_Blast",
+    "Pets.Decoy.Lightning_Bolt"
+  ],
+  "powers": [
+    {
+      "name": "Pets.Decoy.Decoy",
+      "display_name": "Decoy",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/20/invulnerability_temporaryinvulnerabilty.png",
+      "display_help": "The Decoy is an illusion, and is intangible.",
+      "display_short_help": "Intangible",
+      "display_info": {
+        "Available Level": "1",
+        "Effect Area": "Single Target",
+        "Power Type": "Auto",
+        "Target Type": "Self"
+      },
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Auto",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 0.0,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 0.0,
+        "auto_cast_interval": 0.2,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "!(@CustomFX == Mirror)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Translucency"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 0.45,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Untouchable"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "target_type": "Self",
+              "magnitude": 100.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 0.45,
+                  "display_info": [
+                    "100.0 untouchable for 0.45s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.45
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "ThreatLevel"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.45,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "value": 5.0,
+                  "display_info": [
+                    "5.00 threat level for 0.45s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 5.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Healing_Dmg"
+              ],
+              "applies_to": "Resistance",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.5,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 10000.0,
+                  "display_info": [
+                    "10000.00% resistance to healing for 0.5s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Decoy.Fire_Sword",
+      "display_name": "Fire Sword",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/56/fieryfray_firesword.png",
+      "display_help": "The Decoy can summon the illusion of a Fire Sword. Note that Fire Sword is unaffected by Recharge Time changes. Recharge: Fast",
+      "display_short_help": "Melee Taunt",
+      "display_info": {
+        "Recharge Time": "6s",
+        "Power Range": "7 ft.",
+        "Power Type": "Click",
+        "Activation Time": "1.33s",
+        "Available Level": "1",
+        "Effect Area": "Single Target",
+        "Target Type": "Enemies",
+        "Attack Types": "Melee, Psionic"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 1.33,
+        "animation_time": 1.33,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 6.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 73.41,
+                  "average": 73.41,
+                  "per_activation": 55.2,
+                  "per_cast_cycle": 10.02,
+                  "display_info": [
+                    "73.41 psionic damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.32
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 0.0,
+                  "display_info": [
+                    "0.00% run speed for 5s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "healing": 56.72,
+                  "average": 56.72,
+                  "per_activation": 42.65,
+                  "per_cast_cycle": 7.74,
+                  "display_info": [
+                    "56.72 psionic damage on target after 5s delay",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": -1.02
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 27.2,
+                  "display_info": [
+                    "4.0 taunt for 27.2s on target"
+                  ],
+                  "base_value": 13.6,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Decoy.Ice_Sword",
+      "display_name": "Ice Sword",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/56/fieryfray_firesword.png",
+      "display_help": "The Decoy can summon the illusion of a Ice Sword. Note that Ice Sword is unaffected by Recharge Time changes. Recharge: Fast",
+      "display_short_help": "Melee Taunt",
+      "display_info": {
+        "Activation Time": "1.33s",
+        "Attack Types": "Melee, Psionic",
+        "Effect Area": "Single Target",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Recharge Time": "6s",
+        "Power Range": "7 ft.",
+        "Available Level": "1"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 1.33,
+        "animation_time": 1.33,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 6.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 73.41,
+                  "average": 73.41,
+                  "per_activation": 55.2,
+                  "per_cast_cycle": 10.02,
+                  "display_info": [
+                    "73.41 psionic damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.32
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 0.0,
+                  "display_info": [
+                    "0.00% run speed for 5s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "healing": 56.72,
+                  "average": 56.72,
+                  "per_activation": 42.65,
+                  "per_cast_cycle": 7.74,
+                  "display_info": [
+                    "56.72 psionic damage on target after 5s delay",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": -1.02
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 27.2,
+                  "display_info": [
+                    "4.0 taunt for 27.2s on target"
+                  ],
+                  "base_value": 13.6,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Decoy.Punch",
+      "display_name": "Punch",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/9e/superstrength_punch.png",
+      "display_help": "A Super Strength Punch is a powerful pummeling attack, and may knock foes off their feet. Note that Punch is unaffected by Recharge Time changes. Recharge: Fast",
+      "display_short_help": "Melee Smash, Knockback",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Available Level": "1",
+        "Attack Types": "Melee, Psionic",
+        "Power Range": "7 ft.",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Activation Time": "1.2s",
+        "Recharge Time": "6s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 1.2,
+        "animation_time": 1.2,
+        "animation_time_before_hit": 0.8,
+        "recharge_time": 6.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 73.41,
+                  "average": 73.41,
+                  "per_activation": 61.18,
+                  "per_cast_cycle": 10.2,
+                  "display_info": [
+                    "73.41 psionic damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.32
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "healing": 56.72,
+                  "average": 56.72,
+                  "per_activation": 47.27,
+                  "per_cast_cycle": 7.88,
+                  "display_info": [
+                    "56.72 psionic damage on target after 5s delay",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": -1.02
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 27.2,
+                  "display_info": [
+                    "4.0 taunt for 27.2s on target"
+                  ],
+                  "base_value": 13.6,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Decoy.Hurl",
+      "display_name": "Hurl",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/a3/superstrength_hurl.png",
+      "display_help": "The Decoy can pick up and throw nearby objects, or even a piece of concrete flooring. Can knock foes back. Note that Hurl is unaffected by Recharge Time changes. Recharge: Slow",
+      "display_short_help": "Ranged Taunt",
+      "display_info": {
+        "Activation Time": "2.5s",
+        "Power Range": "40 ft.",
+        "Power Type": "Click",
+        "Effect Area": "Single Target",
+        "Target Type": "Enemies",
+        "Recharge Time": "12s",
+        "Attack Types": "Ranged, Psionic",
+        "Available Level": "1"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 40.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 2.5,
+        "animation_time": 2.5,
+        "animation_time_before_hit": 1.9,
+        "recharge_time": 12.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 44.49,
+                  "average": 44.49,
+                  "per_activation": 17.8,
+                  "per_cast_cycle": 3.07,
+                  "display_info": [
+                    "44.49 psionic damage on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "healing": 31.14,
+                  "average": 31.14,
+                  "per_activation": 12.46,
+                  "per_cast_cycle": 2.15,
+                  "display_info": [
+                    "31.14 psionic damage on target after 5s delay",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": -0.7
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 26.66,
+                  "display_info": [
+                    "4.0 taunt for 26.66s on target"
+                  ],
+                  "base_value": 13.33,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Decoy.Power_Bolt",
+      "display_name": "Power Bolt",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/37/powerblast_powerbolts.png",
+      "display_help": "A quick attack. Rapidly hurls small bolts of energy at foes, sometimes knocking them down. Note that Power Bolt is unaffected by Recharge Time changes. Recharge: Fast",
+      "display_short_help": "Ranged Taunt",
+      "display_info": {
+        "Power Type": "Click",
+        "Attack Types": "Ranged, Psionic",
+        "Recharge Time": "4s",
+        "Power Range": "80 ft.",
+        "Effect Area": "Single Target",
+        "Target Type": "Enemies",
+        "Available Level": "1",
+        "Activation Time": "1s"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 4.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 44.49,
+                  "average": 44.49,
+                  "per_activation": 44.49,
+                  "per_cast_cycle": 8.9,
+                  "display_info": [
+                    "44.49 psionic damage on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "healing": 31.14,
+                  "average": 31.14,
+                  "per_activation": 31.14,
+                  "per_cast_cycle": 6.23,
+                  "display_info": [
+                    "31.14 psionic damage on target after 5s delay",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": -0.7
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 26.66,
+                  "display_info": [
+                    "4.0 taunt for 26.66s on target"
+                  ],
+                  "base_value": 13.33,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Decoy.Fire_Blast",
+      "display_name": "Fire Blast",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/71/fireblast_fireblast.png",
+      "display_help": "Sends a Blast of Fire at a targeted foe, setting them on fire for a short time. Slower recharge rate than Flares, but more damage. Note that Fire Blast is unaffected by Recharge Time changes. Recharge: Fast",
+      "display_short_help": "Ranged Fire, DoT",
+      "display_info": {
+        "Available Level": "1",
+        "Power Range": "80 ft.",
+        "Activation Time": "1.67s",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Recharge Time": "4s",
+        "Effect Area": "Single Target",
+        "Attack Types": "Ranged, Psionic"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.53,
+        "recharge_time": 4.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 44.49,
+                  "average": 44.49,
+                  "per_activation": 26.64,
+                  "per_cast_cycle": 7.85,
+                  "display_info": [
+                    "44.49 psionic damage on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 0.0,
+                  "display_info": [
+                    "0.00% run speed for 5s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "healing": 31.14,
+                  "average": 31.14,
+                  "per_activation": 18.65,
+                  "per_cast_cycle": 5.49,
+                  "display_info": [
+                    "31.14 psionic damage on target after 5s delay",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": -0.7
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 26.66,
+                  "display_info": [
+                    "4.0 taunt for 26.66s on target"
+                  ],
+                  "base_value": 13.33,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Decoy.Ice_Blast",
+      "display_name": "Ice Blast",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/37/iceblast_iceblast.png",
+      "display_help": "Ice Blast hurls shards of ice at foes and Slows their attacks for a time. Slower recharge than Ice Bolt, but more damage. Note that Ice Blast is unaffected by Recharge Time changes. Recharge: Fast",
+      "display_short_help": "Ranged Cold/Smash, -Recharge",
+      "display_info": {
+        "Power Type": "Click",
+        "Recharge Time": "4s",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target",
+        "Available Level": "1",
+        "Activation Time": "1.67s",
+        "Attack Types": "Ranged, Psionic",
+        "Power Range": "80 ft."
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 4.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 44.49,
+                  "average": 44.49,
+                  "per_activation": 26.64,
+                  "per_cast_cycle": 7.85,
+                  "display_info": [
+                    "44.49 psionic damage on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "RunningSpeed"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "percent": 0.0,
+                  "display_info": [
+                    "0.00% run speed for 5s on target",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "healing": 31.14,
+                  "average": 31.14,
+                  "per_activation": 18.65,
+                  "per_cast_cycle": 5.49,
+                  "display_info": [
+                    "31.14 psionic damage on target after 5s delay",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": -0.7
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 26.66,
+                  "display_info": [
+                    "4.0 taunt for 26.66s on target"
+                  ],
+                  "base_value": 13.33,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pets.Decoy.Lightning_Bolt",
+      "display_name": "Lightning Bolt",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/5a/electricalbolt_lightningbolt.png",
+      "display_help": "The Decoy can send a large blast of electrical energy at a foe. Note that Lightning Bolt is unaffected by Recharge Time changes. Recharge: Fast",
+      "display_short_help": "Ranged Taunt",
+      "display_info": {
+        "Power Range": "80 ft.",
+        "Recharge Time": "4s",
+        "Attack Types": "Ranged, Psionic",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target",
+        "Available Level": "1",
+        "Activation Time": "1.67s",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Psionic_Def"
+      ],
+      "enhancements_allowed": [
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "activate": {
+        "cast_time": 1.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.87,
+        "recharge_time": 4.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "damage": 44.49,
+                  "average": 44.49,
+                  "per_activation": 26.64,
+                  "per_cast_cycle": 7.85,
+                  "display_info": [
+                    "44.49 psionic damage on target"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Psionic_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 5.0,
+              "flags": [
+                "IgnoreStrength",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "healing": 31.14,
+                  "average": 31.14,
+                  "per_activation": 18.65,
+                  "per_cast_cycle": 5.49,
+                  "display_info": [
+                    "31.14 psionic damage on target after 5s delay",
+                    "Ignores buffs and enhancements"
+                  ],
+                  "base_value": -44.4882,
+                  "scale": -0.7
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Taunt"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Pet",
+                  "duration_seconds": 26.66,
+                  "display_info": [
+                    "4.0 taunt for 26.66s on target"
+                  ],
+                  "base_value": 13.33,
+                  "scale": 2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

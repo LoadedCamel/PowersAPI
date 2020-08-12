@@ -1,1 +1,2573 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Mastermind_Summon.Necromancy","display_name":"Necromancy","display_help":"Command the forces of Death. Necromancy allows you to summon undead henchmen to do your bidding. Some Necromancy powers can even grant your undead henchmen additional powers. Most Undead Henchmen generally have good resistances to Cold, Negative Energy, and Psionic damage as well as Sleep, Fear and Disorient. Undead Henchman cannot be resurrected.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/05/necromancy_darkblast.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Mastermind_Summon.Necromancy.Dark_Blast","Mastermind_Summon.Necromancy.Zombie_Horde","Mastermind_Summon.Necromancy.Gloom","Mastermind_Summon.Necromancy.Enchant_Undead","Mastermind_Summon.Necromancy.Life_Drain","Mastermind_Summon.Necromancy.Skeletal_Warriors","Mastermind_Summon.Necromancy.Soul_Extraction","Mastermind_Summon.Necromancy.Lich","Mastermind_Summon.Necromancy.Dark_Empowerment"],"powers":[{"name":"Mastermind_Summon.Necromancy.Dark_Blast","display_name":"Dark Blast","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/05/necromancy_darkblast.png","display_help":"A long range blast of dark energy. Deals moderate Negative Energy damage and reduces the target's chance to hit. Damage: Moderate, Recharge: Fast","display_short_help":"Ranged, Moderate DMG(Negative), Foe -To Hit","display_info":{"Endurance Cost":"6.50","Recharge Time":"4s","Power Type":"Click","Attack Types":"Ranged, Negative_Energy","Power Range":"80 ft.","Effect Area":"Single Target","Target Type":"Enemies","Activation Time":"1s","Available Level":"1"},"attack_types":["Ranged_Def","Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Accurate To-Hit Debuff","Ranged Damage","To Hit Debuff","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.73,"recharge_time":4.0,"endurance_cost":6.5},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":30.59,"average":30.59,"per_activation":30.59,"per_cast_cycle":6.12,"display_info":["30.59 negative energy damage on target"],"base_value":-30.5856,"scale":1.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":6.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":-5.63,"display_info":["-5.63% to hit for 6s on target"],"base_value":-0.075,"scale":0.75}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":58.15,"average":58.15,"per_activation":58.15,"per_cast_cycle":11.63,"display_info":["58.15 negative energy damage on target"],"base_value":-46.1537,"scale":1.26}]}]}]},{"name":"Mastermind_Summon.Necromancy.Zombie_Horde","display_name":"Zombie Horde","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d8/necromancy_callzombiehorde.png","display_help":"Summons one to three Zombies (depending on your level) to do your bidding. Zombies are very tough but can be slow and stupid. They start out with only rudimentary melee attacks, but can be empowered with range and even life draining powers. You may only have 3 Zombies under your control at any given time. If you attempt to summon more Zombies, you can only replace the ones you have lost in battle. If you already have three, the power will fail. Recharge: Slow","display_short_help":"Summon Zombies","display_info":{"Activation Time":"3.1s","Recharge Time":"1m 0s","Power Range":"60 ft.","Endurance Cost":"19.50","Power Type":"Click","Available Level":"1","Effect Area":"Location","Target Type":"Location"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Heal","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Pet Damage","Mastermind Archetype Sets","To Hit Debuff","Recharge Intensive Pets","Accurate To-Hit Debuff","Accurate Healing","Healing","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":3.1,"animation_time":3.1,"animation_time_before_hit":1.07,"recharge_time":60.0,"endurance_cost":19.5},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":1.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Zombie","display_name":"Zombie","powers":[{"name":"Mastermind_Pets.Zombie.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"},{"name":"Mastermind_Pets.Zombie.Zombie_Brawl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"},{"name":"Mastermind_Pets.Zombie.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source>combatlevel > 5"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":2.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Zombie","display_name":"Zombie","powers":[{"name":"Mastermind_Pets.Zombie.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"},{"name":"Mastermind_Pets.Zombie.Zombie_Brawl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"},{"name":"Mastermind_Pets.Zombie.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source>combatlevel > 17"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":3.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Zombie","display_name":"Zombie","powers":[{"name":"Mastermind_Pets.Zombie.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"},{"name":"Mastermind_Pets.Zombie.Zombie_Brawl","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"},{"name":"Mastermind_Pets.Zombie.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"}]}}}]}]},{"name":"Mastermind_Summon.Necromancy.Gloom","display_name":"Gloom","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/26/necromancy_gloom.png","display_help":"Gloom slowly drains a target of life, while reducing their chance to hit Slower than Dark Blast, but deals more damage over time. Damage: High(DoT), Recharge: Moderate","display_short_help":"Ranged, High DoT(Negative), Foe -To Hit","display_info":{"Power Type":"Click","Power Range":"80 ft.","Target Type":"Enemies","Recharge Time":"8s","Endurance Cost":"10.66","Activation Time":"1.1s","Available Level":"2","Attack Types":"Ranged, Negative_Energy","Effect Area":"Single Target"},"attack_types":["Ranged_Def","Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["To Hit Debuff","Ranged Damage","Universal Damage Sets","Accurate To-Hit Debuff"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":80.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.1,"animation_time":1.1,"animation_time_before_hit":0.83,"recharge_time":8.0,"endurance_cost":10.66},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.6,"continuous_apply_seconds":0.5,"ticks":8,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":6.73,"average":6.73,"per_activation":6.12,"per_cast_cycle":0.74,"display_info":["8 ticks of 6.73 negative energy damage over 3.6s on target"],"base_value":-30.5856,"scale":0.22}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":-5.63,"display_info":["-5.63% to hit for 10s on target"],"base_value":-0.075,"scale":0.75}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":3.6,"continuous_apply_seconds":0.5,"ticks":8,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":8.6,"average":8.6,"per_activation":7.82,"per_cast_cycle":0.95,"display_info":["8 ticks of 8.60 negative energy damage over 3.6s on target"],"base_value":-46.1537,"scale":0.1863}]}]}]},{"name":"Mastermind_Summon.Necromancy.Enchant_Undead","display_name":"Enchant Undead","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/89/necromancy_enchantundead.png","display_help":"Enchant Undead will permanently bestow new powers and abilities to all of your Undead Henchman. The powers gained are unique and dependent upon the type of Undead Henchman that is Enchanted. Enchant Undead only works on your Undead Henchmen and you can only Enchant your Undead Henchmen once with this power. Recharge: Fast","display_short_help":"Ranged, Enchant Undead Henchman","display_info":{"Effect Area":"AoE — 30 ft. radius (16 targets max)","Recharge Time":"6s","Target Type":"Pet","Available Level":"6","Power Range":"50 ft.","Activation Time":"2.07s","Endurance Cost":"22.75","Power Type":"Click"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":30.0,"range_feet":50.0},"target_type_tags":["Pet","Owned"],"display_target_type":"Pet","target_auto_hit_tags":[["Pet","Owned"]],"display_target_auto_hit":["Pet"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.07,"animation_time":2.07,"animation_time_before_hit":0.53,"recharge_time":6.0,"endurance_cost":22.75},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Zombie"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Zombie_2.Projectile_Vomit","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Zombie_2.Zombie_Vomit","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Zombie_2.Enchant","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie-2/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Skeletal_Warrior && (target>kMeter < .5)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_2.Disembowel","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_2.Hack","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_2.Slash","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Skeletal_Warrior && (target>kMeter > .5)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_3.Disembowel","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Skeletal_Warrior"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_2.Gloom","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"}]}}},{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton.Hack","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"}]}}},{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton.Slash","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_2.Costume1","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_2.Enchant","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Lich"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lich_2.Tenebrous_Tentacles","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lich_2.Life_Drain","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lich_2.Costume1","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-2/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lich_2.Enchant","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-2/"}]}}}]}]},{"name":"Mastermind_Summon.Necromancy.Life_Drain","display_name":"Life Drain","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/dd/necromancy_lifedrain.png","display_help":"You can tap the power of the Netherworld to steal some life from a target foe and reduce their chance to hit. Some of that stolen life is transferred to you in the form of Hit Points. Damage: Moderate, Recharge: Moderate","display_short_help":"Ranged, Moderate DMG(Negative), Target -To Hit, Self +HP","display_info":{"Effect Area":"Single Target","Target Type":"Enemies","Power Range":"60 ft.","Activation Time":"1.93s","Endurance Cost":"10.66","Power Type":"Click","Available Level":"8","Recharge Time":"8s","Attack Types":"Ranged, Negative_Energy"},"attack_types":["Ranged_Def","Negative_Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Heal","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Accurate Healing","Healing","Ranged Damage","Universal Damage Sets","To Hit Debuff"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.93,"animation_time":1.93,"animation_time_before_hit":0.83,"recharge_time":8.0,"endurance_cost":10.66},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":50.16,"average":50.16,"per_activation":25.99,"per_cast_cycle":5.05,"display_info":["50.16 negative energy damage on target"],"base_value":-30.5856,"scale":1.64}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Healing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Self","magnitude":1.0,"duration":"Instant","after_delay_seconds":0.5,"flags":["IgnoreLevelDifference","ResistMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","healing":80.32,"average":80.32,"per_activation":41.62,"per_cast_cycle":8.09,"display_info":["80.32 heal on self after 0.5s delay"],"base_value":80.3173,"scale":1.0}]},{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","percent":-5.63,"display_info":["-5.63% to hit for 10s on target"],"base_value":-0.075,"scale":0.75}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Negative_Energy_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","damage":95.58,"average":95.58,"per_activation":49.52,"per_cast_cycle":9.63,"display_info":["95.58 negative energy damage on target"],"base_value":-46.1537,"scale":2.071}]}]}]},{"name":"Mastermind_Summon.Necromancy.Skeletal_Warriors","display_name":"Grave Knight","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/aa/necromancy_summonskeletonwarrior.png","display_help":"You can summon one to two powerful Grave Knights (depending on your level) to do your bidding. Grave Knights come well equipped with several attack powers and can be empowered with even more. You may only have 2 Grave Knights under your control at any given time. If you attempt to summon more Grave Knights, you can only replace the ones you have lost in battle. If you already have two, the power will fail. Recharge: Long","display_short_help":"Summon Grave Knight","display_info":{"Endurance Cost":"19.50","Activation Time":"1.07s","Power Range":"60 ft.","Power Type":"Click","Effect Area":"Location","Recharge Time":"1m 30s","Target Type":"Location","Available Level":"12"},"enhancements_allowed":["Reduce Endurance Cost","Enhance KnockBack","Enhance Heal","Enhance ToHit DeBuffs","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Pet Damage","Defense Debuff","Recharge Intensive Pets","To Hit Debuff","Mastermind Archetype Sets","Universal Damage Sets","Healing","Accurate Healing","Knockback","Accurate Defense Debuff"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.07,"animation_time":1.07,"animation_time_before_hit":0.63,"recharge_time":90.0,"endurance_cost":19.5},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":1.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Skeletal_Warrior","display_name":"Grave Knight","powers":[{"name":"Mastermind_Pets.Skeleton.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"},{"name":"Mastermind_Pets.Skeleton.Hack","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"},{"name":"Mastermind_Pets.Skeleton.Slash","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"},{"name":"Mastermind_Pets.Skeleton.Dark_Blast","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"},{"name":"Mastermind_Pets.Skeleton.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["source>combatlevel > 23"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":2.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Skeletal_Warrior","display_name":"Grave Knight","powers":[{"name":"Mastermind_Pets.Skeleton.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"},{"name":"Mastermind_Pets.Skeleton.Hack","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"},{"name":"Mastermind_Pets.Skeleton.Slash","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"},{"name":"Mastermind_Pets.Skeleton.Dark_Blast","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"},{"name":"Mastermind_Pets.Skeleton.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"}]}}}]}]},{"name":"Mastermind_Summon.Necromancy.Soul_Extraction","display_name":"Soul Extraction","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/51/necromancy_soulextraction.png","display_help":"You can extract the soul from one of your defeated Undead Henchmen and summon its spectral essence to do your bidding. The power of the soul is dependent upon the type of undead Henchman you extract it from, however it will always be one level lower than you. Unlike your other Henchman, the extracted Soul is only loosely bound to your control and will eventually move on to the next world. The Soul cannot gain new powers with Enchanted Undead or Dark Empowerment. Recharge: Very Long","display_short_help":"Summon Ghost (Special)","display_info":{"Endurance Cost":"13.00","Power Type":"Click","Available Level":"18","Effect Area":"Single Target","Target Type":"Pet","Power Range":"60 ft.","Recharge Time":"10m 0s","Activation Time":"2.03s"},"enhancements_allowed":["Enhance Hold","Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Heal","Enhance ToHit DeBuffs","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Pet Damage","Healing","Accurate Healing","Holds","To Hit Debuff","Accurate To-Hit Debuff","Mastermind Archetype Sets","Recharge Intensive Pets"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":60.0},"target_type_tags":["Pet","Owned","Dead"],"display_target_type":"Pet","target_auto_hit_tags":[["Pet","Owned","Dead"]],"display_target_auto_hit":["Pet"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.03,"animation_time":2.03,"animation_time_before_hit":0.83,"recharge_time":600.0,"endurance_cost":13.0},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target>arch == Class_Minion_Henchman"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Ghost_Minion","display_name":"Spirit","powers":[{"name":"Mastermind_Pets.Ghosts.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Phase_Shift","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Ghastly_Blast","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Fly","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Life_Drain","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Enchant","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Necroplasmic_Grasp","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Empower","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target>arch == Class_Lt_Henchman"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Ghost_Lt","display_name":"Tortured Soul","powers":[{"name":"Mastermind_Pets.Ghosts.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Phase_Shift","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Ghastly_Blast","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Fly","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Life_Drain","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Enchant","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Necroplasmic_Grasp","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Empower","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target>arch == Class_Boss_Henchman"],"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","IgnoreLevelDifference","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Ghost_Boss","display_name":"Wraith","powers":[{"name":"Mastermind_Pets.Ghosts.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Phase_Shift","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Self_Destruct","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Ghastly_Blast","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Fly","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Life_Drain","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Enchant","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Necroplasmic_Grasp","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"},{"name":"Mastermind_Pets.Ghosts.Empower","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"}]}},"stacking":{"behavior":"Stack","by_caster":true}}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Healing_Dmg"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.5,"continuous_apply_seconds":1.0,"ticks":1,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Mastermind","healing":0.0,"display_info":["0.00 healing for 0.5s on target","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":0.0}]}]}]},{"name":"Mastermind_Summon.Necromancy.Lich","display_name":"Lich","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/39/necromancy_summonlitch.png","display_help":"Summons a dark and powerful Lich. The lich is an undead entity that, when alive, possessed many dark powers of his own. Perhaps it was a dark wizard, or powerful arch villain. Perhaps it was even a Necromancer. Now it only hungers for the souls of the living, and is quite good at feeding itself. The Lich specializes in dark control and draining powers. You may only have 1 Lich under your control at any given time. If you attempt to summon another Lich, the power will fail. Recharge: Long","display_short_help":"Summon Lich","display_info":{"Recharge Time":"2m 0s","Endurance Cost":"19.50","Effect Area":"Location","Available Level":"26","Power Range":"60 ft.","Activation Time":"3.17s","Power Type":"Click","Target Type":"Location"},"enhancements_allowed":["Enhance Hold","Reduce Endurance Cost","Enhance KnockBack","Enhance Immobilization","Enhance Heal","Enhance Fear","Enhance ToHit DeBuffs","Enhance Defense DeBuff","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Knockback","Universal Damage Sets","Accurate Healing","Holds","Mastermind Archetype Sets","Pet Damage","Accurate To-Hit Debuff","Healing","Immobilize","To Hit Debuff","Accurate Defense Debuff","Fear","Defense Debuff","Recharge Intensive Pets"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"Location","range_feet":60.0},"target_type_tags":["Location"],"display_target_type":"Location","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":3.17,"animation_time":3.17,"animation_time_before_hit":0.5,"recharge_time":120.0,"endurance_cost":19.5},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Create Entity"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","duration":"UntilKilled","after_delay_seconds":0.5,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude","DoNotDisplayShift","NoTokenTime"],"parameter":{"create_entity":{"name":"MastermindPets_Lich","display_name":"Lich","powers":[{"name":"Mastermind_Pets.Lich.Resistance","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich/"},{"name":"Mastermind_Pets.Lich.Dark_Blast","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich/"},{"name":"Mastermind_Pets.Lich.Torrent","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich/"},{"name":"Mastermind_Pets.Lich.Super_Leap","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich/"}]}}}]}]},{"name":"Mastermind_Summon.Necromancy.Dark_Empowerment","display_name":"Dark Empowerment","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ee/necromancy_darkempowerment.png","display_help":"Dark Empowerment will permanently bestow the most powerful and darkest new powers and abilities to all of your Undead Henchman. The Empowered Undead will gain new abilities and powers. The powers gained are unique and dependent upon the type of Undead Henchman that is Empowered. Dark Empowerment only works on your Undead Henchmen and you can only Empower your Undead Henchmen once with this power. Recharge: Moderate","display_short_help":"Ranged, Empower Undead Henchman","display_info":{"Power Type":"Click","Activation Time":"2.07s","Effect Area":"AoE — 30 ft. radius (16 targets max)","Recharge Time":"10s","Available Level":"32","Endurance Cost":"22.75","Power Range":"30 ft.","Target Type":"Pet"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":16,"radius_feet":30.0,"range_feet":30.0},"target_type_tags":["Pet","Owned"],"display_target_type":"Pet","target_auto_hit_tags":[["Pet","Owned"]],"display_target_auto_hit":["Pet"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.07,"animation_time":2.07,"animation_time_before_hit":0.53,"recharge_time":10.0,"endurance_cost":22.75},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Zombie"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Zombie_3.Siphon_Life","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Zombie_3.Empower","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie-3/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Skeletal_Warrior"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_3.Head_Splitter","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_3.Hack","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_3.Slash","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_3.Siphon_Life","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"}]}}},{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_2.Disembowel","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"}]}}},{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_2.Hack","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"}]}}},{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_2.Slash","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"}]}}},{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton.Hack","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"}]}}},{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton.Slash","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_3.Costume2","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_3.Mode2","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_3.Empower","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"}]}}},{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_2.Costume1","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Skeletal_Warrior && (target>kRage > .5)"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Skeleton_3.Disembowel","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"}]}}}]},{"visible_in_info_window":true,"chance_percent":100.0,"requires":["target.VillainName>MastermindPets_Lich"],"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lich_3.Fearsome_Stare","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lich_3.Petrifying_Gaze","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lich_3.Costume2","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lich_3.Mode2","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-3/"}]}}},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lich_3.Empower","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-3/"}]}}},{"attributes":["Revoke Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Affected","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Mastermind_Pets.Lich_2.Costume1","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-2/"}]}}}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Mastermind_Summon.Necromancy",
+  "display_name": "Necromancy",
+  "display_help": "Command the forces of Death. Necromancy allows you to summon undead henchmen to do your bidding. Some Necromancy powers can even grant your undead henchmen additional powers. Most Undead Henchmen generally have good resistances to Cold, Negative Energy, and Psionic damage as well as Sleep, Fear and Disorient. Undead Henchman cannot be resurrected.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/05/necromancy_darkblast.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Mastermind_Summon.Necromancy.Dark_Blast",
+    "Mastermind_Summon.Necromancy.Zombie_Horde",
+    "Mastermind_Summon.Necromancy.Gloom",
+    "Mastermind_Summon.Necromancy.Enchant_Undead",
+    "Mastermind_Summon.Necromancy.Life_Drain",
+    "Mastermind_Summon.Necromancy.Skeletal_Warriors",
+    "Mastermind_Summon.Necromancy.Soul_Extraction",
+    "Mastermind_Summon.Necromancy.Lich",
+    "Mastermind_Summon.Necromancy.Dark_Empowerment"
+  ],
+  "powers": [
+    {
+      "name": "Mastermind_Summon.Necromancy.Dark_Blast",
+      "display_name": "Dark Blast",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/05/necromancy_darkblast.png",
+      "display_help": "A long range blast of dark energy. Deals moderate Negative Energy damage and reduces the target's chance to hit. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Ranged, Moderate DMG(Negative), Foe -To Hit",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Power Range": "80 ft.",
+        "Recharge Time": "4s",
+        "Attack Types": "Ranged, Negative_Energy",
+        "Available Level": "1",
+        "Endurance Cost": "6.50",
+        "Power Type": "Click",
+        "Activation Time": "1s",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Ranged Damage",
+        "To Hit Debuff",
+        "Accurate To-Hit Debuff"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.73,
+        "recharge_time": 4.0,
+        "endurance_cost": 6.5
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 30.59,
+                  "average": 30.59,
+                  "per_activation": 30.59,
+                  "per_cast_cycle": 6.12,
+                  "display_info": [
+                    "30.59 negative energy damage on target"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 6.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": -5.63,
+                  "display_info": [
+                    "-5.63% to hit for 6s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 58.15,
+                  "average": 58.15,
+                  "per_activation": 58.15,
+                  "per_cast_cycle": 11.63,
+                  "display_info": [
+                    "58.15 negative energy damage on target"
+                  ],
+                  "base_value": -46.1537,
+                  "scale": 1.26
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Necromancy.Zombie_Horde",
+      "display_name": "Zombie Horde",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d8/necromancy_callzombiehorde.png",
+      "display_help": "Summons one to three Zombies (depending on your level) to do your bidding. Zombies are very tough but can be slow and stupid. They start out with only rudimentary melee attacks, but can be empowered with range and even life draining powers. You may only have 3 Zombies under your control at any given time. If you attempt to summon more Zombies, you can only replace the ones you have lost in battle. If you already have three, the power will fail. Recharge: Slow",
+      "display_short_help": "Summon Zombies",
+      "display_info": {
+        "Power Range": "60 ft.",
+        "Recharge Time": "1m 0s",
+        "Endurance Cost": "19.50",
+        "Activation Time": "3.1s",
+        "Power Type": "Click",
+        "Effect Area": "Location",
+        "Target Type": "Location",
+        "Available Level": "1"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Heal",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Accurate To-Hit Debuff",
+        "Recharge Intensive Pets",
+        "Accurate Healing",
+        "To Hit Debuff",
+        "Pet Damage",
+        "Healing",
+        "Universal Damage Sets",
+        "Mastermind Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 3.1,
+        "animation_time": 3.1,
+        "animation_time_before_hit": 1.07,
+        "recharge_time": 60.0,
+        "endurance_cost": 19.5
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 1.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Zombie",
+                  "display_name": "Zombie",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Zombie.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Zombie.Zombie_Brawl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Zombie.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source>combatlevel > 5"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Zombie",
+                  "display_name": "Zombie",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Zombie.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Zombie.Zombie_Brawl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Zombie.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source>combatlevel > 17"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 3.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Zombie",
+                  "display_name": "Zombie",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Zombie.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Zombie.Zombie_Brawl",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Zombie.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Necromancy.Gloom",
+      "display_name": "Gloom",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/26/necromancy_gloom.png",
+      "display_help": "Gloom slowly drains a target of life, while reducing their chance to hit Slower than Dark Blast, but deals more damage over time. Damage: High(DoT), Recharge: Moderate",
+      "display_short_help": "Ranged, High DoT(Negative), Foe -To Hit",
+      "display_info": {
+        "Attack Types": "Ranged, Negative_Energy",
+        "Target Type": "Enemies",
+        "Activation Time": "1.1s",
+        "Endurance Cost": "10.66",
+        "Power Type": "Click",
+        "Power Range": "80 ft.",
+        "Recharge Time": "8s",
+        "Available Level": "2",
+        "Effect Area": "Single Target"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Accurate To-Hit Debuff",
+        "Ranged Damage",
+        "To Hit Debuff"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 80.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.1,
+        "animation_time": 1.1,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 8.0,
+        "endurance_cost": 10.66
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.6,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 8,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 6.73,
+                  "average": 6.73,
+                  "per_activation": 6.12,
+                  "per_cast_cycle": 0.74,
+                  "display_info": [
+                    "8 ticks of 6.73 negative energy damage over 3.6s on target"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 0.22
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": -5.63,
+                  "display_info": [
+                    "-5.63% to hit for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 3.6,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 8,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 8.6,
+                  "average": 8.6,
+                  "per_activation": 7.82,
+                  "per_cast_cycle": 0.95,
+                  "display_info": [
+                    "8 ticks of 8.60 negative energy damage over 3.6s on target"
+                  ],
+                  "base_value": -46.1537,
+                  "scale": 0.1863
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Necromancy.Enchant_Undead",
+      "display_name": "Enchant Undead",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/89/necromancy_enchantundead.png",
+      "display_help": "Enchant Undead will permanently bestow new powers and abilities to all of your Undead Henchman. The powers gained are unique and dependent upon the type of Undead Henchman that is Enchanted. Enchant Undead only works on your Undead Henchmen and you can only Enchant your Undead Henchmen once with this power. Recharge: Fast",
+      "display_short_help": "Ranged, Enchant Undead Henchman",
+      "display_info": {
+        "Endurance Cost": "22.75",
+        "Target Type": "Pet",
+        "Activation Time": "2.07s",
+        "Power Range": "50 ft.",
+        "Power Type": "Click",
+        "Recharge Time": "6s",
+        "Effect Area": "AoE — 30 ft. radius (16 targets max)",
+        "Available Level": "6"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 30.0,
+        "range_feet": 50.0
+      },
+      "target_type_tags": [
+        "Pet",
+        "Owned"
+      ],
+      "display_target_type": "Pet",
+      "target_auto_hit_tags": [
+        [
+          "Pet",
+          "Owned"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Pet"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.07,
+        "animation_time": 2.07,
+        "animation_time_before_hit": 0.53,
+        "recharge_time": 6.0,
+        "endurance_cost": 22.75
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Zombie"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Zombie_2.Projectile_Vomit",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Zombie_2.Zombie_Vomit",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Zombie_2.Enchant",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Skeletal_Warrior && (target>kMeter < .5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_2.Disembowel",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_2.Hack",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_2.Slash",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Skeletal_Warrior && (target>kMeter > .5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_3.Disembowel",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Skeletal_Warrior"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_2.Gloom",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Hack",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Slash",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_2.Costume1",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_2.Enchant",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Lich"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lich_2.Tenebrous_Tentacles",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lich_2.Life_Drain",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lich_2.Costume1",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lich_2.Enchant",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Necromancy.Life_Drain",
+      "display_name": "Life Drain",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/dd/necromancy_lifedrain.png",
+      "display_help": "You can tap the power of the Netherworld to steal some life from a target foe and reduce their chance to hit. Some of that stolen life is transferred to you in the form of Hit Points. Damage: Moderate, Recharge: Moderate",
+      "display_short_help": "Ranged, Moderate DMG(Negative), Target -To Hit, Self +HP",
+      "display_info": {
+        "Endurance Cost": "10.66",
+        "Attack Types": "Ranged, Negative_Energy",
+        "Power Type": "Click",
+        "Power Range": "60 ft.",
+        "Activation Time": "1.93s",
+        "Available Level": "8",
+        "Recharge Time": "8s",
+        "Effect Area": "Single Target",
+        "Target Type": "Enemies"
+      },
+      "attack_types": [
+        "Ranged_Def",
+        "Negative_Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Heal",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Healing",
+        "Ranged Damage",
+        "Universal Damage Sets",
+        "Accurate Healing",
+        "To Hit Debuff"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.93,
+        "animation_time": 1.93,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 8.0,
+        "endurance_cost": 10.66
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 50.16,
+                  "average": 50.16,
+                  "per_activation": 25.99,
+                  "per_cast_cycle": 5.05,
+                  "display_info": [
+                    "50.16 negative energy damage on target"
+                  ],
+                  "base_value": -30.5856,
+                  "scale": 1.64
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Healing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "after_delay_seconds": 0.5,
+              "flags": [
+                "IgnoreLevelDifference",
+                "ResistMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "healing": 80.32,
+                  "average": 80.32,
+                  "per_activation": 41.62,
+                  "per_cast_cycle": 8.09,
+                  "display_info": [
+                    "80.32 heal on self after 0.5s delay"
+                  ],
+                  "base_value": 80.3173,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "percent": -5.63,
+                  "display_info": [
+                    "-5.63% to hit for 10s on target"
+                  ],
+                  "base_value": -0.075,
+                  "scale": 0.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Negative_Energy_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "damage": 95.58,
+                  "average": 95.58,
+                  "per_activation": 49.52,
+                  "per_cast_cycle": 9.63,
+                  "display_info": [
+                    "95.58 negative energy damage on target"
+                  ],
+                  "base_value": -46.1537,
+                  "scale": 2.071
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Necromancy.Skeletal_Warriors",
+      "display_name": "Grave Knight",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/aa/necromancy_summonskeletonwarrior.png",
+      "display_help": "You can summon one to two powerful Grave Knights (depending on your level) to do your bidding. Grave Knights come well equipped with several attack powers and can be empowered with even more. You may only have 2 Grave Knights under your control at any given time. If you attempt to summon more Grave Knights, you can only replace the ones you have lost in battle. If you already have two, the power will fail. Recharge: Long",
+      "display_short_help": "Summon Grave Knight",
+      "display_info": {
+        "Recharge Time": "1m 30s",
+        "Endurance Cost": "19.50",
+        "Power Type": "Click",
+        "Target Type": "Location",
+        "Effect Area": "Location",
+        "Activation Time": "1.07s",
+        "Power Range": "60 ft.",
+        "Available Level": "12"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance KnockBack",
+        "Enhance Heal",
+        "Enhance ToHit DeBuffs",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Accurate Defense Debuff",
+        "Knockback",
+        "Universal Damage Sets",
+        "Defense Debuff",
+        "Pet Damage",
+        "Healing",
+        "To Hit Debuff",
+        "Recharge Intensive Pets",
+        "Accurate Healing",
+        "Mastermind Archetype Sets"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.07,
+        "animation_time": 1.07,
+        "animation_time_before_hit": 0.63,
+        "recharge_time": 90.0,
+        "endurance_cost": 19.5
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 1.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Skeletal_Warrior",
+                  "display_name": "Grave Knight",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Hack",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Slash",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Dark_Blast",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "source>combatlevel > 23"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 2.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Skeletal_Warrior",
+                  "display_name": "Grave Knight",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Hack",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Slash",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Dark_Blast",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Necromancy.Soul_Extraction",
+      "display_name": "Soul Extraction",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/51/necromancy_soulextraction.png",
+      "display_help": "You can extract the soul from one of your defeated Undead Henchmen and summon its spectral essence to do your bidding. The power of the soul is dependent upon the type of undead Henchman you extract it from, however it will always be one level lower than you. Unlike your other Henchman, the extracted Soul is only loosely bound to your control and will eventually move on to the next world. The Soul cannot gain new powers with Enchanted Undead or Dark Empowerment. Recharge: Very Long",
+      "display_short_help": "Summon Ghost (Special)",
+      "display_info": {
+        "Endurance Cost": "13.00",
+        "Power Range": "60 ft.",
+        "Activation Time": "2.03s",
+        "Power Type": "Click",
+        "Recharge Time": "10m 0s",
+        "Target Type": "Pet",
+        "Effect Area": "Single Target",
+        "Available Level": "18"
+      },
+      "enhancements_allowed": [
+        "Enhance Hold",
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Heal",
+        "Enhance ToHit DeBuffs",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Holds",
+        "Recharge Intensive Pets",
+        "Mastermind Archetype Sets",
+        "Accurate To-Hit Debuff",
+        "Healing",
+        "To Hit Debuff",
+        "Pet Damage",
+        "Accurate Healing"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Pet",
+        "Owned",
+        "Dead"
+      ],
+      "display_target_type": "Pet",
+      "target_auto_hit_tags": [
+        [
+          "Pet",
+          "Owned",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Pet"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.03,
+        "animation_time": 2.03,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 600.0,
+        "endurance_cost": 13.0
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>arch == Class_Minion_Henchman"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Ghost_Minion",
+                  "display_name": "Spirit",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Phase_Shift",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Ghastly_Blast",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Fly",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Life_Drain",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Enchant",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Necroplasmic_Grasp",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Empower",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>arch == Class_Lt_Henchman"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Ghost_Lt",
+                  "display_name": "Tortured Soul",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Phase_Shift",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Ghastly_Blast",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Fly",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Life_Drain",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Enchant",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Necroplasmic_Grasp",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Empower",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>arch == Class_Boss_Henchman"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "IgnoreLevelDifference",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Ghost_Boss",
+                  "display_name": "Wraith",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Phase_Shift",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Self_Destruct",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Ghastly_Blast",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Fly",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Life_Drain",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Enchant",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Necroplasmic_Grasp",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Ghosts.Empower",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/ghosts/"
+                    }
+                  ]
+                }
+              },
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Healing_Dmg"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.5,
+              "continuous_apply_seconds": 1.0,
+              "ticks": 1,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Mastermind",
+                  "healing": 0.0,
+                  "display_info": [
+                    "0.00 healing for 0.5s on target",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Necromancy.Lich",
+      "display_name": "Lich",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/39/necromancy_summonlitch.png",
+      "display_help": "Summons a dark and powerful Lich. The lich is an undead entity that, when alive, possessed many dark powers of his own. Perhaps it was a dark wizard, or powerful arch villain. Perhaps it was even a Necromancer. Now it only hungers for the souls of the living, and is quite good at feeding itself. The Lich specializes in dark control and draining powers. You may only have 1 Lich under your control at any given time. If you attempt to summon another Lich, the power will fail. Recharge: Long",
+      "display_short_help": "Summon Lich",
+      "display_info": {
+        "Power Type": "Click",
+        "Power Range": "60 ft.",
+        "Recharge Time": "2m 0s",
+        "Target Type": "Location",
+        "Activation Time": "3.17s",
+        "Endurance Cost": "19.50",
+        "Effect Area": "Location",
+        "Available Level": "26"
+      },
+      "enhancements_allowed": [
+        "Enhance Hold",
+        "Reduce Endurance Cost",
+        "Enhance KnockBack",
+        "Enhance Immobilization",
+        "Enhance Heal",
+        "Enhance Fear",
+        "Enhance ToHit DeBuffs",
+        "Enhance Defense DeBuff",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Defense Debuff",
+        "Pet Damage",
+        "Universal Damage Sets",
+        "To Hit Debuff",
+        "Knockback",
+        "Mastermind Archetype Sets",
+        "Holds",
+        "Healing",
+        "Fear",
+        "Recharge Intensive Pets",
+        "Accurate Healing",
+        "Immobilize",
+        "Accurate Defense Debuff",
+        "Accurate To-Hit Debuff"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "Location",
+        "range_feet": 60.0
+      },
+      "target_type_tags": [
+        "Location"
+      ],
+      "display_target_type": "Location",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 3.17,
+        "animation_time": 3.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 120.0,
+        "endurance_cost": 19.5
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Create Entity"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "duration": "UntilKilled",
+              "after_delay_seconds": 0.5,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude",
+                "DoNotDisplayShift",
+                "NoTokenTime"
+              ],
+              "parameter": {
+                "create_entity": {
+                  "name": "MastermindPets_Lich",
+                  "display_name": "Lich",
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lich.Resistance",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lich.Dark_Blast",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lich.Torrent",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich/"
+                    },
+                    {
+                      "name": "Mastermind_Pets.Lich.Super_Leap",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mastermind_Summon.Necromancy.Dark_Empowerment",
+      "display_name": "Dark Empowerment",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ee/necromancy_darkempowerment.png",
+      "display_help": "Dark Empowerment will permanently bestow the most powerful and darkest new powers and abilities to all of your Undead Henchman. The Empowered Undead will gain new abilities and powers. The powers gained are unique and dependent upon the type of Undead Henchman that is Empowered. Dark Empowerment only works on your Undead Henchmen and you can only Empower your Undead Henchmen once with this power. Recharge: Moderate",
+      "display_short_help": "Ranged, Empower Undead Henchman",
+      "display_info": {
+        "Activation Time": "2.07s",
+        "Target Type": "Pet",
+        "Effect Area": "AoE — 30 ft. radius (16 targets max)",
+        "Endurance Cost": "22.75",
+        "Power Range": "30 ft.",
+        "Power Type": "Click",
+        "Recharge Time": "10s",
+        "Available Level": "32"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 16,
+        "radius_feet": 30.0,
+        "range_feet": 30.0
+      },
+      "target_type_tags": [
+        "Pet",
+        "Owned"
+      ],
+      "display_target_type": "Pet",
+      "target_auto_hit_tags": [
+        [
+          "Pet",
+          "Owned"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Pet"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.07,
+        "animation_time": 2.07,
+        "animation_time_before_hit": 0.53,
+        "recharge_time": 10.0,
+        "endurance_cost": 22.75
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Zombie"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Zombie_3.Siphon_Life",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Zombie_3.Empower",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/zombie-3/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Skeletal_Warrior"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_3.Head_Splitter",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_3.Hack",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_3.Slash",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_3.Siphon_Life",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_2.Disembowel",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_2.Hack",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_2.Slash",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Hack",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton.Slash",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_3.Costume2",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_3.Mode2",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_3.Empower",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_2.Costume1",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Skeletal_Warrior && (target>kRage > .5)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Skeleton_3.Disembowel",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/skeleton-3/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target.VillainName>MastermindPets_Lich"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lich_3.Fearsome_Stare",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lich_3.Petrifying_Gaze",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lich_3.Costume2",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lich_3.Mode2",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lich_3.Empower",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-3/"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attributes": [
+                "Revoke Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Mastermind_Pets.Lich_2.Costume1",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/mastermind-pets/lich-2/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

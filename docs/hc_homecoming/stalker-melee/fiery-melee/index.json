@@ -1,1 +1,2572 @@
-{"issue":"i26p5","source":"homecoming","extract_date":"2020-08-11T21:28:16.811569100-07:00","name":"Stalker_Melee.Fiery_Melee","display_name":"Fiery Melee","display_help":"Fiery Melee allows you to attack with fire, and even conjure up flaming melee weapons. Fiery Melee powers tend to set foes ablaze for added Damage Over Time.","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/25/fieryfray_targetedlightmelee.png","show_in_inventory":"Show","show_in_power_management":true,"show_in_power_info":true,"ordered_power_names":["Stalker_Melee.Fiery_Melee.Scorch","Stalker_Melee.Fiery_Melee.Fire_Sword","Stalker_Melee.Fiery_Melee.Cremate","Stalker_Melee.Fiery_Melee.Assassins_Blaze","Stalker_Melee.Fiery_Melee.Build_Up","Stalker_Melee.Fiery_Melee.Placate","Stalker_Melee.Fiery_Melee.Breath_of_Fire","Stalker_Melee.Fiery_Melee.Fire_Sword_Circle","Stalker_Melee.Fiery_Melee.Greater_Fire_Sword"],"powers":[{"name":"Stalker_Melee.Fiery_Melee.Scorch","display_name":"Scorch","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/25/fieryfray_targetedlightmelee.png","display_help":"This power engulfs your hands in flames, and can ignite the target of your Scorching attack. Once on fire, the target will suffer damage over time. Damage: Minor, Recharge: Very Fast","display_short_help":"Melee, Minor DMG(Fire)","display_info":{"Endurance Cost":"4.37","Activation Time":"1s","Attack Types":"Melee, Fire","Target Type":"Enemies","Power Type":"Click","Effect Area":"Single Target","Power Range":"7 ft.","Recharge Time":"3s","Available Level":"1"},"attack_types":["Melee_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Stalker Archetype Sets","Melee Damage","Universal Damage Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.0,"animation_time":1.0,"animation_time_before_hit":0.5,"recharge_time":3.0,"endurance_cost":4.37},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":46.71,"average":46.71,"per_activation":46.71,"per_cast_cycle":11.68,"display_info":["46.71 fire damage on target"],"base_value":-55.6102,"scale":0.84}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":68.82,"average":68.82,"per_activation":68.82,"per_cast_cycle":17.21,"display_info":["68.82 fire damage on target"],"base_value":-56.4121,"scale":1.22}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.1,"after_delay_seconds":0.5,"continuous_apply_seconds":0.5,"ticks":3,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":5.56,"average":10.85,"per_activation":10.85,"per_cast_cycle":2.71,"display_info":["3 ticks of 80.00% chance for 5.56 fire damage over 1.1s on target after 0.5s delay"],"base_value":-55.6102,"scale":0.1}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":7.0,"requires":["(target>enttype == critter) && (source>kMeter < .9)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","HideZero"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":46.71,"average":3.27,"per_activation":3.27,"per_cast_cycle":0.82,"display_info":["7.00% chance for 46.71 fire damage on target"],"base_value":-55.6102,"scale":0.84}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kMeter > 0) && (target>enttype == critter)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":46.71,"average":46.71,"per_activation":46.71,"per_cast_cycle":11.68,"display_info":["46.71 fire damage on target","Only if hidden or target placated"],"base_value":-55.6102,"scale":0.84}]}]},{"visible_in_info_window":true,"chance_percent":65.0,"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Assassins_Focus","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Stalker_Melee.Fiery_Melee.Fire_Sword","display_name":"Fire Sword","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/56/fieryfray_firesword.png","display_help":"Through concentration, you can create a Sword of Fire that sets foes ablaze. Successful attacks from the Fire Sword will ignite your target, dealing damage over time. Damage: Moderate, Recharge: Fast","display_short_help":"Melee, Moderate DMG(Fire/Lethal)","display_info":{"Recharge Time":"6s","Activation Time":"1.33s","Power Type":"Click","Available Level":"1","Target Type":"Enemies","Effect Area":"Single Target","Endurance Cost":"6.86","Power Range":"7 ft.","Attack Types":"Melee, Lethal, Fire"},"attack_types":["Melee_Def","Lethal_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Melee Damage","Stalker Archetype Sets"],"available_at_level":1,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.33,"animation_time":1.33,"animation_time_before_hit":0.57,"recharge_time":6.0,"endurance_cost":6.86},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":27.81,"average":27.81,"per_activation":20.91,"per_cast_cycle":3.79,"display_info":["27.81 lethal damage on target"],"base_value":-55.6102,"scale":0.5}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":45.6,"average":45.6,"per_activation":34.29,"per_cast_cycle":6.22,"display_info":["45.60 fire damage on target"],"base_value":-55.6102,"scale":0.82}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":32.79,"average":32.79,"per_activation":24.65,"per_cast_cycle":4.47,"display_info":["32.79 lethal damage on target"],"base_value":-56.4121,"scale":0.5813}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":54.95,"average":54.95,"per_activation":41.32,"per_cast_cycle":7.5,"display_info":["54.95 fire damage on target"],"base_value":-56.4121,"scale":0.974}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.6,"after_delay_seconds":0.5,"continuous_apply_seconds":0.5,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":5.56,"average":13.13,"per_activation":9.87,"per_cast_cycle":1.79,"display_info":["4 ticks of 80.00% chance for 5.56 fire damage over 1.6s on target after 0.5s delay"],"base_value":-55.6102,"scale":0.1}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":7.0,"requires":["(target>enttype == critter) && (source>kMeter < .9)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","HideZero"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":73.41,"average":5.14,"per_activation":3.86,"per_cast_cycle":0.7,"display_info":["7.00% chance for 73.41 fire damage on target"],"base_value":-55.6102,"scale":1.32}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kMeter > 0) && (target>enttype == critter)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":73.41,"average":73.41,"per_activation":55.2,"per_cast_cycle":10.02,"display_info":["73.41 fire damage on target","Only if hidden or target placated"],"base_value":-55.6102,"scale":1.32}]}]},{"visible_in_info_window":true,"chance_percent":80.0,"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Assassins_Focus","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Stalker_Melee.Fiery_Melee.Cremate","display_name":"Cremate","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/ed/fieryfray_scorch.png","display_help":"A slow but devastating attack. Cremate clobbers your foe with a massive 2 handed fiery smash that leaves your foe set on fire. Damage: High, Recharge: Moderate","display_short_help":"Melee, High DMG(Smash/Fire)","display_info":{"Recharge Time":"8s","Attack Types":"Melee, Smashing, Fire","Available Level":"2","Effect Area":"Single Target","Target Type":"Enemies","Power Range":"7 ft.","Activation Time":"1.5s","Power Type":"Click","Endurance Cost":"8.53"},"attack_types":["Melee_Def","Smashing_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Melee Damage","Universal Damage Sets","Stalker Archetype Sets"],"available_at_level":2,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.5,"animation_time":1.5,"animation_time_before_hit":0.83,"recharge_time":8.0,"endurance_cost":8.53},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":35.59,"average":35.59,"per_activation":23.73,"per_cast_cycle":3.75,"display_info":["35.59 smashing damage on target"],"base_value":-55.6102,"scale":0.64}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":55.61,"average":55.61,"per_activation":37.07,"per_cast_cycle":5.85,"display_info":["55.61 fire damage on target"],"base_value":-55.6102,"scale":1.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Smashing_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":36.94,"average":36.94,"per_activation":24.63,"per_cast_cycle":3.89,"display_info":["36.94 smashing damage on target"],"base_value":-56.4121,"scale":0.6549}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":61.91,"average":61.91,"per_activation":41.27,"per_cast_cycle":6.52,"display_info":["61.91 fire damage on target"],"base_value":-56.4121,"scale":1.0974}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.6,"after_delay_seconds":0.5,"continuous_apply_seconds":0.5,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":5.56,"average":5.56,"per_activation":3.71,"per_cast_cycle":0.59,"display_info":["4 ticks of 5.56 fire damage over 1.6s on target after 0.5s delay"],"base_value":-55.6102,"scale":0.1}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":7.0,"requires":["(target>enttype == critter) && (source>kMeter < .9)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","HideZero"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":91.2,"average":6.38,"per_activation":4.25,"per_cast_cycle":0.67,"display_info":["7.00% chance for 91.20 fire damage on target"],"base_value":-55.6102,"scale":1.64}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kMeter > 0) && (target>enttype == critter)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":91.2,"average":91.2,"per_activation":60.8,"per_cast_cycle":9.6,"display_info":["91.20 fire damage on target","Only if hidden or target placated"],"base_value":-55.6102,"scale":1.64}]}]},{"visible_in_info_window":true,"chance_percent":90.0,"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Assassins_Focus","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Stalker_Melee.Fiery_Melee.Assassins_Blaze","display_name":"Assassin's Blaze","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/da/fieryfray_assassin.png","display_help":"A signature Stalker attack. This attack does superior fire damage on its own as a frontal attack and cannot be interrupted. However, if it is executed while you are Hidden, this attack will do tremendous damage, as you waylay your unsuspecting foe. This attack may be interrupted if you move or are attacked while executing this power and are hidden. Using this power while not hidden has a chance to critically hit equal to 33.3% times the number of stacks of Assassin's Focus. Using Assassin's Blaze when not hidden will remove all stacks of Assassin's Focus regardless if you critically hit or not. Damage: Special, Recharge: Slow","display_short_help":"Melee, Special DMG(Fire)","display_info":{"Activation Time":"3.67s","Power Range":"7 ft.","Attack Types":"Melee, Smashing, Energy","Available Level":"6","Effect Area":"Single Target","Endurance Cost":"14.35","Power Type":"Click","Target Type":"Enemies","Recharge Time":"15s"},"attack_types":["Melee_Def","Smashing_Def","Energy_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Melee Damage","Stalker Archetype Sets"],"available_at_level":6,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":3.67,"animation_time":1.67,"animation_time_before_hit":0.73,"recharge_time":15.0,"interrupt_time":2.0,"endurance_cost":14.35},"effect_groups":[],"redirects":[{"name":"Villain_Pets.Fiery_Melee_Assassins_Blaze.Assassins_Blaze_Quick","fallback":false,"requires":"source>kMeter < .9","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/fiery-melee-assassins-blaze/"},{"name":"Villain_Pets.Fiery_Melee_Assassins_Blaze.Assassins_Blaze_Stealth","fallback":true,"url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/fiery-melee-assassins-blaze/"}]},{"name":"Stalker_Melee.Fiery_Melee.Build_Up","display_name":"Build Up","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/d7/fieryfray_followup.png","display_help":"Greatly increases the amount of damage you deal for a few seconds, as well as slightly increasing your chance to hit. Recharge: Long","display_short_help":"Self +DMG, +To Hit","display_info":{"Recharge Time":"1m 30s","Endurance Cost":"5.20","Power Type":"Click","Target Type":"Self","Effect Area":"Single Target","Available Level":"8","Activation Time":"1.17s"},"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance ToHit Buffs"],"enhancement_set_categories_allowed":["To Hit Buff"],"available_at_level":8,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget"},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","target_auto_hit_tags":[["Self","Alive","Dead"]],"display_target_auto_hit":["Self"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.17,"animation_time":1.17,"animation_time_before_hit":0.5,"recharge_time":90.0,"endurance_cost":5.2},"effect_groups":[{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["ToHit"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","percent":20.0,"display_info":["20.00% to hit for 10s on self","Unresistable"],"base_value":0.1,"scale":2.0}]},{"attributes":["Smashing_Dmg","Lethal_Dmg","Fire_Dmg","Cold_Dmg","Energy_Dmg","Negative_Energy_Dmg","Psionic_Dmg","Toxic_Dmg"],"applies_to":"Strength","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","percent":80.0,"display_info":["80.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self","Ignores buffs and enhancements","Unresistable"],"base_value":0.1,"scale":8.0}]}]}]},{"name":"Stalker_Melee.Fiery_Melee.Placate","display_name":"Placate","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/05/fieryfray_placate.png","display_help":"Allows you to trick a foe to no longer attack you. A Successful Placate will also Hide you. This Hide is very brief, and offers no Defense bonus, but it will allow you to deliver a Critical Hit or an Assassins Strike. However, if you attack a Placated Foe, he will be able to attack you back. Recharge: Slow","display_short_help":"Ranged, Foe Placate, Self Stealth/Hide","display_info":{"Power Type":"Click","Aggro Type":"Enemies will not notice this attack","Activation Time":"1.5s","Target Type":"Enemies","Recharge Time":"1m 0s","Effect Area":"Single Target","Available Level":"12","Power Range":"50 ft."},"enhancements_allowed":["Enhance Range","Enhance Recharge Speed"],"available_at_level":12,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"SingleTarget","range_feet":50.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","target_auto_hit_tags":[["Foe"]],"display_target_auto_hit":["Enemies"],"requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":1.5,"animation_time":1.5,"animation_time_before_hit":0.5,"recharge_time":60.0,"endurance_cost":0.0},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Placate"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","duration_seconds":20.5,"display_info":["4.0 placate for 20.5s on target"],"base_value":2.05,"scale":10.0}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Placate"],"applies_to":"AbsoluteValue","application_type":"OnTick","target_type":"Affected","magnitude":4.0,"duration":"InSecondsScaled","flags":["ResistDuration","CombatModDuration"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","duration_seconds":12.3,"display_info":["4.0 placate for 12.3s on target"],"base_value":2.05,"scale":6.0}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["StealthRadius_PVE"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"after_delay_seconds":0.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Stalker","percent":15000.0,"display_info":["15000.00% stealth radius for 10s on self after 0.25s delay","Unresistable"],"base_value":1.0,"scale":150.0}]},{"attributes":["StealthRadius_PVP"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"after_delay_seconds":0.25,"flags":["IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Stalker","percent":38000.0,"display_info":["38000.00% stealth radius for 10s on self after 0.25s delay","Unresistable"],"base_value":1.0,"scale":380.0}]},{"attributes":["Meter"],"applies_to":"CurrentValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","magnitude":1.0,"duration":"InSeconds","duration_seconds":10.0,"after_delay_seconds":0.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true},"scaled":[{"archetype":"Stalker","value":1.0,"display_info":["1.00 (unknown) for 10s on self after 0.25s delay","Ignores buffs and enhancements","Unresistable"],"base_value":1.0,"scale":1.0}]},{"attributes":["Translucency"],"applies_to":"Special","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Self","duration":"InSeconds","duration_seconds":10.0,"after_delay_seconds":0.25,"flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"stacking":{"behavior":"Replace","by_caster":true}}]}]},{"name":"Stalker_Melee.Fiery_Melee.Breath_of_Fire","display_name":"Breath of Fire","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/eb/fieryfray_breathingfire.png","display_help":"This allows you to spew forth fire from your mouth, burning all foes within its narrow cone. This is a very accurate attack that can deal good damage at a close range. Damage: Moderate(DoT), Recharge: Moderate","display_short_help":"Close (Cone) Moderate DoT(Fire)","display_info":{"Endurance Cost":"10.19","Effect Area":"Cone — 15 ft. radius 30° arc (10 targets max)","Recharge Time":"10s","Activation Time":"2.67s","Attack Types":"Area, Fire","Available Level":"18","Power Range":"15 ft.","Power Type":"Click","Target Type":"Enemies"},"attack_types":["Area_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Range","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","Targeted AoE Damage","Stalker Archetype Sets"],"available_at_level":18,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"Cone","max_targets_hit":10,"radius_feet":15.0,"arc_degrees":30.0,"range_feet":15.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.67,"animation_time":2.67,"animation_time_before_hit":1.17,"recharge_time":10.0,"endurance_cost":10.19},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":100.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":0.6,"continuous_apply_seconds":0.5,"ticks":2,"flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":37.81,"average":37.81,"per_activation":14.16,"per_cast_cycle":2.98,"display_info":["2 ticks of 37.81 fire damage over 0.6s on target"],"base_value":-55.6102,"scale":0.68}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.6,"after_delay_seconds":1.0,"continuous_apply_seconds":0.5,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":5.56,"average":13.13,"per_activation":4.92,"per_cast_cycle":1.04,"display_info":["4 ticks of 80.00% chance for 5.56 fire damage over 1.6s on target after 1s delay"],"base_value":-55.6102,"scale":0.1}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":52.28,"average":52.28,"per_activation":19.58,"per_cast_cycle":4.13,"display_info":["52.28 fire damage on target"],"base_value":-56.4121,"scale":0.9267}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":7.0,"requires":["(target>enttype == critter) && (source>kMeter < .9)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","HideZero"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":60.06,"average":4.2,"per_activation":1.57,"per_cast_cycle":0.33,"display_info":["7.00% chance for 60.06 fire damage on target"],"base_value":-55.6102,"scale":1.08}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":50.0,"requires":["(source>kMeter > 0) && (target>enttype == critter)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":60.06,"average":30.03,"per_activation":11.25,"per_cast_cycle":2.37,"display_info":["50.00% chance for 60.06 fire damage on target","Only if hidden or target placated"],"base_value":-55.6102,"scale":1.08}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Assassins_Focus","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Stalker_Melee.Fiery_Melee.Fire_Sword_Circle","display_name":"Fire Sword Circle","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/e6/fieryfray_fireswordcircle.png","display_help":"Mastery of your Fire Sword has enabled you to make an attack on every foe within melee distance. This will slash and burn your enemies, dealing minor damage and setting them ablaze. Damage: Moderate, Recharge: Slow","display_short_help":"PBAoE Melee, Moderate DMG(Fire/Lethal)","display_info":{"Activation Time":"2.67s","Available Level":"26","Power Type":"Click","Attack Types":"Melee, Fire, Lethal","Recharge Time":"20s","Endurance Cost":"18.51","Effect Area":"AoE — 10 ft. radius (10 targets max)","Target Type":"Self"},"attack_types":["Melee_Def","Fire_Def","Lethal_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Universal Damage Sets","PBAoE Damage","Stalker Archetype Sets"],"available_at_level":26,"auto_issue":false,"power_type":"Click","accuracy":1.0,"effect_area":{"area":"AoE","max_targets_hit":10,"radius_feet":10.0},"target_type_tags":["Self","Alive","Dead"],"display_target_type":"Self","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.67,"animation_time":2.67,"animation_time_before_hit":1.2,"recharge_time":20.0,"endurance_cost":18.51},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":43.1,"average":43.1,"per_activation":16.14,"per_cast_cycle":1.9,"display_info":["43.10 lethal damage on target"],"base_value":-55.6102,"scale":0.775}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":43.1,"average":43.1,"per_activation":16.14,"per_cast_cycle":1.9,"display_info":["43.10 fire damage on target"],"base_value":-55.6102,"scale":0.775}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":49.46,"average":49.46,"per_activation":18.52,"per_cast_cycle":2.18,"display_info":["49.46 lethal damage on target"],"base_value":-56.4121,"scale":0.8768}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":49.46,"average":49.46,"per_activation":18.52,"per_cast_cycle":2.18,"display_info":["49.46 fire damage on target"],"base_value":-56.4121,"scale":0.8768}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":1.6,"after_delay_seconds":0.5,"continuous_apply_seconds":0.5,"ticks":4,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":5.56,"average":13.13,"per_activation":4.92,"per_cast_cycle":0.58,"display_info":["4 ticks of 80.00% chance for 5.56 fire damage over 1.6s on target after 0.5s delay"],"base_value":-55.6102,"scale":0.1}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":7.0,"requires":["(target>enttype == critter) && (source>kMeter < .9)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","HideZero"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":86.2,"average":6.03,"per_activation":2.26,"per_cast_cycle":0.27,"display_info":["7.00% chance for 86.20 fire damage on target"],"base_value":-55.6102,"scale":1.55}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":50.0,"requires":["(source>kMeter > 0) && (target>enttype == critter)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":86.2,"average":43.1,"per_activation":16.14,"per_cast_cycle":1.9,"display_info":["50.00% chance for 86.20 fire damage on target","Only if hidden or target placated"],"base_value":-55.6102,"scale":1.55}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Assassins_Focus","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]}]},{"name":"Stalker_Melee.Fiery_Melee.Greater_Fire_Sword","display_name":"Greater Fire Sword","icon":"https://reborn-team.github.io/PowersAPI/assets/powers/23/fieryfray_greaterfiresword.png","display_help":"Your mastery of fire allows you to create an enhanced Sword of Fire that can set foes ablaze. Successful attacks from the Greater Fire Sword will ignite your target, dealing damage over time. Damage: Superior, Recharge: Slow","display_short_help":"Melee, Superior DMG(Fire/Lethal)","display_info":{"Available Level":"32","Recharge Time":"13s","Power Type":"Click","Effect Area":"Single Target","Target Type":"Enemies","Endurance Cost":"12.69","Activation Time":"2.33s","Power Range":"7 ft.","Attack Types":"Melee, Lethal, Fire"},"attack_types":["Melee_Def","Lethal_Def","Fire_Def"],"enhancements_allowed":["Reduce Endurance Cost","Enhance Recharge Speed","Enhance Damage","Enhance Accuracy"],"enhancement_set_categories_allowed":["Melee Damage","Stalker Archetype Sets","Universal Damage Sets"],"available_at_level":32,"auto_issue":false,"power_type":"Click","accuracy":1.2,"effect_area":{"area":"SingleTarget","range_feet":7.0},"target_type_tags":["Foe"],"display_target_type":"Enemies","requires_line_of_sight":true,"modes_disallowed":["Disable_All"],"activate":{"cast_time":2.33,"animation_time":2.33,"animation_time_before_hit":1.23,"recharge_time":13.0,"endurance_cost":12.69},"effect_groups":[{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == critter"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":50.05,"average":50.05,"per_activation":21.48,"per_cast_cycle":3.26,"display_info":["50.05 lethal damage on target"],"base_value":-55.6102,"scale":0.9}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":85.64,"average":85.64,"per_activation":36.76,"per_cast_cycle":5.59,"display_info":["85.64 fire damage on target"],"base_value":-55.6102,"scale":1.54}]}]},{"pve_or_pvp":"PVP","visible_in_info_window":true,"chance_percent":100.0,"requires":["target>enttype == player"],"effects":[{"attributes":["Lethal_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":53.24,"average":53.24,"per_activation":22.85,"per_cast_cycle":3.47,"display_info":["53.24 lethal damage on target"],"base_value":-56.4121,"scale":0.9438}]},{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":89.22,"average":89.22,"per_activation":38.29,"per_cast_cycle":5.82,"display_info":["89.22 fire damage on target"],"base_value":-56.4121,"scale":1.5816}]}]},{"visible_in_info_window":true,"chance_percent":100.0,"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"OnTick","tick_chance_percent":80.0,"target_type":"Affected","magnitude":1.0,"duration":"InSeconds","duration_seconds":2.1,"after_delay_seconds":0.5,"continuous_apply_seconds":0.5,"ticks":5,"flags":["CancelOnMiss","ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":11.12,"average":29.9,"per_activation":12.83,"per_cast_cycle":1.95,"display_info":["5 ticks of 80.00% chance for 11.12 fire damage over 2.1s on target after 0.5s delay"],"base_value":-55.6102,"scale":0.2}]},{"attributes":["Grant Power"],"applies_to":"Special","application_type":"Immediate","target_type":"Self","duration":"Instant","flags":["IgnoreStrength","IgnoreResistance","CombatModMagnitude"],"parameter":{"power":{"powers":[{"name":"Temporary_Powers.Temporary_Powers.Assassins_Focus","url":"https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"}]}}}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":7.0,"requires":["(target>enttype == critter) && (source>kMeter < .9)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude","HideZero"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":135.69,"average":9.5,"per_activation":4.08,"per_cast_cycle":0.62,"display_info":["7.00% chance for 135.69 fire damage on target"],"base_value":-55.6102,"scale":2.44}]}]},{"pve_or_pvp":"PVE","visible_in_info_window":true,"chance_percent":100.0,"requires":["(source>kMeter > 0) && (target>enttype == critter)"],"effects":[{"attributes":["Fire_Dmg"],"applies_to":"AbsoluteValue","application_type":"Immediate","target_type":"Affected","magnitude":1.0,"duration":"Instant","flags":["ResistMagnitude","CombatModMagnitude"],"stacking":{"behavior":"Stack","by_caster":true},"scaled":[{"archetype":"Stalker","damage":135.69,"average":135.69,"per_activation":58.24,"per_cast_cycle":8.85,"display_info":["135.69 fire damage on target","Only if hidden or target placated"],"base_value":-55.6102,"scale":2.44}]}]}]}]}
+{
+  "issue": "i26p5",
+  "source": "homecoming",
+  "extract_date": "2020-08-11T21:52:57.192132400-07:00",
+  "name": "Stalker_Melee.Fiery_Melee",
+  "display_name": "Fiery Melee",
+  "display_help": "Fiery Melee allows you to attack with fire, and even conjure up flaming melee weapons. Fiery Melee powers tend to set foes ablaze for added Damage Over Time.",
+  "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/25/fieryfray_targetedlightmelee.png",
+  "show_in_inventory": "Show",
+  "show_in_power_management": true,
+  "show_in_power_info": true,
+  "ordered_power_names": [
+    "Stalker_Melee.Fiery_Melee.Scorch",
+    "Stalker_Melee.Fiery_Melee.Fire_Sword",
+    "Stalker_Melee.Fiery_Melee.Cremate",
+    "Stalker_Melee.Fiery_Melee.Assassins_Blaze",
+    "Stalker_Melee.Fiery_Melee.Build_Up",
+    "Stalker_Melee.Fiery_Melee.Placate",
+    "Stalker_Melee.Fiery_Melee.Breath_of_Fire",
+    "Stalker_Melee.Fiery_Melee.Fire_Sword_Circle",
+    "Stalker_Melee.Fiery_Melee.Greater_Fire_Sword"
+  ],
+  "powers": [
+    {
+      "name": "Stalker_Melee.Fiery_Melee.Scorch",
+      "display_name": "Scorch",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/25/fieryfray_targetedlightmelee.png",
+      "display_help": "This power engulfs your hands in flames, and can ignite the target of your Scorching attack. Once on fire, the target will suffer damage over time. Damage: Minor, Recharge: Very Fast",
+      "display_short_help": "Melee, Minor DMG(Fire)",
+      "display_info": {
+        "Endurance Cost": "4.37",
+        "Recharge Time": "3s",
+        "Power Type": "Click",
+        "Effect Area": "Single Target",
+        "Activation Time": "1s",
+        "Target Type": "Enemies",
+        "Power Range": "7 ft.",
+        "Attack Types": "Melee, Fire",
+        "Available Level": "1"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Universal Damage Sets",
+        "Melee Damage",
+        "Stalker Archetype Sets"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.0,
+        "animation_time": 1.0,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 3.0,
+        "endurance_cost": 4.37
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 46.71,
+                  "average": 46.71,
+                  "per_activation": 46.71,
+                  "per_cast_cycle": 11.68,
+                  "display_info": [
+                    "46.71 fire damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 68.82,
+                  "average": 68.82,
+                  "per_activation": 68.82,
+                  "per_cast_cycle": 17.21,
+                  "display_info": [
+                    "68.82 fire damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.22
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 3,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 5.56,
+                  "average": 10.85,
+                  "per_activation": 10.85,
+                  "per_cast_cycle": 2.71,
+                  "display_info": [
+                    "3 ticks of 80.00% chance for 5.56 fire damage over 1.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 7.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter < .9)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "HideZero"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 46.71,
+                  "average": 3.27,
+                  "per_activation": 3.27,
+                  "per_cast_cycle": 0.82,
+                  "display_info": [
+                    "7.00% chance for 46.71 fire damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 46.71,
+                  "average": 46.71,
+                  "per_activation": 46.71,
+                  "per_cast_cycle": 11.68,
+                  "display_info": [
+                    "46.71 fire damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.84
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 65.0,
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Assassins_Focus",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Fiery_Melee.Fire_Sword",
+      "display_name": "Fire Sword",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/56/fieryfray_firesword.png",
+      "display_help": "Through concentration, you can create a Sword of Fire that sets foes ablaze. Successful attacks from the Fire Sword will ignite your target, dealing damage over time. Damage: Moderate, Recharge: Fast",
+      "display_short_help": "Melee, Moderate DMG(Fire/Lethal)",
+      "display_info": {
+        "Target Type": "Enemies",
+        "Power Range": "7 ft.",
+        "Effect Area": "Single Target",
+        "Activation Time": "1.33s",
+        "Recharge Time": "6s",
+        "Available Level": "1",
+        "Endurance Cost": "6.86",
+        "Power Type": "Click",
+        "Attack Types": "Melee, Lethal, Fire"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Stalker Archetype Sets",
+        "Universal Damage Sets",
+        "Melee Damage"
+      ],
+      "available_at_level": 1,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.33,
+        "animation_time": 1.33,
+        "animation_time_before_hit": 0.57,
+        "recharge_time": 6.0,
+        "endurance_cost": 6.86
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 27.81,
+                  "average": 27.81,
+                  "per_activation": 20.91,
+                  "per_cast_cycle": 3.79,
+                  "display_info": [
+                    "27.81 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.5
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 45.6,
+                  "average": 45.6,
+                  "per_activation": 34.29,
+                  "per_cast_cycle": 6.22,
+                  "display_info": [
+                    "45.60 fire damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.82
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 32.79,
+                  "average": 32.79,
+                  "per_activation": 24.65,
+                  "per_cast_cycle": 4.47,
+                  "display_info": [
+                    "32.79 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.5813
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 54.95,
+                  "average": 54.95,
+                  "per_activation": 41.32,
+                  "per_cast_cycle": 7.5,
+                  "display_info": [
+                    "54.95 fire damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.974
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.6,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 5.56,
+                  "average": 13.13,
+                  "per_activation": 9.87,
+                  "per_cast_cycle": 1.79,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 5.56 fire damage over 1.6s on target after 0.5s delay"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 7.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter < .9)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "HideZero"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 73.41,
+                  "average": 5.14,
+                  "per_activation": 3.86,
+                  "per_cast_cycle": 0.7,
+                  "display_info": [
+                    "7.00% chance for 73.41 fire damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.32
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 73.41,
+                  "average": 73.41,
+                  "per_activation": 55.2,
+                  "per_cast_cycle": 10.02,
+                  "display_info": [
+                    "73.41 fire damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.32
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 80.0,
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Assassins_Focus",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Fiery_Melee.Cremate",
+      "display_name": "Cremate",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/ed/fieryfray_scorch.png",
+      "display_help": "A slow but devastating attack. Cremate clobbers your foe with a massive 2 handed fiery smash that leaves your foe set on fire. Damage: High, Recharge: Moderate",
+      "display_short_help": "Melee, High DMG(Smash/Fire)",
+      "display_info": {
+        "Activation Time": "1.5s",
+        "Power Range": "7 ft.",
+        "Target Type": "Enemies",
+        "Power Type": "Click",
+        "Available Level": "2",
+        "Effect Area": "Single Target",
+        "Endurance Cost": "8.53",
+        "Attack Types": "Melee, Smashing, Fire",
+        "Recharge Time": "8s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "Stalker Archetype Sets",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 2,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.5,
+        "animation_time": 1.5,
+        "animation_time_before_hit": 0.83,
+        "recharge_time": 8.0,
+        "endurance_cost": 8.53
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 35.59,
+                  "average": 35.59,
+                  "per_activation": 23.73,
+                  "per_cast_cycle": 3.75,
+                  "display_info": [
+                    "35.59 smashing damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.64
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 55.61,
+                  "average": 55.61,
+                  "per_activation": 37.07,
+                  "per_cast_cycle": 5.85,
+                  "display_info": [
+                    "55.61 fire damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Smashing_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 36.94,
+                  "average": 36.94,
+                  "per_activation": 24.63,
+                  "per_cast_cycle": 3.89,
+                  "display_info": [
+                    "36.94 smashing damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.6549
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 61.91,
+                  "average": 61.91,
+                  "per_activation": 41.27,
+                  "per_cast_cycle": 6.52,
+                  "display_info": [
+                    "61.91 fire damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.0974
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.6,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 5.56,
+                  "average": 5.56,
+                  "per_activation": 3.71,
+                  "per_cast_cycle": 0.59,
+                  "display_info": [
+                    "4 ticks of 5.56 fire damage over 1.6s on target after 0.5s delay"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 7.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter < .9)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "HideZero"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 91.2,
+                  "average": 6.38,
+                  "per_activation": 4.25,
+                  "per_cast_cycle": 0.67,
+                  "display_info": [
+                    "7.00% chance for 91.20 fire damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.64
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 91.2,
+                  "average": 91.2,
+                  "per_activation": 60.8,
+                  "per_cast_cycle": 9.6,
+                  "display_info": [
+                    "91.20 fire damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.64
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 90.0,
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Assassins_Focus",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Fiery_Melee.Assassins_Blaze",
+      "display_name": "Assassin's Blaze",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/da/fieryfray_assassin.png",
+      "display_help": "A signature Stalker attack. This attack does superior fire damage on its own as a frontal attack and cannot be interrupted. However, if it is executed while you are Hidden, this attack will do tremendous damage, as you waylay your unsuspecting foe. This attack may be interrupted if you move or are attacked while executing this power and are hidden. Using this power while not hidden has a chance to critically hit equal to 33.3% times the number of stacks of Assassin's Focus. Using Assassin's Blaze when not hidden will remove all stacks of Assassin's Focus regardless if you critically hit or not. Damage: Special, Recharge: Slow",
+      "display_short_help": "Melee, Special DMG(Fire)",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Power Type": "Click",
+        "Endurance Cost": "14.35",
+        "Activation Time": "3.67s",
+        "Power Range": "7 ft.",
+        "Attack Types": "Melee, Smashing, Energy",
+        "Available Level": "6",
+        "Target Type": "Enemies",
+        "Recharge Time": "15s"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Smashing_Def",
+        "Energy_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Stalker Archetype Sets",
+        "Universal Damage Sets",
+        "Melee Damage"
+      ],
+      "available_at_level": 6,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 3.67,
+        "animation_time": 1.67,
+        "animation_time_before_hit": 0.73,
+        "recharge_time": 15.0,
+        "interrupt_time": 2.0,
+        "endurance_cost": 14.35
+      },
+      "effect_groups": [],
+      "redirects": [
+        {
+          "name": "Villain_Pets.Fiery_Melee_Assassins_Blaze.Assassins_Blaze_Quick",
+          "fallback": false,
+          "requires": "source>kMeter < .9",
+          "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/fiery-melee-assassins-blaze/"
+        },
+        {
+          "name": "Villain_Pets.Fiery_Melee_Assassins_Blaze.Assassins_Blaze_Stealth",
+          "fallback": true,
+          "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/villain-pets/fiery-melee-assassins-blaze/"
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Fiery_Melee.Build_Up",
+      "display_name": "Build Up",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/d7/fieryfray_followup.png",
+      "display_help": "Greatly increases the amount of damage you deal for a few seconds, as well as slightly increasing your chance to hit. Recharge: Long",
+      "display_short_help": "Self +DMG, +To Hit",
+      "display_info": {
+        "Effect Area": "Single Target",
+        "Available Level": "8",
+        "Activation Time": "1.17s",
+        "Recharge Time": "1m 30s",
+        "Endurance Cost": "5.20",
+        "Target Type": "Self",
+        "Power Type": "Click"
+      },
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance ToHit Buffs"
+      ],
+      "enhancement_set_categories_allowed": [
+        "To Hit Buff"
+      ],
+      "available_at_level": 8,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget"
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "target_auto_hit_tags": [
+        [
+          "Self",
+          "Alive",
+          "Dead"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Self"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.17,
+        "animation_time": 1.17,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 90.0,
+        "endurance_cost": 5.2
+      },
+      "effect_groups": [
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "ToHit"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": 20.0,
+                  "display_info": [
+                    "20.00% to hit for 10s on self",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 2.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Smashing_Dmg",
+                "Lethal_Dmg",
+                "Fire_Dmg",
+                "Cold_Dmg",
+                "Energy_Dmg",
+                "Negative_Energy_Dmg",
+                "Psionic_Dmg",
+                "Toxic_Dmg"
+              ],
+              "applies_to": "Strength",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": 80.0,
+                  "display_info": [
+                    "80.00% strength to smashing damage, lethal damage, fire damage, cold damage, energy damage, negative energy damage, psionic damage, toxic damage for 10s on self",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 0.1,
+                  "scale": 8.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Fiery_Melee.Placate",
+      "display_name": "Placate",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/05/fieryfray_placate.png",
+      "display_help": "Allows you to trick a foe to no longer attack you. A Successful Placate will also Hide you. This Hide is very brief, and offers no Defense bonus, but it will allow you to deliver a Critical Hit or an Assassins Strike. However, if you attack a Placated Foe, he will be able to attack you back. Recharge: Slow",
+      "display_short_help": "Ranged, Foe Placate, Self Stealth/Hide",
+      "display_info": {
+        "Power Type": "Click",
+        "Power Range": "50 ft.",
+        "Aggro Type": "Enemies will not notice this attack",
+        "Available Level": "12",
+        "Recharge Time": "1m 0s",
+        "Activation Time": "1.5s",
+        "Target Type": "Enemies",
+        "Effect Area": "Single Target"
+      },
+      "enhancements_allowed": [
+        "Enhance Range",
+        "Enhance Recharge Speed"
+      ],
+      "available_at_level": 12,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 50.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "target_auto_hit_tags": [
+        [
+          "Foe"
+        ]
+      ],
+      "display_target_auto_hit": [
+        "Enemies"
+      ],
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 1.5,
+        "animation_time": 1.5,
+        "animation_time_before_hit": 0.5,
+        "recharge_time": 60.0,
+        "endurance_cost": 0.0
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Placate"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "duration_seconds": 20.5,
+                  "display_info": [
+                    "4.0 placate for 20.5s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 10.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Placate"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "target_type": "Affected",
+              "magnitude": 4.0,
+              "duration": "InSecondsScaled",
+              "flags": [
+                "ResistDuration",
+                "CombatModDuration"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "duration_seconds": 12.3,
+                  "display_info": [
+                    "4.0 placate for 12.3s on target"
+                  ],
+                  "base_value": 2.05,
+                  "scale": 6.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "StealthRadius_PVE"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": 15000.0,
+                  "display_info": [
+                    "15000.00% stealth radius for 10s on self after 0.25s delay",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 150.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "StealthRadius_PVP"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "percent": 38000.0,
+                  "display_info": [
+                    "38000.00% stealth radius for 10s on self after 0.25s delay",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 380.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Meter"
+              ],
+              "applies_to": "CurrentValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "value": 1.0,
+                  "display_info": [
+                    "1.00 (unknown) for 10s on self after 0.25s delay",
+                    "Ignores buffs and enhancements",
+                    "Unresistable"
+                  ],
+                  "base_value": 1.0,
+                  "scale": 1.0
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Translucency"
+              ],
+              "applies_to": "Special",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Self",
+              "duration": "InSeconds",
+              "duration_seconds": 10.0,
+              "after_delay_seconds": 0.25,
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Replace",
+                "by_caster": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Fiery_Melee.Breath_of_Fire",
+      "display_name": "Breath of Fire",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/eb/fieryfray_breathingfire.png",
+      "display_help": "This allows you to spew forth fire from your mouth, burning all foes within its narrow cone. This is a very accurate attack that can deal good damage at a close range. Damage: Moderate(DoT), Recharge: Moderate",
+      "display_short_help": "Close (Cone) Moderate DoT(Fire)",
+      "display_info": {
+        "Power Type": "Click",
+        "Attack Types": "Area, Fire",
+        "Target Type": "Enemies",
+        "Recharge Time": "10s",
+        "Power Range": "15 ft.",
+        "Activation Time": "2.67s",
+        "Effect Area": "Cone — 15 ft. radius 30° arc (10 targets max)",
+        "Endurance Cost": "10.19",
+        "Available Level": "18"
+      },
+      "attack_types": [
+        "Area_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Range",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Targeted AoE Damage",
+        "Stalker Archetype Sets",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 18,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "Cone",
+        "max_targets_hit": 10,
+        "radius_feet": 15.0,
+        "arc_degrees": 30.0,
+        "range_feet": 15.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.67,
+        "animation_time": 2.67,
+        "animation_time_before_hit": 1.17,
+        "recharge_time": 10.0,
+        "endurance_cost": 10.19
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 100.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 0.6,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 2,
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 37.81,
+                  "average": 37.81,
+                  "per_activation": 14.16,
+                  "per_cast_cycle": 2.98,
+                  "display_info": [
+                    "2 ticks of 37.81 fire damage over 0.6s on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.68
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.6,
+              "after_delay_seconds": 1.0,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 5.56,
+                  "average": 13.13,
+                  "per_activation": 4.92,
+                  "per_cast_cycle": 1.04,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 5.56 fire damage over 1.6s on target after 1s delay"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 52.28,
+                  "average": 52.28,
+                  "per_activation": 19.58,
+                  "per_cast_cycle": 4.13,
+                  "display_info": [
+                    "52.28 fire damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.9267
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 7.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter < .9)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "HideZero"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 60.06,
+                  "average": 4.2,
+                  "per_activation": 1.57,
+                  "per_cast_cycle": 0.33,
+                  "display_info": [
+                    "7.00% chance for 60.06 fire damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.08
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 60.06,
+                  "average": 30.03,
+                  "per_activation": 11.25,
+                  "per_cast_cycle": 2.37,
+                  "display_info": [
+                    "50.00% chance for 60.06 fire damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.08
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Assassins_Focus",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Fiery_Melee.Fire_Sword_Circle",
+      "display_name": "Fire Sword Circle",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/e6/fieryfray_fireswordcircle.png",
+      "display_help": "Mastery of your Fire Sword has enabled you to make an attack on every foe within melee distance. This will slash and burn your enemies, dealing minor damage and setting them ablaze. Damage: Moderate, Recharge: Slow",
+      "display_short_help": "PBAoE Melee, Moderate DMG(Fire/Lethal)",
+      "display_info": {
+        "Effect Area": "AoE — 10 ft. radius (10 targets max)",
+        "Attack Types": "Melee, Fire, Lethal",
+        "Power Type": "Click",
+        "Activation Time": "2.67s",
+        "Available Level": "26",
+        "Endurance Cost": "18.51",
+        "Recharge Time": "20s",
+        "Target Type": "Self"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Fire_Def",
+        "Lethal_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Stalker Archetype Sets",
+        "Universal Damage Sets",
+        "PBAoE Damage"
+      ],
+      "available_at_level": 26,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.0,
+      "effect_area": {
+        "area": "AoE",
+        "max_targets_hit": 10,
+        "radius_feet": 10.0
+      },
+      "target_type_tags": [
+        "Self",
+        "Alive",
+        "Dead"
+      ],
+      "display_target_type": "Self",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.67,
+        "animation_time": 2.67,
+        "animation_time_before_hit": 1.2,
+        "recharge_time": 20.0,
+        "endurance_cost": 18.51
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 43.1,
+                  "average": 43.1,
+                  "per_activation": 16.14,
+                  "per_cast_cycle": 1.9,
+                  "display_info": [
+                    "43.10 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.775
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 43.1,
+                  "average": 43.1,
+                  "per_activation": 16.14,
+                  "per_cast_cycle": 1.9,
+                  "display_info": [
+                    "43.10 fire damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.775
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 49.46,
+                  "average": 49.46,
+                  "per_activation": 18.52,
+                  "per_cast_cycle": 2.18,
+                  "display_info": [
+                    "49.46 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.8768
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 49.46,
+                  "average": 49.46,
+                  "per_activation": 18.52,
+                  "per_cast_cycle": 2.18,
+                  "display_info": [
+                    "49.46 fire damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.8768
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 1.6,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 4,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 5.56,
+                  "average": 13.13,
+                  "per_activation": 4.92,
+                  "per_cast_cycle": 0.58,
+                  "display_info": [
+                    "4 ticks of 80.00% chance for 5.56 fire damage over 1.6s on target after 0.5s delay"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 7.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter < .9)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "HideZero"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 86.2,
+                  "average": 6.03,
+                  "per_activation": 2.26,
+                  "per_cast_cycle": 0.27,
+                  "display_info": [
+                    "7.00% chance for 86.20 fire damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.55
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 50.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 86.2,
+                  "average": 43.1,
+                  "per_activation": 16.14,
+                  "per_cast_cycle": 1.9,
+                  "display_info": [
+                    "50.00% chance for 86.20 fire damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.55
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Assassins_Focus",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalker_Melee.Fiery_Melee.Greater_Fire_Sword",
+      "display_name": "Greater Fire Sword",
+      "icon": "https://reborn-team.github.io/PowersAPI/assets/powers/23/fieryfray_greaterfiresword.png",
+      "display_help": "Your mastery of fire allows you to create an enhanced Sword of Fire that can set foes ablaze. Successful attacks from the Greater Fire Sword will ignite your target, dealing damage over time. Damage: Superior, Recharge: Slow",
+      "display_short_help": "Melee, Superior DMG(Fire/Lethal)",
+      "display_info": {
+        "Available Level": "32",
+        "Effect Area": "Single Target",
+        "Power Range": "7 ft.",
+        "Target Type": "Enemies",
+        "Recharge Time": "13s",
+        "Attack Types": "Melee, Lethal, Fire",
+        "Endurance Cost": "12.69",
+        "Activation Time": "2.33s",
+        "Power Type": "Click"
+      },
+      "attack_types": [
+        "Melee_Def",
+        "Lethal_Def",
+        "Fire_Def"
+      ],
+      "enhancements_allowed": [
+        "Reduce Endurance Cost",
+        "Enhance Recharge Speed",
+        "Enhance Damage",
+        "Enhance Accuracy"
+      ],
+      "enhancement_set_categories_allowed": [
+        "Melee Damage",
+        "Stalker Archetype Sets",
+        "Universal Damage Sets"
+      ],
+      "available_at_level": 32,
+      "auto_issue": false,
+      "power_type": "Click",
+      "accuracy": 1.2,
+      "effect_area": {
+        "area": "SingleTarget",
+        "range_feet": 7.0
+      },
+      "target_type_tags": [
+        "Foe"
+      ],
+      "display_target_type": "Enemies",
+      "requires_line_of_sight": true,
+      "modes_disallowed": [
+        "Disable_All"
+      ],
+      "activate": {
+        "cast_time": 2.33,
+        "animation_time": 2.33,
+        "animation_time_before_hit": 1.23,
+        "recharge_time": 13.0,
+        "endurance_cost": 12.69
+      },
+      "effect_groups": [
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == critter"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 50.05,
+                  "average": 50.05,
+                  "per_activation": 21.48,
+                  "per_cast_cycle": 3.26,
+                  "display_info": [
+                    "50.05 lethal damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.9
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 85.64,
+                  "average": 85.64,
+                  "per_activation": 36.76,
+                  "per_cast_cycle": 5.59,
+                  "display_info": [
+                    "85.64 fire damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 1.54
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVP",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "target>enttype == player"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Lethal_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 53.24,
+                  "average": 53.24,
+                  "per_activation": 22.85,
+                  "per_cast_cycle": 3.47,
+                  "display_info": [
+                    "53.24 lethal damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 0.9438
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 89.22,
+                  "average": 89.22,
+                  "per_activation": 38.29,
+                  "per_cast_cycle": 5.82,
+                  "display_info": [
+                    "89.22 fire damage on target"
+                  ],
+                  "base_value": -56.4121,
+                  "scale": 1.5816
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "OnTick",
+              "tick_chance_percent": 80.0,
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "InSeconds",
+              "duration_seconds": 2.1,
+              "after_delay_seconds": 0.5,
+              "continuous_apply_seconds": 0.5,
+              "ticks": 5,
+              "flags": [
+                "CancelOnMiss",
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 11.12,
+                  "average": 29.9,
+                  "per_activation": 12.83,
+                  "per_cast_cycle": 1.95,
+                  "display_info": [
+                    "5 ticks of 80.00% chance for 11.12 fire damage over 2.1s on target after 0.5s delay"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 0.2
+                }
+              ]
+            },
+            {
+              "attributes": [
+                "Grant Power"
+              ],
+              "applies_to": "Special",
+              "application_type": "Immediate",
+              "target_type": "Self",
+              "duration": "Instant",
+              "flags": [
+                "IgnoreStrength",
+                "IgnoreResistance",
+                "CombatModMagnitude"
+              ],
+              "parameter": {
+                "power": {
+                  "powers": [
+                    {
+                      "name": "Temporary_Powers.Temporary_Powers.Assassins_Focus",
+                      "url": "https://reborn-team.github.io/PowersAPI/hc_homecoming/temporary-powers/temporary-powers/"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 7.0,
+          "requires": [
+            "(target>enttype == critter) && (source>kMeter < .9)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude",
+                "HideZero"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 135.69,
+                  "average": 9.5,
+                  "per_activation": 4.08,
+                  "per_cast_cycle": 0.62,
+                  "display_info": [
+                    "7.00% chance for 135.69 fire damage on target"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 2.44
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pve_or_pvp": "PVE",
+          "visible_in_info_window": true,
+          "chance_percent": 100.0,
+          "requires": [
+            "(source>kMeter > 0) && (target>enttype == critter)"
+          ],
+          "effects": [
+            {
+              "attributes": [
+                "Fire_Dmg"
+              ],
+              "applies_to": "AbsoluteValue",
+              "application_type": "Immediate",
+              "target_type": "Affected",
+              "magnitude": 1.0,
+              "duration": "Instant",
+              "flags": [
+                "ResistMagnitude",
+                "CombatModMagnitude"
+              ],
+              "stacking": {
+                "behavior": "Stack",
+                "by_caster": true
+              },
+              "scaled": [
+                {
+                  "archetype": "Stalker",
+                  "damage": 135.69,
+                  "average": 135.69,
+                  "per_activation": 58.24,
+                  "per_cast_cycle": 8.85,
+                  "display_info": [
+                    "135.69 fire damage on target",
+                    "Only if hidden or target placated"
+                  ],
+                  "base_value": -55.6102,
+                  "scale": 2.44
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
