@@ -1,2 +1,2 @@
 # PowersAPI
-An extended version of RubyRed's Powers API, found here: https://gitlab.com/rubidium-dev/powers
+A modified version of RubyRed's Powers API, found here: https://gitlab.com/rubidium-dev/powers
