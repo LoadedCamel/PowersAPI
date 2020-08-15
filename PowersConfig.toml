@@ -1,0 +1,107 @@
+# Example config file
+# Issue that the data were extracted from.
+issue = "i26p5"
+
+# Identifies the source of the data.
+source = "homecoming"
+
+# Optional. Can be "pretty" (nice indented, human-readable JSON) or "compact" (default, saves space).
+output_style = "pretty"
+
+# The security level used for powers calculations. For brevity, the output will only
+# use a specific level rather than providing data for every level. Must be a number
+# from 1 to 50.
+at_level = 50
+
+# Set the base URL for generated JSON assets. Leave blank if you want to use local file system.
+# If specified, make sure it ends with "/".
+base_json_url = "https://reborn-team.github.io/PowersAPI/hc_homecoming/"
+
+# Where to find the extracted .bin files. Required.
+input_path = "./bin"
+
+# Where the JSON files will be written. Required.
+output_path = "./dist"
+
+# List of power categories to use as a filter. Omit if you want everything (not recommended).
+# This mostly controls the top-level categories that appear in the root JSON. If other categories
+# are referenced inside the powers (such as by redirect), they will still be included in the data set
+# for linking, but won't be reflected in the root JSON.
+power_categories = [
+    "Arachnos_Soldiers",
+    "Blaster_Ranged",
+    "Blaster_Support",
+    "Brute_Defense",
+    "Brute_Melee",
+    "Controller_Buff",
+    "Controller_Control",
+    "Corruptor_Buff",
+    "Corruptor_Ranged",
+    "Defender_Buff",
+    "Defender_Ranged",
+    "Dominator_Assault",
+    "Dominator_Control",
+    "Epic",
+    "Incarnate",
+    "Inherent",
+    "Mastermind_Buff",
+    "Mastermind_Summon",
+    "Peacebringer_Defensive",
+    "Peacebringer_Offensive",
+    "Pool",
+    "Prestige",
+    "Scrapper_Defense",
+    "Scrapper_Melee",
+    "Sentinel_Defense",
+    "Sentinel_Ranged",
+    "Stalker_Defense",
+    "Stalker_Melee",
+    "Tanker_Defense",
+    "Tanker_Melee",
+    "Teamwork",
+    "Training_Gadgets",
+    "Warshade_Defensive",
+    "Warshade_Offensive",
+    "Widow_Training",
+]
+
+# This is a bit of a hack ... several categories use indirect methods to tie
+# them to archetypes, such as required modes or buy requirements. This will
+# assign every archetype to those categories in an attempt to have the effect
+# data present, even if a bit inaccurate.
+global_categories = ["Epic", "Incarnate", "Inherent", "Prestige"]
+
+# Filter out power sets based on name matching criteria.
+# The Incarnate power category contains all of the power sets for the individual
+# pets and a few other junk sets. Since those are rolled up into the EntCreate
+# definitions, there's no need to include them.
+filter_powersets = [
+    "Incarnate.Lore_Pet_",
+    "Incarnate.AntiMatterRayBurn",
+    "Incarnate.Data",
+    "Incarnate.Defiler_Pets",
+    "Incarnate.Fate",
+    "Incarnate.Genesis",
+    "Incarnate.Ion_Judgement",
+    "Incarnate.Mind",
+    "Incarnate.Omega",
+    "Incarnate.Socket",
+    "Incarnate.Stance",
+    "Incarnate.Verdict",
+    "Incarnate.Vitae",
+]
+
+# Comment out this block entirely if you don't want to host icon assets.
+[assets]
+# Set the base URL for images. If specified, make sure it ends with "/".
+base_asset_url = "https://reborn-team.github.io/PowersAPI/assets/"
+# Icons stored in the bins usually have .tga or .ico. Change this to the hosted image format.
+ext = ".png"
+# URL path for archetype icons.
+# md5 = first byte of md5 hash of {icon}
+# icon = file name of icon (including extension)
+archetype_icon_format = "archetype/{icon}"
+# URL path for power icons.
+# md5 = first byte of md5 hash of {icon}
+# icon = file name of icon (including extension)
+powers_icon_format = "powers/{md5}/{icon}"
