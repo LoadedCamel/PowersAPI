@@ -1,5 +1,5 @@
 # PowersAPI
-A modified version of RubyRed's Powers API, found here: https://coh.tips/powers/
+A modified version for Mids'-specific purposes of RubyRed's Powers API, found here: https://coh.tips/powers/
 
 ---
 
